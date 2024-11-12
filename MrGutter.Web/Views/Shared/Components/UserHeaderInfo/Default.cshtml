@@ -1,0 +1,23 @@
+﻿@model MrGutter.Models.User
+
+@* <div >
+
+    <p>User: @Model.FirstName</p>
+    <p>Vansh: @Model.LastName</p>
+</div> *@
+<style>
+    .avatar-initials {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        border-radius: 50%;
+        background-color:white;
+        color: #0A3E7A;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+</style>
+<span style="color:white"><strong>@Model.FirstName @Model.LastName</strong></span>
+<span class="avatar-initials">@Model.Initials</span>

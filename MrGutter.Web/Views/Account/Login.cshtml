@@ -1,0 +1,97 @@
+﻿@{
+    Layout = "_Layout_Home";
+}
+@model MrGutter.Models.ViewModels.LoginVM
+<style>
+    .required {
+        color: red;
+    }
+</style>
+
+<form asp-action="Login" asp-controller="Account" method="post">
+    <!-- Hidden input to pass userType to the form --> 
+
+    <!-- Debug line to check the value of UserType -->
+    @* <p>UserType: @ViewBag.UserType</p> *@
+    <section id="login" class="auth-height">
+        <div class="row full-height-vh m-0">
+            <div class="col-12 d-flex align-items-center justify-content-center">
+                <div class="card overflow-hidden radius-12">
+                    <div class="card-content">
+                        <div class="card-body auth-img">
+                            <div class="row m-0">
+                                <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center auth-img-bg p-3">
+                                    <img src="~/image/gutter-logo-1-removebg-preview.png" alt="" class="img-fluid" width="190" height="160">
+                                </div>
+                                <div class="col-lg-6 col-12 px-4 py-3">
+                                    <div class="position-relative mb-3">
+                                        <span class="position-absolute line-hr"></span>
+                                        <h4 class="mb-2 card-title line-inn">@ViewBag.UserType Login</h4>
+                                    </div>
+                                    <p class="mb-1 font-bold font-40">Welcome back!</p>
+                                    <p>Please enter your login details below.</p>
+
+                                    <div class="form-group">
+                                        <label for="mobileOrEmail">Email / Number <sup class="required">*</sup></label>
+                                        <input type="text" asp-for="EmailOrMobile" class="form-control" id="mobileOrEmail" placeholder="Email/ Mobile Number">
+                                        <span asp-validation-for="EmailOrMobile" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group" id="passwordField">
+                                        <label for="password">Password<sup class="required">*</sup></label>
+                                        <input type="password" asp-for="Password" class="form-control" id="password" placeholder="Password">
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                  
+                                    <div class="mb-1 justify-content-center d-flex font-small-2">
+                                        <a asp-action="ForgotPassword" asp-controller="Account">Don't remember your password?</a>
+                                    </div>
+                                    <div class="mb-3 justify-content-center d-flex font-small-2">
+                                        <a asp-action="CreateAccount" asp-controller="Account">Need an account?</a>
+                                    </div>
+                                  
+
+                                    <input type="submit" value="Login" class="cstm-btn-primary" />
+                                        <span class="text-danger">@ViewBag.LoginErrorMsg</span>
+
+                                @*     <div class="container-rmlogin">
+                                        <hr class="divider-rmlogin">
+                                        <span class="text-rmlogin">or</span>
+                                    </div>
+
+                                    <div class="justify-content-between align-items-center content-rmlogin">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" asp-for="IsLoginWithOtp" id="custom-check-2">
+                                            <label class="custom-control-label" for="custom-check-2"><span>Login With OTP</span></label>
+                                        </div>
+                                    </div> *@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var passwordField = document.getElementById('passwordField');
+        var otpCheckbox = document.getElementById('custom-check-2');
+
+        otpCheckbox.addEventListener('change', function () {
+            // Show or hide password field based on OTP checkbox
+            if (otpCheckbox.checked) {
+                passwordField.style.display = 'none';
+            } else {
+                passwordField.style.display = 'block';
+            }
+        });
+
+        // Initial display logic based on OTP checkbox
+        if (otpCheckbox.checked) {
+            passwordField.style.display = 'none';
+        }
+    });
+</script>

@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Mr. Gutter</title>
+    <link rel="stylesheet" href="~/css/DNFINSStyle.css"/>
+    <link rel="stylesheet" href="~/css/pages/authentication.css" />
+    <link href="~/css/style.css" rel="stylesheet" />
+
+
+    
+    <link rel="shortcut icon" type="image/png" href="~/app-assets/img/ico/favicon-32.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
+    <!-- BEGIN VENDOR CSS-->
+    <!-- font icons-->
+    <link rel="stylesheet" type="text/css" href="~/app-assets/fonts/feather/style.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/fonts/simple-line-icons/style.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/perfect-scrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/prism.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/switchery.min.css">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN APEX CSS-->
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/bootstrap-extended.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/colors.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/components.min.css">
+    <link rel="stylesheet" type="text/css" href="~/app-assets/css/themes/layout-dark.min.css">
+    <link rel="stylesheet" href="~/app-assets/css/plugins/switchery.min.css">
+    <!-- END APEX CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" href="~/app-assets/css/pages/authentication.css">
+    <!-- END Page Level CSS-->
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
+    <!-- END: Custom CSS-->
+    @RenderSection("Styles", required: false)
+</head>
+<body class="vertical-layout vertical-menu 1-column auth-page navbar-sticky blank-page" data-menu="vertical-menu" data-col="1-column">
+
+    <div class="wrapper">
+        <div class="main-panel">
+            <!-- BEGIN : Main Content-->
+            <div class="main-content">
+                <div class="content-overlay"></div>
+                <div class="content-wrapper">
+                    <!--Login Page Starts-->
+                    <div class="container">
+                        <main role="main" class="pb-3">
+                            @RenderBody()
+                        </main>
+                    </div>
+                </div>
+            </div>
+            <!-- END : End Main Content-->
+        </div>
+    </div>
+   @*  <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - DNFINS.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer> *@
+
+    <!-- BEGIN VENDOR JS-->
+    <script src="~/app-assets/vendors/js/vendors.min.js"></script>
+    
+    <script src="~/app-assets/vendors/js/switchery.min.js"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN APEX JS-->
+    <script src="~/app-assets/js/core/app-menu.min.js"></script>
+    <script src="~/app-assets/js/core/app.min.js"></script>
+    <script src="~/app-assets/js/notification-sidebar.min.js"></script>
+    <script src="~/app-assets/js/customizer.min.js"></script>
+    <script src="~/app-assets/js/scroll-top.min.js"></script>
+    <!-- END APEX JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <!-- END PAGE LEVEL JS-->
+    <!-- BEGIN: Custom CSS-->
+    <script src="~/js/site.js"></script>
+    <script src="~/assets/js/scripts.js"></script>
+    <!-- END: Custom CSS-->
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

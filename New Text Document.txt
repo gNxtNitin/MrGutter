@@ -1,0 +1,42 @@
+Middleware to Validate JWT Token on Every Request
+If you want to validate the token automatically on every request in your backend API, you can set up JWT authentication middleware.
+
+In Startup.cs:
+
+csharp
+Copy code
+public void ConfigureServices(IServiceCollection services)
+{
+    // Add JWT Authentication
+    services.AddAuthentication(options =>
+    {
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = Configuration["Jwt:Issuer"],
+            ValidAudience = Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+        };
+    });
+
+    services.AddControllersWithViews();
+}
+
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    app.UseAuthentication(); // Ensure this is added
+    app.UseAuthorization();
+
+    app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapControllers();
+    });
+}

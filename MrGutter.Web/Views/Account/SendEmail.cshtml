@@ -1,0 +1,68 @@
+﻿@{
+    Layout = "_Layout_Home";
+}
+<style>
+    .otp-input {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        margin: 0 5px;
+        border: 1px solid #ccc;
+        font-size: 35px !important;
+        font-weight: 900;
+        transition: border-color 0.2s ease-in-out;
+    }
+
+        .otp-input:focus {
+            border-color: #007bff;
+        }
+</style>
+<style>
+    #countdown,
+    #resendSection a {
+        font-weight: bold;
+        color: #2B7FCC; /*  color: green; */
+    }
+</style>
+
+<section id="login" class="auth-height">
+    <div class="row full-height-vh m-0">
+
+        <div class="col-12 d-flex align-items-center justify-content-center">
+
+            <div class="card overflow-hidden radius-12 w-75">
+                <div class="card-content">
+                    <div class="card-body auth-img">
+
+                        <div class="row m-0">
+                            <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center auth-img-bg p-3">
+                                <img src="~/image/gutter-logo-1-removebg-preview.png" alt="Logo" class="img-fluid">
+                            </div>
+                            <div class="col-lg-6 col-12 px-3 py-4">
+
+                                <form>
+                                    <input type="hidden" />
+                                    <div class="d-flex justify-content-center">
+                                        <div>
+                                            <h2>Great! Verify Your Email.</h2>
+                                        </div>
+                                    </div>
+                                    <!-- Add your input fields for OTP here -->
+                                    <div class="form-group mt-1">
+                                        <p for="otpInput">Please verify your email to begin creating stunning proposals on Mr.Gutter. We just sent you a verification link.</label>
+                                    </div>
+                                   @*  <div class="text-center mt-3">
+                                        <a asp-controller="Account" asp-action="Login" type="submit" class="btn btn-primary">Let's go</a>
+                                    </div> *@
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
