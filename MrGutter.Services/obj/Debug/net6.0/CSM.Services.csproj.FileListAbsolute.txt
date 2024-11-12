@@ -1,0 +1,102 @@
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.deps.json
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.dll
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.pdb
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Models.dll
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Repository.dll
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Models.pdb
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Repository.pdb
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.csproj.AssemblyReference.cache
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.AssemblyInfoInputs.cache
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.AssemblyInfo.cs
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.csproj.CoreCompileInputs.cache
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.csproj.CopyComplete
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.dll
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\obj\Debug\net6.0\refint\CSM.Services.dll
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.pdb
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Services\obj\Debug\net6.0\ref\CSM.Services.dll
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.deps.json
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.dll
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.pdb
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Models.dll
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Repository.dll
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Models.pdb
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Repository.pdb
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.csproj.AssemblyReference.cache
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.AssemblyInfoInputs.cache
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.AssemblyInfo.cs
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.csproj.CoreCompileInputs.cache
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Serv.9B17DD2B.Up2Date
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.dll
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\obj\Debug\net6.0\refint\CSM.Services.dll
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.pdb
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Services\obj\Debug\net6.0\ref\CSM.Services.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.deps.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Models.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Repository.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Models.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Repository.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.csproj.AssemblyReference.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.AssemblyInfoInputs.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.AssemblyInfo.cs
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.csproj.CoreCompileInputs.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Serv.9B17DD2B.Up2Date
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\obj\Debug\net6.0\refint\CSM.Services.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Services\obj\Debug\net6.0\ref\CSM.Services.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.deps.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Models.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Repository.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Models.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Repository.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.csproj.AssemblyReference.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.AssemblyInfoInputs.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.AssemblyInfo.cs
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.csproj.CoreCompileInputs.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Serv.9B17DD2B.Up2Date
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\obj\Debug\net6.0\refint\CSM.Services.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Services\obj\Debug\net6.0\ref\CSM.Services.dll
+D:\SampleProjects\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.deps.json
+D:\SampleProjects\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.dll
+D:\SampleProjects\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.pdb
+D:\SampleProjects\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Models.dll
+D:\SampleProjects\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Repository.dll
+D:\SampleProjects\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Models.pdb
+D:\SampleProjects\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Repository.pdb
+D:\SampleProjects\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.csproj.AssemblyReference.cache
+D:\SampleProjects\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\SampleProjects\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.AssemblyInfoInputs.cache
+D:\SampleProjects\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.AssemblyInfo.cs
+D:\SampleProjects\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.csproj.CoreCompileInputs.cache
+D:\SampleProjects\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Serv.9B17DD2B.Up2Date
+D:\SampleProjects\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.dll
+D:\SampleProjects\CSM_Web\CSM.Services\obj\Debug\net6.0\refint\CSM.Services.dll
+D:\SampleProjects\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.pdb
+D:\SampleProjects\CSM_Web\CSM.Services\obj\Debug\net6.0\ref\CSM.Services.dll
+C:\CMS\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.deps.json
+C:\CMS\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.dll
+C:\CMS\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Services.pdb
+C:\CMS\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Models.dll
+C:\CMS\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Repository.dll
+C:\CMS\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Models.pdb
+C:\CMS\CSM_Web\CSM.Services\bin\Debug\net6.0\CSM.Repository.pdb
+C:\CMS\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.csproj.AssemblyReference.cache
+C:\CMS\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\CMS\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.AssemblyInfoInputs.cache
+C:\CMS\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.AssemblyInfo.cs
+C:\CMS\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.csproj.CoreCompileInputs.cache
+C:\CMS\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Serv.9B17DD2B.Up2Date
+C:\CMS\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.dll
+C:\CMS\CSM_Web\CSM.Services\obj\Debug\net6.0\refint\CSM.Services.dll
+C:\CMS\CSM_Web\CSM.Services\obj\Debug\net6.0\CSM.Services.pdb
+C:\CMS\CSM_Web\CSM.Services\obj\Debug\net6.0\ref\CSM.Services.dll

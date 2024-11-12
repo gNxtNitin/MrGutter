@@ -1,0 +1,236 @@
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\appsettings.Development.json
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\appsettings.json
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.staticwebassets.runtime.json
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.exe
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.deps.json
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.runtimeconfig.json
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.dll
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.pdb
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.AssemblyInfoInputs.cache
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.AssemblyInfo.cs
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.CoreCompileInputs.cache
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.RazorAssemblyInfo.cache
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.RazorAssemblyInfo.cs
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.build.json
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.development.json
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.CSM.Web.Microsoft.AspNetCore.StaticWebAssets.props
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.build.CSM.Web.props
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CSM.Web.props
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CSM.Web.props
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.pack.json
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\bundle\CSM.Web.styles.css
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\projectbundle\CSM.Web.bundle.scp.css
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.dll
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\refint\CSM.Web.dll
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.pdb
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.genruntimeconfig.cache
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\ref\CSM.Web.dll
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\appsettings.Development.json
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\appsettings.json
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.staticwebassets.runtime.json
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.exe
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.deps.json
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.runtimeconfig.json
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.dll
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.pdb
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Models.dll
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Repository.dll
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Services.dll
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Services.pdb
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Models.pdb
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Repository.pdb
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.AssemblyReference.cache
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.AssemblyInfoInputs.cache
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.AssemblyInfo.cs
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.CoreCompileInputs.cache
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.RazorAssemblyInfo.cache
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.RazorAssemblyInfo.cs
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.CSM.Web.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.build.CSM.Web.props
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CSM.Web.props
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CSM.Web.props
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.pack.json
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.build.json
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.development.json
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\bundle\CSM.Web.styles.css
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\projectbundle\CSM.Web.bundle.scp.css
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.CopyComplete
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.dll
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\refint\CSM.Web.dll
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.pdb
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.genruntimeconfig.cache
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\obj\Debug\net6.0\ref\CSM.Web.dll
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\appsettings.Development.json
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\appsettings.json
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.staticwebassets.runtime.json
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.exe
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.deps.json
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.runtimeconfig.json
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.dll
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.pdb
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Models.dll
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Repository.dll
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Services.dll
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Services.pdb
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Models.pdb
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Repository.pdb
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.AssemblyReference.cache
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.GeneratedMSBuildEditorConfig.editorconfig
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.AssemblyInfoInputs.cache
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.AssemblyInfo.cs
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.CoreCompileInputs.cache
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.MvcApplicationPartsAssemblyInfo.cache
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.RazorAssemblyInfo.cache
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.RazorAssemblyInfo.cs
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.build.json
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.development.json
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.CSM.Web.Microsoft.AspNetCore.StaticWebAssets.props
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.build.CSM.Web.props
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CSM.Web.props
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CSM.Web.props
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.pack.json
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\bundle\CSM.Web.styles.css
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\projectbundle\CSM.Web.bundle.scp.css
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.Up2Date
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.dll
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\refint\CSM.Web.dll
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.pdb
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.genruntimeconfig.cache
+D:\SampleProjects\CustomerSupportManagement-CSM_Dev\CSM_Web\CSM.Web\obj\Debug\net6.0\ref\CSM.Web.dll
+D:\Projects\CustomerSupportManagement\CSM_Web\CSM.Web\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\appsettings.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.staticwebassets.runtime.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.exe
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.deps.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.runtimeconfig.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Models.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Repository.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Services.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Services.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Models.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Repository.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.AssemblyReference.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.AssemblyInfoInputs.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.AssemblyInfo.cs
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.CoreCompileInputs.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.RazorAssemblyInfo.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.RazorAssemblyInfo.cs
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.CSM.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.build.CSM.Web.props
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CSM.Web.props
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CSM.Web.props
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\bundle\CSM.Web.styles.css
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\projectbundle\CSM.Web.bundle.scp.css
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.Up2Date
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\refint\CSM.Web.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.genruntimeconfig.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM_Web\CSM.Web\obj\Debug\net6.0\ref\CSM.Web.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\appsettings.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.staticwebassets.runtime.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.exe
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.deps.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.runtimeconfig.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Models.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Repository.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Services.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Services.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Models.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Repository.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.AssemblyReference.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.AssemblyInfoInputs.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.AssemblyInfo.cs
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.CoreCompileInputs.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.RazorAssemblyInfo.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.RazorAssemblyInfo.cs
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.CSM.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.build.CSM.Web.props
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CSM.Web.props
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CSM.Web.props
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\bundle\CSM.Web.styles.css
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\projectbundle\CSM.Web.bundle.scp.css
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.Up2Date
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\refint\CSM.Web.dll
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.pdb
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.genruntimeconfig.cache
+C:\Users\vansh\OneDrive\Desktop\CSM Projetct\CSM_Web\CSM.Web\obj\Debug\net6.0\ref\CSM.Web.dll
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Models.dll
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Repository.dll
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Services.dll
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Services.pdb
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Models.pdb
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Repository.pdb
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.AssemblyReference.cache
+D:\SampleProjects\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.Up2Date
+D:\SampleProjects\CSM_Web\CSM.Web\bin\Debug\net6.0\libman.json
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\appsettings.Development.json
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\appsettings.json
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\libman.json
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.staticwebassets.runtime.json
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.exe
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.deps.json
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.runtimeconfig.json
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.dll
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Web.pdb
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Models.dll
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Repository.dll
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Services.dll
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Services.pdb
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Models.pdb
+C:\CMS\CSM_Web\CSM.Web\bin\Debug\net6.0\CSM.Repository.pdb
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.AssemblyReference.cache
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.AssemblyInfoInputs.cache
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.AssemblyInfo.cs
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.CoreCompileInputs.cache
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.RazorAssemblyInfo.cache
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.RazorAssemblyInfo.cs
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.build.json
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.development.json
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.CSM.Web.Microsoft.AspNetCore.StaticWebAssets.props
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.build.CSM.Web.props
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.CSM.Web.props
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.CSM.Web.props
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\staticwebassets.pack.json
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\bundle\CSM.Web.styles.css
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\scopedcss\projectbundle\CSM.Web.bundle.scp.css
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.csproj.Up2Date
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.dll
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\refint\CSM.Web.dll
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.pdb
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\CSM.Web.genruntimeconfig.cache
+C:\CMS\CSM_Web\CSM.Web\obj\Debug\net6.0\ref\CSM.Web.dll

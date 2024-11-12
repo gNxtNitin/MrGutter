@@ -1,0 +1,229 @@
+﻿@model MrGutter.Models.ViewModels.LoginVM
+@{
+    Layout = "_Layout";
+}
+<style>
+    .otp-input {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        margin: 0 5px;
+        border: 1px solid #ccc;
+        font-size: 35px !important;
+        font-weight: 900;
+        transition: border-color 0.2s ease-in-out;
+    }
+
+        .otp-input:focus {
+            border-color: #007bff;
+        }
+</style>
+<style>
+    #countdown,
+    #resendSection a {
+        font-weight:bold;
+        color: #2B7FCC; /*  color: green; */
+    }
+</style>
+
+<section id="login" class="auth-height">
+    <div class="row full-height-vh m-0">
+
+        <div class="col-12 d-flex align-items-center justify-content-center">
+
+            <div class="card overflow-hidden radius-12 w-75">
+
+                <div class="card-content">
+                    <div class="card-body auth-img">
+
+                        <div class="row m-0">
+                            <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center auth-img-bg p-3">
+                                <img src="~/app-assets/img/gallery/logopng.png" alt="" class="img-fluid">
+                            </div>
+                            <div class="col-lg-6 col-12 px-3 py-4">
+
+                                <form method="post" asp-action="ValidateOTPs" asp-controller="Account">
+                                    <input type="hidden" asp-for="EmailOrMobile" />
+                                    <div class="d-flex justify-content-center">
+                                        <div class="">
+                                            <img src="~/app-assets/img/gallery/otp.png" alt="" style="width:200px;" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                    <div class="text-center py-2">
+
+                                        <h4 class="text-center">OTP Verification</h4>
+
+                                    </div>
+                                   @*  @if (ViewBag.ResendOtpMessage != null)
+                                    {
+                                        <p class="text-center">Enter the 4-digit verification code resent to<span style="font-weight:600;"> @Model.EmailOrMobile.</span> For security reasons do not disclose or share the OTP.</p>
+
+                                    }
+                                    else
+                                    {
+                                        <p class="text-center">Enter the 4-digit verification code sent to<span style="font-weight:600;"> @Model.EmailOrMobile.</span> For security reasons do not disclose or share the OTP.</p>
+
+                                    } *@
+                                    <div id="otp" class="d-flex justify-content-center">
+                                        <input type="password" class="form-control otp-input" id="otp1" maxlength="1" oninput="moveToNext(this, 'otp2')" onkeydown="moveToPrev(event, '', 'otp1')" />
+                                        <input type="password" class="form-control otp-input" id="otp2" maxlength="1" oninput="moveToNext(this, 'otp3')" onkeydown="moveToPrev(event, 'otp1', 'otp2')" />
+                                        <input type="password" class="form-control otp-input" id="otp3" maxlength="1" oninput="moveToNext(this, 'otp4')" onkeydown="moveToPrev(event, 'otp2', 'otp3')" />
+                                        <input type="password" class="form-control otp-input" id="otp4" maxlength="1" oninput="combineOtp()" onkeydown="moveToPrev(event, 'otp3', 'otp4')" />
+
+                                    </div>
+                                    <input type="hidden" name="VerificationCode" asp-for="VerificationCode" id="VerificationCode" />
+                                    <input type="submit" value="Verify" class="cstm-btn-primary mt-2" />
+                               @*      @if (ViewBag.ResendOtpMessage != null)
+                                    {
+                                        <div>
+                                            <span class="text-success">@Html.Raw(ViewBag.ResendOtpMessage)</span>
+                                        </div>
+                                    }
+                                    @if (ViewBag.OTPErrorMsg != null)
+                                    {
+                                        <span class="text-danger">@ViewBag.OTPErrorMsg</span>
+                                    } *@
+                                </form>
+
+                                <form asp-action="ResendOtps" asp-controller="Account" id="resendOtpForm">
+                                    <input type="hidden" asp-for="EmailOrMobile" />
+                                    <div class="mt-2 text-center" id="timerSection">
+                                        <p id="timer">Didn't receive OTP? <span class="" id="countdown"> Resend in 02:00</span></p>
+                                    </div>
+                                    <div id="resendSection" class="mt-2 text-center" style="display: none;">
+                                        <p>Didn't receive OTP? <a href="javascript:void(0);" class="" onclick="resendOTP();"> Resend OTP</a></p>
+                                    </div>
+
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+@section Scripts {
+    <script>
+        let timerInterval;
+        const expiredOtpCode = @Json.Serialize(ViewBag.ExpiredOtpCode);
+        const otpExpirationTime = @Json.Serialize(ViewBag.OtpExpirationTime);
+
+        function moveToNext(current, nextFieldID) {
+            if (current.value.length === 1) {
+                document.getElementById(nextFieldID).focus();
+            }
+        }
+
+        function moveToPrev(event, prevFieldID, currentFieldID) {
+            if (event.key === "Backspace") {
+                event.preventDefault();
+                const currentField = document.getElementById(currentFieldID);
+                const prevField = prevFieldID ? document.getElementById(prevFieldID) : null;
+
+                if (currentField.value.length === 0 && prevField) {
+                    prevField.focus();
+                    prevField.value = '';
+                } else {
+                    currentField.value = '';
+                    if (prevField) {
+                        prevField.focus();
+                    }
+                }
+                combineOtp();
+            }
+        }
+
+        function combineOtp() {
+            var otp = '';
+            for (var i = 1; i <= 4; i++) {
+                otp += document.getElementById('otp' + i).value;
+            }
+            document.getElementById('VerificationCode').value = otp;
+        }
+
+        function clearOtpFields() {
+            for (var i = 1; i <= 4; i++) {
+                document.getElementById('otp' + i).value = '';
+            }
+            combineOtp();
+        }
+
+        function startTimer(display) {
+            clearInterval(timerInterval);
+
+            function updateDisplay() {
+                const now = new Date().getTime();
+                const distance = otpExpirationTime - now;
+
+                if (distance <= 0) {
+                    clearInterval(timerInterval);
+                    showResendSection();
+                    return;
+                }
+
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+                const formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = `Resend in ${formattedMinutes}:${formattedSeconds}`;
+            }
+
+            updateDisplay();
+            timerInterval = setInterval(updateDisplay, 1000);
+        }
+
+        function showResendSection() {
+            document.getElementById('timerSection').style.display = 'none';
+            document.getElementById('resendSection').style.display = 'block';
+        }
+
+        function showTimerSection() {
+            document.getElementById('timerSection').style.display = 'block';
+            document.getElementById('resendSection').style.display = 'none';
+        }
+
+        window.onload = function () {
+            document.getElementById('otp1').focus();
+            clearOtpFields();
+            const display = document.querySelector('#countdown');
+
+            if (expiredOtpCode === -2 || otpExpirationTime <= new Date().getTime()) {
+                showResendSection();
+            } else {
+                showTimerSection();
+                startTimer(display);
+            }
+        };
+
+        function resendOTP() {
+            console.log("Resending OTP...");
+            document.getElementById('resendOtpForm').submit();
+        }
+    </script>
+
+}
+@*
+@section Styles {
+    <style>
+        .otp-input {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            margin: 0 5px;
+            border: 1px solid #ccc;
+            font-weight: 900;
+            font-size: 35px;
+            transition: border-color 0.2s ease-in-out;
+        }
+
+            .otp-input:focus {
+                border-color: #007bff;
+            }
+    </style>
+} *@
