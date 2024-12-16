@@ -86,3 +86,15 @@ D:\MrGutter\MrGutter_Web\MrGutter.Models\obj\Debug\net6.0\MrGutter.Models.dll
 D:\MrGutter\MrGutter_Web\MrGutter.Models\obj\Debug\net6.0\refint\MrGutter.Models.dll
 D:\MrGutter\MrGutter_Web\MrGutter.Models\obj\Debug\net6.0\MrGutter.Models.pdb
 D:\MrGutter\MrGutter_Web\MrGutter.Models\obj\Debug\net6.0\ref\MrGutter.Models.dll
+C:\Users\vansh\Source\Repos\MrGutter-UI\MrGutter.Models\bin\Debug\net6.0\MrGutter.Models.deps.json
+C:\Users\vansh\Source\Repos\MrGutter-UI\MrGutter.Models\bin\Debug\net6.0\MrGutter.Models.dll
+C:\Users\vansh\Source\Repos\MrGutter-UI\MrGutter.Models\bin\Debug\net6.0\MrGutter.Models.pdb
+C:\Users\vansh\Source\Repos\MrGutter-UI\MrGutter.Models\obj\Debug\net6.0\MrGutter.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vansh\Source\Repos\MrGutter-UI\MrGutter.Models\obj\Debug\net6.0\MrGutter.Models.AssemblyInfoInputs.cache
+C:\Users\vansh\Source\Repos\MrGutter-UI\MrGutter.Models\obj\Debug\net6.0\MrGutter.Models.AssemblyInfo.cs
+C:\Users\vansh\Source\Repos\MrGutter-UI\MrGutter.Models\obj\Debug\net6.0\MrGutter.Models.csproj.CoreCompileInputs.cache
+C:\Users\vansh\Source\Repos\MrGutter-UI\MrGutter.Models\obj\Debug\net6.0\MrGutter.Models.sourcelink.json
+C:\Users\vansh\Source\Repos\MrGutter-UI\MrGutter.Models\obj\Debug\net6.0\MrGutter.Models.dll
+C:\Users\vansh\Source\Repos\MrGutter-UI\MrGutter.Models\obj\Debug\net6.0\refint\MrGutter.Models.dll
+C:\Users\vansh\Source\Repos\MrGutter-UI\MrGutter.Models\obj\Debug\net6.0\MrGutter.Models.pdb
+C:\Users\vansh\Source\Repos\MrGutter-UI\MrGutter.Models\obj\Debug\net6.0\ref\MrGutter.Models.dll

@@ -43,3 +43,12 @@
 /MrGutter.Web/obj/project.assets.json
 /MrGutter.Web/obj/project.nuget.cache
 /MrGutter.Web/obj/Debug/net6.0/staticwebassets.pack.json
+/.vs/MrGutter_Web/config/applicationhost.config
+/.gitignore
+/.vs/MrGutter_Web/v17/.suo
+/MrGutter.Web/obj/Debug/net6.0/staticwebassets.development.json
+/MrGutter.Web/obj/Debug/net6.0/staticwebassets.build.json
+/MrGutter.Services/bin/Debug/net6.0/MrGutter.Models.dll
+/MrGutter.Services/bin/Debug/net6.0/MrGutter.Models.pdb
+/MrGutter.Services/bin/Debug/net6.0/MrGutter.Repository.dll
+/MrGutter.Services/bin/Debug/net6.0/MrGutter.Repository.pdb
