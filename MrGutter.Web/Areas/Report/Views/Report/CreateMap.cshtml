@@ -3,6 +3,7 @@
     ViewData["Title"] = "Layout";
 }
 
+
 <style>
     /* Style for the thumbnail */
     .thumbnail {
@@ -74,7 +75,7 @@
                                 <div class="col-5">
                                     <div class="card">
                                         <div class="card-body">
-                                            <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" />
+                                            <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" id="thumbnail" />
                                         </div>
                                     </div>
                                 </div>
@@ -83,7 +84,7 @@
                                 <div class="col-5">
                                     <div class="card">
                                         <div class="card-body">
-                                            <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" />
+                                            <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" id="thumbnail" />
                                         </div>
                                     </div>
                                 </div>
@@ -184,7 +185,11 @@
 
             </div>
         </div>
-
+        <!-- Modal -->
+        <div id="imageModal" class="modal">
+            <span class="close" id="closeModal">&times;</span>
+            <img class="modal-content" id="largeImage">
+        </div>
 
 
 
@@ -266,30 +271,37 @@
     });
 </script>
  *@
+
+
 <script>
-    // Get the modal and related elements
+    // Get modal elements
     const modal = document.getElementById('imageModal');
-    const thumbnail = document.getElementById('thumbnail');
-    const largeImage = document.getElementById('largeImage');
-    const closeModal = document.getElementById('closeModal');
+    const modalImg = document.getElementById('largeImage');
+    const closeBtn = document.getElementById('closeModal');
 
-    // Open the modal and display the large image
-    thumbnail.onclick = function () {
-        modal.style.display = 'block';
-        largeImage.src = '/image/layoutimage.jpg'; // Replace with the large version of your image
-    };
+    // Get all thumbnail images
+    const thumbnails = document.querySelectorAll('.thumbnail');
 
-    // Close the modal
-    closeModal.onclick = function () {
+    // Add click event listeners to thumbnails
+    thumbnails.forEach((thumbnail) => {
+        thumbnail.addEventListener('click', function () {
+            modal.style.display = 'block'; // Show the modal
+            modalImg.src = this.src; // Set the large image's src to the clicked thumbnail's src
+        });
+    });
+
+    // Close the modal when the close button is clicked
+    closeBtn.addEventListener('click', () => {
         modal.style.display = 'none';
-    };
+    });
 
-    // Close the modal when clicking outside the image
-    modal.onclick = function (event) {
+    // Close the modal when clicking anywhere outside the modal content
+    window.addEventListener('click', (event) => {
         if (event.target === modal) {
             modal.style.display = 'none';
         }
-    };
+    });
+
 </script>
 
 <!--Script for edit title text-->
@@ -329,3 +341,4 @@
 
 
 </script>
+
