@@ -1,0 +1,688 @@
+﻿@{
+    Layout = "_Layout_Main";
+    ViewBag.Title = "Estimates";
+}
+<style>
+
+    .top-right-dropdown {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 1;
+    }
+    /* .layout-page{
+            max-width: 1300px !important;
+            margin: 0 auto !important;
+        } */
+    .card-img-height {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .form-select-1 {
+        border-radius: 4px;
+        background: #64c5b1;
+        padding: 5px;
+        border: 0;
+        outline: none;
+    }
+
+    .select-radio {
+        border-radius: 4px;
+        background: #2E7DB3;
+        padding: 5px;
+        border: 0;
+        color: white;
+        text-align: center;
+        outline: none;
+        margin-bottom: 5px;
+    }
+
+    .select-radio1 {
+        border-radius: 4px;
+        background: transparent;
+        padding: 5px;
+        border: 1px solid #ccc;
+        text-align: center;
+        outline: none;
+        cursor: pointer;
+        margin-bottom: 5px;
+    }
+
+    .dtl-btn {
+        padding: 10px 10px 16px 18px;
+        border-radius: 0px 0px 0px 50px;
+        background: #2E7DB3;
+    }
+    /* .dlt-btn{
+            display:none;
+            transition: all 0.5s ease-out;
+        }
+
+        .card:hover .dlt-btn{
+                display:block;
+                transition: all 0.5s ease-out;
+         } */
+    .dlt-btn {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+    }
+
+    .card:hover .dlt-btn {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+
+</style>
+
+
+
+
+<div class="container-xxl flex-grow-1">
+
+    <div class="col-md-12 container-p-y">
+        <div class="card">
+
+            <div class="card-header d-flex justify-content-between align-items-center row px-1 gap-3 gap-md-0 px-2">
+
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="ti ti-search ti-md me-2 me-lg-0 ti-lg"></i>
+                        </span>
+                        <input type="search" class="form-control" placeholder="Search" name="Search" />
+                    </div>
+                </div>
+
+                <div class="col-md-3 user_role">
+                    <select id="1" class="form-select text-capitalize">
+                        <option value="Select">Select</option>
+                        <option value="Admin">John Doe</option>
+                    </select>
+
+                </div>
+                <div class="col-md-2 user_plan">
+                    <select id="2" class="form-select text-capitalize">
+                        <option value="Status">Status</option>
+                        <option value="Active">Active</option>
+                    </select>
+                </div>
+                <div class="col-md-2 user_status">
+                    <select id="3" class="form-select text-capitalize">
+                        <option value="Created">Created</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+                </div>
+
+                <div class="col-md-1">
+                    <a href="#" class="text-decoration-underline">Clear All</a>
+                </div>
+                <div class="col-md-1">
+                    <a href="#" data-bs-toggle="modal"
+                       data-bs-target="#modalSignature" class="btn btn-primary tf-icons ti ti-plus scaleX-n1-rtl" title="Create Estimate"></a>
+
+                </div>
+
+
+                <!--Modal for Create Estimate button-->
+                <div class="modal fade" id="modalSignature" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog  modal-xl" role="document">
+                      
+                        <div class="">
+                            <div class="">
+
+                                <div class="modal-content m-4">
+
+                                    <div class="modal-header">
+                                        <div>
+                                            <h3 class="mb-0">Create new estimate</h3>
+                                            <p>Input customer details below to begin creating new reports</p>
+                                        </div>
+                                        
+                                        <button type="button"
+                                                class="btn-close"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+
+                                    <div class="modal-body">
+
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-md-6 mb-6">
+                                                            <label class="form-label" for="basic-default-project">Estimate No.</label>
+                                                            <input type="text" class="form-control" id="basic-default-project" placeholder="Leave blank to generate" />
+                                                        </div>
+                                                        <div class="col-md-6 mb-6">
+                                                            <label class="form-label" for="basic-default-first">First name</label>
+                                                            <input type="text" class="form-control" id="basic-default-first" placeholder="" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-6 mb-6">
+                                                            <label class="form-label" for="basic-default-last">Last name</label>
+                                                            <input type="text" class="form-control" id="basic-default-last" placeholder="" />
+                                                        </div>
+                                                        <div class="col-md-6 mb-6">
+                                                            <label class="form-label" for="basic-default-company">Company</label>
+                                                            <input type="text" class="form-control" id="basic-default-company" placeholder="ACME Inc." />
+                                                        </div>
+                                                    </div>
+                                                 
+                                                    <div class="row">
+                                                        <div class="col-md-6 mb-6">
+                                                            <label class="form-label" for="basic-default-email">Email</label>
+                                                            <div class="input-group input-group-merge">
+                                                                <input type="text"
+                                                                       id="basic-default-email"
+                                                                       class="form-control"
+                                                                       placeholder="john.doe"
+                                                                       aria-label="john.doe"
+                                                                       aria-describedby="basic-default-email2" />
+                                                                <span class="input-group-text" id="basic-default-email2">@@example.com</span>
+                                                            </div>
+                                                            <div class="form-text">You can use letters, numbers & periods</div>
+                                                        </div>
+                                                        <div class="col-md-6 mb-6">
+                                                            <label class="form-label" for="basic-default-phone">Phone No</label>
+                                                            <input type="text"
+                                                                   id="basic-default-phone"
+                                                                   class="form-control phone-mask"
+                                                                   placeholder="658 799 8941" />
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div class="row">
+                                                        <div class="col-md-6 mb-6">
+                                                            <label class="form-label" for="basic-default-line1">Address line 1</label>
+                                                            <input type="text" class="form-control" id="basic-default-line1" placeholder="" />
+                                                        </div>
+                                                        <div class="col-md-6 mb-6">
+                                                            <label class="form-label" for="basic-default-line2">Address line 2</label>
+                                                            <input type="text" class="form-control" id="basic-default-line2" placeholder="" />
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="row">
+                                                        <div class="col-md-4 mb-6">
+                                                            <label class="form-label" for="basic-default-city">City</label>
+                                                            <input type="text" class="form-control" id="basic-default-city" placeholder="" />
+                                                        </div>
+                                                        <div class="col-md-4 mb-6">
+                                                            <label class="form-label" for="basic-default-state">State</label>
+                                                            <input type="text" class="form-control" id="basic-default-state" placeholder="" />
+                                                        </div>
+                                                        <div class="col-md-4 mb-6">
+                                                            <label class="form-label" for="basic-default-zip">Zip code/Postal code</label>
+                                                            <input type="text" class="form-control" id="basic-default-zip" placeholder="" />
+                                                        </div>
+                                                    </div>
+                                             
+
+                                              
+                                                </form>
+                                            </div>
+                                      
+                                        </div>
+
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary">Create Estimate</button>
+                                        <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <div class="row mb-12 g-6">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-12 position-relative">
+                        <a asp-action="EstimationDetails" asp-controller="Estimates">
+                            <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-curtis-adams-1694007-3935333.jpg" alt="Card image" />
+                        </a>
+
+                        <div class="position-absolute end-0 top-0 dlt-btn">
+                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+
+                        <div class="card-body g-0">
+
+                            <div class="col-md-12 mb-2">
+                                <h5 class="card-title mb-0"><b>Insurance Sample</b></h5>
+                                <p class="card-text">123 Sample Ave NW  Calgary, AB  Created 3 years ago.</p>
+                            </div>
+
+
+                            <div class="col-md-6 ps-0">
+                                @* <div class="select-radio">
+                                <div class="form-check mb-1 me-4 me-lg-12 ">
+                                <input class="form-check-input" name="first" type="radio" id="won" />
+                                <label class="form-check-label text-white" for="won">
+                                <b>WON</b>
+                                </label>
+                                </div>
+                                </div>  *@
+                             @*    <div class="select-radio">
+                                    <b>WON</b>
+
+                                </div>
+                                <div class="select-radio1 text-grey">
+                                    <b>LOST</b>
+
+                                </div>
+                                <div class="select-radio1 text-grey">
+                                    <b>OPEN</b>
+                                </div> *@
+                                <div class="col-md-12 rounded text-white status-dropdown">
+                                    <select class="form-select text-capitalize">
+                                        <option value="Requested" selected>Requested</option>
+                                        <option value="Provided">Provided</option>
+                                        <option value="Accepted">Accepted</option>
+                                        <option value="Cancelled">Cancelled</option>
+                                    </select>
+                                </div>
+
+                      
+
+                                @* <div class="form-check mb-1 me-4 me-lg-12 ">
+                                <input class="form-check-input" name="first" type="radio" id="lost" />
+                                <label class="form-check-label text-danger" for="lost">
+                                <b>LOST</b>
+                                </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 ">
+                                <input class="form-check-input" name="first" type="radio" id="open" />
+                                <label class="form-check-label text-primary" for="open">
+
+                                <b>OPEN</b>
+                                </label>
+                                </div> *@
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-12 position-relative">
+                        <a asp-action="EstimationDetails" asp-controller="Estimates">
+                            <img class="card-img card-img-left card-img-height " src="~/img/elements/pexels-pixabay-164558.jpg" alt="Card image" />
+                        </a>
+                        <div class="position-absolute end-0 top-0 dlt-btn">
+                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+
+                        <div class="card-body row g-0">
+
+                            <div class="col-md-12 mb-2">
+                                <h5 class="card-title mb-0"><b>Malarkey Sample</b></h5>
+                                <p class="card-text">698 New York 52  Beacon, New York Created 1 year ago.</p>
+                            </div>
+
+                            <div class="col-md-6">
+                                @* <select id="3" class="form-select-1 text-white text-capitalize">
+                                <option value="Created">WON</option>
+                                <option value="Admin">LOST</option>
+                                <option value="Admin">OPEN</option>
+                                </select>
+                                <div class="">
+                                <button class="border-0 w-100 rounded px-2 py-1 mt-2 btn-danger " id="confirm-text">Delete</button>
+                                </div> *@
+                              @*   <div class="select-radio">
+                                    <b>WON</b>
+
+                                </div>
+                                <div class="select-radio1 text-grey">
+                                    <b>LOST</b>
+
+                                </div>
+                                <div class="select-radio1 text-grey">
+                                    <b>OPEN</b>
+
+                                </div> *@
+
+                                <div class="col-md-12 rounded text-white status-dropdown">
+                                    <select class="form-select text-capitalize">
+                                        <option value="Requested" >Requested</option>
+                                        <option value="Provided">Provided</option>
+                                        <option value="Accepted" selected>Accepted</option>
+                                        <option value="Cancelled">Cancelled</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                            @*  <div class="mt-5">
+                            <button class="btn rounded-pill btn-outline-danger waves-effect w-100" id="confirm-text">Delete</button>
+                            </div> *@
+
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-12 position-relative">
+                        <a asp-action="EstimationDetails" asp-controller="Estimates">
+                            <img class="card-img card-img-left card-img-height " src="~/img/elements/pexels-heyho-5997994.jpg" alt="Card image" />
+                        </a>
+                        <div class="position-absolute end-0 top-0 dlt-btn">
+                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+
+                        <div class="card-body row g-0">
+
+                            <div class="col-md-12 mb-2">
+                                <h5 class="card-title mb-0"><b>Atlas Sample</b></h5>
+                                <p class="card-text">123 Fake street Oak Lawn, illinois Created 3 years ago.</p>
+                            </div>
+
+
+
+                            <div class="col-md-6">
+                                @*  <div class="form-check mb-1 me-4 me-lg-12 ">
+                                <input class="form-check-input" name="first" type="radio" id="won2" />
+                                <label class="form-check-label text-success" for="won2">
+                                <b>WON</b>
+                                </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 ">
+                                <input class="form-check-input" name="first" type="radio" id="lost2" />
+                                <label class="form-check-label text-danger" for="lost2">
+                                <b>LOST</b>
+                                </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 ">
+                                <input class="form-check-input" name="first" type="radio" id="open2" />
+                                <label class="form-check-label text-primary" for="open2">
+
+                                <b>OPEN</b>
+                                </label>
+                                </div> *@
+                               @*  <div class="select-radio">
+                                    <b>WON</b>
+
+                                </div>
+                                <div class="select-radio1 text-grey">
+                                    <b>LOST</b>
+
+                                </div>
+                                <div class="select-radio1 text-grey">
+                                    <b>OPEN</b>
+
+                                </div> *@
+
+                                <div class="col-md-12 rounded text-white status-dropdown">
+                                    <select class="form-select text-capitalize">
+                                        <option value="Requested" selected>Requested</option>
+                                        <option value="Provided" selected>Provided</option>
+                                        <option value="Accepted" >Accepted</option>
+                                        <option value="Cancelled">Cancelled</option>
+                                    </select>
+                                </div>
+
+
+
+                            </div>
+                            @*  <div class="mt-5">
+                            <button class="btn rounded-pill btn-outline-danger waves-effect w-100" id="confirm-text">Delete</button>
+                            </div>
+                            *@
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-12 position-relative">
+                        <a asp-action="EstimationDetails" asp-controller="Estimates">
+                            <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-pixabay-209315.jpg" alt="Card image" />
+                        </a>
+                        <div class="position-absolute end-0 top-0 dlt-btn">
+                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+
+                        <div class="card-body row g-0">
+
+                            <div class="col-md-12 mb-2">
+                                <h5 class="card-title mb-0"> <b>Roofing Sample</b></h5>
+                                <p class="card-text">123 Sample Ave NW Calgary, AB Created 3 years ago.</p>
+                            </div>
+
+
+
+
+                            <div class="col-md-6">
+                                @* <div class="form-check mb-1 me-4 me-lg-12 ">
+                                <input class="form-check-input" name="first" type="radio" id="won3" />
+                                <label class="form-check-label text-success" for="won3">
+                                <b>WON</b>
+                                </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 ">
+                                <input class="form-check-input" name="first" type="radio" id="lost3" />
+                                <label class="form-check-label text-danger" for="lost3">
+                                <b>LOST</b>
+                                </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 ">
+                                <input class="form-check-input" name="first" type="radio" id="open3" />
+                                <label class="form-check-label text-primary" for="open3">
+
+                                <b>OPEN</b>
+                                </label>
+                                </div> *@
+                               @*  <div class="select-radio">
+                                    <b>WON</b>
+
+                                </div>
+                                <div class="select-radio1 text-grey">
+                                    <b>LOST</b>
+
+                                </div>
+                                <div class="select-radio1 text-grey">
+                                    <b>OPEN</b>
+
+                                </div> *@
+                                <div class="col-md-12 rounded text-white status-dropdown">
+                                    <select class="form-select text-capitalize">
+                                        <option value="Requested" >Requested</option>
+                                        <option value="Provided">Provided</option>
+                                        <option value="Accepted" selected>Accepted</option>
+                                        <option value="Cancelled" >Cancelled</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                            @*  <div class="mt-5">
+                            <button class="btn rounded-pill btn-outline-danger waves-effect w-100" id="confirm-text">Delete</button>
+                            </div> *@
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-12 position-relative">
+                        <a asp-action="EstimationDetails" asp-controller="Estimates">
+                            <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-pixabay-259588.jpg" alt="Card image" />
+                        </a>
+                        <div class="position-absolute end-0 top-0 dlt-btn">
+                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+
+                        <div class="card-body row g-0">
+
+                            <div class="col-md-12 mb-2">
+                                <h5 class="card-title mb-0"> <b>Insurance Sample</b></h5>
+                                <p class="card-text">123 Sample Ave NW  Calgary, AB  Created 3 years ago.</p>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                @* <div class="form-check mb-1 me-4 me-lg-12">
+                                <input class="form-check-input" name="first" type="radio" id="won4" />
+                                <label class="form-check-label text-success" for="won4">
+                                <b>WON</b>
+                                </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12">
+                                <input class="form-check-input" name="first" type="radio" id="lost4" />
+                                <label class="form-check-label text-danger" for="lost4">
+                                <b>LOST</b>
+                                </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12">
+                                <input class="form-check-input" name="first" type="radio" id="open4" />
+                                <label class="form-check-label text-primary" for="open4">
+
+                                <b>OPEN</b>
+                                </label>
+                                </div> *@
+                              @*   <div class="select-radio">
+                                    <b>WON</b>
+
+                                </div>
+                                <div class="select-radio1 text-grey">
+                                    <b>LOST</b>
+
+                                </div>
+                                <div class="select-radio1 text-grey">
+                                    <b>OPEN</b>
+                                </div> *@
+                                <div class="col-md-12 rounded text-white status-dropdown">
+                                    <select class="form-select text-capitalize">
+                                        <option value="Requested" >Requested</option>
+                                        <option value="Provided" >Provided</option>
+                                        <option value="Accepted" >Accepted</option>
+                                        <option value="Cancelled" selected>Cancelled</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+
+<script>
+    // Function to update the background and text color of each dropdown
+    function updateBackgroundColor(selectElement) {
+        var selectedValue = selectElement.value;
+        var parentDiv = selectElement.closest('.status-dropdown'); // Get the parent div with class 'status-dropdown'
+
+        // Reset background and text color classes
+        parentDiv.classList.remove("bg-success", "bg-primary", "bg-secondary", "bg-danger", "text-white", "text-dark");
+
+        // Apply the correct background and text color based on the selected value
+        if (selectedValue === "Accepted") {
+            parentDiv.classList.add("bg-success", "text-white"); // Green background, white text
+        } else if (selectedValue === "Requested") {
+            parentDiv.classList.add("bg-primary", "text-white"); // Blue background, white text
+        } else if (selectedValue === "Provided") {
+            parentDiv.classList.add("bg-secondary", "text-dark"); // Grey background, dark text
+        } else if (selectedValue === "Cancelled") {
+            parentDiv.classList.add("bg-danger", "text-white"); // Red background, white text
+        }
+    }
+
+    // Set the background color on page load for all dropdowns
+    window.addEventListener('load', function () {
+        var selectElements = document.querySelectorAll('.status-dropdown select');
+        selectElements.forEach(function (selectElement) {
+            updateBackgroundColor(selectElement); // Apply background color based on current selection
+        });
+    });
+
+    // Listen for changes on each select dropdown
+    document.querySelectorAll('.status-dropdown select').forEach(function (selectElement) {
+        selectElement.addEventListener("change", function () {
+            updateBackgroundColor(selectElement); // Update background color when selection changes
+        });
+    });
+</script>

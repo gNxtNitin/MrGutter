@@ -1,0 +1,438 @@
+﻿@{
+    Layout = "_Layout_Main";
+    ViewData["Title"] = "Estimation Details";
+}
+<style>
+
+    .top-right-dropdown {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 1;
+    }
+    /* .layout-page{
+            max-width: 1300px !important;
+            margin: 0 auto !important;
+        } */
+
+    .card-img-top {
+        /*   height: 150px; */
+        object-fit: cover;
+    }
+
+</style>
+
+<div class="container-xxl flex-grow-1 container-p-y">
+
+
+
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body row">
+                    <h2 class="card-title">Insurance Sample</h2>
+                    <div class="col-md-9 row">
+
+                        <div class="col-md-6">
+                            <h5 class="card-title"><i class="menu-icon ti ti-users"></i> <b>Insurance Sample</b></h5>
+                            <h6 class="card-title"><i class="menu-icon ti ti-phone-call"></i> <a href="#" class="text-decoration-underline">988 897 3243</a></h6>
+                            <h5 class="card-title"><i class="menu-icon ti ti-mail"></i> <a href="#" class="text-decoration-underline">support@mrgutter.com</a></h5>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-start">
+                            <span class="me-1"><i class="menu-icon ti ti-home"></i></span>
+                            <!-- Text -->
+                            <h6 class="card-title mb-0">
+                                123 Sample Ave NW <br />
+                                Calgary, AB <br />
+                                Created 3 years ago.
+                            </h6>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 row">
+                        <div class="col-md-12 mb-2 text-end">
+                            <div class="col-md-12 pe-0">
+                                <a asp-action="EstimationSettings" asp-controller="Estimates" class="mt-2 btn btn-outline-info me-0 pe-5"><i class="ti ti-settings me-3 ti-md"></i> Estimation settings</a>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <button data-bs-toggle="modal"
+                                        data-bs-target="#layouList"
+                                        class="btn btn-primary me-0 pe-5 text-white">
+                                    <i class="tf-icons ti ti-plus scaleX-n1-rtl me-2"></i>Create a new report
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Vertical modal start-->
+    <div class="modal fade" id="layouList" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <h4 class="mb-2"><b>Select layout</b></h4>
+
+                        <div class="col-md-12 mb-2">
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="ti ti-search ti-md me-2 me-lg-0 ti-lg"></i>
+                                </span>
+                                <input type="search" class="form-control" placeholder="Search by name" name="Search" />
+                            </div>
+
+
+
+                            <div class="modal-body">
+
+                                <div class="row mb-2">
+                                    <div class="col-xl-12">
+                                        <div class="nav-align-top nav-tabs-shadow mb-6">
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    <button type="button"
+                                                            class="nav-link active"
+                                                            role="tab"
+                                                            data-bs-toggle="tab"
+                                                            data-bs-target="#navs-top-My"
+                                                            aria-controls="navs-top-My"
+                                                            aria-selected="true">
+                                                        My Layouts
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <button type="button"
+                                                            class="nav-link"
+                                                            role="tab"
+                                                            data-bs-toggle="tab"
+                                                            data-bs-target="#navs-top-Shared"
+                                                            aria-controls="navs-top-Shared"
+                                                            aria-selected="false">
+                                                        Shared Layouts
+                                                    </button>
+                                                </li>
+
+                                            </ul>
+                                            <div class="tab-content">
+
+                                                <div class="tab-pane fade show active" id="navs-top-My" role="tabpanel">
+                                                    @*  <div class="d-flex justify-content-center">
+                                                    <p>
+                                                    No matching records found.
+                                                    </p>
+                                                    </div> *@
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <div>
+                                                            <h5>Malarkey Roofing Quote(Sample)</h5>
+                                                        </div>
+                                                        <div>
+                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <div>
+                                                            <h5>(Sample) James Hardie Siding</h5>
+                                                        </div>
+                                                        <div>
+                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <div>
+                                                            <h5>(Sample) Residential Cement Board Siding</h5>
+                                                        </div>
+                                                        <div>
+                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <div>
+                                                            <h5>Atlas Roofing Quote(Sample)</h5>
+                                                        </div>
+                                                        <div>
+                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="tab-pane fade" id="navs-top-Shared" role="tabpanel">
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <div>
+                                                            <h5>Default Layout</h5>
+                                                        </div>
+                                                        <div>
+                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <div>
+                                                            <h5>Residential Roofing Quote (Sample)</h5>
+                                                        </div>
+                                                        <div>
+                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <div>
+                                                            <h5>Change Order</h5>
+                                                        </div>
+                                                        <div>
+                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                        <div>
+                                                            <h5>(Sample) Insurance Contract</h5>
+                                                        </div>
+                                                        <div>
+                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                    Close
+                                </button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Vertical modal end-->
+
+
+    <div class="row d-flex justify-content-center">
+        <div class="col-8 mb-4 ">
+            <div class="card h-100 position-relative card-img-top">
+                <div class="row m-0">
+                    <div class="pt-4 pb-3 position-relative col-8">
+                        @* <img class="card-img-top rounded-0" src="~/img/elements/pexels-pixabay-259588.jpg" alt="Project Image" /> *@
+                        <img class="card-img-top rounded-0" src="~/img/elements/pexels-pixabay-259588.jpg" alt="Project Image" />
+                        <div class="card-header-elements ms-auto top-right-dropdown pt-2">
+                            <div class="btn-group">
+                                <button type="button"
+                                        class="btn btn-primary btn-icon rounded-pill dropdown-toggle hide-arrow"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    <i class="ti ti-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="javascript:void(0);">Delete report</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);">Duplicate report</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 pt-4 align-self-center">
+                        <div class="mb-5 pb-5">
+                            <div class="mb-5 d-flex justify-content-center">
+                                <h5 class="card-title"> <b>Sample Report</b></h5>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="mb-3">
+                                <a type="button" asp-area="Report" asp-action="CreateReport" asp-controller="Report" class="btn btn-primary w-100">Open</a>
+                            </div>
+                            <div class="mb-3">
+                                <button type="button" class="btn btn-secondary w-100">View Report</button>
+                            </div>
+                            <div class="mb-3">
+                                <button type="button" class="btn btn-success w-100">Manually Sign</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*   <div class="col-6 mb-4">
+        <div class="card h-100 card-img-top">
+
+        <div class="row m-0">
+
+        <div class="pt-8 pb-3 position-relative col-8">
+        <img class="card-img-top rounded-0" src="~/img/elements/pexels-pixabay-259588.jpg" alt="Project Image" />
+
+        <div class="card-header-elements ms-auto top-right-dropdown pt-2">
+        <div class="btn-group">
+        <button type="button"
+        class="btn btn-primary btn-icon rounded-pill dropdown-toggle hide-arrow"
+        data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <i class="ti ti-dots-vertical"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="javascript:void(0);">Delete report</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0);">Duplicate report</a></li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        <div class="col-4 pt-8">
+
+        <div class="">
+        <div class="mb-3">
+        <button type="button" class="btn btn-primary w-100">Open</button>
+        </div>
+        <div class="mb-3">
+        <button type="button" class="btn btn-secondary w-100">View Report</button>
+        </div>
+        <div class="mb-3">
+        <button type="button" class="btn btn-success w-100">Manually Sign</button>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="col-6 mb-4">
+        <div class="card h-100 card-img-top">
+
+        <div class="row m-0">
+
+        <div class="pt-8 pb-3 position-relative col-8">
+        <img class="card-img-top rounded-0" src="~/img/elements/pexels-pixabay-259588.jpg" alt="Project Image" />
+
+        <div class="card-header-elements ms-auto top-right-dropdown pt-2">
+        <div class="btn-group">
+        <button type="button"
+        class="btn btn-primary btn-icon rounded-pill dropdown-toggle hide-arrow"
+        data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <i class="ti ti-dots-vertical"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="javascript:void(0);">Delete report</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0);">Duplicate report</a></li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        <div class="col-4 pt-8">
+
+        <div class="">
+        <div class="mb-3">
+        <button type="button" class="btn btn-primary w-100">Open</button>
+        </div>
+        <div class="mb-3">
+        <button type="button" class="btn btn-secondary w-100">View Report</button>
+        </div>
+        <div class="mb-3">
+        <button type="button" class="btn btn-success w-100">Manually Sign</button>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="col-6 mb-4">
+        <div class="card h-100 card-img-top">
+
+        <div class="row m-0">
+
+        <div class="pt-8 pb-3 position-relative col-8">
+        <img class="card-img-top rounded-0" src="~/img/elements/pexels-pixabay-259588.jpg" alt="Project Image" />
+
+        <div class="card-header-elements ms-auto top-right-dropdown pt-2">
+        <div class="btn-group">
+        <button type="button"
+        class="btn btn-primary btn-icon rounded-pill dropdown-toggle hide-arrow"
+        data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <i class="ti ti-dots-vertical"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="javascript:void(0);">Delete report</a></li>
+        <li><a class="dropdown-item" href="javascript:void(0);">Duplicate report</a></li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        <div class="col-4 pt-8">
+
+        <div class="">
+        <div class="mb-3">
+        <button type="button" class="btn btn-primary w-100">Open</button>
+        </div>
+        <div class="mb-3">
+        <button type="button" class="btn btn-secondary w-100">View Report</button>
+        </div>
+        <div class="mb-3">
+        <button type="button" class="btn btn-success w-100">Manually Sign</button>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div> *@
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    <div class="row row-cols-1 row-cols-md-3 g-6 mb-12">
+        <div class="col-md-6">
+            <h5 class="card-title"><b>Insurance Sample</b></h5>
+            <p class="card-text">123 Sample Ave NW <br /> Calgary, AB <br /> Created 3 years ago.</p>
+        </div>
+        <div class="col-md-6">
+
+
+            <div class="card h-100">
+
+                <div class="pt-8">
+                    <img class="card-img-top rounded-0" src="~/img/elements/pexels-pixabay-259588.jpg" alt="Card image cap" />
+
+                </div>
+                <div class="card-body row">
+                    <div>
+                        <button type="button" class="btn btn-primary col-md-12 my-1">Open for editing</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary col-md-12 my-1">View report</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary col-md-12 my-1">Sign manually</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ *@

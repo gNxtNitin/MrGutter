@@ -1,0 +1,302 @@
+﻿@{
+    Layout = "_Layout_EditReportLayoutSetting";
+    ViewBag.Title = "layout Report";
+}
+
+@* <div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y">
+    <div class="layout-demo-wrapper">
+        <div class="layout-demo-placeholder">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card mb-6">
+                        <!-- Account -->
+                        <div class="card-body pt-4">
+                            <form id="formAccountSettings" method="GET" onsubmit="return false">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <!-- Editable text input -->
+                                    <input type="text" class="form-control flex-grow-1 me-2" placeholder="Enter text here" />
+
+                                    <!-- End button -->
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /Account -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> *@
+
+
+@* <div class="mt-4">
+<div class="swiper-container swiper-container-horizontal swiper swiper-card-advance-bg" id="swiper-with-pagination-cards">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="row">
+                <div class="col-12 d-flex">
+                    <div class="col-4">
+                        <h5 class="text-white mb-0">Dashboard</h5>
+                    </div>
+                    <div class="col-4">
+
+                    </div>
+                    <div class="col-4 text-end">
+                        <a class="btn btn-label-primary d-grid w-100 waves-effect">Create new project</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+</div> *@
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    @* <div class="layout-demo-wrapper">
+    <div class="layout-demo-placeholder"> *@
+    <div class="row">
+        <div class="col-12">
+            <h5 class="mb-0">Page Content</h5>
+       @*      <div class="d-flex justify-content-between mb-1">
+                <h5 class="">
+                    Invoice Defaults
+                    <a href="#" title="Edit the page title"><i class="ti ti-edit"></i></a>
+                </h5>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-primary waves-effect">View Page</button>
+            </div> *@
+            <div class="row">
+                <div class="col-4">
+                    <h5 class="mb-0">
+                        <span id="title-text">Invoice Defaults</span>
+                        <a href="#" id="edit-title-link">
+                            <i class="ti ti-edit"></i>
+                        </a>
+                    </h5>
+                    <input type="text" id="title-input" class="form-control" style="display: none;" />
+                </div>
+                <div class="col-4">
+                </div>
+                <div class="col-4 text-end">
+                    <button type="button" class="btn btn-outline-primary waves-effect" data-bs-target="#fullscreenModal" data-bs-toggle="modal" data-bs-dismiss="modal">View Page</button>
+                </div>
+
+            </div>
+
+
+        </div>
+        <div class="card mt-2">
+        <div class="card-body pt-4">
+            <form id="formAccountSettings" method="GET" onsubmit="return false">
+                <div class="row">
+                    <!-- First Textarea for Address -->
+                    <div class="mb-4 col-12">
+                            <label for="address" class="form-label">Invoice terms:</label>
+                        <textarea class="form-control" id="address" name="address" rows="3" ></textarea>
+                    </div>
+                  
+                </div>
+                <div class="row">
+                        <div class="mb-4 col-12">
+                            <label for="city" class="form-label">Invoice notes:</label>
+                            <textarea class="form-control" id="city" name="city" rows="3"></textarea>
+                        </div>
+
+                </div>
+
+                <div class="mt-2">
+                    <button type="submit" class="btn btn-primary me-3">Save changes</button>
+                    <button type="reset" class="btn btn-label-secondary">Cancel</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+
+
+    <!-- Vertically Centered Modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="orderLayoutSettingModel" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Order layout setting</h5>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col mb-4">
+                            <label for="nameWithTitle" class="form-label">Layout Name</label>
+                            <input type="text"
+                                   id="nameWithTitle"
+                                   class="form-control"
+                                   placeholder="Enter Layout Name" />
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col mb-0">
+                            <div class="input-group">
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0"
+                                           type="checkbox"
+                                           value=""
+                                           aria-label="Checkbox for following text input" />
+                                </div>
+
+                                <label class="form-control">Share layout with all users</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    @*  </div>
+    </div> *@
+</div>
+
+
+<div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">Layout settings</h5>
+                <span class="ms-1 pt-1">(Customize controls for this layout)</span>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-4">
+                        <h5 for="nameWithTitle" class="form-label">Layout Name</h5>
+                        <input type="text"
+                               id="nameWithTitle"
+                               class="form-control"
+                               placeholder="Enter Layout Name" />
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col mb-0">
+                        <h5 for="nameWithTitle" class="form-label">Sharing</h5>
+                        <div class="input-group">
+                            <div class="input-group-text">
+
+                                <input class="form-check-input mt-0"
+                                       type="checkbox"
+                                       value=""
+                                       aria-label="Checkbox for following text input" />
+                            </div>
+                            <label class="form-control">Make this layout available to all users</label>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-md-6">
+    <div class="mt-4">
+        <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalFullTitle">Review</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div style="width: 100%; height: 100%; border: 1px solid #ccc;">
+                            <iframe src="@Url.Content("~/image/samplereportviewpage.pdf")" width="100%" height="100%" style="border: none;"></iframe>
+                        </div>
+
+
+                    </div>
+                    @*     <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> *@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const pdfUrl = '@Url.Content("~/image/samplereportviewpage.pdf")';
+
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdfDoc => {
+        const pdfViewer = document.getElementById('pdfViewer');
+        for (let i = 1; i <= pdfDoc.numPages; i++) {
+            pdfDoc.getPage(i).then(page => {
+                const viewport = page.getViewport({ scale: 1.5 });
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                pdfViewer.appendChild(canvas);
+
+                page.render({ canvasContext: context, viewport: viewport });
+            });
+        }
+    }).catch(error => console.error('Error loading PDF:', error));
+</script>
+<script>
+    document.getElementById('edit-title-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        var titleText = document.getElementById('title-text');
+        var titleInput = document.getElementById('title-input');
+        var editIcon = document.getElementById('edit-title-link');
+        if (titleInput.style.display === 'none') {
+            titleInput.style.display = 'inline-block';
+            titleInput.value = titleText.innerText;
+            titleText.style.display = 'none';
+            editIcon.style.display = 'none';
+
+            titleInput.focus();
+        } else {
+            titleText.innerText = titleInput.value;
+            titleInput.style.display = 'none';
+            titleText.style.display = 'inline-block';
+            editIcon.style.display = 'inline-block';
+        }
+    });
+    document.addEventListener('click', function (e) {
+        var titleText = document.getElementById('title-text');
+        var titleInput = document.getElementById('title-input');
+        var editIcon = document.getElementById('edit-title-link');
+        if (!titleText.contains(e.target) && !titleInput.contains(e.target) && !editIcon.contains(e.target)) {
+            if (titleInput.style.display === 'inline-block') {
+                titleText.innerText = titleInput.value;
+                titleInput.style.display = 'none';
+                titleText.style.display = 'inline-block';
+                editIcon.style.display = 'inline-block';
+            }
+        }
+    });
+
+
+</script>

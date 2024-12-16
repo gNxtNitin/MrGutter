@@ -1,0 +1,136 @@
+﻿@{
+    Layout = "_Layout_Home";
+}
+
+
+<section id="landingReviews" class="section-py bg-body landing-reviews pb-0">
+    <div class="container authentication-wrapper authentication-cover">
+   
+    <div class="authentication-inner row m-0">
+
+        <!-- /Left Text -->
+        <div class="d-none d-lg-flex col-lg-6 p-0">
+            <div class="auth-cover-bg-color auth-cover-bg d-flex col-12 col-md-6 col-lg-6 align-items-center p-sm-12 p-6">
+                <div class="w-px-595 mx-auto mt-12">
+                    <h1 class="text-primary hero-title display-6 fw-extrabold">Get Building. Try<br> Mr. Gutter for Free.</h1>
+                    <ul class="list-unstyled">
+                        <li>
+                            <img src="~/image/644c336fdd7665b5812fc4b6_check.svg" /> <span class="ms-4">14 day trial</span>
+                        </li>
+                        <li class="mt-2">
+                            <img src="~/image/644c336fdd7665b5812fc4b6_check.svg" /> <span class="ms-4">No credit card required</span>
+                        </li>
+                        <li class="mt-2">
+                            <img src="~/image/644c336fdd7665b5812fc4b6_check.svg" /> <span class="ms-4">No strings attached</span>
+                        </li>
+                    </ul>
+                    <div class="mt-5">
+                    <div class="mt-5">
+                        <img src="~/image/64406f648f08291dd7770f2f_quote.svg" />
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <h4 class="text-center mb-1">
+                            <span class="position-relative fw-extrabold z-1">
+                                "Sold our first job with Mr. Gutter the other day. Winning the job made SumoQuote pay for itself for the year!"
+                              
+                            </span>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Left Text -->
+        <!-- Register -->
+        <div class="d-flex col-12 col-md-6 col-lg-6 align-items-center authentication-bg p-sm-12 p-6">
+            <div class="w-px-700 mx-auto">
+                <form id="formAuthentication" class="mb-6" action="~/" method="POST">
+                    <div class="row">
+                        <div class="col-md-6 mb-6">
+                            <label  class="form-label">
+                                First Name
+                            </label>
+                            <input type="text" class="form-control"  placeholder="Required">
+                        </div>
+                        <div class="col-md-6 mb-6">
+                            <label class="form-label">
+                                Last Name
+                            </label>
+                            <input type="text" class="form-control" placeholder="Required">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-6">
+                            <label class="form-label">
+                                Company Name
+
+                            </label>
+                            <input type="text" class="form-control" placeholder="Required">
+                        </div>
+                        <div class="col-md-6 mb-6">
+                            <label class="form-label">
+                                Phone Number
+                            </label>
+                            <input type="text" class="form-control" placeholder="Required">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-6">
+                            <label class="form-label">Email</label>
+                            <input type="text" class="form-control" placeholder="Required" autofocus>
+                        </div>
+                     
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-6">
+                            <label class="form-label">
+                                Password
+                            </label>
+                            <input type="text" class="form-control" placeholder="Required">
+                        </div>
+                        <div class="col-md-6 mb-6">
+                            <label class="form-label">
+                                Confirm Password
+                            </label>
+                            <input type="text" class="form-control" placeholder="Required">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-6">
+                            <label class="form-label" for="multiStepsState">State</label>
+                            <select id="multiStepsState" class="select2 form-select" data-allow-clear="true">
+                                <option value="">Please choose an option</option>
+                                <option value="AL">Beacon</option>
+                                <option value="AK">IKO</option>
+                                <option value="AZ">GAF</option>
+                                <option value="AR">Google</option>
+                                <option value="CA">Other</option>
+                               
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-6">
+                        <div class="form-check mt-4">
+                            <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms">
+                            <label class="form-check-label" for="terms-conditions">
+                                I agree to Mr. Gutter <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy.</a>
+                            </label>
+                        </div>
+                    </div>
+                    <button asp-action="EmailVerify" asp-controller="Account" class="btn btn-primary d-grid w-100">
+                        Sign up
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- /Register -->
+    </div>
+</div>
+</section>
+
+
+
+
+

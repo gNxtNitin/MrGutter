@@ -1,0 +1,876 @@
+﻿@{
+    Layout = "_Layout_Main";
+    ViewBag.Title = "Estimate Settings";
+}
+
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <!-- Form with Tabs -->
+    <div class="row">
+        <div class="col">
+            <div class="card mb-6">
+                <div class="card-header px-0 pt-0">
+                    <div class="nav-align-top">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <button type="button"
+                                        class="nav-link active"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#form-tabs-personal"
+                                        aria-controls="form-tabs-personal"
+                                        role="tab"
+                                        aria-selected="true">
+                                    <span class="ti ti-user ti-lg d-sm-none"></span><span class="d-none d-sm-block">Estimate details</span>
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button"
+                                        class="nav-link"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#form-tabs-account"
+                                        aria-controls="form-tabs-account"
+                                        role="tab"
+                                        aria-selected="false">
+                                    <span class="ti ti-user-cog ti-lg d-sm-none"></span><span class="d-none d-sm-block">Customer details</span>
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button type="button"
+                                        class="nav-link"
+                                        data-bs-toggle="tab"
+                                        data-bs-target="#form-Property-Measurement"
+                                        aria-controls="form-Property-Measurement"
+                                        role="tab"
+                                        aria-selected="false">
+                                    <span class="ti ti-link ti-lg d-sm-none"></span><span class="d-none d-sm-block">Property measurements</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="tab-content p-0">
+                        <!-- Estimate Details-->
+                        <div class="tab-pane fade active show" id="form-tabs-personal" role="tabpanel">
+                            <form>
+                                <div class="row g-6">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-Estimate-no">Estimate No</label>
+                                            <div class="col-sm-9">
+                                                <input type="number"
+                                                       id="formtabs-Estimate-no"
+                                                       class="form-control"
+                                                       placeholder="0" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-last-name">Sales person</label>
+                                            <div class="col-sm-9">
+                                                <select id="formtabs-last-name" class="dropdown form-select" data-allow-clear="true">
+                                                    <option value="j" selected>John Doe</option>
+                                                    <option value="mrgutter">Mr. Gutter</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label class="col-sm-3 col-form-label text-sm-end" for="Created-date">Created date</label>
+                                            <div class="col-sm-9">
+                                                <input type="date"
+                                                       id="Created-date"
+                                                       class="form-control dob-picker"
+                                                       placeholder="YYYY-MM-DD" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-Estimate-name">Estimate revenue</label>
+                                            <div class="col-sm-9">
+                                                <select id="formtabs-Estimate-name" class="dropdown form-select" data-allow-clear="true">
+                                                    <option value="$0" selected>$0.00</option>
+                                                    <option value="$10.00">$10.00</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-next-call">Next callback</label>
+                                            <div class="col-sm-9">
+                                                <input type="date"
+                                                       id="formtabs-next-call"
+                                                       class="form-control dob-picker"
+                                                       placeholder="YYYY-MM-DD" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-6">
+                                    <div class="col-md-6">
+                                        <div class="row justify-content-end">
+                                            <div class="col-sm-9">
+                                                <button type="submit" class="btn btn-primary me-4">Submit</button>
+                                                <a asp-area="" asp-controller="Estimates" asp-action="EstimateDetails" class="btn btn-label-secondary">Cancel</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Customer Details -->
+                        <div class="tab-pane fade" id="form-tabs-account" role="tabpanel">
+                            <form>
+                                <div class="row g-6">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-firstname">First name</label>
+                                            <div class="col-sm-9">
+                                                <input type="text"
+                                                       id="formtabs-firstname"
+                                                       class="form-control"
+                                                       placeholder="john" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-lastname">Last name</label>
+                                            <div class="col-sm-9">
+                                                <input type="text"
+                                                       id="formtabs-lastname"
+                                                       class="form-control"
+                                                       placeholder="doe" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-company-name">Company name</label>
+                                            <div class="col-sm-9">
+                                                <input type="text"
+                                                       id="formtabs-company-name"
+                                                       class="form-control"
+                                                       placeholder="Company name" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-phone">Phone number</label>
+                                            <div class="col-sm-9">
+                                                <input type="text"
+                                                       id="formtabs-phone"
+                                                       class="form-control"
+                                                       placeholder="Phone number" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-email">Email</label>
+                                            <div class="col-sm-9">
+                                                <div class="input-group input-group-merge">
+                                                    <input type="text"
+                                                           id="formtabs-email"
+                                                           class="form-control"
+                                                           placeholder="john.doe"
+                                                           aria-label="john.doe"
+                                                           aria-describedby="formtabs-email2" />
+                                                    <span class="input-group-text" id="formtabs-email2">example.com</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-add1">Address line 1</label>
+                                            <div class="col-sm-9">
+                                                <input type="text"
+                                                       id="formtabs-add1"
+                                                       class="form-control"
+                                                       placeholder="10 Alfred Lerner Way" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-add2">Address line 2</label>
+                                            <div class="col-sm-9">
+                                                <input type="text"
+                                                       id="formtabs-add2"
+                                                       class="form-control"
+                                                       placeholder="" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <label class="col-sm-3 col-form-label text-sm-end" for="formtabs-city">City</label>
+                                            <div class="col-sm-9">
+                                                <input type="text"
+                                                       id="formtabs-city"
+                                                       class="form-control"
+                                                       placeholder="Cleveland" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-6">
+                                    <div class="col-md-6">
+                                        <div class="row justify-content-end">
+                                            <div class="col-sm-9">
+                                                <button type="submit" class="btn btn-primary me-4">Submit</button>
+                                                <a asp-area="" asp-controller="Estimates" asp-action="EstimateDetails" class="btn btn-label-secondary">Cancel</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Property Measurements -->
+                        <div class="tab-pane fade" id="form-Property-Measurement" role="tabpanel">
+                            <form>
+                                <div class="row g-6">
+                                  
+                                    <div class="accordion mt-4" id="accordionExample">
+
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h5><b>Reports Available (0)</b></h5>
+                                            <!--<button type="button" class="btn btn-primary">Upload</button> -->
+                                            <label for="fileUpload" class="btn btn-primary">Upload file</label>
+                                            <input type="file" id="fileUpload" style="display: none;" />
+
+                                        </div>
+
+                                        <!--Accordion-->
+
+                                        <div class="card accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button type="button"
+                                                        class="accordion-button"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#accordionOne"
+                                                        aria-expanded="true"
+                                                        aria-controls="accordionOne">
+                                                    Roof Measurement Tokens
+                                                </button>
+                                            </h2>
+
+                                            <div id="accordionOne"
+                                                 class="accordion-collapse collapse"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+
+                                                    <div class="card-body">
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-RoofAreaRMA">Total Roof Area</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-RoofAreaRMA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-RoofAreaRMA">SQFT</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-TotalEavesRMA">Total Eaves</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-TotalEavesRMA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-TotalEavesRMA">LF</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-TotalRakesRMA">Total Rakes</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-TotalRakesRMA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-TotalRakesRMA">LF</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-GuttersRMA">Gutters</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-GuttersRMA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-GuttersRMA">LF</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-TotalValleysRMA">Total Valleys</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-TotalValleysRMA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-TotalValleysRMA">LF</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-TotalRidgesHipsRMA">Total Ridges/Hips</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-TotalRidgesHipsRMA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-TotalRidgesHipsRMA">LF</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-TotalHipsRMA">Total Hips</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-TotalHipsRMA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-TotalHipsRMA">LF</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-TotalRidgesRMA">Total Ridges</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-TotalRidgesRMA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-TotalRidgesRMA">LF</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-WastePerRMA">Suggested Waste Percentage</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-WastePerRMA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-WastePerRMA">PCT</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-QuickSquaresRMA">Quick Squares</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-QuickSquaresRMA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-QuickSquaresRMA">SQ</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+
+
+                                                        </form>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button type="button"
+                                                        class="accordion-button collapsed"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#accordionTwo"
+                                                        aria-expanded="false"
+                                                        aria-controls="accordionTwo">
+                                                    Roofing Accessories
+                                                </button>
+                                            </h2>
+                                            <div id="accordionTwo"
+                                                 class="accordion-collapse collapse"
+                                                 aria-labelledby="headingTwo"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    
+                                                    <div class="card-body">
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-VenstStdRA">Vents - standard</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-VenstStdRA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-VenstStdRA">PC</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-VentsTurRA">Vents - turbine</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-VentsTurRA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-VentsTurRA">PC</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-VenstPhoenixRA">Vents - phoenix</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-VenstPhoenixRA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-VenstPhoenixRA">PC</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-ExhaustCapRA">Exhaust cap</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-ExhaustCapRA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-ExhaustCapRA">PC</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-PipeJacksRA">Pipe jacks</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-PipeJacksRA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-PipeJacksRA">PC</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-BinDisposalRA">Bin disposal (roofing)</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-BinDisposalRA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-BinDisposalRA">EA</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-SkyLightsRA">Skylights</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-SkyLightsRA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-SkyLightsRA">EA</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-SkylightKitRA">Skylight flashing kits</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-SkylightKitRA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-SkylightKitRA">EA</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-ChimneyAvgRA">Chimney flashing kits - average</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-ChimneyAvgRA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-ChimneyAvgRA">EA</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-ChimneyLargeRA">Chimney flashing kits - large</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-ChimneyLargeRA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-ChimneyLargeRA">EA</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-MinChargeRA">Minimum charge</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-MinChargeRA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-MinChargeRA">EA</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-LaborHoursRA">Labor hours</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-LaborHoursRA" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-LaborHoursRA">HR</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </form>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card accordion-item">
+                                            <h2 class="accordion-header" id="headingSeven">
+                                                <button type="button"
+                                                        class="accordion-button collapsed"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#accordionSeven"
+                                                        aria-expanded="false"
+                                                        aria-controls="accordionSeven">
+                                                    Wall Measurement Tokens
+                                                </button>
+                                            </h2>
+                                            <div id="accordionSeven"
+                                                 class="accordion-collapse collapse"
+                                                 aria-labelledby="headingSeven"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+
+                                                    <div class="card-body">
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-TotalWallAreaWM">Total Wall Area</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-TotalWallAreaWM" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-TotalWallAreaWM">SQFT</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-NorthWallWM">North Wall Area</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-NorthWallWM" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-NorthWallWM">SQFT</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-EastWallAreaWM">East Wall Area</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-EastWallAreaWM" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-EastWallAreaWM">SQFT</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-SouthWallWM">South Wall Area</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-SouthWallWM" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-SouthWallWM">SQFT</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-WestWallAreaWM">West Wall Area</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-WestWallAreaWM" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-WestWallAreaWM">SQFT</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-BinDisposalWM">Bin - disposal(siding)</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-BinDisposalWM" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-BinDisposalWM">EA</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </form>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card accordion-item">
+                                            <h2 class="accordion-header" id="headingThree">
+                                                <button type="button"
+                                                        class="accordion-button collapsed"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#accordionThree"
+                                                        aria-expanded="false"
+                                                        aria-controls="accordionThree">
+                                                    Roof Pitch
+                                                </button>
+                                            </h2>
+                                            <div id="accordionThree"
+                                                 class="accordion-collapse collapse"
+                                                 aria-labelledby="headingThree"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+
+                                                    <div class="card-body">
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-712RP">7/12</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-712RP" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-712RP">SQFT</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-812RP">8/12</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-812RP" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-812RP">SQFT</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-912RP">9/12</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-912RP" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-912RP">SQFT</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-1012RP">10/12</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-1012RP" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-1012RP">SQFT</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-1112RP">11/12</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-1112RP" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-1112RP">SQFT</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-1212RP">12/12</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-1212RP" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-1212RP">SQFT</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-GT1212RP">Greater than 12/12</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-GT1212RP" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-GT1212RP">SQFT</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </form>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card accordion-item">
+                                            <h2 class="accordion-header" id="headingSix">
+                                                <button type="button"
+                                                        class="accordion-button collapsed"
+                                                        data-bs-toggle="collapse"
+                                                        data-bs-target="#accordionSix"
+                                                        aria-expanded="false"
+                                                        aria-controls="accordionSix">
+                                                    Residential Metals
+                                                </button>
+                                            </h2>
+                                            <div id="accordionSix"
+                                                 class="accordion-collapse collapse"
+                                                 aria-labelledby="headingSix"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+
+                                                    <div class="card-body">
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-GuttersRM">Gutters</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-GuttersRM" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-GuttersRM">LF</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-6">
+                                                                    <label class="col-form-label" for="basic-default-DownspoutsRM">Downspouts</label>
+                                                                    <div class="col-sm-10">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" id="basic-default-DownspoutsRM" placeholder="0" />
+                                                                            <span class="input-group-text" id="basic-default-DownspoutsRM">LF</span>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </form>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                       
+
+                                       
+
+
+                                       
+
+                                        <!-- /Accordion-->
+                                    </div>
+                                    <div class="row mt-6">
+                                        <div class="col-md-6">
+                                            <div class="row justify-content-start">
+                                                <div class="col-sm-6">
+                                                    <a asp-area="" asp-controller="Estimates" asp-action="EstimateDetails" class="btn btn-label-secondary">Cancel</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

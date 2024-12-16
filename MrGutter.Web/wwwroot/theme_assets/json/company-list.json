@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "full_name": "Mr. Gutter",
+      "role": "SuperAdmin",
+      "username": "gslixby0",
+      "email": "gslixby0@abc.net.au",
+      "phone": "+3219876367",
+      "pointofcontact": "Joe",
+      "status": 3,
+      "avatar": ""
+    },
+    {
+      "id": 2,
+      "full_name": "Mr. Roofing",
+      "role": "Admin",
+      "username": "hredmore1",
+      "email": "hredmore1@imgur.com",
+      "phone": "+3219876328",
+      "pointofcontact": "Allen",
+      "status": 1,
+      "avatar": "10.png"
+    }
+  ]
+}

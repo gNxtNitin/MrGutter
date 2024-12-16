@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "_Layout_Blank";
+}
+
+<div class="container-xxl">
+    <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner py-6">
+            <!-- Reset Password -->
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mb-1">
+                        <span class="position-relative fw-extrabold z-1">
+                            Success! Your email has been verified.
+                            <img src="~/img/front-pages/icons/section-title-icon.png" alt="laptop charging" class="section-title-img position-absolute object-fit-contain bottom-0 z-n1">
+                        </span>
+                        Thank you and welcome to SumoQuote. You're now ready to start building your first quote.
+                    </h4>
+                    <div class="mt-2">
+                        <a asp-action="Login" asp-controller="Account" class="btn btn-primary">
+                            <span><i class="fa-solid fa-user"></i></span><span class="d-none d-md-block">Let's go</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /Reset Password -->
+        </div>
+    </div>
+</div>
