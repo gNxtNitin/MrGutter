@@ -124,3 +124,7 @@
 /.vs/ProjectEvaluation/mrgutter_web.projects.v7.bin
 /.vs/ProjectEvaluation/mrgutter_web.projects.v7.bin
 /.vs/ProjectEvaluation/mrgutter_web.metadata.v7.bin
+/MrGutter.Models/obj/Debug/net6.0/MrGutter.Models.csproj.CoreCompileInputs.cache
+/MrGutter.Models/obj/Debug/net6.0/MrGutter.Models.sourcelink.json
+/MrGutter.Repository/obj/Debug/net6.0/MrGutter.Repository.sourcelink.json
+/MrGutter.Services/obj/Debug/net6.0/MrGutter.Services.sourcelink.json
