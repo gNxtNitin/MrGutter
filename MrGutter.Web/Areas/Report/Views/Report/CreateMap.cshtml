@@ -3,7 +3,6 @@
     ViewData["Title"] = "Layout";
 }
 
-
 <style>
     /* Style for the thumbnail */
     .thumbnail {
@@ -37,7 +36,7 @@
         margin: auto;
         margin-top: 70px;
         display: block;
-        max-width: 100%;
+        max-width: 60%;
         max-height: 100%;
     }
 
@@ -75,7 +74,7 @@
                                 <div class="col-5">
                                     <div class="card">
                                         <div class="card-body">
-                                            <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" id="thumbnail" />
+                                            <img src="~/image/layoutimage.jpg" alt="thumbnail" class="thumbnail" id="thumbnail" />
                                         </div>
                                     </div>
                                 </div>
@@ -84,7 +83,7 @@
                                 <div class="col-5">
                                     <div class="card">
                                         <div class="card-body">
-                                            <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" id="thumbnail" />
+                                            <img src="~/image/layoutimage.jpg" alt="thumbnail" class="thumbnail" id="thumbnail" />
                                         </div>
                                     </div>
                                 </div>
@@ -286,7 +285,7 @@
     thumbnails.forEach((thumbnail) => {
         thumbnail.addEventListener('click', function () {
             modal.style.display = 'block'; // Show the modal
-            modalImg.src = this.src; // Set the large image's src to the clicked thumbnail's src
+            modalImg.src = '/image/layoutimage.jpg'; // Set the large image's src to the clicked thumbnail's src
         });
     });
 
