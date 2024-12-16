@@ -138,3 +138,9 @@
 /.vs/VSWorkspaceState.json
 /.gitignore
 /.gitignore
+/MrGutter.Models/obj/Debug/net6.0/MrGutter.Models.sourcelink.json
+/MrGutter.Repository/bin/Debug/net6.0/MrGutter.Repository.deps.json
+/MrGutter.Repository/obj/Debug/net6.0/MrGutter.Repository.sourcelink.json
+/MrGutter.Services/bin/Debug/net6.0/MrGutter.Services.deps.json
+/MrGutter.Services/obj/Debug/net6.0/MrGutter.Services.sourcelink.json
+/MrGutter.Web/bin/Debug/net6.0/MrGutter.Web.deps.json
