@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MrGutter.Repository")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9eff3050f3a088f67ffd1709df4fc0e67707c567")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+410ef46c529bbc57c04c6c3c9e45f3817fd6eb5a")]
 [assembly: System.Reflection.AssemblyProductAttribute("MrGutter.Repository")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MrGutter.Repository")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
