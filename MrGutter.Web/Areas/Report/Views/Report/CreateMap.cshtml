@@ -64,119 +64,124 @@
 
         <div class="row">
             <div class="col-12">
-                <!-- Container for all items -->
-                <div class="row mt-4 repeater-container">
-                    <!-- Template Block -->
-                    <div class="repeater-item row mb-4">
-                        <!-- Image 1 -->
-                        <div class="col-5">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" />
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Container for all items -->
+                        <div class="row mt-4 repeater-container">
+                            <!-- Template Block -->
+                            <div class="repeater-item row mb-4">
+                                <!-- Image 1 -->
+                                <div class="col-5">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" />
+                                        </div>
+                                    </div>
                                 </div>
+
+                                <!-- Image 2 -->
+                                <div class="col-5">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-4 col-md-2 text-end">
+                                    <span>
+                                        <a href="#" class="delete-item" data-bs-toggle="modal" title="Delete Item">
+                                            <i class="ti ti-lg ti-trash-filled text-danger"></i>
+                                        </a>
+                                    </span>
+                                </div>
+
+                                <div class="mb-4 col-md-5 mt-3" data-repeater-items>
+                                    <div class="input-group input-group-merge">
+                                        <div class="col-12">
+                                            <label for="description" class="form-label">Description</label>
+                                            <div id="snow-toolbar" style="height: 30px;">
+                                                <span class="ql-formats">
+                                                    <select class="ql-font"></select>
+                                                    <select class="ql-size"></select>
+                                                </span>
+                                                <span class="ql-formats">
+                                                    <button class="ql-bold"></button>
+                                                    <button class="ql-italic"></button>
+                                                    <button class="ql-underline"></button>
+                                                    <button class="ql-strike"></button>
+                                                </span>
+                                                <span class="ql-formats">
+                                                    <select class="ql-color"></select>
+                                                    <select class="ql-background"></select>
+                                                </span>
+                                                <span class="ql-formats">
+                                                    <button class="ql-script" value="sub"></button>
+                                                    <button class="ql-script" value="super"></button>
+                                                </span>
+                                                <span class="ql-formats">
+                                                    <button class="ql-header" value="1"></button>
+                                                    <button class="ql-header" value="2"></button>
+                                                    <button class="ql-blockquote"></button>
+                                                    <button class="ql-code-block"></button>
+                                                </span>
+                                            </div>
+                                            <div id="snow-editor" style="height: 100px; overflow-y: auto;">
+                                                Hello,
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="mb-4 col-md-5 mt-3" data-repeater-items>
+                                    <div class="input-group input-group-merge">
+                                        <div class="col-12">
+                                            <label for="description" class="form-label">Description</label>
+                                            <div id="snow-toolbar1" style="height: 30px;">
+                                                <span class="ql-formats">
+                                                    <select class="ql-font"></select>
+                                                    <select class="ql-size"></select>
+                                                </span>
+                                                <span class="ql-formats">
+                                                    <button class="ql-bold"></button>
+                                                    <button class="ql-italic"></button>
+                                                    <button class="ql-underline"></button>
+                                                    <button class="ql-strike"></button>
+                                                </span>
+                                                <span class="ql-formats">
+                                                    <select class="ql-color"></select>
+                                                    <select class="ql-background"></select>
+                                                </span>
+                                                <span class="ql-formats">
+                                                    <button class="ql-script" value="sub"></button>
+                                                    <button class="ql-script" value="super"></button>
+                                                </span>
+                                                <span class="ql-formats">
+                                                    <button class="ql-header" value="1"></button>
+                                                    <button class="ql-header" value="2"></button>
+                                                    <button class="ql-blockquote"></button>
+                                                    <button class="ql-code-block"></button>
+                                                </span>
+                                            </div>
+                                            <div id="snow-editor1" style="height: 100px; overflow-y: auto;">
+                                                Hello,
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <hr />
                             </div>
                         </div>
 
-                        <!-- Image 2 -->
-                        <div class="col-5">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" />
-                                </div>
-                            </div>
+                        <!-- Add Item Button -->
+                        <div class="mt-1 mb-2">
+                            <button type="button" class="btn btn-outline-primary waves-effect add-item-btn">Add Item</button>
                         </div>
-                        <div class="mb-4 col-md-2 text-end">
-                            <span>
-                                <a href="#" class="delete-item" data-bs-toggle="modal" title="Delete Item">
-                                    <i class="ti ti-lg ti-trash-filled text-danger"></i>
-                                </a>
-                            </span>
-                        </div>
-
-                        <div class="mb-4 col-md-5 mt-3" data-repeater-items>
-                            <div class="input-group input-group-merge">
-                                <div class="col-12">
-                                    <label for="description" class="form-label">Description</label>
-                                    <div id="snow-toolbar" style="height: 30px;">
-                                        <span class="ql-formats">
-                                            <select class="ql-font"></select>
-                                            <select class="ql-size"></select>
-                                        </span>
-                                        <span class="ql-formats">
-                                            <button class="ql-bold"></button>
-                                            <button class="ql-italic"></button>
-                                            <button class="ql-underline"></button>
-                                            <button class="ql-strike"></button>
-                                        </span>
-                                        <span class="ql-formats">
-                                            <select class="ql-color"></select>
-                                            <select class="ql-background"></select>
-                                        </span>
-                                        <span class="ql-formats">
-                                            <button class="ql-script" value="sub"></button>
-                                            <button class="ql-script" value="super"></button>
-                                        </span>
-                                        <span class="ql-formats">
-                                            <button class="ql-header" value="1"></button>
-                                            <button class="ql-header" value="2"></button>
-                                            <button class="ql-blockquote"></button>
-                                            <button class="ql-code-block"></button>
-                                        </span>
-                                    </div>
-                                    <div id="snow-editor" style="height: 100px; overflow-y: auto;">
-                                        Hello,
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="mb-4 col-md-5 mt-3" data-repeater-items>
-                            <div class="input-group input-group-merge">
-                                <div class="col-12">
-                                    <label for="description" class="form-label">Description</label>
-                                    <div id="snow-toolbar1" style="height: 30px;">
-                                        <span class="ql-formats">
-                                            <select class="ql-font"></select>
-                                            <select class="ql-size"></select>
-                                        </span>
-                                        <span class="ql-formats">
-                                            <button class="ql-bold"></button>
-                                            <button class="ql-italic"></button>
-                                            <button class="ql-underline"></button>
-                                            <button class="ql-strike"></button>
-                                        </span>
-                                        <span class="ql-formats">
-                                            <select class="ql-color"></select>
-                                            <select class="ql-background"></select>
-                                        </span>
-                                        <span class="ql-formats">
-                                            <button class="ql-script" value="sub"></button>
-                                            <button class="ql-script" value="super"></button>
-                                        </span>
-                                        <span class="ql-formats">
-                                            <button class="ql-header" value="1"></button>
-                                            <button class="ql-header" value="2"></button>
-                                            <button class="ql-blockquote"></button>
-                                            <button class="ql-code-block"></button>
-                                        </span>
-                                    </div>
-                                    <div id="snow-editor1" style="height: 100px; overflow-y: auto;">
-                                        Hello,
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <hr />
                     </div>
                 </div>
 
-                <!-- Add Item Button -->
-                <div class="mt-1 mb-2">
-                    <button type="button" class="btn btn-outline-primary waves-effect add-item-btn">Add Item</button>
-                </div>
             </div>
         </div>
 
