@@ -1,0 +1,341 @@
+﻿@{
+    Layout = "_Layout_CreateReport";
+    ViewData["Title"] = "Custom Page";
+}
+
+
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    <div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y">
+
+        <div class="layout-demo-wrapper align-items-start">
+            <div class="layout-demo-placeholder w-100">
+                <div class="row">
+                    <div class="col-12">
+                        @* <h6 class="mb-1">PAGE CONTENT</h6> *@
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+
+                            <div>
+                                <h5 class="mb-0">
+                                    <span id="Custom-text"> <b>Custom Page</b></span>
+                                    <a href="#" id="edit-Custom-link" title="Edit the Custom page">
+                                        <i class="ti ti-edit"></i>
+                                    </a>
+                                </h5>
+                                <input type="text" id="Custom-input" class="form-control" style="display: none;" />
+                            </div>
+
+                            <div>
+                                <button type="button" data-bs-toggle="modal"
+                                        data-bs-target="#modalView" class="btn btn-outline-primary waves-effect">
+                                    View Page
+                                </button>
+                                <button type="button" class="btn waves-effect bg bg-danger text-white">Delete</button>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+                        <div class="card mb-6">
+
+                            <div class="card-body pt-4">
+                                <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <p><b>Require customers to acknowledge this page</b><br />They will be asked during the singing process</p>
+
+                                    <div class="p-3 pe-6 ms-auto">
+
+                                        <label class="switch">
+                                            <input type="checkbox" class="switch-input" />
+                                            <span class="switch-toggle-slider" id="with-title">
+                                                <span class="switch-on" id="with-title"></span>
+                                                <span class="switch-off"></span>
+                                            </span>
+
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!--Like sumo quote-->
+                        <div class="card mb-4">
+                            <div class="card-body pt-4">
+                                <!-- Tabs Navigation -->
+                                <ul class="nav nav-tabs" id="pdfOptionsTabs" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="my-pdfs-tab" data-bs-toggle="tab" data-bs-target="#navs-my-pdfs" type="button" role="tab" aria-controls="navs-my-pdfs" aria-selected="true">
+                                            <b>My PDFs</b>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="shared-pdfs-tab" data-bs-toggle="tab" data-bs-target="#navs-shared-pdfs" type="button" role="tab" aria-controls="navs-shared-pdfs" aria-selected="false">
+                                            <b>Shared PDFs</b>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="single-use-tab" data-bs-toggle="tab" data-bs-target="#navs-single-use-pdf" type="button" role="tab" aria-controls="navs-single-use-pdf" aria-selected="false">
+                                            <b>Single Use PDF</b>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="text-page-tab" data-bs-toggle="tab" data-bs-target="#navs-text-page" type="button" role="tab" aria-controls="navs-text-page" aria-selected="false">
+                                            <b>Text Page</b>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Tab Content -->
+                        <div class="card mb-6">
+                            <div class="card-body pt-4">
+                                <div class="tab-content" id="pdfOptionsContent">
+                                    <!-- My PDFs Section -->
+                                    <div class="tab-pane fade show active" id="navs-my-pdfs" role="tabpanel" aria-labelledby="my-pdfs-tab">
+                                        <h5><b>My PDFs</b></h5>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                    <i class="ti ti-search ti-md me-lg-0 ti-lg"></i>
+                                                </span>
+                                                <input type="search" class="form-control" placeholder="Search My PDFs" />
+                                            </div>
+                                            <p class="mt-5">Files /</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Shared PDFs Section -->
+                                    <div class="tab-pane fade" id="navs-shared-pdfs" role="tabpanel" aria-labelledby="shared-pdfs-tab">
+                                        <h5><b>Shared PDFs</b></h5>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                    <i class="ti ti-search ti-md me-lg-0 ti-lg"></i>
+                                                </span>
+                                                <input type="search" class="form-control" placeholder="Search Shared PDFs" />
+                                            </div>
+                                            <p class="mt-5">Files /</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single Use PDF Section -->
+                                    <div class="tab-pane fade" id="navs-single-use-pdf" role="tabpanel" aria-labelledby="single-use-tab">
+                                        <h5><b>Single Use PDF</b></h5>
+
+
+                                        <div class="mb-4 col-md-12">
+
+                                            <div class="col-12 d-flex">
+
+                                                <div class="mb-6 col-md-12">
+                                                    <div class="">
+
+                                                        <form action="/upload" class="dropzone needsclick" id="dropzone-basic">
+                                                            <div class="dz-message needsclick">
+                                                                Drop files here or click to upload
+                                                                <span class="note needsclick">
+                                                                    (This is just a demo dropzone. Selected files are <span class="fw-medium">not</span> actually uploaded.)
+                                                                </span>
+                                                            </div>
+                                                            <div class="fallback">
+                                                                <input name="file" type="file" />
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Text Page Section -->
+                                    <div class="tab-pane fade" id="navs-text-page" role="tabpanel" aria-labelledby="text-page-tab">
+                                        <h5><b>Text Page</b></h5>
+
+                                        <div class="mb-4 col-md-12">
+                                            <div class="input-group input-group-merge">
+                                                <div class="col-12">
+                                                    <div class="mb-6">
+
+                                                        <div class="">
+                                                            <div id="snow-toolbar">
+                                                                <span class="ql-formats">
+                                                                    <select class="ql-font"></select>
+                                                                    <select class="ql-size"></select>
+                                                                </span>
+                                                                <span class="ql-formats">
+                                                                    <button class="ql-bold"></button>
+                                                                    <button class="ql-italic"></button>
+                                                                    <button class="ql-underline"></button>
+                                                                    <button class="ql-strike"></button>
+                                                                </span>
+                                                                <span class="ql-formats">
+                                                                    <select class="ql-color"></select>
+                                                                    <select class="ql-background"></select>
+                                                                </span>
+                                                                <span class="ql-formats">
+                                                                    <button class="ql-script" value="sub"></button>
+                                                                    <button class="ql-script" value="super"></button>
+                                                                </span>
+                                                                <span class="ql-formats">
+                                                                    <button class="ql-header" value="1"></button>
+                                                                    <button class="ql-header" value="2"></button>
+                                                                    <button class="ql-blockquote"></button>
+                                                                    <button class="ql-code-block"></button>
+                                                                </span>
+                                                            </div>
+                                                            <div id="snow-editor">
+                                                                Hello,
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <a data-bs-toggle="modal"
+                                           data-bs-target="#modalCenter21"
+                                           href="#"
+                                           class="text-decoration-underline">
+                                            Save as template
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!--Vertical modal start-->
+                        <div class="modal fade" id="modalCenter21" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+
+                                        <button type="button"
+                                                class="btn-close"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+
+
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div class="container-xxl flex-grow-1 container-p-y">
+                                            <h5 class="mb-0"><b>Save as new template</b></h5>
+                                            <p>Create a name for this new template to use it future reports.</p>
+
+
+                                            <div class="py-1">
+                                                <div class="card-body">
+                                                    <h6 class="mb-1"><b>New template name</b></h6>
+                                                    <input type="text" class="form-control mb-4" />
+
+                                                    <div>
+                                                        <input type="checkbox" class="me-3" /> Share this template with all users
+                                                    </div>
+
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                            Close
+                                        </button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Vertical modal end-->
+
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--Modal for View page-->
+
+
+<div class="modal fade" id="modalView" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title " id="modalCenterTitle"><p class="fs-4 mb-1"><b>Select a PDF</b></p></h5><br />
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <label class="ms-5 ps-1 mb-6 fs-5">You must first select a PDF before you can view it</label>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                    Ok
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    document.getElementById('edit-Custom-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        var titleText = document.getElementById('Custom-text');
+        var titleInput = document.getElementById('Custom-input');
+        var editIcon = document.getElementById('edit-Custom-link');
+        if (titleInput.style.display === 'none') {
+            titleInput.style.display = 'inline-block';
+            titleInput.value = titleText.innerText;
+            titleText.style.display = 'none';
+            editIcon.style.display = 'none';
+
+            titleInput.focus();
+        } else {
+            titleText.innerText = titleInput.value;
+            titleInput.style.display = 'none';
+            titleText.style.display = 'inline-block';
+            editIcon.style.display = 'inline-block';
+        }
+    });
+    document.addEventListener('click', function (e) {
+        var titleText = document.getElementById('Custom-text');
+        var titleInput = document.getElementById('Custom-input');
+        var editIcon = document.getElementById('edit-Custom-link');
+        if (!titleText.contains(e.target) && !titleInput.contains(e.target) && !editIcon.contains(e.target)) {
+            if (titleInput.style.display === 'inline-block') {
+                titleText.innerText = titleInput.value;
+                titleInput.style.display = 'none';
+                titleText.style.display = 'inline-block';
+                editIcon.style.display = 'inline-block';
+            }
+        }
+    });
+
+
+</script>

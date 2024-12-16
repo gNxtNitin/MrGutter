@@ -1,69 +1,40 @@
 ﻿@{
     Layout = "_Layout_Home";
 }
-<style>
-    .otp-input {
-        width: 50px;
-        height: 50px;
-        text-align: center;
-        margin: 0 5px;
-        border: 1px solid #ccc;
-        font-size: 35px !important;
-        font-weight: 900;
-        transition: border-color 0.2s ease-in-out;
-    }
+<div class="authentication-wrapper authentication-cover">
 
-        .otp-input:focus {
-            border-color: #007bff;
-        }
-</style>
-<style>
-    #countdown,
-    #resendSection a {
-        font-weight: bold;
-        color: #2B7FCC; /*  color: green; */
-    }
-</style>
+    <div class="authentication-inner row m-0">
 
-<section id="login" class="auth-height">
-    <div class="row full-height-vh m-0">
+        <!-- /Left Text -->
+        <div class="d-none d-lg-flex col-lg-6 p-0">
+            <div class="auth-cover-bg auth-cover-bg-color d-flex justify-content-center align-items-center">
+                <img src="~/img/illustrations/auth-verify-email-illustration-light.png" alt="auth-verify-email-cover" class="my-5 auth-illustration" data-app-light-img="illustrations/auth-verify-email-illustration-light.png" data-app-dark-img="illustrations/auth-verify-email-illustration-dark.png">
 
-        <div class="col-12 d-flex align-items-center justify-content-center">
-
-            <div class="card overflow-hidden radius-12 w-75">
-
-                <div class="card-content">
-                    <div class="card-body auth-img">
-
-                        <div class="row m-0">
-                            <div class="col-lg-6 d-none d-lg-flex justify-content-center align-items-center auth-img-bg p-3">
-                                <img src="~/image/gutter-logo-1-removebg-preview.png" alt="Logo" class="img-fluid">
-                            </div>
-                            <div class="col-lg-6 col-12 px-3 py-4">
-
-                                <form>
-                                    <input type="hidden"/>
-                                    <div class="d-flex justify-content-center">
-                                        <div>
-                                           <h2>Success! Your email has been verified.</h2>
-                                        </div>
-                                    </div> 
-                                    <!-- Add your input fields for OTP here -->
-                                    <div class="form-group mt-1">
-                                        <p for="otpInput">Thank you and welcome to Mr.Gutter. You're now ready to start building your first quote.</label>
-                                    </div>
-                                    <div class="text-center mt-3">
-                                        <a asp-controller="Account" asp-action="Login" type="submit" class="btn btn-primary">Let's go</a>
-                                    </div>
-                                </form>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <img src="~/img/illustrations/bg-shape-image-light.png" alt="auth-verify-email-cover" class="platform-bg" data-app-light-img="illustrations/bg-shape-image-light.png" data-app-dark-img="illustrations/bg-shape-image-dark.png">
             </div>
         </div>
+        <!-- /Left Text -->
+        <!-- Register -->
+        <div class="d-flex col-12 col-lg-6 align-items-center authentication-bg p-6 p-sm-12">
+           
+            <div class="w-px-400 mx-auto mt-12 mt-5">
+                <div class="text-center mb-3">
+                    <img src="~/image/gutter-logo.png" style="width: 90px; height: 45px;" />
+                </div>
+                <h1 class="text-primary hero-title display-6 fw-extrabold">Great! Verify Your Email.</h1>
+                <p class="text-start mb-0">
+                    Please verify your email to begin creating stunning proposals on SumoQuote. We just sent you a verification link.
+                </p>
+                <p class="text-start mb-0 mt-1">
+                    Reach us at support@mrgutter.com if you need any help getting started.
+                    </p>
 
+                <a class="btn btn-primary w-100 my-6" asp-action="BookDemo" asp-controller="Account">
+                    Book a Demo
+                </a>
+            </div>
+        </div>
+        <!-- /Register -->
     </div>
-</section>
+</div>
 

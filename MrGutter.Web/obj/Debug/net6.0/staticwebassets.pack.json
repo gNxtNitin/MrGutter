@@ -1,1992 +1,24 @@
 {
   "Files": [
     {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\BankLogo\\ADITYA_BIRLA_HOUSING_CAPITAL.png",
-      "PackagePath": "staticwebassets\\BankLogo\\ADITYA_BIRLA_HOUSING_CAPITAL.png"
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Inspection\\FitFourPerPage.png",
+      "PackagePath": "staticwebassets\\Inspection\\FitFourPerPage.png"
     },
     {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\BankLogo\\ADITYA_BIRLA_HOUSING_CAPITAL_Old.png",
-      "PackagePath": "staticwebassets\\BankLogo\\ADITYA_BIRLA_HOUSING_CAPITAL_Old.png"
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Inspection\\FitTwoPerPage.png",
+      "PackagePath": "staticwebassets\\Inspection\\FitTwoPerPage.png"
     },
     {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\BankLogo\\AXIS.png",
-      "PackagePath": "staticwebassets\\BankLogo\\AXIS.png"
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Inspection\\FullFitOnePerPage.png",
+      "PackagePath": "staticwebassets\\Inspection\\FullFitOnePerPage.png"
     },
     {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\BankLogo\\HDFC.png",
-      "PackagePath": "staticwebassets\\BankLogo\\HDFC.png"
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Inspection\\WideFitTwoPerPage.png",
+      "PackagePath": "staticwebassets\\Inspection\\WideFitTwoPerPage.png"
     },
     {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\BankLogo\\ICICI.png",
-      "PackagePath": "staticwebassets\\BankLogo\\ICICI.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\CarLoan_1.png",
-      "PackagePath": "staticwebassets\\Image\\CarLoan_1.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\DN Fins_new_one.png",
-      "PackagePath": "staticwebassets\\Image\\DN Fins_new_one.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\DN Fins_transparent_logo.png",
-      "PackagePath": "staticwebassets\\Image\\DN Fins_transparent_logo.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\DNFINS_banner.png",
-      "PackagePath": "staticwebassets\\Image\\DNFINS_banner.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\DNFins-1.jpg",
-      "PackagePath": "staticwebassets\\Image\\DNFins-1.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\DNFins_Logo.jpg",
-      "PackagePath": "staticwebassets\\Image\\DNFins_Logo.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\EMI Calculator.png",
-      "PackagePath": "staticwebassets\\Image\\EMI Calculator.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\Gutter-Logo-1-removebg-preview.png",
-      "PackagePath": "staticwebassets\\Image\\Gutter-Logo-1-removebg-preview.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\Gutter-Logo-1.png",
-      "PackagePath": "staticwebassets\\Image\\Gutter-Logo-1.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\HoamLoan_1.png",
-      "PackagePath": "staticwebassets\\Image\\HoamLoan_1.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\HomeLoanImg.png",
-      "PackagePath": "staticwebassets\\Image\\HomeLoanImg.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\Hospital_1.png",
-      "PackagePath": "staticwebassets\\Image\\Hospital_1.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\ICICI BANK (1).pdf",
-      "PackagePath": "staticwebassets\\Image\\ICICI BANK (1).pdf"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\IDFC FIRST Bank (1).pdf",
-      "PackagePath": "staticwebassets\\Image\\IDFC FIRST Bank (1).pdf"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\LAP_1.png",
-      "PackagePath": "staticwebassets\\Image\\LAP_1.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\LAP_Img.png",
-      "PackagePath": "staticwebassets\\Image\\LAP_Img.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\MSMS_1.png",
-      "PackagePath": "staticwebassets\\Image\\MSMS_1.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\SMFG INDIA CREDIT COMPANY LTD.pdf",
-      "PackagePath": "staticwebassets\\Image\\SMFG INDIA CREDIT COMPANY LTD.pdf"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\WorkingCapital_1.png",
-      "PackagePath": "staticwebassets\\Image\\WorkingCapital_1.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\_13847444.png",
-      "PackagePath": "staticwebassets\\Image\\_13847444.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\banner-new 1.png",
-      "PackagePath": "staticwebassets\\Image\\banner-new 1.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\banner-new.png",
-      "PackagePath": "staticwebassets\\Image\\banner-new.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\banner1.png",
-      "PackagePath": "staticwebassets\\Image\\banner1.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\logopng.png",
-      "PackagePath": "staticwebassets\\Image\\logopng.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Image\\user_219964.png",
-      "PackagePath": "staticwebassets\\Image\\user_219964.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Models\\ErrorViewModel.cs",
-      "PackagePath": "staticwebassets\\Models\\ErrorViewModel.cs"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\Models\\MenuList.cs",
-      "PackagePath": "staticwebassets\\Models\\MenuList.cs"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\ProfilePics\\Budhdev_Tiwari.jfif",
-      "PackagePath": "staticwebassets\\ProfilePics\\Budhdev_Tiwari.jfif"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\ProfilePics\\Budhdev_Tiwari.jpg",
-      "PackagePath": "staticwebassets\\ProfilePics\\Budhdev_Tiwari.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\ProfilePics\\Mukesh_Jena.jpg",
-      "PackagePath": "staticwebassets\\ProfilePics\\Mukesh_Jena.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\ProfilePics\\Paresh Babu_.jpg",
-      "PackagePath": "staticwebassets\\ProfilePics\\Paresh Babu_.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\ProfilePics\\RM_Test.jpg",
-      "PackagePath": "staticwebassets\\ProfilePics\\RM_Test.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\ProfilePics\\Vansh_Pratap.jfif",
-      "PackagePath": "staticwebassets\\ProfilePics\\Vansh_Pratap.jfif"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\ProfilePics\\Vansh_Pratap.jpg",
-      "PackagePath": "staticwebassets\\ProfilePics\\Vansh_Pratap.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\ProfilePics\\default.jpg",
-      "PackagePath": "staticwebassets\\ProfilePics\\default.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\ProfilePics\\faksjdfasfdj_.jpg",
-      "PackagePath": "staticwebassets\\ProfilePics\\faksjdfasfdj_.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\ProfilePics\\kjljhjgjhgkjh_.jpg",
-      "PackagePath": "staticwebassets\\ProfilePics\\kjljhjgjhgkjh_.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\ProfilePics\\paresh_.jpg",
-      "PackagePath": "staticwebassets\\ProfilePics\\paresh_.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\ProfilePics\\parth_.jpg",
-      "PackagePath": "staticwebassets\\ProfilePics\\parth_.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\bootstrap-extended.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\bootstrap-extended.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\bootstrap.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\colors.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\colors.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\components.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\components.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\app-calendar.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\app-calendar.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\app-chat.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\app-chat.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\app-email.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\app-email.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\app-taskboard.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\app-taskboard.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\authentication.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\authentication.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\charts-apex.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\charts-apex.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\charts-chartist.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\charts-chartist.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\dashboard1.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\dashboard1.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\dashboard2.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\dashboard2.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\ex-component-dragndrop.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\ex-component-dragndrop.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\ex-component-media-player.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\ex-component-media-player.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\ex-component-miscellaneous.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\ex-component-miscellaneous.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\ex-component-nouislider.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\ex-component-nouislider.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\ex-component-sweet-alerts.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\ex-component-sweet-alerts.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\ex-component-swiper.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\ex-component-swiper.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\ex-component-toastr.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\ex-component-toastr.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\ex-component-treeview.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\ex-component-treeview.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\form-wizard.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\form-wizard.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\map-leaflet.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\map-leaflet.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\page-coming-soon.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\page-coming-soon.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\page-error.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\page-error.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\page-faq.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\page-faq.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\page-gallery.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\page-gallery.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\page-invoice.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\page-invoice.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\page-knowledge.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\page-knowledge.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\page-maintenance.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\page-maintenance.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\page-search.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\page-search.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\page-user-profile.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\page-user-profile.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\pages\\page-users.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\pages\\page-users.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\plugins\\cropper\\ex-component-image-cropper.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\plugins\\cropper\\ex-component-image-cropper.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\plugins\\ex-component-tour.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\plugins\\ex-component-tour.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\plugins\\ex-component-upload.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\plugins\\ex-component-upload.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\plugins\\form-validation.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\plugins\\form-validation.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\plugins\\switchery.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\plugins\\switchery.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\css\\themes\\layout-dark.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\css\\themes\\layout-dark.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\fonts\\feather\\fonts\\feathere8ab.woff",
-      "PackagePath": "staticwebassets\\app-assets\\fonts\\feather\\fonts\\feathere8ab.woff"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\fonts\\feather\\style.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\fonts\\feather\\style.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\fonts\\font-awesome\\css\\font-awesome.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\fonts\\font-awesome\\css\\font-awesome.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\fonts\\poppins\\Poppins-Black.ttf",
-      "PackagePath": "staticwebassets\\app-assets\\fonts\\poppins\\Poppins-Black.ttf"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\fonts\\poppins\\Poppins-Bold.ttf",
-      "PackagePath": "staticwebassets\\app-assets\\fonts\\poppins\\Poppins-Bold.ttf"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\fonts\\poppins\\Poppins-Medium.ttf",
-      "PackagePath": "staticwebassets\\app-assets\\fonts\\poppins\\Poppins-Medium.ttf"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\fonts\\poppins\\Poppins-Regular.ttf",
-      "PackagePath": "staticwebassets\\app-assets\\fonts\\poppins\\Poppins-Regular.ttf"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\fonts\\poppins\\Poppins-SemiBold.ttf",
-      "PackagePath": "staticwebassets\\app-assets\\fonts\\poppins\\Poppins-SemiBold.ttf"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\fonts\\simple-line-icons\\fonts\\Simple-Line-Icons.eot",
-      "PackagePath": "staticwebassets\\app-assets\\fonts\\simple-line-icons\\fonts\\Simple-Line-Icons.eot"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\fonts\\simple-line-icons\\fonts\\Simple-Line-Iconsd41d.eot",
-      "PackagePath": "staticwebassets\\app-assets\\fonts\\simple-line-icons\\fonts\\Simple-Line-Iconsd41d.eot"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\fonts\\simple-line-icons\\style.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\fonts\\simple-line-icons\\style.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\fonts\\weathericons\\css\\weather-icons-wind.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\fonts\\weathericons\\css\\weather-icons-wind.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\fonts\\weathericons\\css\\weather-icons.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\fonts\\weathericons\\css\\weather-icons.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-1.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-1.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-10.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-10.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-11.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-11.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-12.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-12.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-13.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-13.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-14.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-14.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-15.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-15.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-16.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-16.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-17.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-17.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-18.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-18.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-19.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-19.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-2.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-2.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-20.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-20.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-21.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-21.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-22.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-22.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-23.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-23.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-24.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-24.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-25.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-25.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-26.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-26.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-27.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-27.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-28.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-28.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-3.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-3.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-30.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-30.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-31.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-31.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-32.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-32.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-33.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-33.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-34.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-34.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-35.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-35.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-36.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-36.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-37.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-37.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-38.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-38.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-39.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-39.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-4.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-4.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-5.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-5.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-7.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-7.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-8.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-8.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\banner-9.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\banner-9.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\parallax-4.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\parallax-4.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\banner\\profile-image.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\banner\\profile-image.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\crop-pic.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\crop-pic.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\datatables\\details_close.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\datatables\\details_close.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\datatables\\details_open.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\datatables\\details_open.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\elements\\01.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\elements\\01.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\elements\\04.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\elements\\04.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\elements\\06.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\elements\\06.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\elements\\07.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\elements\\07.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\elements\\11.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\elements\\11.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\elements\\13.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\elements\\13.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\elements\\14.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\elements\\14.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\elements\\15.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\elements\\15.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\flags\\de.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\flags\\de.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\flags\\es.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\flags\\es.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\flags\\hlMainImg.4f0d448c.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\flags\\hlMainImg.4f0d448c.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\flags\\homel.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\flags\\homel.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\flags\\homeloan.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\flags\\homeloan.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\flags\\pt.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\flags\\pt.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\flags\\us.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\flags\\us.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\1.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\1.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\10.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\10.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\11.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\11.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\13.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\13.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\14.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\14.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\15.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\15.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\17.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\17.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\19.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\19.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\2.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\2.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\21.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\21.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\22.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\22.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\24.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\24.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\26.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\26.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\27.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\27.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\28.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\28.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\29.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\29.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\3.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\3.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\31.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\31.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\33.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\33.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\5.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\5.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\7.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\7.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\9.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\9.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\Recommendation.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\Recommendation.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\bg-grad.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\bg-grad.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\changepass old.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\changepass old.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\changepss old.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\changepss old.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\changepss.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\changepss.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\coming-soon.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\coming-soon.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\error.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\error.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\forgot.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\forgot.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\forgot1.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\forgot1.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\forgot1old.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\forgot1old.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\form-conf.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\form-conf.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\form-conf1.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\form-conf1.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\lock.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\lock.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\login-new.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\login-new.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\login.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\login.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\logopng.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\logopng.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\maintenance.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\maintenance.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\otp.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\otp.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\otp.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\otp.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\register.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\register.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\gallery\\reset.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\gallery\\reset.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\ico\\DNFINS_Fav_icon1.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\ico\\DNFINS_Fav_icon1.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\ico\\DNFINS_Fav_icon2.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\ico\\DNFINS_Fav_icon2.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\ico\\android-chrome-192x192.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\ico\\android-chrome-192x192.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\ico\\android-chrome-512x512.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\ico\\android-chrome-512x512.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\ico\\apple-touch-icon.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\ico\\apple-touch-icon.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\ico\\favicon-16x16.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\ico\\favicon-16x16.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\ico\\favicon-32.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\ico\\favicon-32.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\ico\\favicon-32_Old.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\ico\\favicon-32_Old.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\ico\\favicon.ico",
-      "PackagePath": "staticwebassets\\app-assets\\img\\ico\\favicon.ico"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\ico\\favicon_io (1).zip",
-      "PackagePath": "staticwebassets\\app-assets\\img\\ico\\favicon_io (1).zip"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\ico\\favicon_io.zip",
-      "PackagePath": "staticwebassets\\app-assets\\img\\ico\\favicon_io.zip"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\ico\\site.webmanifest",
-      "PackagePath": "staticwebassets\\app-assets\\img\\ico\\site.webmanifest"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\icons\\pdf.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\icons\\pdf.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\icons\\sketch-mac-icon.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\icons\\sketch-mac-icon.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\logo.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\logo.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\logos\\logo-color-big.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\logos\\logo-color-big.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\1-apex.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\1-apex.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\2-stack.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\2-stack.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\3-convex.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\3-convex.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\4-materialize.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\4-materialize.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\apex.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\apex.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\faq.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\faq.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\materialize.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\materialize.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\modern-thumbnail.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\modern-thumbnail.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\modern.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\modern.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\pixinvent.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\pixinvent.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\signature-scan.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\signature-scan.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\stack.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\stack.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\thumbnail.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\thumbnail.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\vuexy-banner.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\vuexy-banner.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\pages\\vuexy.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\pages\\vuexy.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\01.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\01.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\02.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\02.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\03.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\03.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\04.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\04.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\05.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\05.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\06.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\06.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\07.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\07.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\08.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\08.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\09.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\09.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\10.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\10.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\11.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\11.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\12.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\12.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\13.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\13.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\14.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\14.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\15.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\15.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\17.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\17.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\sunny-weather.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\sunny-weather.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\weather-1.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\weather-1.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\photos\\weather-2.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\photos\\weather-2.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-1.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-1.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-10.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-10.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-11.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-11.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-12.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-12.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-13.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-13.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-14.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-14.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-15.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-15.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-16.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-16.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-17.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-17.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-18.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-18.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-19.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-19.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-2.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-2.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-20.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-20.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-21.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-21.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-22.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-22.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-23.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-23.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-24.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-24.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-25.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-25.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-26.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-26.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-3.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-3.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-4.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-4.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-5.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-5.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-6.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-6.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-7.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-7.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-8.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-8.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\portrait\\small\\avatar-s-9.png",
-      "PackagePath": "staticwebassets\\app-assets\\img\\portrait\\small\\avatar-s-9.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\profile\\profile-portrait-1.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\profile\\profile-portrait-1.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\profile\\profile-portrait-2.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\profile\\profile-portrait-2.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\profile\\profile-portrait-3.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\profile\\profile-portrait-3.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\profile\\profile-portrait-6.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\profile\\profile-portrait-6.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\profile\\profile-portrait-7.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\profile\\profile-portrait-7.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\profile\\profile-portrait-8.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\profile\\profile-portrait-8.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\profile\\profile-portrait-9.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\profile\\profile-portrait-9.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\sidebar-bg\\01.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\sidebar-bg\\01.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\sidebar-bg\\02.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\sidebar-bg\\02.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\sidebar-bg\\03.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\sidebar-bg\\03.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\sidebar-bg\\04.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\sidebar-bg\\04.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\sidebar-bg\\05.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\sidebar-bg\\05.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\sidebar-bg\\06.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\sidebar-bg\\06.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\slider\\01.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\slider\\01.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\slider\\02.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\slider\\02.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\slider\\03.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\slider\\03.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\slider\\04.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\slider\\04.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\slider\\05.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\slider\\05.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\img\\slider\\06.jpg",
-      "PackagePath": "staticwebassets\\app-assets\\img\\slider\\06.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\app-calendar.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\app-calendar.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\app-chat.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\app-chat.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\app-email.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\app-email.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\app-taskboard.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\app-taskboard.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\chars-apex-test.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\chars-apex-test.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\charts-apex.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\charts-apex.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\charts-chartist.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\charts-chartist.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\charts-chartjs.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\charts-chartjs.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\components-modal.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\components-modal.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\components-popover.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\components-popover.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\components-toast.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\components-toast.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\components-tooltip.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\components-tooltip.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\core\\app-menu.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\core\\app-menu.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\core\\app.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\core\\app.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\customizer.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\customizer.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\dashboard1.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\dashboard1.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\dashboard2.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\dashboard2.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\data-tables\\dt-advanced-initialization.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\data-tables\\dt-advanced-initialization.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\data-tables\\dt-api.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\data-tables\\dt-api.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\data-tables\\dt-basic-initialization.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\data-tables\\dt-basic-initialization.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\data-tables\\dt-data-sources.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\data-tables\\dt-data-sources.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\datetime-picker.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\datetime-picker.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\ex-component-dragndrop.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\ex-component-dragndrop.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\ex-component-image-cropper.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\ex-component-image-cropper.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\ex-component-media-player.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\ex-component-media-player.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\ex-component-miscellaneous.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\ex-component-miscellaneous.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\ex-component-nouislider.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\ex-component-nouislider.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\ex-component-sweet-alerts.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\ex-component-sweet-alerts.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\ex-component-swiper.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\ex-component-swiper.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\ex-component-toastr.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\ex-component-toastr.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\ex-component-tour.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\ex-component-tour.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\ex-component-treeview.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\ex-component-treeview.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\ex-component-upload.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\ex-component-upload.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\form-datetimepicker.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\form-datetimepicker.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\form-editor.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\form-editor.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\form-input-tags.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\form-input-tags.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\form-inputs.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\form-inputs.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\form-validation.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\form-validation.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\form-wizard.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\form-wizard.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\map-leaflet.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\map-leaflet.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\notification-sidebar.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\notification-sidebar.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\page-coming-soon.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\page-coming-soon.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\page-faq.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\page-faq.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\page-invoice.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\page-invoice.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\page-knowledge.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\page-knowledge.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\page-search.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\page-search.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\page-user-profile.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\page-user-profile.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\page-users.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\page-users.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\scroll-top.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\scroll-top.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\js\\select2.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\js\\select2.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\animate.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\animate.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\apexcharts.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\apexcharts.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\bootstrap-treeview.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\bootstrap-treeview.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\chartist.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\chartist.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\datatables\\dataTables.bootstrap4.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\datatables\\dataTables.bootstrap4.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\daygrid.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\daygrid.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\dragula.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\dragula.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\dropzone.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\dropzone.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\font\\context-menu-icons63a6-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\font\\context-menu-icons63a6-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\font\\context-menu-icons63a6-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\font\\context-menu-icons63a6-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\font\\context-menu-icons63a6-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\font\\context-menu-icons63a6-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\font\\context-menu-icons63a6.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\font\\context-menu-icons63a6.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_AMS-Regular.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Bold.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Caligraphic-Regular.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Bold.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Fraktur-Regular.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Bold.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Italic.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular.woff2",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Main-Regular.woff2"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic.woff2",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Math-Italic.woff2"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_SansSerif-Regular.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Script-Regular.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size1-Regular.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size2-Regular.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size3-Regular.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Size4-Regular.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular-2.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular-2.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular-3.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular-3.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular-4.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular-4.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular.html",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fonts\\KaTeX_Typewriter-Regular.html"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\fullcalendar.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\fullcalendar.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\images\\layers-2x.png",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\images\\layers-2x.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\images\\layers.png",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\images\\layers.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\images\\marker-icon.png",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\images\\marker-icon.png"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\jquery.contextMenu.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\jquery.contextMenu.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\katex.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\katex.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\leaflet.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\leaflet.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\monokai-sublime.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\monokai-sublime.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\nouislider.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\nouislider.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\perfect-scrollbar.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\perfect-scrollbar.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\pickadate\\pickadate.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\pickadate\\pickadate.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\plyr.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\plyr.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\prism.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\prism.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\quill.bubble.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\quill.bubble.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\quill.snow.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\quill.snow.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\select2.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\select2.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\shepherd.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\shepherd.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\sweetalert2.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\sweetalert2.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\swiper.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\swiper.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\switchery.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\switchery.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\tagging.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\tagging.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\timegrid.min.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\timegrid.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\css\\toastr.css",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\css\\toastr.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\apexcharts.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\apexcharts.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\bootstrap-treeview.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\bootstrap-treeview.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\chart.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\chart.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\chartist.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\chartist.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\cropper.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\cropper.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\datatable\\buttons.html5.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\datatable\\buttons.html5.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\datatable\\buttons.print.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\datatable\\buttons.print.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\datatable\\dataTables.bootstrap4.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\datatable\\dataTables.bootstrap4.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\datatable\\dataTables.buttons.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\datatable\\dataTables.buttons.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\datatable\\jquery.dataTables.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\datatable\\jquery.dataTables.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\datatable\\jszip.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\datatable\\jszip.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\datatable\\pdfmake.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\datatable\\pdfmake.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\datatable\\vfs_fonts.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\datatable\\vfs_fonts.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\daygrid.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\daygrid.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\dragula.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\dragula.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\dropzone.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\dropzone.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\fullcalendar.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\fullcalendar.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\highlight.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\highlight.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\horizontal-timeline.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\horizontal-timeline.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\idle-timer.1.1.0.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\idle-timer.1.1.0.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\interactions.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\interactions.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\jqBootstrapValidation.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\jqBootstrapValidation.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\jquery-ui.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\jquery-ui.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\jquery.contextMenu.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\jquery.contextMenu.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\jquery.countdown.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\jquery.countdown.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\jquery.steps.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\jquery.steps.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\katex.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\katex.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\leaflet.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\leaflet.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\locales.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\locales.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\moment.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\moment.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\nouislider.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\nouislider.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\numeral.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\numeral.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\pickadate\\legacy.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\pickadate\\legacy.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\pickadate\\picker.date.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\pickadate\\picker.date.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\pickadate\\picker.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\pickadate\\picker.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\pickadate\\picker.time.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\pickadate\\picker.time.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\plyr.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\plyr.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\quill.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\quill.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\select2.full.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\select2.full.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\shepherd.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\shepherd.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\sweetalert2.all.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\sweetalert2.all.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\swiper.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\swiper.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\switchery.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\switchery.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\tagging.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\tagging.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\timegrid.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\timegrid.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\toastr.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\toastr.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\vendors.min.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\vendors.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\app-assets\\vendors\\js\\wNumb.js",
-      "PackagePath": "staticwebassets\\app-assets\\vendors\\js\\wNumb.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\assets\\css\\style.css",
-      "PackagePath": "staticwebassets\\assets\\css\\style.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\assets\\js\\scripts.js",
-      "PackagePath": "staticwebassets\\assets\\js\\scripts.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\css\\DNFINSStyle.css",
-      "PackagePath": "staticwebassets\\css\\DNFINSStyle.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\css\\adminStyle.css",
-      "PackagePath": "staticwebassets\\css\\adminStyle.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\css\\authentication.css",
-      "PackagePath": "staticwebassets\\css\\authentication.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\css\\customerStyle.css",
-      "PackagePath": "staticwebassets\\css\\customerStyle.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\css\\rmStyle.css",
-      "PackagePath": "staticwebassets\\css\\rmStyle.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\css\\style.css",
-      "PackagePath": "staticwebassets\\css\\style.css"
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\SampleReport.pdf",
+      "PackagePath": "staticwebassets\\SampleReport.pdf"
     },
     {
       "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\dist\\css\\core-dark.css",
@@ -5121,6 +3153,150 @@
       "PackagePath": "staticwebassets\\fonts\\tabler\\tabler-icons.woff2"
     },
     {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\64406f648f08291dd7770f2f_Quote.svg",
+      "PackagePath": "staticwebassets\\image\\64406f648f08291dd7770f2f_Quote.svg"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\644c336fdd7665b5812fc4b6_check.svg",
+      "PackagePath": "staticwebassets\\image\\644c336fdd7665b5812fc4b6_check.svg"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\ABC.png",
+      "PackagePath": "staticwebassets\\image\\ABC.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\AuthorizationViewPage.pdf",
+      "PackagePath": "staticwebassets\\image\\AuthorizationViewPage.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\EstimateDetailsViewPage.pdf",
+      "PackagePath": "staticwebassets\\image\\EstimateDetailsViewPage.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\Gutter-Logo-1-removebg-preview (1).svg",
+      "PackagePath": "staticwebassets\\image\\Gutter-Logo-1-removebg-preview (1).svg"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\Gutter-Logo.png",
+      "PackagePath": "staticwebassets\\image\\Gutter-Logo.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\Home-Page-Hero_3-1.mp4",
+      "PackagePath": "staticwebassets\\image\\Home-Page-Hero_3-1.mp4"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\InspectionViewPage.pdf",
+      "PackagePath": "staticwebassets\\image\\InspectionViewPage.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\IntroductionViewPage.pdf",
+      "PackagePath": "staticwebassets\\image\\IntroductionViewPage.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\OnbordingTheme.png",
+      "PackagePath": "staticwebassets\\image\\OnbordingTheme.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\SampleReportViewPage.pdf",
+      "PackagePath": "staticwebassets\\image\\SampleReportViewPage.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\TItleViewPage.pdf",
+      "PackagePath": "staticwebassets\\image\\TItleViewPage.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\Template1.png",
+      "PackagePath": "staticwebassets\\image\\Template1.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\Template2.png",
+      "PackagePath": "staticwebassets\\image\\Template2.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\Template3.png",
+      "PackagePath": "staticwebassets\\image\\Template3.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\Template4.png",
+      "PackagePath": "staticwebassets\\image\\Template4.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\Template5.png",
+      "PackagePath": "staticwebassets\\image\\Template5.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\Template6.png",
+      "PackagePath": "staticwebassets\\image\\Template6.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\TermsViewPage.pdf",
+      "PackagePath": "staticwebassets\\image\\TermsViewPage.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\WarrantyViewPage.pdf",
+      "PackagePath": "staticwebassets\\image\\WarrantyViewPage.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\canvas_image.png",
+      "PackagePath": "staticwebassets\\image\\canvas_image.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\inspection1.jpg",
+      "PackagePath": "staticwebassets\\image\\inspection1.jpg"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\inspection2.jpg",
+      "PackagePath": "staticwebassets\\image\\inspection2.jpg"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\layoutImage.jpg",
+      "PackagePath": "staticwebassets\\image\\layoutImage.jpg"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\image\\logoblack.png",
+      "PackagePath": "staticwebassets\\image\\logoblack.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\images\\canvas_image.png",
+      "PackagePath": "staticwebassets\\images\\canvas_image.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\img\\elements\\pexels-curtis-adams-1694007-3935333.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\pexels-curtis-adams-1694007-3935333.jpg"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\img\\elements\\pexels-heyho-5997994.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\pexels-heyho-5997994.jpg"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\img\\elements\\pexels-pixabay-164558.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\pexels-pixabay-164558.jpg"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\img\\elements\\pexels-pixabay-209315.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\pexels-pixabay-209315.jpg"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\img\\elements\\pexels-pixabay-259588.jpg",
+      "PackagePath": "staticwebassets\\img\\elements\\pexels-pixabay-259588.jpg"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\img\\logo\\MrGutter.png",
+      "PackagePath": "staticwebassets\\img\\logo\\MrGutter.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\img\\logo\\drop.png",
+      "PackagePath": "staticwebassets\\img\\logo\\drop.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\img\\logo\\iconer.png",
+      "PackagePath": "staticwebassets\\img\\logo\\iconer.png"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\img\\logo\\logoWhite.png",
+      "PackagePath": "staticwebassets\\img\\logo\\logoWhite.png"
+    },
+    {
       "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\js\\CustomChart.js",
       "PackagePath": "staticwebassets\\js\\CustomChart.js"
     },
@@ -5163,234 +3339,6 @@
     {
       "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\js\\template-customizer.js",
       "PackagePath": "staticwebassets\\js\\template-customizer.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\LICENSE",
-      "PackagePath": "staticwebassets\\lib\\bootstrap"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
-      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
-      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\jquery\\LICENSE.txt",
-      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\jquery\\dist\\jquery.js",
-      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
-      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
-      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
       "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\libs\\@form-validation\\auto-focus.js",
@@ -5935,6 +3883,38 @@
     {
       "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\libs\\typeahead-js\\typeahead.scss",
       "PackagePath": "staticwebassets\\libs\\typeahead-js\\typeahead.scss"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\report_view_pages\\ReportAuthorization.pdf",
+      "PackagePath": "staticwebassets\\report_view_pages\\ReportAuthorization.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\report_view_pages\\ReportInspection.pdf",
+      "PackagePath": "staticwebassets\\report_view_pages\\ReportInspection.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\report_view_pages\\ReportIntroduction.pdf",
+      "PackagePath": "staticwebassets\\report_view_pages\\ReportIntroduction.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\report_view_pages\\ReportQuoteDetails.pdf",
+      "PackagePath": "staticwebassets\\report_view_pages\\ReportQuoteDetails.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\report_view_pages\\ReportT&C.pdf",
+      "PackagePath": "staticwebassets\\report_view_pages\\ReportT&C.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\report_view_pages\\ReportTitle.pdf",
+      "PackagePath": "staticwebassets\\report_view_pages\\ReportTitle.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\report_view_pages\\ReportWarranty.pdf",
+      "PackagePath": "staticwebassets\\report_view_pages\\ReportWarranty.pdf"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\report_view_pages\\review_and_share.pdf",
+      "PackagePath": "staticwebassets\\report_view_pages\\review_and_share.pdf"
     },
     {
       "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\scss\\_bootstrap-dark.scss",
@@ -8013,6 +5993,10 @@
       "PackagePath": "staticwebassets\\theme_assets\\js\\app-chat.js"
     },
     {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\theme_assets\\js\\app-company-list.js",
+      "PackagePath": "staticwebassets\\theme_assets\\js\\app-company-list.js"
+    },
+    {
       "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\theme_assets\\js\\app-ecommerce-category-list.js",
       "PackagePath": "staticwebassets\\theme_assets\\js\\app-ecommerce-category-list.js"
     },
@@ -8431,6 +6415,10 @@
     {
       "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\theme_assets\\json\\app-ecommerce-reviews.json",
       "PackagePath": "staticwebassets\\theme_assets\\json\\app-ecommerce-reviews.json"
+    },
+    {
+      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\theme_assets\\json\\company-list.json",
+      "PackagePath": "staticwebassets\\theme_assets\\json\\company-list.json"
     },
     {
       "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\theme_assets\\json\\earning-reports-charts.json",
@@ -11695,38 +9683,6 @@
     {
       "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\theme_assets\\vendor\\libs\\typeahead-js\\typeahead.js",
       "PackagePath": "staticwebassets\\theme_assets\\vendor\\libs\\typeahead-js\\typeahead.js"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\uploadFiles\\0109e900-85f8-4bd2-9c5e-1697ee38f819.jpg",
-      "PackagePath": "staticwebassets\\uploadFiles\\0109e900-85f8-4bd2-9c5e-1697ee38f819.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\uploadFiles\\03ac4053-63fe-41a5-9d57-8a64bd3e4041.pdf",
-      "PackagePath": "staticwebassets\\uploadFiles\\03ac4053-63fe-41a5-9d57-8a64bd3e4041.pdf"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\uploadFiles\\09686bb1-f274-4d73-a8c3-a7a4fc6179cf.jpg",
-      "PackagePath": "staticwebassets\\uploadFiles\\09686bb1-f274-4d73-a8c3-a7a4fc6179cf.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\uploadFiles\\2dac9887-16bd-4943-9c9e-60066410804e.jpg",
-      "PackagePath": "staticwebassets\\uploadFiles\\2dac9887-16bd-4943-9c9e-60066410804e.jpg"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\uploadFiles\\AXIS FINANCE LTD.pdf",
-      "PackagePath": "staticwebassets\\uploadFiles\\AXIS FINANCE LTD.pdf"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\uploadFiles\\GODREJ CAPITAL POLICY.pdf",
-      "PackagePath": "staticwebassets\\uploadFiles\\GODREJ CAPITAL POLICY.pdf"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\uploadFiles\\HDFC POLICY.pdf",
-      "PackagePath": "staticwebassets\\uploadFiles\\HDFC POLICY.pdf"
-    },
-    {
-      "Id": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Web\\wwwroot\\uploadFiles\\db0f80f3-9faf-4423-adf7-4730da6c4525.jpg",
-      "PackagePath": "staticwebassets\\uploadFiles\\db0f80f3-9faf-4423-adf7-4730da6c4525.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.MrGutter.Web.Microsoft.AspNetCore.StaticWebAssets.props",

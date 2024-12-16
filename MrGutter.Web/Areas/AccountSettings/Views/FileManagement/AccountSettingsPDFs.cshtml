@@ -1,0 +1,168 @@
+﻿@{
+    Layout = "_Layout_AccountSetting";
+    ViewBag.Title = "AccountSettingsPDFs";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    <div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y">
+
+        <div class="layout-demo-wrapper align-items-start">
+            <div class="layout-demo-placeholder w-100">
+                <div class="row">
+                    <div class="col-12">
+                        <h5 class="mb-1"><b>PDFs</b></h5>
+                        
+                        <p class="mb-6">Set up files you commonly add to quotes.</p>
+
+                        <div class="mb-6">
+                            <div class="card-body pt-4">                          
+
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="nav-align-top nav-tabs-shadow mb-6">
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    <button type="button"
+                                                            class="nav-link active"
+                                                            role="tab"
+                                                            data-bs-toggle="tab"
+                                                            data-bs-target="#navs-top-My"
+                                                            aria-controls="navs-top-My"
+                                                            aria-selected="true">
+                                                        My PDFs
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <button type="button"
+                                                            class="nav-link"
+                                                            role="tab"
+                                                            data-bs-toggle="tab"
+                                                            data-bs-target="#navs-top-Shared"
+                                                            aria-controls="navs-top-Shared"
+                                                            aria-selected="false">
+                                                        Shared PDFs
+                                                    </button>
+                                                </li>
+
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade show active" id="navs-top-My" role="tabpanel">
+                                                   
+                                                    <p class="mb-4">
+                                                        These PDFs can be accessed by only you when creating new Report. During Report creation, select "Add Custom Page" to add one of these PDFs.
+                                                    </p>
+                                                    <div class="mb-4 col-md-12">
+
+                                                        <div class="col-12 d-flex">
+
+                                                            <div class="mb-6 col-md-12">
+                                                                <div class="">
+
+                                                                    <form action="/upload" class="dropzone needsclick" id="dropzone-basic">
+                                                                        <div class="dz-message needsclick">
+                                                                            Drop files here or click to upload
+                                                                            <span class="note needsclick">
+                                                                                (This is just a demo dropzone. Selected files are <span class="fw-medium">not</span> actually uploaded.)
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="fallback">
+                                                                            <input name="file" type="file" />
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="d-flex justify-content-end align-items-center">
+                                                        <div class="mt-2 mb-1">
+
+                                                            <span>
+                                                                <button class="btn bg bg-white hoverable text-black border mb-3 ms-1">
+                                                                    <i class="bi bi-save"></i> Add new folder
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">
+                                                                <i class="ti ti-search ti-md me-lg-0 ti-lg"></i>
+                                                            </span>
+                                                            <input type="search" class="form-control" placeholder="Search Shared PDFs" />
+                                                        </div>
+                                                        <p class="mt-5">Files /</p>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="tab-pane fade" id="navs-top-Shared" role="tabpanel">
+                                                    <p class="mb-4">
+                                                        These PDFs can be accessed by your entire team when creating new Report. During Report creation, select "Add Custom Page" to add one of these PDFs.
+                                                    </p>
+
+                                                    <div class="mb-4 col-md-12">
+                                                        <div class="col-12 d-flex">
+                                                            <div class="mb-6 col-md-12">
+                                                                <div class="">
+
+                                                                    <form action="/upload" class="dropzone needsclick" id="dropzone-basic">
+                                                                        <div class="dz-message needsclick">
+                                                                            Drop files here or click to upload
+                                                                            <span class="note needsclick">
+                                                                                (This is just a demo dropzone. Selected files are <span class="fw-medium">not</span> actually uploaded.)
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="fallback">
+                                                                            <input name="file" type="file" />
+                                                                        </div>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="d-flex justify-content-end align-items-center">
+                                                        <div class="mt-2 mb-1">
+
+                                                            <span>
+                                                                <button class="btn bg bg-white hoverable text-black border mb-3 ms-1">
+                                                                    <i class="bi bi-save"></i> Add new folder
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">
+                                                                <i class="ti ti-search ti-md me-lg-0 ti-lg"></i>
+                                                            </span>
+                                                            <input type="search" class="form-control" placeholder="Search Shared PDFs" />
+                                                        </div>
+                                                        <p class="mt-5">Files /</p>
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

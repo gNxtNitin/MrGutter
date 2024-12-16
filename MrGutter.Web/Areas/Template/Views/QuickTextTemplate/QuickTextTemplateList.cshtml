@@ -1,0 +1,198 @@
+﻿@{
+    Layout = "_Layout_AccountSetting";
+    ViewBag.Title = "Template QuickText";
+}
+
+<div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y">
+    <!-- Handles Example -->
+    <div class="Template-demo-wrapper">
+        <div class="Template-demo-placeholder">
+            <!-- Form with Tabs -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="mt-1">
+                            Templates — QuickText
+                        </h4>
+                        <!-- Button trigger modal -->
+                        <button type="button"
+                                class="btn btn-outline-info waves-effect"
+                                data-bs-toggle="modal"
+                                data-bs-target="#createReportTemplate">
+                            Create Template
+                        </button>
+                    </div>
+                    <h6>Create and edit reusable templates for your reports</h6>
+                    <div class="card mb-6">
+                        <div class="row g-6">
+                            <div class="col-md-12 p-4">
+                                <div class="row">
+                                    <div class="input-group input-group-merge">
+                                        <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
+                                        <input type="text" class="form-control" placeholder="Search by Name, Description" aria-label="Search..." aria-describedby="basic-addon-search31">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-header px-0 pt-0">
+                            <div class="nav-align-top">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <button type="button"
+                                                class="nav-link active"
+                                                data-bs-toggle="tab"
+                                                data-bs-target="#form-tabs-personal"
+                                                aria-controls="form-tabs-personal"
+                                                role="tab"
+                                                aria-selected="true">
+                                            <span class="ti ti-user ti-lg d-sm-none"></span><span class="d-none d-sm-block">My Template</span>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button"
+                                                class="nav-link"
+                                                data-bs-toggle="tab"
+                                                data-bs-target="#form-tabs-account"
+                                                aria-controls="form-tabs-account"
+                                                role="tab"
+                                                aria-selected="false">
+                                            <span class="ti ti-user-cog ti-lg d-sm-none"></span><span class="d-none d-sm-block">Shared Template</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content p-0">
+                                <!-- Personal Info -->
+                                <div class="tab-pane fade active show" id="form-tabs-personal" role="tabpanel">
+                                        <div class="row g-6">
+                                            
+                                                <div class="col-sm-12 col-form-label text-sm-end">
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item d-flex justify-content-between">
+                                                            <span class="col-sm-7 d-flex justify-content-start">
+                                                                <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                <span>Residential Quick Text</span>
+                                                            </span>
+                                                            <span class="col-sm-5 d-flex justify-content-end align-items-center">
+
+                                                                <span><a href="/Template/ReportTemplate/EditReportTemplate" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                            </span>
+                                                        </li>
+                                                        <li class="list-group-item d-flex justify-content-between">
+                                                            <span class="col-sm-7 d-flex justify-content-start">
+                                                                <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                <span>Interior Quick Text</span>
+                                                            </span>
+                                                            <span class="col-sm-5 d-flex justify-content-end align-items-center">
+
+                                                                <span><a href="/Template/ReportTemplate/EditReportTemplate" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                           
+                                        </div>
+                                </div>
+                                <!-- Account Details -->
+                                <div class="tab-pane fade" id="form-tabs-account" role="tabpanel">
+                                    <div class="p-4 d-flex align-center justify-center flex-column border"><p data-v-eff5fae4=""><em data-v-eff5fae4="">You don't have any QuickText templates. Create one now! </em></p></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <!-- Vertically Centered Modal -->
+            <!-- Modal -->
+            <div class="modal fade" id="createReportTemplate" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalCenterTitle">Create quicktext template</h5>
+                            <button type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col mb-4">
+                                    <label for="nameWithTitle" class="form-label">Template Name</label>
+                                    <input type="text"
+                                           id="nameWithTitle"
+                                           class="form-control"
+                                           placeholder="Enter Template Name" />
+                                </div>
+                            </div>
+                            <div class="row g-4">
+                                <div class="col mb-4">
+                                    <label for="nameWithTitle" class="form-label">Template Content</label>
+                                    <div id="snow-toolbar">
+                                       
+                                        <span class="ql-formats">
+                                            <button class="ql-bold"></button>
+                                            <button class="ql-italic"></button>
+                                            <button class="ql-underline"></button>
+                                            
+                                        </span>
+                                        @* <span class="ql-formats">
+                                            <select class="ql-color"></select>
+                                            <select class="ql-background"></select>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-script" value="sub"></button>
+                                            <button class="ql-script" value="super"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-header" value="1"></button>
+                                            <button class="ql-header" value="2"></button>
+                                            <button class="ql-blockquote"></button>
+                                            <button class="ql-code-block"></button>
+                                        </span> *@
+                                    </div>
+                                    <div id="snow-editor">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row g-4">
+                                <div class="col mb-0">
+                                    <div class="input-group">
+                                        <div class="input-group-text">
+                                            <input class="form-check-input mt-0"
+                                                   type="checkbox"
+                                                   value=""
+                                                   aria-label="Checkbox for following text input" />
+                                        </div>
+
+                                        <label class="form-control">Share Template with all users</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                Close
+                            </button>
+                            <button type="button" class="btn btn-primary">Create Template</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Handles Example ends -->
+</div>

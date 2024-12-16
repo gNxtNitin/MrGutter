@@ -1,0 +1,102 @@
+﻿@{
+    Layout = "_Layout_AccountSetting";
+    ViewBag.Title = "Template QuickText";
+}
+
+<div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x">
+
+    <div class="layout-demo-wrapper">
+        <div class="layout-demo-placeholder">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="mb-0">Edit Template</h5>
+                    <div class="row">
+                        <div class="col-8">
+                            <h6 class="mb-0">
+                                <span id="title-text">
+                                    (Sample) Interior/Exterior Painting
+                                </span>
+                            </h6>
+                        </div>
+
+                        <div class="col-4 text-end">
+                            <a href="/Template/ReportTemplate/ReportTemplateList" class="btn btn-outline-secondary waves-effect">Back</a>
+                            <a href="/Template/ReportTemplate/ReportTemplateList" class="btn btn-outline-success waves-effect">Save Changes</a>
+                        </div>
+                    </div>
+                    <div class="card mb-6 mt-3">
+                        <!-- Account -->
+                        <div class="card-body pt-4">
+                            <form id="formAccountSettings" method="GET" onsubmit="return false">
+                                <div class="row">
+                                    <div class="col mb-4">
+                                        <h6 class="mb-0">
+                                            <span id="title-text">Template Name</span>
+                                        </h6>
+                                        <input type="text"
+                                               id="nameWithTitle"
+                                               class="form-control"
+                                               placeholder="Enter Template Name" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mb-4 col-md-12">
+                                        <div class="input-group input-group-merge">
+                                            <div class="col-12">
+                                                <div class="card mb-6">
+
+                                                    <div class="card-body">
+                                                        <div id="snow-toolbar">
+                                                            <span class="ql-formats">
+                                                                <select class="ql-font"></select>
+                                                                <select class="ql-size"></select>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <button class="ql-bold"></button>
+                                                                <button class="ql-italic"></button>
+                                                                <button class="ql-underline"></button>
+                                                                <button class="ql-strike"></button>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <select class="ql-color"></select>
+                                                                <select class="ql-background"></select>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <button class="ql-script" value="sub"></button>
+                                                                <button class="ql-script" value="super"></button>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <button class="ql-header" value="1"></button>
+                                                                <button class="ql-header" value="2"></button>
+                                                                <button class="ql-blockquote"></button>
+                                                                <button class="ql-code-block"></button>
+                                                            </span>
+                                                        </div>
+                                                        <div id="snow-editor">
+                                                            <label>
+                                                                You may cancel this contract from the day you enter into the contract until 10 days after you receive a copy of the contract. You do not need a reason to cancel. If you do not receive the goods or services within 30 days of the date stated in the contract, you may cancel this contract within one year of the contract date. You lose that right if you accept delivery after the 30 days. There are other grounds for extended cancellation. For more information, you may contact your provincial/ territorial consumer affairs office. If you cancel this contract, the seller has 15 days to refund your money and any trade-in, or the cash value of the trade-in. You must then return the goods. To cancel, you must give notice of cancellation at the address in this contract. You must give notice of cancellation by a method that will allow you to prove that you gave notice, including registered mail, fax or by personal delivery.
+                                                            </label>
+                                                            <br />
+                                                            <label>
+                                                                I understand that I must remove any personal items from the areas that may be part of this project, and that damage to personal items not moved mau occur. COMPANY NAME is not liable for such damages.
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <!-- /Account -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

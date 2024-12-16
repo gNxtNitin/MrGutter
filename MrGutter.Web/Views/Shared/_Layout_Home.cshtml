@@ -1,92 +1,554 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+
+<html lang="en"
+      class="light-style layout-navbar-fixed layout-wide"
+      dir="ltr"
+      data-theme="theme-default"
+      data-assets-path="../../theme_assets/"
+      data-template="front-pages"
+      data-style="light">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>Mr. Gutter</title>
-    <link rel="stylesheet" href="~/css/DNFINSStyle.css"/>
-    <link rel="stylesheet" href="~/css/pages/authentication.css" />
-    <link href="~/css/style.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
 
-    
-    <link rel="shortcut icon" type="image/png" href="~/app-assets/img/ico/favicon-32.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-touch-fullscreen" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
-    <!-- BEGIN VENDOR CSS-->
-    <!-- font icons-->
-    <link rel="stylesheet" type="text/css" href="~/app-assets/fonts/feather/style.min.css">
-    <link rel="stylesheet" type="text/css" href="~/app-assets/fonts/simple-line-icons/style.min.css">
-    <link rel="stylesheet" type="text/css" href="~/app-assets/fonts/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/perfect-scrollbar.min.css">
-    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/prism.min.css">
-    <link rel="stylesheet" type="text/css" href="~/app-assets/vendors/css/switchery.min.css">
-    <!-- END VENDOR CSS-->
-    <!-- BEGIN APEX CSS-->
-    <link rel="stylesheet" type="text/css" href="~/app-assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="~/app-assets/css/bootstrap-extended.min.css">
-    <link rel="stylesheet" type="text/css" href="~/app-assets/css/colors.min.css">
-    <link rel="stylesheet" type="text/css" href="~/app-assets/css/components.min.css">
-    <link rel="stylesheet" type="text/css" href="~/app-assets/css/themes/layout-dark.min.css">
-    <link rel="stylesheet" href="~/app-assets/css/plugins/switchery.min.css">
-    <!-- END APEX CSS-->
-    <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" href="~/app-assets/css/pages/authentication.css">
-    <!-- END Page Level CSS-->
-    <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
-    <!-- END: Custom CSS-->
-    @RenderSection("Styles", required: false)
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../theme_assets/img/favicon/favicon.ico" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/libs/bs-stepper/bs-stepper.css" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/libs/bootstrap-select/bootstrap-select.css" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/libs/select2/select2.css" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/libs/&#64;form-validation/form-validation.css" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&ampdisplay=swap"
+          rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../theme_assets/vendor/fonts/tabler-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
+    <!-- Core CSS -->
+
+    <link rel="stylesheet" href="../../theme_assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
+
+    <link rel="stylesheet" href="../../theme_assets/css/demo.css" />
+
+    @* <link rel="stylesheet" href="../../theme_assets/vendor/css/pages/front-page.css" /> *@
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../../theme_assets/vendor/libs/node-waves/node-waves.css" />
+
+    <link rel="stylesheet" href="../../theme_assets/vendor/libs/nouislider/nouislider.css" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/libs/swiper/swiper.css" />
+
+    <!-- Page CSS -->
+
+    <link rel="stylesheet" href="../../theme_assets/vendor/css/pages/front-page-landing.css" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/css/pages/page-auth.css">
+    <!-- Helpers -->
+    <script src="../../theme_assets/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+    <script src="../../theme_assets/vendor/js/template-customizer.js"></script>
+
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../../theme_assets/js/front-config.js"></script>
+    <style>
+        #template-customizer {
+            display: none !important;
+        }
+    </style>
 </head>
-<body class="vertical-layout vertical-menu 1-column auth-page navbar-sticky blank-page" data-menu="vertical-menu" data-col="1-column">
 
-    <div class="wrapper">
-        <div class="main-panel">
-            <!-- BEGIN : Main Content-->
-            <div class="main-content">
-                <div class="content-overlay"></div>
-                <div class="content-wrapper">
-                    <!--Login Page Starts-->
-                    <div class="container">
-                        <main role="main" class="pb-3">
-                            @RenderBody()
-                        </main>
+<body>
+    <script src="../../theme_assets/vendor/js/dropdown-hover.js"></script>
+    <script src="../../theme_assets/vendor/js/mega-dropdown.js"></script>
+    <nav class="layout-navbar shadow-none py-0">
+        <div class="container">
+            <div class="navbar navbar-expand-lg landing-navbar px-3 px-md-8">
+                <!-- Menu logo wrapper: Start -->
+                <div class="navbar-brand app-brand demo d-flex py-0 py-lg-2 me-4 me-xl-8">
+                    <!-- Mobile menu toggle: Start-->
+                    <button class="navbar-toggler border-0 px-0 me-4"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <i class="ti ti-menu-2 ti-lg align-middle text-heading fw-medium"></i>
+                    </button>
+                    <!-- Mobile menu toggle: End-->
+                    <a asp-action="Index" asp-controller="Home" class="app-brand-link">
+                        <span class="app-brand-text demo menu-text fw-bold ms-2 ps-1">
+                            <img src="~/image/gutter-logo.png" style="width=90px; height:45px" />
+                        </span>
+                        @*  <span class="app-brand-text demo menu-text fw-bold ms-2 ps-1">Mr. Gutter</span> *@
+                    </a>
+                </div>
+                <!-- Menu logo wrapper: End -->
+                <!-- Menu wrapper: Start -->
+                <div class="collapse navbar-collapse landing-nav-menu" id="navbarSupportedContent">
+                    <button class="navbar-toggler border-0 text-heading position-absolute end-0 top-0 scaleX-n1-rtl"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <i class="ti ti-x ti-lg"></i>
+                    </button>
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" aria-current="page" href="#">Tour</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="#">Integrations</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="#">Blog</a>
+                        </li>
+                        @*       <li class="nav-item">
+                        <a class="nav-link fw-medium" href="landing-page.html#landingTeam">Team</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link fw-medium" href="landing-page.html#landingFAQ">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link fw-medium" href="landing-page.html#landingContact">Contact us</a>
+                        </li>
+                        <li class="nav-item mega-dropdown">
+                        <a href="javascript:void(0);"
+                        class="nav-link dropdown-toggle navbar-ex-14-mega-dropdown mega-dropdown fw-medium"
+                        aria-expanded="false"
+                        data-bs-toggle="mega-dropdown"
+                        data-trigger="hover">
+                        <span data-i18n="Pages">Pages</span>
+                        </a>
+                        <div class="dropdown-menu p-4 p-xl-8">
+                        <div class="row gy-4">
+                        <div class="col-12 col-lg">
+                        <div class="h6 d-flex align-items-center mb-3 mb-lg-5">
+                        <div class="avatar flex-shrink-0 me-3">
+                        <span class="avatar-initial rounded bg-label-primary">
+                        <i class="ti ti-layout-grid ti-lg"></i>
+                        </span>
+                        </div>
+                        <span class="ps-1">Other</span>
+                        </div>
+                        <ul class="nav flex-column">
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link" href="pricing-page.html">
+                        <i class="ti ti-circle me-1"></i>
+                        <span data-i18n="Pricing">Pricing</span>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link" href="payment-page.html">
+                        <i class="ti ti-circle me-1"></i>
+                        <span data-i18n="Payment">Payment</span>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link" href="checkout-page.html">
+                        <i class="ti ti-circle me-1"></i>
+                        <span data-i18n="Checkout">Checkout</span>
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link" href="help-center-landing.html">
+                        <i class="ti ti-circle me-1"></i>
+                        <span data-i18n="Help Center">Help Center</span>
+                        </a>
+                        </li>
+                        </ul>
+                        </div>
+                        <div class="col-12 col-lg">
+                        <div class="h6 d-flex align-items-center mb-3 mb-lg-5">
+                        <div class="avatar flex-shrink-0 me-3">
+                        <span class="avatar-initial rounded bg-label-primary">
+                        <i class="ti ti-lock-open ti-lg"></i>
+                        </span>
+                        </div>
+                        <span class="ps-1">Auth Demo</span>
+                        </div>
+                        <ul class="nav flex-column">
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/auth-login-basic.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Login (Basic)
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/#"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Login (Cover)
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/auth-register-basic.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Register (Basic)
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/auth-register-cover.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Register (Cover)
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/auth-register-multisteps.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Register (Multi-steps)
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/auth-forgot-password-basic.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Forgot Password (Basic)
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/auth-forgot-password-cover.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Forgot Password (Cover)
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/auth-reset-password-basic.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Reset Password (Basic)
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/auth-reset-password-cover.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Reset Password (Cover)
+                        </a>
+                        </li>
+                        </ul>
+                        </div>
+                        <div class="col-12 col-lg">
+                        <div class="h6 d-flex align-items-center mb-3 mb-lg-5">
+                        <div class="avatar flex-shrink-0 me-3">
+                        <span class="avatar-initial rounded bg-label-primary">
+                        <i class="ti ti-file-analytics ti-lg"></i>
+                        </span>
+                        </div>
+                        <span class="ps-1">Other</span>
+                        </div>
+                        <ul class="nav flex-column">
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/pages-misc-error.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Error
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/pages-misc-under-maintenance.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Under Maintenance
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/pages-misc-comingsoon.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Coming Soon
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/pages-misc-not-authorized.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Not Authorized
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/auth-verify-email-basic.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Verify Email (Basic)
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/auth-verify-email-cover.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Verify Email (Cover)
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/auth-two-steps-basic.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Two Steps (Basic)
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link mega-dropdown-link"
+                        href="../vertical-menu-template/auth-two-steps-cover.html"
+                        target="_blank">
+                        <i class="ti ti-circle me-1"></i>
+                        Two Steps (Cover)
+                        </a>
+                        </li>
+                        </ul>
+                        </div>
+                        <div class="col-lg-4 d-none d-lg-block">
+                        <div class="bg-body nav-img-col p-2">
+                        <img src="../../theme_assets/img/front-pages/misc/nav-item-col-img.png"
+                        alt="nav item col image"
+                        class="w-100" />
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link fw-medium" href="../vertical-menu-template/index.html" target="_blank">Admin</a>
+                        </li> *@
+                    </ul>
+                </div>
+                <div class="landing-menu-overlay d-lg-none"></div>
+                <!-- Menu wrapper: End -->
+                <!-- Toolbar: Start -->
+                <ul class="navbar-nav flex-row align-items-center ms-auto">
+                    <!-- Style Switcher -->
+                    <li class="nav-item dropdown-style-switcher dropdown me-2 me-xl-1">
+                        <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+                            <i class="ti ti-lg"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
+                            <li>
+                                <a class="dropdown-item" href="javascript:void(0);" data-theme="light">
+                                    <span class="align-middle"><i class="ti ti-sun me-3"></i>Light</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="javascript:void(0);" data-theme="dark">
+                                    <span class="align-middle"><i class="ti ti-moon-stars me-3"></i>Dark</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="javascript:void(0);" data-theme="system">
+                                    <span class="align-middle"><i class="ti ti-device-desktop-analytics me-3"></i>System</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a asp-action="Login" asp-controller="Account" class="btn btn-primary">
+                            <span><i class="fa-solid fa-user"></i></span><span class="d-none d-md-block">Login</span>
+                        </a>
+                        <a asp-action="CreateAccount" asp-controller="Account" class="btn btn-primary">
+                            <span class="tf-icons ti ti-login scaleX-n1-rtl me-md-1"></span><span class="d-none d-md-block">Register</span>
+                        </a>
+                    </li>
+                    <!-- navbar button: End -->
+                </ul>
+                <!-- Toolbar: End -->
+            </div>
+        </div>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+    <footer class="landing-footer bg-body footer-text">
+        <div class="footer-top position-relative overflow-hidden z-1">
+            <img src="../../theme_assets/img/front-pages/backgrounds/footer-bg-light.png"
+                 alt="footer bg"
+                 class="footer-bg banner-bg-img z-n1"
+                 data-app-light-img="front-pages/backgrounds/footer-bg-light.png"
+                 data-app-dark-img="front-pages/backgrounds/footer-bg-dark.png" />
+            <div class="container">
+                <div class="row gx-0 gy-6 g-lg-10">
+                    <div class="col-lg-5">
+                        <a href="landing-page.html" class="app-brand-link mb-6">
+                            <span class="app-brand-logo demo">
+                                <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                          clip-rule="evenodd"
+                                          d="M0.00172773 0V6.85398C0.00172773 6.85398 -0.133178 9.01207 1.98092 10.8388L13.6912 21.9964L19.7809 21.9181L18.8042 9.88248L16.4951 7.17289L9.23799 0H0.00172773Z"
+                                          fill="#7367F0" />
+                                    <path opacity="0.06"
+                                          fill-rule="evenodd"
+                                          clip-rule="evenodd"
+                                          d="M7.69824 16.4364L12.5199 3.23696L16.5541 7.25596L7.69824 16.4364Z"
+                                          fill="#161616" />
+                                    <path opacity="0.06"
+                                          fill-rule="evenodd"
+                                          clip-rule="evenodd"
+                                          d="M8.07751 15.9175L13.9419 4.63989L16.5849 7.28475L8.07751 15.9175Z"
+                                          fill="#161616" />
+                                    <path fill-rule="evenodd"
+                                          clip-rule="evenodd"
+                                          d="M7.77295 16.3566L23.6563 0H32V6.88383C32 6.88383 31.8262 9.17836 30.6591 10.4057L19.7824 22H13.6938L7.77295 16.3566Z"
+                                          fill="#7367F0" />
+                                </svg>
+                            </span>
+                            <span class="app-brand-text demo footer-link fw-bold ms-2 ps-1">Mr. Gutter</span>
+                        </a>
+                        <p class="footer-text footer-logo-description mb-6">
+                            Most developer friendly & highly customisable Admin Dashboard Template.
+                        </p>
+                        <form class="footer-form">
+                            <label for="footer-email" class="small">Subscribe to newsletter</label>
+                            <div class="d-flex mt-1">
+                                <input type="email"
+                                       class="form-control rounded-0 rounded-start-bottom rounded-start-top"
+                                       id="footer-email"
+                                       placeholder="Your email" />
+                                <button type="submit"
+                                        class="btn btn-primary shadow-none rounded-0 rounded-end-bottom rounded-end-top">
+                                    Subscribe
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <h6 class="footer-title mb-6">Demos</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-4">
+                                <a href="../vertical-menu-template/" target="_blank" class="footer-link">Vertical Layout</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="../horizontal-menu-template/" target="_blank" class="footer-link">Horizontal Layout</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="../vertical-menu-template-bordered/" target="_blank" class="footer-link">Bordered Layout</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="../vertical-menu-template-semi-dark/" target="_blank" class="footer-link">Semi Dark Layout</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="../vertical-menu-template-dark/" target="_blank" class="footer-link">Dark Layout</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <h6 class="footer-title mb-6">Pages</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-4">
+                                <a href="pricing-page.html" class="footer-link">Pricing</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="payment-page.html" class="footer-link">Payment<span class="badge bg-primary ms-2">New</span></a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="checkout-page.html" class="footer-link">Checkout</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="help-center-landing.html" class="footer-link">Help Center</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="../vertical-menu-template/#" target="_blank" class="footer-link">Login/Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4">
+                        <h6 class="footer-title mb-6">Download our app</h6>
+                        <a href="javascript:void(0);" class="d-block mb-4">
+                            <img src="../../theme_assets/img/front-pages/landing-page/apple-icon.png" alt="apple icon" />
+                        </a>
+                        <a href="javascript:void(0);" class="d-block">
+                            <img src="../../theme_assets/img/front-pages/landing-page/google-play-icon.png" alt="google play icon" />
+                        </a>
                     </div>
                 </div>
             </div>
-            <!-- END : End Main Content-->
         </div>
-    </div>
-   @*  <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - DNFINS.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="footer-bottom py-3 py-md-5">
+            <div class="container d-flex flex-wrap justify-content-between flex-md-row flex-column text-center text-md-start">
+               @*  <div class="mb-2 mb-md-0">
+                    <span class="footer-bottom-text">
+                        ©
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script>
+                    </span>
+                    <a href="#" target="_blank" class="fw-medium text-white text-white">Mr. Quote,</a>
+                    <span class="footer-bottom-text"> Made with ❤️ for a better web.</span>
+                </div> *@
+               @*  <div>
+                    <a href="https://github.com/pixinvent" class="me-3" target="_blank">
+                        <img src="../../theme_assets/img/front-pages/icons/github.svg" alt="github icon" />
+                    </a>
+                    <a href="https://www.facebook.com/pixinvents/" class="me-3" target="_blank">
+                        <img src="../../theme_assets/img/front-pages/icons/facebook.svg" alt="facebook icon" />
+                    </a>
+                    <a href="https://twitter.com/pixinvents" class="me-3" target="_blank">
+                        <img src="../../theme_assets/img/front-pages/icons/twitter.svg" alt="twitter icon" />
+                    </a>
+                    <a href="https://www.instagram.com/pixinvents/" target="_blank">
+                        <img src="../../theme_assets/img/front-pages/icons/instagram.svg" alt="google icon" />
+                    </a>
+                </div> *@
+            </div>
         </div>
-    </footer> *@
+    </footer>
+    <!-- Footer: Start -->
 
-    <!-- BEGIN VENDOR JS-->
-    <script src="~/app-assets/vendors/js/vendors.min.js"></script>
-    
-    <script src="~/app-assets/vendors/js/switchery.min.js"></script>
-    <!-- BEGIN VENDOR JS-->
-    <!-- BEGIN PAGE VENDOR JS-->
-    <!-- END PAGE VENDOR JS-->
-    <!-- BEGIN APEX JS-->
-    <script src="~/app-assets/js/core/app-menu.min.js"></script>
-    <script src="~/app-assets/js/core/app.min.js"></script>
-    <script src="~/app-assets/js/notification-sidebar.min.js"></script>
-    <script src="~/app-assets/js/customizer.min.js"></script>
-    <script src="~/app-assets/js/scroll-top.min.js"></script>
-    <!-- END APEX JS-->
-    <!-- BEGIN PAGE LEVEL JS-->
-    <!-- END PAGE LEVEL JS-->
-    <!-- BEGIN: Custom CSS-->
-    <script src="~/js/site.js"></script>
-    <script src="~/assets/js/scripts.js"></script>
-    <!-- END: Custom CSS-->
+    <!-- Footer: End -->
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="../../theme_assets/vendor/libs/popper/popper.js"></script>
+    <script src="../../theme_assets/vendor/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="../../theme_assets/vendor/libs/node-waves/node-waves.js"></script>
+    <script src="../../assets/js/pages-auth.js"></script>
+    <!-- endbuild -->
+    <!-- Vendors JS -->
+    <script src="../../theme_assets/vendor/libs/nouislider/nouislider.js"></script>
+    <script src="../../theme_assets/vendor/libs/swiper/swiper.js"></script>
+    <script src="../../theme_assets/vendor/libs/cleavejs/cleave.js"></script>
+    <script src="../../theme_assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+    <script src="../../theme_assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+    <script src="../../theme_assets/vendor/libs/select2/select2.js"></script>
+    <script src="../../theme_assets/vendor/libs/&#64;form-validation/popular.js"></script>
+    <script src="../../theme_assets/vendor/libs/&#64;form-validation/bootstrap5.js"></script>
+    <script src="../../theme_assets/vendor/libs/&#64;form-validation/auto-focus.js"></script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+    <!-- Main JS -->
+    <script src="../../theme_assets/js/front-main.js"></script>
+    <!-- Page JS -->
+    <script src="../../theme_assets/js/front-page-landing.js"></script>
 </body>
 </html>

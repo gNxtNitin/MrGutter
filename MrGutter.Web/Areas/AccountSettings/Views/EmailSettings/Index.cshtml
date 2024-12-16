@@ -1,0 +1,1728 @@
+﻿@{
+    Layout = "_Layout_AccountSetting";
+    ViewBag.Title = "Email settings";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    <div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y">
+
+        <div class="layout-demo-wrapper align-items-start">
+            <div class="layout-demo-placeholder w-100">
+                <div class="row">
+                    <div class="col-12">
+                        <h5 class="mb-1 fs-4"><b>Email Settings</b></h5>
+
+                        <p class="mb-6 fs-5">Automatically cc/bcc colleagues on emails and manage the content/layout that your client see.</p>
+
+                        <div class="mb-6">
+                            <div class="pt-4">
+
+                                <div class="row g-6">
+
+                                    <!--First Accordion start-->
+                                    <div class="accordion mt-4" id="accordionExample">                                  
+                                        <div class="accordion-item">
+                                            <!--First card-->
+                                            <div class="p-4">
+                                                <h2 class="accordion-header" id="headingOne">
+                                                    <button type="button"
+                                                            class="accordion-button shadow-none fs-5"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#accordionOne"
+                                                            aria-expanded="true"
+                                                            aria-controls="accordionOne">
+                                                        <b>Email Addresses</b>
+                                                    </button>
+                                                  
+                                                </h2>
+                                                <p class="ps-4">Define email cc/bcc addresses and filters.</p>
+                                            </div>                                        
+
+                                            <div id="accordionOne"
+                                                 class="accordion-collapse collapse pb-5"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+
+                                                    <div class="card-body">
+                                                     
+                                                        <div>
+                                                            <h5 class="ps-4">CC ADDRESSES</h5>
+                                                        </div>
+                                                        <div class="card">
+                                                            <div class="pt-0">
+
+                                                                <div class="row">
+                                                                    <div class="col-xl-12">
+                                                                        <div class="nav-align-top nav-tabs-shadow">
+                                                                            <ul class="nav nav-tabs" role="tablist">
+                                                                                <li class="nav-item">
+                                                                                    <button type="button"
+                                                                                            class="nav-link active"
+                                                                                            role="tab"
+                                                                                            data-bs-toggle="tab"
+                                                                                            data-bs-target="#navs-top-My"
+                                                                                            aria-controls="navs-top-My"
+                                                                                            aria-selected="true">
+                                                                                        Email address
+                                                                                    </button>
+                                                                                </li>
+                                                                                <li class="nav-item">
+                                                                                    <button type="button"
+                                                                                            class="nav-link"
+                                                                                            role="tab"
+                                                                                            data-bs-toggle="tab"
+                                                                                            data-bs-target="#navs-top-Shared"
+                                                                                            aria-controls="navs-top-Shared"
+                                                                                            aria-selected="false">
+                                                                                        Email filters
+                                                                                    </button>
+                                                                                </li>
+                                                                                <li class="nav-item">
+                                                                                    <button type="button"
+                                                                                            class="nav-link"
+                                                                                            role="tab"
+                                                                                            data-bs-toggle="tab"
+                                                                                            data-bs-target="#navs-top-Actions"
+                                                                                            aria-controls="navs-top-Actions"
+                                                                                            aria-selected="false">
+                                                                                        Actions
+                                                                                    </button>
+                                                                                </li>
+
+                                                                            </ul>
+                                                                            <div class="tab-content">
+                                                                                <div class="d-flex justify-content-center align-items-center mt-2">
+                                                                                        
+                                                                                    <p>No data available.</p>
+                                                                                   
+                                                                                </div>
+                                                                                <button data-bs-toggle="modal"
+                                                                                        data-bs-target="#modalCenter"
+                                                                                        href="#"
+                                                                                        class="btn bg bg-white text-black border waves-effect">
+                                                                                    Add CC address
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                            <!--First card end-->
+
+
+                                            <!--Second card-->
+
+                                            <div id="accordionOne"
+                                                 class="accordion-collapse collapse pb-5"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+
+                                                    <div class="card-body">
+
+                                                        <div>
+                                                            <h5 class="ps-4">BCC ADDRESSES</h5>
+                                                        </div>
+                                                        <div class="card">
+                                                            <div class="pt-0">
+
+                                                                <div class="row">
+                                                                    <div class="col-xl-12">
+                                                                        <div class="nav-align-top nav-tabs-shadow">
+                                                                            <ul class="nav nav-tabs" role="tablist">
+                                                                                <li class="nav-item">
+                                                                                    <button type="button"
+                                                                                            class="nav-link active"
+                                                                                            role="tab"
+                                                                                            data-bs-toggle="tab"
+                                                                                            data-bs-target="#navs-top-My"
+                                                                                            aria-controls="navs-top-My"
+                                                                                            aria-selected="true">
+                                                                                        Email address
+                                                                                    </button>
+                                                                                </li>
+                                                                                <li class="nav-item">
+                                                                                    <button type="button"
+                                                                                            class="nav-link"
+                                                                                            role="tab"
+                                                                                            data-bs-toggle="tab"
+                                                                                            data-bs-target="#navs-top-Shared"
+                                                                                            aria-controls="navs-top-Shared"
+                                                                                            aria-selected="false">
+                                                                                        Email filters
+                                                                                    </button>
+                                                                                </li>
+                                                                                <li class="nav-item">
+                                                                                    <button type="button"
+                                                                                            class="nav-link"
+                                                                                            role="tab"
+                                                                                            data-bs-toggle="tab"
+                                                                                            data-bs-target="#navs-top-Actions"
+                                                                                            aria-controls="navs-top-Actions"
+                                                                                            aria-selected="false">
+                                                                                        Actions
+                                                                                    </button>
+                                                                                </li>
+
+                                                                            </ul>
+                                                                            <div class="tab-content">
+                                                                                <div class="d-flex justify-content-center align-items-center mt-2">
+
+                                                                                    <p>No data available.</p>
+
+                                                                                </div>
+                                                                                <button data-bs-toggle="modal"
+                                                                                        data-bs-target="#modalCenter1"
+                                                                                        href="#"
+                                                                                        class="btn bg bg-white text-black border waves-effect">
+                                                                                    Add BCC address
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                            <!--Second card end-->
+
+                                            <!--Vertical modal start for CC-->
+                                            <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+
+                                                            <button type="button"
+                                                                    class="btn-close"
+                                                                    data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <div class="container-xxl flex-grow-1 container-p-y">
+                                                                    <h4 class="mb-4">Add CC Address</h4>
+
+                                                                    <div class="mt-4">
+                                                                        <label for="ccAdd"><h5 class="mb-1"><b>CC address</b></h5></label>
+                                                                        <input id="ccAdd" class="form-control" />
+                                                                    </div>
+
+                                                                    <div class="mt-4">
+                                                                        <label for="emailFilters"><h5 class="mb-1"><b>Email filters</b></h5></label>
+                                                                        <div class="col-sm-12">
+                                                                            <select id="emailFilters" class="dropdown form-select" data-allow-clear="true">
+                                                                                <option value="j" selected>Select one</option>
+                                                                                <option value="allEmails">All emails</option>
+                                                                                <option value="signedQuote">Signed quotes only</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    
+
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                                Close
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!--Vertical modal end for CC-->
+
+                                            <!--Vertical modal start for BCC-->
+                                            <div class="modal fade" id="modalCenter1" tabindex="-1" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+
+                                                            <button type="button"
+                                                                    class="btn-close"
+                                                                    data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <div class="container-xxl flex-grow-1 container-p-y">
+                                                                    <h4 class="mb-4">Add BCC Address</h4>
+
+                                                                    <div class="mt-4">
+                                                                        <label for="ccAdd"><h5 class="mb-1"><b>BCC address</b></h5></label>
+                                                                        <input id="ccAdd" class="form-control" />
+                                                                    </div>
+
+                                                                    <div class="mt-4">
+                                                                        <label for="emailFilters"><h5 class="mb-1"><b>Email filters</b></h5></label>
+                                                                        <div class="col-sm-12">
+                                                                            <select id="emailFilters" class="dropdown form-select" data-allow-clear="true">
+                                                                                <option value="j" selected>Select one</option>
+                                                                                <option value="allEmails">All emails</option>
+                                                                                <option value="signedQuote">Signed quotes only</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+
+
+
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                                Close
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!--Vertical modal end for BCC-->
+
+
+                                        </div>
+
+
+                                
+                                      
+
+                                        <!-- /Accordion-->
+                                    </div>
+
+                                    <!--First Accordion end-->
+
+                                    <!--Second Accordion start-->
+                                    <div class="accordion mt-4" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <div class="p-4">
+                                                <h2 class="accordion-header" id="headingTwo">
+                                                    <button type="button"
+                                                            class="accordion-button collapsed fs-5"
+                                                            data-bs-toggle="collapse"
+                                                            data-bs-target="#accordionTwo"
+                                                            aria-expanded="false"
+                                                            aria-controls="accordionTwo">
+                                                        <b>Email Templates</b>
+                                                    </button>
+                                                </h2>
+                                                <p class="ps-4">Manage the content/layout that clients see.</p>
+                                            </div>
+
+                                            <div id="accordionTwo"
+                                                 class="accordion-collapse collapse"
+                                                 aria-labelledby="headingTwo"
+                                                 data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+
+                                                    <!--First card-->
+                                                    <div class="card pt-4 mb-5">
+                                                      
+                                                        <h6 class="ps-4">EMAILS SENT WHEN SHARING A QUOTE</h6>
+                                                        <div class="d-flex justify-content-between align-items-center border-bottom px-4">
+                                                            <p class="pt-3">Sent for signature</p>
+                                                            <a href="#" data-bs-toggle="modal"
+                                                               data-bs-target="#modalSignature" class="text-decoration-underline">
+                                                                Edit template
+                                                            </a>
+
+                                                        </div>
+                                                          <div class="d-flex justify-content-between align-items-center border-bottom px-4">
+                                                            <p class="pt-3">Sent for review</p>
+                                                            <a href="#" data-bs-toggle="modal"
+                                                               data-bs-target="#modalReview" class="text-decoration-underline">
+                                                                Edit template
+                                                            </a>
+
+                                                        </div>
+                                                        <div class="d-flex justify-content-between align-items-center border-bottom px-4 pt-2">
+                                                            <p class="pt-3">Sent for when signature request is canceled</p>
+                                                            <a href="#" data-bs-toggle="modal"
+                                                               data-bs-target="#modalCancelled" class="text-decoration-underline">
+                                                                Edit template
+                                                            </a>
+
+                                                        </div>
+
+                                                        <!--Vertical Modals of modalSignature-->
+
+                                                        <div class="modal fade" id="modalSignature" tabindex="-1" aria-hidden="true">
+                                                            <div class="modal-dialog  modal-fullscreen" role="document">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+
+                                                                        <div class="modal-content m-4">
+
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title fs-4" id="exampleModalLabel4">Sent for signature</h5>
+                                                                                <button type="button"
+                                                                                        class="btn-close"
+                                                                                        data-bs-dismiss="modal"
+                                                                                        aria-label="Close"></button>
+                                                                            </div>
+
+                                                                            <div class="modal-body">
+
+                                                                                <div class="row">
+                                                                                    <div class="col-md-6 mb-4">
+                                                                                        <label for="subject" class="form-label fs-5"><b>Subject</b></label>
+
+
+                                                                                        <div class="input-group">
+                                                                                            <input type="text" class="form-control" id="subject"
+                                                                                                   placeholder="{{ACCOUNT_NAME}} has sent you a{{SALESPERSON_EMAIL}}{{SALESPERSON_EMAIL}} quote" aria-label="Text input with dropdown button" />
+                                                                                            <button class="btn btn-outline-primary dropdown-toggle"
+                                                                                                    type="button"
+                                                                                                    data-bs-toggle="dropdown"
+                                                                                                    aria-expanded="false">
+                                                                                                Insert token
+                                                                                            </button>
+                                                                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Account Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson First Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Last Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Full Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Title</a></li>
+                                                                                                @*            <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Phone</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Email</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer First Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Last Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Full Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Address</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Company Name</a></li> *@
+
+                                                                                            </ul>
+                                                                                        </div>
+
+
+                                                                                        <!--Make it in one col.-->
+                                                                                        <div class="col-md-12 mb-4 mt-6">
+
+                                                                                            <label for="Body" class="form-label fs-5"><b>Body</b></label>
+                                                                                            <div class="mb-4 col-md-12">
+                                                                                                <div class="input-group input-group-merge">
+                                                                                                    <div class="col-12">
+                                                                                                        <div class="">
+
+                                                                                                            <div class="">
+                                                                                                                <div id="snow-toolbar">
+                                                                                                                    <span class="ql-formats">
+                                                                                                                        <select class="ql-font"></select>
+                                                                                                                        <select class="ql-size"></select>
+
+                                                                                                                 
+
+
+
+                                                                                                                    </span>
+                                                                                                                    <span class="ql-formats">
+                                                                                                                        <button class="ql-bold"></button>
+                                                                                                                        <button class="ql-italic"></button>
+                                                                                                                        <button class="ql-underline"></button>
+                                                                                                                        <button class="ql-strike"></button>
+                                                                                                                    </span>
+                                                                                                                   
+                                                                                                                    <span class="ql-formats">
+                                                                                                                        <select class="ql-color"></select>
+                                                                                                                        <select class="ql-background"></select>
+                                                                                                                    </span>
+                                                                                                                    <span class="ql-formats">
+                                                                                                                        <button class="ql-script" value="sub"></button>
+                                                                                                                        <button class="ql-script" value="super"></button>
+                                                                                                                    </span>
+                                                                                                                    <span class="ql-formats">
+                                                                                                                        <button class="ql-header" value="1"></button>
+                                                                                                                        <button class="ql-header" value="2"></button>
+                                                                                                                        <button class="ql-blockquote"></button>
+                                                                                                                        <button class="ql-code-block"></button>
+                                                                                                                    </span>
+                                                                                                                </div>
+
+                                                                                                                <div id="snow-editor">
+                                                                                                                    <h5>
+                                                                                                                        <p>
+                                                                                                                            <b>
+                                                                                                                                You have received a quote from {{SALESPERSON_NAME}} with<br /> {{ACCOUNT_NAME}}.<br />
+                                                                                                                                Questions? Contact {{SALESPERSON_NAME}} by replying to this <br />email.
+                                                                                                                            </b>
+                                                                                                                        </p>
+                                                                                                                    </h5>
+                                                                                                               
+                                                                                                                 
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+
+                                                                                        </div>
+
+
+                                                                                    </div>
+
+
+                                                                                    <div class="col-md-6 mb-4">
+                                                                                        <label for="preview" class="form-label fs-5"><b>Preview</b></label>
+
+                                                                                        <div class="border rounded">
+                                                                                            <p class="p-4">johnson has sent you amekar31867@iminko.commekar31867@iminko.com quote - 123 Sample Ave NW</p>
+
+                                                                                            <div class="p-3">
+                                                                                                <div class="card ">
+                                                                                                    <div class="card-body p-3">
+                                                                                                        <p>
+                                                                                                            <b>
+                                                                                                                You have received a quote from Mitchell Johnson with <br />johnson.<br />
+                                                                                                                Questions? Contact Mitchell Johnson by replying <br /> to this email.
+                                                                                                            </b>
+                                                                                                        </p>
+                                                                                                        <div class="d-flex justify-content-center align-items-center">
+                                                                                                            <button class="btn btn-secondary">Review and Sign Quote</button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <p class="ps-3">Attachment<i class="menu-icons ti ti-paperclip"></i> </p>
+                                                                                        </div>
+
+
+                                                                                    </div>
+                                                                                </div>
+
+
+
+                                                                                <div class="row">
+                                                                                    <label for="btnText" class="form-label fs-5"><b>Button text</b></label>
+                                                                                    <div class="col-md-6">
+
+                                                                                        <input type="text" id="btnText" class="form-control" placeholder="Review and Sign Quote" />
+                                                                                    </div>
+
+
+                                                                                </div>
+
+                                                                                <div class="row">
+                                                                                    <div class="mt-5">
+                                                                                        <p> <b>Attach PDF</b> <input type="checkbox" /></p>
+
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                                                    Close
+                                                                                </button>
+                                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                            
+                                                            </div>
+                                                        </div>
+
+                                                        <!--Vertical Modal for Review-->
+                                                        <div class="modal fade" id="modalReview" tabindex="-1" aria-hidden="true">
+                                                            <div class="modal-dialog modal-xl" role="document">
+                                                                <div class="">
+                                                                    <div class="">
+
+                                                                        <div class="modal-content m-4">
+
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title fs-4" id="exampleModalLabel4">Sent for review</h5>
+                                                                                <button type="button"
+                                                                                        class="btn-close"
+                                                                                        data-bs-dismiss="modal"
+                                                                                        aria-label="Close"></button>
+                                                                            </div>
+
+                                                                            <div class="modal-body">
+
+                                                                                <div class="row">
+                                                                                    <div class="col-md-6 mb-4">
+                                                                                        <label for="subject" class="form-label fs-5"><b>Subject</b></label>
+
+
+                                                                                        <div class="input-group">
+                                                                                            <input type="text" class="form-control" id="subject"
+                                                                                                   placeholder="{{ACCOUNT_NAME}} has sent you a{{SALESPERSON_EMAIL}}{{SALESPERSON_EMAIL}} quote" aria-label="Text input with dropdown button" />
+                                                                                            <button class="btn btn-outline-primary dropdown-toggle"
+                                                                                                    type="button"
+                                                                                                    data-bs-toggle="dropdown"
+                                                                                                    aria-expanded="false">
+                                                                                                Insert token
+                                                                                            </button>
+                                                                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Account Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson First Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Last Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Full Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Title</a></li>
+                                                                                                @*            <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Phone</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Email</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer First Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Last Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Full Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Address</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Company Name</a></li> *@
+
+                                                                                            </ul>
+                                                                                        </div>
+
+
+                                                                                        <!--Make it in one col.-->
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-12 mb-4 mt-6">
+
+                                                                                                <label for="Body" class="form-label fs-5"><b>Body</b></label>
+                                                                                                <div class="mb-4 col-md-12">
+                                                                                                    <div class="input-group input-group-merge">
+                                                                                                        <div class="col-12">
+                                                                                                            <div class="">
+
+                                                                                                                <div class="">
+                                                                                                                    <div id="snow-toolbar1">
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <select class="ql-font"></select>
+                                                                                                                            <select class="ql-size"></select>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-bold"></button>
+                                                                                                                            <button class="ql-italic"></button>
+                                                                                                                            <button class="ql-underline"></button>
+                                                                                                                            <button class="ql-strike"></button>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <select class="ql-color"></select>
+                                                                                                                            <select class="ql-background"></select>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-script" value="sub"></button>
+                                                                                                                            <button class="ql-script" value="super"></button>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-header" value="1"></button>
+                                                                                                                            <button class="ql-header" value="2"></button>
+                                                                                                                            <button class="ql-blockquote"></button>
+                                                                                                                            <button class="ql-code-block"></button>
+                                                                                                                        </span>
+                                                                                                                    </div>
+                                                                                                                    <div id="snow-editor1">
+                                                                                                                        <h5>
+                                                                                                                            <p>
+                                                                                                                                <b>
+                                                                                                                                    You have received a quote from {{SALESPERSON_NAME}} with {{ACCOUNT_NAME}}.<br />
+                                                                                                                                </b>
+                                                                                                                                    Review this quote through the attached PDF.<br />
+                                                                                                                                <b>
+                                                                                                                                    Questions? Contact {{SALESPERSON_NAME}} by replying to this email.
+                                                                                                                                </b>
+
+                                                                                                                                   
+                                                                                                                           
+                                                                                                                            </p>
+                                                                                                                        </h5>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+
+                                                                                        </div>
+                                                                                    
+
+                                                                                    </div>
+
+
+                                                                                    <div class="col-md-6 mb-4">
+                                                                                        <label for="preview" class="form-label fs-5"><b>Preview</b></label>
+
+                                                                                        <div class="border rounded">
+                                                                                            <p class="p-4">johnson has sent you amekar31867@iminko.commekar31867@iminko.com quote - 123 Sample Ave NW</p>
+
+                                                                                            <div class="p-3">
+                                                                                                <div class="card ">
+                                                                                                    <div class="card-body p-3">
+                                                                                                        <p>
+                                                                                                            <b>
+                                                                                                                You have received a quote from Mitchell Johnson with johnson.<br />
+
+                                                                                                                Review this quote through the attached PDF.<br />
+
+                                                                                                                Questions? Contact Mitchell Johnson by replying<br /> to this email.
+                                                                                                            </b>
+                                                                                                        </p>
+                                                                                                        <div class="d-flex justify-content-center align-items-center">
+                                                                                                            <button class="btn btn-secondary">Review and Sign Quote</button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <p class="ps-3">Attachment<i class="menu-icons ti ti-paperclip"></i> </p>
+                                                                                        </div>
+
+
+                                                                                    </div>
+                                                                                </div>
+
+
+
+                                 @*                                                <div class="row">
+                                                                                    <label for="btnText" class="form-label fs-5"><b>Button text</b></label>
+                                                                                    <div class="col-md-6">
+
+                                                                                        <input type="text" id="btnText" class="form-control" placeholder="Review and Sign Quote" />
+                                                                                    </div>
+
+
+                                                                                </div>
+
+                                                                                <div class="row">
+                                                                                    <div class="mt-5">
+                                                                                        <p> <b>Attach PDF</b> <input type="checkbox" /></p>
+
+                                                                                    </div>
+                                                                                </div> *@
+
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                                                    Close
+                                                                                </button>
+                                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                        <!--Vertical Modal for Sugnature req. cancellation-->
+                                                        <div class="modal fade" id="modalCancelled" tabindex="-1" aria-hidden="true">
+                                                            <div class="modal-dialog modal-xl" role="document">
+                                                                <div class="">
+                                                                    <div class="">
+
+                                                                        <div class="modal-content m-4">
+
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title fs-4" id="exampleModalLabel4">Sent when signature request is canceled</h5>
+                                                                                <button type="button"
+                                                                                        class="btn-close"
+                                                                                        data-bs-dismiss="modal"
+                                                                                        aria-label="Close"></button>
+                                                                            </div>
+
+                                                                            <div class="modal-body">
+
+                                                                                <div class="row">
+                                                                                    <div class="col-md-6 mb-4">
+                                                                                        <label for="subject" class="form-label fs-5"><b>Subject</b></label>
+
+
+                                                                                        <div class="input-group">
+                                                                                            <input type="text" class="form-control" id="subject"
+                                                                                                   placeholder="{{ACCOUNT_NAME}} has sent you a{{SALESPERSON_EMAIL}}{{SALESPERSON_EMAIL}} quote" aria-label="Text input with dropdown button" />
+                                                                                            <button class="btn btn-outline-primary dropdown-toggle"
+                                                                                                    type="button"
+                                                                                                    data-bs-toggle="dropdown"
+                                                                                                    aria-expanded="false">
+                                                                                                Insert token
+                                                                                            </button>
+                                                                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Account Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson First Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Last Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Full Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Title</a></li>
+                                                                                                @*            <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Phone</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Email</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer First Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Last Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Full Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Address</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Company Name</a></li> *@
+
+                                                                                            </ul>
+                                                                                        </div>
+
+
+                                                                                        <!--Make it in one col.-->
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-12 mb-4 mt-6">
+
+                                                                                                <label for="Body" class="form-label fs-5"><b>Body</b></label>
+                                                                                                <div class="mb-4 col-md-12">
+                                                                                                    <div class="input-group input-group-merge">
+                                                                                                        <div class="col-12">
+                                                                                                            <div class="">
+
+                                                                                                                <div class="">
+                                                                                                                    <div id="snow-toolbar2">
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <select class="ql-font"></select>
+                                                                                                                            <select class="ql-size"></select>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-bold"></button>
+                                                                                                                            <button class="ql-italic"></button>
+                                                                                                                            <button class="ql-underline"></button>
+                                                                                                                            <button class="ql-strike"></button>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <select class="ql-color"></select>
+                                                                                                                            <select class="ql-background"></select>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-script" value="sub"></button>
+                                                                                                                            <button class="ql-script" value="super"></button>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-header" value="1"></button>
+                                                                                                                            <button class="ql-header" value="2"></button>
+                                                                                                                            <button class="ql-blockquote"></button>
+                                                                                                                            <button class="ql-code-block"></button>
+                                                                                                                        </span>
+                                                                                                                    </div>
+                                                                                                                    <div id="snow-editor2">
+                                                                                                                        <h5>
+                                                                                                                            <p>
+                                                                                                                                <b>
+                                                                                                                                    You have received a quote from {{SALESPERSON_NAME}} with {{ACCOUNT_NAME}}.<br />
+                                                                                                                                </b>
+                                                                                                                                Review this quote through the attached PDF.<br />
+                                                                                                                                <b>
+                                                                                                                                    Questions? Contact {{SALESPERSON_NAME}} by replying to this email.
+                                                                                                                                </b>
+
+
+
+                                                                                                                            </p>
+                                                                                                                        </h5>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+
+                                                                                        </div>
+
+
+                                                                                    </div>
+
+
+                                                                                    <div class="col-md-6 mb-4">
+                                                                                        <label for="preview" class="form-label fs-5"><b>Preview</b></label>
+
+                                                                                        <div class="border rounded">
+                                                                                            <p class="p-4">johnson has sent you amekar31867@iminko.commekar31867@iminko.com quote - 123 Sample Ave NW</p>
+
+                                                                                            <div class="p-3">
+                                                                                                <div class="card ">
+                                                                                                    <div class="card-body p-3">
+                                                                                                        <p>
+                                                                                                            <b>
+                                                                                                                You have received a quote from Mitchell Johnson with johnson.<br />
+
+                                                                                                                Review this quote through the attached PDF.<br />
+
+                                                                                                                Questions? Contact Mitchell Johnson by replying<br /> to this email.
+                                                                                                            </b>
+                                                                                                        </p> 
+                                                                                                        <div class="d-flex justify-content-center align-items-center">
+                                                                                                            <button class="btn btn-secondary">Review and Sign Quote</button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <p class="ps-3">Attachment<i class="menu-icons ti ti-paperclip"></i> </p>
+                                                                                        </div>
+
+
+                                                                                    </div>
+                                                                                </div>
+
+
+
+                                                                                @*                                                <div class="row">
+                                                                                <label for="btnText" class="form-label fs-5"><b>Button text</b></label>
+                                                                                <div class="col-md-6">
+
+                                                                                <input type="text" id="btnText" class="form-control" placeholder="Review and Sign Quote" />
+                                                                                </div>
+
+
+                                                                                </div>
+
+                                                                                <div class="row">
+                                                                                <div class="mt-5">
+                                                                                <p> <b>Attach PDF</b> <input type="checkbox" /></p>
+
+                                                                                </div>
+                                                                                </div> *@
+
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                                                    Close
+                                                                                </button>
+                                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+
+                                                    <!--Second card-->
+                                                    <div class="card pt-4 mb-5">
+
+                                                        <h6 class="ps-4">EMAILS SENT WHEN THE DOCUMENT IS SIGNED</h6>
+                                                        <div class="d-flex justify-content-between align-items-center border-bottom px-4">
+                                                            <p class="pt-3">Sent when the document is signed</p>
+                                                            <a href="#" data-bs-toggle="modal"
+                                                               data-bs-target="#modalSigned" class="text-decoration-underline">
+                                                                Edit template
+                                                            </a>
+
+                                                        </div>
+                                                        <div class="d-flex justify-content-between align-items-center border-bottom px-4">
+                                                            <p class="pt-3">Sent when the document is signed and includes direct financing</p>
+                                                            <a href="#" data-bs-toggle="modal"
+                                                               data-bs-target="#modalDirectFinancing" class="text-decoration-underline">
+                                                                Edit template
+                                                            </a>
+
+                                                        </div>       
+                                                        
+
+                                                        <!--Vertical Modal for signed document-->
+                                                        <div class="modal fade" id="modalSigned" tabindex="-1" aria-hidden="true">
+                                                            <div class="modal-dialog modal-xl" role="document">
+                                                                <div class="">
+                                                                    <div class="">
+
+                                                                        <div class="modal-content m-4">
+
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title fs-4" id="exampleModalLabel4">Sent when the document is signed</h5>
+                                                                                <button type="button"
+                                                                                        class="btn-close"
+                                                                                        data-bs-dismiss="modal"
+                                                                                        aria-label="Close"></button>
+                                                                            </div>
+
+                                                                            <div class="modal-body">
+
+                                                                                <div class="row">
+                                                                                    <div class="col-md-6 mb-4">
+                                                                                        <label for="subject" class="form-label fs-5"><b>Subject</b></label>
+
+
+                                                                                        <div class="input-group">
+                                                                                            <input type="text" class="form-control" id="subject"
+                                                                                                   placeholder="{{ACCOUNT_NAME}} has sent you a{{SALESPERSON_EMAIL}}{{SALESPERSON_EMAIL}} quote" aria-label="Text input with dropdown button" />
+                                                                                            <button class="btn btn-outline-primary dropdown-toggle"
+                                                                                                    type="button"
+                                                                                                    data-bs-toggle="dropdown"
+                                                                                                    aria-expanded="false">
+                                                                                                Insert token
+                                                                                            </button>
+                                                                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Account Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson First Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Last Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Full Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Title</a></li>
+                                                                                                @*            <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Phone</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Email</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer First Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Last Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Full Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Address</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Company Name</a></li> *@
+
+                                                                                            </ul>
+                                                                                        </div>
+
+
+                                                                                        <!--Make it in one col.-->
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-12 mb-4 mt-6">
+
+                                                                                                <label for="Body" class="form-label fs-5"><b>Body</b></label>
+                                                                                                <div class="mb-4 col-md-12">
+                                                                                                    <div class="input-group input-group-merge">
+                                                                                                        <div class="col-12">
+                                                                                                            <div class="">
+
+                                                                                                                <div class="">
+                                                                                                                    <div id="snow-toolbar3">
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <select class="ql-font"></select>
+                                                                                                                            <select class="ql-size"></select>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-bold"></button>
+                                                                                                                            <button class="ql-italic"></button>
+                                                                                                                            <button class="ql-underline"></button>
+                                                                                                                            <button class="ql-strike"></button>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <select class="ql-color"></select>
+                                                                                                                            <select class="ql-background"></select>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-script" value="sub"></button>
+                                                                                                                            <button class="ql-script" value="super"></button>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-header" value="1"></button>
+                                                                                                                            <button class="ql-header" value="2"></button>
+                                                                                                                            <button class="ql-blockquote"></button>
+                                                                                                                            <button class="ql-code-block"></button>
+                                                                                                                        </span>
+                                                                                                                    </div>
+                                                                                                                    <div id="snow-editor3">
+                                                                                                                        <h5>
+                                                                                                                            <p>
+                                                                                                                                <b>
+                                                                                                                                    You have received a quote from {{SALESPERSON_NAME}} with {{ACCOUNT_NAME}}.<br />
+                                                                                                                                </b>
+                                                                                                                                Review this quote through the attached PDF.<br />
+                                                                                                                                <b>
+                                                                                                                                    Questions? Contact {{SALESPERSON_NAME}} by replying to this email.
+                                                                                                                                </b>
+
+
+
+                                                                                                                            </p>
+                                                                                                                        </h5>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+
+                                                                                        </div>
+
+
+                                                                                    </div>
+
+
+                                                                                    <div class="col-md-6 mb-4">
+                                                                                        <label for="preview" class="form-label fs-5"><b>Preview</b></label>
+
+                                                                                        <div class="border rounded">
+                                                                                            <p class="p-4">johnson has sent you amekar31867@iminko.commekar31867@iminko.com quote - 123 Sample Ave NW</p>
+
+                                                                                            <div class="p-3">
+                                                                                                <div class="card ">
+                                                                                                    <div class="card-body p-3">
+                                                                                                        <p>
+                                                                                                            <b>
+                                                                                                                You have received a quote from Mitchell Johnson with johnson.<br />
+
+                                                                                                                Quote Total: $100.00.<br />
+
+                                                                                                                Questions? Contact Mitchell Johnson by replying<br /> to this email.
+                                                                                                            </b>
+                                                                                                        </p>
+                                                                                                        <div class="d-flex justify-content-center align-items-center">
+                                                                                                            <button class="btn btn-secondary">Review and Sign Quote</button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <p class="ps-3">Attachment<i class="menu-icons ti ti-paperclip"></i> </p>
+                                                                                        </div>
+
+
+                                                                                    </div>
+                                                                                </div>
+
+
+
+                                                                                @*                                                <div class="row">
+                                                                                <label for="btnText" class="form-label fs-5"><b>Button text</b></label>
+                                                                                <div class="col-md-6">
+
+                                                                                <input type="text" id="btnText" class="form-control" placeholder="Review and Sign Quote" />
+                                                                                </div>
+
+
+                                                                                </div>
+
+                                                                                <div class="row">
+                                                                                <div class="mt-5">
+                                                                                <p> <b>Attach PDF</b> <input type="checkbox" /></p>
+
+                                                                                </div>
+                                                                                </div> *@
+
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                                                    Close
+                                                                                </button>
+                                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+
+
+                                                        <!--Vertical Modal for Direct Financing-->
+                                                        <div class="modal fade" id="modalDirectFinancing" tabindex="-1" aria-hidden="true">
+                                                            <div class="modal-dialog modal-xl" role="document">
+                                                                <div class="">
+                                                                    <div class="">
+
+                                                                        <div class="modal-content m-4">
+
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title fs-4" id="exampleModalLabel4">Sent when the document is signed and includes direct financing</h5>
+                                                                                <button type="button"
+                                                                                        class="btn-close"
+                                                                                        data-bs-dismiss="modal"
+                                                                                        aria-label="Close"></button>
+                                                                            </div>
+
+                                                                            <div class="modal-body">
+
+                                                                                <div class="row">
+                                                                                    <div class="col-md-6 mb-4">
+                                                                                        <label for="subject" class="form-label fs-5"><b>Subject</b></label>
+
+
+                                                                                        <div class="input-group">
+                                                                                            <input type="text" class="form-control" id="subject"
+                                                                                                   placeholder="{{ACCOUNT_NAME}} has sent you a{{SALESPERSON_EMAIL}}{{SALESPERSON_EMAIL}} quote" aria-label="Text input with dropdown button" />
+                                                                                            <button class="btn btn-outline-primary dropdown-toggle"
+                                                                                                    type="button"
+                                                                                                    data-bs-toggle="dropdown"
+                                                                                                    aria-expanded="false">
+                                                                                                Insert token
+                                                                                            </button>
+                                                                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Account Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson First Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Last Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Full Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Title</a></li>
+                                                                                                @*            <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Phone</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Email</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer First Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Last Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Full Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Address</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Company Name</a></li> *@
+
+                                                                                            </ul>
+                                                                                        </div>
+
+
+                                                                                        <!--Make it in one col.-->
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-12 mb-4 mt-6">
+
+                                                                                                <label for="Body" class="form-label fs-5"><b>Body</b></label>
+                                                                                                <div class="mb-4 col-md-12">
+                                                                                                    <div class="input-group input-group-merge">
+                                                                                                        <div class="col-12">
+                                                                                                            <div class="">
+
+                                                                                                                <div class="">
+                                                                                                                    <div id="snow-toolbar4">
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <select class="ql-font"></select>
+                                                                                                                            <select class="ql-size"></select>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-bold"></button>
+                                                                                                                            <button class="ql-italic"></button>
+                                                                                                                            <button class="ql-underline"></button>
+                                                                                                                            <button class="ql-strike"></button>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <select class="ql-color"></select>
+                                                                                                                            <select class="ql-background"></select>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-script" value="sub"></button>
+                                                                                                                            <button class="ql-script" value="super"></button>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-header" value="1"></button>
+                                                                                                                            <button class="ql-header" value="2"></button>
+                                                                                                                            <button class="ql-blockquote"></button>
+                                                                                                                            <button class="ql-code-block"></button>
+                                                                                                                        </span>
+                                                                                                                    </div>
+                                                                                                                    <div id="snow-editor4">
+                                                                                                                        <h5>
+                                                                                                                            <p>
+                                                                                                                               
+                                                                                                                                <b>
+                                                                                                                                    Your quote from {{ACCOUNT_NAME}} has been signed.<br />
+                                                                                                                                </b>
+
+                                                                                                                                    Quote Total: {{SIGNED_QUOTE_TOTAL}}<br />
+
+                                                                                                                                    <b>
+
+                                                                                                                                    Questions? Contact {{SALESPERSON_NAME}} by replying to this email.<br />
+
+                                                                                                                                    As per your request to finance this project, we have<br /> automatically sent a financing application from
+                                                                                                                                    <br /> {{FINANCING_PROVIDER}} for you to complete. Please complete
+                                                                                                                                    <br /> this application ASAP for your project to continue moving<br /> forward.
+
+                                                                                                                                    </b>
+
+
+                                                                                                                               
+
+                                                                                                                            </p>
+                                                                                                                        </h5>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+
+                                                                                        </div>
+
+
+                                                                                    </div>
+
+
+                                                                                    <div class="col-md-6 mb-4">
+                                                                                        <label for="preview" class="form-label fs-5"><b>Preview</b></label>
+
+                                                                                        <div class="border rounded">
+                                                                                            <p class="p-4">johnson has sent you amekar31867@iminko.commekar31867@iminko.com quote - 123 Sample Ave NW</p>
+
+                                                                                            <div class="p-3">
+                                                                                                <div class="card ">
+                                                                                                    <div class="card-body p-3">
+                                                                                                        <p>
+                                                                                                            <b>
+                                                                                                                You have received a quote from Mitchell Johnson with johnson.<br />
+
+                                                                                                                Review this quote through the attached PDF.<br />
+
+                                                                                                                Questions? Contact Mitchell Johnson by replying<br /> to this email.
+                                                                                                            </b>
+                                                                                                        </p>
+                                                                                                        <div class="d-flex justify-content-center align-items-center">
+                                                                                                            <button class="btn btn-secondary">Review and Sign Quote</button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <p class="ps-3">Attachment<i class="menu-icons ti ti-paperclip"></i> </p>
+                                                                                        </div>
+
+
+                                                                                    </div>
+                                                                                </div>
+
+
+
+                                                                                @*                                                <div class="row">
+                                                                                <label for="btnText" class="form-label fs-5"><b>Button text</b></label>
+                                                                                <div class="col-md-6">
+
+                                                                                <input type="text" id="btnText" class="form-control" placeholder="Review and Sign Quote" />
+                                                                                </div>
+
+
+                                                                                </div>
+
+                                                                                <div class="row">
+                                                                                <div class="mt-5">
+                                                                                <p> <b>Attach PDF</b> <input type="checkbox" /></p>
+
+                                                                                </div>
+                                                                                </div> *@
+
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                                                    Close
+                                                                                </button>
+                                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+
+
+
+                                                    </div>
+    
+                                                    <!--Third card-->
+                                                    <div class="card pt-4 mb-5">
+
+                                                        <h6 class="ps-4">INVOICE</h6>
+                                                        <div class="d-flex justify-content-between align-items-center border-bottom px-4">
+                                                            <p class="pt-3">Sent with invoice</p>
+                                                            <a href="#" data-bs-toggle="modal"
+                                                               data-bs-target="#modalInvoice" class="text-decoration-underline">
+                                                                Edit template
+                                                            </a>
+                                                        </div>
+
+                                                        <!--Vertical Modal for signed document-->
+                                                        <div class="modal fade" id="modalInvoice" tabindex="-1" aria-hidden="true">
+                                                            <div class="modal-dialog modal-xl" role="document">
+                                                                <div class="">
+                                                                    <div class="">
+
+                                                                        <div class="modal-content m-4">
+
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title fs-4" id="exampleModalLabel4">Sent with invoice</h5>
+                                                                                <button type="button"
+                                                                                        class="btn-close"
+                                                                                        data-bs-dismiss="modal"
+                                                                                        aria-label="Close"></button>
+                                                                            </div>
+
+                                                                            <div class="modal-body">
+
+                                                                                <div class="row">
+                                                                                    <div class="col-md-6 mb-4">
+                                                                                        <label for="subject" class="form-label fs-5"><b>Subject</b></label>
+
+
+                                                                                        <div class="input-group">
+                                                                                            <input type="text" class="form-control" id="subject"
+                                                                                                   placeholder="Please review the attached invoice" aria-label="Text input with dropdown button" />
+                                                                                            <button class="btn btn-outline-primary dropdown-toggle"
+                                                                                                    type="button"
+                                                                                                    data-bs-toggle="dropdown"
+                                                                                                    aria-expanded="false">
+                                                                                                Insert token
+                                                                                            </button>
+                                                                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Account Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson First Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Last Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Full Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Title</a></li>
+                                                                                                @*            <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Phone</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Email</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer First Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Last Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Full Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Address</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Company Name</a></li> *@
+
+                                                                                            </ul>
+                                                                                        </div>
+
+
+                                                                                        <!--Make it in one col.-->
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-12 mb-4 mt-6">
+
+                                                                                                <label for="Body" class="form-label fs-5"><b>Body</b></label>
+                                                                                                <div class="mb-4 col-md-12">
+                                                                                                    <div class="input-group input-group-merge">
+                                                                                                        <div class="col-12">
+                                                                                                            <div class="">
+
+                                                                                                                <div class="">
+                                                                                                                    <div id="snow-toolbar5">
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <select class="ql-font"></select>
+                                                                                                                            <select class="ql-size"></select>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-bold"></button>
+                                                                                                                            <button class="ql-italic"></button>
+                                                                                                                            <button class="ql-underline"></button>
+                                                                                                                            <button class="ql-strike"></button>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <select class="ql-color"></select>
+                                                                                                                            <select class="ql-background"></select>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-script" value="sub"></button>
+                                                                                                                            <button class="ql-script" value="super"></button>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-header" value="1"></button>
+                                                                                                                            <button class="ql-header" value="2"></button>
+                                                                                                                            <button class="ql-blockquote"></button>
+                                                                                                                            <button class="ql-code-block"></button>
+                                                                                                                        </span>
+                                                                                                                    </div>
+                                                                                                                    <div id="snow-editor5">
+                                                                                                                        <h5>
+                                                                                                                            <p class="pb-6">
+                                                                                                                                Please review the attached invoice.
+
+
+
+                                                                                                                            </p>
+                                                                                                                        </h5>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+
+                                                                                        </div>
+
+
+                                                                                    </div>
+
+
+                                                                                    <div class="col-md-6 mb-4">
+                                                                                        <label for="preview" class="form-label fs-5"><b>Preview</b></label>
+
+                                                                                        <div class="border rounded">
+                                                                                            <p class="p-4">johnson has sent you amekar31867@iminko.commekar31867@iminko.com quote - 123 Sample Ave NW</p>
+
+                                                                                            <div class="p-3">
+                                                                                                <div class="card ">
+                                                                                                    <div class="card-body p-3">
+                                                                                                        <p>
+                                                                                                            Please review the attached invoice.
+                                                                                                        </p>
+                                                                                                        <div class="d-flex justify-content-center align-items-center">
+                                                                                                            <button class="btn btn-secondary">Review and Sign Quote</button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <p class="ps-3">Attachment<i class="menu-icons ti ti-paperclip"></i> </p>
+                                                                                        </div>
+
+
+                                                                                    </div>
+                                                                                </div>
+
+
+
+                                                                                @*                                                <div class="row">
+                                                                                <label for="btnText" class="form-label fs-5"><b>Button text</b></label>
+                                                                                <div class="col-md-6">
+
+                                                                                <input type="text" id="btnText" class="form-control" placeholder="Review and Sign Quote" />
+                                                                                </div>
+
+
+                                                                                </div>
+
+                                                                                <div class="row">
+                                                                                <div class="mt-5">
+                                                                                <p> <b>Attach PDF</b> <input type="checkbox" /></p>
+
+                                                                                </div>
+                                                                                </div> *@
+
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                                                    Close
+                                                                                </button>
+                                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <!--Fourth card-->
+                                                    <div class="card pt-4 mb-5">
+
+                                                        <h6 class="ps-4">ORDER</h6>
+                                                        <div class="d-flex justify-content-between align-items-center border-bottom px-4">
+                                                            <p class="pt-3">Sent with order</p>
+                                                            <a href="#" data-bs-toggle="modal"
+                                                               data-bs-target="#modalOrder" class="text-decoration-underline">
+                                                                Edit template
+                                                            </a>
+                                                        </div>
+
+                                                        <!--Vertical Modal for Order-->
+                                                        <div class="modal fade" id="modalOrder" tabindex="-1" aria-hidden="true">
+                                                            <div class="modal-dialog modal-xl" role="document">
+                                                                <div class="">
+                                                                    <div class="">
+
+                                                                        <div class="modal-content m-4">
+
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title fs-4" id="exampleModalLabel4">Sent with order</h5>
+                                                                                <button type="button"
+                                                                                        class="btn-close"
+                                                                                        data-bs-dismiss="modal"
+                                                                                        aria-label="Close"></button>
+                                                                            </div>
+
+                                                                            <div class="modal-body">
+
+                                                                                <div class="row">
+                                                                                    <div class="col-md-6 mb-4">
+                                                                                        <label for="subject" class="form-label fs-5"><b>Subject</b></label>
+
+
+                                                                                        <div class="input-group">
+                                                                                            <input type="text" class="form-control" id="subject"
+                                                                                                   placeholder="{{ACCOUNT_NAME}} has sent you a{{SALESPERSON_EMAIL}}{{SALESPERSON_EMAIL}} quote" aria-label="Text input with dropdown button" />
+                                                                                            <button class="btn btn-outline-primary dropdown-toggle"
+                                                                                                    type="button"
+                                                                                                    data-bs-toggle="dropdown"
+                                                                                                    aria-expanded="false">
+                                                                                                Insert token
+                                                                                            </button>
+                                                                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Account Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson First Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Last Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Full Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Title</a></li>
+                                                                                                @*            <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Phone</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Salesperson Email</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer First Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Last Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Full Name</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Customer Address</a></li>
+                                                                                                <li><a class="dropdown-item" href="javascript:void(0);">Company Name</a></li> *@
+
+                                                                                            </ul>
+                                                                                        </div>
+
+
+                                                                                        <!--Make it in one col.-->
+                                                                                        <div class="row">
+                                                                                            <div class="col-md-12 mb-4 mt-6">
+
+                                                                                                <label for="Body" class="form-label fs-5"><b>Body</b></label>
+                                                                                                <div class="mb-4 col-md-12">
+                                                                                                    <div class="input-group input-group-merge">
+                                                                                                        <div class="col-12">
+                                                                                                            <div class="">
+
+                                                                                                                <div class="">
+                                                                                                                    <div id="snow-toolbar6">
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <select class="ql-font"></select>
+                                                                                                                            <select class="ql-size"></select>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-bold"></button>
+                                                                                                                            <button class="ql-italic"></button>
+                                                                                                                            <button class="ql-underline"></button>
+                                                                                                                            <button class="ql-strike"></button>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <select class="ql-color"></select>
+                                                                                                                            <select class="ql-background"></select>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-script" value="sub"></button>
+                                                                                                                            <button class="ql-script" value="super"></button>
+                                                                                                                        </span>
+                                                                                                                        <span class="ql-formats">
+                                                                                                                            <button class="ql-header" value="1"></button>
+                                                                                                                            <button class="ql-header" value="2"></button>
+                                                                                                                            <button class="ql-blockquote"></button>
+                                                                                                                            <button class="ql-code-block"></button>
+                                                                                                                        </span>
+                                                                                                                    </div>
+                                                                                                                    <div id="snow-editor6">
+                                                                                                                        <h5>
+                                                                                                                            <p>
+                                                                                                                                <b>
+                                                                                                                                    You have received a quote from {{SALESPERSON_NAME}} with {{ACCOUNT_NAME}}.<br />
+                                                                                                                                </b>
+                                                                                                                                Review this quote through the attached PDF.<br />
+                                                                                                                                <b>
+                                                                                                                                    Questions? Contact {{SALESPERSON_NAME}} by replying to this email.
+                                                                                                                                </b>
+
+
+
+                                                                                                                            </p>
+                                                                                                                        </h5>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+
+                                                                                            </div>
+
+                                                                                        </div>
+
+
+                                                                                    </div>
+
+
+                                                                                    <div class="col-md-6 mb-4">
+                                                                                        <label for="preview" class="form-label fs-5"><b>Preview</b></label>
+
+                                                                                        <div class="border rounded">
+                                                                                            <p class="p-4">johnson has sent you amekar31867@iminko.commekar31867@iminko.com quote - 123 Sample Ave NW</p>
+
+                                                                                            <div class="p-3">
+                                                                                                <div class="card ">
+                                                                                                    <div class="card-body p-3">
+                                                                                                        <p>
+                                                                                                            <b>
+                                                                                                                You have received a quote from Mitchell Johnson with johnson.<br />
+
+                                                                                                                Quote Total: $100.00.<br />
+
+                                                                                                                Questions? Contact Mitchell Johnson by replying<br /> to this email.
+                                                                                                            </b>
+                                                                                                        </p>
+                                                                                                        <div class="d-flex justify-content-center align-items-center">
+                                                                                                            <button class="btn btn-secondary">Review and Sign Quote</button>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <p class="ps-3">Attachment<i class="menu-icons ti ti-paperclip"></i> </p>
+                                                                                        </div>
+
+
+                                                                                    </div>
+                                                                                </div>
+
+
+
+                                                                                @*                                                <div class="row">
+                                                                                <label for="btnText" class="form-label fs-5"><b>Button text</b></label>
+                                                                                <div class="col-md-6">
+
+                                                                                <input type="text" id="btnText" class="form-control" placeholder="Review and Sign Quote" />
+                                                                                </div>
+
+
+                                                                                </div>
+
+                                                                                <div class="row">
+                                                                                <div class="mt-5">
+                                                                                <p> <b>Attach PDF</b> <input type="checkbox" /></p>
+
+                                                                                </div>
+                                                                                </div> *@
+
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                                                    Close
+                                                                                </button>
+                                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   <!--Second Accordion end-->
+
+                                </div>
+                                
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,442 @@
+﻿@{
+    Layout = "_Layout_CreateReport";
+    ViewData["Title"] = "Terms & Conditions";
+}
+
+
+<div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y pt-0">
+
+    <div class="layout-demo-wrapper">
+        <div class="layout-demo-placeholder">
+            <div class="row">
+                <div class="col-12">
+                    @* <h5 class="mb-0">Page Content</h5> *@
+                    @*       <div class="d-flex justify-content-between mb-1">
+                    <h5 class="">
+                    Terms and Conditions
+
+                    <a href="#" title="Edit the page title"><i class="ti ti-edit"></i></a>
+                    </h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-primary waves-effect">View Page</button>
+                    </div> *@
+                    <div class="row">
+                        <div class="col-4">
+                            <h5 class="mb-0">
+                                <span id="title-text">Terms and Conditions</span>
+                                <a href="#" id="edit-title-link">
+                                    <i class="ti ti-edit"></i>
+                                </a>
+                            </h5>
+                            <input type="text" id="title-input" class="form-control" style="display: none;" />
+                        </div>
+                        <div class="col-4">
+                        </div>
+                        <div class="col-4 text-end">
+                            <button type="button" class="btn btn-outline-primary waves-effect" data-bs-target="#fullscreenModal" data-bs-toggle="modal" data-bs-dismiss="modal">View Page</button>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+                <div class="card mt-3">
+                    <!-- Account -->
+                    <div class="card-body pt-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <h6 class="mb-0"><strong>Require customers to acknowledge this page</strong></h6>
+                                <label>They will be asked during the signing process</label>
+                            </div>
+                            <div class="col-4 text-end">
+                            </div>
+                            <div class="col-2 text-end">
+                                <div class="col text-end form-check form-switch">
+                                    <span class=""><input type="checkbox" class="form-check-input ms-5 mt-3" /></span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="nav-align-top nav-tabs-shadow mb-6 mt-5">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-home" aria-controls="navs-top-home" aria-selected="true">Use Summary</button>
+                                </li>
+                                <li class="nav-item" hidden>
+
+                                </li>
+                                <li class="nav-item">
+                                    <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-messages" aria-controls="navs-top-messages" aria-selected="false">Use PDF</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content p-0">
+                                <div class="tab-pane fade show active" id="navs-top-home" role="tabpanel">
+                                    <p>
+                                        <form id="formAccountSettings" method="GET" onsubmit="return false">
+                                            <div class="row">
+                                                <div class="mb-4 col-md-12">
+                                                    <div class="input-group input-group-merge">
+                                                        <div class="col-12">
+                                                            <div class="card mb-6">
+
+                                                                <div class="card-body">
+                                                                    <div id="snow-toolbar">
+                                                                        <span class="ql-formats">
+                                                                            <select class="ql-font"></select>
+                                                                            <select class="ql-size"></select>
+                                                                        </span>
+                                                                        <span class="ql-formats">
+                                                                            <button class="ql-bold"></button>
+                                                                            <button class="ql-italic"></button>
+                                                                            <button class="ql-underline"></button>
+                                                                            <button class="ql-strike"></button>
+                                                                        </span>
+                                                                        <span class="ql-formats">
+                                                                            <select class="ql-color"></select>
+                                                                            <select class="ql-background"></select>
+                                                                        </span>
+                                                                        <span class="ql-formats">
+                                                                            <button class="ql-script" value="sub"></button>
+                                                                            <button class="ql-script" value="super"></button>
+                                                                        </span>
+                                                                        <span class="ql-formats">
+                                                                            <button class="ql-header" value="1"></button>
+                                                                            <button class="ql-header" value="2"></button>
+                                                                            <button class="ql-blockquote"></button>
+                                                                            <button class="ql-code-block"></button>
+                                                                        </span>
+                                                                    </div>
+                                                                    <div id="snow-editor">
+                                                                        <label>
+                                                                            You may cancel this contract from the day you enter into the contract until 10 days after you receive a copy of the contract. You do not need a reason to cancel. If you do not receive the goods or services within 30 days of the date stated in the contract, you may cancel this contract within one year of the contract date. You lose that right if you accept delivery after the 30 days. There are other grounds for  extended cancellation. For more information, you may contact your provincial/ territorial consumer affairs office. If you cancel this contract, the seller has 15 days to refund your money and any trade-in, or the cash value of the trade-in. You must then return the goods. To cancel, you must give notice of cancellation at the address in this contract. You must give notice of cancellation by a method that will allow you to prove that you gave notice, including registered mail, fax or by personal delivery.
+
+                                                                        </label>
+                                                                        <br />
+                                                                        <label>
+                                                                            <strong>I understand that if roof rot is discovered during tear-off {{ACCOUNT_NAME}} reserves the right to replace sheathing and bill me up to $200 in addition to the estimated cost below without notifying me in advance. {{ACCOUNT_NAME}} will call me for authorization if wood replacement will exceed $200.</strong>
+                                                                        </label>
+                                                                        <br />
+                                                                        <label>
+                                                                            I understand that I must remove items from the interior walls of my home that may be damaged or fall due to vibrations from the loading/installation of shingles on to my roof (if applicable), or installation of siding. {{ACCOUNT_NAME}} is not liable for such damages.
+
+                                                                        </label>
+                                                                        <br />
+                                                                        <label>I understand that minor stucco damage may result when the roof is torn off areas where stucco meets my roof’s surface, especially where improperly applied. {{ACCOUNT_NAME}} is not liable for repairing said damage.</label>
+                                                                        <br />
+                                                                        <label>I understand that any warranty for material used during the project is provided by the material manufacturer. Unless agreed upon otherwise, {{ACCOUNT_NAME}} provides a 5-year Workmanship Warranty on portions of the project in which {{ACCOUNT_NAME}} fully replaced any existing products. Roofing workmanship warranties will be reduced to one year when home owners have requested that full synthetic underlayment not be installed. Full warranty details available by request.</label>
+                                                                        <br />
+                                                                        <label>I understand that, unless agreed upon. This does not apply to products, some of which may deteriorate more rapidly (ie. sealants) and should be inspected on a regular basis, and am not responsible for material shortage and have no claim to material surpluses.</label>
+                                                                        <br />
+
+                                                                        <label>I certify that I am the registered owner of the above project property, or have the legal permission to authorize {{ACCOUNT_NAME}} to perform the work as stated and agree to pay the total project price.</label>
+                                                                        <br />
+                                                                        <label>
+                                                                            I understand that any insurance claims are subject to the specific terms and conditions outlined by my insurance company, and may be subject to insurance company approval.
+
+                                                                        </label>
+                                                                        <br />
+                                                                        <label>
+                                                                            I understand that payment in full is due upon completion of work as stated in contract. All invoices not paid in full after 15 days will be subject to a 2% per month interest charge.
+                                                                        </label>
+                                                                        <br />
+                                                                        <label>
+                                                                            I understand that approval of my estimate is subject to customer credit approval by {{ACCOUNT_NAME}}. I agree that {{ACCOUNT_NAME}} may access my credit bureau report(s), trade references, and other credit information prior to granting credit approval.
+
+                                                                        </label>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </p>
+                                </div>
+
+                                <div class="tab-pane fade" id="navs-top-messages" role="tabpanel">
+                                    <div class="col-12">
+                                        <div class="card mb-6">
+                                            <div class="card-body">
+                                                <form action="/upload" class="dropzone needsclick" id="dropzone-basic">
+                                                    <div class="dz-message needsclick">
+                                                        Drop files here or click to upload
+
+                                                    </div>
+                                                    <div class="fallback">
+                                                        <input name="file" type="file" />
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">Layout settings</h5>
+                <span class="ms-1 pt-1">(Customize controls for this layout)</span>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-4">
+                        <h5 for="nameWithTitle" class="form-label">Layout Name</h5>
+                        <input type="text"
+                               id="nameWithTitle"
+                               class="form-control"
+                               placeholder="Enter Layout Name" />
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col mb-0">
+                        <h5 for="nameWithTitle" class="form-label">Sharing</h5>
+                        <div class="input-group">
+                            <div class="input-group-text">
+
+                                <input class="form-check-input mt-0"
+                                       type="checkbox"
+                                       value=""
+                                       aria-label="Checkbox for following text input" />
+                            </div>
+                            <label class="form-control">Make this layout available to all users</label>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Modal for View page button-->
+
+        <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalFullTitle">Review</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div style="width: 100%; height: 100%; border: 1px solid #ccc;">
+                            <iframe src="@Url.Content("~/report_view_pages/reportT&C.pdf")" width="100%" height="100%" style="border: none;"></iframe>
+                        </div>
+
+
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+   
+
+
+
+<!--Script for View page button-->
+<script>
+    const pdfUrl = '@Url.Content("~/report_view_pages/reportT&C.pdf")';
+
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdfDoc => {
+        const pdfViewer = document.getElementById('pdfViewer');
+        for (let i = 1; i <= pdfDoc.numPages; i++) {
+            pdfDoc.getPage(i).then(page => {
+                const viewport = page.getViewport({ scale: 1.5 });
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                pdfViewer.appendChild(canvas);
+
+                page.render({ canvasContext: context, viewport: viewport });
+            });
+        }
+    }).catch(error => console.error('Error loading PDF:', error));
+</script>
+
+
+
+<script>
+    document.getElementById('edit-title-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        var titleText = document.getElementById('title-text');
+        var titleInput = document.getElementById('title-input');
+        var editIcon = document.getElementById('edit-title-link');
+        if (titleInput.style.display === 'none') {
+            titleInput.style.display = 'inline-block';
+            titleInput.value = titleText.innerText;
+            titleText.style.display = 'none';
+            editIcon.style.display = 'none';
+
+            titleInput.focus();
+        } else {
+            titleText.innerText = titleInput.value;
+            titleInput.style.display = 'none';
+            titleText.style.display = 'inline-block';
+            editIcon.style.display = 'inline-block';
+        }
+    });
+    document.addEventListener('click', function (e) {
+        var titleText = document.getElementById('title-text');
+        var titleInput = document.getElementById('title-input');
+        var editIcon = document.getElementById('edit-title-link');
+        if (!titleText.contains(e.target) && !titleInput.contains(e.target) && !editIcon.contains(e.target)) {
+            if (titleInput.style.display === 'inline-block') {
+                titleText.innerText = titleInput.value;
+                titleInput.style.display = 'none';
+                titleText.style.display = 'inline-block';
+                editIcon.style.display = 'inline-block';
+            }
+        }
+    });
+
+
+</script>
+
+
+<!--Mine-->
+@* <div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y pt-0">
+
+
+
+        <div class="layout-demo-wrapper align-items-start">
+            <div class="layout-demo-placeholder w-100">
+                <div class="row">
+                    <div class="col-12">
+                        <h6 class="mb-1">PAGE CONTENT</h6>
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+
+
+                        <div>
+                            <h5 class="mb-0">
+                                <span id="Terms-text"> <b>Terms and Conditioin Page</b></span>
+                                <a href="#" id="edit-Terms-link" title="Edit the Terms and Condition page">
+                                    <i class="ti ti-edit"></i>
+                                </a>
+                            </h5>
+                            <input type="text" id="Terms-input" class="form-control" style="display: none;" />
+                        </div>
+
+                            <div>
+                                <button type="button" class="btn btn-outline-primary waves-effect">View Page</button>
+                            </div>
+
+                        </div>
+
+                        <p><i class="ti ti-info-circle"></i>Terms and Conditions content can be edited in your <a href="#" class="text-decoration-underline">Layouts</a></p>
+
+
+
+
+
+                        <div class="card mb-6">
+
+                            <div class="card-body pt-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p><b>Require customers to acknowledge this page</b><br />They will be asked during the singing process</p>
+
+                                    <div class="p-3 pe-6 ms-auto">
+
+                                        <label class="switch">
+                                            <input type="checkbox" class="switch-input" />
+                                            <span class="switch-toggle-slider" id="with-title">
+                                                <span class="switch-on" id="with-title"></span>
+                                                <span class="switch-off"></span>
+                                            </span>
+
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="card mb-6">
+                            <div class="card-body pt-4">
+                                <div class="row-4">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+</div>
+
+
+
+<script>
+    document.getElementById('edit-Terms-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        var titleText = document.getElementById('Terms-text');
+        var titleInput = document.getElementById('Terms-input');
+        var editIcon = document.getElementById('edit-Terms-link');
+        if (titleInput.style.display === 'none') {
+            titleInput.style.display = 'inline-block';
+            titleInput.value = titleText.innerText;
+            titleText.style.display = 'none';
+            editIcon.style.display = 'none';
+
+            titleInput.focus();
+        } else {
+            titleText.innerText = titleInput.value;
+            titleInput.style.display = 'none';
+            titleText.style.display = 'inline-block';
+            editIcon.style.display = 'inline-block';
+        }
+    });
+    document.addEventListener('click', function (e) {
+        var titleText = document.getElementById('Terms-text');
+        var titleInput = document.getElementById('Terms-input');
+        var editIcon = document.getElementById('edit-Terms-link');
+        if (!titleText.contains(e.target) && !titleInput.contains(e.target) && !editIcon.contains(e.target)) {
+            if (titleInput.style.display === 'inline-block') {
+                titleText.innerText = titleInput.value;
+                titleInput.style.display = 'none';
+                titleText.style.display = 'inline-block';
+                editIcon.style.display = 'inline-block';
+            }
+        }
+    });
+
+
+</script>
+ *@

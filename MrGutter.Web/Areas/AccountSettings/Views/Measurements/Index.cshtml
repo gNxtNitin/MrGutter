@@ -1,0 +1,434 @@
+﻿@{
+    Layout = "_Layout_AccountSetting";
+    ViewBag.Title = "AccountSettingsPDFs";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    <div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y">
+
+        <div class="layout-demo-wrapper align-items-start">
+            <div class="layout-demo-placeholder w-100">
+                <div class="row">
+                    <div class="col-12">
+                        <h5 class="mb-1"><b>Measurements</b></h5>
+
+                        <p class="mb-6">Define categories of tokens that contractor measure for projects they are working on. These items are used in price data calculatoins.</p>
+
+                        <div class="mb-6">
+                            <div class="card-body pt-4">
+
+                                <div class="row g-6">
+
+                                    <div class="accordion mt-4" id="accordionExample">
+
+                                        <!--Accordion-->
+
+                                        <div class="">
+                                            <ul class="list-group list-group-flush mt-2 list-unstyled" id="handle-list-1">
+                                                <li class="text-decoration-none bg-white mb-3" draggable="false">
+                                                    <h2 class="accordion-header d-flex align-items-center" id="headingOne">
+                                                        <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom ms-2"></i>
+                                                        <button type="button"
+                                                                class="accordion-button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#accordionOne"
+                                                                aria-expanded="true"
+                                                                aria-controls="accordionOne">
+                                                            Roof Measurement Tokens
+                                                        </button>
+                                                    </h2>
+
+                                                    <div id="accordionOne"
+                                                         class="accordion-collapse collapse"
+                                                         data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+
+                                                            <ul class="list-group list-group-flush mt-2" id="handle-list-2">
+
+                                                                <li class="d-flex justify-content-between border-bottom p-3" draggable="false">
+                                                                    <span class="col-sm-7 d-flex justify-content-start">
+                                                                        <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                        <span>Total Roof Area</span>
+                                                                    </span>
+                                                                    <span class="col-sm-5 d-flex justify-content-end align-items-center">
+                                                                     
+                                                                        <span><a href="/Layout/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                        <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                        <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                    </span>
+                                                                </li>
+                                                                
+
+                                                                <li class="d-flex justify-content-between border-bottom p-3">
+                                                                    <span class="col-sm-7 d-flex justify-content-start">
+                                                                        <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                        <span>Total Ridges/Hips</span>
+                                                                    </span>
+                                                                    <span class="col-sm-5 d-flex justify-content-end align-items-center">
+
+                                                                        <span><a href="/Layout/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                        <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                        <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                    </span>
+                                                                </li>
+
+                                                                <li class="d-flex justify-content-between border-bottom p-3">
+                                                                    <span class="col-sm-7 d-flex justify-content-start">
+                                                                        <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                        <span>Total Ridges</span>
+                                                                    </span>
+                                                                    <span class="col-sm-5 d-flex justify-content-end align-items-center">
+
+                                                                        <span><a href="/Layout/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                        <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                        <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                    </span>
+                                                                </li>
+                                                                <li class="d-flex justify-content-between border-bottom p-3">
+                                                                    <span class="col-sm-7 d-flex justify-content-start">
+                                                                        <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                        <span>Total Hips</span>
+                                                                    </span>
+                                                                    <span class="col-sm-5 d-flex justify-content-end align-items-center">
+
+                                                                        <span><a href="/Layout/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                        <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                        <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                    </span>
+                                                                </li>
+
+                                                                <li class="d-flex justify-content-between border-bottom p-3">
+                                                                    <span class="col-sm-7 d-flex justify-content-start">
+                                                                        <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                        <span>Total Valleys</span>
+                                                                    </span>
+                                                                    <span class="col-sm-5 d-flex justify-content-end align-items-center">
+
+                                                                        <span><a href="/Layout/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                        <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                        <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                    </span>
+                                                                </li>
+
+                                                                <li class="d-flex justify-content-between border-bottom p-3">
+                                                                    <span class="col-sm-7 d-flex justify-content-start">
+                                                                        <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                        <span>Total Eaves</span>
+                                                                    </span>
+                                                                    <span class="col-sm-5 d-flex justify-content-end align-items-center">
+
+                                                                        <span><a href="/Layout/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                        <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                        <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                    </span>
+                                                                </li>
+
+                                                                <li class="d-flex justify-content-between border-bottom p-3">
+                                                                    <span class="col-sm-7 d-flex justify-content-start">
+                                                                        <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                        <span>Total Rakes</span>
+                                                                    </span>
+                                                                    <span class="col-sm-5 d-flex justify-content-end align-items-center">
+
+                                                                        <span><a href="/Layout/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                        <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                        <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                    </span>
+                                                                </li>
+
+                                                                <li class="d-flex justify-content-between border-bottom p-3">
+                                                                    <span class="col-sm-7 d-flex justify-content-start">
+                                                                        <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                        <span>Suggested Waste Percentage</span>
+                                                                    </span>
+                                                                    <span class="col-sm-5 d-flex justify-content-end align-items-center">
+
+                                                                        <span><a href="/Layout/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                        <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                        <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                    </span>
+                                                                </li>
+
+                                                                <li class="d-flex justify-content-between border-bottom p-3">
+                                                                    <span class="col-sm-7 d-flex justify-content-start">
+                                                                        <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                        <span>Quick Squres</span>
+                                                                    </span>
+                                                                    <span class="col-sm-5 d-flex justify-content-end align-items-center">
+
+                                                                        <span><a href="/Layout/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                        <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                        <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                    </span>
+                                                                </li>
+
+                                                            </ul>
+                                                            <div class="mt-3">
+                                                               
+                                                                <a data-bs-toggle="modal"
+                                                                   data-bs-target="#modalCenter1"
+                                                                   href="#"
+                                                                   class="btn bg bg-white text-black border waves-effect">
+                                                                    Add Token
+                                                                </a>
+                                                                <a data-bs-toggle="modal"
+                                                                   data-bs-target="#modalCenter2"
+                                                                   href="#"
+                                                                   class="btn bg bg-white text-black border waves-effect">
+                                                                    Edit Category
+                                                                </a>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <!--Second Accordion-->
+                                                <li class="text-decoration-none bg-white mb-3" draggable="false">
+                                                    <h2 class="accordion-header d-flex align-items-center" id="headingtwo">
+                                                        <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom ms-2"></i>
+                                                        <button type="button"
+                                                                class="accordion-button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#accordionTwo"
+                                                                aria-expanded="true"
+                                                                aria-controls="accordionTwo">
+                                                            Wall Measurement Tokens
+                                                        </button>
+                                                    </h2>
+
+                                                    <div id="accordionTwo"
+                                                         class="accordion-collapse collapse"
+                                                         data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+
+                                                            <ul class="list-group list-group-flush mt-2" id="handle-list-3">
+
+                                                                <li class="d-flex justify-content-between border-bottom p-3" draggable="false">
+                                                                    <span class="col-sm-7 d-flex justify-content-start">
+                                                                        <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                        <span>Quick Squares</span>
+                                                                    </span>
+                                                                    <span class="col-sm-5 d-flex justify-content-end align-items-center">
+
+                                                                        <span><a href="/Layout/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                        <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                        <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                    </span>
+                                                                </li>
+
+                                                                <li class="d-flex justify-content-between border-bottom p-3">
+                                                                    <span class="col-sm-7 d-flex justify-content-start">
+                                                                        <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                        <span>Total Roof Area</span>
+                                                                    </span>
+                                                                    <span class="col-sm-5 d-flex justify-content-end align-items-center">
+
+                                                                        <span><a href="/Layout/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                        <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                        <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                    </span>
+                                                                </li>
+
+                                                            </ul>
+                                                            <div class="mt-3">
+
+                                                                <a data-bs-toggle="modal"
+                                                                   data-bs-target="#modalCenter1"
+                                                                   href="#"
+                                                                   class="btn bg bg-white text-black border waves-effect">
+                                                                    Add Token
+                                                                </a>
+                                                                <a data-bs-toggle="modal"
+                                                                   data-bs-target="#modalCenter2"
+                                                                   href="#"
+                                                                   class="btn bg bg-white text-black border waves-effect">
+                                                                    Edit Category
+                                                                </a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                             
+                                            </ul>
+
+                                            <!--Vertical modal start for Edit-->
+                                            <div class="modal fade" id="modalCenter2" tabindex="-1" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+
+                                                            <button type="button"
+                                                                    class="btn-close"
+                                                                    data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body pt-1">
+
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <div class="container-xxl flex-grow-1 container-p-y">
+                                                                    <h4 class="mb-4">Edit category</h4>
+
+                                                                    <div class="mt-4">
+                                                                        <label for="catName"><h5 class="mb-1"><b>Category Name</b></h5></label>
+                                                                        <p>For example, 'Joinery' or 'Plumbing'</p>
+                                                                        <input id="taxName" class="form-control" placeholder="Roof Measurements Tokens" />
+                                                                    </div>
+
+
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                                Cancel
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary">Save</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!--Vertical modal end-->
+
+                                            <!--Vertical modal start for Add-->
+                                            <div class="modal fade" id="modalCenter1" tabindex="-1" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+
+                                                            <button type="button"
+                                                                    class="btn-close"
+                                                                    data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body pt-1">
+
+                                                            <div class="d-flex justify-content-center align-items-center">
+                                                                <div class="container-xxl flex-grow-1 container-p-y">
+                                                                    <h4 class="mb-4">Add token</h4>
+                                                                    <p>To store this token for use in future reports, give it a name and a unit of measurement.</p>
+
+                                                                    <div class="d-flex justify-content-between align-items-center mt-4">
+                                                                        <div class="col-md-7">
+                                                                            <label for="tokenName"><h5 class="mb-1"><b>Token Name</b></h5></label>
+                                                                            <input id="tokenName" class="form-control" />
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <label for="unitMeasure"><h5 class="mb-1"><b>Unit of Measure</b></h5></label>
+                                                                            <input type="number" id="unitMeasure" class="form-control" />
+                                                                        </div>
+                                                                     
+                                                                    </div>
+
+                                                             
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                                Cancel
+                                                            </button>
+                                                            <button type="button" class="btn btn-primary">Save</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <!--Vertical modal end-->
+                                   
+                                        </div>
+
+                    
+
+
+                                    
+                                      
+                                    </div>
+
+
+                                    <div class="mt-3">
+                                       
+                                        <a data-bs-toggle="modal"
+                                           data-bs-target="#modalCenter"
+                                           href="#"
+                                           class="btn bg bg-white text-black border waves-effect">
+                                            Add Category
+                                        </a>
+                                    </div>
+
+
+                                    <!--Vertical modal start for category-->
+                                    <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                    <button type="button"
+                                                            class="btn-close"
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body pt-1">
+
+                                                    <div class="d-flex justify-content-center align-items-center">
+                                                        <div class="container-xxl flex-grow-1 container-p-y">
+                                                            <h4 class="mb-4">Add measurement category</h4>
+
+                                                            <div class="mt-4">
+                                                                <label for="catName"><h5 class="mb-1"><b>Category Name</b></h5></label>
+                                                                <p>For example, 'Joinery' or 'Plumbing'</p>
+                                                                <input id="taxName" class="form-control" />
+                                                            </div>
+
+
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                        Cancel
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary">Save</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                    <!--Vertical modal end-->
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

@@ -290,11 +290,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Services\\MrGutter.Services.csproj",
+      "projectUniqueName": "C:\\Users\\YASH\\source\\repos\\MrGutter-UI\\MrGutter.Services\\MrGutter.Services.csproj",
       "projectName": "MrGutter.Services",
-      "projectPath": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Services\\MrGutter.Services.csproj",
+      "projectPath": "C:\\Users\\YASH\\source\\repos\\MrGutter-UI\\MrGutter.Services\\MrGutter.Services.csproj",
       "packagesPath": "C:\\Users\\YASH\\.nuget\\packages\\",
-      "outputPath": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Services\\obj\\",
+      "outputPath": "C:\\Users\\YASH\\source\\repos\\MrGutter-UI\\MrGutter.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -316,11 +316,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\MrGutter\\MrGutter_Web\\MrGutter.Models\\MrGutter.Models.csproj": {
-              "projectPath": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Models\\MrGutter.Models.csproj"
+            "C:\\Users\\YASH\\source\\repos\\MrGutter-UI\\MrGutter.Models\\MrGutter.Models.csproj": {
+              "projectPath": "C:\\Users\\YASH\\source\\repos\\MrGutter-UI\\MrGutter.Models\\MrGutter.Models.csproj"
             },
-            "D:\\MrGutter\\MrGutter_Web\\MrGutter.Repository\\MrGutter.Repository.csproj": {
-              "projectPath": "D:\\MrGutter\\MrGutter_Web\\MrGutter.Repository\\MrGutter.Repository.csproj"
+            "C:\\Users\\YASH\\source\\repos\\MrGutter-UI\\MrGutter.Repository\\MrGutter.Repository.csproj": {
+              "projectPath": "C:\\Users\\YASH\\source\\repos\\MrGutter-UI\\MrGutter.Repository\\MrGutter.Repository.csproj"
             }
           }
         }

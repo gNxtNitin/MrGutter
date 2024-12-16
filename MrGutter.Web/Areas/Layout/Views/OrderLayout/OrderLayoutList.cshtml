@@ -1,0 +1,211 @@
+﻿@{
+    Layout = "_Layout_AccountSetting";
+    ViewBag.Title = "layout Order";
+}
+
+<div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y">
+    <!-- Handles Example -->
+    <div class="layout-demo-wrapper">
+        <div class="layout-demo-placeholder">
+            <!-- Form with Tabs -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="mt-1">
+                            Layouts — Orders
+                        </h4>
+                        <!-- Button trigger modal -->
+                        <button type="button"
+                                class="btn btn-outline-info waves-effect"
+                                data-bs-toggle="modal"
+                                data-bs-target="#modalCenter">
+                            Create Layout
+                        </button>
+                    </div>
+                    <h6>Create reusable report layouts for your future projects</h6>
+                    <div class="card mb-6">
+                        <div class="card-header px-0 pt-0">
+                            <div class="nav-align-top">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <button type="button"
+                                                class="nav-link active"
+                                                data-bs-toggle="tab"
+                                                data-bs-target="#form-tabs-personal"
+                                                aria-controls="form-tabs-personal"
+                                                role="tab"
+                                                aria-selected="true">
+                                            <span class="ti ti-user ti-lg d-sm-none"></span><span class="d-none d-sm-block">My Layout</span>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button"
+                                                class="nav-link"
+                                                data-bs-toggle="tab"
+                                                data-bs-target="#form-tabs-account"
+                                                aria-controls="form-tabs-account"
+                                                role="tab"
+                                                aria-selected="false">
+                                            <span class="ti ti-user-cog ti-lg d-sm-none"></span><span class="d-none d-sm-block">Shared Layout</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content p-0">
+                                <!-- Personal Info -->
+                                <div class="tab-pane fade active show" id="form-tabs-personal" role="tabpanel">
+                                    <form>
+                                        <div class="row g-6">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="input-group input-group-merge">
+                                                        <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon-search31">
+                                                    </div>
+                                                    <div class="col-sm-12 col-form-label text-sm-end">
+                                                        <ul class="list-group list-group-flush mt-2">
+                                                            <li class="list-group-item d-flex justify-content-between">
+                                                                <span class="col-sm-7 d-flex justify-content-start">
+                                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                    <span>(Sample) Residential Metals</span>
+                                                                </span>
+                                                                <span class="col-sm-5 d-flex justify-content-end align-items-center">
+                                                                    <span class="me-4"><a href="#" class="btn btn-outline-secondary waves-effect">Make Default</a></span>
+                                                                    <span><a href="/Layout/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                    <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                    <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                </span>
+                                                            </li>
+                                                            <li class="list-group-item d-flex justify-content-between">
+                                                                <span class="col-sm-7 d-flex justify-content-start">
+                                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                    <span>(Sample) Interior Painting - General</span>
+                                                                </span>
+                                                                <span class="col-sm-5 d-flex justify-content-end align-items-center">
+                                                                    <span class="me-4"><a href="#" class="btn btn-outline-secondary waves-effect">Make Default</a></span>
+                                                                    <span><a href="/Layout/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                    <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                    <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                </span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- Account Details -->
+                                <div class="tab-pane fade" id="form-tabs-account" role="tabpanel">
+                                    <form>
+                                        <div class="row g-6">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="input-group input-group-merge">
+                                                        <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon-search31">
+                                                    </div>
+                                                    <div class="col-sm-12 col-form-label text-sm-end">
+                                                        <ul class="list-group list-group-flush mt-2">
+                                                            <li class="list-group-item d-flex justify-content-between">
+                                                                <span class="col-sm-7 d-flex justify-content-start">
+                                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                    <span>Default Layout</span>
+                                                                </span>
+                                                                <span class="col-sm-5 d-flex justify-content-end align-items-center">
+                                                                    <span class="me-4"><strong>Default</strong></span>
+                                                                    <span><a href="/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                    <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                    <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                </span>
+                                                            </li>
+                                                            <li class="list-group-item d-flex justify-content-between">
+                                                                <span class="col-sm-7 d-flex justify-content-start">
+                                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                    <span>(Sample) Residential Metals</span>
+                                                                </span>
+                                                                <span class="col-sm-5 d-flex justify-content-end align-items-center">
+                                                                    <span class="me-4"><a href="#" class="btn btn-outline-secondary waves-effect">Make Default</a></span>
+                                                                    <span><a href="/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                    <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                    <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                </span>
+                                                            </li>
+                                                            <li class="list-group-item d-flex justify-content-between">
+                                                                <span class="col-sm-7 d-flex justify-content-start">
+                                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                    <span>(Sample) Interior Painting - General</span>
+                                                                </span>
+                                                                <span class="col-sm-5 d-flex justify-content-end align-items-center">
+                                                                    <span class="me-4"><a href="#" class="btn btn-outline-secondary waves-effect">Make Default</a></span>
+                                                                    <span><a href="/OrderLayout/LayoutTitle" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                    <span><a href="#" title="Copy"><i class="ti ti-lg ti-copy-plus text-secondary me-2"></i></a></span>
+                                                                    <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                </span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vertically Centered Modal -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalCenterTitle">Create order layout</h5>
+                                    <button type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col mb-4">
+                                            <label for="nameWithTitle" class="form-label">Layout Name</label>
+                                            <input type="text"
+                                                   id="nameWithTitle"
+                                                   class="form-control"
+                                                   placeholder="Enter Layout Name" />
+                                        </div>
+                                    </div>
+                                    <div class="row g-4">
+                                        <div class="col mb-0">
+                                            <div class="input-group">
+                                                <div class="input-group-text">
+                                                    <input class="form-check-input mt-0"
+                                                           type="checkbox"
+                                                           value=""
+                                                           aria-label="Checkbox for following text input" />
+                                                </div>
+                                               
+                                        <label class="form-control">Share layout with all users</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </div>
+    <!-- /Handles Example ends -->
+</div>

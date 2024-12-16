@@ -3,10 +3,10 @@
     {
       "id": 1,
       "full_name": "Galen Slixby",
-      "role": "Editor",
+      "role": "SuperAdmin",
       "username": "gslixby0",
       "email": "gslixby0@abc.net.au",
-      "current_plan": "Enterprise",
+      "phone": "+3219876367",
       "billing": "Manual - Credit Card",
       "status": 3,
       "avatar": ""
@@ -14,10 +14,10 @@
     {
       "id": 2,
       "full_name": "Halsey Redmore",
-      "role": "Author",
+      "role": "Admin",
       "username": "hredmore1",
       "email": "hredmore1@imgur.com",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Paypal",
       "status": 1,
       "avatar": "10.png"
@@ -25,10 +25,10 @@
     {
       "id": 3,
       "full_name": "Marjory Sicely",
-      "role": "Maintainer",
+      "role": "Estimator",
       "username": "msicely2",
       "email": "msicely2@who.int",
-      "current_plan": "Enterprise",
+      "phone": "+3219876367",
       "billing": "Auto Debit",
       "status": 2,
       "avatar": "1.png"
@@ -36,10 +36,10 @@
     {
       "id": 4,
       "full_name": "Cyrill Risby",
-      "role": "Maintainer",
+      "role": "Estimator",
       "username": "crisby3",
       "email": "crisby3@wordpress.com",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Credit Card",
       "status": 3,
       "avatar": "9.png"
@@ -47,10 +47,10 @@
     {
       "id": 5,
       "full_name": "Maggy Hurran",
-      "role": "Subscriber",
+      "role": "Estimator",
       "username": "mhurran4",
       "email": "mhurran4@yahoo.co.jp",
-      "current_plan": "Enterprise",
+      "phone": "+3219876367",
       "billing": "Auto Debit",
       "status": 1,
       "avatar": "10.png"
@@ -58,10 +58,10 @@
     {
       "id": 6,
       "full_name": "Silvain Halstead",
-      "role": "Author",
+      "role": "Admin",
       "username": "shalstead5",
       "email": "shalstead5@shinystat.com",
-      "current_plan": "Company",
+      "phone": "+3219876325",
       "billing": "Auto Debit",
       "status": 2,
       "avatar": ""
@@ -69,10 +69,10 @@
     {
       "id": 7,
       "full_name": "Breena Gallemore",
-      "role": "Subscriber",
+      "role": "Estimator",
       "username": "bgallemore6",
       "email": "bgallemore6@boston.com",
-      "current_plan": "Company",
+      "phone": "+3219876325",
       "billing": "Manual - Paypal",
       "status": 1,
       "avatar": ""
@@ -80,10 +80,10 @@
     {
       "id": 8,
       "full_name": "Kathryne Liger",
-      "role": "Author",
+      "role": "Admin",
       "username": "kliger7",
       "email": "kliger7@vinaora.com",
-      "current_plan": "Enterprise",
+      "phone": "+3219876367",
       "billing": "Manual - Cash",
       "status": 1,
       "avatar": "9.png"
@@ -91,10 +91,10 @@
     {
       "id": 9,
       "full_name": "Franz Scotfurth",
-      "role": "Subscriber",
+      "role": "Estimator",
       "username": "fscotfurth8",
       "email": "fscotfurth8@dailymotion.com",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Auto Debit",
       "status": 1,
       "avatar": "2.png"
@@ -102,10 +102,10 @@
     {
       "id": 10,
       "full_name": "Jillene Bellany",
-      "role": "Maintainer",
+      "role": "Estimator",
       "username": "jbellany9",
       "email": "jbellany9@kickstarter.com",
-      "current_plan": "Company",
+      "phone": "+3219876325",
       "billing": "Auto Debit",
       "status": 3,
       "avatar": "9.png"
@@ -113,10 +113,10 @@
     {
       "id": 11,
       "full_name": "Jonah Wharlton",
-      "role": "Subscriber",
+      "role": "Estimator",
       "username": "jwharltona",
       "email": "jwharltona@oakley.com",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Paypal",
       "status": 3,
       "avatar": "4.png"
@@ -124,10 +124,10 @@
     {
       "id": 12,
       "full_name": "Seth Hallam",
-      "role": "Subscriber",
+      "role": "Estimator",
       "username": "shallamb",
       "email": "shallamb@hugedomains.com",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Credit Card",
       "status": 1,
       "avatar": "5.png"
@@ -135,10 +135,10 @@
     {
       "id": 13,
       "full_name": "Yoko Pottie",
-      "role": "Subscriber",
+      "role": "Estimator",
       "username": "ypottiec",
       "email": "ypottiec@privacy.gov.au",
-      "current_plan": "Basic",
+      "phone": "+3219876367",
       "billing": "Auto Debit",
       "status": 3,
       "avatar": "7.png"
@@ -146,10 +146,10 @@
     {
       "id": 14,
       "full_name": "Maximilianus Krause",
-      "role": "Author",
+      "role": "Admin",
       "username": "mkraused",
       "email": "mkraused@stanford.edu",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Auto Debit",
       "status": 2,
       "avatar": "9.png"
@@ -157,10 +157,10 @@
     {
       "id": 15,
       "full_name": "Zsazsa McCleverty",
-      "role": "Maintainer",
+      "role": "Estimator",
       "username": "zmcclevertye",
       "email": "zmcclevertye@soundcloud.com",
-      "current_plan": "Enterprise",
+      "phone": "+3219876367",
       "billing": "Auto Debit",
       "status": 2,
       "avatar": "2.png"
@@ -168,10 +168,10 @@
     {
       "id": 16,
       "full_name": "Bentlee Emblin",
-      "role": "Author",
+      "role": "Admin",
       "username": "bemblinf",
       "email": "bemblinf@wired.com",
-      "current_plan": "Company",
+      "phone": "+3219876325",
       "billing": "Auto Debit",
       "status": 2,
       "avatar": "6.png"
@@ -179,10 +179,10 @@
     {
       "id": 17,
       "full_name": "Brockie Myles",
-      "role": "Maintainer",
+      "role": "Estimator",
       "username": "bmylesg",
       "email": "bmylesg@amazon.com",
-      "current_plan": "Basic",
+      "phone": "+3219876367",
       "billing": "Manual - Paypal",
       "status": 2,
       "avatar": ""
@@ -190,10 +190,10 @@
     {
       "id": 18,
       "full_name": "Bertha Biner",
-      "role": "Editor",
+      "role": "SuperAdmin",
       "username": "bbinerh",
       "email": "bbinerh@mozilla.com",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Cash",
       "status": 2,
       "avatar": "7.png"
@@ -204,7 +204,7 @@
       "role": "Admin",
       "username": "tbruntjeni",
       "email": "tbruntjeni@sitemeter.com",
-      "current_plan": "Enterprise",
+      "phone": "+3219876367",
       "billing": "Manual - Cash",
       "status": 2,
       "avatar": ""
@@ -212,10 +212,10 @@
     {
       "id": 20,
       "full_name": "Wesley Burland",
-      "role": "Editor",
+      "role": "SuperAdmin",
       "username": "wburlandj",
       "email": "wburlandj@uiuc.edu",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Auto Debit",
       "status": 3,
       "avatar": "6.png"
@@ -223,10 +223,10 @@
     {
       "id": 21,
       "full_name": "Stu Delamaine",
-      "role": "Author",
+      "role": "Admin",
       "username": "sdelamainek",
       "email": "sdelamainek@who.int",
-      "current_plan": "Basic",
+      "phone": "+3219876367",
       "billing": "Auto Debit",
       "status": 1,
       "avatar": "1.png"
@@ -234,10 +234,10 @@
     {
       "id": 22,
       "full_name": "Jameson Lyster",
-      "role": "Editor",
+      "role": "SuperAdmin",
       "username": "jlysterl",
       "email": "jlysterl@guardian.co.uk",
-      "current_plan": "Company",
+      "phone": "+3219876325",
       "billing": "Auto Debit",
       "status": 3,
       "avatar": "8.png"
@@ -245,10 +245,10 @@
     {
       "id": 23,
       "full_name": "Kare Skitterel",
-      "role": "Maintainer",
+      "role": "Estimator",
       "username": "kskitterelm",
       "email": "kskitterelm@washingtonpost.com",
-      "current_plan": "Basic",
+      "phone": "+3219876367",
       "billing": "Manual - Paypal",
       "status": 1,
       "avatar": "3.png"
@@ -259,7 +259,7 @@
       "role": "Admin",
       "username": "chatherleighn",
       "email": "chatherleighn@washington.edu",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Paypal",
       "status": 1,
       "avatar": "2.png"
@@ -270,7 +270,7 @@
       "role": "Admin",
       "username": "amiccoo",
       "email": "amiccoo@whitehouse.gov",
-      "current_plan": "Enterprise",
+      "phone": "+3219876367",
       "billing": "Manual - Credit Card",
       "status": 1,
       "avatar": ""
@@ -281,7 +281,7 @@
       "role": "Admin",
       "username": "hhassonp",
       "email": "hhassonp@bizjournals.com",
-      "current_plan": "Basic",
+      "phone": "+3219876367",
       "billing": "Manual - Cash",
       "status": 3,
       "avatar": "4.png"
@@ -289,10 +289,10 @@
     {
       "id": 27,
       "full_name": "Germain Jacombs",
-      "role": "Editor",
+      "role": "SuperAdmin",
       "username": "gjacombsq",
       "email": "gjacombsq@jigsy.com",
-      "current_plan": "Enterprise",
+      "phone": "+3219876367",
       "billing": "Manual - Cash",
       "status": 2,
       "avatar": "10.png"
@@ -300,10 +300,10 @@
     {
       "id": 28,
       "full_name": "Bree Kilday",
-      "role": "Maintainer",
+      "role": "Estimator",
       "username": "bkildayr",
       "email": "bkildayr@mashable.com",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Credit Card",
       "status": 2,
       "avatar": ""
@@ -311,10 +311,10 @@
     {
       "id": 29,
       "full_name": "Candice Pinyon",
-      "role": "Maintainer",
+      "role": "Estimator",
       "username": "cpinyons",
       "email": "cpinyons@behance.net",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Auto Debit",
       "status": 2,
       "avatar": "7.png"
@@ -322,10 +322,10 @@
     {
       "id": 30,
       "full_name": "Isabel Mallindine",
-      "role": "Subscriber",
+      "role": "Estimator",
       "username": "imallindinet",
       "email": "imallindinet@shinystat.com",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Credit Card",
       "status": 1,
       "avatar": ""
@@ -336,7 +336,7 @@
       "role": "Admin",
       "username": "gmeinekenu",
       "email": "gmeinekenu@hc360.com",
-      "current_plan": "Basic",
+      "phone": "+3219876367",
       "billing": "Manual - Cash",
       "status": 1,
       "avatar": "1.png"
@@ -344,10 +344,10 @@
     {
       "id": 32,
       "full_name": "Rafaellle Snowball",
-      "role": "Editor",
+      "role": "SuperAdmin",
       "username": "rsnowballv",
       "email": "rsnowballv@indiegogo.com",
-      "current_plan": "Basic",
+      "phone": "+3219876367",
       "billing": "Manual - Paypal",
       "status": 1,
       "avatar": "5.png"
@@ -358,7 +358,7 @@
       "role": "Admin",
       "username": "remerw",
       "email": "remerw@blogtalkradio.com",
-      "current_plan": "Basic",
+      "phone": "+3219876367",
       "billing": "Auto Debit",
       "status": 2,
       "avatar": "8.png"
@@ -366,10 +366,10 @@
     {
       "id": 34,
       "full_name": "Ophelie Fibbens",
-      "role": "Subscriber",
+      "role": "Estimator",
       "username": "ofibbensx",
       "email": "ofibbensx@booking.com",
-      "current_plan": "Company",
+      "phone": "+3219876325",
       "billing": "Manual - Cash",
       "status": 2,
       "avatar": "4.png"
@@ -377,10 +377,10 @@
     {
       "id": 35,
       "full_name": "Stephen MacGilfoyle",
-      "role": "Maintainer",
+      "role": "Estimator",
       "username": "smacgilfoyley",
       "email": "smacgilfoyley@bigcartel.com",
-      "current_plan": "Company",
+      "phone": "+3219876325",
       "billing": "Manual - Paypal",
       "status": 1,
       "avatar": ""
@@ -388,10 +388,10 @@
     {
       "id": 36,
       "full_name": "Bradan Rosebotham",
-      "role": "Subscriber",
+      "role": "Estimator",
       "username": "brosebothamz",
       "email": "brosebothamz@tripadvisor.com",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Paypal",
       "status": 3,
       "avatar": ""
@@ -402,7 +402,7 @@
       "role": "Admin",
       "username": "shebblethwaite10",
       "email": "shebblethwaite10@arizona.edu",
-      "current_plan": "Company",
+      "phone": "+3219876325",
       "billing": "Manual - Cash",
       "status": 3,
       "avatar": "9.png"
@@ -410,10 +410,10 @@
     {
       "id": 38,
       "full_name": "Moritz Piccard",
-      "role": "Maintainer",
+      "role": "Estimator",
       "username": "mpiccard11",
       "email": "mpiccard11@vimeo.com",
-      "current_plan": "Enterprise",
+      "phone": "+3219876367",
       "billing": "Manual - Credit Card",
       "status": 3,
       "avatar": "1.png"
@@ -421,10 +421,10 @@
     {
       "id": 39,
       "full_name": "Tyne Widmore",
-      "role": "Subscriber",
+      "role": "Estimator",
       "username": "twidmore12",
       "email": "twidmore12@bravesites.com",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Cash",
       "status": 1,
       "avatar": ""
@@ -432,10 +432,10 @@
     {
       "id": 40,
       "full_name": "Florenza Desporte",
-      "role": "Author",
+      "role": "Admin",
       "username": "fdesporte13",
       "email": "fdesporte13@omniture.com",
-      "current_plan": "Company",
+      "phone": "+3219876325",
       "billing": "Manual - Cash",
       "status": 2,
       "avatar": "6.png"
@@ -443,10 +443,10 @@
     {
       "id": 41,
       "full_name": "Edwina Baldetti",
-      "role": "Maintainer",
+      "role": "Estimator",
       "username": "ebaldetti14",
       "email": "ebaldetti14@theguardian.com",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Credit Card",
       "status": 1,
       "avatar": ""
@@ -454,10 +454,10 @@
     {
       "id": 42,
       "full_name": "Benedetto Rossiter",
-      "role": "Editor",
+      "role": "SuperAdmin",
       "username": "brossiter15",
       "email": "brossiter15@craigslist.org",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Cash",
       "status": 3,
       "avatar": ""
@@ -468,7 +468,7 @@
       "role": "Admin",
       "username": "mmcnirlan16",
       "email": "mmcnirlan16@hc360.com",
-      "current_plan": "Basic",
+      "phone": "+3219876367",
       "billing": "Manual - Credit Card",
       "status": 3,
       "avatar": ""
@@ -476,10 +476,10 @@
     {
       "id": 44,
       "full_name": "Vladamir Koschek",
-      "role": "Author",
+      "role": "Admin",
       "username": "vkoschek17",
       "email": "vkoschek17@abc.net.au",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Paypal",
       "status": 2,
       "avatar": ""
@@ -487,10 +487,10 @@
     {
       "id": 45,
       "full_name": "Corrie Perot",
-      "role": "Subscriber",
+      "role": "Estimator",
       "username": "cperot18",
       "email": "cperot18@goo.ne.jp",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Paypal",
       "status": 1,
       "avatar": "3.png"
@@ -498,10 +498,10 @@
     {
       "id": 46,
       "full_name": "Saunder Offner",
-      "role": "Maintainer",
+      "role": "Estimator",
       "username": "soffner19",
       "email": "soffner19@mac.com",
-      "current_plan": "Enterprise",
+      "phone": "+3219876367",
       "billing": "Auto Debit",
       "status": 1,
       "avatar": ""
@@ -512,7 +512,7 @@
       "role": "Admin",
       "username": "kcourtliff1a",
       "email": "kcourtliff1a@bbc.co.uk",
-      "current_plan": "Basic",
+      "phone": "+3219876367",
       "billing": "Manual - Paypal",
       "status": 2,
       "avatar": "1.png"
@@ -523,7 +523,7 @@
       "role": "Admin",
       "username": "owind1b",
       "email": "owind1b@yandex.ru",
-      "current_plan": "Basic",
+      "phone": "+3219876367",
       "billing": "Manual - Paypal",
       "status": 1,
       "avatar": ""
@@ -531,10 +531,10 @@
     {
       "id": 49,
       "full_name": "Paulie Durber",
-      "role": "Subscriber",
+      "role": "Estimator",
       "username": "pdurber1c",
       "email": "pdurber1c@gov.uk",
-      "current_plan": "Team",
+      "phone": "+3219876328",
       "billing": "Manual - Cash",
       "status": 3,
       "avatar": ""
@@ -542,10 +542,10 @@
     {
       "id": 50,
       "full_name": "Beverlie Krabbe",
-      "role": "Editor",
+      "role": "SuperAdmin",
       "username": "bkrabbe1d",
       "email": "bkrabbe1d@home.pl",
-      "current_plan": "Company",
+      "phone": "+3219876325",
       "billing": "Auto Debit",
       "status": 2,
       "avatar": "9.png"

@@ -1,0 +1,101 @@
+﻿@{
+    Layout = "_Layout_AccountSetting";
+    ViewBag.Title = "Template Email";
+}
+
+
+<div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x">
+
+    <div class="layout-demo-wrapper">
+        <div class="layout-demo-placeholder">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="mb-0">Edit Template</h5>
+                    <div class="row">
+                        <div class="col-8">
+                            <h6 class="mb-0">
+                                <span id="title-text">
+                                    (Sample) Interior/Exterior Painting
+                                </span>
+                            </h6>
+                        </div>
+
+                        <div class="col-4 text-end">
+                            <a href="/Template/ReportTemplate/ReportTemplateList" class="btn btn-outline-secondary waves-effect">Back</a>
+                            <a href="/Template/ReportTemplate/ReportTemplateList" class="btn btn-outline-success waves-effect">Save Changes</a>
+                        </div>
+                    </div>
+                    <div class="card mb-6 mt-3">
+                        <!-- Account -->
+                        <div class="card-body pt-4">
+                            <form id="formAccountSettings" method="GET" onsubmit="return false">
+                                <div class="row">
+                                    <div class="col mb-4">
+                                        <h6 class="mb-0">
+                                            <span id="title-text">Template Name</span>
+                                        </h6>
+                                        <input type="text"
+                                               id="nameWithTitle"
+                                               class="form-control"
+                                               placeholder="Enter Template Name" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="mb-4 col-md-12">
+                                        <div class="input-group input-group-merge">
+                                            <div class="col-12">
+                                                <div class="card mb-6">
+
+                                                    <div class="card-body">
+                                                        <div id="snow-toolbar">
+                                                            <span class="ql-formats">
+                                                                <select class="ql-font"></select>
+                                                                <select class="ql-size"></select>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <button class="ql-bold"></button>
+                                                                <button class="ql-italic"></button>
+                                                                <button class="ql-underline"></button>
+                                                                <button class="ql-strike"></button>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <select class="ql-color"></select>
+                                                                <select class="ql-background"></select>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <button class="ql-script" value="sub"></button>
+                                                                <button class="ql-script" value="super"></button>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <button class="ql-header" value="1"></button>
+                                                                <button class="ql-header" value="2"></button>
+                                                                <button class="ql-blockquote"></button>
+                                                                <button class="ql-code-block"></button>
+                                                            </span>
+                                                        </div>
+                                                        <div id="snow-editor">
+
+                                                            <p>Hi {{CUSTOMER_FIRST_NAME}},</p><p><br></p><p>Thanks for taking a few minutes to meet with me at your property yesterday.</p><p><br></p><p>I've attached a thorough walkthrough of all the painting areas we discussed, all the areas you requested be refreshed have been included in the quote that is attached.</p><p><br></p><p>If you would like to sign off on this contract so that we can begin planning the project for you, I have included an easy way for you to e-sign directly from your browser. Simply click on the REVIEW AND SIGN QUOTE link above and you will be able to sign, select upgrades and insert your color selections.</p><p><br></p><p>Please give me a call should you have any questions and I would be happy to discuss or meet at your convenience.</p><p><br></p><p>Kind regards,</p><p><br></p><p><strong>{{SALESPERSON_NAM<span class="ql-cursor">﻿﻿﻿﻿﻿</span>E}}</strong></p><p>{{SALESPERSON_EMAIL}}</p><p>{{SALESPERSON_PHONE}}</p>
+
+
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <!-- /Account -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+

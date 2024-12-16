@@ -1,0 +1,423 @@
+﻿@{
+    Layout = "_Layout_Main";
+    ViewBag.Title = "Projects";
+}
+<style>
+
+    .top-right-dropdown {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 1;
+
+    }
+    /* .layout-page{
+        max-width: 1300px !important;
+        margin: 0 auto !important;
+    } */
+
+    .card-img-top {
+        height: 200px; 
+        object-fit: cover; 
+    }
+
+</style>
+
+
+@* <div class="col-md-12 container-p-y">
+    <div class="card">
+        <div class="card-header border-bottom d-flex justify-content-between align-items-center">
+            <!-- Filters Heading -->
+            <h5 class="card-title mb-0">Filters</h5>
+            <!-- Create User Button -->
+            <a href="#" class="btn btn-primary">Create User</a>
+        </div>
+        <div class="d-flex justify-content-between align-items-center row pt-4 gap-4 gap-md-0">
+            <!-- Search Input -->
+            <div class="col-md-3">
+                <input type="search" class="form-control" placeholder="Search" name="Search" value="" />
+            </div>
+            <!-- User Role Dropdown -->
+            <div class="col-md-3 user_role">
+                <select id="1" class="form-select text-capitalize">
+                    <option value="Select">Select</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </div>
+            <!-- User Plan Dropdown -->
+            <div class="col-md-3 user_plan">
+                <select id="2" class="form-select text-capitalize">
+                    <option value="Status">Status</option>
+                    <option value="Active">Active</option>
+                </select>
+            </div>
+            <!-- User Status Dropdown -->
+            <div class="col-md-2 user_status">
+                <select id="3" class="form-select text-capitalize">
+                    <option value="Created">Created</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </div>
+            <!-- Clear All Link -->
+            <div class="col-md-1">
+                <a href="#">Clear All</a>
+            </div>
+        </div>
+    </div>
+</div>
+ *@
+
+<div class="container-xxl flex-grow-1">
+
+    <div class="col-md-12 container-p-y">
+        <div class="card">
+          
+            <div class="card-header d-flex justify-content-between align-items-center row px-1 gap-3 gap-md-0 mb-3 px-2">
+
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                            <i class="ti ti-search ti-md me-2 me-lg-0 ti-lg"></i>
+                            </span>
+                            <input type="search" class="form-control" placeholder="Search" name="Search"/>
+                        </div>
+                   </div>
+
+                    <div class="col-md-3 user_role">
+                        <select id="1" class="form-select text-capitalize">
+                            <option value="Select">Select</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+
+                    </div>
+                    <div class="col-md-2 user_plan">
+                        <select id="2" class="form-select text-capitalize">
+                            <option value="Status">Status</option>
+                            <option value="Active">Active</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 user_status">
+                        <select id="3" class="form-select text-capitalize">
+                            <option value="Created">Created</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-1">
+                        <a href="#">Clear All</a>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="#" class="btn btn-primary tf-icons ti ti-plus scaleX-n1-rtl" title="Create Project"></a>
+    
+                    </div>
+
+
+
+                </div>
+       
+      
+        </div>
+    </div>
+
+
+    <div class="row mb-12 g-6">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <a asp-action="EstimationDetails" asp-controller="Estimates">
+                            <img class="card-img card-img-left" src="~/img/elements/pexels-curtis-adams-1694007-3935333.jpg" alt="Card image" />
+                        </a>
+
+                        
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="card-body row g-0">
+
+                            <div class="col-md-7">
+                                <h5 class="card-title p-1"><b>Insurance Sample</b></h5>
+                                <p class="card-text">123 Sample Ave NW <br /> Calgary, AB <br /> Created 3 years ago.</p>
+                           </div>
+
+                            <!-- Vertical Line Section -->
+                            <div class="col-md-1 d-flex align-items-stretch">
+                                <div class="border-start"></div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-3">
+                                    <input class="form-check-input" name="first" type="radio" id="won" />
+                                    <label class="form-check-label" for="won">
+                                        Won
+                                    </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-3">
+                                    <input class="form-check-input" name="first" type="radio" id="lost" />
+                                    <label class="form-check-label" for="lost">
+                                        Lost
+                                    </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-3">
+                                    <input class="form-check-input" name="first" type="radio" id="open" />
+                                    <label class="form-check-label" for="open">
+                                        Open
+                                    </label>
+                                </div>
+                                <div class="mt-9">
+                                    <button class="btn rounded-pill btn-outline-danger waves-effect" id="confirm-text">Delete</button>
+                                </div>
+                                
+                            </div>
+                           
+
+                        </div>
+
+                       
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img class="card-img card-img-left" src="~/img/elements/pexels-pixabay-164558.jpg" alt="Card image" />
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="card-body row g-0">
+
+                            <div class="col-md-7">
+                                <h5 class="card-title p-1"><b>Malarkey Sample</b></h5>
+                                <p class="card-text">698 New York 52 <br /> Beacon, New York <br /> Created 1 year ago.</p>
+                            </div>
+
+                            <!-- Vertical Line Section -->
+                            <div class="col-md-1 d-flex align-items-stretch">
+                                <div class="border-start"></div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-3">
+                                    <input class="form-check-input" type="checkbox" id="won1" />
+                                    <label class="form-check-label" for="won1">
+                                        Won
+                                    </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-3">
+                                    <input class="form-check-input" type="checkbox" id="lost1" />
+                                    <label class="form-check-label" for="lost1">
+                                        Lost
+                                    </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-3">
+                                    <input class="form-check-input" type="checkbox" id="open1" />
+                                    <label class="form-check-label" for="open1">
+                                        Open
+                                    </label>
+                                </div>
+
+                                <div class="mt-9">
+                                    <button class="btn rounded-pill btn-outline-danger waves-effect">Delete</button>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-12 g-6">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img class="card-img card-img-left" src="~/img/elements/pexels-heyho-5997994.jpg" alt="Card image" />
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="card-body row g-0">
+
+                            <div class="col-md-7">
+                                <h5 class="card-title p-1"><b>Atlas Sample</b></h5>
+                                <p class="card-text">123 Fake street <br /> Oak Lawn, illinois <br /> Created 3 years ago.</p>
+                            </div>
+
+                            <!-- Vertical Line Section -->
+                            <div class="col-md-1 d-flex align-items-stretch">
+                                <div class="border-start"></div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-3">
+                                    <input class="form-check-input" type="checkbox" id="won2" />
+                                    <label class="form-check-label" for="won2">
+                                        Won
+                                    </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-3">
+                                    <input class="form-check-input" type="checkbox" id="lost2" />
+                                    <label class="form-check-label" for="lost2">
+                                        Lost
+                                    </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-3">
+                                    <input class="form-check-input" type="checkbox" id="open2" />
+                                    <label class="form-check-label" for="open2">
+                                        Open
+                                    </label>
+                                </div>
+
+                                <div class="mt-9">
+                                    <button class="btn rounded-pill btn-outline-danger waves-effect">Delete</button>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img class="card-img card-img-left" src="~/img/elements/pexels-pixabay-209315.jpg" alt="Card image" />
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="card-body row g-0">
+
+                            <div class="col-md-7">
+                                <h5 class="card-title p-1"> <b>Roofing Sample</b></h5>
+                                <p class="card-text">123 Sample Ave NW <br /> Calgary, AB <br /> Created 3 years ago.</p>
+                            </div>
+
+                            <!-- Vertical Line Section -->
+                            <div class="col-md-1 d-flex align-items-stretch">
+                                <div class="border-start"></div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-3">
+                                    <input class="form-check-input" type="checkbox" id="won3" />
+                                    <label class="form-check-label" for="won3">
+                                        Won
+                                    </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-3">
+                                    <input class="form-check-input" type="checkbox" id="lost3" />
+                                    <label class="form-check-label" for="lost3">
+                                        Lost
+                                    </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-3">
+                                    <input class="form-check-input" type="checkbox" id="open3" />
+                                    <label class="form-check-label" for="open3">
+                                        Open
+                                    </label>
+                                </div>
+
+                                <div class="mt-9">
+                                    <button class="btn rounded-pill btn-outline-danger waves-effect">Delete</button>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-12 g-3">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <img class="card-img card-img-left" src="~/img/elements/pexels-pixabay-259588.jpg" alt="Card image" />
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="card-body row g-0">
+
+                            <div class="col-md-7">
+                                <h5 class="card-title px-1"> <b>Insurance Sample</b></h5>
+                                <p class="card-text">123 Sample Ave NW <br /> Calgary, AB <br /> Created 3 years ago.</p>
+                            </div>
+
+                            <!-- Vertical Line Section -->
+                            <div class="col-md-1 d-flex align-items-stretch">
+                                <div class="border-start"></div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-3">
+                                    <input class="form-check-input" type="checkbox" id="won4" />
+                                    <label class="form-check-label" for="won4">
+                                        Won
+                                    </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-3">
+                                    <input class="form-check-input" type="checkbox" id="lost4" />
+                                    <label class="form-check-label" for="lost4">
+                                        Lost
+                                    </label>
+                                </div>
+                                <div class="form-check mb-1 me-4 me-lg-12 col-md-2">
+                                    <input class="form-check-input" type="checkbox" id="open4" />
+                                    <label class="form-check-label" for="open4">
+                                        Open
+                                    </label>
+                                </div>
+
+                                <div class="mt-9">
+                                    <button class="btn rounded-pill btn-outline-danger waves-effect">Delete</button>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+     
+
+   
+</div>
+
+

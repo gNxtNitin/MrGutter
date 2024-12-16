@@ -1,0 +1,343 @@
+﻿@{
+    Layout = "_Layout_EditReportLayoutSetting";
+    ViewBag.Title = "layout Report";
+}
+
+
+
+<div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y pt-0">
+
+    <div class="layout-demo-wrapper">
+        <div class="layout-demo-placeholder">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="mb-0">Page Content</h5>
+                    @*    <div class="d-flex justify-content-between mb-1">
+                    <h5 class="">
+                    Warranty
+                    <a href="#" title="Edit the page title"><i class="ti ti-edit"></i></a>
+                    </h5>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-primary waves-effect">View Page</button>
+                    </div> *@
+                    <div class="row">
+                        <div class="col-4">
+                            <h5 class="mb-0">
+                                <span id="title-text">Warranty</span>
+                                <a href="#" id="edit-title-link">
+                                    <i class="ti ti-edit"></i>
+                                </a>
+                            </h5>
+                            <input type="text" id="title-input" class="form-control" style="display: none;" />
+                        </div>
+                        <div class="col-4">
+                        </div>
+                        <div class="col-4 text-end">
+                            <button type="button" class="btn btn-outline-primary waves-effect" data-bs-target="#fullscreenModal" data-bs-toggle="modal" data-bs-dismiss="modal">View Page</button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="card mt-3">
+                    <!-- Account -->
+                    <div class="card-body pt-4">
+                        <div class="row">
+                            <p><strong>Warranty details:</strong></p>
+                        </div>
+
+                        <div class="mt-1">
+                            <div class="row">
+                                <div class="mb-4 col-md-12">
+                                    <div class="input-group input-group-merge">
+                                        <div class="col-12">
+                                            <div class="card mb-6">
+                                                <div class="card-body">
+                                                    <!-- Quill Toolbar for Warranty Details -->
+                                                    <div id="snow-toolbar">
+                                                        <span class="ql-formats">
+                                                            <select class="ql-font"></select>
+                                                            <select class="ql-size"></select>
+                                                        </span>
+                                                        <span class="ql-formats">
+                                                            <button class="ql-bold"></button>
+                                                            <button class="ql-italic"></button>
+                                                            <button class="ql-underline"></button>
+                                                            <button class="ql-strike"></button>
+                                                        </span>
+                                                        <span class="ql-formats">
+                                                            <select class="ql-color"></select>
+                                                            <select class="ql-background"></select>
+                                                        </span>
+                                                        <span class="ql-formats">
+                                                            <button class="ql-script" value="sub"></button>
+                                                            <button class="ql-script" value="super"></button>
+                                                        </span>
+                                                        <span class="ql-formats">
+                                                            <button class="ql-header" value="1"></button>
+                                                            <button class="ql-header" value="2"></button>
+                                                            <button class="ql-blockquote"></button>
+                                                            <button class="ql-code-block"></button>
+                                                        </span>
+                                                    </div>
+                                                    <!-- Quill Editor for Warranty Details -->
+                                                    <div id="snow-editor">
+                                                        <label>
+                                                            This document warrants that should a defect in workmanship, related to the work completed by {{ACCOUNT_NAME}}, occur within 5 years of the project, {{ACCOUNT_NAME}} will complete repairs within the original project’s scope of work at no charge to the customer. This warranty does not cover normal wear and tear, hail damage, wind damage, sun damage, intentional or accidental damage by any person, or acts of God that may or may not merit an insurance claim. This warranty only applies to portions of the project in which {{ACCOUNT_NAME}}{{ACCOUNT_NAME}} fully replaced any existing products, and does not cover repairs or service done to another contractor’s work. Defects in the building materials used to complete work do not fall under the scope of this workmanship warranty; any building products installed will instead be covered by the product’s original manufacturer warranty.
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        @* <div class="mt-1">
+                            <div class="row">
+                                <p><strong>Thank you note:</strong></p>
+                            </div>
+
+                            <div class="mt-1">
+                                <div class="row">
+                                    <div class="mb-4 col-md-12">
+                                        <div class="input-group input-group-merge">
+                                            <div class="col-12">
+                                                <div class="card mb-6">
+                                                    <div class="card-body">
+                                                        <div id="full-editor">
+                                                            <label> Thank you again for choosing  to complete work on your property. We trust you had a great customer experience! </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> *@
+                       @*  <div class="mt-1">
+                            <div class="row">
+                                <p><strong>Thank you note:</strong></p>
+                            </div>
+
+                            <div class="mt-1">
+                                <div class="row">
+                                    <div class="mb-4 col-md-12">
+                                        <div class="input-group input-group-merge">
+                                            <div class="col-12">
+                                                <div class="card mb-6">
+                                                    <div class="card-body">
+                                                        <div id="full-editor">
+                                                            <label class="text-black"> Thank you again for choosing  to complete work on your property. We trust you had a great customer experience! </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> *@
+                        @*  <div class="mt-1">
+                        <div class="row">
+                        <p><strong>Signature:</strong></p>
+                        <div class="col-12">
+                        <div class="card mb-6">
+                        <div class="card-body">
+                        <form action="/upload" class="dropzone needsclick" id="dropzone-basic">
+                        <div class="dz-message needsclick">
+                        Drop files here or click to upload
+
+                        </div>
+                        <div class="fallback">
+                        <input name="file" type="file" />
+                        </div>
+                        </form>
+                        </div>
+                        </div>
+                        </div>
+
+                        </div>
+                        </div> *@
+
+                        <div class="mt-1">
+                            <div class="row">
+                                <p class="mb-1"><strong>Signee's Name:</strong></p>
+                                <input id="" class="form-control rounded-pill" type="text" />
+
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="row">
+                                <p class="mb-1"><strong>Signee's title (e.g. Managing Director):</strong></p>
+                                <input id="" class="form-control rounded-pill" type="text" />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">Layout settings</h5>
+                <span class="ms-1 pt-1">(Customize controls for this layout)</span>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-4">
+                        <h5 for="nameWithTitle" class="form-label">Layout Name</h5>
+                        <input type="text"
+                               id="nameWithTitle"
+                               class="form-control"
+                               placeholder="Enter Layout Name" />
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col mb-0">
+                        <h5 for="nameWithTitle" class="form-label">Sharing</h5>
+                        <div class="input-group">
+                            <div class="input-group-text">
+
+                                <input class="form-check-input mt-0"
+                                       type="checkbox"
+                                       value=""
+                                       aria-label="Checkbox for following text input" />
+                            </div>
+                            <label class="form-control">Make this layout available to all users</label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">Layout settings</h5>
+                <span class="ms-1 pt-1">(Customize controls for this layout)</span>
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-4">
+                        <h5 for="nameWithTitle" class="form-label">Layout Name</h5>
+                        <input type="text"
+                               id="nameWithTitle"
+                               class="form-control"
+                               placeholder="Enter Layout Name" />
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col mb-0">
+                        <h5 for="nameWithTitle" class="form-label">Sharing</h5>
+                        <div class="input-group">
+                            <div class="input-group-text">
+
+                                <input class="form-check-input mt-0"
+                                       type="checkbox"
+                                       value=""
+                                       aria-label="Checkbox for following text input" />
+                            </div>
+                            <label class="form-control">Make this layout available to all users</label>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-md-6">
+    <div class="mt-4">
+        <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalFullTitle">Review</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div style="width: 100%; height: 100%; border: 1px solid #ccc;">
+                            <iframe src="@Url.Content("~/image/warrantyviewpage.pdf")" width="100%" height="100%" style="border: none;"></iframe>
+                        </div>
+
+                    </div>
+                    @*     <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> *@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('edit-title-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        var titleText = document.getElementById('title-text');
+        var titleInput = document.getElementById('title-input');
+        var editIcon = document.getElementById('edit-title-link');
+        if (titleInput.style.display === 'none') {
+            titleInput.style.display = 'inline-block';
+            titleInput.value = titleText.innerText;
+            titleText.style.display = 'none';
+            editIcon.style.display = 'none';
+
+            titleInput.focus();
+        } else {
+            titleText.innerText = titleInput.value;
+            titleInput.style.display = 'none';
+            titleText.style.display = 'inline-block';
+            editIcon.style.display = 'inline-block';
+        }
+    });
+    document.addEventListener('click', function (e) {
+        var titleText = document.getElementById('title-text');
+        var titleInput = document.getElementById('title-input');
+        var editIcon = document.getElementById('edit-title-link');
+        if (!titleText.contains(e.target) && !titleInput.contains(e.target) && !editIcon.contains(e.target)) {
+            if (titleInput.style.display === 'inline-block') {
+                titleText.innerText = titleInput.value;
+                titleInput.style.display = 'none';
+                titleText.style.display = 'inline-block';
+                editIcon.style.display = 'inline-block';
+            }
+        }
+    });
+
+
+</script>

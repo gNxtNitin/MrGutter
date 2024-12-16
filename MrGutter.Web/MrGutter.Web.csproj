@@ -14,7 +14,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="HtmlSanitizer" Version="8.1.870" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.18" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MrGutter.Services\MrGutter.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Shared\_Layout_Blank.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Layout\Data\" />
+    <Folder Include="Areas\Layout\Models\" />
+    <Folder Include="Areas\Template\Data\" />
+    <Folder Include="Areas\Template\Models\" />
   </ItemGroup>
 
 </Project>
