@@ -26,6 +26,11 @@ namespace MrGutter.Web.Areas.Layout.Controllers
         {
             return View();
         }
+        
+        public IActionResult EditMapLayout()
+        {
+            return View();
+        }
         public IActionResult EditLayoutTitle()
         {
             return View();

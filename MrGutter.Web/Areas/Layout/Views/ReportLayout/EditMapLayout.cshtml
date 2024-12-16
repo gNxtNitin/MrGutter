@@ -1,0 +1,266 @@
+﻿@{
+    Layout = "_Layout_EditReportLayoutSetting";
+    ViewBag.Title = "layout Report";
+}
+
+<style>
+    /* Style for the thumbnail */
+    .thumbnail {
+        cursor: pointer;
+        width: 100% !important;
+        height: auto;
+        /* border: 2px solid #ddd;
+                border-radius: 4px; */
+        transition: transform 0.2s;
+    }
+
+    /* .thumbnail:hover {
+                    transform: scale(1.1);
+                } */
+
+    /* Modal container */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        /*  top: 50px; */
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Modal content (image) */
+    .modal-content {
+        margin: auto;
+        margin-top: 70px;
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    /* Close button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        .close:hover, .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+</style>
+
+<div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y pt-0">
+
+    <div class="layout-demo-wrapper">
+        <div class="layout-demo-placeholder w-100">
+            <div class="row">
+                <div class="col-12">
+                    @* <h5 class="mb-0">Page Content</h5> *@
+                    <div class="row">
+                        <div class="col-4">
+                            <h5 class="mb-0">
+                                <span id="Inspection-text">Layout</span>
+                                <a href="#" id="edit-Inspection-link" title="Edit the page title">
+                                    <i class="ti ti-edit"></i>
+                                </a>
+                            </h5>
+                            <input type="text" id="Inspection-input" class="form-control" style="display: none;" />
+                        </div>
+                        <div class="col-4">
+                        </div>
+                        <div class="col-4 text-end mb-3">
+                            <button type="button" class="btn btn-outline-primary waves-effect">View Page</button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-6">
+                            <!-- Thumbnail -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" id="thumbnail" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <!-- Thumbnail -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" id="thumbnail" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-4">
+
+                        <div class="mb-4 col-md-6" data-repeater-items>
+                            <div class="input-group input-group-merge">
+                                <div class="col-12">
+                                    <label for="description" class="form-label">Description</label>
+                                    <div id="snow-toolbar" style="height: 30px;">
+                                        <span class="ql-formats">
+                                            <select class="ql-font"></select>
+                                            <select class="ql-size"></select>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-bold"></button>
+                                            <button class="ql-italic"></button>
+                                            <button class="ql-underline"></button>
+                                            <button class="ql-strike"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <select class="ql-color"></select>
+                                            <select class="ql-background"></select>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-script" value="sub"></button>
+                                            <button class="ql-script" value="super"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-header" value="1"></button>
+                                            <button class="ql-header" value="2"></button>
+                                            <button class="ql-blockquote"></button>
+                                            <button class="ql-code-block"></button>
+                                        </span>
+                                    </div>
+                                    <div id="snow-editor" style="height: 100px; overflow-y: auto;">
+                                        Hello,
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-4 col-md-6" data-repeater-items>
+                            <div class="input-group input-group-merge">
+                                <div class="col-12">
+                                    <label for="description" class="form-label">Description</label>
+                                    <div id="snow-toolbar1" style="height: 30px;">
+                                        <span class="ql-formats">
+                                            <select class="ql-font"></select>
+                                            <select class="ql-size"></select>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-bold"></button>
+                                            <button class="ql-italic"></button>
+                                            <button class="ql-underline"></button>
+                                            <button class="ql-strike"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <select class="ql-color"></select>
+                                            <select class="ql-background"></select>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-script" value="sub"></button>
+                                            <button class="ql-script" value="super"></button>
+                                        </span>
+                                        <span class="ql-formats">
+                                            <button class="ql-header" value="1"></button>
+                                            <button class="ql-header" value="2"></button>
+                                            <button class="ql-blockquote"></button>
+                                            <button class="ql-code-block"></button>
+                                        </span>
+                                    </div>
+                                    <div id="snow-editor1" style="height: 100px; overflow-y: auto;">
+                                        Hello,
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div id="imageModal" class="modal">
+                <span class="close" id="closeModal">&times;</span>
+                <img class="modal-content" id="largeImage">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // Get the modal and related elements
+    const modal = document.getElementById('imageModal');
+    const thumbnail = document.getElementById('thumbnail');
+    const largeImage = document.getElementById('largeImage');
+    const closeModal = document.getElementById('closeModal');
+
+    // Open the modal and display the large image
+    thumbnail.onclick = function () {
+        modal.style.display = 'block';
+        largeImage.src = '/image/layoutimage.jpg'; // Replace with the large version of your image
+    };
+
+    // Close the modal
+    closeModal.onclick = function () {
+        modal.style.display = 'none';
+    };
+
+    // Close the modal when clicking outside the image
+    modal.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+</script>
+
+<!--Script for edit title text-->
+<script>
+    document.getElementById('edit-Inspection-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        var titleText = document.getElementById('Inspection-text');
+        var titleInput = document.getElementById('Inspection-input');
+        var editIcon = document.getElementById('edit-Inspection-link');
+        if (titleInput.style.display === 'none') {
+            titleInput.style.display = 'inline-block';
+            titleInput.value = titleText.innerText;
+            titleText.style.display = 'none';
+            editIcon.style.display = 'none';
+
+            titleInput.focus();
+        } else {
+            titleText.innerText = titleInput.value;
+            titleInput.style.display = 'none';
+            titleText.style.display = 'inline-block';
+            editIcon.style.display = 'inline-block';
+        }
+    });
+    document.addEventListener('click', function (e) {
+        var titleText = document.getElementById('Inspection-text');
+        var titleInput = document.getElementById('Inspection-input');
+        var editIcon = document.getElementById('edit-Inspection-link');
+        if (!titleText.contains(e.target) && !titleInput.contains(e.target) && !editIcon.contains(e.target)) {
+            if (titleInput.style.display === 'inline-block') {
+                titleText.innerText = titleInput.value;
+                titleInput.style.display = 'none';
+                titleText.style.display = 'inline-block';
+                editIcon.style.display = 'inline-block';
+            }
+        }
+    });
+
+
+</script>
