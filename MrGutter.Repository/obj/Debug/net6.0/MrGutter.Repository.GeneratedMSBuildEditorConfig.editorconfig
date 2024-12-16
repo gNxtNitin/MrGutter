@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MrGutter.Repository
-build_property.ProjectDir = D:\MrGutter\MrGutter_Web\MrGutter.Repository\
+build_property.ProjectDir = C:\Users\YASH\Source\Repos\MrGutter-UI\MrGutter.Repository\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

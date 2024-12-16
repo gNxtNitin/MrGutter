@@ -9,91 +9,91 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MrGutter.Web
 build_property.RootNamespace = MrGutter.Web
-build_property.ProjectDir = D:\MrGutter\MrGutter_Web\MrGutter.Web\
+build_property.ProjectDir = C:\Users\YASH\Source\Repos\MrGutter-UI\MrGutter.Web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\MrGutter\MrGutter_Web\MrGutter.Web
+build_property.MSBuildProjectDirectory = C:\Users\YASH\Source\Repos\MrGutter-UI\MrGutter.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Account/ChangePassword.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Account/CreateAccount.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Account/CreateAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDcmVhdGVBY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Account/EmailVerify.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Account/EmailVerify.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFbWFpbFZlcmlmeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Account/ForgotPassword.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Account/Login.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Account/SendEmail.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Account/SendEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTZW5kRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Account/SuccessChangePassword.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Account/SuccessChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTdWNjZXNzQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Account/ValidateOtp.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Account/ValidateOtp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxWYWxpZGF0ZU90cC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Dashboard/Index.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Home/Forbidden.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Home/Forbidden.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb3JiaWRkZW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Home/Index.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Home/Privacy.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Shared/Components/UserHeaderInfo/Default.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Shared/Components/UserHeaderInfo/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVXNlckhlYWRlckluZm9cRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Shared/Error.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Shared/_Layout.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Shared/_Layout_Home.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Shared/_Layout_Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfSG9tZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Shared/_Layout_Main.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Shared/_Layout_Main.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRfTWFpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/_ViewImports.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/MrGutter/MrGutter_Web/MrGutter.Web/Views/_ViewStart.cshtml]
+[C:/Users/YASH/Source/Repos/MrGutter-UI/MrGutter.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
