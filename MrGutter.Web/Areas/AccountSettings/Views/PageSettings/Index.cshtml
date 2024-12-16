@@ -1,0 +1,280 @@
+﻿@{
+    Layout = "_Layout_AccountSetting";
+    ViewData["Title"] = "Page settings";
+}
+
+<div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y pt-0">
+
+
+
+    <div class="layout-demo-wrapper align-items-start">
+        <div class="layout-demo-placeholder w-100">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="mb-1"><b>Page Settings</b></h5>
+                    <p class="fs-5">Customize how your reports are generated.</p>
+                   
+                    <div class="mb-1">
+                        <h6><b>REPORT TITLE PAGE SETTINGS</b></h6>
+                    </div>
+
+                    
+
+
+                    <div class="card mb-6">
+
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center border rounded p-3 mt-2">
+                                <p class="pb-0 ps-2 pt-2"><b>Display project email on Title Page</b><br /></p>
+
+                                <div class="p-3 pe-6 me-2 ms-auto">
+
+                                    <label class="switch">
+                                        <input type="checkbox" class="switch-input" />
+                                        <span class="switch-toggle-slider" id="with-title">
+                                            <span class="switch-on" id="with-title"></span>
+                                            <span class="switch-off"></span>
+                                        </span>
+
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="card-body pt-0">
+                            <div class="d-flex justify-content-between align-items-center border rounded p-3 mt-2">
+                                <p class="pb-0 ps-2 pt-2"><b>Display project phone number on Title Page</b><br /></p>
+
+                                <div class="p-3 pe-6 me-2 ms-auto">
+
+                                    <label class="switch">
+                                        <input type="checkbox" class="switch-input" />
+                                        <span class="switch-toggle-slider" id="with-title">
+                                            <span class="switch-on" id="with-title"></span>
+                                            <span class="switch-off"></span>
+                                        </span>
+
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="mb-1">
+                        <h6><b>ORDER TITLE PAGE SETTINGS</b></h6>
+                    </div>
+
+                    <div class="card mb-6">
+
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center border rounded p-3 mt-2">
+                                <p class="pb-0 ps-2 pt-2"><b>Display project email on Order Title Page</b><br /></p>
+
+                                <div class="p-3 pe-6 me-2 ms-auto">
+
+                                    <label class="switch">
+                                        <input type="checkbox" class="switch-input" />
+                                        <span class="switch-toggle-slider" id="with-title">
+                                            <span class="switch-on" id="with-title"></span>
+                                            <span class="switch-off"></span>
+                                        </span>
+
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="card-body pt-0">
+                            <div class="d-flex justify-content-between align-items-center border rounded p-3 mt-2">
+                                <p class="pb-0 ps-2 pt-2"><b>Display project phone number on Order Title Page</b><br /></p>
+
+                                <div class="p-3 pe-6 me-2 ms-auto">
+
+                                    <label class="switch">
+                                        <input type="checkbox" class="switch-input" />
+                                        <span class="switch-toggle-slider" id="with-title">
+                                            <span class="switch-on" id="with-title"></span>
+                                            <span class="switch-off"></span>
+                                        </span>
+
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="mb-1">
+                        <h6><b>QUOTE DETAIL PAGE SETTINGS</b></h6>
+                    </div>
+
+                    <div class="card mb-6">
+
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center border rounded p-3 mt-2">
+                                <p class="pb-0 ps-2 pt-2"><b>Price Adjustments</b><br />
+                                    Allow users to include discounts and markups on quote details pages.
+                                </p>
+
+
+                               
+
+                                <div class="pe-2 me-2 ms-auto">
+
+                                    <a data-bs-toggle="modal"
+                                       data-bs-target="#modalToggle" class="btn btn-outline-primary">Edit</a>
+                                </div>
+                            </div>
+
+                            <!--Vertical Modal for edit-->
+                            <!-- Modal 1-->
+                            <div class="modal fade"
+                                 id="modalToggle"
+                                 aria-labelledby="modalToggleLabel"
+                                 tabindex="-1"
+                                 style="display: none"
+                                 aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalToggleLabel">Edit Price Adjustments</h5>
+                         
+                                            <button type="button"
+                                                    class="btn-close"
+                                                    data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                        </div>
+
+                                        <div class="ms-6">  <p class="modal-description">Who is allowed to include discounts & markups in quote details pages?</p></div>
+
+                                        <div class="modal-body">
+                                            <div class="mb-2">
+                                                <input type="radio" name="common" class="me-1" />
+                                                <label for="noOne" class="form-label fs-5">No One</label>
+                                                
+                                            </div>
+                                            
+                                            <div class="mb-2">
+                                                <input type="radio" data-bs-target="#modalToggle2" name="common"
+                                                       data-bs-toggle="modal"
+                                                       data-bs-dismiss="modal"/>
+                                                <label for="adminOnly" class="form-label fs-5">Admin Only</label>
+                                            </div>
+
+                                            <div class="mb-2">
+                                                <input type="radio" data-bs-target="#modalToggle2" name="common"
+                                                       data-bs-toggle="modal"
+                                                       data-bs-dismiss="modal"/> 
+
+                                                <label for="allUsers" class="form-label fs-5">All Users</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                Close
+                                            </button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal 2-->
+                            <div class="modal fade"
+                                 id="modalToggle2"
+                                 aria-hidden="true"
+                                 aria-labelledby="modalToggleLabel2"
+                                 tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalToggleLabel">Edit Price Adjustments</h5>
+
+                                            <button type="button"
+                                                    class="btn-close"
+                                                    data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                        </div>
+
+                                        <div class="ms-6">  <p class="modal-description">Who is allowed to include discounts & markups in quote details pages?</p></div>
+
+                                        <div class="modal-body">
+                                            <div class="mb-2">
+                                                <input type="radio" name="common" class="me-1" />
+                                                <label for="noOne" class="form-label fs-5">No One</label>
+
+                                            </div>
+
+                                            <div class="mb-2">
+                                                <input type="radio" data-bs-target="#modalToggle2" name="common"
+                                                       />
+                                                <label for="adminOnly" class="form-label fs-5">Admin Only</label>
+                                            </div>
+
+                                            <div class="mb-2">
+                                                <input type="radio" data-bs-target="#modalToggle2" name="common"
+                                                       />
+
+                                                <label for="allUsers" class="form-label fs-5">All Users</label>
+                                            </div>
+
+                                            <div class="mt-2">
+                                                <h5><b>Set discount limits</b></h5>
+                                            </div>
+                                            <div>
+                                                <p>Do not allow discounts of more than:</p>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="maxiDollar" class="form-label fs-5"><b>Maximum $</b></label>
+                                                    <input id="maxiDollar" class="form-control" type="text" placeholder="0"/>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label for="maxiPer" class="form-label fs-5"><b>Maximum %</b></label>
+                                                    <input id="maxiPer" class="form-control" type="text" placeholder="0" />
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                Close
+                                            </button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                        </div>
+
+                                    </div>
+
+
+
+                                   
+                                </div>
+                            </div>
+
+                        </div>
+
+                    
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>

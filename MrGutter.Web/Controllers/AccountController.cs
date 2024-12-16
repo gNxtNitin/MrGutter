@@ -25,6 +25,18 @@ namespace MrGutter.Web.Controllers
             _userService = userService;
             _httpContextAccessor = httpContextAccessor;
         }
+        public IActionResult User()
+        {
+            return View();
+        }
+        public IActionResult Company()
+        {
+            return View();
+        }
+        public IActionResult RegisterCompany()
+        {
+            return View();
+        }
         public IActionResult Login()
         {
             return View();
@@ -97,6 +109,13 @@ namespace MrGutter.Web.Controllers
         {
             return View();
         }
+        public IActionResult ChangePassword()
+        {
+            TempData["Success"] = true;
+            TempData["SuccessMessage"] = "We've just sent you an email to reset your password.";
+           
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> ForgotPassword(LoginVM model)
         {
@@ -121,12 +140,14 @@ namespace MrGutter.Web.Controllers
                 return View(model);
             }
         }
-        public IActionResult ChangePassword(string email)
-        {
-            UsersVM usersVM = new UsersVM();    
-            usersVM.EmailID = email;    
-            return View(usersVM);
-        }
+        //public IActionResult ChangePassword(string email)
+        //{
+        //    TempData["Success"] = true;
+        //    TempData["SuccessMessage"] = "Ticket category added successfully!";
+        //    UsersVM usersVM = new UsersVM();    
+        //    usersVM.EmailID = email;    
+        //    return View(usersVM);
+        //}
         [HttpPost]
         public async Task<IActionResult> ChangePassword(UsersVM usersVM)
         {
@@ -215,6 +236,36 @@ namespace MrGutter.Web.Controllers
         {
             return View();
         }
+        public IActionResult BookDemo()
+        {
+            return View();
+        }
+        public IActionResult OnboardingCompanyDetails()
+        {
+            return View();
+        }
+        public IActionResult OnboardingBrands()
+        {
+            return View();
+        }
+        public IActionResult OnboardingTheme()
+        {
+            return View();
+        }
+        public IActionResult OnboardingConfirm()
+        {
+            return View();
+        }
+        public IActionResult OnboardingLetGoClick()
+        {
+            return View();
+        }
+        public IActionResult OnboardingBranding()
+        {
+            return View();
+        }
+        
+
         private long GetOtpExpirationTimeForJavaScript()
         {
             var storedExpirationTime = HttpContext.Session.GetString("OtpExpirationTime");

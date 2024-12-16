@@ -821,22 +821,22 @@ button.list-group-item-primary.active {
 .jstree-default .jstree-wholerow-hovered,
 .jstree-default .jstree-hovered {
   background: rgba(115, 103, 240, 0.16);
-  color: #7367f0;
+  color: #2E7DB3;
 }
 .jstree-default .jstree-wholerow-clicked,
 .jstree-default .jstree-clicked {
-  background: #7367f0;
+  background: #2E7DB3;
   color: #fff;
 }
 
 .jstree-default-dark .jstree-wholerow-hovered,
 .jstree-default-dark .jstree-hovered {
   background: rgba(115, 103, 240, 0.16);
-  color: #7367f0;
+  color: #2E7DB3;
 }
 .jstree-default-dark .jstree-wholerow-clicked,
 .jstree-default-dark .jstree-clicked {
-  background: #7367f0;
+  background: #2E7DB3;
   color: #fff;
 }
 

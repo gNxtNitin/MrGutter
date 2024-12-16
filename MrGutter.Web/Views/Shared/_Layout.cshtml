@@ -20,7 +20,8 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="../../theme_assets/img/favicon/favicon.ico" />
-
+    <link rel="stylesheet" href="~/vendor/css/pages/page-auth.css">
+    <link rel="stylesheet" href="~/vendor/libs/&#64;form-validation/form-validation.css" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -55,6 +56,11 @@
 
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../../theme_assets/js/front-config.js"></script>
+    <style>
+        #template-customizer {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -62,7 +68,7 @@
     <script src="../../theme_assets/vendor/js/mega-dropdown.js"></script>
 
     <!-- Navbar: Start -->
-    <nav class="layout-navbar shadow-none py-0">
+    <nav class="layout-navbar shadow-none py-0 d-none">
         <div class="container">
             <div class="navbar navbar-expand-lg landing-navbar px-3 px-md-8">
                 <!-- Menu logo wrapper: Start -->
@@ -78,9 +84,10 @@
                         <i class="ti ti-menu-2 ti-lg align-middle text-heading fw-medium"></i>
                     </button>
                     <!-- Mobile menu toggle: End-->
-                    <a href="landing-page.html" class="app-brand-link">
-                        <span class="app-brand-logo demo">
-                            <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a asp-action="Index" asp-controller="Home" class="app-brand-link">
+                        <span class="app-brand-text demo menu-text fw-bold ms-2 ps-1">
+                            <img src="~/image/gutter-logo.png" style="width=90px; height:45px" />
+                          @*   <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
                                       clip-rule="evenodd"
                                       d="M0.00172773 0V6.85398C0.00172773 6.85398 -0.133178 9.01207 1.98092 10.8388L13.6912 21.9964L19.7809 21.9181L18.8042 9.88248L16.4951 7.17289L9.23799 0H0.00172773Z"
@@ -99,9 +106,9 @@
                                       clip-rule="evenodd"
                                       d="M7.77295 16.3566L23.6563 0H32V6.88383C32 6.88383 31.8262 9.17836 30.6591 10.4057L19.7824 22H13.6938L7.77295 16.3566Z"
                                       fill="#7367F0" />
-                            </svg>
+                            </svg> *@
                         </span>
-                        <span class="app-brand-text demo menu-text fw-bold ms-2 ps-1">Mr. Gutter</span>
+                       @*  <span class="app-brand-text demo menu-text fw-bold ms-2 ps-1">Mr. Gutter</span> *@
                     </a>
                 </div>
                 <!-- Menu logo wrapper: End -->
@@ -118,12 +125,18 @@
                     </button>
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" aria-current="page" href="landing-page.html#landingHero">Home</a>
+                            <a class="nav-link fw-medium" aria-current="page" href="#">Tour</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link fw-medium" href="landing-page.html#landingFeatures">Features</a>
+                            <a class="nav-link fw-medium" href="#">Integrations</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link fw-medium" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="#">Blog</a>
+                        </li>
+                  @*       <li class="nav-item">
                             <a class="nav-link fw-medium" href="landing-page.html#landingTeam">Team</a>
                         </li>
                         <li class="nav-item">
@@ -198,7 +211,7 @@
                                             </li>
                                             <li class="nav-item">
                                                 <a class="nav-link mega-dropdown-link"
-                                                   href="../vertical-menu-template/auth-login-cover.html"
+                                                   href="../vertical-menu-template/#"
                                                    target="_blank">
                                                     <i class="ti ti-circle me-1"></i>
                                                     Login (Cover)
@@ -350,7 +363,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link fw-medium" href="../vertical-menu-template/index.html" target="_blank">Admin</a>
-                        </li>
+                        </li> *@
                     </ul>
                 </div>
                 <div class="landing-menu-overlay d-lg-none"></div>
@@ -383,8 +396,11 @@
                     <!-- / Style Switcher-->
                     <!-- navbar button: Start -->
                     <li>
-                        <a href="../vertical-menu-template/auth-login-cover.html" class="btn btn-primary" target="_blank">
-                            <span class="tf-icons ti ti-login scaleX-n1-rtl me-md-1"></span><span class="d-none d-md-block">Login/Register</span>
+                        <a asp-action="Login" asp-controller="Account" class="btn btn-primary">
+                            <span><i class="fa-solid fa-user"></i></span><span class="d-none d-md-block">Login</span>
+                        </a>
+                        <a asp-action="RegisterCompany" asp-controller="Account" class="btn btn-primary">
+                            <span class="tf-icons ti ti-login scaleX-n1-rtl me-md-1"></span><span class="d-none d-md-block">Register</span>
                         </a>
                     </li>
                     <!-- navbar button: End -->
@@ -402,7 +418,7 @@
     </div>
 
     <!-- Footer: Start -->
-    <footer class="landing-footer bg-body footer-text">
+    <footer class="landing-footer bg-body footer-text d-none">
         <div class="footer-top position-relative overflow-hidden z-1">
             <img src="../../theme_assets/img/front-pages/backgrounds/footer-bg-light.png"
                  alt="footer bg"
@@ -490,7 +506,7 @@
                                 <a href="help-center-landing.html" class="footer-link">Help Center</a>
                             </li>
                             <li class="mb-4">
-                                <a href="../vertical-menu-template/auth-login-cover.html" target="_blank" class="footer-link">Login/Register</a>
+                                <a href="../vertical-menu-template/#" target="_blank" class="footer-link">Login/Register</a>
                             </li>
                         </ul>
                     </div>
@@ -508,17 +524,17 @@
         </div>
         <div class="footer-bottom py-3 py-md-5">
             <div class="container d-flex flex-wrap justify-content-between flex-md-row flex-column text-center text-md-start">
-                <div class="mb-2 mb-md-0">
+               @*  <div class="mb-2 mb-md-0">
                     <span class="footer-bottom-text">
                         ©
                         <script>
                             document.write(new Date().getFullYear());
                         </script>
                     </span>
-                    <a href="https://pixinvent.com" target="_blank" class="fw-medium text-white text-white">Pixinvent,</a>
+                    <a href="#" target="_blank" class="fw-medium text-white text-white">Mr. Quote,</a>
                     <span class="footer-bottom-text"> Made with ❤️ for a better web.</span>
-                </div>
-                <div>
+                </div> *@
+               @*  <div>
                     <a href="https://github.com/pixinvent" class="me-3" target="_blank">
                         <img src="../../theme_assets/img/front-pages/icons/github.svg" alt="github icon" />
                     </a>
@@ -531,7 +547,7 @@
                     <a href="https://www.instagram.com/pixinvents/" target="_blank">
                         <img src="../../theme_assets/img/front-pages/icons/instagram.svg" alt="google icon" />
                     </a>
-                </div>
+                </div> *@
             </div>
         </div>
     </footer>
@@ -546,7 +562,10 @@
     <!-- Vendors JS -->
     <script src="../../theme_assets/vendor/libs/nouislider/nouislider.js"></script>
     <script src="../../theme_assets/vendor/libs/swiper/swiper.js"></script>
-
+    <script src="~/vendor/libs/&#64;form-validation/popular.js"></script>
+    <script src="~/vendor/libs/&#64;form-validation/bootstrap5.js"></script>
+    <script src="~/vendor/libs/&#64;form-validation/auto-focus.js"></script>
+    <script src="~/js/pages-auth.js"></script>
     <!-- Main JS -->
     <script src="../../theme_assets/js/front-main.js"></script>
     <!-- Page JS -->

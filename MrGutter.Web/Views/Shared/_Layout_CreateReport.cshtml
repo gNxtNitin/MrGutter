@@ -1,0 +1,1313 @@
+﻿@{
+    TempData.Keep();
+    string? currentPage = ViewContext.HttpContext.Request.Path;
+
+    bool isConfigurationActive = currentPage.StartsWith("/Branding") ||
+                               currentPage.StartsWith("/AccountSettings") ||
+                               currentPage.StartsWith("/Billing") ||
+                               currentPage.StartsWith("/Integrations");
+
+    bool isSettingActive = currentPage.StartsWith("/EditProfile") ||
+                             currentPage.StartsWith("/ChangePassword") ||
+                             currentPage.StartsWith("/SignOut");
+}
+
+<!DOCTYPE html>
+
+<html lang="en"
+      class="light-style layout-navbar-fixed layout-menu-fixed layout-compact"
+      dir="ltr"
+      data-theme="theme-default"
+      data-assets-path="../../theme_assets/"
+      data-template="vertical-menu-template"
+      data-style="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Mr. Gutter</title>
+
+    <meta name="description" content="" />
+    <!--Css for custom button-->
+   
+
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../theme_assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&ampdisplay=swap"
+          rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="../../theme_assets/vendor/fonts/fontawesome.css" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/fonts/tabler-icons.css" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/fonts/flag-icons.css" />
+
+    <!-- Core CSS -->
+
+    <link rel="stylesheet" href="../../theme_assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
+
+    <link rel="stylesheet" href="../../theme_assets/css/demo.css" />
+    @* <link rel="stylesheet" href="../../theme_assets/vendor/css/pages/front-page.css" /> *@
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../../theme_assets/vendor/libs/node-waves/node-waves.css" />
+    <link href="~/theme_assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.css" rel="stylesheet" />
+    <link href="~/theme_assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/libs/nouislider/nouislider.css" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/libs/swiper/swiper.css" />
+    <link href="~/theme_assets/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.css" rel="stylesheet" />
+    <link href="~/theme_assets/vendor/libs/dropzone/dropzone.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link href="~/theme_assets/vendor/libs/flatpickr/flatpickr.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/libs/typeahead-js/typeahead.css" />
+    <link href="~/theme_assets/vendor/libs/quill/editor.css" rel="stylesheet" />
+    <link href="~/theme_assets/vendor/libs/quill/katex.css" rel="stylesheet" />
+    <link href="~/theme_assets/vendor/libs/quill/typography.css" rel="stylesheet" />
+    <link href="~/theme_assets/vendor/libs/jquery-timepicker/jquery-timepicker.css" rel="stylesheet" />
+    <link href="~/theme_assets/vendor/libs/pickr/pickr-themes.css" rel="stylesheet" />   
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../../theme_assets/vendor/css/pages/front-page-landing.css" />
+    <link rel="stylesheet" href="../../theme_assets/vendor/css/pages/page-auth.css">
+    <!-- Helpers -->
+    <script src="../../theme_assets/vendor/js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+    <script src="../../theme_assets/vendor/js/template-customizer.js"></script>
+
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../../theme_assets/js/config.js"></script>
+
+    <style>
+        #template-customizer {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <!-- Menu -->
+            <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+                <div class="app-brand demo" style="background: #0f4a72;">
+                    @* <a href="index.html" class="app-brand-link">
+                        <img style="height:55px;" src="/img/logo/logoWhite.png" />
+                    </a> *@
+
+                    <ul class="menu-inner py-1">
+                        <li class="menu-item mt-0">
+                            <a class="menu-link px-0 mx-0" href="index.html">
+                                @* <i class="menu-icon"><img style="height:30px;" src="/img/logo/iconer.png" /></i> *@
+                                <i class="menu-icon"><img style="height:30px;" src="/img/logo/drop.png" /></i>
+                                <div> <img style="height:40px;" src="/img/logo/logoWhite.png" /></div>
+                            </a>
+                        </li>
+                        </ul>
+
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
+                        <i class="ti menu-toggle-icon d-none d-xl-block align-middle"></i>
+                        <i class="ti ti-x d-block d-xl-none ti-md align-middle"></i>
+                    </a>
+                </div>
+
+                <div class="menu-inner-shadow"></div>
+
+                <ul class="menu-inner py-1">
+
+
+
+                    <!-- Estimate -->
+                    <li class='menu-item@(currentPage.EndsWith("/") || currentPage.StartsWith("/Estimates")? " active open" : "")'>
+                        <a asp-area="" asp-action="EstimateList" asp-controller="Estimates" class="menu-link">
+                            <i class="menu-icon ti ti-brand-databricks"></i>
+                            <div data-i18n="Estimate">Estimate</div>
+                        </a>
+                    </li>
+
+                    <!-- Users -->
+                    <li class="menu-item">
+                        <a asp-area="" asp-action="User" asp-controller="Account"  class="menu-link">
+                            <i class="menu-icon tf-icons ti ti-users"></i>
+                            <div data-i18n="Users">Users</div>
+                        </a>
+
+                    </li>
+
+                    <!-- Configuration -->
+                    <li class="menu-item@(isConfigurationActive ? " active open" : "")">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+                            <i class="menu-icon ti ti-adjustments-horizontal"></i>
+                            <div data-i18n="Configuration">Configuration</div>
+                        </a>
+                        <ul class="menu-sub sub-menu-icon">
+                            <li class="menu-item@(currentPage.EndsWith("/") || currentPage.StartsWith("/Branding")? " active open" : "")">
+                                     
+                                    <a class="menu-link" asp-area="" asp-action="Branding" asp-controller="Configuration">
+                                    <i class="pe-1 ti ti-carambola"></i>
+                                    <div data-i18n="Branding">Branding</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-link" asp-area="Layout" asp-action="ReportLayoutList" asp-controller="ReportLayout">
+                                    <i class="pe-1 ti ti-table-options"></i>
+                                    <div data-i18n="Account Settings">Account Settings</div>
+                                </a>
+                            </li>
+                     @*        <li class="menu-item">
+                                <a class="menu-link" href="@Url.Action("Index", "Branding")">
+                                    <i class="pe-1 ti ti-clock-dollar"></i>
+                                    <div data-i18n="Blling">Blling</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-link" href="@Url.Action("Index", "Branding")">
+                                    <i class="pe-1 ti ti-plug-connected"></i>
+                                    <div data-i18n="Integrations">Integrations</div>
+                                </a>
+                            </li> *@
+
+
+                        </ul>
+                    </li>
+                    <!-- Company -->
+                    <li class="menu-item@(currentPage.EndsWith("/") || currentPage.StartsWith("/Account/Company")? " active open" : "")">
+                        <a asp-area="" asp-action="Company" asp-controller="Account" class="menu-link">
+                            <i class="menu-icon ti ti-building scaleX-n1-rtl"></i>
+                            <div data-i18n="Company">Company</div>
+                        </a>
+
+                    </li>
+
+                    <!--Change Password-->
+               
+
+                    <!-- Settings -->
+                     <li class="menu-item@(isSettingActive ? " active open" : "")">
+                        <a href="javascript:void(0);" class="menu-link menu-toggle">
+
+                             
+
+                            <i class="ti ti-settings me-3 ti-md"></i>
+                            <div data-i18n="Settings">Settings</div>
+                        </a>
+                        <ul class="menu-sub sub-menu-icon">
+                            <li class="menu-item">
+                                <a class="menu-link" href="@Url.Action("Index", "Branding")">
+                                    <i class="pe-1 ti ti-pencil"></i>
+                                    <div data-i18n="Edit Profile">Edit Profile</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-link" href="@Url.Action("Index", "Branding")">
+                                    <i class="pe-1 ti ti-lock-cog"></i>
+                                    <div data-i18n="Change Password">Change Password</div>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a class="menu-link" href="@Url.Action("Index", "Branding")">
+                                    <i class="pe-1 ti ti-rubber-stamp-off "></i>
+                                    <div data-i18n="Sign Out">Sign Out</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li> 
+                </ul>
+            </aside>
+            <!-- / Menu -->
+            <!-- Layout container -->
+            <div class="layout-page">
+                <!-- Navbar -->
+
+                <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+                     id="layout-navbar">
+                    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+                        <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                            <i class="ti ti-menu-2 ti-md"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-nav-right d-flex align-items-center" style="height: 3.5rem;" id="navbar-collapse">
+                        <!-- Search -->
+                        <div class="navbar-nav align-items-center">
+                            <div class="nav-item navbar-search-wrapper mb-0">
+
+                                <span class="card-title mb-0">
+                                    <b>@ViewBag.Title</b>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- /Search -->
+
+                        <ul class="navbar-nav flex-row align-items-center ms-auto">
+                            <!--/ Language -->
+                            <!-- Style Switcher -->
+                            <li class="nav-item p-3">
+                                <span class="text-white"><strong>MR. GUTTER</strong></span>
+                            </li>
+                            <li class="nav-item dropdown-style-switcher dropdown">
+                                <a class="nav-link btn btn-text-secondary btn-icon rounded-pill dropdown-toggle hide-arrow"
+                                   href="javascript:void(0);"
+                                   data-bs-toggle="dropdown">
+                                    <i class="ti ti-md"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
+                                    <li>
+                                        <a class="dropdown-item" href="javascript:void(0);" data-theme="light">
+                                            <span class="align-middle"><i class="ti ti-sun ti-md me-3"></i>Light</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="javascript:void(0);" data-theme="dark">
+                                            <span class="align-middle"><i class="ti ti-moon-stars ti-md me-3"></i>Dark</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="javascript:void(0);" data-theme="system">
+                                            <span class="align-middle"><i class="ti ti-device-desktop-analytics ti-md me-3"></i>System</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- / Style Switcher-->
+                            <!-- Quick links -->
+                            <!-- Notification -->
+                            <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-2">
+                                <a class="nav-link btn btn-text-secondary btn-icon rounded-pill dropdown-toggle hide-arrow"
+                                   href="javascript:void(0);"
+                                   data-bs-toggle="dropdown"
+                                   data-bs-auto-close="outside"
+                                   aria-expanded="false">
+                                    <span class="position-relative">
+                                        <i class="ti ti-bell ti-md"></i>
+                                        <span class="badge rounded-pill bg-danger badge-dot badge-notifications border"></span>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end p-0">
+                                    <li class="dropdown-menu-header border-bottom">
+                                        <div class="dropdown-header d-flex align-items-center py-3">
+                                            <h6 class="mb-0 me-auto">Notification</h6>
+                                            <div class="d-flex align-items-center h6 mb-0">
+                                                <span class="badge bg-label-primary me-2">8 New</span>
+                                                <a href="javascript:void(0)"
+                                                   class="btn btn-text-secondary rounded-pill btn-icon dropdown-notifications-all"
+                                                   data-bs-toggle="tooltip"
+                                                   data-bs-placement="top"
+                                                   title="Mark all as read">
+                                                    <i class="ti ti-mail-opened text-heading"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="dropdown-notifications-list scrollable-container">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <img src="../../theme_theme_assets/img/avatars/1.png" alt class="rounded-circle" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="small mb-1">Congratulation Lettie 🎉</h6>
+                                                        <small class="mb-1 d-block text-body">Won the monthly best seller gold badge</small>
+                                                        <small class="text-muted">1h ago</small>
+                                                    </div>
+                                                    <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="ti ti-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <span class="avatar-initial rounded-circle bg-label-danger">CF</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1 small">Charles Franklin</h6>
+                                                        <small class="mb-1 d-block text-body">Accepted your connection</small>
+                                                        <small class="text-muted">12hr ago</small>
+                                                    </div>
+                                                    <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="ti ti-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <img src="../../theme_theme_assets/img/avatars/2.png" alt class="rounded-circle" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1 small">New Message ✉️</h6>
+                                                        <small class="mb-1 d-block text-body">You have new message from Natalie</small>
+                                                        <small class="text-muted">1h ago</small>
+                                                    </div>
+                                                    <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="ti ti-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <span class="avatar-initial rounded-circle bg-label-success">
+                                                                <i class="ti ti-shopping-cart"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1 small">Whoo! You have new order 🛒</h6>
+                                                        <small class="mb-1 d-block text-body">ACME Inc. made new order $1,154</small>
+                                                        <small class="text-muted">1 day ago</small>
+                                                    </div>
+                                                    <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="ti ti-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <img src="../../theme_theme_assets/img/avatars/9.png" alt class="rounded-circle" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1 small">Application has been approved 🚀</h6>
+                                                        <small class="mb-1 d-block text-body">Your ABC project application has been approved.</small>
+                                                        <small class="text-muted">2 days ago</small>
+                                                    </div>
+                                                    <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="ti ti-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <span class="avatar-initial rounded-circle bg-label-success">
+                                                                <i class="ti ti-chart-pie"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1 small">Monthly report is generated</h6>
+                                                        <small class="mb-1 d-block text-body">July monthly financial report is generated </small>
+                                                        <small class="text-muted">3 days ago</small>
+                                                    </div>
+                                                    <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="ti ti-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <img src="../../theme_theme_assets/img/avatars/5.png" alt class="rounded-circle" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1 small">Send connection request</h6>
+                                                        <small class="mb-1 d-block text-body">Peter sent you connection request</small>
+                                                        <small class="text-muted">4 days ago</small>
+                                                    </div>
+                                                    <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="ti ti-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <img src="../../theme_theme_assets/img/avatars/6.png" alt class="rounded-circle" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1 small">New message from Jane</h6>
+                                                        <small class="mb-1 d-block text-body">Your have new message from Jane</small>
+                                                        <small class="text-muted">5 days ago</small>
+                                                    </div>
+                                                    <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="ti ti-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item list-group-item-action dropdown-notifications-item marked-as-read">
+                                                <div class="d-flex">
+                                                    <div class="flex-shrink-0 me-3">
+                                                        <div class="avatar">
+                                                            <span class="avatar-initial rounded-circle bg-label-warning">
+                                                                <i class="ti ti-alert-triangle"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-1 small">CPU is running high</h6>
+                                                        <small class="mb-1 d-block text-body">CPU Utilization Percent is currently at 88.63%,</small>
+                                                        <small class="text-muted">5 days ago</small>
+                                                    </div>
+                                                    <div class="flex-shrink-0 dropdown-notifications-actions">
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-read">
+                                                            <span class="badge badge-dot"></span>
+                                                        </a>
+                                                        <a href="javascript:void(0)" class="dropdown-notifications-archive">
+                                                            <span class="ti ti-x"></span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="border-top">
+                                        <div class="d-grid p-4">
+                                            <a class="btn btn-primary btn-sm d-flex" href="javascript:void(0);">
+                                                <small class="align-middle">View all notifications</small>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/ Notification -->
+                            <!-- User -->
+                            <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                                <a class="nav-link dropdown-toggle hide-arrow p-0"
+                                   href="javascript:void(0);"
+                                   data-bs-toggle="dropdown">
+                                    <div class="btn rounded-pill btn-icon btn-primary waves-effect waves-light">
+                                        <!--<img src="../../theme_theme_assets/img/avatars/1.png" alt class="rounded-circle" />-->
+                                        PS
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li>
+                                        <a class="dropdown-item mt-0" href="#">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-shrink-0 me-2">
+                                                    <div class="btn rounded-pill btn-icon btn-primary waves-effect waves-light">
+                                                        PS
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-0">Parth Sharma</h6>
+                                                    <small class="text-muted">Admin</small>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-divider my-1 mx-n2"></div>
+                                    </li>
+                                    <li>
+                                        <span class="d-flex align-items-center align-middle ms-3 mt-2">
+                                            <span class="flex-grow-1 align-middle"><strong>Switch Company</strong></span>
+                                        </span>
+                                    </li>
+
+                                    <li>
+                                        <div class="dropdown-item waves-effect">
+                                            <span class="d-flex align-items-center align-middle">
+                                                <div class="avatar me-2">
+                                                    <span class="avatar-initial rounded-circle bg-label-info">G</span>
+                                                </div>
+                                                <span class="flex-grow-1 align-middle">Mr. Gutter</span>
+                                                <span class="flex-shrink-0 badge d-flex align-items-center justify-content-center">
+                                                    <input type="radio" id="radioButton" class="cursor-pointer form-check-input" name="group1">
+                                                </span>
+
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown-item waves-effect">
+                                            <span class="d-flex align-items-center align-middle">
+                                                <div class="avatar me-2">
+                                                    <span class="avatar-initial rounded-circle bg-label-success">R</span>
+                                                </div>
+                                                <span class="flex-grow-1 align-middle">Mr. Roofing</span>
+                                                <span class="flex-shrink-0 badge d-flex align-items-center justify-content-center">
+                                                    <input type="radio" id="radioButton" class="cursor-pointer form-check-input" name="group1">
+                                                </span>
+
+                                            </span>
+                                        </div>
+                                    </li>
+                                    <div class="dropdown-divider my-1 mx-n2"></div>
+                                    <li>
+                                        <a class="dropdown-item" href="pages-profile-user.html">
+                                            <i class="ti ti-user me-3 ti-md"></i><span class="align-middle">My Profile</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <i class="ti ti-settings me-3 ti-md"></i><span class="align-middle">Change Password</span>
+                                        </a>
+                                    </li>
+
+                                    <div class="dropdown-divider my-1 mx-n2"></div>
+                                    <li>
+                                        <div class="d-grid px-2 pt-2 pb-1">
+                                            <a class="btn btn-sm btn-danger d-flex" asp-area="" asp-controller="Home" asp-action="Index">
+                                                <small class="align-middle">Logout</small>
+                                                <i class="ti ti-logout ms-2 ti-14px"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--/ User -->
+                        </ul>
+                    </div>
+
+                    <!-- Search Small Screens -->
+                    <div class="navbar-search-wrapper search-input-wrapper d-none">
+                        <input type="text"
+                               class="form-control search-input container-xxl border-0"
+                               placeholder="Search..."
+                               aria-label="Search..." />
+                        <i class="ti ti-x search-toggler cursor-pointer"></i>
+
+                    </div>
+                </nav>
+
+                <!-- / Navbar -->
+                
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    
+                    <!-- Content -->
+                    <div class="container-xxl flex-grow-1 pt-5">
+                       
+
+
+                        <div class="row mb-2">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="px-5 py-4">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                            <a asp-area="" asp-controller="Estimates" asp-action="EstimationDetails" class="text-decoration-underline">
+                                            <i class="ti ti-chevron-left me-1 ti-md"></i> Project:Insurance Sample
+                                        </a>
+
+
+                                        <a data-bs-toggle="modal"
+                                                data-bs-target="#changeLayoutModel"
+                                           class="btn btn-outline-info me-0 pe-5 text-info">
+                                            <i class="ti ti-settings me-1 ti-md"></i>Change Layout
+                                        </a>
+
+                                  
+
+
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                                <h4 class="mb-1">Sample Estimate</h4>
+                                            <p class="mb-0">
+                                                Layout: Default layout
+                                            </p>
+                                        </div>
+
+                                        <div class="col-4 text-end">
+                                              
+                                                    <a asp-area="Report" asp-action="ReviewAndShare" asp-controller="Report" class="btn btn-primary">Review and Share</a>
+                                              
+                                        </div>
+
+@* 
+                                        <a data-bs-toggle="modal"
+                                           data-bs-target="#changeLayoutModel"
+                                           class="btn btn-outline-info me-0 pe-5 text-info">
+                                           Review and Share
+                                        </a> *@
+                                    </div>
+                                    </div>
+
+
+
+
+                                    <!--Changessss-->
+                                    <!-- Vertically Centered Modal -->
+                                    <!-- Modal -->
+
+                                    <div class="modal fade" id="changeLayoutModel" tabindex="-1" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+
+                                                    <button type="button"
+                                                            class="btn-close"
+                                                            data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                </div>
+
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <div class="container-xxl flex-grow-1 container-p-y">
+                                                        <h3 class="mb-1">Change Layout</h3>
+                                                        <h6>Configure layout for this report</h6>
+
+                                                        <div class="py-6">
+                                                            <div class="card-body">
+                                                                <div class="row mb-2">
+                                                                    <div class="col-xl-12">
+                                                                        <div class="nav-align-top nav-tabs-shadow mb-6">
+                                                                            <ul class="nav nav-tabs" role="tablist">
+                                                                                <li class="nav-item">
+                                                                                    <button type="button"
+                                                                                            class="nav-link active"
+                                                                                            role="tab"
+                                                                                            data-bs-toggle="tab"
+                                                                                            data-bs-target="#navs-top-My"
+                                                                                            aria-controls="navs-top-My"
+                                                                                            aria-selected="true">
+                                                                                        My Layouts
+                                                                                    </button>
+                                                                                </li>
+                                                                                <li class="nav-item">
+                                                                                    <button type="button"
+                                                                                            class="nav-link"
+                                                                                            role="tab"
+                                                                                            data-bs-toggle="tab"
+                                                                                            data-bs-target="#navs-top-Shared"
+                                                                                            aria-controls="navs-top-Shared"
+                                                                                            aria-selected="false">
+                                                                                        Shared Layouts
+                                                                                    </button>
+                                                                                </li>
+
+                                                                            </ul>
+                                                                            <div class="tab-content">
+
+                                                                                <div class="tab-pane fade show active" id="navs-top-My" role="tabpanel">
+                                                                                    @*  <div class="d-flex justify-content-center">
+                                                                                    <p>
+                                                                                    No matching records found.
+                                                                                    </p>
+                                                                                    </div> *@
+                                                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                                        <div>
+                                                                                            <h5>Malarkey Roofing Quote(Sample)</h5>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                                        <div>
+                                                                                            <h5>(Sample) James Hardie Siding</h5>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                                        <div>
+                                                                                            <h5>(Sample) Residential Cement Board Siding</h5>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                                        <div>
+                                                                                            <h5>Atlas Roofing Quote(Sample)</h5>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div class="tab-pane fade" id="navs-top-Shared" role="tabpanel">
+                                                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                                        <div>
+                                                                                            <h5>Default Layout</h5>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                                        <div>
+                                                                                            <h5>Residential Roofing Quote (Sample)</h5>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                                        <div>
+                                                                                            <h5>Change Order</h5>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                                                                        <div>
+                                                                                            <h5>(Sample) Insurance Contract</h5>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <a asp-area="Report" asp-action="CreateReport" asp-controller="Report"><i class="ti ti-xl ti-circle-check-filled"></i></a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                        Close
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                   
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <div class="container-xxl d-flex align-items-stretch flex-grow-1 p-0">
+
+                            <div class="flex-shrink-1 flex-grow-0 w-px-400 border-end container-p-x ps-0 container-p-y">
+
+
+
+
+                                <div class="layout-example-sidebar layout-example-content-inner">
+                                    <div class="card-body">
+                                        <nav class="card nav flex-column">
+                                            <div class="card-body px-0 pt-0 pb-2">
+                                                <div class="p-4 border-bottom">
+                                                    <h6 class="mb-0">PAGES</h6>
+                                                </div>
+                                             <ul class="list-group list-group-flush" id="handle-list-1">
+              
+                                             
+                                                <li class="list-group-item d-flex justify-content-between align-items-center py-4" style="">
+                                                    <div class="d-flex align-items-center" style="flex:1;">
+                                                    <input class="form-check-input me-3" type="checkbox" id="checkbox-title" value="" aria-label="" />
+                                                            <span class="d-flex justify-content-between align-items-center w-100">
+                                                        <a asp-area="Report" asp-action="CreateReport" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                            Title
+                                                        </a>
+                                                    </span>
+                                                    </div>
+                                                        <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                </li>
+
+                                                <li class="list-group-item d-flex justify-content-between align-items-center py-4" style="">
+                                                    <div class="d-flex align-items-center" style="flex:1;">
+                                                        <input class="form-check-input me-3" type="checkbox" id="checkbox-Introduction" value="" aria-label="" />
+                                                            <span class="d-flex justify-content-between align-items-center w-100">
+                                                            <a asp-area="Report" asp-action="Introduction" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                Introduction
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                </li>
+
+                                                <li class="list-group-item d-flex justify-content-between align-items-center py-4" style="">
+                                                    <div class="d-flex align-items-center" style="flex:1;">
+                                                        <input class="form-check-input me-3" type="checkbox" id="checkbox-Inspection" value="" aria-label="" />
+                                                            <span class="d-flex justify-content-between align-items-center w-100">
+                                                            <a asp-area="Report" asp-action="Inspection" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                Inspection
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center py-4" style="">
+                                                    <div class="d-flex align-items-center" style="flex:1;">
+                                                        <input class="form-check-input me-3" type="checkbox" id="checkbox-Layout" value="" aria-label="" />
+                                                            <span class="d-flex justify-content-between align-items-center w-100">
+                                                            <a asp-area="Report" asp-action="CreateMap" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                Layout
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center py-4" style="">
+                                                    <div class="d-flex align-items-center" style="flex:1;">
+                                                        <input class="form-check-input me-3" type="checkbox" id="checkbox-Quote" value="" aria-label="" />
+                                                            <span class="d-flex justify-content-between align-items-center w-100">
+                                                            <a asp-area="Report" asp-action="QuoteDetails" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                Quote Details
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center py-4" style="">
+                                                    <div class="d-flex align-items-center" style="flex:1;">
+                                                        <input class="form-check-input me-3" type="checkbox" id="checkbox-Authorization" value="" aria-label="" />
+                                                            <span class="d-flex justify-content-between align-items-center w-100">
+                                                            <a asp-area="Report" asp-action="Authorize" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                Authorization page
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center py-4" style="">
+                                                    <div class="d-flex align-items-center" style="flex:1;">
+                                                        <input class="form-check-input me-3" type="checkbox" id="checkbox-Terms" value="" aria-label="" />
+                                                            <span class="d-flex justify-content-between align-items-center w-100">
+                                                            <a asp-area="Report" asp-action="TermsAndConditions" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                Terms and Conditions
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                </li>
+                                                <li class="list-group-item d-flex justify-content-between align-items-center py-4" style="">
+                                                    <div class="d-flex align-items-center" style="flex:1;">
+                                                        <input class="form-check-input me-3" type="checkbox" id="checkbox-Warranty" value="" aria-label="" />
+                                                        <span class="d-flex justify-content-between align-items-center w-100">
+                                                            <a asp-area="Report" asp-action="Warranty" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                Warranty
+                                                            </a>
+                                                        </span>
+                                                    </div>
+                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                </li>
+
+                                              </ul>
+
+
+                                            
+                                                <!-- Main Navigation Items -->
+                                               @* <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex justify-content-between w-100">
+                                                            <input class="form-check-input me-3" type="checkbox" id="checkbox-title" value="" aria-label="" />
+                                                            <div style="flex:1">
+                                                                <a asp-area="Report" asp-action="CreateReport" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                    Title
+                                                                </a>
+                                                            </div>
+                                                            <i class="ti ti-menu-2"></i>
+                                                        </div>
+                                                    </li>
+                                                    <div class="collapse" id="clone-source-4"></div>
+                                                </ul> *@
+
+
+                                               
+
+                                                @*  <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex justify-content-between w-100">
+                                                            <input class="form-check-input me-3" type="checkbox" id="checkbox-Introduction" value="" aria-label="" />
+                                                            <div style="flex:1">
+                                                                <a asp-area="Report" asp-action="Introduction" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                    Introduction
+                                                                </a>
+                                                            </div>
+                                                            <i class="ti ti-menu-2"></i>
+                                                        </div>
+                                                    </li>
+                                                    <div class="collapse" id="clone-source-4"></div>
+                                                </ul>
+
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex justify-content-between w-100">
+                                                            <input class="form-check-input me-3" type="checkbox" id="checkbox-Inspection" value="" aria-label="" />
+                                                            <div style="flex:1">
+                                                                <a asp-area="Report" asp-action="Inspection" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                    Inspection
+                                                                </a>
+                                                            </div>
+                                                            <i class="ti ti-menu-2"></i>
+                                                        </div>
+                                                    </li>
+                                                    <div class="collapse" id="clone-source-4"></div>
+                                                </ul>
+
+                                                 <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex justify-content-between w-100">
+                                                            <input class="form-check-input me-3" type="checkbox" id="checkbox-Layout" value="" aria-label="" />
+                                                            <div style="flex:1">
+                                                                <a asp-area="Report" asp-action="CreateMap" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                    Layout
+                                                                </a>
+                                                            </div>
+                                                            <i class="ti ti-menu-2"></i>
+                                                        </div>
+                                                    </li>
+                                                    <div class="collapse" id="clone-source-4"></div>
+                                                </ul>
+
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex justify-content-between w-100">
+                                                            <input class="form-check-input me-3" type="checkbox" id="checkbox-Quote" value="" aria-label="" />
+                                                            <div style="flex:1">
+                                                                <a asp-area="Report" asp-action="QuoteDetails" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                    Quote Details
+                                                                </a>
+                                                            </div>
+                                                            <i class="ti ti-menu-2"></i>
+                                                        </div>
+                                                    </li>
+                                                    <div class="collapse" id="clone-source-4"></div>
+                                                </ul>
+
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex justify-content-between w-100">
+                                                            <input class="form-check-input me-3" type="checkbox" id="checkbox-Authorization" value="" aria-label="" />
+                                                            <div style="flex:1">
+                                                                <a asp-area="Report" asp-action="Authorize" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                    Authorization page
+                                                                </a>
+                                                            </div>
+                                                            <i class="ti ti-menu-2"></i>
+                                                        </div>
+                                                    </li>
+                                                    <div class="collapse" id="clone-source-4"></div>
+                                                </ul>
+
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex justify-content-between w-100">
+                                                            <input class="form-check-input me-3" type="checkbox" id="checkbox-Terms" value="" aria-label="" />
+                                                            <div style="flex:1">
+                                                                <a asp-area="Report" asp-action="TermsAndConditions" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                    Terms and Conditions
+                                                                </a>
+                                                            </div>
+                                                            <i class="ti ti-menu-2"></i>
+                                                        </div>
+                                                    </li>
+                                                    <div class="collapse" id="clone-source-4"></div>
+                                                </ul>
+
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex justify-content-between w-100">
+                                                            <input class="form-check-input me-3" type="checkbox" id="checkbox-Warranty" value="" aria-label="" />
+                                                            <div style="flex:1">
+                                                                <a asp-area="Report" asp-action="Warranty" asp-controller="Report" class="text-decoration-none d-flex w-100" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                                    Warranty
+                                                                </a>
+                                                            </div>
+                                                            <i class="ti ti-menu-2"></i>
+                                                        </div>
+                                                    </li>
+                                                    <div class="collapse" id="clone-source-4"></div>
+                                                </ul> *@
+
+                                                <!-- Add Custom Page Button -->
+                                                <ul id="sidebarList" class="list-group list-group-flush d-flex flex-column-reverse">
+                                                    <li class="list-group-item cursor-move d-flex justify-content-center align-items-center">
+                                                        <div class="">
+                                                            <a asp-area="Report" asp-action="AddCustomPage" asp-controller="Report" class="btn btn-primary cursor-pointer d-flex w-100" id="addCustomPageButton">
+                                                                <i></i>Add Custom Page
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <div class="collapse" id="clone-source-4"></div>
+                                                </ul>
+                                            </div>
+                                        </nav>
+                                    </div>
+                                </div>
+
+                              
+
+
+
+
+                               
+                            </div>
+                            <div class="w-100">
+                                @RenderBody()
+                                @RenderSection("Scripts", required: false)
+                            </div>
+                        </div>
+                        <!-- Footer -->
+                        <footer class="content-footer footer bg-footer-theme">
+                            <div class="container-xxl">
+                                <div class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+                                    @* <div class="text-body">
+                                        ©
+                                        <script>
+                                            document.write(new Date().getFullYear());
+                                        </script>
+                                        , made with ❤️ by  <a asp-action="Index" asp-controller="Dashboard" class="footer-link">Mr. Gutter</a>
+                                    </div> *@
+                                   @*  <div class="d-none d-lg-inline-block">
+                                        <a href="https://themeforest.net/licenses/standard" class="footer-link me-4" target="_blank">License</a>
+                                        <a href="https://1.envato.market/pixinvent_portfolio" target="_blank" class="footer-link me-4">More Themes</a>
+
+                                        <a href="https://demos.pixinvent.com/vuexy-html-admin-template/documentation/"
+                                           target="_blank"
+                                           class="footer-link me-4">Documentation</a>
+
+                                        <a href="https://pixinvent.ticksy.com/" target="_blank" class="footer-link d-none d-sm-inline-block">Support</a>
+                                    </div *@
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- / Footer -->
+                        <div class="content-backdrop fade"></div>
+                    </div>
+                    <!-- Content wrapper -->
+                </div>
+                <!-- / Layout page -->
+            </div>
+
+            <!-- Overlay -->
+            <div class="layout-overlay layout-menu-toggle"></div>
+
+            <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+            <div class="drag-target"></div>
+        </div>
+        <!-- / Layout wrapper -->
+        <!-- Core JS -->
+        <!-- build:js theme_assets/vendor/js/core.js -->
+
+        <script src="../../theme_assets/vendor/libs/jquery/jquery.js"></script>
+        <script src="../../theme_assets/vendor/libs/popper/popper.js"></script>
+        <script src="../../theme_assets/vendor/js/bootstrap.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+        <script src="../../theme_assets/vendor/libs/node-waves/node-waves.js"></script>
+        <script src="../../theme_assets/js/pages-auth.js"></script>
+        <script src="../../theme_assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+        <script src="../../theme_assets/vendor/libs/hammer/hammer.js"></script>
+        <script src="../../theme_assets/vendor/libs/i18n/i18n.js"></script>
+        <script src="../../theme_assets/vendor/libs/typeahead-js/typeahead.js"></script>
+        <script src="../../theme_assets/vendor/js/menu.js"></script>
+        <script src="../../theme_assets/vendor/libs/sortablejs/sortable.js"></script>
+        <script src="~/theme_assets/js/extended-ui-drag-and-drop.js"></script>
+        <!-- endbuild -->
+        <!-- Vendors JS -->
+        <script src="~/theme_assets/vendor/libs/autosize/autosize.js"></script>
+        <script src="~/theme_assets/vendor/libs/cleavejs/cleave.js"></script>
+        <script src="~/theme_assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+        <script src="~/theme_assets/vendor/libs/bootstrap-maxlength/bootstrap-maxlength.js"></script>
+        <script src="~/theme_assets/vendor/libs/jquery-repeater/jquery-repeater.js"></script>
+
+        <script src="~/theme_assets/vendor/libs/moment/moment.js"></script>
+        <script src="~/theme_assets/vendor/libs/flatpickr/flatpickr.js"></script>
+        <script src="~/theme_assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js"></script>
+        <script src="~/theme_assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js"></script>
+        <script src="~/theme_assets/vendor/libs/jquery-timepicker/jquery-timepicker.js"></script>
+
+
+        <script src="../../theme_assets/vendor/libs/nouislider/nouislider.js"></script>
+        <script src="../../theme_assets/vendor/libs/swiper/swiper.js"></script>
+        <script src="../../theme_assets/vendor/libs/dropzone/dropzone.js"></script>
+        <script src="../../theme_assets/vendor/libs/pickr/pickr.js"></script>
+        <script src="~/theme_assets/vendor/libs/quill/quill.js"></script>
+        <script src="~/theme_assets/vendor/libs/quill/katex.js"></script>
+        <!-- Page JS -->
+        <script src="../../theme_assets/js/forms-file-upload.js"></script>
+        <script src="~/theme_assets/js/forms-editors.js"></script>
+        <script src="../../theme_assets/js/form-input-group.js"></script>
+
+        <script src="~/theme_assets/js/forms-extras.js"></script>
+        <!-- Main JS -->
+        <script src="../../theme_assets/js/main.js"></script>
+
+
+        <!--Script for custom page button-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const addButton = document.getElementById("addCustomPageButton"); // Add Custom Page Button
+                const sidebarList = document.getElementById("sidebarList"); // Sidebar list container
+
+                let customPageCount = 0;
+
+                // Check if there are any custom pages stored in localStorage
+                if (localStorage.getItem('customPages')) {
+                    const customPages = JSON.parse(localStorage.getItem('customPages'));
+                    customPages.forEach(page => {
+                        addCustomPageToSidebar(page.count);
+                    });
+                    customPageCount = customPages.length;
+                }
+
+                // Event listener for the "Add Custom Page" button
+                addButton.addEventListener("click", function (e) {
+                    e.preventDefault();
+
+                    // Increment the counter for naming the new custom page
+                    customPageCount++;
+
+                    // Store custom page in localStorage
+                    const customPages = JSON.parse(localStorage.getItem('customPages') || '[]');
+                    customPages.push({ count: customPageCount });
+                    localStorage.setItem('customPages', JSON.stringify(customPages));
+
+                    // Add the custom page to the sidebar
+                    addCustomPageToSidebar(customPageCount);
+                });
+
+                // Function to add custom page to sidebar
+                function addCustomPageToSidebar(count) {
+                    const newListItem = document.createElement("li");
+                    newListItem.className = "list-group-item d-flex justify-content-between align-items-center border-bottom py-3";
+
+                    // Add the checkbox button for the custom page
+                    newListItem.innerHTML = `
+                            <div class="d-flex justify-content-between w-100 align-items-center">
+                                <div class="form-check d-flex align-items-center">
+                                    <input class="form-check-input me-2" type="checkbox" id="customPageCheckbox${count}" />
+                                    <a href="/Report/Report/AddCustomPage" class="text-decoration-none" data-bs-target="#clone-source-4" aria-expanded="false">
+                                        Custom Page
+                                    </a>
+                                </div>
+                                <i class="ti ti-menu-2 mb-2"></i>
+                            </div>
+                        `;
+
+                    // Append the new custom page to the sidebar
+                    sidebarList.appendChild(newListItem);
+                }
+            });
+        </script>
+
+
+        <!--Script for navbar's fields-->
+
+        <script>
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const navLinks = document.querySelectorAll('a.text-decoration-none'); // All navigation links
+                const checkboxes = document.querySelectorAll('input.form-check-input'); // All checkboxes
+                const listItems = document.querySelectorAll('.list-group-item'); // All list items
+
+                // Restore the active checkbox and styling on page load
+                const activeItemId = localStorage.getItem('activeItemId');
+                if (activeItemId) {
+                    const activeCheckbox = document.getElementById(activeItemId);
+                    if (activeCheckbox) {
+                        activeCheckbox.checked = true; // Restore checkbox state
+                        const listItem = activeCheckbox.closest('li');
+                        if (listItem) listItem.classList.add('active'); // Add active styling
+                    }
+                }
+
+                // Add click event listener to all navigation links
+                navLinks.forEach(link => {
+                    link.addEventListener("click", function (event) {
+                        event.preventDefault(); // Prevent default anchor behavior
+
+                        // Smooth navigation to the target page
+                        const targetUrl = this.getAttribute("href");
+                        if (targetUrl) {
+                            // Delay navigation to allow checkbox state to update smoothly
+                            setTimeout(() => {
+                                window.location.href = targetUrl;
+                            }, 100); // Adjust delay if necessary
+                        }
+
+                        // Uncheck all checkboxes and remove active classes
+                        checkboxes.forEach(checkbox => (checkbox.checked = false));
+                        listItems.forEach(item => item.classList.remove('active'));
+
+                        // Activate the clicked checkbox and list item
+                        const listItem = this.closest('li');
+                        const checkbox = listItem.querySelector('input.form-check-input');
+                        if (checkbox) {
+                            checkbox.checked = true; // Check the current checkbox
+                            listItem.classList.add('active'); // Highlight the current list item
+                            localStorage.setItem('activeItemId', checkbox.id); // Persist state
+                        }
+                    });
+                });
+
+               
+            });
+
+
+        </script>
+
+        
+
+
+</body>
+</html>

@@ -258,7 +258,7 @@
     {
       "name": "Account Settings - Account",
       "icon": "ti-user",
-      "url": "pages-account-settings-account.html"
+      "url": "#"
     },
     {
       "name": "Account Settings - Security",
@@ -318,7 +318,7 @@
     {
       "name": "Login Cover",
       "icon": "ti-login",
-      "url": "auth-login-cover.html"
+      "url": "#"
     },
     {
       "name": "Register Basic",

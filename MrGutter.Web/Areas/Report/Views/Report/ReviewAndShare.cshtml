@@ -1,0 +1,288 @@
+﻿@{
+    Layout = "_Layout_Blank";
+    ViewData["Title"] = "ReviewAndShare";
+}
+
+
+
+<div class="">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <!-- Header Section -->
+            <div class="d-flex justify-content-between mt-4">
+                <h5 class="modal-title">Review</h5>
+               @*  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> *@
+                <div class="d-flex align-items-center">
+                    <div class="me-5 pe-4">
+                        <button type="button" class="btn btn-outline-primary waves-effect" id="signNowBtn">
+                            Sign now
+                        </button>
+                        <button type="button" class="btn btn-outline-primary waves-effect" data-bs-toggle="modal" data-bs-target="#sendForSigning">
+                            Send for signing
+                        </button>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+
+            <!-- Review Content Section (iframe displaying PDF) -->
+            <div class="mt-4">
+                <div style="width: 100%; height: 80vh; border: 1px solid #ccc;">
+                    <iframe src="@Url.Content("~/report_view_pages/review_and_share.pdf")" width="100%" height="100%" style="border: none;"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Now Section (This can be hidden initially and toggled via button) -->
+    <div class="row mt-5" id="signNowSection">
+        <div class="col-lg-12">
+            <div class="modal-header">
+                <h5 class="modal-title">Sign now</h5><br />
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-4">
+                        <h5 class="form-label">This quote will be signed by the following person:</h5>
+                        <h5 class="mb-0"><p class="mb-0">1. Insurance Sample</p></h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="ms-4">parth@mrgutter.com</p>
+                            <i class="ti ti-edit text-end" data-bs-toggle="modal" data-bs-target="#modalEdit"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" id="closeSignNowBtn">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">Sign now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Send for signing (Keep it if needed) -->
+<div class="modal fade" id="sendForSigning" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-4" id="modalCenterTitle"><b>Send for Signing</b></h5><br />
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-4">
+                        <h5 for="nameWithTitle" class="form-label fs-5">This quote will be sent to the following person :</h5>
+                        <h5 class="mb-0"><p class="mb-0">1. Insurance Sample</p></h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="ms-4">parth@mrgutter.com</p>
+                            <i class="ti ti-edit text-end" data-bs-toggle="modal" data-bs-target="#modalEdit"></i>
+                        </div>
+                    </div>
+                </div>
+                <h5 class="mb-1">Note to customer</h5>
+                <div class="mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div id="snow-toolbar">
+                                <span class="ql-formats">
+                                    <select class="ql-font"></select>
+                                    <select class="ql-size"></select>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-bold"></button>
+                                    <button class="ql-italic"></button>
+                                    <button class="ql-underline"></button>
+                                </span>
+                            </div>
+                            <div class="snow-editor">
+                                Type something...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div>
+                    <a href="#" data-bs-toggle="modal"
+                    data-bs-target="#templateModal" class="text-decoration-underline">Save as template</a>
+                </div>
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">Send for signing</button>
+            </div>
+        
+        </div>
+    </div>
+</div>
+
+<!--Modal for save template of send for signing-->
+<div class="modal fade" id="templateModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row gap-0">
+                    <h5 class="modal-title mb-0 fs-4" id="modalCenterTitle"><b>Save as new template</b></h5><br />
+                    <p>Create a name for this new template to use it in future reports.</p>
+                </div>
+               
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-4">
+                    <label class="form-label fs-5" for="namee"><b>New template name</b></label>
+                    <input class="form-control" id="namee"/>
+                </div>
+
+                <div class="form-check mb-0">
+                    <input class="form-check-input" type="checkbox" id="remember-me">
+                    <label class="form-check-label" for="remember-me">
+                        Share this template with all users
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal for Sign now button -->
+<div class="modal fade" id="signNow" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row gap-0">
+                    <h5 class="modal-title mb-0 fs-4" id="modalCenterTitle"><b>Sign now</b></h5><br />
+                   
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-4">
+                        <p class="mb-0">This quote will be signed by the following person :</p>
+                        <h5 class="mb-0 mt-0"><p class="mb-0 fs-5"><b>1. Insurance Sample</b></p></h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="ms-4">parth@mrgutter.com</p>
+                            <i class="ti ti-edit text-end" data-bs-toggle="modal" data-bs-target="#modalEdit"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <a href="/Report/Signing/CustomerReview" class="btn btn-primary">Sign now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal for Edit button -->
+<div class="modal fade" id="modalEdit" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">Sign now</h5><br />
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-4">
+                        <h5 for="nameWithTitle" class="form-label">This quote will be signed by the following person :</h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0"><p class="mb-0">1. Primary signer </p></h5>
+                            <i class="ti ti-xl ti-circle-check-filled"></i>
+                        </div>
+
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="form-label" for="firstName"><h5 class="mb-0">First name</h5></label>
+                                    <input type="text" id="firstName" class="form-control col-md-6" placeholder="Insurance" />
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label" for="lastName"><h5 class="mb-0">Last name</h5></label>
+                                    <input type="text" id="lastName" class="form-control col-md-6" placeholder="Sample" />
+                                </div>
+                              
+                            </div>
+
+
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-md-6">
+                                <label class="form-label" for="email"><h5 class="mb-0">Email address</h5></label>
+                                <input type="text" id="email" class="form-control col-md-6" placeholder="john@@mrgutter.com" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">Sign now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Script for Review and Share page button -->
+<script>
+    document.getElementById('signNowBtn').addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent default action (page redirect)
+
+        // Hide the Review and Share modal explicitly
+        const reviewShareModal = bootstrap.Modal.getInstance(document.getElementById('reviewShare')); // Get the instance of the reviewShare modal
+        if (reviewShareModal) {
+            reviewShareModal.hide(); // Hide the Review and Share modal
+        }
+
+        // Show the 'Sign Now' modal
+        const signNowModal = new bootstrap.Modal(document.getElementById('signNow'));
+        signNowModal.show();  // Trigger modal display
+    });
+</script>
+
+<!--Script for close the Review and Share page-->
+<script>
+
+    const closeButton = document.querySelector('.btn-close[data-bs-dismiss="modal"]');
+
+    // Add click event listener
+    closeButton.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // Redirect the user to the previous page
+        window.history.back();
+    });
+</script>
+
+
+
+
+
+
+
+

@@ -1,0 +1,442 @@
+﻿@{
+    Layout = "_Layout_CreateReport";
+    ViewData["Title"] = "Layout";
+}
+<style>
+    canvas {
+        border: 1px solid #ccc;
+    }
+
+    #canvasContainer {
+        position: relative;
+        display: inline-block;
+    }
+
+    #horizontalRuler, #verticalRuler {
+        position: absolute;
+        background-color: #f0f0f0;
+    }
+
+    #horizontalRuler {
+        height: 30px;
+        top: 0;
+        left: 30px;
+    }
+
+    #verticalRuler {
+        width: 30px;
+        top: 30px;
+        left: 0;
+    }
+
+    #controls {
+        margin-top: 20px;
+    }
+
+    #canvas {
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+
+    #measurement {
+        position: absolute;
+        background-color: rgba(255,255,255,0.8);
+        padding: 5px;
+        border: 1px solid #ccc;
+        font-size: 12px;
+        display: none;
+    }
+</style>
+
+<div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y pt-0">
+
+    <div class="layout-demo-wrapper">
+        <div class="layout-demo-placeholder">
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="mb-0">Page Content</h5>
+                    <div class="d-flex justify-content-between mb-1">
+
+                        <div>
+                            <h5 class="mb-0">
+                                <span id="Inspection-text"> <b>Inspection Page</b></span>
+                                <a href="#" id="edit-Inspection-link" title="Edit the Inspection page">
+                                    <i class="ti ti-edit"></i>
+                                </a>
+                            </h5>
+                            <input type="text" id="Inspection-input" class="form-control" style="display: none;" />
+                        </div>
+                        <div class="mb-2">
+                            <button class="btn btn-outline-primary">View Page</button>
+                        </div>
+
+
+                    </div>
+
+                    <div id="canvasContainer" class="w-100">
+                        <canvas id="horizontalRuler" height="30" width="800"></canvas>
+                        <canvas id="verticalRuler" width="30" height="600"></canvas>
+                        <canvas id="drawingCanvas" width="800" height="600" style="border:1px solid #000;"></canvas>
+                        <div id="measurement"></div>
+                    </div>
+                    <div>
+                        <button id="clearCanvas">Clear Canvas</button>
+                        <button id="drawFree">Free Draw</button>
+                        <button id="drawRectangle">Draw Rectangle</button>
+                        <button id="drawLine">Draw Line</button>
+                        <button id="drawCircle">Draw Circle</button>
+                        <button id="drawPolygon">Draw Polygon</button>
+                        <button id="addText">Add Text to Line</button>
+                        <button id="zoom">Enable Zoom</button>
+                        <button id="saveCanvas">Save as Image with Measurements</button>
+                        <label for="unit">Choose unit:</label>
+                        <select id="unit">
+                            <option value="meters">Meters</option>
+                            <option value="feet">Feet</option>
+                        </select>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+
+        <script>
+            const canvas = new fabric.Canvas('drawingCanvas');
+            let drawingMode = ''; // To keep track of the selected shape
+            let currentLine = null;
+            let currentPolygon = null;
+            let polygonPoints = [];
+
+            const pixelsPerCm = 37.7953;
+            // Add Grid Lines on the Canvas
+            function addGridLines() {
+                const gridSize = pixelsPerCm; // 1 cm grid
+                for (var i = 0; i < (canvas.width / gridSize); i++) {
+                    canvas.add(new fabric.Line([i * gridSize, 0, i * gridSize, canvas.height], {
+                        stroke: '#ddd',
+                        selectable: false,
+                        evented: false
+                    }));
+                }
+                for (var j = 0; j < (canvas.height / gridSize); j++) {
+                    canvas.add(new fabric.Line([0, j * gridSize, canvas.width, j * gridSize], {
+                        stroke: '#ddd',
+                        selectable: false,
+                        evented: false
+                    }));
+                }
+            }
+
+            // Draw horizontal ruler
+            function drawHorizontalRuler() {
+                var rulerCanvas = document.getElementById('horizontalRuler');
+                var ctx = rulerCanvas.getContext('2d');
+                ctx.clearRect(0, 0, rulerCanvas.width, rulerCanvas.height);
+                var step = pixelsPerCm; // 1 cm in pixels
+                ctx.font = "10px Verdana";
+                for (var i = 0; i < rulerCanvas.width; i += step) {
+                    ctx.moveTo(i, 0);
+                    ctx.lineTo(i, 20);
+                    ctx.stroke();
+                    ctx.fillText((i / pixelsPerCm).toFixed(1) + "cm", i + 2, 25);
+                }
+            }
+
+            // Draw vertical ruler
+            function drawVerticalRuler() {
+                var rulerCanvas = document.getElementById('verticalRuler');
+                var ctx = rulerCanvas.getContext('2d');
+                ctx.clearRect(0, 0, rulerCanvas.width, rulerCanvas.height);
+                var step = pixelsPerCm; // 1 cm in pixels
+                ctx.font = "10px Verdana";
+                for (var i = 0; i < rulerCanvas.height; i += step) {
+                    ctx.moveTo(0, i);
+                    ctx.lineTo(20, i);
+                    ctx.stroke();
+                    ctx.fillText((i / pixelsPerCm).toFixed(1) + "cm", 5, i + 12);
+                }
+            }
+
+            // Draw rulers and grid on load
+            drawHorizontalRuler();
+            drawVerticalRuler();
+            addGridLines();
+
+
+
+
+            // Common function to deactivate drawing mode
+            function deactivateDrawing() {
+
+                drawingMode = '';
+                currentLine = null;
+                currentPolygon = null;
+                polygonPoints = [];
+                canvas.isDrawingMode = false;
+                canvas.off('mouse:down');
+                canvas.off('mouse:move');
+                canvas.off('mouse:up');
+            }
+            //Clear the canvas
+            document.getElementById('clearCanvas').addEventListener('click', function () {
+                canvas.isDrawingMode = false;
+                canvas.clear();
+                drawHorizontalRuler();
+                drawVerticalRuler();
+                addGridLines();
+                window.location.reload();
+            });
+            //Free draw
+            document.getElementById('drawFree').addEventListener('click', function () {
+                // canvas.isDrawingMode = !canvas.isDrawingMode;
+                canvas.isDrawingMode = true;
+            });
+            // Draw rectangle
+            document.getElementById('drawRectangle').addEventListener('click', function () {
+                deactivateDrawing();
+                const rect = new fabric.Rect({
+                    left: 100,
+                    top: 100,
+                    width: 200,
+                    height: 150,
+                    fill: 'transparent',
+                    stroke: 'black',
+                    strokeWidth: 2
+                });
+                canvas.add(rect);
+                canvas.renderAll();
+            });
+
+            // Draw line
+            // document.getElementById('drawLine').addEventListener('click', function () {
+            //     deactivateDrawing();
+            //     drawingMode = 'line';
+
+            //     canvas.on('mouse:down', function (options) {
+            //         if (drawingMode === 'line' && !currentLine) {
+            //             const pointer = canvas.getPointer(options.e);
+            //             const points = [pointer.x, pointer.y, pointer.x, pointer.y];
+
+            //             currentLine = new fabric.Line(points, {
+            //                 strokeWidth: 2,
+            //                 stroke: 'black',
+            //                 originX: 'center',
+            //                 originY: 'center'
+            //             });
+
+            //             canvas.add(currentLine);
+            //         }
+            //     });
+
+            //     canvas.on('mouse:move', function (options) {
+            //         if (drawingMode === 'line' && currentLine) {
+            //             const pointer = canvas.getPointer(options.e);
+            //             currentLine.set({ x2: pointer.x, y2: pointer.y });
+            //             canvas.renderAll();
+            //         }
+            //     });
+
+            //     canvas.on('mouse:up', function () {
+            //         if (currentLine) {
+            //             currentLine = null;
+            //         }
+            //     });
+            // });
+            var measurementDiv = document.getElementById('measurement');
+
+            // Function to show measurement feedback (in cm)
+            function showMeasurement(x, y, text) {
+                measurementDiv.style.left = x + 'px';
+                measurementDiv.style.top = y + 'px';
+                measurementDiv.innerText = text;
+                measurementDiv.style.display = 'block';
+            }
+
+            // Hide measurement feedback
+            function hideMeasurement() {
+                measurementDiv.style.display = 'none';
+            }
+            document.getElementById('drawLine').addEventListener('click', function () {
+                deactivateDrawing();
+                canvas.isDrawingMode = false; // Disable free drawing mode
+                isDrawing = false;  // Reset state
+
+                canvas.on('mouse:down', function (o) {
+                    var pointer = canvas.getPointer(o.e);
+                    startX = pointer.x;
+                    startY = pointer.y;
+
+                    isDrawing = true;
+                    currentShape = new fabric.Line([startX, startY, startX, startY], {
+                        stroke: 'blue',
+                        strokeWidth: 2,
+                    });
+                    canvas.add(currentShape);
+                });
+
+                canvas.on('mouse:move', function (o) {
+                    if (!isDrawing) return;
+
+                    var pointer = canvas.getPointer(o.e);
+                    currentShape.set({ x2: pointer.x, y2: pointer.y });
+
+                    // Calculate line length in pixels
+                    var lengthInPixels = Math.sqrt(Math.pow(pointer.x - startX, 2) + Math.pow(pointer.y - startY, 2));
+                    var lengthInCm = (lengthInPixels / pixelsPerCm).toFixed(2);  // Convert to cm
+
+                    // Show the measurement feedback near the mouse pointer
+                    showMeasurement(pointer.x + 10, pointer.y + 10, lengthInCm + " cm");
+
+                    canvas.renderAll();
+                });
+
+                canvas.on('mouse:up', function (o) {
+                    isDrawing = false;
+                    hideMeasurement();
+                    currentShape.setCoords();  // Finalize the line coordinates
+                });
+            });
+
+
+            // Draw circle
+            document.getElementById('drawCircle').addEventListener('click', function () {
+                canvas.isDrawingMode = false; // Disable free drawing mode
+                deactivateDrawing();
+                drawingMode = 'circle';
+
+                canvas.on('mouse:down', function (options) {
+                    if (drawingMode === 'circle') {
+                        const pointer = canvas.getPointer(options.e);
+                        const circle = new fabric.Circle({
+                            left: pointer.x,
+                            top: pointer.y,
+                            radius: 50,
+                            fill: 'transparent',
+                            stroke: 'black',
+                            strokeWidth: 2,
+                            originX: 'center',
+                            originY: 'center'
+                        });
+
+                        canvas.add(circle);
+                        canvas.renderAll();
+                        deactivateDrawing(); // Stop drawing mode after adding the circle
+                    }
+                });
+            });
+
+            // Draw polygon
+            document.getElementById('drawPolygon').addEventListener('click', function () {
+                canvas.isDrawingMode = false; // Disable free drawing mode
+                deactivateDrawing();
+                drawingMode = 'polygon';
+
+                canvas.on('mouse:down', function (options) {
+                    if (drawingMode === 'polygon') {
+                        const pointer = canvas.getPointer(options.e);
+                        polygonPoints.push({ x: pointer.x, y: pointer.y });
+
+                        if (polygonPoints.length === 3) { // For example, a triangle (3 points)
+                            currentPolygon = new fabric.Polygon(polygonPoints, {
+                                fill: 'transparent',
+                                stroke: 'black',
+                                strokeWidth: 2
+                            });
+                            canvas.add(currentPolygon);
+                            canvas.renderAll();
+                            deactivateDrawing(); // Reset after drawing
+                        }
+                    }
+                });
+            });
+
+            // Add text to the canvas
+            document.getElementById('addText').addEventListener('click', function () {
+                canvas.isDrawingMode = false; // Disable free drawing mode
+                deactivateDrawing();
+                const text = new fabric.Textbox('Enter text here', {
+                    left: 150,
+                    top: 120,
+                    fontSize: 20,
+                    fill: 'black'
+                });
+                canvas.add(text);
+                canvas.renderAll();
+            });
+
+            // Save the canvas as an image and include measurements
+            document.getElementById('saveCanvas').addEventListener('click', function () {
+                const unit = document.getElementById('unit').value;
+                const canvasObjects = canvas.getObjects();
+                const measurements = [];
+
+                canvasObjects.forEach((obj) => {
+                    let dimensions = {
+                        type: obj.type,
+                        width: obj.width ? obj.width * obj.scaleX : 0,
+                        height: obj.height ? obj.height * obj.scaleY : 0,
+                        left: obj.left,
+                        top: obj.top,
+                        unit: unit
+                    };
+
+                    if (unit === 'meters') {
+                        dimensions.width = PixelsToMeters(dimensions.width);
+                        dimensions.height = PixelsToMeters(dimensions.height);
+                    } else if (unit === 'feet') {
+                        dimensions.width = PixelsToFeet(dimensions.width);
+                        dimensions.height = PixelsToFeet(dimensions.height);
+                    }
+
+                    measurements.push(dimensions);
+                });
+
+                const canvasDataUrl = canvas.toDataURL({
+                    format: 'png',
+                    multiplier: 2
+                });
+
+                const drawingData = { imageData: canvasDataUrl, measurements, unit };
+                console.log(drawingData);
+                fetch('https://localhost:7200/report/report/saveCanvas', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(drawingData)
+                }).then(response => {
+                    if (response.ok) {
+                        alert('Canvas saved successfully with measurements!');
+                    } else {
+                        alert('Error saving canvas');
+                    }
+                });
+            });
+
+            // Conversion functions
+            function PixelsToMeters(pixels) {
+                return pixels / 100; // Example conversion
+            }
+
+            function PixelsToFeet(pixels) {
+                return (pixels / 100) * 3.28084; // Example conversion
+            }
+
+            document.getElementById('zoom').addEventListener('click', function () {
+                canvas.on('mouse:wheel', function (opt) {
+                    var delta = opt.e.deltaY;
+                    var zoom = canvas.getZoom();
+                    zoom *= 0.999 ** delta;
+                    if (zoom > 20) zoom = 20;
+                    if (zoom < 0.01) zoom = 0.01;
+                    canvas.zoomToPoint({ x: opt.e.offsetX, y: opt.e.offsetY }, zoom);
+                    opt.e.preventDefault();
+                    opt.e.stopPropagation();
+                });
+            });
+        </script>
+    }
+

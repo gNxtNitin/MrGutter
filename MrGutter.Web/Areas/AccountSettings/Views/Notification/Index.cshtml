@@ -1,0 +1,203 @@
+﻿@{
+    Layout = "_Layout_AccountSetting";
+    ViewBag.Title = "Notifications";
+}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+
+    <div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y">
+
+        <div class="layout-demo-wrapper align-items-start">
+            <div class="layout-demo-placeholder w-100">
+                <div class="row">
+                    <div class="col-12">
+                        <h5 class="mb-1 fs-4"><b>Notificaitons</b></h5>
+
+                        <p class="mb-6 fs-5">You can toggle notifications on/off for the following actions.</p>
+
+                        <div class="mb-6">
+                            <div class="card-body pt-4">
+
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="nav-align-top nav-tabs-shadow mb-6">
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    <button type="button"
+                                                            class="nav-link active"
+                                                            role="tab"
+                                                            data-bs-toggle="tab"
+                                                            data-bs-target="#navs-top-My"
+                                                            aria-controls="navs-top-My"
+                                                            aria-selected="true">
+                                                        My Notifications
+                                                    </button>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <button type="button"
+                                                            class="nav-link"
+                                                            role="tab"
+                                                            data-bs-toggle="tab"
+                                                            data-bs-target="#navs-top-Shared"
+                                                            aria-controls="navs-top-Shared"
+                                                            aria-selected="false">
+                                                        Account Notifications
+                                                    </button>
+                                                </li>
+
+                                            </ul>
+                                            <div class="tab-content">
+                                                <div class="tab-pane fade show active" id="navs-top-My" role="tabpanel">
+
+                                                    <div class="mt-2 border border-light rounded">
+                                                        <div class="d-flex justify-content-between align-items-center p-4">
+
+                                                            <div>
+                                                                <h5 class="mb-1"><b>Initial Open</b></h5>
+                                                                <p>Sent when an email recipient opens the email for the first time</p>
+                                                            </div>
+                                                            <div class="p-3 pe-6 ms-auto">                                                           
+                                                                <label class="switch">
+                                                                    <input type="checkbox" class="switch-input" />
+                                                                    <span class="switch-toggle-slider" id="with-title">
+                                                                        <span class="switch-on" id="with-title"></span>
+                                                                        <span class="switch-off"></span>
+                                                                    </span>
+
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="mt-2 border border-light rounded">
+                                                        <div class="d-flex justify-content-between align-items-center p-4">
+
+                                                            <div>
+                                                                <h5 class="mb-1"><b>Click</b></h5>
+                                                                <p>Sent every time an email recipients click on a link in the email</p>
+                                                            </div>
+                                                            <div class="p-3 pe-6 ms-auto">                                                            
+                                                                <label class="switch">
+                                                                    <input type="checkbox" class="switch-input" />
+                                                                    <span class="switch-toggle-slider" id="with-title">
+                                                                        <span class="switch-on" id="with-title"></span>
+                                                                        <span class="switch-off"></span>
+                                                                    </span>
+
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="mt-2 border border-light rounded">
+                                                        <div class="d-flex justify-content-between align-items-center p-4">
+
+                                                            <div>
+                                                                <h5 class="mb-1"><b>Bounce</b></h5>
+                                                                <p>Sent when an email address is undelivered</p>
+                                                            </div>
+                                                            <div class="p-3 pe-6 ms-auto">
+                                                                <label class="switch">
+                                                                    <input type="checkbox" class="switch-input" />
+                                                                    <span class="switch-toggle-slider" id="with-title">
+                                                                        <span class="switch-on" id="with-title"></span>
+                                                                        <span class="switch-off"></span>
+                                                                    </span>
+
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+            
+                                                <!--Second portion-->
+                                                <div class="tab-pane fade" id="navs-top-Shared" role="tabpanel">
+
+
+                                                    <div class="mt-2 border border-light rounded">
+                                                        <div class="d-flex justify-content-between align-items-center p-4">
+
+                                                            <div>
+                                                                <h5 class="mb-1"><b>Initial Open</b></h5>
+                                                                <p>Sent when an email recipient opens the email for the first time</p>
+                                                            </div>
+                                                            <div class="p-3 pe-6 ms-auto">
+                                                                <label class="switch">
+                                                                    <input type="checkbox" class="switch-input" />
+                                                                    <span class="switch-toggle-slider" id="with-title">
+                                                                        <span class="switch-on" id="with-title"></span>
+                                                                        <span class="switch-off"></span>
+                                                                    </span>
+
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="mt-2 border border-light rounded">
+                                                        <div class="d-flex justify-content-between align-items-center p-4">
+
+                                                            <div>
+                                                                <h5 class="mb-1"><b>Click</b></h5>
+                                                                <p>Sent every time an email recipients click on a link in the email</p>
+                                                            </div>
+                                                            <div class="p-3 pe-6 ms-auto">
+                                                                <label class="switch">
+                                                                    <input type="checkbox" class="switch-input" />
+                                                                    <span class="switch-toggle-slider" id="with-title">
+                                                                        <span class="switch-on" id="with-title"></span>
+                                                                        <span class="switch-off"></span>
+                                                                    </span>
+
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="mt-2 border border-light rounded">
+                                                        <div class="d-flex justify-content-between align-items-center p-4">
+
+                                                            <div>
+                                                                <h5 class="mb-1"><b>Bounce</b></h5>
+                                                                <p>Sent when an email address is undelivered</p>
+                                                            </div>
+                                                            <div class="p-3 pe-6 ms-auto">
+                                                                <label class="switch">
+                                                                    <input type="checkbox" class="switch-input" />
+                                                                    <span class="switch-toggle-slider" id="with-title">
+                                                                        <span class="switch-on" id="with-title"></span>
+                                                                        <span class="switch-off"></span>
+                                                                    </span>
+
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

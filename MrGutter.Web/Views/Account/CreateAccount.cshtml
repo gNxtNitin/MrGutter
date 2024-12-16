@@ -1,149 +1,133 @@
-﻿@model MrGutter.Models.ViewModels.UsersVM
-@{
+﻿@{
     Layout = "_Layout_Home";
 }
-<style>
-    .requried {
-        color: red;
-    }
-</style>
 
-<section id="">
-    <div class="row full-height-vh m-0">
-        <div class="col-12 d-flex align-items-center justify-content-center">
-            <div class="card overflow-hidden radius-12">
-                <div class="card-content">
-                    <form method="post" asp-action="CreateAccount" asp-controller="Account">
 
-                        <div class="card-body auth-img">
+<section id="landingReviews" class="section-py bg-body landing-reviews pb-0">
+    <div class="container authentication-wrapper authentication-cover">
+   
+    <div class="authentication-inner row m-0">
 
-                            <div class="row m-0 p-3">
-                                <div class="col-md-6 bg-light-blue pt-2">
-                                    <div class="text-center mb-3">
-                                        <img src="~/image/gutter-logo-1-removebg-preview.png" class="dnfinsImgHomeLoanAc" alt="dnfins.com" /><br />
-                                    </div>
-                                    <div class="text-center"> <img src="~/app-assets/img/flags/homeloan.png" style="height:200px;" /></div>
-                                    <div class="mt-4">
-                                        <h1 class="card-title"><strong>“Sold our first job with Mr.Gutter the other day. Winning the job made Mr.Gutter pay for itself for the year!”</strong></h1><br />
-                                    </div>
-
-                                </div>
-                                <div class="col-lg-6 col-12 px-4 py-3">
-                                    <div class="row">
-                                        <!-- First Name and Last Name on a single line -->
-                                        <div class="col-lg-6 col-12">
-                                            <fieldset class="form-group">
-                                                <label class="font-14" for="FirstName">First Name<span id="f_name" class="requried">*</span></label>
-                                                <input type="text" class="cstm-input0" id="FirstName" name="FirstName" placeholder="Required" asp-for="FirstName">
-                                                <span asp-validation-for="FirstName" class="text-danger"></span>
-                                            </fieldset>
-                                        </div>
-                                        <div class="col-lg-6 col-12">
-                                            <fieldset class="form-group">
-                                                <label class="font-14" for="LastName">Last Name<span id="l_name" class="requried">*</span></label>
-                                                <input type="text" class="cstm-input0" id="LastName" name="LastName" placeholder="Required" asp-for="LastName">
-                                                <span asp-validation-for="LastName" class="text-danger"></span>
-                                            </fieldset>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6 col-12">
-                                        <fieldset class="form-group">
-                                            <label class="font-14" for="CompanyName">
-                                                Company Name
-                                                <span class="requried">*</span>
-                                            </label>
-                                                <input type="text" class="cstm-input0" id="LastName" name="CompanyName" placeholder="Required" asp-for="CompanyName">
-                                                <span asp-validation-for="CompanyName" class="text-danger"></span>
-                                        </fieldset>
-                                        </div>
-                                        <div class="col-lg-6 col-12">
-                                            <fieldset class="form-group">
-                                                <label class="font-14" for="MobileNo">
-                                                    Phone Number
-                                                    <span class="requried">*</span>
-                                                </label>
-                                                <input type="number" class="cstm-input0" id="MobileNo" name="MobileNo" placeholder="Required" asp-for="MobileNo" min="0" max="9999999999" maxlength="10">
-                                                <span asp-validation-for="MobileNo" class="text-danger"></span>
-                                            </fieldset>
-                                        </div>
-                                      
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-12 col-12">
-                                            <fieldset class="form-group">
-                                                <label class="font-14" for="EmailID">Email<span class="requried">*</span></label>
-                                                <input type="text" class="cstm-input0" id="EmailID" placeholder="Required"  name="EmailID" asp-for="EmailID">
-                                                <span asp-validation-for="EmailID" class="text-danger"></span>
-                                            </fieldset>
-                                        </div>
-                                      
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6 col-12">
-                                            <fieldset class="form-group">
-                                                <label class="font-14" for="CompanyName">
-                                                    Password
-                                                    <span class="requried">*</span>
-                                                </label>
-                                                <input type="password" class="cstm-input0" id="LastName" name="Password" placeholder="Required" asp-for="Password">
-                                                <span asp-validation-for="Password" class="text-danger"></span>
-                                            </fieldset>
-                                        </div>
-                                        <div class="col-lg-6 col-12">
-                                            <fieldset class="form-group">
-                                                <label class="font-14" for="MobileNo">
-                                                    Confirm Password
-                                                    <span class="requried">*</span>
-                                                </label>
-                                                <input type="password" class="cstm-input0" id="LastName" name="ConfirmPassword" placeholder="Required" asp-for="ConfirmPassword">
-                                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-                                            </fieldset>
-                                        </div>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12 col-12">
-                                            <label class="font-14" for="users-list-verified font-weight-bold">
-                                                How did you hear about us?
-                                            </label>
-                                            <select id="users-list-status" class="cstm-input0" asp-for="SelectQues" name="SelectQues">
-                                                <option value="">Please choose an option</option>
-                                                <option value="CompanyCom">CompanyCom</option>
-                                                <option value="IKO">IKO</option>
-                                                <option value="GAF">GAF</option>
-                                                <option value="Google">Google</option>
-                                                <option value="Other">Other</option>
-                                            </select>
-                                            <span  class="text-danger"></span>
-                                        </div>
-
-                                    </div>
-                                    <div class="content-rmlogin mt-3">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="custom-check-2">
-                                            <label style="text-transform: lowercase;" class="custom-control-label" for="custom-check-2">
-                                                <span><span style="text-transform: uppercase;">I</span> agree to SumoQuote <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>.</span>
-                                            </label>
-
-                                        </div>
-                                    </div>
-                                 
-                                    <div class="mt-3 d-flex justify-content-end">
-                                        <span class="text-danger mr-4 mt-1">@ViewBag.error</span>
-                                        <button type="submit" class="cstm-button">Proceed</button>
-                                    </div>
-                                </div>
-                            </div>
+        <!-- /Left Text -->
+        <div class="d-none d-lg-flex col-lg-6 p-0">
+            <div class="auth-cover-bg-color auth-cover-bg d-flex col-12 col-md-6 col-lg-6 align-items-center p-sm-12 p-6">
+                <div class="w-px-595 mx-auto mt-12">
+                    <h1 class="text-primary hero-title display-6 fw-extrabold">Get Building. Try<br> Mr. Gutter for Free.</h1>
+                    <ul class="list-unstyled">
+                        <li>
+                            <img src="~/image/644c336fdd7665b5812fc4b6_check.svg" /> <span class="ms-4">14 day trial</span>
+                        </li>
+                        <li class="mt-2">
+                            <img src="~/image/644c336fdd7665b5812fc4b6_check.svg" /> <span class="ms-4">No credit card required</span>
+                        </li>
+                        <li class="mt-2">
+                            <img src="~/image/644c336fdd7665b5812fc4b6_check.svg" /> <span class="ms-4">No strings attached</span>
+                        </li>
+                    </ul>
+                    <div class="mt-5">
+                    <div class="mt-5">
+                        <img src="~/image/64406f648f08291dd7770f2f_quote.svg" />
                         </div>
-                    </form>
-
+                    </div>
+                    <div class="mt-2">
+                        <h4 class="text-center mb-1">
+                            <span class="position-relative fw-extrabold z-1">
+                                "Sold our first job with Mr. Gutter the other day. Winning the job made SumoQuote pay for itself for the year!"
+                              
+                            </span>
+                        </h4>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- /Left Text -->
+        <!-- Register -->
+        <div class="d-flex col-12 col-md-6 col-lg-6 align-items-center authentication-bg p-sm-12 p-6">
+            <div class="w-px-700 mx-auto">
+                <form id="formAuthentication" class="mb-6" action="~/" method="POST">
+                    <div class="row">
+                        <div class="col-md-6 mb-6">
+                            <label  class="form-label">
+                                First Name
+                            </label>
+                            <input type="text" class="form-control"  placeholder="Required">
+                        </div>
+                        <div class="col-md-6 mb-6">
+                            <label class="form-label">
+                                Last Name
+                            </label>
+                            <input type="text" class="form-control" placeholder="Required">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-6">
+                            <label class="form-label">
+                                Company Name
+
+                            </label>
+                            <input type="text" class="form-control" placeholder="Required">
+                        </div>
+                        <div class="col-md-6 mb-6">
+                            <label class="form-label">
+                                Phone Number
+                            </label>
+                            <input type="text" class="form-control" placeholder="Required">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-6">
+                            <label class="form-label">Email</label>
+                            <input type="text" class="form-control" placeholder="Required" autofocus>
+                        </div>
+                     
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-6">
+                            <label class="form-label">
+                                Password
+                            </label>
+                            <input type="text" class="form-control" placeholder="Required">
+                        </div>
+                        <div class="col-md-6 mb-6">
+                            <label class="form-label">
+                                Confirm Password
+                            </label>
+                            <input type="text" class="form-control" placeholder="Required">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 mb-6">
+                            <label class="form-label" for="multiStepsState">State</label>
+                            <select id="multiStepsState" class="select2 form-select" data-allow-clear="true">
+                                <option value="">Please choose an option</option>
+                                <option value="AL">Beacon</option>
+                                <option value="AK">IKO</option>
+                                <option value="AZ">GAF</option>
+                                <option value="AR">Google</option>
+                                <option value="CA">Other</option>
+                               
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-6">
+                        <div class="form-check mt-4">
+                            <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms">
+                            <label class="form-check-label" for="terms-conditions">
+                                I agree to Mr. Gutter <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy.</a>
+                            </label>
+                        </div>
+                    </div>
+                    <button asp-action="EmailVerify" asp-controller="Account" class="btn btn-primary d-grid w-100">
+                        Sign up
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- /Register -->
     </div>
+</div>
 </section>
 
 

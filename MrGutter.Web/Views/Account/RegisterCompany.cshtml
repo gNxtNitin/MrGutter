@@ -1,0 +1,142 @@
+﻿@{
+    ViewData["Title"] = "Company Registeration";
+}
+@{
+    Layout = "_Layout_Home";
+}
+
+
+<section id="landingReviews" class="section-py bg-body landing-reviews pb-0">
+    <div class="container authentication-wrapper authentication-cover">
+        <div class="authentication-inner row m-0">
+            <!-- Logo -->
+            <!-- /Logo -->
+            <div class="authentication-inner row m-0 p-0">
+                <!-- /Left Text -->
+                <div class="d-none d-lg-flex col-lg-6 p-0">
+                    <div class="auth-cover-bg auth-cover-bg-color d-flex justify-content-center align-items-center">
+                        <img src="../../assets/img/illustrations/auth-login-illustration-light.png"
+                             alt="auth-login-cover"
+                             class="my-5 auth-illustration"
+                             data-app-light-img="illustrations/auth-login-illustration-light.png"
+                             data-app-dark-img="illustrations/auth-login-illustration-dark.png" />
+
+                        <img src="../../assets/img/illustrations/bg-shape-image-light.png"
+                             alt="auth-login-cover"
+                             class="platform-bg"
+                             data-app-light-img="illustrations/bg-shape-image-light.png"
+                             data-app-dark-img="illustrations/bg-shape-image-dark.png" />
+                    </div>
+                </div>
+                <!-- /Left Text -->
+                <!-- Login -->
+                <div class="d-flex col-12 col-lg-6 align-items-center authentication-bg p-sm-12 p-6">
+                    <div class="w-px-400 mx-auto mt-12 pt-5">
+                        <h4 class="mb-1">Welcome to Mr. Gutter! 👋</h4>
+                        <p class="mb-6">Please sign-in to your account and start the adventure</p>
+
+                        <form id="formAuthentication" class="mb-6" action="index.html" method="GET">
+                            <div class="mb-6 row">
+                                <div class="col-md-6">
+                                    <label class="form-label" for="basic-default-fullname">Full Name</label>
+                                    <input type="text" class="form-control" id="basic-default-fullname" placeholder="John Doe" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="basic-default-company">Company Name</label>
+                                    <input type="text" class="form-control" id="basic-default-company" placeholder="ACME Inc." />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="collapsible-state">Business Type</label>
+                                    <select id="collapsible-state" class="select2 form-select" data-allow-clear="true">
+                                        <option value="">Select</option>
+                                        <option value="SP">Sole proprietorship</option>
+                                        <option value="GP">General partnership</option>
+                                        <option value="LP">Limited partnership</option>
+                                        <option value="LLP">Limited liability partnership (LLP)</option>
+
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label" for="collapsible-state">Industry</label>
+                                    <select id="collapsible-state" class="select2 form-select" data-allow-clear="true">
+                                        <option value="">Select</option>
+                                        <option value="PR">Primary</option>
+                                        <option value="SR">Secondary</option>
+                                        <option value="TER">Tertiary</option>
+                                        <option value="QUAT">Quaternary</option>
+
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label" for="basic-default-message">Business Description</label>
+                                    <textarea id="basic-default-message" class="form-control" rows="1" cols="50" placeholder="Business Description"></textarea>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label" for="basic-default-fullname">Business Address</label>
+                                    <input type="text" class="form-control" id="basic-default-fullname" placeholder="Business Address" />
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label" for="basic-default-phone">Phone No</label>
+                                    <input type="text" id="basic-default-phone" class="form-control phone-mask" placeholder="658 799 8941" />
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label" for="basic-default-email">Email</label>
+                                    <div class="input-group input-group-merge">
+                                        <input type="text" id="basic-default-email" class="form-control" placeholder="john.doe &#64;example.com" aria-label="john.doe" aria-describedby="basic-default-email2" />
+                                        <span class="input-group-text" id="basic-default-email2"></span>
+                                    </div>
+                                    <div class="form-text"> You can use letters, numbers & periods </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <button class="btn btn-primary d-grid w-100">Register</button>
+                        </form>
+
+                        <p class="text-center">
+                            <span>New on our platform?</span>
+                            <a asp-action="CreateAccount" asp-controller="Account">
+                                <span>Create an account</span>
+                            </a>
+                        </p>
+
+                        <div class="divider my-6">
+                            <div class="divider-text">or</div>
+                        </div>
+
+                        <div class="d-flex justify-content-center">
+                            <a href="javascript:;" class="btn btn-sm btn-icon rounded-pill btn-text-facebook me-1_5">
+                                <i class="tf-icons ti ti-brand-facebook-filled"></i>
+                            </a>
+
+                            <a href="javascript:;" class="btn btn-sm btn-icon rounded-pill btn-text-twitter me-1_5">
+                                <i class="tf-icons ti ti-brand-twitter-filled"></i>
+                            </a>
+
+                            <a href="javascript:;" class="btn btn-sm btn-icon rounded-pill btn-text-github me-1_5">
+                                <i class="tf-icons ti ti-brand-github-filled"></i>
+                            </a>
+
+                            <a href="javascript:;" class="btn btn-sm btn-icon rounded-pill btn-text-google-plus">
+                                <i class="tf-icons ti ti-brand-google-filled"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Login -->
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+

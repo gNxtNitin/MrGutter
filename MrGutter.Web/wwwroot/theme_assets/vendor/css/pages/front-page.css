@@ -167,7 +167,7 @@ nav.layout-navbar.navbar-active::after {
 .light-style .layout-navbar .navbar.landing-navbar .navbar-nav .active > .nav-link,
 .light-style .layout-navbar .navbar.landing-navbar .navbar-nav .nav-link.show,
 .light-style .layout-navbar .navbar.landing-navbar .navbar-nav .nav-link.active {
-  color: #7367f0 !important;
+  color: #2E7DB3 !important;
 }
 .light-style .layout-navbar .navbar.landing-navbar .navbar-nav .nav-item.mega-dropdown > .dropdown-menu .mega-dropdown-link i {
   color: #6d6b77;
@@ -196,7 +196,7 @@ nav.layout-navbar.navbar-active::after {
 .dark-style .layout-navbar .navbar.landing-navbar .navbar-nav .active > .nav-link,
 .dark-style .layout-navbar .navbar.landing-navbar .navbar-nav .nav-link.show,
 .dark-style .layout-navbar .navbar.landing-navbar .navbar-nav .nav-link.active {
-  color: #7367f0 !important;
+  color: #2E7DB3 !important;
 }
 .dark-style .layout-navbar .navbar.landing-navbar .navbar-nav .nav-item.mega-dropdown > .dropdown-menu .mega-dropdown-link i {
   color: #acabc1;
