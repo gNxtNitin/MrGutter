@@ -4,6 +4,11 @@
 }
 <style>
 
+    .bg-blue {
+        background-color: #007bff; /* Choose a shade of blue */
+    }
+
+
     .top-right-dropdown {
         position: absolute;
         top: 5px;
@@ -11,9 +16,9 @@
         z-index: 1;
     }
     /* .layout-page{
-            max-width: 1300px !important;
-            margin: 0 auto !important;
-        } */
+                max-width: 1300px !important;
+                margin: 0 auto !important;
+            } */
     .card-img-height {
         height: 200px;
         width: 100%;
@@ -56,14 +61,14 @@
         background: #2E7DB3;
     }
     /* .dlt-btn{
-            display:none;
-            transition: all 0.5s ease-out;
-        }
-
-        .card:hover .dlt-btn{
-                display:block;
+                display:none;
                 transition: all 0.5s ease-out;
-         } */
+            }
+
+            .card:hover .dlt-btn{
+                    display:block;
+                    transition: all 0.5s ease-out;
+             } */
     .dlt-btn {
         opacity: 0;
         visibility: hidden;
@@ -134,7 +139,7 @@
                 <!--Modal for Create Estimate button-->
                 <div class="modal fade" id="modalSignature" tabindex="-1" aria-hidden="true">
                     <div class="modal-dialog  modal-xl" role="document">
-                      
+
                         <div class="">
                             <div class="">
 
@@ -145,7 +150,7 @@
                                             <h3 class="mb-0">Create new estimate</h3>
                                             <p>Input customer details below to begin creating new reports</p>
                                         </div>
-                                        
+
                                         <button type="button"
                                                 class="btn-close"
                                                 data-bs-dismiss="modal"
@@ -178,7 +183,7 @@
                                                             <input type="text" class="form-control" id="basic-default-company" placeholder="ACME Inc." />
                                                         </div>
                                                     </div>
-                                                 
+
                                                     <div class="row">
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-email">Email</label>
@@ -201,7 +206,7 @@
                                                                    placeholder="658 799 8941" />
                                                         </div>
                                                     </div>
-                                                   
+
                                                     <div class="row">
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-line1">Address line 1</label>
@@ -212,7 +217,7 @@
                                                             <input type="text" class="form-control" id="basic-default-line2" placeholder="" />
                                                         </div>
                                                     </div>
-                                                
+
                                                     <div class="row">
                                                         <div class="col-md-4 mb-6">
                                                             <label class="form-label" for="basic-default-city">City</label>
@@ -227,12 +232,12 @@
                                                             <input type="text" class="form-control" id="basic-default-zip" placeholder="" />
                                                         </div>
                                                     </div>
-                                             
 
-                                              
+
+
                                                 </form>
                                             </div>
-                                      
+
                                         </div>
 
 
@@ -243,7 +248,7 @@
                                         <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
                                             Cancel
                                         </button>
-                                        
+
                                     </div>
                                 </div>
 
@@ -296,27 +301,29 @@
                                 </label>
                                 </div>
                                 </div>  *@
-                             @*    <div class="select-radio">
-                                    <b>WON</b>
+                                @*    <div class="select-radio">
+                                <b>WON</b>
 
                                 </div>
                                 <div class="select-radio1 text-grey">
-                                    <b>LOST</b>
+                                <b>LOST</b>
 
                                 </div>
                                 <div class="select-radio1 text-grey">
-                                    <b>OPEN</b>
+                                <b>OPEN</b>
                                 </div> *@
                                 <div class="col-md-12 rounded text-white status-dropdown">
                                     <select class="form-select text-capitalize">
                                         <option value="Requested" selected>Requested</option>
                                         <option value="Provided">Provided</option>
+                                        <option value="Completed">Completed</option>
+                                        <option value="Revised">Revised</option>
                                         <option value="Accepted">Accepted</option>
                                         <option value="Cancelled">Cancelled</option>
                                     </select>
                                 </div>
 
-                      
+
 
                                 @* <div class="form-check mb-1 me-4 me-lg-12 ">
                                 <input class="form-check-input" name="first" type="radio" id="lost" />
@@ -375,23 +382,25 @@
                                 <div class="">
                                 <button class="border-0 w-100 rounded px-2 py-1 mt-2 btn-danger " id="confirm-text">Delete</button>
                                 </div> *@
-                              @*   <div class="select-radio">
-                                    <b>WON</b>
+                                @*   <div class="select-radio">
+                                <b>WON</b>
 
                                 </div>
                                 <div class="select-radio1 text-grey">
-                                    <b>LOST</b>
+                                <b>LOST</b>
 
                                 </div>
                                 <div class="select-radio1 text-grey">
-                                    <b>OPEN</b>
+                                <b>OPEN</b>
 
                                 </div> *@
 
                                 <div class="col-md-12 rounded text-white status-dropdown">
                                     <select class="form-select text-capitalize">
-                                        <option value="Requested" >Requested</option>
+                                        <option value="Requested">Requested</option>
                                         <option value="Provided">Provided</option>
+                                        <option value="Completed">Completed</option>
+                                        <option value="Revised">Revised</option>
                                         <option value="Accepted" selected>Accepted</option>
                                         <option value="Cancelled">Cancelled</option>
                                     </select>
@@ -457,24 +466,26 @@
                                 <b>OPEN</b>
                                 </label>
                                 </div> *@
-                               @*  <div class="select-radio">
-                                    <b>WON</b>
+                                @*  <div class="select-radio">
+                                <b>WON</b>
 
                                 </div>
                                 <div class="select-radio1 text-grey">
-                                    <b>LOST</b>
+                                <b>LOST</b>
 
                                 </div>
                                 <div class="select-radio1 text-grey">
-                                    <b>OPEN</b>
+                                <b>OPEN</b>
 
                                 </div> *@
 
                                 <div class="col-md-12 rounded text-white status-dropdown">
                                     <select class="form-select text-capitalize">
                                         <option value="Requested" selected>Requested</option>
-                                        <option value="Provided" selected>Provided</option>
-                                        <option value="Accepted" >Accepted</option>
+                                        <option value="Provided">Provided</option>
+                                        <option value="Completed">Completed</option>
+                                        <option value="Revised">Revised</option>
+                                        <option value="Accepted">Accepted</option>
                                         <option value="Cancelled">Cancelled</option>
                                     </select>
                                 </div>
@@ -539,24 +550,26 @@
                                 <b>OPEN</b>
                                 </label>
                                 </div> *@
-                               @*  <div class="select-radio">
-                                    <b>WON</b>
+                                @*  <div class="select-radio">
+                                <b>WON</b>
 
                                 </div>
                                 <div class="select-radio1 text-grey">
-                                    <b>LOST</b>
+                                <b>LOST</b>
 
                                 </div>
                                 <div class="select-radio1 text-grey">
-                                    <b>OPEN</b>
+                                <b>OPEN</b>
 
                                 </div> *@
                                 <div class="col-md-12 rounded text-white status-dropdown">
                                     <select class="form-select text-capitalize">
-                                        <option value="Requested" >Requested</option>
+                                        <option value="Requested">Requested</option>
                                         <option value="Provided">Provided</option>
+                                        <option value="Completed">Completed</option>
+                                        <option value="Revised">Revised</option>
                                         <option value="Accepted" selected>Accepted</option>
-                                        <option value="Cancelled" >Cancelled</option>
+                                        <option value="Cancelled">Cancelled</option>
                                     </select>
                                 </div>
 
@@ -617,22 +630,24 @@
                                 <b>OPEN</b>
                                 </label>
                                 </div> *@
-                              @*   <div class="select-radio">
-                                    <b>WON</b>
+                                @*   <div class="select-radio">
+                                <b>WON</b>
 
                                 </div>
                                 <div class="select-radio1 text-grey">
-                                    <b>LOST</b>
+                                <b>LOST</b>
 
                                 </div>
                                 <div class="select-radio1 text-grey">
-                                    <b>OPEN</b>
+                                <b>OPEN</b>
                                 </div> *@
                                 <div class="col-md-12 rounded text-white status-dropdown">
                                     <select class="form-select text-capitalize">
-                                        <option value="Requested" >Requested</option>
-                                        <option value="Provided" >Provided</option>
-                                        <option value="Accepted" >Accepted</option>
+                                        <option value="Requested">Requested</option>
+                                        <option value="Provided">Provided</option>
+                                        <option value="Accepted">Accepted</option>
+                                        <option value="Completed">Completed</option>
+                                        <option value="Revised">Revised</option>
                                         <option value="Cancelled" selected>Cancelled</option>
                                     </select>
                                 </div>
@@ -650,6 +665,8 @@
 
 </div>
 
+<!--Script for drop down colour-->
+
 <script>
     // Function to update the background and text color of each dropdown
     function updateBackgroundColor(selectElement) {
@@ -657,7 +674,7 @@
         var parentDiv = selectElement.closest('.status-dropdown'); // Get the parent div with class 'status-dropdown'
 
         // Reset background and text color classes
-        parentDiv.classList.remove("bg-success", "bg-primary", "bg-secondary", "bg-danger", "text-white", "text-dark");
+        parentDiv.classList.remove("bg-success", "bg-primary", "bg-secondary", "bg-danger", "bg-blue", "text-white", "text-dark");
 
         // Apply the correct background and text color based on the selected value
         if (selectedValue === "Accepted") {
@@ -668,6 +685,10 @@
             parentDiv.classList.add("bg-secondary", "text-dark"); // Grey background, dark text
         } else if (selectedValue === "Cancelled") {
             parentDiv.classList.add("bg-danger", "text-white"); // Red background, white text
+        } else if (selectedValue === "Revised") {
+            parentDiv.classList.add("bg-success", "text-white"); // Red background, white text
+        } else if (selectedValue === "Completed") {
+            parentDiv.classList.add("bg-blue", "text-white"); // Red background, white text
         }
     }
 

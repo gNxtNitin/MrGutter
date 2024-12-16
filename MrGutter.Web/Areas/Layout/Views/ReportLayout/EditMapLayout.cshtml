@@ -1,6 +1,6 @@
 ﻿@{
-    Layout = "_Layout_CreateReport";
-    ViewData["Title"] = "Layout";
+    Layout = "_Layout_EditReportLayoutSetting";
+    ViewBag.Title = "layout Report";
 }
 
 <style>
@@ -61,39 +61,52 @@
 <div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y pt-0">
 
     <div class="layout-demo-wrapper">
-
-        <div class="row">
-            <div class="col-12">
-                <!-- Container for all items -->
-                <div class="row mt-4 repeater-container">
-                    <!-- Template Block -->
-                    <div class="repeater-item row mb-4">
-                        <!-- Image 1 -->
-                        <div class="col-5">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Image 2 -->
-                        <div class="col-5">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mb-4 col-md-2 text-end">
-                            <span>
-                                <a href="#" class="delete-item" data-bs-toggle="modal" title="Delete Item">
-                                    <i class="ti ti-lg ti-trash-filled text-danger"></i>
+        <div class="layout-demo-placeholder w-100">
+            <div class="row">
+                <div class="col-12">
+                    @* <h5 class="mb-0">Page Content</h5> *@
+                    <div class="row">
+                        <div class="col-4">
+                            <h5 class="mb-0">
+                                <span id="Inspection-text">Layout</span>
+                                <a href="#" id="edit-Inspection-link" title="Edit the page title">
+                                    <i class="ti ti-edit"></i>
                                 </a>
-                            </span>
+                            </h5>
+                            <input type="text" id="Inspection-input" class="form-control" style="display: none;" />
+                        </div>
+                        <div class="col-4">
+                        </div>
+                        <div class="col-4 text-end mb-3">
+                            <button type="button" class="btn btn-outline-primary waves-effect">View Page</button>
                         </div>
 
-                        <div class="mb-4 col-md-5 mt-3" data-repeater-items>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-6">
+                            <!-- Thumbnail -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" id="thumbnail" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <!-- Thumbnail -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="~/image/layoutimage.jpg" alt="Thumbnail" class="thumbnail" id="thumbnail" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-4">
+
+                        <div class="mb-4 col-md-6" data-repeater-items>
                             <div class="input-group input-group-merge">
                                 <div class="col-12">
                                     <label for="description" class="form-label">Description</label>
@@ -131,7 +144,7 @@
                         </div>
 
 
-                        <div class="mb-4 col-md-5 mt-3" data-repeater-items>
+                        <div class="mb-4 col-md-6" data-repeater-items>
                             <div class="input-group input-group-merge">
                                 <div class="col-12">
                                     <label for="description" class="form-label">Description</label>
@@ -166,101 +179,28 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
-                        <hr />
-                    </div>
-                </div>
 
-                <!-- Add Item Button -->
-                <div class="mt-1 mb-2">
-                    <button type="button" class="btn btn-outline-primary waves-effect add-item-btn">Add Item</button>
+
+                    </div>
+
+
+
+
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div id="imageModal" class="modal">
+                <span class="close" id="closeModal">&times;</span>
+                <img class="modal-content" id="largeImage">
+            </div>
         </div>
-
-
-
-
-
     </div>
 </div>
 
 
-
-<!--Script for Add item button-->
-<!-- JavaScript -->
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const addItemButton = document.querySelector(".add-item-btn");
-        const repeaterContainer = document.querySelector(".repeater-container");
-
-        // Event listener for "Add Item" button
-        addItemButton.addEventListener("click", function () {
-            const template = document.querySelector(".repeater-item");
-            if (template) {
-                const newItem = template.cloneNode(true);
-
-                // Reset editor content
-                const editors = newItem.querySelectorAll(".editor");
-                editors.forEach((editor) => {
-                    editor.innerHTML = ""; // Clear content
-                });
-
-                // Add delete functionality to the new item
-                const deleteButton = newItem.querySelector(".delete-item");
-                deleteButton.addEventListener("click", function (event) {
-                    event.preventDefault(); // Prevent default link behaviors
-                    newItem.remove(); // Remove the item
-                });
-
-                repeaterContainer.appendChild(newItem);
-            }
-        });
-
-        // Event delegation for existing delete buttons
-        repeaterContainer.addEventListener("click", function (event) {
-            if (event.target.closest(".delete-item")) {
-                event.preventDefault(); // Prevent default link behavior
-                const repeaterItem = event.target.closest(".repeater-item");
-                if (repeaterItem) {
-                    repeaterItem.remove(); // Remove the item block
-                }
-            }
-        });
-    });
-
-</script>
-
-@* <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const addItemButton = document.querySelector(".add-item-btn");
-        const repeaterContainer = document.querySelector(".repeater-container");
-
-        addItemButton.addEventListener("click", function () {
-            // Find the first repeater item as a template
-            const template = document.querySelector(".repeater-item");
-            if (template) {
-                // Clone the template block
-                const newItem = template.cloneNode(true);
-
-                // Reset editor content and clear other dynamic values
-                const editors = newItem.querySelectorAll(".editor");
-                editors.forEach((editor) => {
-                    editor.innerHTML = ""; // Clear the editor content
-                });
-
-                // Append the new item to the container
-                repeaterContainer.appendChild(newItem);
-            } else {
-                console.error("Repeater item template not found.");
-            }
-        });
-    });
-</script>
- *@
 <script>
     // Get the modal and related elements
     const modal = document.getElementById('imageModal');
