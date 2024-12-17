@@ -240,7 +240,8 @@
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!--/ Language -->
                             <!-- Style Switcher -->
-                            <li class="nav-item p-3">
+                            <li class="nav-item p-3 d-flex align-items-center">
+                                <img src="/img/logo/drop.png" style="width:25px;" alt="logo" class="rounded-circle" />
                                 <span class="text-white"><strong>MR. GUTTER</strong></span>
                             </li>
                             <li class="nav-item dropdown-style-switcher dropdown">
@@ -554,7 +555,9 @@
                                         <div class="dropdown-item waves-effect">
                                             <span class="d-flex align-items-center align-middle">
                                                 <div class="avatar me-2">
-                                                    <span class="avatar-initial rounded-circle bg-label-info">G</span>
+                                                    <span class="avatar-initial rounded-circle bg-label-info">
+                                                        <img src="/img/logo/drop.png" alt="logo" class="rounded-circle" />
+                                                    </span>
                                                 </div>
                                                 <span class="flex-grow-1 align-middle">Mr. Gutter</span>
                                                 <span class="flex-shrink-0 badge d-flex align-items-center justify-content-center">
@@ -568,7 +571,9 @@
                                         <div class="dropdown-item waves-effect">
                                             <span class="d-flex align-items-center align-middle">
                                                 <div class="avatar me-2">
-                                                    <span class="avatar-initial rounded-circle bg-label-success">R</span>
+                                                    <span class="avatar-initial rounded-circle bg-label-success">
+                                                        <img src="/img/logo/roofing.svg" alt="logo" class="rounded-circle" />
+                                                    </span>
                                                 </div>
                                                 <span class="flex-grow-1 align-middle">US Metal Roofing</span>
                                                 <span class="flex-shrink-0 badge d-flex align-items-center justify-content-center">
@@ -636,16 +641,16 @@
                         </div>
                     </div> *@
                     <div class="container-xxl d-flex align-items-stretch flex-grow-1 p-0">
-                        <div class="flex-shrink-1 flex-grow-0 w-px-350 border-end container-p-x">
+                        <div class="flex-shrink-1 flex-grow-0 w-px-400 border-end container-p-x">
                             <div class="layout-example-sidebar layout-example-content-inner">
                                 <div class="card-body mt-5">
                                     <nav class="card nav flex-column">
-                                        <div class="card-body py-0">
+                                        <div class="card-body p-0">
                                             <!-- Main Navigation Items -->
                                              <ul class="list-group list-group-flush">
                                                 <!-- Templates Main Menu -->
-                                                <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
-                                                    <a asp-area="Layout" asp-action="ReportLayoutList" asp-controller="ReportLayout"  class="text-decoration-none" aria-expanded="false">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a asp-area="Layout" asp-action="ReportLayoutList" asp-controller="ReportLayout"  class="text-decoration-none w-100" aria-expanded="false">
                                                         Quote Layout
                                                     </a>
                                                 </li>
@@ -673,30 +678,30 @@
 
                                             <ul class="list-group list-group-flush">
                                                 <!-- Templates Main Menu -->
-                                                <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
-                                                    <a href="javascript:void(0);" class="text-decoration-none dropdown-toggle" id="navbarDropdown2" data-bs-toggle="collapse" data-bs-target="#clone-source-3" aria-expanded="false">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="javascript:void(0);" class="text-decoration-none dropdown-toggle w-100" id="navbarDropdown2" data-bs-toggle="collapse" data-bs-target="#clone-source-3" aria-expanded="false">
                                                         Templates
                                                     </a>
                                                 </li>
                                                 <div class="collapse" id="clone-source-3">
-                                                    <ul class="list-group">
-                                                        <li class="list-group-item">
+                                                    <ul>
+                                                        <li class="list-group-item border-start-0">
                                                             <a asp-area="Template" asp-controller="ReportTemplate" asp-action="ReportTemplateList" class="dropdown-item">Quotes</a>
                                                         </li>
                                                        @*  <li class="list-group-item">
                                                             <a href="#" class="dropdown-item">Orders</a>
                                                         </li> *@
-                                                        <li class="list-group-item">
+                                                        <li class="list-group-item border-start-0 border-bottom-0">
                                                             <a asp-area="Template" asp-controller="QuickTextTemplate" asp-action="QuickTextTemplateList" class="dropdown-item">QuickText</a>
                                                         </li>
                                                     </ul>
                                                 </div>
                                             </ul>
 
-                                            <ul class="list-group list-group-flush">
+                                            <ul class="list-group list-group-flush border-top">
                                                 <!-- Templates Main Menu -->
-                                                <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
-                                                    <a asp-area="AccountSettings" asp-action="AccountSettingsPDFs" asp-controller="FileManagement"  class="text-decoration-none" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a asp-area="AccountSettings" asp-action="AccountSettingsPDFs" asp-controller="FileManagement" class="text-decoration-none w-100" data-bs-target="#clone-source-4" aria-expanded="false">
                                                         PDFs
                                                     </a>
                                                 </li>
@@ -705,8 +710,8 @@
                                             </ul>
                                             <ul class="list-group list-group-flush">
                                                 <!-- Templates Main Menu -->
-                                                <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
-                                                    <a asp-area="AccountSettings" asp-action="Index" asp-controller="Measurements" class="text-decoration-none" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a asp-area="AccountSettings" asp-action="Index" asp-controller="Measurements" class="text-decoration-none w-100" data-bs-target="#clone-source-4" aria-expanded="false">
                                                         Measurements
                                                     </a>
                                                 </li>
@@ -716,8 +721,8 @@
 
                                             <ul class="list-group list-group-flush">
                                                 <!-- Templates Main Menu -->
-                                                <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
-                                                    <a href="/AccountSettings/ProductsAndPricing/ProductsAndPricing" class="text-decoration-none" id="navbarDropdown5">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="/AccountSettings/ProductsAndPricing/ProductsAndPricing" class="text-decoration-none w-100" id="navbarDropdown5">
                                                         Products & Pricing
                                                     </a>
                                                 </li>
@@ -727,8 +732,8 @@
                                          
                                             <ul class="list-group list-group-flush">
                                                 <!-- Templates Main Menu -->
-                                                <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
-                                                    <a href="/AccountSettings/Notification/Index" class="text-decoration-none" aria-expanded="false">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="/AccountSettings/Notification/Index" class="text-decoration-none w-100" aria-expanded="false">
                                                         Notification
                                                     </a>
                                                 </li>
@@ -737,8 +742,8 @@
                                             </ul>
                                             <ul class="list-group list-group-flush">
                                                 <!-- Templates Main Menu -->
-                                                <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
-                                                    <a href="/AccountSettings/EmailSettings/Index" class="text-decoration-none"  aria-expanded="false">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a href="/AccountSettings/EmailSettings/Index" class="text-decoration-none w-100" aria-expanded="false">
                                                         Email Settings
                                                     </a>
                                                 </li>
@@ -758,8 +763,8 @@
  *@
                                             <ul class="list-group list-group-flush">
                                                 <!-- Templates Main Menu -->
-                                                <li class="list-group-item cursor-move d-flex justify-content-between align-items-center">
-                                                    <a asp-area="AccountSettings" asp-action="Index" asp-controller="PageSettings" class="text-decoration-none" data-bs-target="#clone-source-4" aria-expanded="false">
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <a asp-area="AccountSettings" asp-action="Index" asp-controller="PageSettings" class="text-decoration-none w-100" data-bs-target="#clone-source-4" aria-expanded="false">
                                                         Page Settings
                                                     </a>
                                                 </li>
