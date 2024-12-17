@@ -205,7 +205,8 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a class="menu-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                <a class="menu-link" data-bs-toggle="modal"
+                                   data-bs-target="#signOut">
                                     <i class="pe-1 ti ti-rubber-stamp-off "></i>
                                     <div data-i18n="Sign Out">Sign Out</div>
                                 </a>
@@ -215,8 +216,35 @@
                         </ul>
                     </li>
 
+
+
                 </ul>
+
+
+        
             </aside>
+
+            <!--Modal for Sign out-->
+            <div class="modal fade" id="signOut" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalCenterTitle">Do you want to sign out?</h5><br />
+
+                          
+                        </div>
+                      
+                     
+                        <div class="modal-footer">
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-label-secondary" >
+                                Yes
+                            </a>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- / Menu -->
             <!-- Layout container -->
             <div class="layout-page">
@@ -634,7 +662,8 @@
                                     <div class="dropdown-divider my-1 mx-n2"></div>
                                     <li>
                                         <div class="d-grid px-2 pt-2 pb-1">
-                                            <a class="btn btn-sm btn-danger d-flex" asp-area="" asp-controller="Home" asp-action="Index">
+                                            <a class="btn btn-sm btn-danger d-flex" data-bs-toggle="modal"
+                                               data-bs-target="#signOut">
                                                 <small class="align-middle">Logout</small>
                                                 <i class="ti ti-logout ms-2 ti-14px"></i>
                                             </a>
