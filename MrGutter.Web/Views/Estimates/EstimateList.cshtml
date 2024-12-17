@@ -102,33 +102,59 @@
                         <span class="input-group-text">
                             <i class="ti ti-search ti-md me-2 me-lg-0 ti-lg"></i>
                         </span>
-                        <input type="search" class="form-control" placeholder="Search" name="Search" />
+                        <input type="search" id="searchInput" class="form-control" placeholder="Search" name="Search" />
                     </div>
                 </div>
 
                 <div class="col-md-3 user_role">
-                    <select id="1" class="form-select text-capitalize">
-                        <option value="Select">Select</option>
+                    <select id="userRole" class="form-select text-capitalize">
+                        <option value="Select">Estimator</option>
                         <option value="Admin">John Doe</option>
                     </select>
-
                 </div>
+
                 <div class="col-md-2 user_plan">
-                    <select id="2" class="form-select text-capitalize">
-                        <option value="Status">Status</option>
+                    <select id="userPlan" class="form-select text-capitalize">
+                        <option value="Status">Estimate Status</option>
                         <option value="Active">Active</option>
                     </select>
                 </div>
+
                 <div class="col-md-2 user_status">
-                    <select id="3" class="form-select text-capitalize">
-                        <option value="Created">Created</option>
+                    <select id="userStatus" class="form-select text-capitalize">
+                        <option value="Created">Created by</option>
                         <option value="Admin">Admin</option>
                     </select>
                 </div>
 
                 <div class="col-md-1">
-                    <a href="#" class="text-decoration-underline">Clear All</a>
+                    <a href="#" id="clearAllBtn" class="text-decoration-underline">Clear All</a>
                 </div>
+
+                <!-- Script for reset all the input fields of filter -->
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        document.getElementById("clearAllBtn").addEventListener("click", function (e) {
+                            e.preventDefault();
+
+                            // Reset input field
+                            const searchInput = document.getElementById("searchInput");
+                            if (searchInput) searchInput.value = "";
+
+                            // Reset select fields
+                            const userRole = document.getElementById("userRole");
+                            const userPlan = document.getElementById("userPlan");
+                            const userStatus = document.getElementById("userStatus");
+
+                            if (userRole) userRole.selectedIndex = 0;
+                            if (userPlan) userPlan.selectedIndex = 0;
+                            if (userStatus) userStatus.selectedIndex = 0;
+                        });
+                    });
+                </script>
+                <!-- Script end -->
+
+
                 <div class="col-md-1">
                     <a href="#" data-bs-toggle="modal"
                        data-bs-target="#modalSignature" class="btn btn-primary tf-icons ti ti-plus scaleX-n1-rtl" title="Create Estimate"></a>
