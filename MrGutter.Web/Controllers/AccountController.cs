@@ -232,6 +232,13 @@ namespace MrGutter.Web.Controllers
             int userId = await _accountService.ValidateOTPAsync(loginModel);
             return RedirectToAction("EmailVerify");
         }
+
+
+        public IActionResult MyProfile()
+        {
+            return View();
+        }
+
         public IActionResult EmailVerify()
         {
             return View();

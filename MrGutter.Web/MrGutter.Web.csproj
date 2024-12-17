@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Account\MyProfile.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Controllers\AccountController.cs~RFaa428c.TMP" />
     <None Remove="Program.cs~RF36e1ce.TMP" />
     <None Remove="ViewComponents\UserHeaderInfoViewComponent.cs~RFa2cd10.TMP" />
@@ -34,6 +38,18 @@
     <Folder Include="Areas\Layout\Models\" />
     <Folder Include="Areas\Template\Data\" />
     <Folder Include="Areas\Template\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Account\MyProfile.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Account\MyProfile.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Account\MyProfile.cshtml" />
   </ItemGroup>
 
 </Project>
