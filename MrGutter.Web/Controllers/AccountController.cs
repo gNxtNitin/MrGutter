@@ -234,7 +234,11 @@ namespace MrGutter.Web.Controllers
         }
 
 
-        public IActionResult MyProfile()
+        public IActionResult EditProfile()
+        {
+            return View();
+        }
+        public IActionResult EditPassword()
         {
             return View();
         }
