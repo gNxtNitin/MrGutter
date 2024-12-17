@@ -279,7 +279,10 @@
                         </a>
 
                         <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                            <button data-bs-toggle="modal"
+                                    data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text">
+                                <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -361,7 +364,8 @@
                             <img class="card-img card-img-left card-img-height " src="~/img/elements/pexels-pixabay-164558.jpg" alt="Card image" />
                         </a>
                         <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                            <button class="border-0 dtl-btn" data-bs-toggle="modal"
+                               data-bs-target="#delete" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -432,7 +436,10 @@
                             <img class="card-img card-img-left card-img-height " src="~/img/elements/pexels-heyho-5997994.jpg" alt="Card image" />
                         </a>
                         <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                            <button data-bs-toggle="modal"
+                                    data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text">
+                                <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -515,7 +522,10 @@
                             <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-pixabay-209315.jpg" alt="Card image" />
                         </a>
                         <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                            <button data-bs-toggle="modal"
+                                    data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text">
+                                <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -597,7 +607,10 @@
                             <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-pixabay-259588.jpg" alt="Card image" />
                         </a>
                         <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                            <button data-bs-toggle="modal"
+                                    data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text">
+                                <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -659,6 +672,28 @@
             </div>
         </div>
 
+    </div>
+
+    <!--Modal for Delete button-->
+    <!--Modal for Sign out-->
+    <div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Do you want delete this estimate?</h5><br />
+
+
+                </div>
+
+
+                <div class="modal-footer">
+                    <a class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Yes
+                    </a>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
     </div>
 
 
