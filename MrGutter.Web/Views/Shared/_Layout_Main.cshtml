@@ -76,12 +76,6 @@
     <link rel="stylesheet" href="../../theme_assets\vendor\libs\dropzone\dropzone.css" />
     <!-- Page CSS -->
     <link rel="stylesheet" href="../../theme_assets/vendor/css/pages/cards-advance.css" />
-    @* <link rel="stylesheet" href="~/vendor/libs/apex-charts/apex-charts.css" />
-    <link rel="stylesheet" href="~/vendor/libs/swiper/swiper.css" />
-    <link rel="stylesheet" href="~/vendor/libs/datatables-bs5/datatables.bootstrap5.css">
-    <link rel="stylesheet" href="~/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css">
-    <link rel="stylesheet" href="~/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css">
-    <link rel="stylesheet" href="~/vendor/css/pages/cards-advance.css" /> *@
     <!-- Helpers -->
     <script src="../../theme_assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
@@ -160,18 +154,7 @@
                                     <div data-i18n="Account Settings">Account Settings</div>
                                 </a>
                             </li>
-                            @*  <li class="menu-item">
-                            <a class="menu-link" href="@Url.Action("Index", "Branding")">
-                            <i class="pe-1 ti ti-clock-dollar"></i>
-                            <div data-i18n="Blling">Blling</div>
-                            </a>
-                            </li>
-                            <li class="menu-item">
-                            <a class="menu-link" href="@Url.Action("Index", "Branding")">
-                            <i class="pe-1 ti ti-plug-connected"></i>
-                            <div data-i18n="Integrations">Integrations</div>
-                            </a>
-                            </li> *@
+                           
                         </ul>
                     </li>
 
@@ -186,8 +169,6 @@
                     <!-- Settings -->
                     <li class="menu-item@(isSettingActive ? " active open" : "")">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
-                            @* <i class="menu-icon ti ti-tool"></i> *@
-
                             <i class="ti ti-settings me-3 ti-md"></i>
                             <div data-i18n="Settings">Settings</div>
                         </a>
@@ -262,11 +243,6 @@
                         <!-- Search -->
                         <div class="navbar-nav align-items-center">
                             <div class="nav-item navbar-search-wrapper mb-0">
-                                @*   <a class="" href="javascript:void(0);">
-                                <i class="ti ti-search ti-md me-2 me-lg-4 ti-lg"></i>
-                                <span class="d-none d-md-inline-block text-muted fw-normal"></span>
-                                </a> *@
-
                                 <span class="card-title mb-0">
                                     <b>@ViewBag.Title</b>
                                 </span>
@@ -276,35 +252,7 @@
 
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Language -->
-                            @*  <li class="nav-item dropdown-language dropdown">
-                            <a class="nav-link btn btn-text-secondary btn-icon rounded-pill dropdown-toggle hide-arrow"
-                            href="javascript:void(0);"
-                            data-bs-toggle="dropdown">
-                            <i class="ti ti-language rounded-circle ti-md"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                            <a class="dropdown-item" href="javascript:void(0);" data-language="en" data-text-direction="ltr">
-                            <span>English</span>
-                            </a>
-                            </li>
-                            <li>
-                            <a class="dropdown-item" href="javascript:void(0);" data-language="fr" data-text-direction="ltr">
-                            <span>French</span>
-                            </a>
-                            </li>
-                            <li>
-                            <a class="dropdown-item" href="javascript:void(0);" data-language="ar" data-text-direction="rtl">
-                            <span>Arabic</span>
-                            </a>
-                            </li>
-                            <li>
-                            <a class="dropdown-item" href="javascript:void(0);" data-language="de" data-text-direction="ltr">
-                            <span>German</span>
-                            </a>
-                            </li>
-                            </ul>
-                            </li> *@
+                           
                             <!--/ Language -->
                             <!-- Style Switcher -->
                             <li class="nav-item p-3 d-flex align-items-center">
@@ -742,8 +690,7 @@
         <div class="drag-target"></div>
     </div>
     <!-- / Layout wrapper -->
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
+   
 
     <script src="../../theme_assets/vendor/libs/jquery/jquery.js"></script>
     <script src="../../theme_assets/vendor/libs/popper/popper.js"></script>
