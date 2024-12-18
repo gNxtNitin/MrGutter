@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "est_name": "Mr. Gutter",
+      "est_no": "123 232 3242",
+      "address": "123 Sample Ave NW Calgary, AB",
+      "status": "pending"
+
+    },
+    {
+      "id": 2,
+      "est_name": "US Metal Roofing",
+      "est_no": "hredmore1",
+      "address": "698 New York 52 Beacon, New York",
+      "status": "Accepted"
+    }
+  ]
+}
