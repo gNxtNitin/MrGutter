@@ -164,21 +164,21 @@ $(function () {
                 //    return '<span class="text-heading">' + $plan + '</span>';
                 //  }
                 //},
-                {
-                    // User Status
-                    targets: 5,
-                    render: function (data, type, full, meta) {
-                        var $status = full['status'];
+                //{
+                //    // User Status
+                //    targets: 5,
+                //    render: function (data, type, full, meta) {
+                //        var $status = full['status'];
 
-                        return (
-                            '<span class="badge ' +
-                            statusObj[$status].class +
-                            '" text-capitalized>' +
-                            statusObj[$status].title +
-                            '</span>'
-                        );
-                    }
-                },
+                //        return (
+                //            '<span class="badge ' +
+                //            statusObj[$status].class +
+                //            '" text-capitalized>' +
+                //            statusObj[$status].title +
+                //            '</span>'
+                //        );
+                //    }
+                //},
                 {
                     // Actions
                     targets: -1,
@@ -217,7 +217,7 @@ $(function () {
             language: {
                 sLengthMenu: '_MENU_',
                 search: '',
-                searchPlaceholder: 'Search Company',
+                searchPlaceholder: 'Search Estimate',
                 paginate: {
                     next: '<i class="ti ti-chevron-right ti-sm"></i>',
                     previous: '<i class="ti ti-chevron-left ti-sm"></i>'
@@ -367,7 +367,7 @@ $(function () {
              // },
              
                 {
-                    text: '<i class="ti ti-plus me-0 me-sm-1 ti-xs"></i><span class="d-none d-sm-inline-block">Add New Comapny</span>',
+                    text: '<i class="ti ti-plus me-0 me-sm-1 ti-xs"></i><span class="d-none d-sm-inline-block">Add New Estimate</span>',
                     className: 'add-new btn btn-primary waves-effect waves-light mx-4',
                     attr: {
                         'data-bs-toggle': 'offcanvas',
