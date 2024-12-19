@@ -42,13 +42,16 @@ $(function () {
             ajax: assetsPath + 'json/estimate-list.json', // JSON file to add data
             columns: [
                 // columns according to JSON
+                //{ data: 'id' },
                 { data: 'id' },
-                { data: 'id' },
+                { data: 'est_no' },
                 { data: 'est_name'},
-                { data: 'est_no'},
                 { data: 'address' },
+                { data: 'salesperson' },
+                { data: 'created' },
                 { data: 'status' },
-                { data: null }
+                { data: 'revenue' },
+            
             ],
             columnDefs: [
                 {
@@ -62,24 +65,24 @@ $(function () {
                         return '';
                     }
                 },
-                {
-                    // For Checkboxes
-                    targets: 1,
-                    orderable: false,
-                    checkboxes: {
-                        selectAllRender: '<input type="checkbox" class="form-check-input">'
-                    },
-                    render: function () {
-                        return '<input type="checkbox" class="dt-checkboxes form-check-input" >';
-                    },
-                    searchable: false
-                },
+                //{
+                //    // For Checkboxes
+                //    targets: 1,
+                //    orderable: false,
+                //    checkboxes: {
+                //        selectAllRender: '<input type="checkbox" class="form-check-input">'
+                //    },
+                //    render: function () {
+                //        return '<input type="checkbox" class="dt-checkboxes form-check-input" >';
+                //    },
+                //    searchable: false
+                //},
                 {
                     // Estimate name
-                    targets: 2,
+                    targets: 1,
                     responsivePriority: 4,
                     render: function (data, type, full, meta) {
-                        var $name = full['est_name'];
+                        var $name = full['est_no'];
                         
                         // Creates full output for row
                         var $row_output =
@@ -105,9 +108,9 @@ $(function () {
                 },
                 {
                     // Estimate no
-                    targets: 3,
+                    targets: 2,
                     render: function (data, type, full, meta) {
-                        var $email = full['est_no'];
+                        var $email = full['est_name'];
                         return (
                             "<span class='text-truncate d-flex align-items-center text-heading'>" +
                             $email +
@@ -120,9 +123,35 @@ $(function () {
                 
                 {
                     // address
-                    targets: 4,
+                    targets: 3,
                     render: function (data, type, full, meta) {
                         var $email = full['address'];
+                        return (
+                            "<span class='text-truncate d-flex align-items-center text-heading'>" +
+                            $email +
+                            '</span>'
+                        );
+                    }
+                },
+
+                {
+                    // salesperson
+                    targets: 4,
+                    render: function (data, type, full, meta) {
+                        var $email = full['salesperson'];
+                        return (
+                            "<span class='text-truncate d-flex align-items-center text-heading'>" +
+                            $email +
+                            '</span>'
+                        );
+                    }
+                },
+
+                {
+                    // created
+                    targets: 5,
+                    render: function (data, type, full, meta) {
+                        var $email = full['created'];
                         return (
                             "<span class='text-truncate d-flex align-items-center text-heading'>" +
                             $email +
@@ -132,9 +161,22 @@ $(function () {
                 },
                 {
                     // status
-                    targets: 5,
+                    targets: 6,
                     render: function (data, type, full, meta) {
-                        var $email = full['address'];
+                        var $email = full['status'];
+                        return (
+                            "<span class='text-truncate d-flex align-items-center text-heading'>" +
+                            $email +
+                            '</span>'
+                        );
+                    }
+                },
+
+                {
+                    // revenue
+                    targets: 7,
+                    render: function (data, type, full, meta) {
+                        var $email = full['revenue'];
                         return (
                             "<span class='text-truncate d-flex align-items-center text-heading'>" +
                             $email +
@@ -143,24 +185,6 @@ $(function () {
                     }
                 },
                
-                {
-                    // Actions
-                    targets: -1,
-                    title: 'Actions',
-                    searchable: false,
-                    orderable: false,
-                    render: function (data, type, full, meta) {
-                        return (
-                            '<div class="d-flex align-items-center">' +
-                            '<a href="' +
-                            userView +
-                            '" class="btn btn-icon btn-text-secondary waves-effect waves-light rounded-pill"><i class="ti ti-eye ti-md"></i></a>' +
-                            '<a href="javascript:;" class="btn btn-icon btn-text-primary waves-effect waves-light rounded-pill"><i class="ti ti-edit ti-md me-2"></i></a>' +
-                            '<a href="javascript:;" class="btn btn-icon btn-text-danger waves-effect waves-light rounded-pill delete-record"><i class="ti ti-trash ti-md"></i></a>' +
-                            '</div>'
-                        );
-                    }
-                }
             ],
 
             order: [[2, 'desc']],
