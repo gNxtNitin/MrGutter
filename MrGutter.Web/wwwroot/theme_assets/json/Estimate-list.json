@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "est_no": "1",
+      "est_name": "Mr. Gutter",
+      "address": "123 Sample Ave NW Calgary, AB",
+      "salesperson": "Stiven",
+      "created": "7 days ago",
+      "status": "2",
+      "revenue": "$0.00"
+    },
+    {
+      "id": 2,
+      "est_no": "2",
+      "est_name": "US Metal Roofing",
+      "address": "698 New York 52 Beacon, New York",
+      "salesperson": "Stiven",
+      "created": "3 hours ago",
+      "status": "4",
+      "revenue": "$0.00"
+    },
+    {
+      "id": 3,
+      "est_no": "3",
+      "est_name": "Atlas",
+      "address": "698 New York 52 Beacon, New York",
+      "salesperson": "Stiven",
+      "created": "1 hours ago",
+      "status": "5",
+      "revenue": "$0.00"
+    },
+    {
+      "id": 4,
+      "est_no": "4",
+      "est_name": "Insurance Sample",
+      "address": "698 New York 52 Beacon, New York",
+      "salesperson": "Stiven",
+      "created": "3 hours ago",
+      "status": "1",
+      "revenue": "$0.00"
+    },
+    {
+      "id": 5,
+      "est_no": "5",
+      "est_name": "Malarkey Sample",
+      "address": "123 Fake street Oak Lawn, illinois",
+      "salesperson": "Stiven",
+      "created": "9 hours ago",
+      "status": "6",
+      "revenue": "$0.00"
+    }
+  ]
+}

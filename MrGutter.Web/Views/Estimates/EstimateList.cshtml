@@ -3,7 +3,9 @@
     ViewBag.Title = "Estimate";
 }
 <style>
-
+    .hidden {
+        display: none;
+    }
     .bg-blue {
         background-color: #007bff; /* Choose a shade of blue */
     }
@@ -97,42 +99,82 @@
 
             <div class="card-header d-flex justify-content-between align-items-center row px-1 gap-3 gap-md-0 px-2">
 
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="ti ti-search ti-md me-2 me-lg-0 ti-lg"></i>
-                        </span>
-                        <input type="search" class="form-control" placeholder="Search" name="Search" />
+                       
+                        <input type="search" id="searchInput" class="form-control" placeholder="Search" name="Search" />
                     </div>
                 </div>
 
-                <div class="col-md-3 user_role">
-                    <select id="1" class="form-select text-capitalize">
-                        <option value="Select">Select</option>
+                <div class="col-md-2 user_role">
+                    <select id="userRole" class="form-select text-capitalize">
+                        <option value="Select">Estimator</option>
                         <option value="Admin">John Doe</option>
+                        <option value="Allen">Allen</option>
+                        <option value="George">George</option>
                     </select>
-
                 </div>
+
                 <div class="col-md-2 user_plan">
-                    <select id="2" class="form-select text-capitalize">
-                        <option value="Status">Status</option>
-                        <option value="Active">Active</option>
+                    <select id="userPlan" class="form-select text-capitalize">
+                        <option value="Status">Estimate Status</option>
+                        <option value="Requested">Requested</option>
+                        <option value="Cancelled">Cancelled</option>
+                        <option value="Accepted">Accepted</option>
+                        <option value="Provided">Provided</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Revised">Revised</option>
                     </select>
                 </div>
+
                 <div class="col-md-2 user_status">
-                    <select id="3" class="form-select text-capitalize">
-                        <option value="Created">Created</option>
-                        <option value="Admin">Admin</option>
+                    <select id="userStatus" class="form-select text-capitalize">
+                        <option value="Created anytime">Created anytime</option>
+                        <option value="24">Last 24 hours</option>
+                        <option value="7">Last 7 days</option>
+                        <option value="30">Last 30 days</option>
+                        <option value="Older">Older (than 30 days)</option>
                     </select>
                 </div>
 
                 <div class="col-md-1">
-                    <a href="#" class="text-decoration-underline">Clear All</a>
+                    <a href="#" id="clearAllBtn" class="text-decoration-underline">Clear all</a>
                 </div>
-                <div class="col-md-1">
-                    <a href="#" data-bs-toggle="modal"
-                       data-bs-target="#modalSignature" class="btn btn-primary tf-icons ti ti-plus scaleX-n1-rtl" title="Create Estimate"></a>
 
+                <!-- Script for reset all the input fields of filter -->
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        document.getElementById("clearAllBtn").addEventListener("click", function (e) {
+                            e.preventDefault();
+
+                            // Reset input field
+                            const searchInput = document.getElementById("searchInput");
+                            if (searchInput) searchInput.value = "";
+
+                            // Reset select fields
+                            const userRole = document.getElementById("userRole");
+                            const userPlan = document.getElementById("userPlan");
+                            const userStatus = document.getElementById("userStatus");
+
+                            if (userRole) userRole.selectedIndex = 0;
+                            if (userPlan) userPlan.selectedIndex = 0;
+                            if (userStatus) userStatus.selectedIndex = 0;
+                        });
+                    });
+                </script>
+                <!-- Script end -->
+
+                <div class="col-md-3 d-flex justify-content-end align-items-center">
+                    <a href="#" data-bs-toggle="modal"
+                       data-bs-target="#modalSignature" class="btn btn-primary tf-icons  scaleX-n1-rtl" title="Create Estimate">
+                        <span class="ti ti-plus me-2"></span>
+                        Estimate
+                   </a>
+                    <div class="border-start mx-3 pl-2" style="height: 30px;"></div>
+                    <div class="px-3">
+                        <a id="gridIcon" href="#" onclick="switchToGrid()" class="menu-item ti ti-layout-grid-filled" title="Tile view"></a>
+                        <a id="listIcon" href="#" onclick="switchToList()" class="menu-item ti ti-list" title="List view"></a>
+                    </div>
                 </div>
 
 
@@ -269,8 +311,9 @@
 
 
 
-    <div class="row mb-12 g-6">
-        <div class="col-md-4">
+    <div class="row mb-12 g-6" id="grid" style="display: flex;">
+
+        <div class="col-md-4 ">
             <div class="card">
                 <div class="row g-0">
                     <div class="col-md-12 position-relative">
@@ -279,7 +322,10 @@
                         </a>
 
                         <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                            <button data-bs-toggle="modal"
+                                    data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text">
+                                <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -288,56 +334,30 @@
 
                             <div class="col-md-12 mb-2">
                                 <h5 class="card-title mb-0"><b>Insurance Sample</b></h5>
-                                <p class="card-text">123 Sample Ave NW  Calgary, AB  Created 3 years ago.</p>
+                                <p class="mb-1">Estimate No. : 890 329 2123</p>
+                                <p class="card-text text-black">123 Sample Ave NW  Calgary, AB</p>
                             </div>
 
 
-                            <div class="col-md-6 ps-0">
-                                @* <div class="select-radio">
-                                <div class="form-check mb-1 me-4 me-lg-12 ">
-                                <input class="form-check-input" name="first" type="radio" id="won" />
-                                <label class="form-check-label text-white" for="won">
-                                <b>WON</b>
-                                </label>
+                            <div class="col-md-12 ps-0">
+                              
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="col-md-6 rounded text-white status-dropdown">
+                                        <select class="form-select text-capitalize">
+                                            <option value="Requested" selected>Requested</option>
+                                            <option value="Provided">Provided</option>
+                                            <option value="Completed">Completed</option>
+                                            <option value="Revised">Revised</option>
+                                            <option value="Accepted">Accepted</option>
+                                            <option value="Cancelled">Cancelled</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 d-flex justify-content-end align-items-center">
+                                        <p style="color:#b1acac !important" class="mb-0">Created 3 years ago.</p>
+                                    </div>
                                 </div>
-                                </div>  *@
-                                @*    <div class="select-radio">
-                                <b>WON</b>
+                                
 
-                                </div>
-                                <div class="select-radio1 text-grey">
-                                <b>LOST</b>
-
-                                </div>
-                                <div class="select-radio1 text-grey">
-                                <b>OPEN</b>
-                                </div> *@
-                                <div class="col-md-12 rounded text-white status-dropdown">
-                                    <select class="form-select text-capitalize">
-                                        <option value="Requested" selected>Requested</option>
-                                        <option value="Provided">Provided</option>
-                                        <option value="Completed">Completed</option>
-                                        <option value="Revised">Revised</option>
-                                        <option value="Accepted">Accepted</option>
-                                        <option value="Cancelled">Cancelled</option>
-                                    </select>
-                                </div>
-
-
-
-                                @* <div class="form-check mb-1 me-4 me-lg-12 ">
-                                <input class="form-check-input" name="first" type="radio" id="lost" />
-                                <label class="form-check-label text-danger" for="lost">
-                                <b>LOST</b>
-                                </label>
-                                </div>
-                                <div class="form-check mb-1 me-4 me-lg-12 ">
-                                <input class="form-check-input" name="first" type="radio" id="open" />
-                                <label class="form-check-label text-primary" for="open">
-
-                                <b>OPEN</b>
-                                </label>
-                                </div> *@
 
 
                             </div>
@@ -361,7 +381,8 @@
                             <img class="card-img card-img-left card-img-height " src="~/img/elements/pexels-pixabay-164558.jpg" alt="Card image" />
                         </a>
                         <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                            <button class="border-0 dtl-btn" data-bs-toggle="modal"
+                               data-bs-target="#delete" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -370,41 +391,30 @@
 
                             <div class="col-md-12 mb-2">
                                 <h5 class="card-title mb-0"><b>Malarkey Sample</b></h5>
-                                <p class="card-text">698 New York 52  Beacon, New York Created 1 year ago.</p>
+                                <p class="mb-1">Estimate No. : 890 329 2124</p>
+                                <p class="card-text text-black">698 New York 52  Beacon, New York</p>
                             </div>
 
-                            <div class="col-md-6">
-                                @* <select id="3" class="form-select-1 text-white text-capitalize">
-                                <option value="Created">WON</option>
-                                <option value="Admin">LOST</option>
-                                <option value="Admin">OPEN</option>
-                                </select>
-                                <div class="">
-                                <button class="border-0 w-100 rounded px-2 py-1 mt-2 btn-danger " id="confirm-text">Delete</button>
-                                </div> *@
-                                @*   <div class="select-radio">
-                                <b>WON</b>
+                            <div class="col-md-12 rounded text-white status-dropdown">
 
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="col-md-6 rounded text-white status-dropdown">
+                                        <select class="form-select text-capitalize">
+                                            <option value="Requested">Requested</option>
+                                            <option value="Provided">Provided</option>
+                                            <option value="Completed">Completed</option>
+                                            <option value="Revised">Revised</option>
+                                            <option value="Accepted" selected>Accepted</option>
+                                            <option value="Cancelled">Cancelled</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 d-flex justify-content-end align-items-center">
+                                        <p style="color:#b1acac !important" class="mb-0"> Created 1 year ago.</p>
+                                    </div>
                                 </div>
-                                <div class="select-radio1 text-grey">
-                                <b>LOST</b>
 
-                                </div>
-                                <div class="select-radio1 text-grey">
-                                <b>OPEN</b>
 
-                                </div> *@
 
-                                <div class="col-md-12 rounded text-white status-dropdown">
-                                    <select class="form-select text-capitalize">
-                                        <option value="Requested">Requested</option>
-                                        <option value="Provided">Provided</option>
-                                        <option value="Completed">Completed</option>
-                                        <option value="Revised">Revised</option>
-                                        <option value="Accepted" selected>Accepted</option>
-                                        <option value="Cancelled">Cancelled</option>
-                                    </select>
-                                </div>
 
 
                             </div>
@@ -432,7 +442,10 @@
                             <img class="card-img card-img-left card-img-height " src="~/img/elements/pexels-heyho-5997994.jpg" alt="Card image" />
                         </a>
                         <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                            <button data-bs-toggle="modal"
+                                    data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text">
+                                <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -441,57 +454,32 @@
 
                             <div class="col-md-12 mb-2">
                                 <h5 class="card-title mb-0"><b>Atlas Sample</b></h5>
-                                <p class="card-text">123 Fake street Oak Lawn, illinois Created 3 years ago.</p>
+                                <p class="mb-1">Estimate No. : 890 329 2125</p>
+                                <p class="card-text text-black">123 Fake street Oak Lawn, illinois</p>
                             </div>
 
 
 
-                            <div class="col-md-6">
-                                @*  <div class="form-check mb-1 me-4 me-lg-12 ">
-                                <input class="form-check-input" name="first" type="radio" id="won2" />
-                                <label class="form-check-label text-success" for="won2">
-                                <b>WON</b>
-                                </label>
-                                </div>
-                                <div class="form-check mb-1 me-4 me-lg-12 ">
-                                <input class="form-check-input" name="first" type="radio" id="lost2" />
-                                <label class="form-check-label text-danger" for="lost2">
-                                <b>LOST</b>
-                                </label>
-                                </div>
-                                <div class="form-check mb-1 me-4 me-lg-12 ">
-                                <input class="form-check-input" name="first" type="radio" id="open2" />
-                                <label class="form-check-label text-primary" for="open2">
+                            <div class="col-md-12 rounded text-white status-dropdown">
 
-                                <b>OPEN</b>
-                                </label>
-                                </div> *@
-                                @*  <div class="select-radio">
-                                <b>WON</b>
 
-                                </div>
-                                <div class="select-radio1 text-grey">
-                                <b>LOST</b>
-
-                                </div>
-                                <div class="select-radio1 text-grey">
-                                <b>OPEN</b>
-
-                                </div> *@
-
-                                <div class="col-md-12 rounded text-white status-dropdown">
-                                    <select class="form-select text-capitalize">
-                                        <option value="Requested" selected>Requested</option>
-                                        <option value="Provided">Provided</option>
-                                        <option value="Completed">Completed</option>
-                                        <option value="Revised">Revised</option>
-                                        <option value="Accepted">Accepted</option>
-                                        <option value="Cancelled">Cancelled</option>
-                                    </select>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="col-md-6 rounded text-white status-dropdown">
+                                        <select class="form-select text-capitalize">
+                                            <option value="Requested" selected>Requested</option>
+                                            <option value="Provided">Provided</option>
+                                            <option value="Completed">Completed</option>
+                                            <option value="Revised">Revised</option>
+                                            <option value="Accepted">Accepted</option>
+                                            <option value="Cancelled">Cancelled</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 d-flex justify-content-end align-items-center">
+                                        <p style="color:#b1acac !important" class="mb-0">Created 3 years ago.</p>
+                                    </div>
                                 </div>
 
-
-
+                               
                             </div>
                             @*  <div class="mt-5">
                             <button class="btn rounded-pill btn-outline-danger waves-effect w-100" id="confirm-text">Delete</button>
@@ -515,7 +503,10 @@
                             <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-pixabay-209315.jpg" alt="Card image" />
                         </a>
                         <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                            <button data-bs-toggle="modal"
+                                    data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text">
+                                <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -524,54 +515,33 @@
 
                             <div class="col-md-12 mb-2">
                                 <h5 class="card-title mb-0"> <b>Roofing Sample</b></h5>
-                                <p class="card-text">123 Sample Ave NW Calgary, AB Created 3 years ago.</p>
+                                <p class="mb-1">Estimate No. : 890 329 2126</p>
+                                <p class="card-text text-black">123 Sample Ave NW Calgary, AB </p>
                             </div>
 
 
+                            <div class="col-md-12 rounded text-white status-dropdown">
 
-
-                            <div class="col-md-6">
-                                @* <div class="form-check mb-1 me-4 me-lg-12 ">
-                                <input class="form-check-input" name="first" type="radio" id="won3" />
-                                <label class="form-check-label text-success" for="won3">
-                                <b>WON</b>
-                                </label>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="col-md-6 rounded text-white status-dropdown">
+                                        <select class="form-select text-capitalize">
+                                            <option value="Requested">Requested</option>
+                                            <option value="Provided">Provided</option>
+                                            <option value="Completed">Completed</option>
+                                            <option value="Revised">Revised</option>
+                                            <option value="Accepted" selected>Accepted</option>
+                                            <option value="Cancelled">Cancelled</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6 d-flex justify-content-end align-items-center">
+                                        <p style="color:#b1acac !important" class="mb-0">Created 3 years ago.</p>
+                                    </div>
                                 </div>
-                                <div class="form-check mb-1 me-4 me-lg-12 ">
-                                <input class="form-check-input" name="first" type="radio" id="lost3" />
-                                <label class="form-check-label text-danger" for="lost3">
-                                <b>LOST</b>
-                                </label>
-                                </div>
-                                <div class="form-check mb-1 me-4 me-lg-12 ">
-                                <input class="form-check-input" name="first" type="radio" id="open3" />
-                                <label class="form-check-label text-primary" for="open3">
 
-                                <b>OPEN</b>
-                                </label>
-                                </div> *@
-                                @*  <div class="select-radio">
-                                <b>WON</b>
 
-                                </div>
-                                <div class="select-radio1 text-grey">
-                                <b>LOST</b>
-
-                                </div>
-                                <div class="select-radio1 text-grey">
-                                <b>OPEN</b>
-
-                                </div> *@
-                                <div class="col-md-12 rounded text-white status-dropdown">
-                                    <select class="form-select text-capitalize">
-                                        <option value="Requested">Requested</option>
-                                        <option value="Provided">Provided</option>
-                                        <option value="Completed">Completed</option>
-                                        <option value="Revised">Revised</option>
-                                        <option value="Accepted" selected>Accepted</option>
-                                        <option value="Cancelled">Cancelled</option>
-                                    </select>
-                                </div>
+                           
+                            </div>
+                              
 
 
                             </div>
@@ -584,7 +554,6 @@
 
 
 
-                    </div>
                 </div>
             </div>
         </div>
@@ -597,7 +566,10 @@
                             <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-pixabay-259588.jpg" alt="Card image" />
                         </a>
                         <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button class="border-0 dtl-btn" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
+                            <button data-bs-toggle="modal"
+                                    data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text">
+                                <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -606,42 +578,14 @@
 
                             <div class="col-md-12 mb-2">
                                 <h5 class="card-title mb-0"> <b>Insurance Sample</b></h5>
-                                <p class="card-text">123 Sample Ave NW  Calgary, AB  Created 3 years ago.</p>
+                                <p class="mb-1">Estimate No. : 890 329 2123</p>
+                                <p class="card-text text-black">123 Sample Ave NW  Calgary, AB  </p>
                             </div>
 
 
-                            <div class="col-md-6">
-                                @* <div class="form-check mb-1 me-4 me-lg-12">
-                                <input class="form-check-input" name="first" type="radio" id="won4" />
-                                <label class="form-check-label text-success" for="won4">
-                                <b>WON</b>
-                                </label>
-                                </div>
-                                <div class="form-check mb-1 me-4 me-lg-12">
-                                <input class="form-check-input" name="first" type="radio" id="lost4" />
-                                <label class="form-check-label text-danger" for="lost4">
-                                <b>LOST</b>
-                                </label>
-                                </div>
-                                <div class="form-check mb-1 me-4 me-lg-12">
-                                <input class="form-check-input" name="first" type="radio" id="open4" />
-                                <label class="form-check-label text-primary" for="open4">
-
-                                <b>OPEN</b>
-                                </label>
-                                </div> *@
-                                @*   <div class="select-radio">
-                                <b>WON</b>
-
-                                </div>
-                                <div class="select-radio1 text-grey">
-                                <b>LOST</b>
-
-                                </div>
-                                <div class="select-radio1 text-grey">
-                                <b>OPEN</b>
-                                </div> *@
-                                <div class="col-md-12 rounded text-white status-dropdown">
+                        <div class="col-md-12 rounded text-white status-dropdown">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="col-md-6 rounded text-white status-dropdown">
                                     <select class="form-select text-capitalize">
                                         <option value="Requested">Requested</option>
                                         <option value="Provided">Provided</option>
@@ -651,8 +595,13 @@
                                         <option value="Cancelled" selected>Cancelled</option>
                                     </select>
                                 </div>
-
+                                <div class="col-md-6 d-flex justify-content-end align-items-center">
+                                    <p style="color:#b1acac !important" class="mb-0">Created 3 years ago.</p>
+                                </div>
                             </div>
+
+                       
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -661,11 +610,83 @@
 
     </div>
 
+    <div id="list" style="display: none;">
+      
+        <!-- Users List Table -->
+        <div class="card">
+
+            <div class="card-datatable table-responsive">
+                <table class="datatables-estimate table">
+                    <thead class="border-top bg-menu-theme text-white">
+                        <tr>
+                            <th class="text-white"></th>
+@*                             <th class="text-white"></th>
+ *@                            
+                            <th class="text-white">Estimate No.</th>
+                            <th class="text-white">Estimate Name</th>
+                            <th class="text-white"> Address</th>
+                            <th class="text-white"> Salesperson</th>
+                            <th class="text-white"> Created</th>
+                            <th class="text-white">Status</th>
+                            @* <th class="text-white">Role</th>
+                            <th class="text-white">Status</th> *@
+                            <th class="text-white">Revenue</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+          
+        </div>
+
+
+
+    </div>
+
+
+    <!--Script for grid and list view-->
+    <script>
+        function switchToGrid() {
+            // Hide the list view and show the grid view
+            document.getElementById("list").style.display = "none";
+            document.getElementById("grid").style.display = "flex";
+        }
+
+        function switchToList() {
+            // Hide the grid view and show the list view
+            document.getElementById("grid").style.display = "none";
+            document.getElementById("list").style.display = "block";
+        }
+
+    </script>
+
+    <!--Modal for Delete button-->
+    <!--Modal for Sign out-->
+    <div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Do you want to delete this estimate?</h5><br />
+
+
+                </div>
+
+
+                <div class="modal-footer">
+                    <a class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Yes
+                    </a>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 </div>
 
 <!--Script for drop down colour-->
+
 
 <script>
     // Function to update the background and text color of each dropdown
