@@ -21,7 +21,7 @@ $(function () {
     // Variable declaration for table
     var dt_user_table = $('.datatables-estimate'),
         select2 = $('.select2'),
-        userView = '#',
+        userView = '/Estimates/EstimationDetails',
         statusObj = {
             1: { title: 'Pending', class: 'bg-label-warning' },
             2: { title: 'Active', class: 'bg-label-success' },
@@ -65,45 +65,13 @@ $(function () {
                         return '';
                     }
                 },
-                //{
-                //    // For Checkboxes
-                //    targets: 1,
-                //    orderable: false,
-                //    checkboxes: {
-                //        selectAllRender: '<input type="checkbox" class="form-check-input">'
-                //    },
-                //    render: function () {
-                //        return '<input type="checkbox" class="dt-checkboxes form-check-input" >';
-                //    },
-                //    searchable: false
-                //},
                 {
                     // Estimate name
                     targets: 1,
                     responsivePriority: 4,
                     render: function (data, type, full, meta) {
                         var $name = full['est_no'];
-                        
-                        // Creates full output for row
-                        var $row_output =
-                            '<div class="d-flex justify-content-start align-items-center user-name">' +
-                            '<div class="avatar-wrapper">' +
-                            //'<div class="avatar avatar-sm me-4">' +
-                            //$output +
-                            //'</div>' +
-                            '</div>' +
-                            '<div class="d-flex flex-column">' +
-                            '<a href="' +
-                            userView +
-                            '" class="text-heading text-truncate"><span class="fw-medium">' +
-                            $name +
-                            '</span></a>' +
-                            //'<small>' +
-                            //$email +
-                            //'</small>' +
-                            '</div>' +
-                            '</div>';
-                        return $row_output;
+                        return $name;
                     }
                 },
                 {
@@ -112,15 +80,14 @@ $(function () {
                     render: function (data, type, full, meta) {
                         var $email = full['est_name'];
                         return (
-                            "<span class='text-truncate d-flex align-items-center text-heading'>" +
+                           '<a href="' +
+                            userView +
+                            '" class="text-heading text-truncate"><span class="fw-medium">' +
                             $email +
-                            '</span>'
+                            '</span></a>'
                         );
                     }
                 },
-                
-             
-                
                 {
                     // address
                     targets: 3,
@@ -133,7 +100,6 @@ $(function () {
                         );
                     }
                 },
-
                 {
                     // salesperson
                     targets: 4,
@@ -146,7 +112,6 @@ $(function () {
                         );
                     }
                 },
-
                 {
                     // created
                     targets: 5,
@@ -191,7 +156,7 @@ $(function () {
             dom:
                 '<"row"' +
                 '<"col-md-2"<"ms-n2"l>>' +
-                '<"col-md-10"<"dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-6 mb-md-0 mt-n6 mt-md-0"f>>' +
+                '<"col-md-10"<"dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-6 mb-md-0 mt-n6 mt-md-0">>' +
                 '>t' +
                 '<"row"' +
                 '<"col-sm-12 col-md-6"i>' +
