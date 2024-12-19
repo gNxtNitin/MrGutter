@@ -128,33 +128,8 @@ $(function () {
                         );
                     }
                 },
-                {
-                    // address
-                    targets: 4,
-                    render: function (data, type, full, meta) {
-                        var $email = full['address'];
-                        return (
-                            "<span class='text-truncate d-flex align-items-center text-heading'>" +
-                            $email +
-                            '</span>'
-                        );
-                    }
-                },
-                //{
-                //    // address
-                //    targets: 5,
-                //    render: function (data, type, full, meta) {
-                //        var $email = full['status'];
-                //        return (
-                //            "<span class='text-truncate d-flex align-items-center text-heading'>" +
-                //            $email +
-                //            '</span>'
-                //        );
-                //    }
-                //},
                 
-              
-                
+             
                 //{
                 //  // Plans
                 //  targets: 4,
@@ -175,6 +150,30 @@ $(function () {
                 //            statusObj[$status].class +
                 //            '" text-capitalized>' +
                 //            statusObj[$status].title +
+                //            '</span>'
+                //        );
+                //    }
+                //},
+                {
+                    // address
+                    targets: 4,
+                    render: function (data, type, full, meta) {
+                        var $email = full['address'];
+                        return (
+                            "<span class='text-truncate d-flex align-items-center text-heading'>" +
+                            $email +
+                            '</span>'
+                        );
+                    }
+                },
+                //{
+                //    // status
+                //    targets: 5,
+                //    render: function (data, type, full, meta) {
+                //        var $email = full['status'];
+                //        return (
+                //            "<span class='text-truncate d-flex align-items-center text-heading'>" +
+                //            $email +
                 //            '</span>'
                 //        );
                 //    }
@@ -203,6 +202,7 @@ $(function () {
                     }
                 }
             ],
+
             order: [[2, 'desc']],
             dom:
                 '<"row"' +
@@ -381,7 +381,7 @@ $(function () {
                     display: $.fn.dataTable.Responsive.display.modal({
                         header: function (row) {
                             var data = row.data();
-                            return 'Details of ' + data['full_name'];
+                            return 'Details of ' + data['_name'];
                         }
                     }),
                     type: 'column',
