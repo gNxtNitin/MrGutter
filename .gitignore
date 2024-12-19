@@ -148,3 +148,4 @@
 /.vs/ProjectEvaluation/mrgutter_web.metadata.v8.bin
 /.vs/ProjectEvaluation/mrgutter_web.projects.v8.bin
 /.vs/MrGutter_Web/v17/HierarchyCache.v1.txt
+/MrGutter.Web/obj/Debug/net6.0/staticwebassets/msbuild.MrGutter.Web.Microsoft.AspNetCore.StaticWebAssets.props
