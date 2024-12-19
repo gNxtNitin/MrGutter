@@ -1,0 +1,156 @@
+﻿@{
+    Layout = "_Layout_ProductAndPricing";
+    ViewBag.Title = "Product List";
+}
+
+<div class="flex-grow-1 container-p-y pt-0">
+   <div class="card mt-5">
+       <div class="card-body">
+           <div class="row">
+               <div class="text-center">
+                    <label>There are no items available in this price list. Add an item from the product list now!</label>
+               </div>
+               <div class="text-center mt-5">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#fullscreenModal" class="btn btn-primary waves-effect waves-light">Add Item</button>
+               </div>
+
+           </div>
+       </div>
+   </div> 
+
+</div>
+<div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFullTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="mt-1">
+            </div>
+            <div class="modal-body">
+                <div class="">
+
+                    <!-- Users List Table -->
+                    <div class="card mt-5">
+                        <div class="card-body">
+                            <div class="row mt-3">
+                                <div class="col-8">
+                                    <h6 class="mb-0"><strong>Product List (default pricing)</strong></h6>
+                                    <label>Search SumoQuote for a product you'd like to link to asd.</label>
+                                </div>
+                                <div class="col-4 text-end">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="card-datatable table-responsive mt-3">
+                            <table class="dt-fixedheader table" id="dt-fixedheader-table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th>Name</th>
+                                        <th>Description</th>
+                                        <th>Price</th>
+                                        <th>Unit</th>
+                                        <th>Measurement</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                        <td></td>
+                                        <td><strong>10/12 STEEP PITCH LABOR</strong></td>
+                                        <td>10/12 STEEP PITCH LABOR</td>
+                                        <td>0</td>
+                                        <td>SQ</td>
+                                        <td><a class="btn btn-label-info waves-effect" href="#">Calculation</a></td>
+                                        <td>
+                                            <a data-bs-toggle="modal"
+                                               data-bs-target="#textAreaEnabledId2" class="btn btn-sm btn-text-secondary rounded-pill btn-icon item-edit">
+                                                <i class="ti ti-pencil ti-md"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                        <td></td>
+                                        <td><strong>11/12 STEEP PITCH LABOR</strong></td>
+                                        <td>11/12 STEEP PITCH LABOR</td>
+                                        <td>0</td>
+                                        <td>SQ</td>
+                                        <td><a class="btn btn-label-info waves-effect" href="#">Calculation</a></td>
+                                        <td>
+                                            <a href="javascript:;"
+                                               class="btn btn-sm btn-text-secondary rounded-pill btn-icon item-edit">
+                                                <i class="ti ti-pencil ti-md"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                        <td></td>
+                                        <td><strong>5" GUTTER GUARDS</strong></td>
+                                        <td>5" GUTTER GUARDS Homeowners choose gutter guard protection for one simple reason — it works. The pat...</td>
+                                        <td>0</td>
+                                        <td>LF</td>
+                                        <td><a class="btn btn-label-info waves-effect" href="#">Calculation</a></td>
+                                        <td>
+                                            <a href="javascript:;"
+                                               class="btn btn-sm btn-text-secondary rounded-pill btn-icon item-edit">
+                                                <i class="ti ti-pencil ti-md"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                        <td></td>
+                                        <td><strong>Gutters</strong></td>
+                                        <td>5" SEAMLESS GUTTERS Supply and install gutters on all sides of house.</td>
+                                        <td>5</td>
+                                        <td>LF</td>
+                                        <td><a class="btn btn-label-info waves-effect" href="#">Calculation</a></td>
+                                        <td>
+                                            <a href="javascript:;"
+                                               class="btn btn-sm btn-text-secondary rounded-pill btn-icon item-edit">
+                                                <i class="ti ti-pencil ti-md"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                        <td></td>
+                                        <td><strong>COIL ROOFING NAILS</strong></td>
+                                        <td>COIL ROOFING NAILS</td>
+                                        <td>0</td>
+                                        <td>BX</td>
+                                        <td><a class="btn btn-label-info waves-effect" href="#">Calculation</a></td>
+                                        <td>
+                                            <a href="javascript:;"
+                                               class="btn btn-sm btn-text-secondary rounded-pill btn-icon item-edit">
+                                                <i class="ti ti-pencil ti-md"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add Item</button>
+            </div>
+        </div>
+    </div>
+</div>

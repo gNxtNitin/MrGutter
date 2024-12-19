@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "10/12 STEEP PITCH LABOR",
+      "role": "SuperAdmin",
+      "description": "10/12 STEEP PITCH LABOR",
+      "price": "0",
+      "unit": "SQ",
+      "measurement": "Calculation",
+      "status": 3,
+      "avatar": ""
+    },
+    {
+      "id": 2,
+      "name": "11/12 STEEP PITCH LABOR",
+      "role": "SuperAdmin",
+      "description": "11/12 STEEP PITCH LABOR",
+      "price": "0",
+      "unit": "SQ",
+      "measurement": "Calculation",
+      "status": 3,
+      "avatar": ""
+    },
+    {
+      "id": 3,
+      "name": "12/12 STEEP PITCH LABOR",
+      "role": "SuperAdmin",
+      "description": "12/12 STEEP PITCH LABOR",
+      "price": "0",
+      "unit": "SQ",
+      "measurement": "Calculation",
+      "status": 3,
+      "avatar": ""
+    },
+    {
+      "id": 4,
+      "name": "13/12 STEEP PITCH LABOR",
+      "role": "SuperAdmin",
+      "description": "13/12 STEEP PITCH LABOR",
+      "price": "0",
+      "unit": "SQ",
+      "measurement": "Calculation",
+      "status": 3,
+      "avatar": ""
+    }
+   
+  ]
+}

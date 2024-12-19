@@ -14,15 +14,20 @@ namespace MrGutter.Web.Areas.AccountSettings.Controllers
         {
             return View();
         }
-        //public IActionResult ProfitSettings()
-        //{
-        //    return View();
-        //}
-     
-        //public IActionResult DefaultProductList()
-        //{
-        //    return View();
-        //}
+        public IActionResult ProfitSettings()
+        {
+            return View();
+        }
+
+        public IActionResult DefaultProductList()
+        {
+            return View();
+        }
+        public IActionResult EditPriceList()
+        {
+            return View();
+        }
+
 
 
     }

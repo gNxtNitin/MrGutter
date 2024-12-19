@@ -1,0 +1,273 @@
+﻿@{
+    Layout = "_Layout_AccountSetting";
+    ViewBag.Title = "Products And Pricing";
+}
+
+<div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y pt-0">
+    <div class="layout-demo-wrapper">
+        <div class="layout-demo-placeholder">
+            <div class="row">
+                <div class="col-7">
+                    <span>
+                        <h5 class="mb-0 mt-2">
+                            <strong>
+                                Profit settings
+
+                            </strong>
+                        </h5>  <label>
+                        </label>
+                    </span>
+                </div>
+                <div class="col-5 text-end">
+                    <a type="button" class="btn btn-label-info waves-effect mt-1" href="/AccountSettings/ProductsAndPricing/ProductsAndPricing">Back</a>
+                </div>
+                <div class="card mt-3">
+                    <!-- Account -->
+                    <div class="card-body pt-4">
+                        <div class="row">
+                            <div class="col-9 mt-2">
+                                <h5 class="mb-0"><strong>How will you calculate profit?</strong></h5>
+                            </div>
+                            <div class="col-1 text-end">
+                            </div>
+                            <div class="col-2 text-end">
+                                <a type="button" href="/AccountSettings/ProductsAndPricing/ProfitSettings" class="btn btn-primary waves-effect waves-light">Save</a>
+                            </div>
+
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-xl-12">
+                                <div class="nav-align-top nav-tabs-shadow mb-6">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li class="nav-item">
+                                            <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-home" aria-controls="navs-top-home" aria-selected="true">Use Margin</button>
+                                        </li>
+                                        <li class="nav-item">
+                                            <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-profile" aria-controls="navs-top-profile" aria-selected="false">Use Markup</button>
+                                        </li>
+                                     
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="navs-top-home" role="tabpanel">
+                                            <p>Margin = profit as a percentage of overall revenue. (ex. 35% of our revenue were profits).</p>
+                                            <div class="row mt-2">
+                                                <div class="col-10">
+                                                <h6 class="mb-0">Default margin</h6>
+                                                    <label>Will be applied to any new price items and included on existing items that do not have a margin previously defined</label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <h6 class="mb-0">Sample:</h6>
+                                                <p>This is how your pricing will look, based on the default margin</p>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col-3">
+                                                    <label>Material</label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <label>Labor</label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-3">
+                                                    <label>
+                                                        Margin
+                                                    </label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-3">
+                                                    <label>
+                                                        Price
+                                                    </label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row mt-3">
+                                                <div class="col-6">
+                                                    <h6 class="mb-0">Margin slider</h6>
+                                                    <label>Use the margin slider on Quote Details and Authorization pages</label>
+                                                </div>
+                                                <div class="col-4 text-end">
+                                                </div>
+                                                <div class="col-2 text-end">
+                                                    <div class="col text-end form-check form-switch">
+                                                        <span class=""><input type="checkbox" class="form-check-input ms-5 mt-3" /></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <hr />
+                                            <div class="row mt-2">
+                                                <div class="col-10">
+                                                    <h6 class="mb-0">Minimum margin</h6>
+                                                    <label>The margin slider cannot go below this</label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control" />
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row mt-2">
+                                                <div class="col-6">
+                                                    <h6 class="mb-0">Profitability</h6>
+                                                    <label>
+                                                        Allow all users to view total breakdown on quotes
+                                                    </label>
+                                                </div>
+                                                <div class="col-4 text-end">
+                                                </div>
+                                                <div class="col-2 text-end">
+                                                    <div class="col text-end form-check form-switch">
+                                                        <span class=""><input type="checkbox" class="form-check-input ms-5 mt-3" /></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="navs-top-profile" role="tabpanel">
+                                            <p>Markup = Percentage profit increase over the cost of the goods/services sold (ex. We added 35% to our total costs to give us our profit.</p>
+                                            <div class="row mt-2">
+                                                <div class="col-10">
+                                                    <h6 class="mb-0">Default markup</h6>
+                                                    <label>Will be applied to any new price items and included on existing items that do not have a markup previously defined.</label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control" />
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <h6 class="mb-0">Sample:</h6>
+                                                <p>This is how your pricing will look, based on the default markup.</p>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col-3">
+                                                    <label>Material</label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <label>Labor</label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-3">
+                                                    <label>
+                                                        Margin
+                                                    </label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                                <div class="col-3">
+                                                    <label>
+                                                        Price
+                                                    </label>
+                                                    <input type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row mt-3">
+                                                <div class="col-6">
+                                                    <h6 class="mb-0">Margin slider</h6>
+                                                    <label>Use the margin slider on Quote Details and Authorization pages</label>
+                                                </div>
+                                                <div class="col-4 text-end">
+                                                </div>
+                                                <div class="col-2 text-end">
+                                                    <div class="col text-end form-check form-switch">
+                                                        <span class=""><input type="checkbox" class="form-check-input ms-5 mt-3" /></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <hr />
+                                            <div class="row mt-2">
+                                                <div class="col-10">
+                                                    <h6 class="mb-0">Minimum margin</h6>
+                                                    <label>The margin slider cannot go below this</label>
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="form-control" />
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div class="row mt-2">
+                                                <div class="col-6">
+                                                    <h6 class="mb-0">Profitability</h6>
+                                                    <label>
+                                                        Allow all users to view total breakdown on quotes
+                                                    </label>
+                                                </div>
+                                                <div class="col-4 text-end">
+                                                </div>
+                                                <div class="col-2 text-end">
+                                                    <div class="col text-end form-check form-switch">
+                                                        <span class=""><input type="checkbox" class="form-check-input ms-5 mt-3" /></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      @*   <div class="row mt-3">
+                            <hr />
+                            <h6 class="mb-0"><strong>Products & Pricing</strong></h6>
+                            <div class="card mt-3">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-9 mt-1">
+                                            <label class="mb-0"><strong>Product List (default pricing)</strong></label>
+                                        </div>
+                                        <div class="col-1 text-end">
+                                        </div>
+                                        <div class="col-2 text-end">
+                                            <a href="#"><i class="fa fa-edit"></i></a>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-8 mt-1">
+                                            <label class="mb-0"><strong>Additional price lists</strong></label>
+                                        </div>
+                                        <div class="col-1 text-end">
+                                        </div>
+                                        <div class="col-3 text-end">
+                                            <button type="button" class="btn btn-label-primary waves-effect">Create Price List</button>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row mt-5">
+                                        <div class="col-8 mt-1">
+                                            <label class="mb-0"><strong>More options</strong></label>
+                                        </div>
+                                        <div class="col-1 text-end">
+                                        </div>
+                                        <div class="col-3 text-end">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-3">
+                                            <i class="fas fa-download"></i> <a href="#">Download Price List</a>
+                                        </div>
+                                        <div class="col-3">
+                                            <i class="fas fa-upload"></i> <a href="#">Upload Price List</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> *@
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
