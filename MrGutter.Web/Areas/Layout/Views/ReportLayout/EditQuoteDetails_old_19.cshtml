@@ -2,43 +2,28 @@
     Layout = "_Layout_EditReportLayoutSetting";
     ViewBag.Title = "layout Report";
 }
-
-
-
 <style>
     .required {
         color: red;
     }
-
-    .horizontal-scroll1 {
-        display: flex !important;
-        width: calc(100vh + 16px) !important;
-        gap: 10px;
-    }
-
-        .horizontal-scroll1::-webkit-scrollbar {
-            height: 8px;
-            /*  width: 8px;  */
-            border: 1px solid #2E7DB3;
-            border-radius: 8px;
-        }
-
-        .horizontal-scroll1::-webkit-scrollbar-thumb:horizontal {
-            background: #2E7DB3;
-            border-radius: 8px;
-        }
-
 </style>
+
+
+
+
+
+
+
+
 <div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y pt-0">
     <div class="layout-demo-wrapper">
         <div class="layout-demo-placeholder">
             <div class="row">
                 <div class="col-12">
-                    @* <h5 class="mb-0">Page Content</h5> *@
                     <div class="row">
                         <div class="col-5">
                             <h5 class="mb-0">
-                                <span id="title-text">Quote Details </span>
+                                <span id="title-text">Good - Architectural Shingles </span>
                                 <a href="#" id="edit-title-link">
                                     <i class="ti ti-edit"></i>
                                 </a>
@@ -57,65 +42,73 @@
                                                     data-bs-target="#viewIntoductionModel"> view templates</a>
                     </label>
                     <div class="card mb-6 mt-3">
-                        <!-- Account -->
                         <div class="card-body pt-4">
                             <div class="col-xl-12">
-                                <div class="nav-align-top border rounded mb-6">
-                                    <div class="d-flex align-items-baseline">
-                                        <ul class="nav nav-tabs horizontal-scroll1" role="tablist" id="tabList">
-                                            <li class="nav-item">
-                                                <button type="button" class="nav-link active px-2" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-home" aria-controls="navs-top-home" aria-selected="true">
-                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>Quote Details
-                                                    <a href="#" title="close" onclick="openModal(1)"><i class="ti ti-x align-text-bottom me-2 ms-2 icon-close"></i></a>
-                                                </button>
-                                            </li>
-                                            <li class="nav-item">
-                                                <button type="button" class="nav-link px-2" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-profile" aria-controls="navs-top-profile" aria-selected="false">
-                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>New Quote
-                                                    <a href="#" title="close" onclick="openModal(2)"><i class="ti ti-x align-text-bottom me-2 ms-2 icon-close"></i></a>
-                                                </button>
-                                            </li>
-                                            <li class="nav-item">
-                                                <button type="button" class="nav-link px-2" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-messages" aria-controls="navs-top-messages" aria-selected="false">
-                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>New Quote
-                                                    <a href="#" title="close" onclick="openModal(3)"><i class="ti ti-x align-text-bottom me-2 ms-2 icon-close"></i></a>
-                                                </button>
-                                            </li>
-                                            @*  <li class="nav-item card" id="plusButton" style="background-color: #2E7DB3;color: aliceblue">
-                                            <i class="ti ti-plus align-text-bottom p-3 cursor-pointer" onclick="handleClick()"></i>
-                                            </li> *@
-
-                                        </ul>
-                                        <button class="nav-item card d-flex align-items-center justify-content-center" id="plusButton" style="width:35px; height:35px;background-color: #2E7DB3;color: aliceblue">
-                                            <i class="ti ti-plus align-text-bottom p-3 cursor-pointer" onclick="handleClick()"></i>
-                                        </button>
-                                    </div>
-
+                                <div class="nav-align-top nav-tabs-shadow mb-6">
+                                    <ul class="nav nav-tabs" role="tablist" id="tabList" style=" display: flex;gap: 10px;">
+                                        <li class="nav-item">
+                                            <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-home" aria-controls="navs-top-home" aria-selected="true">
+                                                <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>Architectural Shingles
+                                                <a href="#" title="close" onclick="openModal(1)"><i class="ti ti-x align-text-bottom me-2 ms-2 icon-close"></i></a>
+                                            </button>
+                                        </li>
+                                  @*       <li class="nav-item" style="flex: 1 0 30%; min-width: 150px;">
+                                            <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-profile" aria-controls="navs-top-profile" aria-selected="false">
+                                                <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>Impact Resistant Shingles
+                                                <a href="#" title="close" onclick="openModal(2)"><i class="ti ti-x align-text-bottom me-2 ms-2 icon-close"></i></a>
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" style="flex: 1 0 30%; min-width: 150px;">
+                                            <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-messages" aria-controls="navs-top-messages" aria-selected="false">
+                                                <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>Designer Shingles
+                                                <a href="#" title="close" onclick="openModal(3)"><i class="ti ti-x align-text-bottom me-2 ms-2 icon-close"></i></a>
+                                            </button>
+                                        </li> *@
+                                        <li class="nav-item card ms-4" id="plusButton" style="flex: 0 0 20%; max-width: 85px; background-color: #2E7DB3;color: aliceblue">
+                                            <i class="ti ti-plus align-text-bottom p-3 cursor-pointer ps-4 ms-4" onclick="handleClick()"></i>
+                                        </li>
+                                    </ul>
                                     <div class="tab-content">
                                         <div class="tab-pane fade show active" id="navs-top-home" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <label for="itemSelect">Include all items from</label>
+                                                    <select class="form-select mt-0" aria-label="Dropdown for sharing options">
+                                                        <option selected>None</option>
+                                                    </select>
+                                                </div>
 
-                                            <div>
-
-                                                <h5 class="row">
+                                                <div class="col-6">
+                                                    <label for="itemSelect">Description</label>
+                                                    <input class="form-control"
+                                                           type="text"
+                                                           autofocus />
+                                                </div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <hr />
+                                                <h5>
                                                     Section Title
-
+                                                    <span class="cursor-pointer">
+                                                        🔼 🔽
+                                                    </span>
                                                 </h5>
 
                                                 <div class="row align-items-center">
-                                                    <div class="col-6 ps-0">
+                                                    <div class="col-6">
                                                         <div class="input-group input-group-merge">
                                                             <input type="text" class="form-control" aria-describedby="basic-addon-search31">
                                                         </div>
 
                                                     </div>
                                                     <div class="col-5 text-start">
-                                                        <span class="mb-1"><a href="#" title="Delete" class="btn btn-icon btn-outline-secondary waves-effect"><i class="ti ti-lg ti-trash-filled cursor-pointer"></i></a></span>
+                                                        <span class="mb-1"><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
                                                     </div>
                                                     <div class="col text-end form-check form-switch">
                                                         <span class=""><input type="checkbox" class="form-check-input" /></span>
                                                     </div>
                                                 </div>
-
+                                                <hr />
                                                 <div class="row mt-3">
                                                     <div class="card-body pt-0 px-0">
                                                         <form class="source-item">
@@ -141,7 +134,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="d-flex flex-column align-items-center justify-content-between border-start p-2">
-                                                                            <a href="#" title="Delete" class="btn btn-icon btn-outline-secondary waves-effect"><i class="ti ti-lg ti-trash-filled cursor-pointer"></i></a>
+                                                                            <i class="ti ti-lg ti-trash-filled text-danger" data-repeater-delete></i>
                                                                             <div class="dropdown">
                                                                                 <span class="message-actions input-group-text">
                                                                                     <a data-bs-toggle="modal"
@@ -400,19 +393,19 @@
                                                                 const searchColumn = document.createElement("div");
                                                                 searchColumn.classList.add("col-6");
                                                                 searchColumn.innerHTML = `
-                                                                                                                                                                                    <div class="input-group input-group-merge">
-                                                                                                                                                                                        <input type="text" class="form-control" placeholder="Search..."/>
-                                                                                                                                                                                    </div>`;
+                                                                                                                            <div class="input-group input-group-merge">
+                                                                                                                                <input type="text" class="form-control" placeholder="Search..."/>
+                                                                                                                            </div>`;
                                                                 row.appendChild(searchColumn);
 
                                                                 // Delete icon column
                                                                 const deleteColumn = document.createElement("div");
                                                                 deleteColumn.classList.add("col-5", "text-start");
                                                                 deleteColumn.innerHTML = `
-                                                                                                                                                                                    <a href="#" class="delete-button" title="Delete Section"
-                                                                                                                                                                                       data-bs-toggle="modal" data-bs-target="#deleteAsSection">
-                                                                                                                                                                                       <i class="ti ti-lg ti-trash-filled text-danger"></i>
-                                                                                                                                                                                    </a>`;
+                                                                                                                            <a href="#" class="delete-button" title="Delete Section"
+                                                                                                                               data-bs-toggle="modal" data-bs-target="#deleteAsSection">
+                                                                                                                               <i class="ti ti-lg ti-trash-filled text-danger"></i>
+                                                                                                                            </a>`;
                                                                 row.appendChild(deleteColumn);
 
                                                                 // Checkbox column
@@ -485,19 +478,19 @@
 
                                                     <div class="card-body px-0">
                                                         <div class="row row-gap-4">
-                                                            <div class="col-md-8 mb-md-0 mb-4">
+                                                            <div class="col-md-6 mb-md-0 mb-4">
                                                             </div>
-                                                            <div class="col-md-4 d-flex justify-content-end">
-                                                                <div class="invoice-calculations w-100">
+                                                            <div class="col-md-6 d-flex justify-content-end">
+                                                                <div class="invoice-calculations">
 
                                                                     <div class="d-flex justify-content-between mb-2">
-                                                                        <span>Quote subtotal:</span>
+                                                                        <span class="w-px-100">Quote subtotal:</span>
                                                                         <span class="fw-medium text-heading">$0.00</span>
                                                                     </div>
                                                                     <hr />
                                                                     <div class="d-flex justify-content-between">
-                                                                        <span class="w-px-100 fw-bold">Total:</span>
-                                                                        <span class="fw-bold text-heading">$0.00</span>
+                                                                        <span class="w-px-100">Total:</span>
+                                                                        <span class="fw-medium text-heading">$0.00</span>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -510,7 +503,7 @@
                                                     <div class="col-12">
                                                         <div>
                                                             <label for="note" class="text-heading mb-1 fw-medium">Note:</label>
-                                                            <textarea class="form-control" rows="3" id="autosize-demo"></textarea>
+                                                            <textarea class="form-control" rows="2" id="note"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -518,12 +511,26 @@
                                             </div>
                                         </div>
                                         <div class="tab-pane fade" id="navs-top-profile" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <label for="itemSelect">Include all items from</label>
+                                                    <select class="form-select mt-0" aria-label="Dropdown for sharing options">
+                                                        <option selected>Good - Architectural Shingles ($0.00)</option>
+                                                    </select>
+                                                </div>
 
-                                            <div>
-
-                                                <h5 class="row">Section title</h5>
+                                                <div class="col-6">
+                                                    <label for="itemSelect">Description</label>
+                                                    <input class="form-control"
+                                                           type="text"
+                                                           autofocus placeholder="Includes everything from Good - Architectural Shingles" />
+                                                </div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <hr />
+                                                <h5>Section title</h5>
                                                 <div class="row align-items-center">
-                                                    <div class="col-6 ps-0">
+                                                    <div class="col-6">
                                                         <div class="input-group input-group-merge">
                                                             <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
                                                             <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon-search31">
@@ -532,13 +539,13 @@
 
                                                     </div>
                                                     <div class="col-5 text-start">
-                                                        <span class="mb-1"><a href="#" title="Delete" class="btn btn-icon btn-outline-secondary waves-effect"><i class="ti ti-lg ti-trash-filled"></i></a></span>
+                                                        <span class="mb-1"><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
                                                     </div>
                                                     <div class="col text-end form-check form-switch">
                                                         <span class=""><input type="checkbox" class="form-check-input" /></span>
                                                     </div>
                                                 </div>
-
+                                                <hr />
                                                 <div class="row mt-3">
                                                     <div class="card-body pt-0 px-0">
                                                         <form class="source-item">
@@ -746,10 +753,10 @@
                                                 </div>
                                             </div>
                                             <div class="mt-3">
-
-                                                <h5 class="row">Section title</h5>
+                                                <hr />
+                                                <h5>Section title</h5>
                                                 <div class="row align-items-center">
-                                                    <div class="col-6 ps-0">
+                                                    <div class="col-6">
                                                         <div class="input-group input-group-merge">
                                                             <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
                                                             <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon-search31">
@@ -758,13 +765,13 @@
 
                                                     </div>
                                                     <div class="col-5 text-start">
-                                                        <span class="mb-1"><a href="#" title="Delete" class="btn btn-icon btn-outline-secondary waves-effect"><i class="ti ti-lg ti-trash-filled"></i></a></span>
+                                                        <span class="mb-1"><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
                                                     </div>
                                                     <div class="col text-end form-check form-switch">
                                                         <span class=""><input type="checkbox" class="form-check-input" /></span>
                                                     </div>
                                                 </div>
-
+                                                <hr />
                                                 <div class="row mt-3">
                                                     <div class="card-body pt-0 px-0">
                                                         <form class="source-item">
@@ -968,10 +975,10 @@
                                 </div>
                             </div>
 
-                            @* <div class="mt-2">
-                            <a href="" data-bs-toggle="modal"
-                            data-bs-target="#saveAsTemplate">Save as template</a>
-                            </div> *@
+                            <div class="mt-2">
+                                <a href="" data-bs-toggle="modal"
+                                   data-bs-target="#saveAsTemplate">Save as template</a>
+                            </div>
                         </div>
 
                     </div>
@@ -1100,7 +1107,7 @@
                                                                         </a>
                                                                     </span>
                                                                     <span><a href="#" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
-                                                                    <span><a href="#" title="Delete" class="btn btn-icon btn-outline-secondary waves-effect"><i class="ti ti-lg ti-trash-filled"></i></a></span>
+                                                                    <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
                                                                 </span>
                                                             </li>
                                                             <li class="list-group-item d-flex justify-content-between">
@@ -1115,7 +1122,7 @@
                                                                         </a>
                                                                     </span>
                                                                     <span><a href="#" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
-                                                                    <span><a href="#" title="Delete" class="btn btn-icon btn-outline-secondary waves-effect"><i class="ti ti-lg ti-trash-filled"></i></a></span>
+                                                                    <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
                                                                 </span>
                                                             </li>
                                                             <!-- Additional layout items go here -->
@@ -1349,11 +1356,11 @@
                                 protecting vulnerable areas on a roof from ice and water damage
                             </label>
                         </div>
-                        <div class="col-5 mt-5">
+                     @*    <div class="col-5 mt-5">
                             <button type="button" class="btn btn-outline-primary waves-effect" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBoth">
                                 Edit In Price List
                             </button>
-                        </div>
+                        </div> *@
                     </div>
                     <div class="row mt-3">
                         <span class="badge bg-label-warning">!<label class="ms-2">Values can be edited on reports</label></span>
@@ -1507,7 +1514,6 @@
     </div>
 
 </div>
-
 <div class="modal fade" id="saveAsTemplate" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -1699,8 +1705,6 @@
     </div>
 
 </div>
-
-
 <div class="">
     <h5 class=""></h5>
     <div class="">
@@ -1765,8 +1769,6 @@
     </div>
 
 </div>
-
-<!--Modal for View page-->
 <div class="col-lg-4 col-md-6">
     <div class="mt-4">
         <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
@@ -1779,7 +1781,7 @@
                     <div class="modal-body">
 
                         <div style="width: 100%; height: 100%; border: 1px solid #ccc;">
-                            <iframe src="@Url.Content("~/report_view_pages/reportquotedetails.pdf")" width="100%" height="100%" style="border: none;"></iframe>
+                            <iframe src="@Url.Content("~/image/estimatedetailsviewpage.pdf")" width="100%" height="100%" style="border: none;"></iframe>
                         </div>
                     </div>
                 </div>
@@ -1787,26 +1789,22 @@
         </div>
     </div>
 </div>
-
-
-
-
 <script>
-    let tabCount = 3;
-    const maxTabs = 9;
+    let tabCount = 1;
+    const maxTabs = 5;
 
     function handleClick() {
         if (tabCount < maxTabs) {
             tabCount++;
             const newTab = document.createElement('li');
             newTab.classList.add('nav-item');
-            newTab.style = "width: auto;";
+            newTab.style = "";
             newTab.innerHTML = `
-                                                                <button type="button" class="nav-link px-2" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-new${tabCount}" aria-controls="navs-top-new${tabCount}" aria-selected="false">
-                                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>New Quote
-                                                                    <a href="#" title="close" onclick="openModal(${tabCount})"><i class="ti ti-x align-text-bottom me-2 ms-2 icon-close"></i></a>
-                                                                </button>
-                                                            `;
+                                                            <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-new${tabCount}" aria-controls="navs-top-new${tabCount}" aria-selected="false">
+                                                                <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>New Quote
+                                                                <a href="#" title="close" onclick="openModal(${tabCount})"><i class="ti ti-x align-text-bottom me-2 ms-2 icon-close"></i></a>
+                                                            </button>
+                                                        `;
 
             document.getElementById('tabList').insertBefore(newTab, document.querySelector('.nav-item.card.ms-4'));
             const newTabContent = document.createElement('div');
@@ -1815,231 +1813,231 @@
             newTabContent.setAttribute('role', 'tabpanel');
             newTabContent.setAttribute('aria-labelledby', `navs-top-new${tabCount}-tab`);
             newTabContent.innerHTML = `
-                                                                <div class="row">
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <label for="itemSelect">Include all items from</label>
+                                                                    <select class="form-select mt-0" aria-label="Dropdown for sharing options">
+                                                                        <option selected>None</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <label for="itemSelect">Description</label>
+                                                                    <input class="form-control" type="text" autofocus />
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="mt-3">
+                                                                <hr />
+                                                                <h5>
+                                                                    Section Title
+                                                                    <span class="cursor-pointer">
+                                                                        🔼 🔽
+                                                                    </span>
+                                                                </h5>
+
+                                                                <div class="row align-items-center">
                                                                     <div class="col-6">
-                                                                        <label for="itemSelect">Include all items from</label>
-                                                                        <select class="form-select mt-0" aria-label="Dropdown for sharing options">
-                                                                            <option selected>None</option>
-                                                                        </select>
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" aria-describedby="basic-addon-search31">
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="col-6">
-                                                                        <label for="itemSelect">Description</label>
-                                                                        <input class="form-control" type="text" autofocus />
+                                                                    <div class="col-5 text-start">
+                                                                        <span class="mb-1"><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                    </div>
+                                                                    <div class="col text-end form-check form-switch">
+                                                                        <span class=""><input type="checkbox" class="form-check-input" /></span>
                                                                     </div>
                                                                 </div>
-
-                                                                <div class="mt-3">
-                                                                    <hr />
-                                                                        <h5 class="row">
-                                                                        Section Title
-                                                                        <span class="cursor-pointer">
-                                                                            🔼 🔽
-                                                                        </span>
-                                                                    </h5>
-
-                                                                    <div class="row align-items-center">
-                                                                        <div class="col-6 ps-0">
-                                                                            <div class="input-group input-group-merge">
-                                                                                <input type="text" class="form-control" aria-describedby="basic-addon-search31">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-5 text-start">
-                                                                                    <span class="mb-1"><a href="#" title="Delete" class="btn btn-icon btn-outline-secondary waves-effect"><i class="ti ti-lg ti-trash-filled"></i></a></span>
-                                                                        </div>
-                                                                        <div class="col text-end form-check form-switch">
-                                                                            <span class=""><input type="checkbox" class="form-check-input" /></span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <hr />
-                                                                                                            <div class="row mt-3">
-                                                                                                        <div class="card-body pt-0 px-0">
-                                                                                                            <form class="source-item">
-                                                                                                                <div class="mb-4" data-repeater-list="group-b">
-                                                                                                                    <div class="repeater-wrapper mt-2" data-repeater-item>
-                                                                                                                        <div class="d-flex border rounded position-relative pe-0">
-                                                                                                                            <div class="row w-100 p-6">
-                                                                                                                                <div class="col-md-6 col-12 mb-md-0 mb-4">
-                                                                                                                                    <p class="h6 repeater-title">Item</p>
-                                                                                                                                    <textarea class="form-control" rows="2" placeholder="" disabled></textarea>
-                                                                                                                                </div>
-                                                                                                                                <div class="col-md-3 col-12 mb-md-0 mb-4">
-                                                                                                                                    <p class="h6 repeater-title">Qty</p>
-                                                                                                                                    <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
-                                                                                                                                </div>
-                                                                                                                                <div class="col-md-2 col-12 mb-md-0 mb-4">
-                                                                                                                                    <p class="h6 repeater-title">Qty</p>
-                                                                                                                                    <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
-                                                                                                                                </div>
-                                                                                                                                <div class="col-md-1 col-12 pe-0 mt-md-2">
-                                                                                                                                    <p class="h6 repeater-title">Price</p>
-                                                                                                                                    <p class="mb-0 text-heading">$0.00</p>
-                                                                                                                                </div>
+                                                                <hr />
+                                                                                                        <div class="row mt-3">
+                                                                                                    <div class="card-body pt-0 px-0">
+                                                                                                        <form class="source-item">
+                                                                                                            <div class="mb-4" data-repeater-list="group-b">
+                                                                                                                <div class="repeater-wrapper mt-2" data-repeater-item>
+                                                                                                                    <div class="d-flex border rounded position-relative pe-0">
+                                                                                                                        <div class="row w-100 p-6">
+                                                                                                                            <div class="col-md-6 col-12 mb-md-0 mb-4">
+                                                                                                                                <p class="h6 repeater-title">Item</p>
+                                                                                                                                <textarea class="form-control" rows="2" placeholder="" disabled></textarea>
                                                                                                                             </div>
-                                                                                                                            <div class="d-flex flex-column align-items-center justify-content-between border-start p-2">
-                                                                                                                                <i class="ti ti-lg ti-trash-filled text-danger" data-repeater-delete></i>
-                                                                                                                                <div class="dropdown">
-                                                                                                                                    <span class="message-actions input-group-text">
-                                                                                                                                        <a data-bs-toggle="modal"
-                                                                                                                                           data-bs-target="#textAreaEnabledId2"> <i class='ti ti-lock cursor-pointer'></i></a>
-                                                                                                                                    </span>
+                                                                                                                            <div class="col-md-3 col-12 mb-md-0 mb-4">
+                                                                                                                                <p class="h6 repeater-title">Qty</p>
+                                                                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                                                                            </div>
+                                                                                                                            <div class="col-md-2 col-12 mb-md-0 mb-4">
+                                                                                                                                <p class="h6 repeater-title">Qty</p>
+                                                                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                                                                            </div>
+                                                                                                                            <div class="col-md-1 col-12 pe-0 mt-md-2">
+                                                                                                                                <p class="h6 repeater-title">Price</p>
+                                                                                                                                <p class="mb-0 text-heading">$0.00</p>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="d-flex flex-column align-items-center justify-content-between border-start p-2">
+                                                                                                                            <i class="ti ti-lg ti-trash-filled text-danger" data-repeater-delete></i>
+                                                                                                                            <div class="dropdown">
+                                                                                                                                <span class="message-actions input-group-text">
+                                                                                                                                    <a data-bs-toggle="modal"
+                                                                                                                                       data-bs-target="#textAreaEnabledId2"> <i class='ti ti-lock cursor-pointer'></i></a>
+                                                                                                                                </span>
 
-                                                                                                                                    </i>
-                                                                                                                                    <div class="dropdown-menu dropdown-menu-end w-px-300 p-4" aria-labelledby="dropdownMenuButton">
+                                                                                                                                </i>
+                                                                                                                                <div class="dropdown-menu dropdown-menu-end w-px-300 p-4" aria-labelledby="dropdownMenuButton">
 
-                                                                                                                                        <div class="row g-3">
-                                                                                                                                            <div class="col-12">
-                                                                                                                                                <label for="discountInput" class="form-label">Discount(%)</label>
-                                                                                                                                                <input type="number" class="form-control" id="discountInput" min="0" max="100" />
-                                                                                                                                            </div>
-                                                                                                                                            <div class="col-md-6">
-                                                                                                                                                <label for="taxInput1" class="form-label">Tax 1</label>
-                                                                                                                                                <select name="tax-1-input" id="taxInput1" class="form-select tax-select">
-                                                                                                                                                    <option value="0%" selected>0%</option>
-                                                                                                                                                    <option value="1%">1%</option>
-                                                                                                                                                    <option value="10%">10%</option>
-                                                                                                                                                    <option value="18%">18%</option>
-                                                                                                                                                    <option value="40%">40%</option>
-                                                                                                                                                </select>
-                                                                                                                                            </div>
-                                                                                                                                            <div class="col-md-6">
-                                                                                                                                                <label for="taxInput2" class="form-label">Tax 2</label>
-                                                                                                                                                <select name="tax-2-input" id="taxInput2" class="form-select tax-select">
-                                                                                                                                                    <option value="0%" selected>0%</option>
-                                                                                                                                                    <option value="1%">1%</option>
-                                                                                                                                                    <option value="10%">10%</option>
-                                                                                                                                                    <option value="18%">18%</option>
-                                                                                                                                                    <option value="40%">40%</option>
-                                                                                                                                                </select>
-                                                                                                                                            </div>
+                                                                                                                                    <div class="row g-3">
+                                                                                                                                        <div class="col-12">
+                                                                                                                                            <label for="discountInput" class="form-label">Discount(%)</label>
+                                                                                                                                            <input type="number" class="form-control" id="discountInput" min="0" max="100" />
                                                                                                                                         </div>
-                                                                                                                                        <div class="dropdown-divider my-4"></div>
-                                                                                                                                        <button type="button" class="btn btn-label-primary btn-apply-changes">Apply</button>
-                                                                                                                                    </div>
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </form>
-                                                                                                        </div>
-                                                                                                        <div class="card-body pt-0 px-0">
-                                                                                                            <form class="source-item">
-                                                                                                                <div class="mb-4" data-repeater-list="group-a">
-                                                                                                                    <div class="repeater-wrapper mt-2" data-repeater-item>
-                                                                                                                        <div class="d-flex border rounded position-relative pe-0">
-                                                                                                                            <div class="row w-100 p-6">
-                                                                                                                                <div class="col-md-6 col-12 mb-md-0 mb-4">
-                                                                                                                                    <p class="h6 repeater-title">Item</p>
-                                                                                                                                    <textarea class="form-control" rows="2" placeholder=""></textarea>
-                                                                                                                                </div>
-                                                                                                                                <div class="col-md-3 col-12 mb-md-0 mb-4">
-                                                                                                                                    <p class="h6 repeater-title">Qty</p>
-                                                                                                                                    <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
-                                                                                                                                </div>
-                                                                                                                                <div class="col-md-2 col-12 mb-md-0 mb-4">
-                                                                                                                                    <p class="h6 repeater-title">Qty</p>
-                                                                                                                                    <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
-                                                                                                                                </div>
-                                                                                                                                <div class="col-md-1 col-12 pe-0 mt-md-2">
-                                                                                                                                    <p class="h6 repeater-title">Price</p>
-                                                                                                                                    <p class="mb-0 text-heading">$0.00</p>
-                                                                                                                                </div>
-                                                                                                                            </div>
-                                                                                                                            <div class="d-flex flex-column align-items-center justify-content-between border-start p-2">
-                                                                                                                                <i class="ti ti-lg ti-trash-filled text-danger" data-repeater-delete></i>
-                                                                                                                                <div class="dropdown">
-                                                                                                                                    <span class="message-actions input-group-text">
-                                                                                                                                        <a data-bs-toggle="modal"
-                                                                                                                                           data-bs-target="#textAreaEnabledId1"><i class='ti ti-plus cursor-pointer'></i></a>
-                                                                                                                                    </span>
-
-                                                                                                                                    </i>
-                                                                                                                                    <div class="dropdown-menu dropdown-menu-end w-px-300 p-4" aria-labelledby="dropdownMenuButton">
-
-                                                                                                                                        <div class="row g-3">
-                                                                                                                                            <div class="col-12">
-                                                                                                                                                <label for="discountInput" class="form-label">Discount(%)</label>
-                                                                                                                                                <input type="number" class="form-control" id="discountInput" min="0" max="100" />
-                                                                                                                                            </div>
-                                                                                                                                            <div class="col-md-6">
-                                                                                                                                                <label for="taxInput1" class="form-label">Tax 1</label>
-                                                                                                                                                <select name="tax-1-input" id="taxInput1" class="form-select tax-select">
-                                                                                                                                                    <option value="0%" selected>0%</option>
-                                                                                                                                                    <option value="1%">1%</option>
-                                                                                                                                                    <option value="10%">10%</option>
-                                                                                                                                                    <option value="18%">18%</option>
-                                                                                                                                                    <option value="40%">40%</option>
-                                                                                                                                                </select>
-                                                                                                                                            </div>
-                                                                                                                                            <div class="col-md-6">
-                                                                                                                                                <label for="taxInput2" class="form-label">Tax 2</label>
-                                                                                                                                                <select name="tax-2-input" id="taxInput2" class="form-select tax-select">
-                                                                                                                                                    <option value="0%" selected>0%</option>
-                                                                                                                                                    <option value="1%">1%</option>
-                                                                                                                                                    <option value="10%">10%</option>
-                                                                                                                                                    <option value="18%">18%</option>
-                                                                                                                                                    <option value="40%">40%</option>
-                                                                                                                                                </select>
-                                                                                                                                            </div>
+                                                                                                                                        <div class="col-md-6">
+                                                                                                                                            <label for="taxInput1" class="form-label">Tax 1</label>
+                                                                                                                                            <select name="tax-1-input" id="taxInput1" class="form-select tax-select">
+                                                                                                                                                <option value="0%" selected>0%</option>
+                                                                                                                                                <option value="1%">1%</option>
+                                                                                                                                                <option value="10%">10%</option>
+                                                                                                                                                <option value="18%">18%</option>
+                                                                                                                                                <option value="40%">40%</option>
+                                                                                                                                            </select>
                                                                                                                                         </div>
-                                                                                                                                        <div class="dropdown-divider my-4"></div>
-                                                                                                                                        <button type="button" class="btn btn-label-primary btn-apply-changes">Apply</button>
+                                                                                                                                        <div class="col-md-6">
+                                                                                                                                            <label for="taxInput2" class="form-label">Tax 2</label>
+                                                                                                                                            <select name="tax-2-input" id="taxInput2" class="form-select tax-select">
+                                                                                                                                                <option value="0%" selected>0%</option>
+                                                                                                                                                <option value="1%">1%</option>
+                                                                                                                                                <option value="10%">10%</option>
+                                                                                                                                                <option value="18%">18%</option>
+                                                                                                                                                <option value="40%">40%</option>
+                                                                                                                                            </select>
+                                                                                                                                        </div>
                                                                                                                                     </div>
+                                                                                                                                    <div class="dropdown-divider my-4"></div>
+                                                                                                                                    <button type="button" class="btn btn-label-primary btn-apply-changes">Apply</button>
                                                                                                                                 </div>
                                                                                                                             </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <hr />
-                                                                                                                <div class="row">
-                                                                                                                    <div class="col-6">
-                                                                                                                        <button type="button" class="btn btn-outline-primary waves-effect" data-repeater-create><i class='ti ti-plus ti-14px me-1_5'></i>Add Item</button>
-                                                                                                                    </div>
-                                                                                                                    <div class="col-6 text-end">
-                                                                                                                        <label>Section total: <strong class="ms-4">$0.00</strong></label>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                            </form>
-                                                                                                        </div>
-
-                                                                                                        <hr class="my-0">
-                                                                                                        <div class="col-6 text-start ps-0 p-2">
-                                                                                                            <button type="button" class="btn btn-outline-primary waves-effect" data-repeater-create><i class='ti ti-plus ti-14px me-1_5'></i>Add section</button>
-                                                                                                        </div>
-                                                                                                        <hr />
-                                                                                                        <div class="card-body px-0">
-                                                                                                            <div class="row row-gap-4">
-                                                                                                                <div class="col-md-6 mb-md-0 mb-4">
-                                                                                                                </div>
-                                                                                                                <div class="col-md-6 d-flex justify-content-end">
-                                                                                                                    <div class="invoice-calculations">
-
-                                                                                                                        <div class="d-flex justify-content-between mb-2">
-                                                                                                                            <span class="w-px-100">Quote subtotal:</span>
-                                                                                                                            <span class="fw-medium text-heading">$0.00</span>
-                                                                                                                        </div>
-                                                                                                                        <hr />
-                                                                                                                        <div class="d-flex justify-content-between">
-                                                                                                                            <span class="w-px-100">Total:</span>
-                                                                                                                            <span class="fw-medium text-heading">$0.00</span>
                                                                                                                         </div>
                                                                                                                     </div>
                                                                                                                 </div>
                                                                                                             </div>
-
-                                                                                                        </div>
-                                                                                                        <hr class="my-0">
+                                                                                                        </form>
                                                                                                     </div>
-                                                                                                    <div class="row mt-4">
-                                                                                                        <div class="col-12">
-                                                                                                            <div>
-                                                                                                                <label for="note" class="text-heading mb-1 fw-medium">Note:</label>
-                                                                                                                <textarea class="form-control" rows="2" id="note"></textarea>
+                                                                                                    <div class="card-body pt-0 px-0">
+                                                                                                        <form class="source-item">
+                                                                                                            <div class="mb-4" data-repeater-list="group-a">
+                                                                                                                <div class="repeater-wrapper mt-2" data-repeater-item>
+                                                                                                                    <div class="d-flex border rounded position-relative pe-0">
+                                                                                                                        <div class="row w-100 p-6">
+                                                                                                                            <div class="col-md-6 col-12 mb-md-0 mb-4">
+                                                                                                                                <p class="h6 repeater-title">Item</p>
+                                                                                                                                <textarea class="form-control" rows="2" placeholder=""></textarea>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-md-3 col-12 mb-md-0 mb-4">
+                                                                                                                                <p class="h6 repeater-title">Qty</p>
+                                                                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                                                                            </div>
+                                                                                                                            <div class="col-md-2 col-12 mb-md-0 mb-4">
+                                                                                                                                <p class="h6 repeater-title">Qty</p>
+                                                                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                                                                            </div>
+                                                                                                                            <div class="col-md-1 col-12 pe-0 mt-md-2">
+                                                                                                                                <p class="h6 repeater-title">Price</p>
+                                                                                                                                <p class="mb-0 text-heading">$0.00</p>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="d-flex flex-column align-items-center justify-content-between border-start p-2">
+                                                                                                                            <i class="ti ti-lg ti-trash-filled text-danger" data-repeater-delete></i>
+                                                                                                                            <div class="dropdown">
+                                                                                                                                <span class="message-actions input-group-text">
+                                                                                                                                    <a data-bs-toggle="modal"
+                                                                                                                                       data-bs-target="#textAreaEnabledId1"><i class='ti ti-plus cursor-pointer'></i></a>
+                                                                                                                                </span>
+
+                                                                                                                                </i>
+                                                                                                                                <div class="dropdown-menu dropdown-menu-end w-px-300 p-4" aria-labelledby="dropdownMenuButton">
+
+                                                                                                                                    <div class="row g-3">
+                                                                                                                                        <div class="col-12">
+                                                                                                                                            <label for="discountInput" class="form-label">Discount(%)</label>
+                                                                                                                                            <input type="number" class="form-control" id="discountInput" min="0" max="100" />
+                                                                                                                                        </div>
+                                                                                                                                        <div class="col-md-6">
+                                                                                                                                            <label for="taxInput1" class="form-label">Tax 1</label>
+                                                                                                                                            <select name="tax-1-input" id="taxInput1" class="form-select tax-select">
+                                                                                                                                                <option value="0%" selected>0%</option>
+                                                                                                                                                <option value="1%">1%</option>
+                                                                                                                                                <option value="10%">10%</option>
+                                                                                                                                                <option value="18%">18%</option>
+                                                                                                                                                <option value="40%">40%</option>
+                                                                                                                                            </select>
+                                                                                                                                        </div>
+                                                                                                                                        <div class="col-md-6">
+                                                                                                                                            <label for="taxInput2" class="form-label">Tax 2</label>
+                                                                                                                                            <select name="tax-2-input" id="taxInput2" class="form-select tax-select">
+                                                                                                                                                <option value="0%" selected>0%</option>
+                                                                                                                                                <option value="1%">1%</option>
+                                                                                                                                                <option value="10%">10%</option>
+                                                                                                                                                <option value="18%">18%</option>
+                                                                                                                                                <option value="40%">40%</option>
+                                                                                                                                            </select>
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                    <div class="dropdown-divider my-4"></div>
+                                                                                                                                    <button type="button" class="btn btn-label-primary btn-apply-changes">Apply</button>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <hr />
+                                                                                                            <div class="row">
+                                                                                                                <div class="col-6">
+                                                                                                                    <button type="button" class="btn btn-outline-primary waves-effect" data-repeater-create><i class='ti ti-plus ti-14px me-1_5'></i>Add Item</button>
+                                                                                                                </div>
+                                                                                                                <div class="col-6 text-end">
+                                                                                                                    <label>Section total: <strong class="ms-4">$0.00</strong></label>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </form>
+                                                                                                    </div>
+
+                                                                                                    <hr class="my-0">
+                                                                                                    <div class="col-6 text-start ps-0 p-2">
+                                                                                                        <button type="button" class="btn btn-outline-primary waves-effect" data-repeater-create><i class='ti ti-plus ti-14px me-1_5'></i>Add section</button>
+                                                                                                    </div>
+                                                                                                    <hr />
+                                                                                                    <div class="card-body px-0">
+                                                                                                        <div class="row row-gap-4">
+                                                                                                            <div class="col-md-6 mb-md-0 mb-4">
+                                                                                                            </div>
+                                                                                                            <div class="col-md-6 d-flex justify-content-end">
+                                                                                                                <div class="invoice-calculations">
+
+                                                                                                                    <div class="d-flex justify-content-between mb-2">
+                                                                                                                        <span class="w-px-100">Quote subtotal:</span>
+                                                                                                                        <span class="fw-medium text-heading">$0.00</span>
+                                                                                                                    </div>
+                                                                                                                    <hr />
+                                                                                                                    <div class="d-flex justify-content-between">
+                                                                                                                        <span class="w-px-100">Total:</span>
+                                                                                                                        <span class="fw-medium text-heading">$0.00</span>
+                                                                                                                    </div>
+                                                                                                                </div>
                                                                                                             </div>
                                                                                                         </div>
+
                                                                                                     </div>
-                                                                </div>
-                                                            `;
+                                                                                                    <hr class="my-0">
+                                                                                                </div>
+                                                                                                <div class="row mt-4">
+                                                                                                    <div class="col-12">
+                                                                                                        <div>
+                                                                                                            <label for="note" class="text-heading mb-1 fw-medium">Note:</label>
+                                                                                                            <textarea class="form-control" rows="2" id="note"></textarea>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                            </div>
+                                                        `;
             document.getElementById('tabContent').appendChild(newTabContent);
             if (tabCount >= maxTabs) {
                 document.getElementById('plusButton').remove();
@@ -2053,41 +2051,46 @@
         modal.setAttribute('tabindex', '-1');
         modal.setAttribute('aria-hidden', 'true');
         modal.innerHTML = `
-                                                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h5 class="modal-title" id="modalCenterTitle">Delete quote?</h5><br />
-                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                    </div>
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCenterTitle">Delete quote?</h5><br />
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
 
-                                                                    <div class="modal-body">
-                                                                        <label for="nameWithTitle" class="form-label">Deleting this quote will remove all associated data. This cannot be undone.</label>
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
-                                                                            Close
-                                                                        </button>
-                                                                        <button type="button" class="btn btn-danger" onclick="deleteTab(${tabId})">Delete quote</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        `;
+                    <div class="modal-body">
+                        <label for="nameWithTitle" class="form-label">Deleting this quote will remove all associated data. This cannot be undone.</label>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-danger" onclick="deleteTab(${tabId})">Delete quote</button>
+                    </div>
+                </div>
+            </div>
+        `;
         document.body.appendChild(modal);
         new bootstrap.Modal(modal).show();
     }
-    function deleteTab(tabId) {
-        const tab = document.getElementById(`navs-top-new${tabId}`);
-        const tabButton = document.querySelector(`[aria-controls="navs-top-new${tabId}"]`).parentElement;
-
-        tabButton.remove();
-        tab.remove();
-        const modal = document.getElementById(`tabcloseId${tabId}`);
-        const modalInstance = bootstrap.Modal.getInstance(modal);
-        modalInstance.hide();
-    }
+    // function deleteTab(tabId) {
+    //     const tab = document.getElementById(`navs-top-new${tabId}`);
+    //     const tabButton = document.querySelector(`[aria-controls="navs-top-new${tabId}"]`).parentElement;
+    //     tabButton.remove();
+    //     tab.remove();
+    //     const modal = document.getElementById(`tabcloseId${tabId}`);
+    //     const modalInstance = bootstrap.Modal.getInstance(modal);
+    //     modalInstance.hide();
+    //     const homeTab = document.getElementById('navs-top-home');
+    //     const homeTabButton = document.querySelector('[aria-controls="navs-top-home"]').parentElement;
+    //     homeTab.classList.add('show', 'active');
+    //     homeTabButton.classList.add('active');
+    //     const tabInstance = new bootstrap.Tab(homeTabButton);
+    //     tabInstance.show();
+    // }
 </script>
 <script>
-    const pdfUrl = '@Url.Content("~/report_view_pages/reportquotedetails.pdf")';
+    const pdfUrl = '@Url.Content("~/image/samplereportviewpage.pdf")';
 
     pdfjsLib.getDocument(pdfUrl).promise.then(pdfDoc => {
         const pdfViewer = document.getElementById('pdfViewer');
@@ -2139,6 +2142,3 @@
         }
     });
 </script>
-
-
-

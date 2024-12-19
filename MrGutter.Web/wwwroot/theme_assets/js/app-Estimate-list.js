@@ -23,9 +23,12 @@ $(function () {
         select2 = $('.select2'),
         userView = '/Estimates/EstimationDetails',
         statusObj = {
-            1: { title: 'Pending', class: 'bg-label-warning' },
-            2: { title: 'Active', class: 'bg-label-success' },
-            3: { title: 'Inactive', class: 'bg-label-secondary' }
+            1: { title: 'Cancelled', class: 'bg-label-warning' },
+            2: { title: 'Accepted', class: 'bg-label-success' },
+            3: { title: 'Provided', class: 'bg-label-secondary' },
+            4: { title: 'Revised', class: 'bg-label-secondary' },
+            5: { title: 'Completed', class: 'bg-label-success' },
+            6: { title: 'Requested', class: 'bg-label-secondary' }
         };
 
     if (select2.length) {
@@ -66,7 +69,7 @@ $(function () {
                     }
                 },
                 {
-                    // Estimate name
+                    // Estimate no
                     targets: 1,
                     responsivePriority: 4,
                     render: function (data, type, full, meta) {
@@ -75,7 +78,7 @@ $(function () {
                     }
                 },
                 {
-                    // Estimate no
+                    // Estimate name
                     targets: 2,
                     render: function (data, type, full, meta) {
                         var $email = full['est_name'];
@@ -124,18 +127,35 @@ $(function () {
                         );
                     }
                 },
+                //{
+                //    // status
+                //    targets: 6,
+                //    render: function (data, type, full, meta) {
+                //        var $email = full['status'];
+                //        return (
+                //            "<span class='text-truncate d-flex align-items-center text-heading'>" +
+                //            $email +
+                //            '</span>'
+                //        );
+                //    }
+                //},
+
                 {
-                    // status
+                    // User Status
                     targets: 6,
                     render: function (data, type, full, meta) {
-                        var $email = full['status'];
+                        var $status = full['status'];
+
                         return (
-                            "<span class='text-truncate d-flex align-items-center text-heading'>" +
-                            $email +
+                            '<span class="badge ' +
+                            statusObj[$status].class +
+                            '" text-capitalized>' +
+                            statusObj[$status].title +
                             '</span>'
                         );
                     }
                 },
+
 
                 {
                     // revenue

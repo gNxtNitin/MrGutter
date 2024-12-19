@@ -7,7 +7,7 @@
       "address": "123 Sample Ave NW Calgary, AB",
       "salesperson": "Stiven",
       "created": "7 days ago",
-      "status": "Pending",
+      "status": "2",
       "revenue": "$0.00"
     },
     {
@@ -17,7 +17,7 @@
       "address": "698 New York 52 Beacon, New York",
       "salesperson": "Stiven",
       "created": "3 hours ago",
-      "status": "Accepted",
+      "status": "4",
       "revenue": "$0.00"
     },
     {
@@ -27,7 +27,7 @@
       "address": "698 New York 52 Beacon, New York",
       "salesperson": "Stiven",
       "created": "1 hours ago",
-      "status": "Accepted",
+      "status": "5",
       "revenue": "$0.00"
     },
     {
@@ -37,7 +37,7 @@
       "address": "698 New York 52 Beacon, New York",
       "salesperson": "Stiven",
       "created": "3 hours ago",
-      "status": "Provided",
+      "status": "1",
       "revenue": "$0.00"
     },
     {
@@ -47,7 +47,7 @@
       "address": "123 Fake street Oak Lawn, illinois",
       "salesperson": "Stiven",
       "created": "9 hours ago",
-      "status": "Cancelled",
+      "status": "6",
       "revenue": "$0.00"
     }
   ]
