@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <Content Remove="Views\Account\MyProfile.cshtml" />
+    <Content Remove="wwwroot\theme_assets\js\app-defaultproductpricing-list.js" />
+    <Content Remove="wwwroot\theme_assets\js\app-defaultproductpricing-list.js~RF2d96dfe5.TMP" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,10 +48,12 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Views\Account\MyProfile.cshtml" />
+    <_ContentIncludedByDefault Remove="wwwroot\theme_assets\js\app-defaultproductpricing-list.js" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Views\Account\MyProfile.cshtml" />
+    <None Include="wwwroot\theme_assets\js\app-defaultproductpricing-list.js" />
   </ItemGroup>
 
 </Project>
