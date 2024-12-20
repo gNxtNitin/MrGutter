@@ -53,7 +53,6 @@ $(function () {
                 { data: 'salesperson' },
                 { data: 'created' },
                 { data: 'status' },
-                { data: 'revenue' },
             
             ],
             columnDefs: [
@@ -157,18 +156,18 @@ $(function () {
                 },
 
 
-                {
-                    // revenue
-                    targets: 7,
-                    render: function (data, type, full, meta) {
-                        var $email = full['revenue'];
-                        return (
-                            "<span class='text-truncate d-flex align-items-center text-heading'>" +
-                            $email +
-                            '</span>'
-                        );
-                    }
-                },
+                //{
+                //    // revenue
+                //    targets: 7,
+                //    render: function (data, type, full, meta) {
+                //        var $email = full['revenue'];
+                //        return (
+                //            "<span class='text-truncate d-flex align-items-center text-heading'>" +
+                //            $email +
+                //            '</span>'
+                //        );
+                //    }
+                //},
                
             ],
 
