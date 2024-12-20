@@ -237,12 +237,39 @@
                                     <i class="ti ti-dots-vertical"></i>
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-end">
-                                    <li><a class="dropdown-item" href="javascript:void(0);">Delete Quote</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                           data-bs-target="#delete">Delete Quote</a>
+                                    </li>
                                     <li><a class="dropdown-item" href="javascript:void(0);">Duplicate Quote</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
+                    <!--Modal for Sign out-->
+                    <div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalCenterTitle">Do you want to delete this quote?</h5><br />
+
+
+                                </div>
+
+
+                                <div class="modal-footer">
+                                    <a class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                        Yes
+                                    </a>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                     <div class="col-4 pt-4 align-self-center">
                         <div class="mb-5 pb-5">
                             <div class="mb-5 d-flex justify-content-center">
