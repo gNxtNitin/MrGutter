@@ -72,8 +72,11 @@ $(function () {
                     targets: 0,
                     responsivePriority: 4,
                     render: function (data, type, full, meta) {
-                        var $name = full['est_no'];
-                        return $name;
+                        var $no = full['est_no'];
+                        "<span class='text-truncate d-flex align-items-center text-heading'>" +
+                            $no +
+                            '</span>'
+                        return $no;
                     }
                 },
                 {
@@ -174,12 +177,14 @@ $(function () {
             order: [[2, 'desc']],
             dom:
                 '<"row"' +
-                '<"col-md-2"<"ms-n2"l>>' +
+                /*'<"col-md-2"<"ms-n2"l>>' +*/
                 '<"col-md-10"<"dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-6 mb-md-0 mt-n6 mt-md-0">>' +
                 '>t' +
                 '<"row"' +
+              
                 '<"col-sm-12 col-md-6"i>' +
-                '<"col-sm-12 col-md-6"p>' +
+               /* '<"col-sm-12 col-md-4 m-0"l>' +*/
+                '<"col-sm-12 col-md-6 d-flex align-items-center justify-content-end"lp>' +
                 '>',
             language: {
                 sLengthMenu: '_MENU_',

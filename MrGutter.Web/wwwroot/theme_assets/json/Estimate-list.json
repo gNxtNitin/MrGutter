@@ -2,7 +2,7 @@
   "data": [
     {
       "id": 1,
-      "est_no": "890 329 2123",
+      "est_no": "8903292123",
       "est_name": "Mr. Gutter",
       "address": "123 Sample Ave NW Calgary, AB",
       "salesperson": "Stiven",
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "est_no": "890 329 2122",
+      "est_no": "8903292122",
       "est_name": "US Metal Roofing",
       "address": "698 New York 52 Beacon, New York",
       "salesperson": "Stiven",
@@ -20,7 +20,7 @@
     },
     {
       "id": 3,
-      "est_no": "890 329 2124",
+      "est_no": "8903292124",
       "est_name": "Atlas",
       "address": "698 New York 52 Beacon, New York",
       "salesperson": "Stiven",
@@ -29,7 +29,7 @@
     },
     {
       "id": 4,
-      "est_no": "890 329 2125",
+      "est_no": "8903292125",
       "est_name": "Insurance Sample",
       "address": "698 New York 52 Beacon, New York",
       "salesperson": "Stiven",
@@ -38,7 +38,7 @@
     },
     {
       "id": 5,
-      "est_no": "890 329 2126",
+      "est_no": "8903292126",
       "est_name": "Malarkey Sample",
       "address": "123 Fake street Oak Lawn, illinois",
       "salesperson": "Stiven",
@@ -47,7 +47,7 @@
     },
     {
       "id": 6,
-      "est_no": "890 329 2127",
+      "est_no": "8903292127",
       "est_name": "Example Sample",
       "address": "323 New York 52 Beacon, New York",
       "salesperson": "Stiven",
@@ -56,7 +56,7 @@
     },
     {
       "id": 7,
-      "est_no": "890 329 2129",
+      "est_no": "8903292129",
       "est_name": "Insurance Sample",
       "address": "634 New York 32 Beacon, New York",
       "salesperson": "Stiven",
@@ -65,7 +65,7 @@
     },
     {
       "id": 8,
-      "est_no": "890 329 2110",
+      "est_no": "8903292110",
       "est_name": "Insurance Sample",
       "address": "543 New York 21 Beacon, New York",
       "salesperson": "Stiven",
@@ -74,7 +74,7 @@
     },
     {
       "id": 9,
-      "est_no": "890 329 2111",
+      "est_no": "8903292111",
       "est_name": "Example Sample",
       "address": "432 New York 32 Beacon, New York",
       "salesperson": "Stiven",
@@ -83,7 +83,7 @@
     },
     {
       "id": 10,
-      "est_no": "890 329 2113",
+      "est_no": "8903292113",
       "est_name": "Example Sample",
       "address": "654 New York 45 Beacon, New York",
       "salesperson": "Stiven",
@@ -92,7 +92,7 @@
     },
     {
       "id": 11,
-      "est_no": "890 329 2114",
+      "est_no": "8903292114",
       "est_name": "Example Sample",
       "address": "223 New York 2 Beacon, New York",
       "salesperson": "Stiven",
@@ -101,7 +101,7 @@
     },
     {
       "id": 12,
-      "est_no": "890 329 2114",
+      "est_no": "8903292114",
       "est_name": "Example Sample",
       "address": "443 New York 23 Beacon, New York",
       "salesperson": "Stiven",
@@ -110,7 +110,7 @@
     },
     {
       "id": 13,
-      "est_no": "890 329 2115",
+      "est_no": "8903292115",
       "est_name": "Example Sample",
       "address": "645 New York 45 Beacon, New York",
       "salesperson": "Stiven",
