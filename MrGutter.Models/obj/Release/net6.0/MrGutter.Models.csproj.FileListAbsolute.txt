@@ -1,0 +1,12 @@
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Models\bin\Release\net6.0\MrGutter.Models.deps.json
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Models\bin\Release\net6.0\MrGutter.Models.dll
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Models\bin\Release\net6.0\MrGutter.Models.pdb
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Models\obj\Release\net6.0\MrGutter.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Models\obj\Release\net6.0\MrGutter.Models.AssemblyInfoInputs.cache
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Models\obj\Release\net6.0\MrGutter.Models.AssemblyInfo.cs
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Models\obj\Release\net6.0\MrGutter.Models.csproj.CoreCompileInputs.cache
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Models\obj\Release\net6.0\MrGutter.Models.sourcelink.json
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Models\obj\Release\net6.0\MrGutter.Models.dll
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Models\obj\Release\net6.0\refint\MrGutter.Models.dll
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Models\obj\Release\net6.0\MrGutter.Models.pdb
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Models\obj\Release\net6.0\ref\MrGutter.Models.dll
