@@ -46,40 +46,42 @@ $(function () {
             columns: [
                 // columns according to JSON
                 //{ data: 'id' },
-                { data: 'id' },
+                /*{ data: 'id' },*/
                 { data: 'est_no' },
                 { data: 'est_name'},
                 { data: 'address' },
                 { data: 'salesperson' },
                 { data: 'created' },
                 { data: 'status' },
-                { data: 'revenue' },
             
             ],
             columnDefs: [
-                {
-                    // For Responsive
-                    className: 'control',
-                    searchable: false,
-                    orderable: false,
-                    responsivePriority: 2,
-                    targets: 0,
-                    render: function (data, type, full, meta) {
-                        return '';
-                    }
-                },
+                //{
+                //    // For Responsive
+                //    className: 'control',
+                //    searchable: false,
+                //    orderable: false,
+                //    responsivePriority: 2,
+                //    targets: 0,
+                //    render: function (data, type, full, meta) {
+                //        return '';
+                //    }
+                //},
                 {
                     // Estimate no
-                    targets: 1,
+                    targets: 0,
                     responsivePriority: 4,
                     render: function (data, type, full, meta) {
-                        var $name = full['est_no'];
-                        return $name;
+                        var $no = full['est_no'];
+                        "<span class='text-truncate d-flex align-items-center text-heading'>" +
+                            $no +
+                            '</span>'
+                        return $no;
                     }
                 },
                 {
                     // Estimate name
-                    targets: 2,
+                    targets: 1,
                     render: function (data, type, full, meta) {
                         var $email = full['est_name'];
                         return (
@@ -93,7 +95,7 @@ $(function () {
                 },
                 {
                     // address
-                    targets: 3,
+                    targets: 2,
                     render: function (data, type, full, meta) {
                         var $email = full['address'];
                         return (
@@ -105,7 +107,7 @@ $(function () {
                 },
                 {
                     // salesperson
-                    targets: 4,
+                    targets: 3,
                     render: function (data, type, full, meta) {
                         var $email = full['salesperson'];
                         return (
@@ -117,7 +119,7 @@ $(function () {
                 },
                 {
                     // created
-                    targets: 5,
+                    targets: 4,
                     render: function (data, type, full, meta) {
                         var $email = full['created'];
                         return (
@@ -142,7 +144,7 @@ $(function () {
 
                 {
                     // User Status
-                    targets: 6,
+                    targets: 5,
                     render: function (data, type, full, meta) {
                         var $status = full['status'];
 
@@ -157,30 +159,32 @@ $(function () {
                 },
 
 
-                {
-                    // revenue
-                    targets: 7,
-                    render: function (data, type, full, meta) {
-                        var $email = full['revenue'];
-                        return (
-                            "<span class='text-truncate d-flex align-items-center text-heading'>" +
-                            $email +
-                            '</span>'
-                        );
-                    }
-                },
+                //{
+                //    // revenue
+                //    targets: 7,
+                //    render: function (data, type, full, meta) {
+                //        var $email = full['revenue'];
+                //        return (
+                //            "<span class='text-truncate d-flex align-items-center text-heading'>" +
+                //            $email +
+                //            '</span>'
+                //        );
+                //    }
+                //},
                
             ],
 
             order: [[2, 'desc']],
             dom:
                 '<"row"' +
-                '<"col-md-2"<"ms-n2"l>>' +
+                /*'<"col-md-2"<"ms-n2"l>>' +*/
                 '<"col-md-10"<"dt-action-buttons text-xl-end text-lg-start text-md-end text-start d-flex align-items-center justify-content-end flex-md-row flex-column mb-6 mb-md-0 mt-n6 mt-md-0">>' +
                 '>t' +
                 '<"row"' +
+              
                 '<"col-sm-12 col-md-6"i>' +
-                '<"col-sm-12 col-md-6"p>' +
+               /* '<"col-sm-12 col-md-4 m-0"l>' +*/
+                '<"col-sm-12 col-md-6 d-flex align-items-center justify-content-end"lp>' +
                 '>',
             language: {
                 sLengthMenu: '_MENU_',

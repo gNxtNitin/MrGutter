@@ -10,7 +10,12 @@
         background-color: #007bff; /* Choose a shade of blue */
     }
 
+  
 
+    div.dataTables_wrapper div.dataTables_length, div.dataTables_wrapper .dataTables_filter {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
     .top-right-dropdown {
         position: absolute;
         top: 5px;
@@ -97,17 +102,17 @@
     <div class="col-md-12 container-p-y">
         <div class="card">
 
-            <div class="card-header d-flex justify-content-between align-items-center row px-1 gap-3 gap-md-0 px-2">
+            <div class="card-header d-flex justify-content-between align-items-center row px-1 gap-3 gap-md-0">
 
                 <div class="col-md-2">
-                    <div class="input-group">
+                    <div class="input-group ms-2 me-1">
                        
                         <input type="search" id="searchInput" class="form-control" placeholder="Search" name="Search" />
                     </div>
                 </div>
 
                 <div class="col-md-2 user_role">
-                    <select id="userRole" class="form-select text-capitalize">
+                    <select id="userRole" class="form-select text-capitalize ms-2">
                         <option value="Select">Estimator</option>
                         <option value="Admin">John Doe</option>
                         <option value="Allen">Allen</option>
@@ -116,7 +121,7 @@
                 </div>
 
                 <div class="col-md-2 user_plan">
-                    <select id="userPlan" class="form-select text-capitalize">
+                    <select id="userPlan" class="form-select text-capitalize ms-2">
                         <option value="Status">Estimate Status</option>
                         <option value="Requested">Requested</option>
                         <option value="Cancelled">Cancelled</option>
@@ -128,7 +133,7 @@
                 </div>
 
                 <div class="col-md-2 user_status">
-                    <select id="userStatus" class="form-select text-capitalize">
+                    <select id="userStatus" class="form-select text-capitalize ms-2">
                         <option value="Created anytime">Created anytime</option>
                         <option value="24">Last 24 hours</option>
                         <option value="7">Last 7 days</option>
@@ -138,7 +143,7 @@
                 </div>
 
                 <div class="col-md-1">
-                    <a href="#" id="clearAllBtn" class="text-decoration-underline">Clear all</a>
+                    <a href="#" id="clearAllBtn" class="text-decoration-underline ms-6">Clear all</a>
                 </div>
 
                 <!-- Script for reset all the input fields of filter -->
@@ -166,14 +171,14 @@
 
                 <div class="col-md-3 d-flex justify-content-end align-items-center">
                     <a href="#" data-bs-toggle="modal"
-                       data-bs-target="#modalSignature" class="btn btn-primary tf-icons  scaleX-n1-rtl" title="Create Estimate">
+                       data-bs-target="#modalSignature" class="btn btn-primary tf-icons  scaleX-n1-rtl mx-6" title="Create Estimate">
                         <span class="ti ti-plus me-2"></span>
                         Estimate
                    </a>
-                    <div class="border-start mx-3 pl-2" style="height: 30px;"></div>
+                    <div class="border-start mx-2 pl-2" style="height: 30px;"></div>
                     <div class="px-3">
-                        <a id="gridIcon" href="#" onclick="switchToGrid()" class="menu-item ti ti-layout-grid-filled" title="Tile view"></a>
-                        <a id="listIcon" href="#" onclick="switchToList()" class="menu-item ti ti-list" title="List view"></a>
+                        <a id="gridIcon" href="#" onclick="switchToGrid()" class="menu-item ti ti-layout-grid-filled ms-3" title="Tile view"></a>
+                        <a id="listIcon" href="#" onclick="switchToList()" class="menu-item ti ti-list me-1" title="List view"></a>
                     </div>
                 </div>
 
@@ -353,7 +358,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6 d-flex justify-content-end align-items-center">
-                                        <p style="color:#b1acac !important" class="mb-0">Created 3 years ago.</p>
+                                        <p style="color:#b1acac !important" class="mb-0">Created 3 days ago.</p>
                                     </div>
                                 </div>
                                 
@@ -409,7 +414,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6 d-flex justify-content-end align-items-center">
-                                        <p style="color:#b1acac !important" class="mb-0"> Created 1 year ago.</p>
+                                        <p style="color:#b1acac !important" class="mb-0"> Created 6 days ago.</p>
                                     </div>
                                 </div>
 
@@ -475,7 +480,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6 d-flex justify-content-end align-items-center">
-                                        <p style="color:#b1acac !important" class="mb-0">Created 3 years ago.</p>
+                                        <p style="color:#b1acac !important" class="mb-0">Created 1 week ago.</p>
                                     </div>
                                 </div>
 
@@ -534,7 +539,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-6 d-flex justify-content-end align-items-center">
-                                        <p style="color:#b1acac !important" class="mb-0">Created 3 years ago.</p>
+                                        <p style="color:#b1acac !important" class="mb-0">Created 2 months ago.</p>
                                     </div>
                                 </div>
 
@@ -619,18 +624,18 @@
                 <table class="datatables-estimate table">
                     <thead class="border-top bg-menu-theme text-white">
                         <tr>
-                            <th class="text-white"></th>
+                           @*  <th class="text-white"></th> *@
 @*                             <th class="text-white"></th>
  *@                            
-                            <th class="text-white">Estimate No.</th>
-                            <th class="text-white">Estimate Name</th>
+                            <th class="text-white">No.</th>
+                            <th class="text-white">Name</th>
                             <th class="text-white"> Address</th>
-                            <th class="text-white"> Salesperson</th>
+                            <th class="text-white"> Estimator</th>
                             <th class="text-white"> Created</th>
                             <th class="text-white">Status</th>
                             @* <th class="text-white">Role</th>
                             <th class="text-white">Status</th> *@
-                            <th class="text-white">Revenue</th>
+                         @*    <th class="text-white">Revenue</th> *@
                         </tr>
                     </thead>
                 </table>

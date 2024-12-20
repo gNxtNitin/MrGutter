@@ -2,53 +2,120 @@
   "data": [
     {
       "id": 1,
-      "est_no": "1",
+      "est_no": "8903292123",
       "est_name": "Mr. Gutter",
       "address": "123 Sample Ave NW Calgary, AB",
       "salesperson": "Stiven",
-      "created": "7 days ago",
-      "status": "2",
-      "revenue": "$0.00"
+      "created": "2 days ago",
+      "status": "2"
     },
     {
       "id": 2,
-      "est_no": "2",
+      "est_no": "8903292122",
       "est_name": "US Metal Roofing",
       "address": "698 New York 52 Beacon, New York",
-      "salesperson": "Stiven",
+      "salesperson": "Allen",
       "created": "3 hours ago",
-      "status": "4",
-      "revenue": "$0.00"
+      "status": "4"
     },
     {
       "id": 3,
-      "est_no": "3",
+      "est_no": "8903292124",
       "est_name": "Atlas",
       "address": "698 New York 52 Beacon, New York",
       "salesperson": "Stiven",
       "created": "1 hours ago",
-      "status": "5",
-      "revenue": "$0.00"
+      "status": "5"
     },
     {
       "id": 4,
-      "est_no": "4",
+      "est_no": "8903292125",
       "est_name": "Insurance Sample",
       "address": "698 New York 52 Beacon, New York",
-      "salesperson": "Stiven",
+      "salesperson": "Allen",
       "created": "3 hours ago",
-      "status": "1",
-      "revenue": "$0.00"
+      "status": "1"
     },
     {
       "id": 5,
-      "est_no": "5",
+      "est_no": "8903292126",
       "est_name": "Malarkey Sample",
       "address": "123 Fake street Oak Lawn, illinois",
       "salesperson": "Stiven",
       "created": "9 hours ago",
-      "status": "6",
-      "revenue": "$0.00"
+      "status": "6"
+    },
+    {
+      "id": 6,
+      "est_no": "8903292127",
+      "est_name": "Example Sample",
+      "address": "323 New York 52 Beacon, New York",
+      "salesperson": "Allen",
+      "created": "6 hours ago",
+      "status": "1"
+    },
+    {
+      "id": 7,
+      "est_no": "8903292129",
+      "est_name": "Insurance Sample",
+      "address": "634 New York 32 Beacon, New York",
+      "salesperson": "Allen",
+      "created": "3 days ago",
+      "status": "2"
+    },
+    {
+      "id": 8,
+      "est_no": "8903292110",
+      "est_name": "Insurance Sample",
+      "address": "543 New York 21 Beacon, New York",
+      "salesperson": "Stiven",
+      "created": "3 week ago",
+      "status": "3"
+    },
+    {
+      "id": 9,
+      "est_no": "8903292111",
+      "est_name": "Example Sample",
+      "address": "432 New York 32 Beacon, New York",
+      "salesperson": "Allen",
+      "created": "1 hours ago",
+      "status": "4"
+    },
+    {
+      "id": 10,
+      "est_no": "8903292113",
+      "est_name": "Example Sample",
+      "address": "654 New York 45 Beacon, New York",
+      "salesperson": "Stiven",
+      "created": "3 week ago",
+      "status": "2"
+    },
+    {
+      "id": 11,
+      "est_no": "8903292114",
+      "est_name": "Example Sample",
+      "address": "223 New York 2 Beacon, New York",
+      "salesperson": "Stiven",
+      "created": "5 hour ago",
+      "status": "4"
+    },
+    {
+      "id": 12,
+      "est_no": "8903292114",
+      "est_name": "Example Sample",
+      "address": "443 New York 23 Beacon, New York",
+      "salesperson": "Stiven",
+      "created": "3 year ago",
+      "status": "4"
+    },
+    {
+      "id": 13,
+      "est_no": "8903292115",
+      "est_name": "Example Sample",
+      "address": "645 New York 45 Beacon, New York",
+      "salesperson": "Stiven",
+      "created": "7 hour ago",
+      "status": "6"
     }
   ]
 }

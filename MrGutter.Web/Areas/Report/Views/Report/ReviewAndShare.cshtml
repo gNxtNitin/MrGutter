@@ -14,7 +14,7 @@
                @*  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> *@
                 <div class="d-flex align-items-center">
                     <div class="me-5 pe-4">
-                        <button type="button" class="btn btn-outline-primary waves-effect" id="signNowBtn">
+                        <button type="button" class="btn btn-outline-primary waves-effect" data-bs-toggle="modal" data-bs-target="#signNow">
                             Sign now
                         </button>
                         <button type="button" class="btn btn-outline-primary waves-effect" data-bs-toggle="modal" data-bs-target="#sendForSigning">
@@ -35,7 +35,7 @@
     </div>
 
     <!-- Sign Now Section (This can be hidden initially and toggled via button) -->
-    <div class="row mt-5" id="signNowSection">
+   @*  <div class="row mt-5" id="signNowSection">
         <div class="col-lg-12">
             <div class="modal-header">
                 <h5 class="modal-title">Sign now</h5><br />
@@ -47,7 +47,7 @@
                         <h5 class="mb-0"><p class="mb-0">1. Insurance Sample</p></h5>
                         <div class="d-flex justify-content-between align-items-center">
                             <p class="ms-4">parth@mrgutter.com</p>
-                            <i class="ti ti-edit text-end" data-bs-toggle="modal" data-bs-target="#modalEdit"></i>
+                            <i class="ti ti-edit text-end cursor-pointer" data-bs-toggle="modal" data-bs-target="#modalEdit"></i>
                         </div>
                     </div>
                 </div>
@@ -59,10 +59,10 @@
                 <button type="button" class="btn btn-primary">Sign now</button>
             </div>
         </div>
-    </div>
+    </div> *@
 </div>
 
-<!-- Modal for Send for signing (Keep it if needed) -->
+<!-- Modal for Send for signing  -->
 <div class="modal fade" id="sendForSigning" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -77,14 +77,14 @@
                         <h5 class="mb-0"><p class="mb-0">1. Insurance Sample</p></h5>
                         <div class="d-flex justify-content-between align-items-center">
                             <p class="ms-4">parth@mrgutter.com</p>
-                            <i class="ti ti-edit text-end" data-bs-toggle="modal" data-bs-target="#modalEdit"></i>
+                            <i class="ti ti-edit text-end cursor-pointer" data-bs-toggle="modal" data-bs-target="#modalEdit"></i>
                         </div>
                     </div>
                 </div>
                 <h5 class="mb-1">Note to customer</h5>
                 <div class="mb-4">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="">
                             <div id="snow-toolbar">
                                 <span class="ql-formats">
                                     <select class="ql-font"></select>
@@ -94,10 +94,26 @@
                                     <button class="ql-bold"></button>
                                     <button class="ql-italic"></button>
                                     <button class="ql-underline"></button>
+                                    <button class="ql-strike"></button>
+                                </span>
+                                <span class="ql-formats">
+                                    <select class="ql-color"></select>
+                                    <select class="ql-background"></select>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-script" value="sub"></button>
+                                    <button class="ql-script" value="super"></button>
+                                </span>
+                                <span class="ql-formats">
+                                    <button class="ql-header" value="1"></button>
+                                    <button class="ql-header" value="2"></button>
+                                    <button class="ql-blockquote"></button>
+                                    <button class="ql-code-block"></button>
                                 </span>
                             </div>
-                            <div class="snow-editor">
-                                Type something...
+                            <div id="snow-editor">
+                                <h6>Type something here...</h6>
+                           
                             </div>
                         </div>
                     </div>
@@ -175,7 +191,7 @@
                         <h5 class="mb-0 mt-0"><p class="mb-0 fs-5"><b>1. Insurance Sample</b></p></h5>
                         <div class="d-flex justify-content-between align-items-center">
                             <p class="ms-4">parth@mrgutter.com</p>
-                            <i class="ti ti-edit text-end" data-bs-toggle="modal" data-bs-target="#modalEdit"></i>
+                            <i class="ti ti-edit text-end cursor-pointer" data-bs-toggle="modal" data-bs-target="#modalEdit"></i>
                         </div>
                     </div>
                 </div>
@@ -248,13 +264,13 @@
 
 
 
-<!-- Script for Review and Share page button -->
-<script>
+<!-- Script for Review and Share page button (Require when we tried to handle with the help of modal instead of separate page(ReviewAndShare)) -->
+@* <script>
     document.getElementById('signNowBtn').addEventListener('click', function (e) {
         e.preventDefault(); // Prevent default action (page redirect)
 
         // Hide the Review and Share modal explicitly
-        const reviewShareModal = bootstrap.Modal.getInstance(document.getElementById('reviewShare')); // Get the instance of the reviewShare modal
+        const reviewShareModal = bootstrap.Modal.getInstance(document.getElementById('reviewShare'));
         if (reviewShareModal) {
             reviewShareModal.hide(); // Hide the Review and Share modal
         }
@@ -263,7 +279,7 @@
         const signNowModal = new bootstrap.Modal(document.getElementById('signNow'));
         signNowModal.show();  // Trigger modal display
     });
-</script>
+</script> *@
 
 <!--Script for close the Review and Share page-->
 <script>

@@ -1,0 +1,16 @@
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\bin\Release\net6.0\MrGutter.Repository.deps.json
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\bin\Release\net6.0\MrGutter.Repository.dll
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\bin\Release\net6.0\MrGutter.Repository.pdb
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\bin\Release\net6.0\MrGutter.Models.dll
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\bin\Release\net6.0\MrGutter.Models.pdb
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\obj\Release\net6.0\MrGutter.Repository.csproj.AssemblyReference.cache
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\obj\Release\net6.0\MrGutter.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\obj\Release\net6.0\MrGutter.Repository.AssemblyInfoInputs.cache
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\obj\Release\net6.0\MrGutter.Repository.AssemblyInfo.cs
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\obj\Release\net6.0\MrGutter.Repository.csproj.CoreCompileInputs.cache
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\obj\Release\net6.0\MrGutter.Repository.sourcelink.json
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\obj\Release\net6.0\MrGutter.BD9E3EBA.Up2Date
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\obj\Release\net6.0\MrGutter.Repository.dll
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\obj\Release\net6.0\refint\MrGutter.Repository.dll
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\obj\Release\net6.0\MrGutter.Repository.pdb
+C:\Users\YASH\source\repos\MrGutter-UI\MrGutter.Repository\obj\Release\net6.0\ref\MrGutter.Repository.dll
