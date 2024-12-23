@@ -1,4 +1,5 @@
 ﻿@{
+
     TempData.Keep();
     string? currentPage = ViewContext.HttpContext.Request.Path;
 
@@ -10,8 +11,8 @@
     bool isUser = currentPage.StartsWith("/Account/User");
     bool isCompany = currentPage.StartsWith("/Account/Company");
 
-    bool isSettingActive = currentPage.StartsWith("/EditProfile") ||
-                             currentPage.StartsWith("/ChangePassword") ||
+    bool isSettingActive = currentPage.StartsWith("/Account/EditProfile") ||
+                             currentPage.StartsWith("/Account/EditPassword") ||
                              currentPage.StartsWith("/SignOut");
 }
 
