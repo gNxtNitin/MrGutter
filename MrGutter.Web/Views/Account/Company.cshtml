@@ -74,17 +74,7 @@
                                    aria-label="john.doe@example.com"
                                    name="userContact" />
                         </div>
-                        @*  <div class="mb-6">
-                        <label class="form-label" for="add-user-company">Job title</label>
-                        <input type="text"
-                        id="add-user-company"
-                        class="form-control"
-                        placeholder="Web Developer"
-                        aria-label="jdoe1"
-                        name="companyName" />
-                        </div>
-                        *@
-                      
+                   
 
                         <button type="submit" class="btn btn-primary me-3 data-submit">Save</button>
                         <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">Cancel</button>
@@ -94,4 +84,119 @@
         </div>
     </div>
 
+</div>
+
+
+<!-- Modal for Edit -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row gap-0">
+                    <h5 class="modal-title mb-0 fs-4" id="modalCenterTitle"><b>Edit company</b></h5><br />
+                </div>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form class="add-new-user pt-0" id="addNewUserForm" onsubmit="return false">
+                    <div class="mb-6">
+                        <label class="form-label" for="add-user-fullname">Company name</label>
+                        <input type="text"
+                               class="form-control"
+                               id="add-user-fullname"
+                               placeholder=""
+                               name="firstname"
+                               aria-label="John" />
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="form-label" for="add-user-contact">Point of contact</label>
+                        <input type="text"
+                               class="form-control"
+                               id="add-user-fullname"
+                               placeholder=""
+                               name="firstname"
+                               aria-label="John" />
+                    </div>
+
+
+
+
+                    <div class="mb-6">
+                        <label class="form-label" for="add-user-email">Email</label>
+                        <input type="text"
+                               id="add-user-email"
+                               class="form-control"
+                               placeholder="john.doe@example.com"
+                               aria-label="john.doe@example.com"
+                               name="userEmail" />
+                    </div>
+                    <div class="mb-6">
+                        <label class="form-label" for="add-user-contact">Phone number</label>
+                        <input type="text"
+                               id="add-user-contact"
+                               class="form-control phone-mask"
+                               placeholder="+1 (609) 988-44-11"
+                               aria-label="john.doe@example.com"
+                               name="userContact" />
+                    </div>
+
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save Changes</button>
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@* <!-- Modal for Delete pop up-->
+<div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row gap-0">
+                    <p class="modal-title mb-4 fs-4" id="modalCenterTitle">Do you want to delete this company?</p><br />
+
+                </div>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Yes
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+ *@
+<div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title mb-4 fs-4" id="modalCenterTitle">Do you want to delete this company?</p>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+                <button type="button" class="btn btn-label-secondary confirm-delete" data-bs-dismiss="modal">
+                    Yes
+                </button>
+            </div>
+        </div>
+    </div>
 </div>

@@ -179,8 +179,8 @@ $(function () {
                             '<a href="' +
                             userView +
                             '" class="btn btn-icon btn-text-secondary waves-effect waves-light rounded-pill"><i class="ti ti-eye ti-md"></i></a>' +
-                            '<a href="javascript:;" class="btn btn-icon btn-text-primary waves-effect waves-light rounded-pill"><i class="ti ti-edit ti-md me-2"></i></a>' +
-                            '<a href="javascript:;" class="btn btn-icon btn-text-danger waves-effect waves-light rounded-pill delete-record"><i class="ti ti-trash ti-md"></i></a>' +
+                            '<a data-bs-target="#editModal" data-bs-toggle="modal" data-bs-dismiss="modal"  class="btn btn-icon btn-text-primary waves-effect waves-light rounded-pill"><i class="ti ti-edit ti-md me-2"></i></a>' +
+                            '<a data-bs-target="#delete" data-bs-toggle="modal" data-bs-dismiss="modal"  data-row-index="ROW_INDEX" class="btn btn-icon btn-text-danger waves-effect waves-light rounded-pill delete-record"><i class="ti ti-trash text-danger ti-md"></i></a>' +
                             //'<a href="javascript:;" class="btn btn-icon btn-text-secondary waves-effect waves-light rounded-pill dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical ti-md"></i></a>' +
                             //'<div class="dropdown-menu dropdown-menu-end m-0">' +
                             //'<a href="javascript:;"" class="dropdown-item">Edit</a>' +
@@ -213,147 +213,7 @@ $(function () {
             },
             // Buttons with Dropdown
             buttons: [
-            //  {
-            //    extend: 'collection',
-            //    className: 'btn btn-label-secondary dropdown-toggle mx-4 waves-effect waves-light',
-            //    text: '<i class="ti ti-upload me-2 ti-xs"></i>Export',
-               // buttons: [
-                  //{
-                  //  extend: 'print',
-                  //  text: '<i class="ti ti-printer me-2" ></i>Print',
-                  //  className: 'dropdown-item',
-                  //  exportOptions: {
-                  //    columns: [1, 2, 3, 4, 5],
-                  //    // prevent avatar to be print
-                  //    format: {
-                  //      body: function (inner, coldex, rowdex) {
-                  //        if (inner.length <= 0) return inner;
-                  //        var el = $.parseHTML(inner);
-                  //        var result = '';
-                  //        $.each(el, function (index, item) {
-                  //          if (item.classList !== undefined && item.classList.contains('user-name')) {
-                  //            result = result + item.lastChild.firstChild.textContent;
-                  //          } else if (item.innerText === undefined) {
-                  //            result = result + item.textContent;
-                  //          } else result = result + item.innerText;
-                  //        });
-                  //        return result;
-                  //      }
-                  //    }
-                  //  },
-                  //  customize: function (win) {
-                  //    //customize print view for dark
-                  //    $(win.document.body)
-                  //      .css('color', headingColor)
-                  //      .css('border-color', borderColor)
-                  //      .css('background-color', bodyBg);
-                  //    $(win.document.body)
-                  //      .find('table')
-                  //      .addClass('compact')
-                  //      .css('color', 'inherit')
-                  //      .css('border-color', 'inherit')
-                  //      .css('background-color', 'inherit');
-                  //  }
-                  //},
-                  //{
-                  //  extend: 'csv',
-                  //  text: '<i class="ti ti-file-text me-2" ></i>Csv',
-                  //  className: 'dropdown-item',
-                  //  exportOptions: {
-                  //    columns: [1, 2, 3, 4, 5],
-                  //    // prevent avatar to be display
-                  //    format: {
-                  //      body: function (inner, coldex, rowdex) {
-                  //        if (inner.length <= 0) return inner;
-                  //        var el = $.parseHTML(inner);
-                  //        var result = '';
-                  //        $.each(el, function (index, item) {
-                  //          if (item.classList !== undefined && item.classList.contains('user-name')) {
-                  //            result = result + item.lastChild.firstChild.textContent;
-                  //          } else if (item.innerText === undefined) {
-                  //            result = result + item.textContent;
-                  //          } else result = result + item.innerText;
-                  //        });
-                  //        return result;
-                  //      }
-                  //    }
-                  //  }
-                  //},
-                  //{
-                  //  extend: 'excel',
-                  //  text: '<i class="ti ti-file-spreadsheet me-2"></i>Excel',
-                  //  className: 'dropdown-item',
-                  //  exportOptions: {
-                  //    columns: [1, 2, 3, 4, 5],
-                  //    // prevent avatar to be display
-                  //    format: {
-                  //      body: function (inner, coldex, rowdex) {
-                  //        if (inner.length <= 0) return inner;
-                  //        var el = $.parseHTML(inner);
-                  //        var result = '';
-                  //        $.each(el, function (index, item) {
-                  //          if (item.classList !== undefined && item.classList.contains('user-name')) {
-                  //            result = result + item.lastChild.firstChild.textContent;
-                  //          } else if (item.innerText === undefined) {
-                  //            result = result + item.textContent;
-                  //          } else result = result + item.innerText;
-                  //        });
-                  //        return result;
-                  //      }
-                  //    }
-                  //  }
-                  //},
-                  //{
-                  //  extend: 'pdf',
-                  //  text: '<i class="ti ti-file-code-2 me-2"></i>Pdf',
-                  //  className: 'dropdown-item',
-                  //  exportOptions: {
-                  //    columns: [1, 2, 3, 4, 5],
-                  //    // prevent avatar to be display
-                  //    format: {
-                  //      body: function (inner, coldex, rowdex) {
-                  //        if (inner.length <= 0) return inner;
-                  //        var el = $.parseHTML(inner);
-                  //        var result = '';
-                  //        $.each(el, function (index, item) {
-                  //          if (item.classList !== undefined && item.classList.contains('user-name')) {
-                  //            result = result + item.lastChild.firstChild.textContent;
-                  //          } else if (item.innerText === undefined) {
-                  //            result = result + item.textContent;
-                  //          } else result = result + item.innerText;
-                  //        });
-                  //        return result;
-                  //      }
-                  //    }
-                  //  }
-                  //},
-                  //{
-                  //  extend: 'copy',
-                  //  text: '<i class="ti ti-copy me-2" ></i>Copy',
-                  //  className: 'dropdown-item',
-                  //  exportOptions: {
-                  //    columns: [1, 2, 3, 4, 5],
-                  //    // prevent avatar to be display
-                  //    format: {
-                  //      body: function (inner, coldex, rowdex) {
-                  //        if (inner.length <= 0) return inner;
-                  //        var el = $.parseHTML(inner);
-                  //        var result = '';
-                  //        $.each(el, function (index, item) {
-                  //          if (item.classList !== undefined && item.classList.contains('user-name')) {
-                  //            result = result + item.lastChild.firstChild.textContent;
-                  //          } else if (item.innerText === undefined) {
-                  //            result = result + item.textContent;
-                  //          } else result = result + item.innerText;
-                  //        });
-                  //        return result;
-                  //      }
-                  //    }
-                  //  }
-                  //}
-               // ]
-             // },
-             
+         
                 {
                     text: '<i class="ti ti-plus me-0 me-sm-1 ti-xs"></i><span class="d-none d-sm-inline-block">Add New Comapny</span>',
                     className: 'add-new btn btn-primary waves-effect waves-light mx-4',
@@ -473,10 +333,30 @@ $(function () {
         });
     }
 
-    // Delete Record
-    $('.datatables-company tbody').on('click', '.delete-record', function () {
-        dt_user.row($(this).parents('tr')).remove().draw();
+    //// Delete Record
+    //$('.datatables-company tbody').on('click', '.delete-record', function () {
+    //    dt_user.row($(this).parents('tr')).remove().draw();
+    //});
+
+    $(document).ready(function () {
+        let rowToDelete = null; // Variable to store the row reference for deletion
+
+        // Trigger delete confirmation modal
+        $('.datatables-company tbody').on('click', '.delete-record', function () {
+            rowToDelete = dt_user.row($(this).parents('tr')); // Store the row reference
+            $('#delete').modal('show'); // Show the delete confirmation modal
+        });
+
+        // Handle the "Yes" button click in the modal
+        $('#delete .confirm-delete').on('click', function () {
+            if (rowToDelete) {
+                rowToDelete.remove().draw(); // Delete the row and redraw the table
+                rowToDelete = null; // Reset the variable
+            }
+        });
     });
+
+
 
     // Filter form control to default size
     // ? setTimeout used for multilingual table initialization

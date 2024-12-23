@@ -185,8 +185,8 @@ $(function () {
                             '<a href="' +
                             userView +
                             '" class="btn btn-icon btn-text-secondary waves-effect waves-light rounded-pill"><i class="ti ti-eye ti-md"></i></a>' +
-                            '<a href="javascript:;" class="btn btn-icon btn-text-primary waves-effect waves-light rounded-pill"><i class="ti ti-edit ti-md me-2"></i></a>' +
-                            '<a href="javascript:;" class="btn btn-icon btn-text-danger waves-effect waves-light rounded-pill delete-record"><i class="ti ti-trash ti-md"></i></a>' +
+                            '<a data-bs-target="#editModal" data-bs-toggle="modal" data-bs-dismiss="modal" class="btn btn-icon btn-text-primary waves-effect waves-light rounded-pill"><i class="ti ti-edit ti-md me-2"></i></a>' +
+                            '<a  data-bs-target="#delete" data-bs-toggle="modal" data-bs-dismiss="modal" data-row-index="ROW_INDEX" class="btn btn-icon btn-text-danger waves-effect waves-light rounded-pill delete-record"><i class="ti ti-trash text-danger ti-md"></i></a>' +
                             //'<a href="javascript:;" class="btn btn-icon btn-text-secondary waves-effect waves-light rounded-pill dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical ti-md"></i></a>' +
                             //'<div class="dropdown-menu dropdown-menu-end m-0">' +
                             //'<a href="javascript:;"" class="dropdown-item">Edit</a>' +
@@ -340,9 +340,31 @@ $(function () {
     }
 
     // Delete Record
-    $('.datatables-users tbody').on('click', '.delete-record', function () {
-        dt_user.row($(this).parents('tr')).remove().draw();
+    //$('.datatables-users tbody').on('click', '.delete-record', function () {
+    //    dt_user.row($(this).parents('tr')).remove().draw();
+    //});
+
+
+
+    $(document).ready(function () {
+        let rowToDelete = null; // Variable to store the row reference for deletion
+
+        // Trigger delete confirmation modal
+        $('.datatables-users tbody').on('click', '.delete-record', function () {
+            rowToDelete = dt_user.row($(this).parents('tr')); // Store the row reference
+            $('#delete').modal('show'); // Show the delete confirmation modal
+        });
+
+        // Handle the "Yes" button click in the modal
+        $('#delete .confirm-delete').on('click', function () {
+            if (rowToDelete) {
+                rowToDelete.remove().draw(); // Delete the row and redraw the table
+                rowToDelete = null; // Reset the variable
+            }
+        });
     });
+
+
 
     // Filter form control to default size
     // ? setTimeout used for multilingual table initialization
