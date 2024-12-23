@@ -140,7 +140,7 @@
                         <ul class="menu-sub sub-menu-icon">
                             <li class="menu-item@(currentPage == "/Configuration/Branding" ? " active open" : "")">
 
-                                <a class="menu-link" href="@Url.Action("Branding", "Configuration")">
+                                <a class="menu-link" asp-area="" asp-action="Branding" asp-controller="Configuration">
                                     <i class="pe-1 ti ti-carambola"></i>
                                     <div data-i18n="Branding">Branding</div>
                                 </a>
