@@ -34426,3 +34426,7 @@ a.bg-vimeo:hover, a.bg-vimeo:focus {
 .footer.bg-lighter hr {
   border-color: rgba(207, 205, 228, 0.06);
 }
+/*Custom CSS*/
+.sub-menu-icon > .menu-item > .menu-link:before {
+    display: none !important;
+}
