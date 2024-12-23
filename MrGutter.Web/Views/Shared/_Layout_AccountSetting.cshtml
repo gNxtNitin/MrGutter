@@ -85,14 +85,20 @@
             <!-- Menu -->
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo" style="background: #0f4a72;">
+                    @* <a href="index.html" class="app-brand-link">
+                    <img style="height:55px;" src="/img/logo/logoWhite.png" />
+                    </a> *@
+
                     <ul class="menu-inner py-1">
                         <li class="menu-item mt-0">
-                            <a class="menu-link px-0 mx-0" href="index.html">
+                            <a class="menu-link px-0 mx-0" asp-area="" asp-controller="Estimates" asp-action="EstimateList">
+                                @* <i class="menu-icon"><img style="height:30px;" src="/img/logo/iconer.png" /></i> *@
                                 <i class="menu-icon"><img style="height:30px;" src="/img/logo/drop.png" /></i>
                                 <div> <img style="height:40px;" src="/img/logo/logoWhite.png" /></div>
                             </a>
                         </li>
                     </ul>
+
                     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
                         <i class="ti menu-toggle-icon d-none d-xl-block align-middle"></i>
                         <i class="ti ti-x d-block d-xl-none ti-md align-middle"></i>
