@@ -1,0 +1,715 @@
+﻿@{
+    Layout = "_Layout_ProductAndPricing";
+    ViewBag.Title = "Product List";
+}
+<div class="flex-grow-1 container-p-y">
+    <div class="">
+
+        <!-- Users List Table -->
+        <div class="card">
+
+            <div class="card-datatable table-responsive">
+                <table class="datatables-editproductandpricing table">
+                    <thead class="border-top bg-menu-theme text-white">
+                        <tr>
+                            <th class="text-white"></th>
+                            <th class="text-white"></th>
+                            <th class="text-white" style="width:182% !important">Name</th>
+                            <th class="text-white">Description</th>
+                            <th class="text-white">Price</th>
+                            <th class="text-white">Unit</th>
+                            @* <th class="text-white">Role</th>*@
+                           @*  <th class="text-white">Measurement</th> *@
+                            <th class="text-white">Action</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <!-- Offcanvas to add new user -->
+            <div class="offcanvas offcanvas-end"
+                 tabindex="-1"
+                 id="offcanvasAddCompany"
+                 aria-labelledby="offcanvasAddUserLabel">
+                <div class="offcanvas-header border-bottom">
+                    <h5 id="offcanvasAddUserLabel" class="offcanvas-title">Add Comapny</h5>
+                    <button type="button"
+                            class="btn-close text-reset"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body mx-0 flex-grow-0 p-6 h-100">
+                    <form class="add-new-user pt-0" id="addNewUserForm" onsubmit="return false">
+                        <div class="mb-6">
+                            <label class="form-label" for="add-companyname">Company Name</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="add-companyname"
+                                   placeholder="gNxt Systems"
+                                   aria-label="gNxt" />
+                        </div>
+                        <div class="mb-6">
+                            <label class="form-label" for="add-companyname">Point Of Contact</label>
+                            <input type="text" class="form-control" id="txtPointOfContact" placeholder="Point of contact" aria-label="gNxt" />
+                        </div>
+                        <div class="mb-6">
+                            <label class="form-label" for="add-user-email">Email</label>
+                            <input type="text"
+                                   id="add-user-email"
+                                   class="form-control"
+                                   placeholder="john.doe@example.com"
+                                   aria-label="john.doe@example.com"
+                                   name="userEmail" />
+                        </div>
+                        <div class="mb-6">
+                            <label class="form-label" for="add-user-contact">Phone number</label>
+                            <input type="text"
+                                   id="add-user-contact"
+                                   class="form-control phone-mask"
+                                   placeholder="+1 (609) 988-44-11"
+                                   aria-label="john.doe@example.com"
+                                   name="userContact" />
+                        </div>
+                        @*  <div class="mb-6">
+                        <label class="form-label" for="add-user-company">Job title</label>
+                        <input type="text"
+                        id="add-user-company"
+                        class="form-control"
+                        placeholder="Web Developer"
+                        aria-label="jdoe1"
+                        name="companyName" />
+                        </div>
+                        *@
+                        <button type="submit" class="btn btn-primary me-3 data-submit">Save</button>
+                        <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalFullTitle"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="mt-1">
+            </div>
+            <div class="modal-body">
+                <div class="">
+                    <div class="card">
+                        <div>
+                            <div class="card-body pb-0">
+                                <h5 class="mb-0">Product List (default pricing)</h5>
+                                <label>Search SumoQuote for a product you'd like to link to <strong>ABC</strong>.</label>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="card-datatable table-responsive">
+                            <table class="datatables-defaultpricing table">
+                                <thead class="border-top bg-menu-theme text-white">
+                                    <tr>
+                                        <th class="text-white"></th>
+                                        @*            <th class="text-white"></th>
+                                        *@
+                                        <th class="text-white"></th>
+                                        <th class="text-white w-100">Name</th>
+                                        <th class="text-white">Description</th>
+                                        <th class="text-white"> Price</th>
+                                        <th class="text-white"> Unit</th>
+                                        <th class="text-white"></th>
+                                        <th class="text-white"></th>
+                                        @* <th class="text-white">Role</th>
+                                        <th class="text-white">Status</th> *@
+                                        <th class="text-white"></th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                        <hr />
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
+                            <a type="button" class="btn btn-primary" href="/AccountSettings/ProductsAndPricing/AfterEditPriceList">Add Item</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="textAreaEnabledId2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="offcanvasBothLabel" class="offcanvas-title">Edit Price Detail</h5><br />
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <label>Name</label>
+                <input type="text" class="form-control flex-grow-1 me-2 mt-2" />
+                <label class="mt-2">Description</label>
+                <textarea class="form-control flex-grow-1 me-2 mt-2" rows="2" cols="50"></textarea>
+                <label for="itemSelect" class="mt-2">Unit</label>
+                <select class="form-select mt-0" aria-label="Dropdown for sharing options">
+                    <option></option>
+                    <option>SQ</option>
+                    <option>SQFT</option>
+                    <option>LF</option>
+                    <option>EA</option>
+                    <option>PC</option>
+                </select>
+                <label for="itemSelect" class="mt-2">Price adjustment</label>
+                <div class="row mt-2">
+                    <div class="col-3">
+                        <label>Material</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-3">
+                        <label>Labor</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-3">
+                        <label>
+                            Margin
+                        </label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-3">
+                        <label>
+                            Price
+                        </label>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="form-check mb-0">
+                        <input class="form-check-input" type="checkbox" id="remember-me">
+                        <label class="form-check-label" for="remember-me">
+                            This item is tax exempt
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="textAreaEnabledId1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">Add Price Detail</h5><br />
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <label>Name</label>
+                <input type="text" class="form-control flex-grow-1 me-2 mt-2" />
+                <label class="mt-2">Description</label>
+                <textarea class="form-control flex-grow-1 me-2 mt-2" rows="2" cols="50"></textarea>
+                <label for="itemSelect" class="mt-2">Unit</label>
+                <select class="form-select mt-0" aria-label="Dropdown for sharing options">
+                    <option></option>
+                    <option>SQ</option>
+                    <option>SQFT</option>
+                    <option>LF</option>
+                    <option>EA</option>
+                    <option>PC</option>
+                </select>
+                <label for="itemSelect" class="mt-2">Price adjustment</label>
+                <div class="row mt-2">
+                    <div class="col-3">
+                        <label>Material</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-3">
+                        <label>Labor</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-3">
+                        <label>
+                            Margin
+                        </label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-3">
+                        <label>
+                            Price
+                        </label>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="form-check mb-0">
+                        <input class="form-check-input" type="checkbox" id="remember-me">
+                        <label class="form-check-label" for="remember-me">
+                            This item is tax exempt
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">Save</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="textAreaEnabledId2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="offcanvasBothLabel" class="offcanvas-title">Edit Price Detail</h5><br />
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <label>Name</label>
+                <input type="text" class="form-control flex-grow-1 me-2 mt-2" />
+                <label class="mt-2">Description</label>
+                <textarea class="form-control flex-grow-1 me-2 mt-2" rows="2" cols="50"></textarea>
+                <label for="itemSelect" class="mt-2">Unit</label>
+                <select class="form-select mt-0" aria-label="Dropdown for sharing options">
+                    <option></option>
+                    <option>SQ</option>
+                    <option>SQFT</option>
+                    <option>LF</option>
+                    <option>EA</option>
+                    <option>PC</option>
+                </select>
+                <label for="itemSelect" class="mt-2">Price adjustment</label>
+                <div class="row mt-2">
+                    <div class="col-3">
+                        <label>Material</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-3">
+                        <label>Labor</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-3">
+                        <label>
+                            Margin
+                        </label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col-3">
+                        <label>
+                            Price
+                        </label>
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="form-check mb-0">
+                        <input class="form-check-input" type="checkbox" id="remember-me">
+                        <label class="form-check-label" for="remember-me">
+                            This item is tax exempt
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-3 mt-3">
+                <div class="p-0">
+                    <div class="card p-5">
+                        <div class="card-body pt-0">
+                            <h5 class="mb-0">Quantity calculation for 9/12 STEEP PITCH LABOR</h5>
+                            <label class="">Build your formula here just like you would in Excel. To insert token names, select from the list or type '@@' and SumoQuote will suggest the correct token name.</label>
+                            <hr />
+                            <div class="row">
+                                <div class="col-7">
+                                    <h5 class="mb-0">Formula</h5>
+                                    <div class="col-md-12 mb-6">
+                                        <div class="select2-info">
+                                            <select id="select2Info" class="select2 form-select" multiple>
+                                                <optgroup label="Siding Measurement Tokens">
+                                                    <option value="1" selected>Total Wall Area</option>
+                                                    <option value="2" selected>Footprint Perimeter</option>
+                                                    <option value="3">12 Yard Disposal Bin</option>
+                                                </optgroup>
+                                                <optgroup label="Roof Measurement Tokens">
+                                                    <option value="1">7/12</option>
+                                                    <option value="2">8/12</option>
+                                                </optgroup>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    @*          <div>
+                                    <div class="input-group select2-info">
+                                    <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                    <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tokens</button>
+                                    <ul class="dropdown-menu dropdown-menu-end" id="select2Info">
+                                    <li>
+                                    <hr class="dropdown-divider">
+                                    </li>
+                                    <li><label>Siding Measurement Tokens</label></li>
+                                    <li>
+                                    <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);">Total Wall Area</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);">Footprint Perimeter</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);">12 Yard Disposal Bin</a></li>
+                                    <li>
+                                    <hr class="dropdown-divider">
+                                    </li>
+                                    <li><label>Roof Measurement Tokens</label></li>
+                                    <li>
+                                    <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);">7/12</a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);">8/12</a></li>
+                                    </ul>
+                                    </div>
+                                    </div> *@
+                                </div>
+                                <div class="col-5">
+                                    <h5 class="mb-0">Rounding</h5>
+                                    <div>
+                                        <div class="dropdown">
+                                            <input type="text"
+                                                   class="form-control"
+                                                   placeholder="Select an option"
+                                                   readonly
+                                                   data-bs-toggle="dropdown"
+                                                   aria-expanded="false"
+                                                   id="dropdownInput">
+                                            <ul class="dropdown-menu col-12" aria-labelledby="dropdownInput">
+                                                <li><a class="dropdown-item" href="#" id="select2Info">No Rounding</a></li>
+                                                <li><a class="dropdown-item" href="#">Next 1/10th</a></li>
+                                                <li><a class="dropdown-item" href="#">Next 1/4th</a></li>
+                                                <li><a class="dropdown-item" href="#">Next 1/2</a></li>
+                                                <li><a class="dropdown-item" href="#">Previous 1/4th</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div>
+                                    <h5 class="mb-0">Available tokens</h5>
+                                </div>
+                                <div class="mt-1">
+                                    <div class="row">
+                                        <div class="col-md mb-12 mb-md-2">
+                                            <div class="accordion mt-4" id="accordionExample">
+                                                <div class="card accordion-item active">
+                                                    <h2 class="accordion-header" id="headingOne">
+                                                        <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordionOne" aria-expanded="true" aria-controls="accordionOne">
+                                                            <h6 class="mb-0">Siding Measurement Tokens</h6>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="accordionOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-md mb-12 mb-md-0">
+                                                                    <div class="accordion accordion-custom-button mt-4" id="accordionCustom">
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>Total Wall Area</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr />
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>Walls Waste Percentage</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr />
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>Footprint Perimeter</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr />
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>Outside Corners</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr />
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>Inside Corners</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card accordion-item">
+                                                    <h2 class="accordion-header" id="headingTwo">
+                                                        <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionTwo" aria-expanded="false" aria-controls="accordionTwo">
+                                                            <h6 class="mb-0">Roof Measurement Tokens</h6>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="accordionTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-md mb-12 mb-md-0">
+                                                                    <div class="accordion accordion-custom-button mt-4" id="accordionCustom">
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>Total Roof Area</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr />
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>7/12</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr />
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>8/12</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr />
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>9/12</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr />
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>10/12</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card accordion-item">
+                                                    <h2 class="accordion-header" id="headingThree">
+                                                        <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionThree" aria-expanded="false" aria-controls="accordionThree">
+                                                            <h6 class="mb-0">Wall Measurement Tokens</h6>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="accordionThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                        <div class="accordion-body">
+                                                            <div class="row">
+                                                                <div class="col-md mb-12 mb-md-0">
+                                                                    <div class="accordion accordion-custom-button mt-4" id="accordionCustom">
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>Total Wall Area</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr />
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>North Wall Area</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr />
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>East Wall Area</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr />
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>South Wall Area</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr />
+                                                                        <div class="row">
+                                                                            <div class="col-6 text-start">
+                                                                                <label>West Wall Area</label>
+                                                                            </div>
+                                                                            <div class="col-6 text-end">
+                                                                                <div>
+                                                                                    <i class="fas fa-plus cursor-pointer"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mt-0 mb-3" />
+                            <div class="row">
+                                <div>
+                                    <h5 class="mb-0">Test your formula</h5>
+                                    <label>Once you've built your formula, you can run a test here to make sure it's working correctly</label>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div>
+                                    <label class="form-label" for="">10/12</label>
+                                </div>
+                                <div>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div>
+                                    <label class="form-label" for="">Total Wall Area</label>
+                                </div>
+                                <div>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div>
+                                    <label class="form-label" for="">Walls Waste Percentage</label>
+                                </div>
+                                <div>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div>
+                                </div>
+                                <div class="text-end">
+                                    <label><strong>Result: 0</strong></label>
+                                </div>
+                            </div>
+                            <div>
+                            </div>
+                            <hr />
+                            <div class="">
+                                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            let selectedOption = this.textContent;
+            document.getElementById('dropdownInput').value = selectedOption;
+        });
+    });
+</script>

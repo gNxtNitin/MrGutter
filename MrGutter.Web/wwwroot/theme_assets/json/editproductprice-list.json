@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Accent Trims",
+      "role": "SuperAdmin",
+      "description": "ACCENT TRIMS Supply and install all accents around front windows and doors.",
+      "price": "7",
+      "unit": "LF",
+      "status": 3,
+      "avatar": ""
+    },
+    {
+      "id": 2,
+      "name": "9/12 STEEP PITCH LABOR",
+      "role": "SuperAdmin",
+      "description": "9/12 STEEP PITCH LABOR",
+      "price": "0",
+      "unit": "SQ",
+      "status": 3,
+      "avatar": ""
+    }
+   
+   
+  ]
+}

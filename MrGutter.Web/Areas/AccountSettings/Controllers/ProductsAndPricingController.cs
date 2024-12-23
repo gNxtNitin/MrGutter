@@ -27,6 +27,11 @@ namespace MrGutter.Web.Areas.AccountSettings.Controllers
         {
             return View();
         }
+        public IActionResult AfterEditPriceList()
+        {
+            return View();
+        }
+
 
 
 
