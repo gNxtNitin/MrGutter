@@ -118,20 +118,14 @@
                             <div data-i18n="Estimate">Estimate</div>
                         </a>
                     </li>
-
-
                     <!-- Users -->
-
                     <li class="menu-item@(isUser ? " active open" : "")">
                         <a asp-area="" asp-action="User" asp-controller="Account" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-users"></i>
                             <div data-i18n="Users">Users</div>
                         </a>
                     </li>
-
-
                     <!-- Configuration -->
-
                     <li class="menu-item@(isConfigurationActive ? " active open" : "")">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
                             <i class="menu-icon ti ti-adjustments-horizontal"></i>
@@ -153,21 +147,13 @@
                             </li>
                         </ul>
                     </li>
-
-
-
-
-
                     <!-- Company -->
-
                     <li class="menu-item@(isCompany ? " active open" : "")">
                         <a asp-area="" asp-action="Company" asp-controller="Account" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-building scaleX-n1-rtl"></i>
                             <div data-i18n="Company">Company</div>
                         </a>
                     </li>
-
-
                     <!-- Settings -->
                     <li class="menu-item@(isSettingActive ? " active open" : "")">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -198,20 +184,13 @@
                     </li>
                 </ul>
             </aside>
-
-
-
             <!--Modal for Sign out-->
             <div class="modal fade" id="signOut" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="modalCenterTitle">Do you want to sign out?</h5><br />
-
-
                         </div>
-
-
                         <div class="modal-footer">
                             <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-label-secondary">
                                 Yes
@@ -221,14 +200,10 @@
                     </div>
                 </div>
             </div>
-
-
-
             <!-- / Menu -->
             <!-- Layout container -->
             <div class="layout-page">
                 <!-- Navbar -->
-
                 <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                      id="layout-navbar">
                     <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
