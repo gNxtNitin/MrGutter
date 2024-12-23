@@ -2,13 +2,16 @@
     TempData.Keep();
     string? currentPage = ViewContext.HttpContext.Request.Path;
 
-    bool isConfigurationActive = currentPage.StartsWith("/Branding") ||
-                               currentPage.StartsWith("/AccountSettings") ||
-                               currentPage.StartsWith("/Billing") ||
-                               currentPage.StartsWith("/Integrations");
+    bool isConfigurationActive = currentPage.StartsWith("/Configuration/Branding") ||
+                               currentPage.StartsWith("/Layout/ReportLayout/ReportLayoutList");
 
-    bool isSettingActive = currentPage.StartsWith("/EditProfile") ||
-                             currentPage.StartsWith("/ChangePassword") ||
+
+
+    bool isUser = currentPage.StartsWith("/Account/User");
+    bool isCompany = currentPage.StartsWith("/Account/Company");
+
+    bool isSettingActive = currentPage.StartsWith("/Account/EditProfile") ||
+                             currentPage.StartsWith("/Account/EditPassword") ||
                              currentPage.StartsWith("/SignOut");
 }
 <!DOCTYPE html>
@@ -131,12 +134,11 @@
                     </li>
 
                     <!-- Users -->
-                    <li class="menu-item">
-                        <a asp-area="" asp-action="User" asp-controller="Account"  class="menu-link">
+                    <li class="menu-item@(isUser ? " active open" : "")">
+                        <a asp-area="" asp-action="User" asp-controller="Account" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-users"></i>
                             <div data-i18n="Users">Users</div>
                         </a>
-
                     </li>
 
                     <!-- Configuration -->
@@ -146,64 +148,45 @@
                             <div data-i18n="Configuration">Configuration</div>
                         </a>
                         <ul class="menu-sub sub-menu-icon">
-                            <li class="menu-item@(currentPage.EndsWith("/") || currentPage.StartsWith("/Branding")? " active open" : "")">
-                                     
-                                    <a class="menu-link" asp-area="" asp-action="Branding" asp-controller="Configuration">
+                            <li class="menu-item@(currentPage == "/Configuration/Branding" ? " active open" : "")">
+
+                                <a class="menu-link" href="@Url.Action("Branding", "Configuration")">
                                     <i class="pe-1 ti ti-carambola"></i>
                                     <div data-i18n="Branding">Branding</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
-                                <a class="menu-link" asp-area="Layout" asp-action="ReportLayoutList" asp-controller="ReportLayout">
+                            <li class="menu-item@(currentPage == "/Layout/ReportLayout/ReportLayoutList" ? " active open" : "")">
+                                <a class="menu-link" asp-area="Layout" asp-controller="ReportLayout" asp-action="ReportLayoutList">
                                     <i class="pe-1 ti ti-table-options"></i>
                                     <div data-i18n="Account Settings">Account Settings</div>
                                 </a>
                             </li>
-                     @*        <li class="menu-item">
-                                <a class="menu-link" href="@Url.Action("Index", "Branding")">
-                                    <i class="pe-1 ti ti-clock-dollar"></i>
-                                    <div data-i18n="Blling">Blling</div>
-                                </a>
-                            </li>
-                            <li class="menu-item">
-                                <a class="menu-link" href="@Url.Action("Index", "Branding")">
-                                    <i class="pe-1 ti ti-plug-connected"></i>
-                                    <div data-i18n="Integrations">Integrations</div>
-                                </a>
-                            </li> *@
-
-
                         </ul>
                     </li>
-                    <!-- Company -->
-                    <li class="menu-item@(currentPage.EndsWith("/") || currentPage.StartsWith("/Account/Company")? " active open" : "")">
+
+                    <li class="menu-item@(isCompany ? " active open" : "")">
                         <a asp-area="" asp-action="Company" asp-controller="Account" class="menu-link">
-                            <i class="menu-icon ti ti-building scaleX-n1-rtl"></i>
+                            <i class="menu-icon tf-icons ti ti-building scaleX-n1-rtl"></i>
                             <div data-i18n="Company">Company</div>
                         </a>
-
                     </li>
-
-                    <!--Change Password-->
+       
                
 
                     <!-- Settings -->
-                     <li class="menu-item@(isSettingActive ? " active open" : "")">
+                    <li class="menu-item@(isSettingActive ? " active open" : "")">
                         <a href="javascript:void(0);" class="menu-link menu-toggle">
-
-                             
-
                             <i class="ti ti-settings me-3 ti-md"></i>
                             <div data-i18n="Settings">Settings</div>
                         </a>
                         <ul class="menu-sub sub-menu-icon">
-                            <li class="menu-item">
+                            <li class="menu-item@(currentPage == "/Account/EditProfile" ? " active open" : "")">
                                 <a class="menu-link" asp-area="" asp-controller="Account" asp-action="EditProfile">
                                     <i class="pe-1 ti ti-pencil"></i>
                                     <div data-i18n="Edit Profile">Edit Profile</div>
                                 </a>
                             </li>
-                            <li class="menu-item">
+                            <li class="menu-item@(currentPage == "/Account/EditPassword" ? " active open" : "")">
                                 <a class="menu-link" asp-area="" asp-controller="Account" asp-action="EditPassword">
                                     <i class="pe-1 ti ti-lock-cog"></i>
                                     <div data-i18n="Change Password">Change Password</div>
@@ -211,13 +194,13 @@
                             </li>
                             <li class="menu-item">
                                 <a class="menu-link" data-bs-toggle="modal"
-                                   data-bs-target="#signOut">
+                                   data-bs-target="#signOut" href="#">
                                     <i class="pe-1 ti ti-rubber-stamp-off "></i>
                                     <div data-i18n="Sign Out">Sign Out</div>
                                 </a>
                             </li>
                         </ul>
-                    </li> 
+                    </li>
                 </ul>
             </aside>
 
