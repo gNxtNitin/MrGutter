@@ -98,7 +98,7 @@
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo" style="background: #0f4a72;">
                     <ul class="menu-inner py-1">
-                        <li class="menu-item mt-0">
+                        <li class="menu mt-0">
                             <a class="menu-link px-0 mx-0" asp-area="" asp-controller="Estimates" asp-action="EstimateList">
                                 <i class="menu-icon"><img style="height:30px;" src="/img/logo/drop.png" /></i>
                                 <div> <img style="height:40px;" src="/img/logo/logoWhite.png" /></div>
@@ -113,7 +113,7 @@
                 <div class="menu-inner-shadow"></div>
                 <ul class="menu-inner py-1">
                     <!-- Project -->
-                    <li class='menu-item@(currentPage.EndsWith("/") || currentPage.StartsWith("/Project")? " active open" : "")'>
+                    <li class='menu-item@(currentPage.EndsWith("/") || currentPage.StartsWith("/Estimates")? " active open" : "")'>
                         <a href="@Url.Action("EstimateList","Estimates")" class="menu-link">
                             <i class="menu-icon ti ti-brand-databricks"></i>
                             <div data-i18n="Estimate">Estimate</div>
@@ -148,10 +148,10 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="menu-item@(currentPage.EndsWith("/") || currentPage.StartsWith("/Account/Company")? " active open" : "")">
+                    <li class="menu-item@(currentPage.EndsWith("/") || currentPage.StartsWith("/Company")? "active open" : "")">
                         <a asp-area="" asp-action="Company" asp-controller="Account" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-building scaleX-n1-rtl"></i>
-                            <div data-i18n="Company">Comapany</div>
+                            <div data-i18n="Company">Company</div>
                         </a>
                     </li>
                     <!-- Settings -->

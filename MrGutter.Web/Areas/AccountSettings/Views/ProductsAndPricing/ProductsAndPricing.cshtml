@@ -87,7 +87,8 @@
                                             <i class="fas fa-download"></i> <a href="#">Download Price List</a>
                                         </div>
                                         <div class="col-3">
-                                            <i class="fas fa-upload"></i> <a href="#">Upload Price List</a>
+                                            <i class="fas fa-upload"></i> <a href="#" data-bs-toggle="modal"
+                                                                             data-bs-target="#uploadPriceList">Upload Price List</a>
                                         </div>
                                     </div>
                                 </div>
@@ -102,6 +103,61 @@
         </div>
     </div>
 </div>
+
+
+<!-- Modal for Upload price list -->
+
+<div class="modal fade" id="uploadPriceList" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fs-4" id="modalCenterTitle">Upload your file</h5><br />
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-4">
+                        <h5 for="nameWithTitle" class="form-label mb-3 fs-5">You may upload an .xlsx file.</h5>
+
+                        <div class="col-12">
+                            <div class="mb-6">
+                                <div class="card-body">
+                                    <div action="/upload" class="dropzone needsclick" id="dropzone-multi">
+                                        <div class="dz-message needsclick">
+                                            Drop files here or click to upload
+
+                                        </div>
+                                        <div class="fallback">
+                                            <input name="file" type="file" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
