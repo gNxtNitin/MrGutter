@@ -238,6 +238,10 @@ namespace MrGutter.Web.Controllers
         {
             return View();
         }
+        public IActionResult MyProfile()
+        {
+            return View();
+        }
         public IActionResult EditPassword()
         {
             return View();
