@@ -149,3 +149,13 @@
 /.vs/ProjectEvaluation/mrgutter_web.projects.v8.bin
 /.vs/MrGutter_Web/v17/HierarchyCache.v1.txt
 /MrGutter.Web/obj/Debug/net6.0/staticwebassets/msbuild.MrGutter.Web.Microsoft.AspNetCore.StaticWebAssets.props
+/MrGutter.Web/obj/publish/win-x64/MrGutter.Web.csproj.nuget.dgspec.json
+/MrGutter.Web/obj/publish/win-x64/MrGutter.Web.csproj.nuget.g.props
+/MrGutter.Web/obj/publish/win-x64/MrGutter.Web.csproj.nuget.g.targets
+/MrGutter.Web/obj/publish/win-x64/project.assets.json
+/MrGutter.Web/obj/publish/win-x64/project.nuget.cache
+/MrGutter.Web/obj/Release/net6.0/win-x64/MrGutter.Web.assets.cache
+/MrGutter.Web/obj/Release/net6.0/win-x64/MrGutter.Web.csproj.FileListAbsolute.txt
+/MrGutter.Web/obj/Release/net6.0/win-x64/MrGutter.Web.GlobalUsings.g.cs
+/MrGutter.Web/Properties/PublishProfiles/FolderProfile.pubxml
+/MrGutter.Web/Properties/PublishProfiles/FolderProfile.pubxml.user
