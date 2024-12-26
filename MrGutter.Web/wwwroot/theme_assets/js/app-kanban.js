@@ -3,7 +3,6 @@
  */
 
 'use strict';
-
 (async function () {
   let boards;
   const kanbanSidebar = document.querySelector('.kanban-update-item-sidebar'),
@@ -35,7 +34,6 @@
       dateFormat: 'Y-m-d'
     });
   }
-
   //! TODO: Update Event label and guest code to JS once select removes jQuery dependency
   // select2
   if (select2.length) {
@@ -46,7 +44,6 @@
       var $badge = "<div class='badge " + $(option.element).data('color') + "'> " + option.text + '</div>';
       return $badge;
     }
-
     select2.each(function () {
       var $this = $(this);
       $this.wrap("<div class='position-relative'></div>").select2({

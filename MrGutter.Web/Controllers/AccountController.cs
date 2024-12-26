@@ -51,7 +51,6 @@ namespace MrGutter.Web.Controllers
             try
             {
                 var result = await _accountService.AuthenticateUser(loginReq);
-               // result.Code = 1;
                 HttpContext.Session.SetInt32("UserId", Convert.ToInt32(result.Code));
                 if (result.Code <= 0)
                 {
@@ -67,8 +66,6 @@ namespace MrGutter.Web.Controllers
                 }
                 var claims = new List<Claim>
             {
-                //new Claim(ClaimTypes.Name, user.Users[0].UserName),
-                //new Claim(ClaimTypes.Email, user.Users[0].UserName),
                 new Claim(ClaimTypes.Role, currentUserRole.RoleName),
                 new Claim(ClaimTypes.NameIdentifier, result.Code.ToString())
             };
@@ -140,14 +137,6 @@ namespace MrGutter.Web.Controllers
                 return View(model);
             }
         }
-        //public IActionResult ChangePassword(string email)
-        //{
-        //    TempData["Success"] = true;
-        //    TempData["SuccessMessage"] = "Ticket category added successfully!";
-        //    UsersVM usersVM = new UsersVM();    
-        //    usersVM.EmailID = email;    
-        //    return View(usersVM);
-        //}
         [HttpPost]
         public async Task<IActionResult> ChangePassword(UsersVM usersVM)
         {
