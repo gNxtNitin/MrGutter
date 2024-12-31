@@ -284,29 +284,116 @@
                                 </div>
 
                             </div>
-                            <div class="card mt-3">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between mb-1">
-                                        <strong>Primary signer<a href="#" title="Edit the page title"><i class="ti ti-edit ms-2"></i></a></strong>
-                                    </div>
-                                    <label>Signatories can be customized within a report.</label>
-                                    <div class="row mt-3">
-                                        <div class="col-4">
-                                            <label for="defaultInput" class="form-label">First name</label>
-                                            <input id="defaultInput" class="form-control" type="text" disabled />
-                                        </div>
-                                        <div class="col-4">
-                                            <label for="defaultInput" class="form-label">Last name</label>
-                                            <input id="defaultInput" class="form-control" type="text" disabled />
-                                        </div>
-                                        <div class="col-4">
-                                            <label for="defaultInput" class="form-label">Email address</label>
-                                            <input id="defaultInput" class="form-control" type="text" disabled />
-                                        </div>
-                                    </div>
-                                </div>
 
+                            <!-- Primary Signer -->
+                            
+                            <div class="card-body pt-0 px-0">
+                                <form class="source-item">
+                                    <div class="card mt-3">
+                                        <div class="card-body" id="cardBody">
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <strong class="signer-label">
+                                                    Primary signer
+                                                    <a href="#" title="Edit the page title"><i class="ti ti-edit ms-2"></i></a>
+                                                </strong>
+                                            </div>
+                                            <label>Signatories can be customized within a report.</label>
+                                            <div id="signerList">
+                                                <!-- Primary signer fields -->
+                                                <div class="row mt-3 signer-item">
+                                                    <div class="col-4">
+                                                        <label for="defaultInput" class="form-label">First name</label>
+                                                        <input id="defaultInput" class="form-control" type="text" disabled />
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <label for="defaultInput" class="form-label">Last name</label>
+                                                        <input id="defaultInput" class="form-control" type="text" disabled />
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <label for="defaultInput" class="form-label">Email address</label>
+                                                        <input id="defaultInput" class="form-control" type="text" disabled />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6 mt-4">
+                                                    
+                                                    <button type="button" class="btn btn-outline-primary waves-effect" id="addItemBtn">
+                                                        <i class='ti ti-plus ti-14px me-1_5'></i>Add signer
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
+                                    </div>
+                                    <hr />
+                                 
+                                </form>
                             </div>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", () => {
+                                    const addItemBtn = document.getElementById("addItemBtn");
+                                    const signerList = document.getElementById("signerList");
+
+                                    let signerCount = 1; // Counter for signer numbers (Primary signer is the first)
+
+                                    addItemBtn.addEventListener("click", () => {
+                                        if (signerCount >= 4) {
+                                            console.log("Maximum 4 signers allowed, including the Primary signer.");
+                                            return; // Do nothing if the limit is reached
+                                        }
+
+                                        signerCount++; // Increment signer number
+
+                                        // Create new signer fields
+                                        const newSigner = document.createElement("div");
+                                        newSigner.classList.add("row", "mt-3", "signer-item");
+                                        newSigner.innerHTML = `
+                                                <div class="row">                                                   
+                                                    <div class="col-6 mb-2">
+                                                        <strong>Signer ${signerCount}</strong>
+                                                    </div>
+                                                     <div class="col-6 mb-2 text-end">
+                                                        <button type="button" class="btn btn-outline-danger btn-sm delete-signer"><i class="ti ti-trash"></i></button>
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-4">
+                                                    <label for="defaultInput" class="form-label">First name</label>
+                                                    <input id="defaultInput" class="form-control" type="text" />
+                                                </div>
+                                                <div class="col-4">
+                                                    <label for="defaultInput" class="form-label">Last name</label>
+                                                    <input id="defaultInput" class="form-control" type="text" />
+                                                </div>
+                                                <div class="col-4">
+                                                    <label for="defaultInput" class="form-label">Email address</label>
+                                                    <input id="defaultInput" class="form-control" type="text" />
+                                                </div>
+                                               
+                                            `;
+
+                                        // Add new signer fields to the signer list
+                                        signerList.appendChild(newSigner);
+
+                                        // Add event listener for the delete button
+                                        const deleteBtn = newSigner.querySelector(".delete-signer");
+                                        deleteBtn.addEventListener("click", () => {
+                                            newSigner.remove(); // Remove the signer fields
+                                            signerCount--; // Decrement signer count
+                                        });
+                                    });
+                                });
+                            </script>
+
+                   
+
+
+
+
+
+
                             <div class="card mt-3">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between mb-1">
