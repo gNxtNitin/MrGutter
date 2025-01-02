@@ -88,7 +88,15 @@
                                 <div class="tab-content" id="pdfOptionsContent">
                                     <!-- My PDFs Section -->
                                     <div class="tab-pane fade show active" id="navs-my-pdfs" role="tabpanel" aria-labelledby="my-pdfs-tab">
-                                        <h5><b>My PDFs</b></h5>
+                                       
+                                        <div class="d-flex justify-content-between align-items-center">
+                                             <h5><b>My PDFs</b></h5>
+                                             <div class="px-0">
+                                                <a id="gridIcon" href="#" onclick="switchToGrid()" class="menu-item ti ti-layout-grid-filled ms-3" title="Tile view"></a>
+                                                <a id="listIcon" href="#" onclick="switchToList()" class="menu-item ti ti-list me-1" title="List view"></a>
+                                            </div>
+
+                                        </div>
                                         <div class="col-md-6">
                                             <div class="input-group">
                                                 <span class="input-group-text">
@@ -102,7 +110,19 @@
 
                                     <!-- Shared PDFs Section -->
                                     <div class="tab-pane fade" id="navs-shared-pdfs" role="tabpanel" aria-labelledby="shared-pdfs-tab">
-                                        <h5><b>Shared PDFs</b></h5>
+                                        
+
+
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h5><b>Shared PDFs</b></h5>
+                                            <div class="px-0">
+                                                <a id="gridIcon" href="#" onclick="switchToGrid()" class="menu-item ti ti-layout-grid-filled ms-3" title="Tile view"></a>
+                                                <a id="listIcon" href="#" onclick="switchToList()" class="menu-item ti ti-list me-1" title="List view"></a>
+                                            </div>
+
+                                        </div>
+
+
                                         <div class="col-md-6">
                                             <div class="input-group">
                                                 <span class="input-group-text">

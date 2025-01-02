@@ -5,8 +5,10 @@
 
 
 
-
 <style>
+    .row > * {
+        padding-right: 0px;
+    }
     .required {
         color: red;
     }
@@ -49,6 +51,8 @@
                         <div class="col-3">
                         </div>
                         <div class="col-4 text-end">
+                            <button type="button" class="btn btn-outline-primary waves-effect" data-bs-target="#pageSettingModel" data-bs-toggle="modal" data-bs-dismiss="modal">Page Settings</button>
+
                             <button type="button" class="btn btn-outline-primary waves-effect" data-bs-target="#fullscreenModal" data-bs-toggle="modal" data-bs-dismiss="modal">View Page</button>
                         </div>
 
@@ -487,6 +491,11 @@
                                                     <div class="card-body px-0">
                                                         <div class="row row-gap-4">
                                                             <div class="col-md-8 mb-md-0 mb-4">
+                                                                <label for="margin" class="form-label">
+                                                                    <h5 class="mb-1"><b>Profit margin for this quote</b></h5>
+                                                                </label>
+                                                                <input class="form-control" id="margin"/>
+
                                                             </div>
                                                             <div class="col-md-4 d-flex justify-content-end">
                                                                 <div class="invoice-calculations w-100">
@@ -982,6 +991,60 @@
             </div>
         </div>
     </div>
+    <!-- Page Setting button besides View page -->
+    <div class="modal fade" id="pageSettingModel" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle"><b>Page Settings</b></h5><br />
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div><h5><b>Select what to display in the PDF.</b></h5></div>
+                        <div class="form-check mb-0 ms-3">
+                            <input class="form-check-input" type="checkbox" id="remember-me">
+                            <label class="form-check-label" for="remember-me">
+                                Unit Price
+                            </label>
+                        </div>
+                        <hr />
+                        <div class="form-check mb-0 ms-3">
+                            <input class="form-check-input" type="checkbox" id="remember-me">
+                            <label class="form-check-label" for="remember-me">
+                                Quantity
+                            </label>
+                        </div>
+                        <hr />
+                        <div class="form-check mb-0 ms-3">
+                            <input class="form-check-input" type="checkbox" id="remember-me">
+                            <label class="form-check-label" for="remember-me">
+                                Line Total
+                            </label>
+                        </div>
+                        <hr />
+                        <div class="form-check mb-0 ms-3">
+                            <input class="form-check-input" type="checkbox" id="remember-me">
+                            <label class="form-check-label" for="remember-me">
+                                Section Total
+                            </label>
+                        </div>
+                        <hr />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -1288,19 +1351,28 @@
                     </select>
                     <label for="itemSelect" class="mt-2">Price adjustment</label>
                     <div class="row mt-2">
-                        <div class="col-3">
+                        <div class="col-2">
                             <label>Material</label>
                             <input type="text" class="form-control" />
                         </div>
-                        <div class="col-3">
+                        <div class="col-1">
+                            <i class="ti ti-plus mt-7"></i>
+                        </div>
+                        <div class="col-2">
                             <label>Labor</label>
                             <input type="text" class="form-control" />
                         </div>
-                        <div class="col-3">
+                        <div class="col-1">
+                            <i class="ti ti-plus mt-7"></i>
+                        </div>
+                        <div class="col-2">
                             <label>
                                 Margin
                             </label>
                             <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-1">
+                            <i class="ti ti-equal mt-7"></i>
                         </div>
                         <div class="col-3">
                             <label>

@@ -2,6 +2,13 @@
     Layout = "_Layout_CreateReport";
     ViewBag.Title = "layout Estimate";
 }
+
+<style>
+    .row > *{
+        padding-right: 0px;
+    }
+</style>
+
 <div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y pt-0">
 
     <div class="layout-demo-wrapper">
@@ -22,6 +29,7 @@
                         <div class="col-4">
                         </div>
                         <div class="col-4 text-end">
+                            <button type="button" class="btn btn-outline-primary waves-effect" data-bs-target="#pageSettingModel" data-bs-toggle="modal" data-bs-dismiss="modal">Page Settings</button>
                             <button type="button" class="btn btn-outline-primary waves-effect" data-bs-target="#fullscreenModal" data-bs-toggle="modal" data-bs-dismiss="modal">View Page</button>
                         </div>
 
@@ -284,29 +292,116 @@
                                 </div>
 
                             </div>
-                            <div class="card mt-3">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between mb-1">
-                                        <strong>Primary signer<a href="#" title="Edit the page title"><i class="ti ti-edit ms-2"></i></a></strong>
-                                    </div>
-                                    <label>Signatories can be customized within a report.</label>
-                                    <div class="row mt-3">
-                                        <div class="col-4">
-                                            <label for="defaultInput" class="form-label">First name</label>
-                                            <input id="defaultInput" class="form-control" type="text" disabled />
-                                        </div>
-                                        <div class="col-4">
-                                            <label for="defaultInput" class="form-label">Last name</label>
-                                            <input id="defaultInput" class="form-control" type="text" disabled />
-                                        </div>
-                                        <div class="col-4">
-                                            <label for="defaultInput" class="form-label">Email address</label>
-                                            <input id="defaultInput" class="form-control" type="text" disabled />
-                                        </div>
-                                    </div>
-                                </div>
 
+                            <!-- Primary Signer -->
+                            
+                            <div class="card-body pt-0 px-0">
+                                <form class="source-item">
+                                    <div class="card mt-3">
+                                        <div class="card-body" id="cardBody">
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <strong class="signer-label">
+                                                    Primary signer
+                                                    <a href="#" title="Edit the page title"><i class="ti ti-edit ms-2"></i></a>
+                                                </strong>
+                                            </div>
+                                            <label>Signatories can be customized within a report.</label>
+                                            <div id="signerList">
+                                                <!-- Primary signer fields -->
+                                                <div class="row mt-3 signer-item">
+                                                    <div class="col-4">
+                                                        <label for="defaultInput" class="form-label">First name</label>
+                                                        <input id="defaultInput" class="form-control" type="text" disabled />
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <label for="defaultInput" class="form-label">Last name</label>
+                                                        <input id="defaultInput" class="form-control" type="text" disabled />
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <label for="defaultInput" class="form-label">Email address</label>
+                                                        <input id="defaultInput" class="form-control" type="text" disabled />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6 mt-4">
+                                                    
+                                                    <button type="button" class="btn btn-outline-primary waves-effect" id="addItemBtn">
+                                                        <i class='ti ti-plus ti-14px me-1_5'></i>Add signer
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
+                                    </div>
+                                    <hr />
+                                 
+                                </form>
                             </div>
+
+                            <script>
+                                document.addEventListener("DOMContentLoaded", () => {
+                                    const addItemBtn = document.getElementById("addItemBtn");
+                                    const signerList = document.getElementById("signerList");
+
+                                    let signerCount = 1; // Counter for signer numbers (Primary signer is the first)
+
+                                    addItemBtn.addEventListener("click", () => {
+                                        if (signerCount >= 4) {
+                                            console.log("Maximum 4 signers allowed, including the Primary signer.");
+                                            return; // Do nothing if the limit is reached
+                                        }
+
+                                        signerCount++; // Increment signer number
+
+                                        // Create new signer fields
+                                        const newSigner = document.createElement("div");
+                                        newSigner.classList.add("row", "mt-3", "signer-item");
+                                        newSigner.innerHTML = `
+                                                <div class="row mt-3">                                                   
+                                                    <div class="col-6">
+                                                        <strong>Signer ${signerCount}</strong>
+                                                    </div>
+                                                     <div class="col-6 text-end">
+                                                        <button type="button" class="btn btn-outline-danger btn-sm delete-signer"><i class="ti ti-trash"></i></button>
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-4">
+                                                    <label for="defaultInput" class="form-label">First name</label>
+                                                    <input id="defaultInput" class="form-control" type="text" />
+                                                </div>
+                                                <div class="col-4">
+                                                    <label for="defaultInput" class="form-label">Last name</label>
+                                                    <input id="defaultInput" class="form-control" type="text" />
+                                                </div>
+                                                <div class="col-4">
+                                                    <label for="defaultInput" class="form-label">Email address</label>
+                                                    <input id="defaultInput" class="form-control" type="text" />
+                                                </div>
+                                               
+                                            `;
+
+                                        // Add new signer fields to the signer list
+                                        signerList.appendChild(newSigner);
+
+                                        // Add event listener for the delete button
+                                        const deleteBtn = newSigner.querySelector(".delete-signer");
+                                        deleteBtn.addEventListener("click", () => {
+                                            newSigner.remove(); // Remove the signer fields
+                                            signerCount--; // Decrement signer count
+                                        });
+                                    });
+                                });
+                            </script>
+
+                   
+
+
+
+
+
+
                             <div class="card mt-3">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between mb-1">
@@ -315,7 +410,7 @@
                                     <div class="row mt-3">
                                         <div class="col-12">
                                             <label for="note" class="text-heading mb-1 fw-medium">Note:</label>
-                                            <textarea class="form-control" rows="2" id="note"></textarea>
+                                            <textarea class="form-control" rows="3" id="autosize-demo"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -613,6 +708,7 @@
             </div>
         </div>
     </div>
+
     <div class="modal fade" id="textAreaEnabledId1" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -640,19 +736,28 @@
                     </select>
                     <label for="itemSelect" class="mt-2">Price adjustment</label>
                     <div class="row mt-2">
-                        <div class="col-3">
+                        <div class="col-2">
                             <label>Material</label>
                             <input type="text" class="form-control" />
                         </div>
-                        <div class="col-3">
+                        <div class="col-1">
+                            <i class="ti ti-plus mt-7"></i>
+                        </div>
+                        <div class="col-2">
                             <label>Labor</label>
                             <input type="text" class="form-control" />
                         </div>
-                        <div class="col-3">
+                        <div class="col-1">
+                            <i class="ti ti-plus mt-7"></i>
+                        </div>
+                        <div class="col-2">
                             <label>
                                 Margin
                             </label>
                             <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-1">
+                            <i class="ti ti-equal mt-7"></i>
                         </div>
                         <div class="col-3">
                             <label>
@@ -904,7 +1009,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalCenterTitle">Page Settings</h5><br />
+                <h5 class="modal-title" id="modalCenterTitle"><b>Page Settings</b></h5><br />
                 <button type="button"
                         class="btn-close"
                         data-bs-dismiss="modal"
@@ -926,20 +1031,7 @@
                             Quantity
                         </label>
                     </div>
-                    <hr />
-                    <div class="form-check mb-0 ms-3">
-                        <input class="form-check-input" type="checkbox" id="remember-me">
-                        <label class="form-check-label" for="remember-me">
-                            Line Total
-                        </label>
-                    </div>
-                    <hr />
-                    <div class="form-check mb-0 ms-3">
-                        <input class="form-check-input" type="checkbox" id="remember-me">
-                        <label class="form-check-label" for="remember-me">
-                            Section Total
-                        </label>
-                    </div>
+                   
                     <hr />
                 </div>
             </div>

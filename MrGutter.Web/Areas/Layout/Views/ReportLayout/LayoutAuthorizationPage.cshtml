@@ -3,6 +3,13 @@
     ViewBag.Title = "layout Report";
 }
 
+<style>
+    .row > * {
+        padding-right: 0px;
+    }
+</style>
+
+
 <div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y pt-0">
 
     <div class="layout-demo-wrapper">
@@ -23,6 +30,8 @@
                         <div class="col-4">
                         </div>
                         <div class="col-4 text-end">
+                            <button type="button" class="btn btn-outline-primary waves-effect" data-bs-target="#pageSettingModel" data-bs-toggle="modal" data-bs-dismiss="modal">Page Settings</button>
+
                             <button type="button" class="btn btn-outline-primary waves-effect" data-bs-target="#fullscreenModal" data-bs-toggle="modal" data-bs-dismiss="modal">View Page</button>
                         </div>
 
@@ -318,7 +327,7 @@
                                     <div class="row mt-3">
                                         <div class="col-12">
                                             <label for="note" class="text-heading mb-1 fw-medium">Note:</label>
-                                            <textarea class="form-control" rows="2" id="note"></textarea>
+                                            <textarea class="form-control" rows="3" id="autosize-demo"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -643,19 +652,28 @@
                     </select>
                     <label for="itemSelect" class="mt-2">Price adjustment</label>
                     <div class="row mt-2">
-                        <div class="col-3">
+                        <div class="col-2">
                             <label>Material</label>
                             <input type="text" class="form-control" />
                         </div>
-                        <div class="col-3">
+                        <div class="col-1">
+                            <i class="ti ti-plus mt-7"></i>
+                        </div>
+                        <div class="col-2">
                             <label>Labor</label>
                             <input type="text" class="form-control" />
                         </div>
-                        <div class="col-3">
+                        <div class="col-1">
+                            <i class="ti ti-plus mt-7"></i>
+                        </div>
+                        <div class="col-2">
                             <label>
                                 Margin
                             </label>
                             <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-1">
+                            <i class="ti ti-equal mt-7"></i>
                         </div>
                         <div class="col-3">
                             <label>
@@ -862,6 +880,47 @@
         </div>
     </div>
 
+</div>
+
+
+<div class="modal fade" id="pageSettingModel" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle"><b>Page Settings</b></h5><br />
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div><h5><b>Select what to display in the PDF.</b></h5></div>
+                    <div class="form-check mb-0 ms-3">
+                        <input class="form-check-input" type="checkbox" id="remember-me">
+                        <label class="form-check-label" for="remember-me">
+                            Unit Price
+                        </label>
+                    </div>
+                    <hr />
+                    <div class="form-check mb-0 ms-3">
+                        <input class="form-check-input" type="checkbox" id="remember-me">
+                        <label class="form-check-label" for="remember-me">
+                            Quantity
+                        </label>
+                    </div>
+
+                    <hr />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="modal fade" id="saveAsTemplate" tabindex="-1" aria-hidden="true">

@@ -129,23 +129,30 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <div class="border-top mt-2 mx-4"><h5 class="card-header pb-0 pt-2">Brand Colors</h5></div>
+                                <div class="border-top mt-2 mx-4"><h5 class="card-header pb-0 pt-2 ps-2">Brand Colors</h5></div>
 
                                 <div class="card-body pt-0">
+                                  
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-5">
                                             <form>
-                                                <label for="myColor" class="form-label">Primary</label>
+                                                <label for="primaryColor" class="form-label">Primary</label>
                                                 <input type="color" class="form-control form-control-color w-100" id="primaryColor" value="#13296C" title="Choose a color">
                                             </form>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-2 d-flex justify-content-center align-items-center">
+                                            <i class="ti ti-arrows-exchange fs-3 mt-7" id="swapIcon" style="cursor: pointer;"></i>
+                                        </div>
+                                        <div class="col-md-5">
                                             <form>
-                                                <label for="myColor" class="form-label">Secondary</label>
+                                                <label for="secondaryColor" class="form-label">Secondary</label>
                                                 <input type="color" class="form-control form-control-color w-100" id="secondaryColor" value="#CCCCCC" title="Choose a color">
                                             </form>
                                         </div>
                                     </div>
+
+                                  
+
                                 </div>
 
                             </div>
@@ -212,3 +219,22 @@
         </div>
     </div>
 </div>
+
+<!-- Script for Swapping icon -->
+<script>
+    // Get the color inputs and the swap icon
+    const primaryColorInput = document.getElementById('primaryColor');
+    const secondaryColorInput = document.getElementById('secondaryColor');
+    const swapIcon = document.getElementById('swapIcon');
+
+    // Add a click event listener to the swap icon
+    swapIcon.addEventListener('click', function () {
+        // Get the current values of the color inputs
+        const primaryValue = primaryColorInput.value;
+        const secondaryValue = secondaryColorInput.value;
+
+        // Swap the values
+        primaryColorInput.value = secondaryValue;
+        secondaryColorInput.value = primaryValue;
+    });
+</script>
