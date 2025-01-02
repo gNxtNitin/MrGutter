@@ -30,7 +30,25 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body row py-2">
-                    <h4 class="card-title">Insurance Sample</h4>
+                  
+
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="text-end me-4">
+                            <h4 class="card-title">Insurance Sample</h4>
+                        </div>
+
+                        <div class="rounded text-white status-dropdown">
+                            <select class="form-select text-capitalize">
+                                <option value="Requested" selected>Requested</option>
+                                <option value="Provided">Provided</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Revised">Revised</option>
+                                <option value="Accepted">Accepted</option>
+                                <option value="Cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="col-md-8 row">
 
                         <div class="col-md-6">
@@ -415,6 +433,49 @@
     </div>
 </div>
 
+<!--Script for drop down colour-->
+
+
+<script>
+    // Function to update the background and text color of each dropdown
+    function updateBackgroundColor(selectElement) {
+        var selectedValue = selectElement.value;
+        var parentDiv = selectElement.closest('.status-dropdown'); // Get the parent div with class 'status-dropdown'
+
+        // Reset background and text color classes
+        parentDiv.classList.remove("bg-success", "bg-primary", "bg-secondary", "bg-danger", "bg-blue", "text-white", "text-dark");
+
+        // Apply the correct background and text color based on the selected value
+        if (selectedValue === "Accepted") {
+            parentDiv.classList.add("bg-success", "text-white"); // Green background, white text
+        } else if (selectedValue === "Requested") {
+            parentDiv.classList.add("bg-primary", "text-white"); // Blue background, white text
+        } else if (selectedValue === "Provided") {
+            parentDiv.classList.add("bg-secondary", "text-dark"); // Grey background, dark text
+        } else if (selectedValue === "Cancelled") {
+            parentDiv.classList.add("bg-danger", "text-white"); // Red background, white text
+        } else if (selectedValue === "Revised") {
+            parentDiv.classList.add("bg-success", "text-white"); // Red background, white text
+        } else if (selectedValue === "Completed") {
+            parentDiv.classList.add("bg-blue", "text-white"); // Red background, white text
+        }
+    }
+
+    // Set the background color on page load for all dropdowns
+    window.addEventListener('load', function () {
+        var selectElements = document.querySelectorAll('.status-dropdown select');
+        selectElements.forEach(function (selectElement) {
+            updateBackgroundColor(selectElement); // Apply background color based on current selection
+        });
+    });
+
+    // Listen for changes on each select dropdown
+    document.querySelectorAll('.status-dropdown select').forEach(function (selectElement) {
+        selectElement.addEventListener("change", function () {
+            updateBackgroundColor(selectElement); // Update background color when selection changes
+        });
+    });
+</script>
 
 
 
