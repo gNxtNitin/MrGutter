@@ -11,6 +11,8 @@ using MrGutter.Services.IService;
 using MrGutter.Repository;
 using Microsoft.AspNetCore.Identity;
 using MrGutter.Models;
+using MrGutter.Web.Models;
+using System.Diagnostics;
 namespace MrGutter.Web.Controllers
 {
     public class AccountController : Controller
@@ -18,26 +20,22 @@ namespace MrGutter.Web.Controllers
         private readonly IAccountService _accountService;
         private readonly IUserManagerService _userService;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly ILogger<AccountController> _logger;
         EncryptDecrypt _encryptDecrypt = new EncryptDecrypt();
-        public AccountController(IAccountService accountService, IUserManagerService userService, IHttpContextAccessor httpContextAccessor)
+        public AccountController(IAccountService accountService, IUserManagerService userService, IHttpContextAccessor httpContextAccessor, ILogger<AccountController> logger)
         {
             _accountService = accountService;
             _userService = userService;
             _httpContextAccessor = httpContextAccessor;
+            _logger = logger;
         }
-        public IActionResult User()
+        public IActionResult Index()
         {
             return View();
         }
-        public IActionResult Company()
-        {
-            return View();
-        }
+
+     
         public IActionResult RegisterCompany()
-        {
-            return View();
-        }
-        public IActionResult Login()
         {
             return View();
         }
@@ -46,29 +44,35 @@ namespace MrGutter.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(loginReq);
+                ViewBag.LoginError = "Invalid";
+                return View("Index", loginReq);
             }
             try
             {
                 var result = await _accountService.AuthenticateUser(loginReq);
-                HttpContext.Session.SetInt32("UserId", Convert.ToInt32(result.Code));
+
                 if (result.Code <= 0)
                 {
+                    ViewBag.LoginError = "Invalid";
                     ViewBag.LoginErrorMsg = "Invalid Credentials.";
-                    return View(loginReq);
+                    return View("Index");
                 }
-                 var roleManager = await _userService.GetRoleByUserIdAsync(Convert.ToInt32(result.Code));
-                 var currentUserRole = roleManager.Roles.FirstOrDefault();
-                if (currentUserRole == null)
+                HttpContext.Session.SetInt32("UserId", Convert.ToInt32(result.Code));
+
+                var roleManager = await _userService.GetRoleByUserIdAsync(Convert.ToInt32(result.Code));
+                var roleName = roleManager.Roles.FirstOrDefault()?.RoleName;
+
+                if (string.IsNullOrEmpty(roleName))
                 {
+                    ViewBag.LoginError = "Invalid";
                     ViewBag.LoginErrorMsg = "Invalid Credentials.";
-                    return View(loginReq);
+                    return View("Index");
                 }
                 var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Role, currentUserRole.RoleName),
-                new Claim(ClaimTypes.NameIdentifier, result.Code.ToString())
-            };
+        {
+            new Claim(ClaimTypes.Role, roleName),
+            new Claim(ClaimTypes.NameIdentifier, result.Code.ToString())
+        };
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
                 var props = new AuthenticationProperties
@@ -76,16 +80,17 @@ namespace MrGutter.Web.Controllers
                     IsPersistent = true,
                     ExpiresUtc = DateTime.UtcNow.AddMinutes(15)
                 };
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props);
-                return RedirectToAction("Dashboard", "Dashboard", new { area = "" });
+                HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props).Wait();
+
+                return RedirectToAction("EstimateList", "Estimates", new { area = "" });
             }
             catch (Exception ex)
             {
-                ViewBag.LoginErrorMsg = "An error occurred.";
-                return View(loginReq);
+                ViewBag.LoginErrorMsg = "An error occurred. Please try again.";
+                return View("Index");
             }
         }
-        public async Task<IActionResult> LogOut(LoginVM loginReqModel)
+        public async Task<IActionResult> LogOut()
         {
             var userId = _httpContextAccessor.HttpContext?.Session.GetInt32("UserId");
             if (_httpContextAccessor.HttpContext?.Request.Cookies.Count > 0)
@@ -106,13 +111,7 @@ namespace MrGutter.Web.Controllers
         {
             return View();
         }
-        public IActionResult ChangePassword()
-        {
-            TempData["Success"] = true;
-            TempData["SuccessMessage"] = "We've just sent you an email to reset your password.";
-           
-            return View();
-        }
+     
         [HttpPost]
         public async Task<IActionResult> ForgotPassword(LoginVM model)
         {
@@ -129,7 +128,7 @@ namespace MrGutter.Web.Controllers
            if(result > 0)
             {
                 ViewBag.successmsg = "We've just send you an email to reset your password.";
-                return View(model);
+                return View();
             }
             else
             {
@@ -138,29 +137,54 @@ namespace MrGutter.Web.Controllers
             }
         }
         [HttpPost]
-        public async Task<IActionResult> ChangePassword(UsersVM usersVM)
+        public async Task<IActionResult> ChangePassword(ResetPasswordVM resetPassword)
         {
-            if(usersVM.Password == null)
+            LoginVM loginVM = new LoginVM();
+            loginVM.EmailOrMobile = resetPassword.EmailID;
+            loginVM.Password = resetPassword.Password;
+            loginVM.ConfirmPassword = resetPassword.ConfirmPassword;
+            if (!ModelState.IsValid)
             {
-                ViewBag.errormsg = "Password is required";
-                return View(usersVM);
+                return View(resetPassword);
             }
-            else if (usersVM.ConfirmPassword == null)
+            //if (usersVM.Password == null)
+            //{
+            //    ViewBag.errormsg = "Password is required";
+            //    return View(usersVM);
+            //}
+            //else if (usersVM.ConfirmPassword == null)
+            //{
+            //    ViewBag.error = "Confirm password is required";
+            //    return View(usersVM);
+            //}
+            if (loginVM.Password == loginVM.ConfirmPassword)
             {
-                ViewBag.error = "Confirm password is required";
-                return View(usersVM);
+                var result = await _accountService.ResetPasswordAsync(loginVM);
+                if (result > 0)
+                {
+                    return RedirectToAction("SuccessChangePassword");
+                }
             }
-            var result = await _accountService.ResetPasswordAsync(usersVM);
-            if (result > 0)
+            else
             {
-                return RedirectToAction("SuccessChangePassword");  
+                ViewBag.ConfirmPassword = "The password and confirmation password do not match.";
+                return View(resetPassword);
+
             }
+
+
             return View();
         }
 
         public IActionResult SuccessChangePassword()
         {
             return View();
+        }
+        public IActionResult ChangePassword(string email)
+        {
+            ResetPasswordVM resetPasswordVM = new ResetPasswordVM();   
+            resetPasswordVM.EmailID = email;
+            return View(resetPasswordVM);
         }
         public IActionResult CreateAccount()
         {
@@ -184,29 +208,6 @@ namespace MrGutter.Web.Controllers
                 ViewBag.error = "User already exists.";
                 return View(usersVM);
             }
-         
-            //    if (details.data != null)
-            //    {
-            //        NewCustomerOtpVerificationReqModel obj = new NewCustomerOtpVerificationReqModel();
-            //        obj.UserId = details.code;
-            //        obj.CaseId = Convert.ToInt32(details.data);
-            //        obj.MobileNo = requestmodel.MobileNo;
-            //        obj.Email = requestmodel.Email;
-
-            //        string json = JsonConvert.SerializeObject(obj);
-            //        string encReq = await encryptDecrypt.Encrypt(json);
-            //        encReq = System.Net.WebUtility.UrlEncode(encReq);
-            //        return RedirectToAction("OtpVerification", "Home", new { enc = encReq });
-            //    }
-            //    else
-            //    {
-            //        return View(requestmodel);
-            //    }
-            //}
-            //else
-            //{
-            //    return View(requestmodel);
-            //}
         }
         public IActionResult SendEmail()
         {
@@ -221,21 +222,7 @@ namespace MrGutter.Web.Controllers
             int userId = await _accountService.ValidateOTPAsync(loginModel);
             return RedirectToAction("EmailVerify");
         }
-
-
-        public IActionResult EditProfile()
-        {
-            return View();
-        }
-        public IActionResult MyProfile()
-        {
-            return View();
-        }
-        public IActionResult EditPassword()
-        {
-            return View();
-        }
-
+     
         public IActionResult EmailVerify()
         {
             return View();
@@ -280,6 +267,11 @@ namespace MrGutter.Web.Controllers
             }
             // Default expiration time (2 minutes from now) if no stored expiration time
             return (long)(DateTime.UtcNow.AddMinutes(2) - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
+        }
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

@@ -45,12 +45,12 @@ namespace MrGutter.Services
             }
             return result;
         }
-        public async Task<int> ResetPasswordAsync(UsersVM usersVM)
+        public async Task<int> ResetPasswordAsync(LoginVM loginVM)
         {
             int result = 0;
             LoginModel model = new LoginModel();
-            model.MobileOrEmail = usersVM.EmailID;
-            model.Password = usersVM.ConfirmPassword;
+            model.MobileOrEmail = loginVM.EmailOrMobile;
+            model.Password = loginVM.ConfirmPassword;
             var response = await _accountRepo.ResetPasswordAsync(model);
             if (response.Code > 0)
             {

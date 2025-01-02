@@ -129,7 +129,7 @@
                     </li>
                     <!-- Users -->
                     <li class="menu-item@(isUser ? " active open" : "")">
-                        <a asp-area="" asp-action="User" asp-controller="Account" class="menu-link">
+                        <a asp-area="" asp-action="User" asp-controller="UserManager" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-users"></i>
                             <div data-i18n="Users">Users</div>
                         </a>
@@ -158,7 +158,7 @@
                     </li>
                     <!-- Company -->
                     <li class="menu-item@(isCompany ? " active open" : "")">
-                        <a asp-area="" asp-action="Company" asp-controller="Account" class="menu-link">
+                        <a asp-area="" asp-action="Company" asp-controller="UserManager" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-building scaleX-n1-rtl"></i>
                             <div data-i18n="Company">Company</div>
                         </a>
@@ -201,7 +201,7 @@
                             <h5 class="modal-title" id="modalCenterTitle">Do you want to sign out?</h5><br />
                         </div>
                         <div class="modal-footer">
-                            <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-label-secondary">
+                            <a href="/Account/LogOut" class="btn btn-label-secondary">
                                 Yes
                             </a>
                             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
@@ -582,12 +582,12 @@
                                     </li>
                                     <div class="dropdown-divider my-1 mx-n2"></div>
                                     <li>
-                                        <a class="dropdown-item" href="/Account/MyProfile">
+                                        <a class="dropdown-item" href="/UserManager/MyProfile">
                                             <i class="ti ti-user me-3 ti-md"></i><span class="align-middle">My Profile</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="/Account/EditP">
+                                        <a class="dropdown-item" href="/UserManager/EditPassword">
                                             <i class="pe-1 ti ti-lock-cog me-3"></i><span class="align-middle">Change Password</span>
                                         </a>
                                     </li>

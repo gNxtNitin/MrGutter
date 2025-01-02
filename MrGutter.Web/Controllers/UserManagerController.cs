@@ -5,17 +5,25 @@ namespace MrGutter.Web.Controllers
 {
     [Authorize]
     [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
-    public class EstimatesController : Controller
+    public class UserManagerController : Controller
     {
-        public IActionResult EstimateList()
+        public IActionResult User()
         {
             return View();
         }
-        public IActionResult EstimationDetails()
+        public IActionResult Company()
         {
             return View();
         }
-        public IActionResult EstimationSettings()
+        public IActionResult EditProfile()
+        {
+            return View();
+        }
+        public IActionResult MyProfile()
+        {
+            return View();
+        }
+        public IActionResult EditPassword()
         {
             return View();
         }

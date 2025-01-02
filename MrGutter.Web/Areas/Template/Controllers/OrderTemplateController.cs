@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MrGutter.Web.Areas.Layout.Controllers
 {
     [Area("Template")]
+    [Authorize]
+    [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
     public class OrderTemplateController : Controller
     {
         public IActionResult OrderLayoutList()

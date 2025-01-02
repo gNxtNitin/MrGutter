@@ -1,4 +1,5 @@
-﻿@{
+﻿@model MrGutter.Models.ViewModels.LoginVM
+@{
     ViewData["Title"] = "Mr. Quote";
 }
 @{
@@ -294,15 +295,16 @@ a:visited {
                                     <img src="~/image/logoblack.png" style="height: 45px;" />
                                 </div>
 
-                                <form id="formAuthentication" class="mb-4 mt-5" action="~/" method="POST">
+                                <form id="formAuthentication" method="POST" asp-controller="Home" asp-action="Login">
+
                                     <div class="mb-6">
                                         <label for="email" class="form-label d-flex justify-content-start">Email or Username</label>
-                                        <input type="text" class="form-control" id="email" name="email-username" placeholder="Enter your email or username" autofocus>
+                                        <input type="text" class="form-control" asp-for="EmailOrMobile"  placeholder="Enter your email or username">
                                     </div>
                                     <div class="mb-6 form-password-toggle">
-                                        <label class="form-label d-flex justify-content-start" for="password">Password</label>
+                                        <label class="form-label d-flex justify-content-start" asp-for="Password">Password</label>
                                         <div class="input-group input-group-merge">
-                                            <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
+                                            <input type="password" class="form-control" name="password" asp-for="Password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
                                             <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
                                         </div>
                                     </div>
@@ -320,7 +322,7 @@ a:visited {
                                         </div>
                                     </div>
                                     <div class="mb-6">
-                                        <button class="btn btn-primary d-grid w-100" asp-action="EstimateList" asp-controller="Estimates" type="submit">Login</button>
+                                        <button class="btn btn-primary d-grid w-100" type="submit">Login</button>
                                     </div>
                                 </form>
 
@@ -340,17 +342,6 @@ a:visited {
         </video>
 
     </header>
-
-
-
-
-
-
-
-
-
-
-
 </header>
 <script>
     // JavaScript to show the login form when the button is clicked

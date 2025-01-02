@@ -3,6 +3,7 @@ using MrGutter.Repository;
 using MrGutter.Repository.Helper;
 using MrGutter.Repository.IRepository;
 using MrGutter.Services;
+
 using MrGutter.Services.IService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,37 +15,35 @@ builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IUserManagerService, UserManagerService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddSession(); // Add session service
 
 
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-// Register IHttpContextAccessor
-builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        options.LoginPath = new PathString("/Home/Index");
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(10); // Set to 60 minutes for a more typical expiration time
-        options.AccessDeniedPath = "/Home/Forbidden";
+        options.LoginPath = new PathString("/Account/Index");
+        options.LogoutPath = new PathString("/Account/LogOut");
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(10); 
+        options.AccessDeniedPath = "/Home/Forbidden/";
         options.SlidingExpiration = true;
     });
-
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 // Register Custom HttpClient with CustomHttpClientHandler
 builder.Services.AddTransient<CustomHttpClientHandler>();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddHttpClient<ApiClient>()
         .AddHttpMessageHandler<CustomHttpClientHandler>();
 
 // Add other services
-
+builder.Services.AddSession(); // Add session service
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseExceptionHandler("/Account/Error");
     app.UseHsts();
 }
 
@@ -57,14 +56,18 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllerRoute(
     name: "area",
-    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+    pattern: "{area:exists}/{controller=Account}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=Index}/{id?}");
 //app.MapControllerRoute(
 //    name: "default",
 //    pattern: "{controller=Home}/{action=Index}/{id?}");
-
+var cookiePolicyOptions = new CookiePolicyOptions
+{
+    MinimumSameSitePolicy = SameSiteMode.Strict,
+};
+app.UseCookiePolicy(cookiePolicyOptions);
 
 app.Run();
