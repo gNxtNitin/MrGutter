@@ -1,4 +1,5 @@
-﻿using MrGutter.Models;
+﻿using Microsoft.AspNetCore.Http;
+using MrGutter.Models;
 using MrGutter.Repository.IRepository;
 using Newtonsoft.Json;
 using System;
@@ -13,8 +14,16 @@ namespace MrGutter.Repository
 {
     public class AccountRepository : IAccountRepository
     {
-        APIWrapper _aPIWrapper=new APIWrapper();
-        EncryptDecrypt _encryptDecrypt=new EncryptDecrypt();    
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly APIWrapper _aPIWrapper;
+        public AccountRepository(IHttpContextAccessor httpContextAccessor, APIWrapper aPIWrapper) 
+        {
+            _aPIWrapper = aPIWrapper;
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+        EncryptDecrypt _encryptDecrypt = new EncryptDecrypt();
+
         public async Task<APIResponseModel> AuthenticateUser(LoginModel loginReqModel)
         {
             APIResponseModel response = new APIResponseModel();
@@ -25,7 +34,7 @@ namespace MrGutter.Repository
                 string reqStr = HttpUtility.UrlEncode(json);
 
                 //Call the API
-                response = await _aPIWrapper.PostAsync("Account/AuthenticateUser", json, "");
+                response = await _aPIWrapper.PostAsync("Account/AuthenticateUser", json);
             }
             catch (Exception ex)
             {
@@ -48,7 +57,7 @@ namespace MrGutter.Repository
                // APIRequestModel.V = await _encryptDecrypt.Encrypt(json);
                // string json2 = JsonConvert.SerializeObject(APIRequestModel);
 
-                APIResponseModel = await _aPIWrapper.PostAsync("Account/ResetPassword", json, "");
+                APIResponseModel = await _aPIWrapper.PostAsync("Account/ResetPassword", json);
             }
             catch (Exception ex)
             {
@@ -67,7 +76,7 @@ namespace MrGutter.Repository
                 string json = JsonConvert.SerializeObject(loginReqModel);
                 APIRequestModel.V = await _encryptDecrypt.Encrypt(json);
                 string json2 = JsonConvert.SerializeObject(APIRequestModel);
-                response = await _aPIWrapper.PostAsync("Account/SendForgotPasswordEmail", json2, "");
+                response = await _aPIWrapper.PostAsync("Account/SendForgotPasswordEmail", json2);
             }
             catch (Exception ex)
             {
@@ -82,7 +91,7 @@ namespace MrGutter.Repository
             try
             {
                 string json = JsonConvert.SerializeObject(loginReqModel);
-                APIResponseModel = await _aPIWrapper.PostAsync("api/Account/SetOTP", json,"");
+                APIResponseModel = await _aPIWrapper.PostAsync("api/Account/SetOTP", json);
             }
             catch (Exception ex)
             {
@@ -103,7 +112,7 @@ namespace MrGutter.Repository
                 APIRequestModel.V = await _encryptDecrypt.Encrypt(json);
                 string json2 = JsonConvert.SerializeObject(APIRequestModel);
               
-                APIResponseModel = await _aPIWrapper.PostAsync("Account/ValidateOTP", json2, "");
+                APIResponseModel = await _aPIWrapper.PostAsync("Account/ValidateOTP", json2);
             }
             catch (Exception ex)
             {
@@ -123,7 +132,7 @@ namespace MrGutter.Repository
                 APIRequestModel.V =await _encryptDecrypt.Encrypt(json); 
                 string json2 = JsonConvert.SerializeObject(APIRequestModel);
 
-                APIResponseModel = await _aPIWrapper.PostAsync("UserManager/CreateUser", json2, "");
+                APIResponseModel = await _aPIWrapper.PostAsync("UserManager/CreateUser", json2);
             }
             catch (Exception ex)
             {
@@ -143,7 +152,7 @@ namespace MrGutter.Repository
                 APIRequestModel.V = await _encryptDecrypt.Encrypt(json);
                 string json2 = JsonConvert.SerializeObject(APIRequestModel);
 
-                APIResponseModel = await _aPIWrapper.PostAsync("Account/SetOTP", json2, "");
+                APIResponseModel = await _aPIWrapper.PostAsync("Account/SetOTP", json2);
             }
             catch (Exception ex)
             {
@@ -161,7 +170,7 @@ namespace MrGutter.Repository
             {
                 string V = await _encryptDecrypt.Encrypt(UserId.ToString());
                 string reqStr = HttpUtility.UrlEncode(V);
-                APIResponseModel = await _aPIWrapper.GetAsync("UserManager/GetUsers?encReq=",reqStr,"");
+                APIResponseModel = await _aPIWrapper.GetAsync("UserManager/GetUsers?encReq=",reqStr);
             }
             catch (Exception ex)
             {
