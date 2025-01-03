@@ -1,4 +1,5 @@
-﻿using MrGutter.Models;
+﻿using Microsoft.AspNetCore.Http;
+using MrGutter.Models;
 using MrGutter.Models.ViewModels;
 using MrGutter.Repository.IRepository;
 using Newtonsoft.Json;
@@ -13,7 +14,13 @@ namespace MrGutter.Repository
 {
     public class UserRepository : IUserRepository
     {
-        APIWrapper _aPIWrapper = new APIWrapper();
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly APIWrapper _aPIWrapper;
+        public UserRepository(IHttpContextAccessor httpContextAccessor, APIWrapper aPIWrapper)
+        {
+            _aPIWrapper = aPIWrapper;
+            _httpContextAccessor = httpContextAccessor;
+        }
         EncryptDecrypt _encryptDecrypt = new EncryptDecrypt();
         public async Task<APIResponseModel> GetGroupAsync(string? groupId)
         {
@@ -25,7 +32,7 @@ namespace MrGutter.Repository
                 //string reqStr = HttpUtility.UrlEncode(json);
 
                 //Call the API
-                response = await _aPIWrapper.GetAsync("UserManager/GetGroups", "", "");
+                response = await _aPIWrapper.GetAsync("UserManager/GetGroups", "");
             }
             catch (Exception ex)
             {
@@ -42,7 +49,7 @@ namespace MrGutter.Repository
             {
                 string V = await _encryptDecrypt.Encrypt(roleId.ToString());
                 string reqStr = HttpUtility.UrlEncode(V);
-                response = await _aPIWrapper.GetAsync("UserManager/GetRoles?encReq=", reqStr, "");
+                response = await _aPIWrapper.GetAsync("UserManager/GetRoles?encReq=", reqStr);
             }
             catch (Exception ex)
             {
@@ -58,9 +65,8 @@ namespace MrGutter.Repository
             APIResponseModel response = new APIResponseModel();
             try
             {
-                string V = await _encryptDecrypt.Encrypt(userId.ToString());
-                string reqStr = HttpUtility.UrlEncode(V);
-                response = await _aPIWrapper.GetAsync("UserManager/GetRoleByUserId?encReq=", reqStr, "");
+                
+                response = await _aPIWrapper.GetAsync("UserManager/GetRoleByUserId?userId="+ userId.ToString(), "");
             }
             catch (Exception ex)
             {

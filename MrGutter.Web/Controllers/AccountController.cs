@@ -51,6 +51,8 @@ namespace MrGutter.Web.Controllers
             {
                 var result = await _accountService.AuthenticateUser(loginReq);
 
+                var token = result.Data;
+
                 if (result.Code <= 0)
                 {
                     ViewBag.LoginError = "Invalid";
@@ -58,6 +60,7 @@ namespace MrGutter.Web.Controllers
                     return View("Index");
                 }
                 HttpContext.Session.SetInt32("UserId", Convert.ToInt32(result.Code));
+
 
                 var roleManager = await _userService.GetRoleByUserIdAsync(Convert.ToInt32(result.Code));
                 var roleName = roleManager.Roles.FirstOrDefault()?.RoleName;
@@ -71,7 +74,8 @@ namespace MrGutter.Web.Controllers
                 var claims = new List<Claim>
         {
             new Claim(ClaimTypes.Role, roleName),
-            new Claim(ClaimTypes.NameIdentifier, result.Code.ToString())
+            new Claim(ClaimTypes.NameIdentifier, result.Code.ToString()),
+              new Claim("Token", token)
         };
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);

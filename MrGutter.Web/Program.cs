@@ -17,6 +17,7 @@ builder.Services.AddScoped<IUserManagerService, UserManagerService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 
+builder.Services.AddScoped<APIWrapper>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
