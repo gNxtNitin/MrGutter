@@ -18,9 +18,9 @@ namespace MrGutter.Web.Controllers
 
 
         [HttpGet]
-        public IActionResult User()
+        public async Task<IActionResult> User()
         {
-            var res = _userManagerService.GetUserAsync("1");
+            var res = await _userManagerService.GetUserAsync("1");
             
             return View(res);
         }
