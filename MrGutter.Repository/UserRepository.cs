@@ -65,8 +65,10 @@ namespace MrGutter.Repository
             APIResponseModel response = new APIResponseModel();
             try
             {
-                
-                response = await _aPIWrapper.GetAsync("UserManager/GetRoleByUserId?userId="+ userId.ToString(), "");
+                //string json = JsonConvert.SerializeObject(userId.ToString());
+                string V = await _encryptDecrypt.Encrypt(userId.ToString());
+                string reqStr = HttpUtility.UrlEncode(V);
+                response = await _aPIWrapper.GetAsync("UserManager/GetRoleByUserId?encReq=" + reqStr, "");
             }
             catch (Exception ex)
             {
@@ -87,7 +89,7 @@ namespace MrGutter.Repository
                 //string reqStr = HttpUtility.UrlEncode(V);
 
                 //Call the API
-                apiResponse = await _aPIWrapper.GetAsync("api/UserManager/GetUsers?encReq="+ json,  "");
+                apiResponse = await _aPIWrapper.GetAsync("api/UserManager/GetUsers?encReq=" + json,  "");
             }
             catch (Exception ex)
             {
