@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MrGutter.Models;
+using MrGutter.Services;
+using MrGutter.Services.IService;
 
 namespace MrGutter.Web.Controllers
 {
@@ -8,14 +10,19 @@ namespace MrGutter.Web.Controllers
     [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
     public class UserManagerController : Controller
     {
+        private readonly IUserManagerService _userManagerService;
+        public UserManagerController(IUserManagerService userManagerService)
+        {
+            _userManagerService = userManagerService;
+        }
+
+
         [HttpGet]
         public IActionResult User()
         {
-            User users = new User();
+            var res = _userManagerService.GetUserAsync("1");
             
-
-
-            return View();
+            return View(res);
         }
         public IActionResult Company()
         {

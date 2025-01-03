@@ -10,5 +10,6 @@ namespace MrGutter.Services.IService
     public interface IUserManagerService
     {
         public Task<RoleVM> GetRoleByUserIdAsync(int userId);
+        public Task<UsersVM> GetUserAsync(string? UserId);
     }
 }

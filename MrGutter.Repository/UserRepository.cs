@@ -77,7 +77,7 @@ namespace MrGutter.Repository
             return response;
         }
 
-        public async Task<APIResponseModel> GetUserAsync(int userId)
+        public async Task<APIResponseModel> GetUserAsync(string? userId)
         {
             APIResponseModel apiResponse = new APIResponseModel();
             try
@@ -87,7 +87,7 @@ namespace MrGutter.Repository
                 //string reqStr = HttpUtility.UrlEncode(V);
 
                 //Call the API
-                apiResponse = await _aPIWrapper.GetAsync("api/UserManager/GetUsers?encReq=", json, "");
+                apiResponse = await _aPIWrapper.GetAsync("UserManager/GetUsers?encReq=", json);
             }
             catch (Exception ex)
             {

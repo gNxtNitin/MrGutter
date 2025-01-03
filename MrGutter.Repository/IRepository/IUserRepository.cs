@@ -12,6 +12,6 @@ namespace MrGutter.Repository.IRepository
         public Task<APIResponseModel> GetRoleAsync(int roleId);
         public Task<APIResponseModel> GetRoleByUserIdAsync(int userId);
         public Task<APIResponseModel> GetGroupAsync(string? groupId);
-        public Task<APIResponseModel> GetUserAsync(int userId);
+        public Task<APIResponseModel> GetUserAsync(string? userId);
     }
 }
