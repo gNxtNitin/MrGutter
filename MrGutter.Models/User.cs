@@ -16,6 +16,7 @@ namespace MrGutter.Models
         public string UserType { get; set; }
         public string MobileNo { get; set; }
         public string EmailID { get; set; }
+        public bool isActive { get; set; }
         public string DOB { get; set; }
         public string CreatedBy { get; set; } = "0";
         public string LastLoginDate { get; set; }

@@ -71,9 +71,25 @@ namespace MrGutter.Repository
             return response;
         }
 
-        public Task<APIResponseModel> GetUserAsync(int userId)
+        public async Task<APIResponseModel> GetUserAsync(int userId)
         {
-            throw new NotImplementedException();
+            APIResponseModel apiResponse = new APIResponseModel();
+            try
+            {
+                string json = JsonConvert.SerializeObject(userId);
+                //string V = await _encryptDecrypt.Encrypt(json);
+                //string reqStr = HttpUtility.UrlEncode(V);
+
+                //Call the API
+                apiResponse = await _aPIWrapper.GetAsync("api/UserManager/GetUsers?encReq=", json, "");
+            }
+            catch (Exception ex)
+            {
+                apiResponse = new APIResponseModel();
+                apiResponse.Code = -1; 
+                apiResponse.Msg = ex.Message;
+            }
+            return apiResponse;
         }
     }
 }
