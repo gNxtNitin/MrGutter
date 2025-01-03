@@ -22,7 +22,7 @@ namespace MrGutter.Web.Controllers
         {
             var res = await _userManagerService.GetUserAsync("1");
             
-            return View(res);
+            return Json(res);
         }
         public IActionResult Company()
         {

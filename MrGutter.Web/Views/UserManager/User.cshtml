@@ -27,25 +27,7 @@
                             <th class="text-white">Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        @foreach (var user in Model.Users)
-                        {
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td>@user.UserName</td>
-                                <td>@user.EmailID</td>
-                                <td>@user.MobileNo</td>
-                                <td>@user.UserType</td>
-                                <td>@user.UserStatus</td>
-                                <td>
-                                    <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">Edit</button>
-                                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Delete</button>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-
+                 
                 </table>
             </div>
             <!-- Offcanvas to add new user -->

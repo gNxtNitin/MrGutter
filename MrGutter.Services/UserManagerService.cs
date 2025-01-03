@@ -28,7 +28,7 @@ namespace MrGutter.Services
             }
             return roles;
         }
-        public async Task<UsersVM> GetUserAsync(string UserId)
+        public async Task<UsersVM> GetUserAsync(string? UserId)
         {
             UsersVM usersVM = new UsersVM();
             var response = await _userRepository.GetUserAsync(UserId);

@@ -39,17 +39,18 @@ $(function () {
     // Users datatable
     if (dt_user_table.length) {
         var dt_user = dt_user_table.DataTable({
-            ajax: assetsPath + 'json/user-list.json', // JSON file to add data
+            ajax: assetsPath + 'UserManager/User', // JSON file to add data
+           
             columns: [
                 // columns according to JSON
-                { data: 'id' },
-                { data: 'id' },
-                { data: 'full_name' },
-                { data: 'email' },
-                { data: 'phone' },
-                { data: 'role' },
-                { data: 'status' },
-                { data: 'action' }
+                { Users: 'id' },
+                { Users: 'id' },
+                { Users: 'userName' },
+                { Users: 'emailID' },
+                { Users: 'mobileNo' },
+                { Users: 'userType' },
+                { Users: 'isActive' },
+                { Users: 'action' }
             ],
             columnDefs: [
                 {
@@ -80,7 +81,7 @@ $(function () {
                     targets: 2,
                     responsivePriority: 4,
                     render: function (data, type, full, meta) {
-                        var $name = full['full_name'],
+                        var $name = full['userName'],
                             $email = full['email'],
                             $image = full['avatar'];
                         if ($image) {
@@ -123,7 +124,7 @@ $(function () {
                     // Email
                     targets: 3,
                     render: function (data, type, full, meta) {
-                        var $email = full['email'];
+                        var $email = full['emailID'];
                         return (
                             "<span class='text-truncate d-flex align-items-center text-heading'>" +
                             $email +
@@ -135,7 +136,7 @@ $(function () {
                     // User Role
                     targets: 5,
                     render: function (data, type, full, meta) {
-                        var $role = full['role'];
+                        var $role = full['userType'];
                         var roleBadgeObj = {
                             SuperAdmin: '<i class="ti ti-crown ti-md text-primary me-2"></i>',
                             Estimator: '<i class="ti ti-edit ti-md text-warning me-2"></i>',
@@ -162,7 +163,7 @@ $(function () {
                     // User Status
                     targets: 6,
                     render: function (data, type, full, meta) {
-                        var $status = full['status'];
+                        var $status = full['isActive'];
 
                         return (
                             '<span class="badge ' +
