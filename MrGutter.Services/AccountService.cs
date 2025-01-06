@@ -34,8 +34,8 @@ namespace MrGutter.Services
          User model = new User();
             model.FirstName = usersVM.FirstName;    
             model.LastName = usersVM.LastName;
-            model.EmailID = usersVM.EmailID;
-            model.MobileNo = usersVM.MobileNo;
+            model.Email = usersVM.Email;
+            model.Mobile = usersVM.MobileNo;
             model.DOB = usersVM.DOB;
             model.Password = usersVM.ConfirmPassword;
            var  response = await _accountRepo.CreateAaccountAsync(model);
@@ -62,7 +62,7 @@ namespace MrGutter.Services
         {
             int result = 0;
             User model = new User();
-            model.EmailID = usersVM.EmailID;
+            model.Email = usersVM.Email;
             var response = await _accountRepo.SetOtpAsync(model);
             if (response.Code > 0)
             {

@@ -19,7 +19,7 @@ namespace MrGutter.Models.ViewModels
 
         [Required(ErrorMessage = "Email is required")]
         [RegularExpression(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", ErrorMessage = "Please enter a valid email address")]
-        public string? EmailID { get; set; }
+        public string? Email { get; set; }
 
         [Required(ErrorMessage = "Phone Number is required")]
         [Phone(ErrorMessage = "Invalid Phone Number")]

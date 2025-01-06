@@ -48,9 +48,12 @@ namespace MrGutter.Web.Controllers
             // Searching
             if (!string.IsNullOrEmpty(searchValue))
             {
-                users = users.Where(m => m.FirstName.ToString().Contains(searchValue)
-                                                    || m.LastName.Contains(searchValue)
-                                                    || m.EmailID.Contains(searchValue));
+                users = users.Where(m => m.UserName.ToString().Contains(searchValue)
+                                                    || m.Email .Contains(searchValue)
+                                                      || m.Mobile.Contains(searchValue)
+                                                     || m.UserType.Contains(searchValue)
+                                                    || m.UserStatus.Contains(searchValue));
+
 
             }
             // Count filtered records
