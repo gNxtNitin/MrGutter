@@ -160,3 +160,6 @@
 /MrGutter.Web/Properties/PublishProfiles/FolderProfile.pubxml
 /MrGutter.Web/Properties/PublishProfiles/FolderProfile.pubxml.user
 /MrGutter.Web/obj/Debug/net6.0
+/MrGutter.Models/bin/Debug/net6.0/MrGutter.Models.deps.json
+*.cache
+*.dll
