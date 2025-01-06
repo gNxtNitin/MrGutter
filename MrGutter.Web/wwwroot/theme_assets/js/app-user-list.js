@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $("#userDatatable").DataTable({
-        "dom": 'Blfrtip',
+        "dom": 'Blfrtiuip',
         //"buttons": [
         //    'copy', 'csv', 'excel', 'pdf', 'print'
         //],
