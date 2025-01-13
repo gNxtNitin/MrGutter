@@ -42,7 +42,8 @@ namespace MrGutter.Repository
             }
             return response;
         }
-        public async Task<APIResponseModel> GetRoleAsync(int roleId)
+
+        public async Task<APIResponseModel> GetRoleAsync(string? roleId)
         {
             APIResponseModel response = new APIResponseModel();
             try
@@ -98,6 +99,102 @@ namespace MrGutter.Repository
                 apiResponse.Msg = ex.Message;
             }
             return apiResponse;
+        }
+
+        public async Task<APIResponseModel> CreateOrUpdateUser(User userInfo)
+        {
+            APIResponseModel response = new APIResponseModel();
+            try
+            {
+                string json = JsonConvert.SerializeObject(userInfo);
+                response = await _aPIWrapper.PostAsync("UserManager/CreateOrSetUser", json);
+            }
+            catch (Exception ex)
+            {
+                response = new APIResponseModel();
+                response.Code = -1;
+                response.Msg = ex.Message;
+            }
+            return response;
+
+
+        }
+        public async Task<APIResponseModel> DeleteUser(User userInfo)
+        {
+            APIResponseModel response = new APIResponseModel();
+            try
+            {
+                string json = JsonConvert.SerializeObject(userInfo);
+                response = await _aPIWrapper.PostAsync("UserManager/CreateOrSetUser", json);
+            }
+            catch (Exception ex)
+            {
+                response = new APIResponseModel();
+                response.Code = -1;
+                response.Msg = ex.Message;
+            }
+            return response;
+
+
+        }
+
+        public async Task <APIResponseModel> GetCompanyAsync(string? cId)
+        {
+            APIResponseModel apiResponse = new APIResponseModel();
+            try
+            {
+                string json = JsonConvert.SerializeObject(cId);
+                //string V = await _encryptDecrypt.Encrypt(json);
+                //string reqStr = HttpUtility.UrlEncode(V);
+
+                //Call the API
+                apiResponse = await _aPIWrapper.GetAsync("UserManager/GetCompany?cId=" + cId, "");
+            }
+            catch (Exception ex)
+            {
+                apiResponse = new APIResponseModel();
+                apiResponse.Code = -1;
+                apiResponse.Msg = ex.Message;
+            }
+            return apiResponse;
+        }
+
+        public async Task<APIResponseModel> CreateOrUpdateCompany(Company cmpInfo)
+        {
+            APIResponseModel response = new APIResponseModel();
+            try
+            {
+                string json = JsonConvert.SerializeObject(cmpInfo);
+                response = await _aPIWrapper.PostAsync("UserManager/CreateOrSetCompany", json);
+            }
+            catch (Exception ex)
+            {
+                response = new APIResponseModel();
+                response.Code = -1;
+                response.Msg = ex.Message;
+            }
+            return response;
+
+
+        }
+
+        public async Task<APIResponseModel> DeleteCompanyAsync(Company cmpInfo)
+        {
+            APIResponseModel response = new APIResponseModel();
+            try
+            {
+                string json = JsonConvert.SerializeObject(cmpInfo);
+                response = await _aPIWrapper.PostAsync("UserManager/CreateOrSetCompany", json);
+            }
+            catch (Exception ex)
+            {
+                response = new APIResponseModel();
+                response.Code = -1;
+                response.Msg = ex.Message;
+            }
+            return response;
+
+
         }
     }
 }

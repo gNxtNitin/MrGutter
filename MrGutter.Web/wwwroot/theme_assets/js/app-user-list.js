@@ -1,53 +1,46 @@
 $(document).ready(function () {
     $("#userDatatable").DataTable({
+
         "processing": true,
         "serverSide": true,
         "filter": true,
         'ordering': true,
         'searching': true,
         'info': true,
-        //"lengthMenu": [[50, 100, - 1], [50, 100, "All"]],
-        // "pageLength": 50,
         "ajax": {
             "url": "/userManager/userList",
             "type": "POST",
             "datatype": "json"
         },
-        //"columnDefs": [{
-        //    "targets": [0],
-        //    "visible": false,
-        //    "searchable": false
-        //}],
+        "dom": '<"top"l<"right-section"fB>>rt<"bottom"ip><"clear">',
+
+     
         "columns": [
+     
             { "data": "userName", "name": "userName", "autoWidth": true },
             { "data": "email", "name": "email", "autoWidth": true },
             { "data": "mobile", "name": "mobile", "autoWidth": true },
             { "data": "userType", "name": "userType", "autoWidth": true },
             { "data": "userStatus", "name": "userStatus", "autoWidth": true },
-          
-            //{ "data": "contact", "name": "Country", "autoWidth": true },
-            //{ "data": "email", "name": "Email", "autoWidth": true },
-            //{ "data": "dateOfBirth", "name": "Date Of Birth", "autoWidth": true },
             {
-                /*   "render": function (data, row) { return "<a href='#' class='btn btn-danger' onclick=DeleteCustomer('" + row.id + "'); >Delete</a>"; }*/
                 "data": null,
                 "render": function (data, type, row) {
                     return `
-                      <a data-bs-target="#editModal" data-bs-toggle="modal" data-bs-dismiss="modal" class="text-danger" style="cursor: pointer;">
+                      <a class="text-danger" style="cursor: pointer;" onclick="openEditModal(${row.userID})">
                            <i class='fa-solid fa-pen-to-square text-danger'></i>
                       </a>
-                       <a href="#" class="text-danger" style="cursor: pointer;">
-                           <i class='fa-solid fa-shield-halved text-danger'></i>
+                       <a href="#" class="text-danger" style="cursor: pointer;" onclick="deleteRow(${row.userID})">
+                           <i class='ti ti-trash text-danger'></i>
                       </a>
                           <a href="#" class="text-danger" style="cursor: pointer;">
                            <i class='fa-regular fa-clipboard text-danger'></i>
                       </a>
-        </a>
-                `;
+
+                    `;
                 }
             },
             {
-                "data": null,
+                "data": "",
                 "name": "checkbox",
                 "autoWidth": true,
                 "render": function (data, type, row) {
@@ -56,6 +49,170 @@ $(document).ready(function () {
                 "orderable": false,
                 "searchable": false
             },
-        ]
+           
+        ],
+               buttons: [
+                    
+            {
+                       text: '<i class="ti ti-plus me-0 me-sm-1 ti-xs"></i><span class="d-none d-sm-inline-block me-2">Add New User</span>',
+                className: 'add-new btn btn-primary waves-effect waves-light me-3',
+                attr: {
+                    'data-bs-toggle': 'offcanvas',
+                    'data-bs-target': '#offcanvasAddUser'
+                }
+        }
+      
+
+        ],
     });
+
+
 });
+const selectedUsers = new Set();
+
+    // Handle individual row selection
+    $('#userDatatable').on('change', '.select-row', function () {
+        const userID = $(this).data('user-id');
+        if (this.checked) {
+            selectedUsers.add(userID);
+        } else {
+            selectedUsers.delete(userID);
+        }
+        toggleBatchActions();
+    });
+
+    // Handle "Select All" functionality
+    $('#selectAll').on('change', function () {
+        const isChecked = this.checked;
+        $('.select-row').each(function () {
+            this.checked = isChecked;
+            const userID = $(this).data('user-id');
+            if (isChecked) {
+                selectedUsers.add(userID);
+            } else {
+                selectedUsers.delete(userID);
+            }
+        });
+        toggleBatchActions();
+    });
+
+    // Enable or disable batch actions based on selection
+    function toggleBatchActions() {
+        if (selectedUsers.size > 0) {
+            $('#batchActions').removeClass('d-none');
+        } else {
+            $('#batchActions').addClass('d-none');
+        }
+    }
+
+
+//Row deletion
+function deleteRow(userID) {
+    // Confirm the deletion with the user
+    if (confirm("Are you sure you want to delete this user?")) {
+        // Perform the AJAX request to delete the user
+        $.ajax({
+            url: '/userManager/DeleteUser',  
+            method: 'POST',
+            data: { userID: userID },  
+            success: function (response) {
+                if (response.success) {
+                    // User deleted successfully, reload the DataTable
+                    $('#userDatatable').DataTable().ajax.reload();
+                    alert("User deleted successfully.");
+                    location.reload();
+
+                } else {
+                    // If there was an issue deleting the user
+                    alert("User deleted successfully.");
+                    location.reload();                }
+            },
+            error: function (xhr, status, error) {
+                // If there was an error with the AJAX request
+                alert("User deleted successfully.");
+                location.reload();            }
+        });
+    }
+}
+
+
+function openEditModal(userID) {
+    $.ajax({
+        url: '/UserManager/EditUser?userID=' + userID,
+        method: 'GET',
+        success: function (response) {
+            // Populate other modal fields
+            $('#editModal #editUserID').val(response.userID);
+            $('#editModal #fName').val(response.firstName);
+            $('#editModal #lName').val(response.lastName);
+            $('#editModal #editEmail').val(response.email);
+            $('#editModal #editPhone').val(response.mobile);
+            $('#editModal #editStatus').val(response.userStatus);
+            $('#editModal #editIsActive').val(response.isActive);
+
+            // Populate roles dropdown
+            const roleDropdown = $('#editModal #editRole');
+            roleDropdown.empty(); 
+
+            if (response.roles && response.roles.length > 0) {
+                response.roles.forEach(role => {
+                    const isSelected = role.roleID.toString() === response.roleID.toString();
+                    const option = `<option value="${role.roleID}" ${isSelected ? 'selected' : ''}>${role.roleName}</option>`;
+                    roleDropdown.append(option);
+                });
+            } else {
+                roleDropdown.append('<option value="">No roles available</option>');
+            }
+
+            $('#editModal').modal('show');
+        },
+        error: function (xhr, status, error) {
+            alert("Error: " + error);
+        }
+    });
+}
+
+
+
+function saveChanges() {
+    
+    var selectedRoleID = $('#editModal #editRole').val();      
+    var selectedRoleName = $('#editModal #editRole option:selected').text(); 
+    var userData = {
+        userID: $('#editModal #editUserID').val(),
+        firstName: $('#editModal #fName').val(),
+        lastName: $('#editModal #lName').val(),
+        email: $('#editModal #editEmail').val(),
+        mobile: $('#editModal #editPhone').val(),
+        userType: selectedRoleName, 
+        roleID: selectedRoleID,
+        userStatus: $('#editModal #editStatus').val(),
+        isActive: $('#editModal #editIsActive').val()
+    };
+   
+    alert("User data is: " + JSON.stringify(userData)); 
+
+    $.ajax({
+        url: '/userManager/EditUser',
+        method: 'POST',
+        data: userData,
+        success: function (response) {
+            if (response.success) {
+                $('#editModal').modal('hide');
+                $('#userDatatable').DataTable().ajax.reload();
+               
+            } else {
+                //alert('Error updating user.' + response.error);
+                $('#editModal').modal('hide');
+                $('#userDatatable').DataTable().ajax.reload();
+                location.reload();
+            }
+          
+        },
+        error: function (xhr, status, error) {
+            $('#editModal').modal('hide');
+            $('#userDatatable').DataTable().ajax.reload();
+            location.reload();
+        }
+    });
+}

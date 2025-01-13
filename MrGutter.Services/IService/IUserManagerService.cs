@@ -1,4 +1,5 @@
-﻿using MrGutter.Models.ViewModels;
+﻿using MrGutter.Models;
+using MrGutter.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,15 @@ namespace MrGutter.Services.IService
     {
         public Task<RoleVM> GetRoleByUserIdAsync(int userId);
         public Task<UsersVM> GetUserAsync(string? UserId);
+        public Task<RoleVM> GetRoleAsync(string? roleId);
+        public Task<int> CreateOrUpdateUser(UsersVM user);
+        public Task<int> DeleteUser(UsersVM user);
+        public Task<CompanyVM> GetCompanyAsync(string? cId);
+        public Task<int> CreateOrUpdateCompany(CompanyVM cmpInfo);
+        public Task<int> DeleteCompanyAsync(CompanyVM cmpInfo);
+
+
+
+        //public Task<int> UpdateUser(UsersVM user);
     }
 }

@@ -35,7 +35,7 @@ namespace MrGutter.Services
             model.FirstName = usersVM.FirstName;    
             model.LastName = usersVM.LastName;
             model.Email = usersVM.Email;
-            model.Mobile = usersVM.MobileNo;
+            model.Mobile = usersVM.Mobile;
             model.DOB = usersVM.DOB;
             model.Password = usersVM.ConfirmPassword;
            var  response = await _accountRepo.CreateAaccountAsync(model);

@@ -4,6 +4,41 @@
     ViewData["Title"] = "User List";
 }
 
+
+<style>
+    /* Flexbox layout for the top section */
+    .top {
+        display: flex;
+        justify-content: space-between; /* Space between left (dropdown) and right (search + button) */
+        width: 100%;
+        align-items: center;
+    }
+
+        /* Align the Show dropdown (length) at the left */
+        .top .dataTables_length {
+            order: 0; /* Ensure it comes first (left side) */
+        }
+
+        /* Right section for search input and buttons */
+        .top .right-section {
+            display: flex;
+            align-items: center; /* Vertically align */
+            justify-content: flex-end; /* Align to the right */
+        }
+
+        /* Space between the search field and Add button */
+        .top .dataTables_filter {
+            margin-right: 10px; /* Space between search and button */
+        }
+
+        /* Style the button */
+        .top .dt-buttons {
+            margin-left: 10px; /* Space between buttons */
+        }
+
+
+</style>
+
 <link href="~/lib/datatables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
 @* <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" /> *@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.4.0/css/buttons.dataTables.min.css" />
@@ -32,9 +67,115 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Table rows will be inserted here by AJAX -->
+                      
                     </tbody>
                 </table>
+            </div>
+            <!-- Offcanvas to add new user -->
+            <div class="offcanvas offcanvas-end"
+                 tabindex="-1"
+                 id="offcanvasAddUser"
+                 aria-labelledby="offcanvasAddUserLabel">
+                <div class="offcanvas-header border-bottom">
+                    <h5 id="offcanvasAddUserLabel" class="offcanvas-title">Add </h5>
+                    <button type="button"
+                            class="btn-close text-reset"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body mx-0 flex-grow-0 p-6 h-100">
+                    <form class="add-new-user pt-0" method="post" asp-controller="UserManager" asp-action="CreateUser">
+                        <div class="mb-6">
+                            <label class="form-label" for="add-user-firstname">First name</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="add-user-firstname"
+                                   placeholder="John"
+                                   name="firstName"
+                                   value="" />
+                        </div>
+                        <div class="mb-6">
+                            <label class="form-label" for="add-user-lastname">Last name</label>
+                            <input type="text"
+                                   class="form-control"
+                                   id="add-user-lastname"
+                                   placeholder="Doe"
+                                   name="lastName"/>
+                        </div>
+                        <div class="mb-6">
+                            <label class="form-label" for="add-user-email">Email</label>
+                            <input type="text"
+                                   id="add-user-email"
+                                   class="form-control"
+                                   placeholder="john.doe@example.com"
+                                   name="email" />
+                        </div>
+                        <div class="mb-6">
+                            <label class="form-label" for="add-user-contact">Phone number</label>
+                            <input type="text"
+                                   id="add-user-contact"
+                                   class="form-control phone-mask"
+                                   placeholder="+1 (609) 988-44-11"
+                                   name="mobile" />
+                        </div>
+                        @*  <div class="mb-6">
+                        <label class="form-label" for="add-user-company">Job title</label>
+                        <input type="text"
+                        id="add-user-company"
+                        class="form-control"
+                        placeholder="Web Developer"
+                        aria-label="jdoe1"
+                        name="companyName" />
+                        </div>
+                        *@
+
+                        <div class="mb-6">
+                        
+
+                            <label for="company" class="form-label">Company</label>
+                            <select id="company" name="companyId" class="form-select">
+                                <option value="">Select a company</option>
+
+                                <!-- Bind the dropdown options using ViewBag -->
+                                @foreach (var comp in ViewBag.Company as List<SelectListItem> ?? new List<SelectListItem>())
+                                {
+                                    <option value="@comp.Value">@comp.Text</option>
+                                }
+                            </select>
+                        </div>
+
+
+                        <div class="mb-6">
+                            <label for="user-role" class="form-label">User Role</label>
+                            <select id="user-role" name="roleID" class="form-select">
+                                <option value="">Select a Role</option>
+                                @foreach (var role in ViewBag.Roles as List<SelectListItem> ?? new List<SelectListItem>())
+                                {
+                                    <option value="@role.Value" data-userType="@role.Text">@role.Text</option>
+                                }
+                            </select>
+                        </div>
+
+                        <!-- Hidden field for UserType -->
+                        <input type="hidden" id="userType" name="UserType" value="">
+
+                        <script>
+                            document.getElementById("user-role").addEventListener("change", function () {
+                                // Get the UserType (Role Name) from the selected option's data attribute
+                                const selectedUserType = this.options[this.selectedIndex].getAttribute("data-userType");
+                                document.getElementById("userType").value = selectedUserType; // Update hidden field with UserType
+                            });
+                        </script>
+
+
+
+
+
+
+                        <button type="submit" id="" class="btn btn-primary me-3 data-submit">Save</button>
+                        <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">Cancel</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -55,52 +196,68 @@
             <div class="modal-body">
 
                 <form class="add-new-user pt-0" id="addNewUserForm" onsubmit="return false">
+
+                    <input type="hidden" id="editUserID" />
+                    <input type="hidden" id="editIsActive" />
+                    
                     <div class="mb-6">
-                        <label class="form-label" for="add-user-fullname">Username</label>
+                        <label class="form-label" for="fName">First name</label>
                         <input type="text"
                                class="form-control"
-                               id="add-user-fullname"
+                               id="fName"
+                               placeholder="John"
+                               name="firstname"
+                               aria-label="John"
+                             />
+                    </div>
+                    <div class="mb-6">
+                        <label class="form-label" for="lName">Last name</label>
+                        <input type="text"
+                               class="form-control"
+                               id="lName"
                                placeholder="John"
                                name="firstname"
                                aria-label="John" />
                     </div>
 
                     <div class="mb-6">
-                        <label class="form-label" for="add-user-email">Email</label>
+                        <label class="form-label" for="editEmail">Email</label>
                         <input type="text"
-                               id="add-user-email"
+                               id="editEmail"
                                class="form-control"
                                placeholder="john.doe@example.com"
                                aria-label="john.doe@example.com"
-                               name="userEmail" />
+                               name="userEmail" 
+                               />
                     </div>
                     <div class="mb-6">
-                        <label class="form-label" for="add-user-contact">Phone number</label>
+                        <label class="form-label" for="editPhone">Phone number</label>
                         <input type="text"
-                               id="add-user-contact"
-                               class="form-control phone-mask"
+                               id="editPhone"
+                               class="form-control"
                                placeholder="+1 (609) 988-44-11"
-                               aria-label="john.doe@example.com"
-                               name="userContact" />
+                           
+                               />
                     </div>
 
                     <div class="mb-6">
-                        <label class="form-label" for="company">Role</label>
-                        <select id="company" class="form-select">
-                            <option value="select" selected>Select</option>
+                        <label class="form-label" for="editRole">Role</label>
+                        <select id="editRole" class="form-select">
+                          @*   <option value="select" selected>Select</option>
                             <option value="SuperAdmin">Super Admin</option>
                             <option value="Admin">Admin</option>
-                            <option value="estimator">Estimator</option>
+                            <option value="User">User</option>
+                            <option value="Estimator">Estimator</option> *@
 
                         </select>
                     </div>
 
                     <div class="mb-6">
-                        <label class="form-label" for="user-role">Status</label>
-                        <select id="user-role" class="form-select">
+                        <label class="form-label" for="editStatus">Status</label>
+                        <select id="editStatus" class="form-select">
                             <option value="select" selected>Select</option>
                             <option value="Active">Active</option>
-                            <option value="Inactive">Inactive</option>
+                            <option value="InActive">InActive</option>
                             <option value="Pending">Pending</option>
 
                         </select>
@@ -110,7 +267,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-primary" onclick="saveChanges()">Save</button>
                 <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
                     Cancel
                 </button>
