@@ -23,9 +23,10 @@ namespace MrGutter.Repository
 
             try
             {
-                var token = _httpContextAccessor.HttpContext?.Request.Cookies["Token"];
+             
                 string url = baseURL + APIName;
                 using HttpClient client = new();
+                var token = _httpContextAccessor.HttpContext?.Session.GetString("AuthToken");
                 if (token != null)
                 {
                  
@@ -51,7 +52,7 @@ namespace MrGutter.Repository
             APIResponseModel? resp = null;
             try
             {
-                var token = _httpContextAccessor.HttpContext?.Request.Cookies["Token"];
+                var token = _httpContextAccessor.HttpContext?.Session.GetString("AuthToken");
 
                 string url = baseURL + APIName;
                 using HttpClient client = new();

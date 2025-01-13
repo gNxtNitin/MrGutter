@@ -34,11 +34,8 @@ namespace MrGutter.Web.Controllers
             var searchValue = Request.Form["search[value]"].FirstOrDefault();
             int pageSize = length != null ? Convert.ToInt32(length) : 0;
             int skip = start != null ? Convert.ToInt32(start) : 0;
-            // Store the original user list for count
-            var originalUserList = result.Users.ToList(); // Make sure to evaluate the list here
+            var originalUserList = result.Users.ToList(); 
             var users = originalUserList.AsQueryable();
-
-            // Sorting
             if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
             {
                 bool descendingOrder = sortColumnDirection == "asc" ? false : true;
@@ -56,17 +53,12 @@ namespace MrGutter.Web.Controllers
 
 
             }
-            // Count filtered records
             int recordsTotal = users.Count();
             var data = users.Skip(skip).Take(pageSize).ToList();
-
             var jsonData = new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = originalUserList.Count(), data = users };
             return Ok(jsonData);
 
         }
-
-
-
         public IActionResult Company()
         {
             return View();

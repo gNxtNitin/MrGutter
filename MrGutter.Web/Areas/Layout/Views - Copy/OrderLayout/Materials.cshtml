@@ -1,0 +1,105 @@
+﻿@{
+    Layout = "_Layout_EditOrderLayoutSetting";
+    ViewBag.Title = "layout Report";
+}
+<div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y">
+
+    <div class="layout-demo-wrapper">
+        <div class="layout-demo-placeholder">
+            <div class="row">
+                <div class="col-12">
+                   @*  <h6>Page Content</h6> *@
+                    <div class="d-flex justify-content-between mb-1">
+                        <h5 class="">
+                            Materials <a href="#" title="Edit the page title"><i class="ti ti-edit"></i></a>
+                        </h5>
+                        <!-- Button trigger modal -->
+                        <span class="d-flex justify-content-end"><button type="button" class="btn btn-outline-danger waves-effect">Delete</button> <button type="button" class="btn btn-outline-primary waves-effect">View Page</button></span>
+                        
+                    </div>
+
+                    <div class="card mb-6">
+                        <!-- Account -->
+                        <div class="card-body pt-4">
+                            <div class="d-flex col-12 col-md-12 col-lg-12 align-items-center authentication-bg p-sm-12 p-6">
+                                <div class="w-px-700 mx-auto">
+                                    <form id="" class="mb-6" action="~/" method="POST">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-6">
+                                                <label class="form-label">
+                                                    Job Number
+                                                </label>
+                                                <input type="text" class="form-control" placeholder="Required">
+                                            </div>
+                                            <div class="col-md-6 mb-6">
+                                                <label class="form-label">
+                                                   Start Date
+                                                </label>
+                                                <input type="date" class="form-control" placeholder="Required">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                           
+                                            <div class="col-md-12 mb-6">
+                                                <label class="form-label">
+                                                   Address Line 1
+                                                </label>
+                                                <input type="text" class="form-control" placeholder="Required">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-6">
+                                                <label class="form-label">
+                                                    Delivery Date
+
+                                                </label>
+                                                <input type="date" class="form-control" placeholder="Required">
+                                            </div>
+                                            <div class="col-md-6 mb-6">
+                                                <label class="form-label">City</label>
+                                                <input type="text" class="form-control" placeholder="Required" autofocus>
+                                            </div>
+                                           
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-6">
+                                                <label class="form-label">
+                                                    State/Province
+                                                </label>
+                                                <input type="text" class="form-control" placeholder="Required">
+                                            </div>
+                                            <div class="col-md-6 mb-6">
+                                                <label class="form-label">
+                                                    Zip code/Postal code
+                                                </label>
+                                                <input type="text" class="form-control" placeholder="Required">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <!-- /Account -->
+                    </div>
+                    <div class="card mb-6">
+                        <!-- Account -->
+                        <div class="card-body pt-4">
+                            <button type="button" class="btn btn-outline-primary waves-effect">Add Section</button>
+                        </div>
+                        <!-- /Account -->
+                    </div>
+                    <div class="card mb-6">
+                        <!-- Account -->
+                        <div class="card-body pt-4">
+                            <button type="button" class="btn btn-outline-primary waves-effect">Add Notes</button>
+                        </div>
+                        <!-- /Account -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -18,7 +18,8 @@ namespace MrGutter.Repository.IRepository
 
         public Task<APIResponseModel> SetOtpAsync(User user);
         public Task<APIResponseModel> GetUserAsync(string? UserId);
-     //   public Task<APIResponseModel> SendForgotPasswordEmailAsync(LoginModel loginModel);
+        public Task<APIResponseModel> GetRoleAsync(string? RoleId);
+        //   public Task<APIResponseModel> SendForgotPasswordEmailAsync(LoginModel loginModel);
 
     }
 }

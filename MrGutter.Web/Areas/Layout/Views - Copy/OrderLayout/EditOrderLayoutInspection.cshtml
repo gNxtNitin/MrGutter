@@ -1,0 +1,136 @@
+﻿@{
+    Layout = "_Layout_EditOrderLayoutSetting";
+    ViewBag.Title = "layout Report";
+}
+<div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y">
+
+    <div class="layout-demo-wrapper">
+        <div class="layout-demo-placeholder">
+            <div class="row">
+                <div class="col-12">
+                   @*  <h6>Page Content</h6> *@
+                    <div class="d-flex justify-content-between mb-1">
+                        <h5 class="">
+                            Inspection <a href="#" title="Edit the page title"><i class="ti ti-edit"></i></a>
+                        </h5>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-primary waves-effect">View Page</button>
+                    </div>
+                   
+                    <div class="card mb-6">
+                        <!-- Account -->
+                        <div class="card-body pt-4">
+                            <form id="formAccountSettings" method="GET" onsubmit="return false">
+                                <div class="row">
+                                    <div class="mb-4 col-md-6">
+                                        <b for="reporttype" class="form-label">Inspection</b>
+                                        <b class="form-label">Style: <b>Standard</b> <a href="#">Change</a></b>
+                                    </div>
+                                    <div class="mb-4 col-md-6 text-end">
+                                        <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                    </div>
+                                    <div class="mb-4 col-md-4" hidden>
+                                        <label for="dropzone-basic1" class="form-label">Primary Image</label>
+                                        <div class="col-12">
+                                            <div class="card mb-6">
+                                                <div class="card-body">
+                                                    <form action="/upload" class="dropzone needsclick" id="dropzone-basic1">
+                                                        <div class="dz-message needsclick">
+                                                            Drop files here or click to upload
+                                                            <span class="note needsclick">
+                                                                (This is just a demo dropzone. Selected files are <span class="fw-medium">not</span> actually uploaded.)
+                                                            </span>
+                                                        </div>
+                                                        <div class="fallback">
+                                                            <input name="file" type="file" />
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="mb-4 col-md-5">
+                                     
+                                        <div class="col-12 d-flex">
+                                            <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                            <div class="card mb-6">
+                                                <div class="card-body">
+                                                    
+                                                    <form action="/upload" class="dropzone needsclick" id="dropzone-basic">
+                                                        <div class="dz-message needsclick">
+                                                            Drop files here or click to upload
+                                                            <span class="note needsclick">
+                                                                (This is just a demo dropzone. Selected files are <span class="fw-medium">not</span> actually uploaded.)
+                                                            </span>
+                                                        </div>
+                                                        <div class="fallback">
+                                                            <input name="file" type="file" />
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-4 col-md-6">
+                                        <div class="input-group input-group-merge">
+                                            <div class="col-12">
+                                                <div class="card mb-6">
+                                                    <h5 class="card-header">Snow Theme</h5>
+                                                    <div class="card-body">
+                                                        <div id="snow-toolbar">
+                                                            <span class="ql-formats">
+                                                                <select class="ql-font"></select>
+                                                                <select class="ql-size"></select>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <button class="ql-bold"></button>
+                                                                <button class="ql-italic"></button>
+                                                                <button class="ql-underline"></button>
+                                                                <button class="ql-strike"></button>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <select class="ql-color"></select>
+                                                                <select class="ql-background"></select>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <button class="ql-script" value="sub"></button>
+                                                                <button class="ql-script" value="super"></button>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <button class="ql-header" value="1"></button>
+                                                                <button class="ql-header" value="2"></button>
+                                                                <button class="ql-blockquote"></button>
+                                                                <button class="ql-code-block"></button>
+                                                            </span>
+                                                        </div>
+                                                        <div id="snow-editor">
+                                                         Hello,
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-4 col-md-1 text-end">
+                                        <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                    </div>
+                                </div>
+                                <div class="mt-1">
+                                    <button type="submit" class="btn btn-outline-info waves-effect me-3">Add item</button>
+                                </div>
+                                <hr />
+                                <div class="mt-1">
+                                    <button type="submit" class="btn btn-outline-info waves-effect me-3">Add section</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /Account -->
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

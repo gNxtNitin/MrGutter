@@ -1,6 +1,7 @@
-﻿@{
+﻿@model MrGutter.Models.ViewModels.EstimateVM
+@{
     Layout = "_Layout_Main";
-    ViewData["Title"] = "Estimate Details";
+
 }
 <style>
 
@@ -53,14 +54,14 @@
 
                         <div class="col-md-6">
                             <h5 class="card-title"><i class="menu-icon ti ti-users"></i> <b>Insurance Sample</b></h5>
-                            <h6 class="card-title"><i class="menu-icon ti ti-phone-call"></i> <a href="tel:988 897 3243" class="text-decoration-underline">988 897 3243</a></h6>
-                            <h5 class="card-title"><i class="menu-icon ti ti-mail"></i> <a href="mailto:support@MrGutter.com" class="text-decoration-underline">support@mrgutter.com</a></h5>
+                            <h6 class="card-title"><i class="menu-icon ti ti-phone-call"></i> <a href="tel:988 897 3243" class="text-decoration-underline">@Model.PhoneNo</a></h6>
+                            <h5 class="card-title"><i class="menu-icon ti ti-mail"></i> <a href="mailto:support@MrGutter.com" class="text-decoration-underline">@Model.Email</a></h5>
                         </div>
                         <div class="col-md-6 d-flex align-items-start">
                             <span class="me-1"><i class="menu-icon ti ti-home"></i></span>
                             <!-- Text -->
                             <h6 class="card-title mb-0">
-                                123 Sample Ave NW <br />
+                              @Model.Addressline1 <br />
                                 Calgary, AB <br />
                                 Created 3 years ago.
                             </h6>

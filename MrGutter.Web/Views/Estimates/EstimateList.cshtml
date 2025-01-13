@@ -1,4 +1,5 @@
-﻿@{
+﻿@model MrGutter.Models.ViewModels.EstimateVM
+@{
     Layout = "_Layout_Main";
     ViewBag.Title = "Estimate";
 }
@@ -208,7 +209,7 @@
 
                                         <div class="card">
                                             <div class="card-body">
-                                                <form>
+                                                <form asp-controller="Estimates" asp-action="CreateEstimate" method="post">
                                                     <div class="row">
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-project">Estimate No.</label>
@@ -216,72 +217,80 @@
                                                         </div>
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-first">First name</label>
-                                                            <input type="text" class="form-control" id="basic-default-first" placeholder="" />
+                                                            <input type="text" class="form-control" name="firstName" value="" placeholder="" />
+                                                            <span asp-validation-for="FirstName" class="text-danger"></span>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-last">Last name</label>
-                                                            <input type="text" class="form-control" id="basic-default-last" placeholder="" />
+                                                            <input type="text" class="form-control" name="lastName" value="" placeholder="" />
+                                                            <span asp-validation-for="LastName" class="text-danger"></span>
                                                         </div>
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-company">Company</label>
-                                                            <input type="text" class="form-control" id="basic-default-company" placeholder="ACME Inc." />
+                                                            <input type="text" class="form-control" name="company" value="" placeholder="ACME Inc." />
+                                                            <span asp-validation-for="Company" class="text-danger"></span>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-email">Email</label>
-                                                            <div class="input-group input-group-merge">
+                                                        
                                                                 <input type="text"
-                                                                       id="basic-default-email"
-                                                                       class="form-control"
-                                                                       placeholder="john.doe"
-                                                                       aria-label="john.doe"
-                                                                       aria-describedby="basic-default-email2" />
-                                                                <span class="input-group-text" id="basic-default-email2">@@example.com</span>
-                                                            </div>
-                                                            <div class="form-text">You can use letters, numbers & periods</div>
+                                                                    name="email" value=""
+                                                                       class="form-control"/>
+                                                                <span asp-validation-for="Email" class="text-danger"></span>
                                                         </div>
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-phone">Phone No</label>
                                                             <input type="text"
-                                                                   id="basic-default-phone"
+                                                                   name="phoneNo"
                                                                    class="form-control phone-mask"
                                                                    placeholder="658 799 8941" />
+                                                            <span asp-validation-for="PhoneNo" class="text-danger"></span>
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-line1">Address line 1</label>
-                                                            <input type="text" class="form-control" id="basic-default-line1" placeholder="" />
+                                                            <input type="text" class="form-control" name="addressline1" value="" placeholder="" />
+                                                            <span asp-validation-for="Addressline1" class="text-danger"></span>
                                                         </div>
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-line2">Address line 2</label>
-                                                            <input type="text" class="form-control" id="basic-default-line2" placeholder="" />
+                                                            <input type="text" class="form-control" name="addressline2" value="" placeholder="" />
+                                                         
                                                         </div>
                                                     </div>
 
                                                     <div class="row">
                                                         <div class="col-md-4 mb-6">
                                                             <label class="form-label" for="basic-default-city">City</label>
-                                                            <input type="text" class="form-control" id="basic-default-city" placeholder="" />
+                                                            <input type="text" class="form-control" name="city" value="" placeholder="" />
+                                                            <span asp-validation-for="City" class="text-danger"></span>
                                                         </div>
                                                         <div class="col-md-4 mb-6">
                                                             <label class="form-label" for="basic-default-state">State</label>
-                                                            <input type="text" class="form-control" id="basic-default-state" placeholder="" />
+                                                            <input type="text" class="form-control" name="state" value="" placeholder="" />
+                                                            <span asp-validation-for="State" class="text-danger"></span>
                                                         </div>
                                                         <div class="col-md-4 mb-6">
                                                             <label class="form-label" for="basic-default-zip">Zip code/Postal code</label>
-                                                            <input type="text" class="form-control" id="basic-default-zip" placeholder="" />
+                                                            <input type="text" class="form-control" name="zipCode" value="" placeholder="" />
+                                                            <span asp-validation-for="ZipCode" class="text-danger"></span>
                                                         </div>
                                                     </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-primary">Create Estimate</button>
+                                                        <button type="submit" asp-controller="Estimates" asp-action="EstimateList" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                                                            Cancel
+                                                        </button>
 
-
-
+                                                    </div>
                                                 </form>
                                             </div>
 
@@ -290,13 +299,7 @@
 
 
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary">Create Estimate</button>
-                                        <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
-                                            Cancel
-                                        </button>
-
-                                    </div>
+                           
                                 </div>
 
                             </div>
@@ -377,241 +380,100 @@
                 </div>
             </div>
         </div>
+ @foreach (var item in Model.EstimateList)
+{
+        string estimateCreatedDate = item.EstimateCreatedDate;
+        string formattedDate = "Invalid date format";
 
-        <div class="col-md-4">
-            <div class="card">
-                <div class="row g-0">
-                    <div class="col-md-12 position-relative">
-                        <a asp-action="EstimationDetails" asp-controller="Estimates">
-                            <img class="card-img card-img-left card-img-height " src="~/img/elements/pexels-pixabay-164558.jpg" alt="Card image" />
-                        </a>
-                        <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button class="border-0 dtl-btn" data-bs-toggle="modal"
+        if (!string.IsNullOrEmpty(estimateCreatedDate))
+        {
+            DateTime createdDate;
+            if (DateTime.TryParse(estimateCreatedDate, out createdDate))
+            {
+                TimeSpan timeDifference = DateTime.Now - createdDate;
+
+                if (timeDifference.Days > 365)
+                {
+                    formattedDate = $"Created {timeDifference.Days / 365} years ago.";
+                }
+                else if (timeDifference.Days > 30)
+                {
+                    formattedDate = $"Created {timeDifference.Days / 30} months ago.";
+                }
+                else if (timeDifference.Days > 0)
+                {
+                    formattedDate = $"Created {timeDifference.Days} days ago.";
+                }
+                else if (timeDifference.Hours > 0)
+                {
+                    formattedDate = $"Created {timeDifference.Hours} hours ago.";
+                }
+                else if (timeDifference.Minutes > 0)
+                {
+                    formattedDate = $"Created {timeDifference.Minutes} minutes ago.";
+                }
+                else
+                {
+                    formattedDate = $"Created {timeDifference.Seconds} seconds ago.";
+                }
+            }
+        
+    }
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="row g-0">
+                <div class="col-md-12 position-relative">
+                    <a asp-action="EstimationDetails" asp-controller="Estimates">
+                        <img class="card-img card-img-left card-img-height " src="~/img/elements/pexels-pixabay-164558.jpg" alt="Card image" />
+                    </a>
+                    <div class="position-absolute end-0 top-0 dlt-btn">
+                        <button class="border-0 dtl-btn" data-bs-toggle="modal"
                                data-bs-target="#delete" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-
-                        <div class="card-body row g-0">
-
-                            <div class="col-md-12 mb-2">
-                                <h5 class="card-title mb-0"><b>Malarkey Sample</b></h5>
-                                <p class="mb-1">Estimate No. : 890 329 2124</p>
-                                <p class="card-text text-black">698 New York 52  Beacon, New York</p>
-                            </div>
-
-                            <div class="col-md-12 rounded text-white status-dropdown">
-
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <div class="col-md-6 rounded text-white status-dropdown">
-                                        <select class="form-select text-capitalize">
-                                            <option value="Requested">Requested</option>
-                                            <option value="Provided">Provided</option>
-                                            <option value="Completed">Completed</option>
-                                            <option value="Revised">Revised</option>
-                                            <option value="Accepted" selected>Accepted</option>
-                                            <option value="Cancelled">Cancelled</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 d-flex justify-content-end align-items-center">
-                                        <p style="color:#b1acac !important" class="mb-0"> Created 6 days ago.</p>
-                                    </div>
-                                </div>
-
-
-
-
-
-                            </div>
-                            @*  <div class="mt-5">
-                            <button class="btn rounded-pill btn-outline-danger waves-effect w-100" id="confirm-text">Delete</button>
-                            </div> *@
-
-                        </div>
-
-
-                    </div>
-
-
-
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-md-4">
-            <div class="card">
-                <div class="row g-0">
-                    <div class="col-md-12 position-relative">
-                        <a asp-action="EstimationDetails" asp-controller="Estimates">
-                            <img class="card-img card-img-left card-img-height " src="~/img/elements/pexels-heyho-5997994.jpg" alt="Card image" />
-                        </a>
-                        <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button data-bs-toggle="modal"
-                                    data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text">
-                                <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-
-                        <div class="card-body row g-0">
-
-                            <div class="col-md-12 mb-2">
-                                <h5 class="card-title mb-0"><b>Atlas Sample</b></h5>
-                                <p class="mb-1">Estimate No. : 890 329 2125</p>
-                                <p class="card-text text-black">123 Fake street Oak Lawn, illinois</p>
-                            </div>
-
-
-
-                            <div class="col-md-12 rounded text-white status-dropdown">
-
-
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <div class="col-md-6 rounded text-white status-dropdown">
-                                        <select class="form-select text-capitalize">
-                                            <option value="Requested" selected>Requested</option>
-                                            <option value="Provided">Provided</option>
-                                            <option value="Completed">Completed</option>
-                                            <option value="Revised">Revised</option>
-                                            <option value="Accepted">Accepted</option>
-                                            <option value="Cancelled">Cancelled</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 d-flex justify-content-end align-items-center">
-                                        <p style="color:#b1acac !important" class="mb-0">Created 1 week ago.</p>
-                                    </div>
-                                </div>
-
-                               
-                            </div>
-                            @*  <div class="mt-5">
-                            <button class="btn rounded-pill btn-outline-danger waves-effect w-100" id="confirm-text">Delete</button>
-                            </div>
-                            *@
-
-                        </div>
-
-
-
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card">
-                <div class="row g-0">
-                    <div class="col-md-12 position-relative">
-                        <a asp-action="EstimationDetails" asp-controller="Estimates">
-                            <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-pixabay-209315.jpg" alt="Card image" />
-                        </a>
-                        <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button data-bs-toggle="modal"
-                                    data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text">
-                                <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
-                            </button>
+                <div class="col-md-12">
+                    <div class="card-body row g-0">
+                        <div class="col-md-12 mb-2">
+                            <h5 class="card-title mb-0"><b>@item.FirstName</b></h5>
+                            <p class="mb-1">Estimate No. : @item.EstimateNo</p>
+                            <p class="card-text text-black">@item.Addressline1</p>
                         </div>
-                    </div>
-                    <div class="col-md-12">
-
-                        <div class="card-body row g-0">
-
-                            <div class="col-md-12 mb-2">
-                                <h5 class="card-title mb-0"> <b>Roofing Sample</b></h5>
-                                <p class="mb-1">Estimate No. : 890 329 2126</p>
-                                <p class="card-text text-black">123 Sample Ave NW Calgary, AB </p>
-                            </div>
-
-
-                            <div class="col-md-12 rounded text-white status-dropdown">
-
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <div class="col-md-6 rounded text-white status-dropdown">
-                                        <select class="form-select text-capitalize">
-                                            <option value="Requested">Requested</option>
-                                            <option value="Provided">Provided</option>
-                                            <option value="Completed">Completed</option>
-                                            <option value="Revised">Revised</option>
-                                            <option value="Accepted" selected>Accepted</option>
-                                            <option value="Cancelled">Cancelled</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 d-flex justify-content-end align-items-center">
-                                        <p style="color:#b1acac !important" class="mb-0">Created 2 months ago.</p>
-                                    </div>
-                                </div>
-
-
-                           
-                            </div>
-                              
-
-
-                            </div>
-                            @*  <div class="mt-5">
-                            <button class="btn rounded-pill btn-outline-danger waves-effect w-100" id="confirm-text">Delete</button>
-                            </div> *@
-
-
-                        </div>
-
-
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card">
-                <div class="row g-0">
-                    <div class="col-md-12 position-relative">
-                        <a asp-action="EstimationDetails" asp-controller="Estimates">
-                            <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-pixabay-259588.jpg" alt="Card image" />
-                        </a>
-                        <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button data-bs-toggle="modal"
-                                    data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text">
-                                <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-
-                        <div class="card-body row g-0">
-
-                            <div class="col-md-12 mb-2">
-                                <h5 class="card-title mb-0"> <b>Insurance Sample</b></h5>
-                                <p class="mb-1">Estimate No. : 890 329 2123</p>
-                                <p class="card-text text-black">123 Sample Ave NW  Calgary, AB  </p>
-                            </div>
-
-
                         <div class="col-md-12 rounded text-white status-dropdown">
                             <div class="d-flex justify-content-center align-items-center">
                                 <div class="col-md-6 rounded text-white status-dropdown">
                                     <select class="form-select text-capitalize">
                                         <option value="Requested">Requested</option>
                                         <option value="Provided">Provided</option>
-                                        <option value="Accepted">Accepted</option>
                                         <option value="Completed">Completed</option>
                                         <option value="Revised">Revised</option>
-                                        <option value="Cancelled" selected>Cancelled</option>
+                                        <option value="Accepted" selected>Accepted</option>
+                                        <option value="Cancelled">Cancelled</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6 d-flex justify-content-end align-items-center">
-                                    <p style="color:#b1acac !important" class="mb-0">Created 3 years ago.</p>
+                                    <p style="color:#b1acac !important" class="mb-0">@formattedDate</p>
                                 </div>
                             </div>
-
-                       
-                        </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+}
+
+  
+
+
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+   
+
+       
 
     </div>
 
@@ -691,7 +553,19 @@
 </div>
 
 <!--Script for drop down colour-->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        debugger
+        // Retrieve the ViewBag value
+        var showErrorModal = '@(ViewBag.EstimateError ?? "False")' === 'True';
 
+        // Show the modal if EstimateError is true
+        if (showErrorModal) {
+            var modal = new bootstrap.Modal(document.getElementById('modalSignature'));
+            modal.show();
+        }
+    });
+</script>
 
 <script>
     // Function to update the background and text color of each dropdown

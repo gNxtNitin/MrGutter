@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MrGutter.Models.ViewModels;
+using MrGutter.Services.IService;
 using System.Net;
 
 namespace MrGutter.Web.Areas.Layout.Controllers
@@ -9,10 +11,32 @@ namespace MrGutter.Web.Areas.Layout.Controllers
     [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
     public class ReportLayoutController : Controller
     {
+        private readonly ILayoutManagerService _layoutManagerService;
+        public ReportLayoutController(ILayoutManagerService layoutManagerService)
+        {
+            _layoutManagerService = layoutManagerService;
+
+        }
         public IActionResult Index()
         {
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateLayout(string? layoutName, Boolean? isShare)
+        {
+            CreateReportLayoutVM createReportVM = new CreateReportLayoutVM();
+            createReportVM.LayoutName = layoutName;
+            createReportVM.IsShared = isShare;
+            if (!ModelState.IsValid)
+            {
+                return View("ReportLayoutList");
+            }
+            var response = await _layoutManagerService.CreateLayoutAsync(createReportVM);
+            return View();
+        }
+
+
         public IActionResult ReportLayoutList()
         {
             return View();

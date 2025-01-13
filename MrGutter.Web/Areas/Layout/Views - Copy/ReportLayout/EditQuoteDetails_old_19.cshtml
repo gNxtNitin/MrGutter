@@ -1,0 +1,2144 @@
+﻿@{
+    Layout = "_Layout_EditReportLayoutSetting";
+    ViewBag.Title = "layout Report";
+}
+<style>
+    .required {
+        color: red;
+    }
+</style>
+
+
+
+
+
+
+
+
+<div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y pt-0">
+    <div class="layout-demo-wrapper">
+        <div class="layout-demo-placeholder">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-5">
+                            <h5 class="mb-0">
+                                <span id="title-text">Good - Architectural Shingles </span>
+                                <a href="#" id="edit-title-link">
+                                    <i class="ti ti-edit"></i>
+                                </a>
+                            </h5>
+                            <input type="text" id="title-input" class="form-control" style="display: none;" />
+                        </div>
+                        <div class="col-3">
+                        </div>
+                        <div class="col-4 text-end">
+                            <button type="button" class="btn btn-outline-primary waves-effect" data-bs-target="#fullscreenModal" data-bs-toggle="modal" data-bs-dismiss="modal">View Page</button>
+                        </div>
+
+                    </div>
+                    <label>
+                        You have saved templates.<a href="" data-bs-toggle="modal"
+                                                    data-bs-target="#viewIntoductionModel"> view templates</a>
+                    </label>
+                    <div class="card mb-6 mt-3">
+                        <div class="card-body pt-4">
+                            <div class="col-xl-12">
+                                <div class="nav-align-top nav-tabs-shadow mb-6">
+                                    <ul class="nav nav-tabs" role="tablist" id="tabList" style=" display: flex;gap: 10px;">
+                                        <li class="nav-item">
+                                            <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-home" aria-controls="navs-top-home" aria-selected="true">
+                                                <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>Architectural Shingles
+                                                <a href="#" title="close" onclick="openModal(1)"><i class="ti ti-x align-text-bottom me-2 ms-2 icon-close"></i></a>
+                                            </button>
+                                        </li>
+                                  @*       <li class="nav-item" style="flex: 1 0 30%; min-width: 150px;">
+                                            <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-profile" aria-controls="navs-top-profile" aria-selected="false">
+                                                <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>Impact Resistant Shingles
+                                                <a href="#" title="close" onclick="openModal(2)"><i class="ti ti-x align-text-bottom me-2 ms-2 icon-close"></i></a>
+                                            </button>
+                                        </li>
+                                        <li class="nav-item" style="flex: 1 0 30%; min-width: 150px;">
+                                            <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-messages" aria-controls="navs-top-messages" aria-selected="false">
+                                                <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>Designer Shingles
+                                                <a href="#" title="close" onclick="openModal(3)"><i class="ti ti-x align-text-bottom me-2 ms-2 icon-close"></i></a>
+                                            </button>
+                                        </li> *@
+                                        <li class="nav-item card ms-4" id="plusButton" style="flex: 0 0 20%; max-width: 85px; background-color: #2E7DB3;color: aliceblue">
+                                            <i class="ti ti-plus align-text-bottom p-3 cursor-pointer ps-4 ms-4" onclick="handleClick()"></i>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="navs-top-home" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <label for="itemSelect">Include all items from</label>
+                                                    <select class="form-select mt-0" aria-label="Dropdown for sharing options">
+                                                        <option selected>None</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <label for="itemSelect">Description</label>
+                                                    <input class="form-control"
+                                                           type="text"
+                                                           autofocus />
+                                                </div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <hr />
+                                                <h5>
+                                                    Section Title
+                                                    <span class="cursor-pointer">
+                                                        🔼 🔽
+                                                    </span>
+                                                </h5>
+
+                                                <div class="row align-items-center">
+                                                    <div class="col-6">
+                                                        <div class="input-group input-group-merge">
+                                                            <input type="text" class="form-control" aria-describedby="basic-addon-search31">
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-5 text-start">
+                                                        <span class="mb-1"><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                    </div>
+                                                    <div class="col text-end form-check form-switch">
+                                                        <span class=""><input type="checkbox" class="form-check-input" /></span>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div class="row mt-3">
+                                                    <div class="card-body pt-0 px-0">
+                                                        <form class="source-item">
+                                                            <div class="mb-4" data-repeater-list="group-b">
+                                                                <div class="repeater-wrapper mt-2" data-repeater-item>
+                                                                    <div class="d-flex border rounded position-relative pe-0">
+                                                                        <div class="row w-100 p-6">
+                                                                            <div class="col-md-6 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Item</p>
+                                                                                <textarea class="form-control" rows="2" disabled></textarea>
+                                                                            </div>
+                                                                            <div class="col-md-3 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Quantity</p>
+                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                            </div>
+                                                                            <div class="col-md-2 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Price</p>
+                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                            </div>
+                                                                            <div class="col-md-1 col-12 pe-0 mt-md-2">
+                                                                                <p class="h6 repeater-title">Line total</p>
+                                                                                <p class="mb-0 text-heading">$0.00</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="d-flex flex-column align-items-center justify-content-between border-start p-2">
+                                                                            <i class="ti ti-lg ti-trash-filled text-danger" data-repeater-delete></i>
+                                                                            <div class="dropdown">
+                                                                                <span class="message-actions input-group-text">
+                                                                                    <a data-bs-toggle="modal"
+                                                                                       data-bs-target="#textAreaEnabledId2"> <i class='ti ti-lock cursor-pointer'></i></a>
+                                                                                </span>
+
+                                                                                </i>
+                                                                                <div class="dropdown-menu dropdown-menu-end w-px-300 p-4" aria-labelledby="dropdownMenuButton">
+
+                                                                                    <div class="row g-3">
+                                                                                        <div class="col-12">
+                                                                                            <label for="discountInput" class="form-label">Discount(%)</label>
+                                                                                            <input type="number" class="form-control" id="discountInput" min="0" max="100" />
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="taxInput1" class="form-label">Tax 1</label>
+                                                                                            <select name="tax-1-input" id="taxInput1" class="form-select tax-select">
+                                                                                                <option value="0%" selected>0%</option>
+                                                                                                <option value="1%">1%</option>
+                                                                                                <option value="10%">10%</option>
+                                                                                                <option value="18%">18%</option>
+                                                                                                <option value="40%">40%</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="taxInput2" class="form-label">Tax 2</label>
+                                                                                            <select name="tax-2-input" id="taxInput2" class="form-select tax-select">
+                                                                                                <option value="0%" selected>0%</option>
+                                                                                                <option value="1%">1%</option>
+                                                                                                <option value="10%">10%</option>
+                                                                                                <option value="18%">18%</option>
+                                                                                                <option value="40%">40%</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="dropdown-divider my-4"></div>
+                                                                                    <button type="button" class="btn btn-label-primary btn-apply-changes">Apply</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="card-body pt-0 px-0">
+                                                        <form class="source-item">
+                                                            <div class="mb-4" data-repeater-list="group-a">
+                                                                <div class="repeater-wrapper mt-2" data-repeater-item>
+                                                                    <div class="d-flex border rounded position-relative pe-0">
+                                                                        <div class="row w-100 p-6">
+                                                                            <div class="col-md-6 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Item</p>
+                                                                                <textarea class="form-control" rows="2"></textarea>
+                                                                            </div>
+                                                                            <div class="col-md-3 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Quantity</p>
+                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                            </div>
+                                                                            <div class="col-md-2 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Price</p>
+                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                            </div>
+                                                                            <div class="col-md-1 col-12 pe-0 mt-md-2">
+                                                                                <p class="h6 repeater-title">Line total</p>
+                                                                                <p class="mb-0 text-heading">$0.00</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="d-flex flex-column align-items-center justify-content-between border-start p-2">
+                                                                            <i class="ti ti-lg ti-trash-filled text-danger" data-repeater-delete></i>
+                                                                            <div class="dropdown">
+                                                                                <span class="message-actions input-group-text">
+                                                                                    <a data-bs-toggle="modal" data-bs-target="#textAreaEnabledId1">
+                                                                                        <i class="ti ti-plus cursor-pointer"></i>
+                                                                                    </a>
+                                                                                </span>
+                                                                                <div class="dropdown-menu dropdown-menu-end w-px-300 p-4" aria-labelledby="dropdownMenuButton">
+                                                                                    <div class="row g-3">
+                                                                                        <div class="col-12">
+                                                                                            <label for="discountInput" class="form-label">Discount(%)</label>
+                                                                                            <input type="number" class="form-control" id="discountInput" min="0" max="100" />
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="taxInput1" class="form-label">Tax 1</label>
+                                                                                            <select name="tax-1-input" id="taxInput1" class="form-select tax-select">
+                                                                                                <option value="0%" selected>0%</option>
+                                                                                                <option value="1%">1%</option>
+                                                                                                <option value="10%">10%</option>
+                                                                                                <option value="18%">18%</option>
+                                                                                                <option value="40%">40%</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="taxInput2" class="form-label">Tax 2</label>
+                                                                                            <select name="tax-2-input" id="taxInput2" class="form-select tax-select">
+                                                                                                <option value="0%" selected>0%</option>
+                                                                                                <option value="1%">1%</option>
+                                                                                                <option value="10%">10%</option>
+                                                                                                <option value="18%">18%</option>
+                                                                                                <option value="40%">40%</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="dropdown-divider my-4"></div>
+                                                                                    <button type="button" class="btn btn-label-primary btn-apply-changes">Apply</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <button type="button" class="btn btn-outline-primary waves-effect" data-repeater-create>
+                                                                        <i class="ti ti-plus ti-14px me-1_5"></i>Add Item
+                                                                    </button>
+                                                                </div>
+                                                                <div class="col-6 text-end">
+                                                                    <label>Section total: <strong class="ms-4">$0.00</strong></label>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <hr class="my-0">
+
+                                                    <!-- Start of the second form -->
+                                                    <div class="source-item ps-0 pe-0">
+                                                        <!-- Container for dynamic sections -->
+                                                        <div class="sections-container mb-4" id="sectionsContainer">
+                                                            <!-- Example Static Section -->
+                                                            <div class="section-item mb-4">
+                                                            </div>
+                                                        </div>
+                                                        <hr />
+                                                        <!-- Button to Add Sections -->
+                                                        <button type="button" class="btn btn-outline-primary" onclick="addSection()">
+                                                            <i class="ti ti-plus"></i> Add Section
+                                                        </button>
+                                                    </div>
+                                                    <hr class="mt-3" />
+
+                                                    <!-- Hidden Item Template -->
+                                                    <div class="item-template d-none">
+                                                        <div class="repeater-wrapper mt-2">
+                                                            <div class="d-flex border rounded">
+                                                                <div class="row w-100 p-3">
+                                                                    <div class="col-md-6">
+                                                                        <label for="itemDescription">Item</label>
+                                                                        <textarea id="itemDescription" class="form-control" rows="2" placeholder="Description"></textarea>
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <label for="quantityInput">Quantity</label>
+                                                                        <input id="quantityInput" type="number" class="form-control" min="1" max="50" />
+                                                                    </div>
+                                                                    <div class="col-md-2">
+                                                                        <label for="priceInput">Price</label>
+                                                                        <input id="priceInput" type="number" class="form-control" min="1" max="50" />
+                                                                    </div>
+                                                                    <div class="col-md-2 mt-2">
+                                                                        <p>Line Total</p>
+                                                                        <p>$0.00</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex flex-column align-items-center justify-content-between border-start p-2">
+                                                                    <i class="ti ti-lg ti-trash-filled text-danger" data-repeater-delete></i>
+                                                                    <div class="dropdown">
+                                                                        <span class="message-actions input-group-text">
+                                                                            <a data-bs-toggle="modal" data-bs-target="#textAreaEnabledId1">
+                                                                                <i class="ti ti-plus cursor-pointer"></i>
+                                                                            </a>
+                                                                        </span>
+                                                                        <div class="dropdown-menu dropdown-menu-end w-px-300 p-4" aria-labelledby="dropdownMenuButton">
+                                                                            <div class="row g-3">
+                                                                                <div class="col-12">
+                                                                                    <label for="discountInput" class="form-label">Discount(%)</label>
+                                                                                    <input type="number" class="form-control" id="discountInput" min="0" max="100" />
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <label for="taxInput1" class="form-label">Tax 1</label>
+                                                                                    <select name="tax-1-input" id="taxInput1" class="form-select tax-select">
+                                                                                        <option value="0%" selected>0%</option>
+                                                                                        <option value="1%">1%</option>
+                                                                                        <option value="10%">10%</option>
+                                                                                        <option value="18%">18%</option>
+                                                                                        <option value="40%">40%</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <label for="taxInput2" class="form-label">Tax 2</label>
+                                                                                    <select name="tax-2-input" id="taxInput2" class="form-select tax-select">
+                                                                                        <option value="0%" selected>0%</option>
+                                                                                        <option value="1%">1%</option>
+                                                                                        <option value="10%">10%</option>
+                                                                                        <option value="18%">18%</option>
+                                                                                        <option value="40%">40%</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="dropdown-divider my-4"></div>
+                                                                            <button type="button" class="btn btn-label-primary btn-apply-changes">Apply</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <script>
+                                                        document.addEventListener("DOMContentLoaded", function () {
+                                                            let sectionToDelete = null; // Track the section to be deleted
+
+                                                            // Function to add a new section with search bar and item container
+                                                            window.addSection = function () {
+                                                                const sectionsContainer = document.getElementById("sectionsContainer");
+
+                                                                // Create new section
+                                                                const newSection = document.createElement("div");
+                                                                newSection.classList.add("section-item", "mb-4");
+
+                                                                // Add <hr> element after section title
+                                                                const hr = document.createElement("hr");
+                                                                newSection.appendChild(hr); // This places the <hr> after the section title
+
+                                                                // Add section title
+                                                                const sectionTitle = document.createElement("h5");
+                                                                sectionTitle.textContent = "Section Title";
+
+                                                                // Create a span for the clickable arrows
+                                                                const arrowSpan = document.createElement("span");
+                                                                arrowSpan.textContent = "🔼 🔽"; // Add the arrows (up and down)
+
+                                                                // Make the span clickable by adding a click event
+                                                                arrowSpan.style.cursor = "pointer";  // Inline style to make it clickable
+
+                                                                // Toggle the arrows when clicked
+                                                                arrowSpan.addEventListener("click", function () {
+                                                                    if (arrowSpan.textContent === "🔼 🔽") {
+                                                                        arrowSpan.textContent = "🔽 🔼";  // Swap arrows
+                                                                    } else {
+                                                                        arrowSpan.textContent = "🔼 🔽";  // Reset to original
+                                                                    }
+                                                                });
+
+                                                                // Append the arrow span to the section title
+                                                                sectionTitle.appendChild(arrowSpan);
+
+                                                                // Append the section title to the new section
+                                                                newSection.appendChild(sectionTitle);
+
+                                                                // Add row with search bar, delete icon, and switch
+                                                                const row = document.createElement("div");
+                                                                row.classList.add("row", "align-items-center");
+
+                                                                // Search bar column
+                                                                const searchColumn = document.createElement("div");
+                                                                searchColumn.classList.add("col-6");
+                                                                searchColumn.innerHTML = `
+                                                                                                                            <div class="input-group input-group-merge">
+                                                                                                                                <input type="text" class="form-control" placeholder="Search..."/>
+                                                                                                                            </div>`;
+                                                                row.appendChild(searchColumn);
+
+                                                                // Delete icon column
+                                                                const deleteColumn = document.createElement("div");
+                                                                deleteColumn.classList.add("col-5", "text-start");
+                                                                deleteColumn.innerHTML = `
+                                                                                                                            <a href="#" class="delete-button" title="Delete Section"
+                                                                                                                               data-bs-toggle="modal" data-bs-target="#deleteAsSection">
+                                                                                                                               <i class="ti ti-lg ti-trash-filled text-danger"></i>
+                                                                                                                            </a>`;
+                                                                row.appendChild(deleteColumn);
+
+                                                                // Checkbox column
+                                                                const checkboxColumn = document.createElement("div");
+                                                                checkboxColumn.classList.add("col", "text-end", "form-check", "form-switch");
+                                                                checkboxColumn.innerHTML = `<input type="checkbox" class="form-check-input" />`;
+                                                                row.appendChild(checkboxColumn);
+
+                                                                // Append row to the new section
+                                                                newSection.appendChild(row);
+
+                                                                // Add items container
+                                                                const itemsContainer = document.createElement("div");
+                                                                itemsContainer.classList.add("items-container");
+                                                                newSection.appendChild(itemsContainer);
+
+                                                                // Add margin-top before "Add Item" button
+                                                                const addItemButton = document.createElement("button");
+                                                                addItemButton.type = "button";
+                                                                addItemButton.classList.add("btn", "btn-outline-primary", "mt-3");
+                                                                addItemButton.innerHTML = `<i class="ti ti-plus"></i> Add Item`;
+                                                                addItemButton.onclick = function () {
+                                                                    addItem(itemsContainer);
+                                                                };
+                                                                newSection.appendChild(addItemButton);
+
+                                                                // Attach the delete button event to open modal and set section to delete
+                                                                deleteColumn.querySelector("a").addEventListener("click", function (event) {
+                                                                    event.preventDefault(); // Prevent default anchor action (navigation)
+                                                                    sectionToDelete = newSection; // Store the section to be deleted
+                                                                });
+
+                                                                // Append the new section to the sections container
+                                                                sectionsContainer.appendChild(newSection);
+
+                                                                // Show the hidden item template in the new section
+                                                                addItem(itemsContainer); // Adds the first item automatically
+                                                            };
+
+                                                            // Function to add a new item to the section
+                                                            window.addItem = function (itemsContainer) {
+                                                                const itemTemplate = document.querySelector(".item-template");
+
+                                                                // Create and append a new item
+                                                                const newItem = itemTemplate.cloneNode(true);
+                                                                newItem.classList.remove("d-none");
+                                                                itemsContainer.appendChild(newItem);
+
+                                                                // Handle the delete button for the item
+                                                                newItem.querySelector("[data-repeater-delete]").addEventListener("click", function (event) {
+                                                                    event.preventDefault();
+                                                                    newItem.remove(); // Remove the specific item when the delete button is clicked
+                                                                });
+                                                            };
+
+                                                            // Function to confirm the section deletion
+                                                            window.confirmDeleteSection = function () {
+                                                                if (sectionToDelete) {
+                                                                    sectionToDelete.remove(); // Remove the section from the DOM
+                                                                    sectionToDelete = null; // Reset the reference
+                                                                }
+                                                            };
+                                                        });
+
+
+                                                    </script>
+
+
+
+
+                                                    <div class="card-body px-0">
+                                                        <div class="row row-gap-4">
+                                                            <div class="col-md-6 mb-md-0 mb-4">
+                                                            </div>
+                                                            <div class="col-md-6 d-flex justify-content-end">
+                                                                <div class="invoice-calculations">
+
+                                                                    <div class="d-flex justify-content-between mb-2">
+                                                                        <span class="w-px-100">Quote subtotal:</span>
+                                                                        <span class="fw-medium text-heading">$0.00</span>
+                                                                    </div>
+                                                                    <hr />
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <span class="w-px-100">Total:</span>
+                                                                        <span class="fw-medium text-heading">$0.00</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <hr class="my-0">
+                                                </div>
+                                                <div class="row mt-4">
+                                                    <div class="col-12">
+                                                        <div>
+                                                            <label for="note" class="text-heading mb-1 fw-medium">Note:</label>
+                                                            <textarea class="form-control" rows="2" id="note"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="navs-top-profile" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <label for="itemSelect">Include all items from</label>
+                                                    <select class="form-select mt-0" aria-label="Dropdown for sharing options">
+                                                        <option selected>Good - Architectural Shingles ($0.00)</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <label for="itemSelect">Description</label>
+                                                    <input class="form-control"
+                                                           type="text"
+                                                           autofocus placeholder="Includes everything from Good - Architectural Shingles" />
+                                                </div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <hr />
+                                                <h5>Section title</h5>
+                                                <div class="row align-items-center">
+                                                    <div class="col-6">
+                                                        <div class="input-group input-group-merge">
+                                                            <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
+                                                            <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon-search31">
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-5 text-start">
+                                                        <span class="mb-1"><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                    </div>
+                                                    <div class="col text-end form-check form-switch">
+                                                        <span class=""><input type="checkbox" class="form-check-input" /></span>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div class="row mt-3">
+                                                    <div class="card-body pt-0 px-0">
+                                                        <form class="source-item">
+                                                            <div class="mb-4" data-repeater-list="group-b">
+                                                                <div class="repeater-wrapper mt-2" data-repeater-item>
+                                                                    <div class="d-flex border rounded position-relative pe-0">
+                                                                        <div class="row w-100 p-6">
+                                                                            <div class="col-md-6 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Item</p>
+                                                                                <textarea class="form-control" rows="2" disabled></textarea>
+                                                                            </div>
+                                                                            <div class="col-md-3 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Quantity</p>
+                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                            </div>
+                                                                            <div class="col-md-2 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Price</p>
+                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                            </div>
+                                                                            <div class="col-md-1 col-12 pe-0 mt-md-2">
+                                                                                <p class="h6 repeater-title">Line total</p>
+                                                                                <p class="mb-0 text-heading">$0.00</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="d-flex flex-column align-items-center justify-content-between border-start p-2">
+                                                                            <i class="ti ti-lg ti-trash-filled text-danger" data-repeater-delete></i>
+                                                                            <div class="dropdown">
+                                                                                <span class="message-actions input-group-text">
+                                                                                    <a data-bs-toggle="modal"
+                                                                                       data-bs-target="#textAreaEnabledId2"> <i class='ti ti-lock cursor-pointer'></i></a>
+                                                                                </span>
+
+                                                                                </i>
+                                                                                <div class="dropdown-menu dropdown-menu-end w-px-300 p-4" aria-labelledby="dropdownMenuButton">
+
+                                                                                    <div class="row g-3">
+                                                                                        <div class="col-12">
+                                                                                            <label for="discountInput" class="form-label">Discount(%)</label>
+                                                                                            <input type="number" class="form-control" id="discountInput" min="0" max="100" />
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="taxInput1" class="form-label">Tax 1</label>
+                                                                                            <select name="tax-1-input" id="taxInput1" class="form-select tax-select">
+                                                                                                <option value="0%" selected>0%</option>
+                                                                                                <option value="1%">1%</option>
+                                                                                                <option value="10%">10%</option>
+                                                                                                <option value="18%">18%</option>
+                                                                                                <option value="40%">40%</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="taxInput2" class="form-label">Tax 2</label>
+                                                                                            <select name="tax-2-input" id="taxInput2" class="form-select tax-select">
+                                                                                                <option value="0%" selected>0%</option>
+                                                                                                <option value="1%">1%</option>
+                                                                                                <option value="10%">10%</option>
+                                                                                                <option value="18%">18%</option>
+                                                                                                <option value="40%">40%</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="dropdown-divider my-4"></div>
+                                                                                    <button type="button" class="btn btn-label-primary btn-apply-changes">Apply</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="card-body pt-0 px-0">
+                                                        <form class="source-item">
+                                                            <div class="mb-4" data-repeater-list="group-a">
+                                                                <div class="repeater-wrapper mt-2" data-repeater-item>
+                                                                    <div class="d-flex border rounded position-relative pe-0">
+                                                                        <div class="row w-100 p-6">
+                                                                            <div class="col-md-6 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Item</p>
+                                                                                <textarea class="form-control" rows="2" placeholder=""></textarea>
+                                                                            </div>
+                                                                            <div class="col-md-3 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Qty</p>
+                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                            </div>
+                                                                            <div class="col-md-2 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Qty</p>
+                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                            </div>
+                                                                            <div class="col-md-1 col-12 pe-0 mt-md-2">
+                                                                                <p class="h6 repeater-title">Price</p>
+                                                                                <p class="mb-0 text-heading">$0.00</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="d-flex flex-column align-items-center justify-content-between border-start p-2">
+                                                                            <i class="ti ti-lg ti-trash-filled text-danger" data-repeater-delete></i>
+                                                                            <div class="dropdown">
+                                                                                <span class="message-actions input-group-text">
+                                                                                    <a data-bs-toggle="modal"
+                                                                                       data-bs-target="#textAreaEnabledId1"><i class='ti ti-plus cursor-pointer'></i></a>
+                                                                                </span>
+
+                                                                                </i>
+                                                                                <div class="dropdown-menu dropdown-menu-end w-px-300 p-4" aria-labelledby="dropdownMenuButton">
+
+                                                                                    <div class="row g-3">
+                                                                                        <div class="col-12">
+                                                                                            <label for="discountInput" class="form-label">Discount(%)</label>
+                                                                                            <input type="number" class="form-control" id="discountInput" min="0" max="100" />
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="taxInput1" class="form-label">Tax 1</label>
+                                                                                            <select name="tax-1-input" id="taxInput1" class="form-select tax-select">
+                                                                                                <option value="0%" selected>0%</option>
+                                                                                                <option value="1%">1%</option>
+                                                                                                <option value="10%">10%</option>
+                                                                                                <option value="18%">18%</option>
+                                                                                                <option value="40%">40%</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="taxInput2" class="form-label">Tax 2</label>
+                                                                                            <select name="tax-2-input" id="taxInput2" class="form-select tax-select">
+                                                                                                <option value="0%" selected>0%</option>
+                                                                                                <option value="1%">1%</option>
+                                                                                                <option value="10%">10%</option>
+                                                                                                <option value="18%">18%</option>
+                                                                                                <option value="40%">40%</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="dropdown-divider my-4"></div>
+                                                                                    <button type="button" class="btn btn-label-primary btn-apply-changes">Apply</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <hr />
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <button type="button" class="btn btn-outline-primary waves-effect" data-repeater-create><i class='ti ti-plus ti-14px me-1_5'></i>Add Item</button>
+                                                                </div>
+                                                                <div class="col-6 text-end">
+                                                                    <label>Section total: <strong class="ms-4">$0.00</strong></label>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <hr class="my-0">
+                                                    <div class="col-6 text-start ps-0 p-2">
+                                                        <button type="button" class="btn btn-outline-primary waves-effect" data-repeater-create><i class='ti ti-plus ti-14px me-1_5'></i>Add section</button>
+                                                    </div>
+                                                    <hr />
+                                                    <div class="card-body px-0">
+                                                        <div class="row row-gap-4">
+                                                            <div class="col-md-6 mb-md-0 mb-4">
+                                                            </div>
+                                                            <div class="col-md-6 d-flex justify-content-end">
+                                                                <div class="invoice-calculations">
+
+                                                                    <div class="d-flex justify-content-between mb-2">
+                                                                        <span class="w-px-100">Quote subtotal:</span>
+                                                                        <span class="fw-medium text-heading">$0.00</span>
+                                                                    </div>
+                                                                    <hr />
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <span class="w-px-100">Total:</span>
+                                                                        <span class="fw-medium text-heading">$0.00</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <hr class="my-0">
+                                                </div>
+                                                <div class="row mt-4">
+                                                    <div class="col-12">
+                                                        <div>
+                                                            <label for="note" class="text-heading mb-1 fw-medium">Note:</label>
+                                                            <textarea class="form-control" rows="2" id="note"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="navs-top-messages" role="tabpanel">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <label for="itemSelect">Include all items from</label>
+                                                    <select class="form-select mt-0" aria-label="Dropdown for sharing options">
+                                                        <option selected>Good - Impact Resistant Shingles ($0.00)</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-6">
+                                                    <label for="itemSelect">Description</label>
+                                                    <input class="form-control"
+                                                           type="text"
+                                                           autofocus placeholder="Includes everything from Better - Impact Resistant Shingles" />
+                                                </div>
+                                            </div>
+                                            <div class="mt-3">
+                                                <hr />
+                                                <h5>Section title</h5>
+                                                <div class="row align-items-center">
+                                                    <div class="col-6">
+                                                        <div class="input-group input-group-merge">
+                                                            <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
+                                                            <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon-search31">
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-5 text-start">
+                                                        <span class="mb-1"><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                    </div>
+                                                    <div class="col text-end form-check form-switch">
+                                                        <span class=""><input type="checkbox" class="form-check-input" /></span>
+                                                    </div>
+                                                </div>
+                                                <hr />
+                                                <div class="row mt-3">
+                                                    <div class="card-body pt-0 px-0">
+                                                        <form class="source-item">
+                                                            <div class="mb-4" data-repeater-list="group-b">
+                                                                <div class="repeater-wrapper mt-2" data-repeater-item>
+                                                                    <div class="d-flex border rounded position-relative pe-0">
+                                                                        <div class="row w-100 p-6">
+                                                                            <div class="col-md-6 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Item</p>
+                                                                                <textarea class="form-control" rows="2" placeholder="" disabled></textarea>
+                                                                            </div>
+                                                                            <div class="col-md-3 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Qty</p>
+                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                            </div>
+                                                                            <div class="col-md-2 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Qty</p>
+                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                            </div>
+                                                                            <div class="col-md-1 col-12 pe-0 mt-md-2">
+                                                                                <p class="h6 repeater-title">Price</p>
+                                                                                <p class="mb-0 text-heading">$0.00</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="d-flex flex-column align-items-center justify-content-between border-start p-2">
+                                                                            <i class="ti ti-lg ti-trash-filled text-danger" data-repeater-delete></i>
+                                                                            <div class="dropdown">
+                                                                                <span class="message-actions input-group-text">
+                                                                                    <a data-bs-toggle="modal"
+                                                                                       data-bs-target="#textAreaEnabledId2"> <i class='ti ti-lock cursor-pointer'></i></a>
+                                                                                </span>
+
+                                                                                </i>
+                                                                                <div class="dropdown-menu dropdown-menu-end w-px-300 p-4" aria-labelledby="dropdownMenuButton">
+
+                                                                                    <div class="row g-3">
+                                                                                        <div class="col-12">
+                                                                                            <label for="discountInput" class="form-label">Discount(%)</label>
+                                                                                            <input type="number" class="form-control" id="discountInput" min="0" max="100" />
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="taxInput1" class="form-label">Tax 1</label>
+                                                                                            <select name="tax-1-input" id="taxInput1" class="form-select tax-select">
+                                                                                                <option value="0%" selected>0%</option>
+                                                                                                <option value="1%">1%</option>
+                                                                                                <option value="10%">10%</option>
+                                                                                                <option value="18%">18%</option>
+                                                                                                <option value="40%">40%</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="taxInput2" class="form-label">Tax 2</label>
+                                                                                            <select name="tax-2-input" id="taxInput2" class="form-select tax-select">
+                                                                                                <option value="0%" selected>0%</option>
+                                                                                                <option value="1%">1%</option>
+                                                                                                <option value="10%">10%</option>
+                                                                                                <option value="18%">18%</option>
+                                                                                                <option value="40%">40%</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="dropdown-divider my-4"></div>
+                                                                                    <button type="button" class="btn btn-label-primary btn-apply-changes">Apply</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="card-body pt-0 px-0">
+                                                        <form class="source-item">
+                                                            <div class="mb-4" data-repeater-list="group-a">
+                                                                <div class="repeater-wrapper mt-2" data-repeater-item>
+                                                                    <div class="d-flex border rounded position-relative pe-0">
+                                                                        <div class="row w-100 p-6">
+                                                                            <div class="col-md-6 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Item</p>
+                                                                                <textarea class="form-control" rows="2" placeholder=""></textarea>
+                                                                            </div>
+                                                                            <div class="col-md-3 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Qty</p>
+                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                            </div>
+                                                                            <div class="col-md-2 col-12 mb-md-0 mb-4">
+                                                                                <p class="h6 repeater-title">Qty</p>
+                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                            </div>
+                                                                            <div class="col-md-1 col-12 pe-0 mt-md-2">
+                                                                                <p class="h6 repeater-title">Price</p>
+                                                                                <p class="mb-0 text-heading">$0.00</p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="d-flex flex-column align-items-center justify-content-between border-start p-2">
+                                                                            <i class="ti ti-lg ti-trash-filled text-danger" data-repeater-delete></i>
+                                                                            <div class="dropdown">
+                                                                                <span class="message-actions input-group-text">
+                                                                                    <a data-bs-toggle="modal"
+                                                                                       data-bs-target="#textAreaEnabledId1"><i class='ti ti-plus cursor-pointer'></i></a>
+                                                                                </span>
+
+                                                                                </i>
+                                                                                <div class="dropdown-menu dropdown-menu-end w-px-300 p-4" aria-labelledby="dropdownMenuButton">
+
+                                                                                    <div class="row g-3">
+                                                                                        <div class="col-12">
+                                                                                            <label for="discountInput" class="form-label">Discount(%)</label>
+                                                                                            <input type="number" class="form-control" id="discountInput" min="0" max="100" />
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="taxInput1" class="form-label">Tax 1</label>
+                                                                                            <select name="tax-1-input" id="taxInput1" class="form-select tax-select">
+                                                                                                <option value="0%" selected>0%</option>
+                                                                                                <option value="1%">1%</option>
+                                                                                                <option value="10%">10%</option>
+                                                                                                <option value="18%">18%</option>
+                                                                                                <option value="40%">40%</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                        <div class="col-md-6">
+                                                                                            <label for="taxInput2" class="form-label">Tax 2</label>
+                                                                                            <select name="tax-2-input" id="taxInput2" class="form-select tax-select">
+                                                                                                <option value="0%" selected>0%</option>
+                                                                                                <option value="1%">1%</option>
+                                                                                                <option value="10%">10%</option>
+                                                                                                <option value="18%">18%</option>
+                                                                                                <option value="40%">40%</option>
+                                                                                            </select>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="dropdown-divider my-4"></div>
+                                                                                    <button type="button" class="btn btn-label-primary btn-apply-changes">Apply</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <hr />
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <button type="button" class="btn btn-outline-primary waves-effect" data-repeater-create><i class='ti ti-plus ti-14px me-1_5'></i>Add Item</button>
+                                                                </div>
+                                                                <div class="col-6 text-end">
+                                                                    <label>Section total: <strong class="ms-4">$0.00</strong></label>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <hr class="my-0">
+                                                    <div class="col-6 text-start ps-0 p-2">
+                                                        <button type="button" class="btn btn-outline-primary waves-effect" data-repeater-create><i class='ti ti-plus ti-14px me-1_5'></i>Add section</button>
+                                                    </div>
+                                                    <hr />
+                                                    <div class="card-body px-0">
+                                                        <div class="row row-gap-4">
+                                                            <div class="col-md-6 mb-md-0 mb-4">
+                                                            </div>
+                                                            <div class="col-md-6 d-flex justify-content-end">
+                                                                <div class="invoice-calculations">
+
+                                                                    <div class="d-flex justify-content-between mb-2">
+                                                                        <span class="w-px-100">Quote subtotal:</span>
+                                                                        <span class="fw-medium text-heading">$0.00</span>
+                                                                    </div>
+                                                                    <hr />
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <span class="w-px-100">Total:</span>
+                                                                        <span class="fw-medium text-heading">$0.00</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <hr class="my-0">
+                                                </div>
+                                                <div class="row mt-4">
+                                                    <div class="col-12">
+                                                        <div>
+                                                            <label for="note" class="text-heading mb-1 fw-medium">Note:</label>
+                                                            <textarea class="form-control" rows="2" id="note"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div id="tabContent" class="tab-content">
+                                            <!-- Existing tab content -->
+                                        </div>
+                                        <div id="tabcloseId" style="display: none;">
+                                            <div id="modalContent"></div>
+                                            <button id="deleteButton">Delete</button>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="mt-2">
+                                <a href="" data-bs-toggle="modal"
+                                   data-bs-target="#saveAsTemplate">Save as template</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Layout settings</h5>
+                    <span class="ms-1 pt-1">(Customize controls for this layout)</span>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col mb-4">
+                            <h5 for="nameWithTitle" class="form-label">Layout Name</h5>
+                            <input type="text"
+                                   id="nameWithTitle"
+                                   class="form-control"
+                                   placeholder="Enter Layout Name" />
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col mb-0">
+                            <h5 for="nameWithTitle" class="form-label">Sharing</h5>
+                            <div class="input-group">
+                                <div class="input-group-text">
+
+                                    <input class="form-check-input mt-0"
+                                           type="checkbox"
+                                           value=""
+                                           aria-label="Checkbox for following text input" />
+                                </div>
+                                <label class="form-control">Make this layout available to all users</label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="viewIntoductionModel" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Saved templates</h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card mb-6">
+                        <div class="card-header px-0 pt-0">
+                            <div class="nav-align-top">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <button type="button" class="nav-link active" data-bs-toggle="tab" data-bs-target="#form-tabs-personal" aria-controls="form-tabs-personal" role="tab" aria-selected="true">
+                                            <span class="ti ti-user ti-lg d-sm-none"></span><span class="d-none d-sm-block">My Layout</span>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="nav-link" data-bs-toggle="tab" data-bs-target="#form-tabs-account" aria-controls="form-tabs-account" role="tab" aria-selected="false">
+                                            <span class="ti ti-user-cog ti-lg d-sm-none"></span><span class="d-none d-sm-block">Shared Layout</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content p-0">
+                                <div class="tab-pane fade active show" id="form-tabs-personal" role="tabpanel">
+                                    <form>
+                                        <div class="row g-6">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="input-group input-group-merge">
+                                                        <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon-search31">
+                                                    </div>
+                                                    <div class="col-sm-12 col-form-label text-sm-end">
+                                                        <ul class="list-group list-group-flush mt-2">
+                                                            <label class="text-center">No matching records found.</label>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- Account Details -->
+                                <div class="tab-pane fade" id="form-tabs-account" role="tabpanel">
+                                    <form>
+                                        <div class="row g-6">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="input-group input-group-merge">
+                                                        <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon-search31">
+                                                    </div>
+                                                    <div class="col-sm-12 col-form-label text-sm-end">
+                                                        <ul class="list-group list-group-flush mt-2">
+                                                            <li class="list-group-item d-flex justify-content-between">
+                                                                <span class="col-sm-7 d-flex justify-content-start">
+                                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                    <span>Introduction (Sample)</span>
+                                                                </span>
+                                                                <span class="col-sm-5 d-flex justify-content-end align-items-center">
+                                                                    <span>
+                                                                        <a href="#" title="Check">
+                                                                            <i class="ti ti-lg ti-check text-success me-2"></i>
+                                                                        </a>
+                                                                    </span>
+                                                                    <span><a href="#" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                    <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                </span>
+                                                            </li>
+                                                            <li class="list-group-item d-flex justify-content-between">
+                                                                <span class="col-sm-7 d-flex justify-content-start">
+                                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                    <span>(Sample) Residential Metals</span>
+                                                                </span>
+                                                                <span class="col-sm-5 d-flex justify-content-end align-items-center">
+                                                                    <span>
+                                                                        <a href="#" title="Check">
+                                                                            <i class="ti ti-lg ti-check text-success me-2"></i>
+                                                                        </a>
+                                                                    </span>
+                                                                    <span><a href="#" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                    <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                </span>
+                                                            </li>
+                                                            <!-- Additional layout items go here -->
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="saveAsTemplate" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Save as new template</h5><br />
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <label class="ms-5 ps-1">(Create a name for this new template to use it in future reports.)</label>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col mb-4">
+                            <h5 for="nameWithTitle" class="form-label">New template Name</h5>
+                            <input type="text"
+                                   id="nameWithTitle"
+                                   class="form-control" />
+                        </div>
+                        <div class="form-check mb-0 ms-3">
+                            <input class="form-check-input" type="checkbox" id="remember-me">
+                            <label class="form-check-label" for="remember-me">
+                                Share this template with all users
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="tabcloseId1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle" data-bs-dismiss="modal">Delete quote?</h5><br />
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <label for="nameWithTitle" class="form-label">Deleting Good - Architectural Shingles will remove all associated data. This cannot be undone.</label>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-danger">Delete quote</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="tabcloseId2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Delete quote?</h5><br />
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <label for="nameWithTitle" class="form-label">Deleting Good - Impact Resistant Shingles will remove all associated data. This cannot be undone.</label>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-danger">Delete quote</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="tabcloseId3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Delete quote?</h5><br />
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <label for="nameWithTitle" class="form-label">Deleting Good - Designer Shingles will remove all associated data. This cannot be undone.</label>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-danger">Delete quote</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="textAreaEnabledId1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Add Price Detail</h5><br />
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <label>Name</label>
+                    <input type="text" class="form-control flex-grow-1 me-2 mt-2" />
+                    <label class="mt-2">Description</label>
+                    <textarea class="form-control flex-grow-1 me-2 mt-2" rows="2" cols="50"></textarea>
+                    <label for="itemSelect" class="mt-2">Unit</label>
+                    <select class="form-select mt-0" aria-label="Dropdown for sharing options">
+                        <option></option>
+                        <option>SQ</option>
+                        <option>SQFT</option>
+                        <option>LF</option>
+                        <option>EA</option>
+                        <option>PC</option>
+                    </select>
+                    <label for="itemSelect" class="mt-2">Price adjustment</label>
+                    <div class="row mt-2">
+                        <div class="col-3">
+                            <label>Material</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-3">
+                            <label>Labor</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-3">
+                            <label>
+                                Margin
+                            </label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-3">
+                            <label>
+                                Price
+                            </label>
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="form-check mb-0">
+                            <input class="form-check-input" type="checkbox" id="remember-me">
+                            <label class="form-check-label" for="remember-me">
+                                This item is tax exempt
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Save</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="textAreaEnabledId2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Edit item</h5><br />
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="max-height: 500px; overflow-y: auto;">
+                    <div class="row">
+                        <div class="col-7">
+                            <h6 class="mb-0"><strong>ICE & WATER BARRIER</strong></h6>
+                            <label>
+                                CE & WATER BARRIER Self-adhesive
+                                underlayment applied along eaves and valleys
+                                protecting vulnerable areas on a roof from ice and water damage
+                            </label>
+                        </div>
+                     @*    <div class="col-5 mt-5">
+                            <button type="button" class="btn btn-outline-primary waves-effect" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBoth">
+                                Edit In Price List
+                            </button>
+                        </div> *@
+                    </div>
+                    <div class="row mt-3">
+                        <span class="badge bg-label-warning">!<label class="ms-2">Values can be edited on reports</label></span>
+                    </div>
+                    <hr />
+                    <div class="mt-2">
+                        <h6 class="mb-0"><strong>Price calculation</strong></h6>
+                        <div class="row mt-3">
+                            <div class="col-8 text-start">
+                                <label class="mt-2">Material</label>
+                            </div>
+                            <div class="col-4 text-end">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row mt-3">
+                            <div class="col-8 text-start">
+                                <label class="mt-2">Labor</label>
+                            </div>
+                            <div class="col-4 text-end">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row mt-3">
+                            <div class="col-8 text-start">
+                                <label class="mt-2">Margin</label>
+                            </div>
+                            <div class="col-4 text-end">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row mt-3">
+                            <div class="col-8 text-start">
+                                <label class="mt-2"><strong>Total</strong></label>
+                            </div>
+                            <div class="col-4 text-end">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="mt-2">
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox" id="remember-me">
+                                <label class="form-check-label" for="remember-me">
+                                    This item is tax exempt
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mt-1">
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox" id="remember-me">
+                                <label class="form-check-label" for="remember-me">
+                                    Margin locked
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row mt-3">
+                        <div class="col-6 mt-2">
+                            <h6 class="mb-0"><strong>Quantity calculation</strong></h6>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn btn-outline-primary waves-effect" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBoth1">
+                                Edit Quantity Calculation
+                            </button>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <label class="mt-2">Calculation</label>
+                            </div>
+                            <div class="col-8 text-end">
+                                <label>((Total Eaves+Total Valleys)*(1+Suggested Waste Percentage))/66</label>
+                            </div>
+                        </div>
+                        <hr class="mt-2" />
+                        <div class="row mt-3">
+                            <div class="col-8 text-start">
+                                <label class="mt-2">Total Eaves</label>
+                            </div>
+                            <div class="col-4 text-end">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <hr class="mt-2" />
+                        <div class="row mt-3">
+                            <div class="col-8 text-start">
+                                <label class="mt-2">Total Valleys</label>
+                            </div>
+                            <div class="col-4 text-end">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <hr class="mt-2" />
+                        <div class="row mt-3">
+                            <div class="col-8 text-start">
+                                <label class="mt-2">Suggested Waste Percentage</label>
+                            </div>
+                            <div class="col-4 text-end">
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <hr class="mt-2" />
+                        <div class="row">
+                            <div class="col-8 text-start">
+                                <label class="mt-2"><strong>Quantity</strong></label>
+                            </div>
+                            <div class="col-4 text-end">
+                                <strong>0</strong>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal to edit Quantity Calculation (tabcloseId1) -->
+    <div class="modal fade" id="tabcloseId1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Edit Quantity Calculation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Add your content here for editing Quantity Calculation -->
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="quantityInput">New Quantity:</label>
+                            <input type="text" class="form-control" id="quantityInput" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="modal fade" id="saveAsTemplate" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">Save as new template</h5><br />
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <label class="ms-5 ps-1">(Create a name for this new template to use it in future reports.)</label>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-4">
+                        <h5 for="nameWithTitle" class="form-label">New template Name</h5>
+                        <input type="text"
+                               id="nameWithTitle"
+                               class="form-control" />
+                    </div>
+
+                    <div class="form-check mb-0 ms-3">
+                        <input class="form-check-input" type="checkbox" id="remember-me">
+                        <label class="form-check-label" for="remember-me">
+                            Share this template with all users
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="pageSettingModel" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">Page Settings</h5><br />
+
+                <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col mb-4">
+                        <div class="form-check form-check-primary">
+                            <input class="form-check-input" name="radioButton" id="customRadioPrimary" type="radio" />
+                            <label class="form-check-label">Customer can select only one quote</label>
+                        </div>
+                        <hr />
+                        <div class="form-check form-check-primary">
+                            <input class="form-check-input" name="radioButton" id="customRadioPrimary" type="radio" />
+                            <label class="form-check-label">Customer can select only at least one quote</label>
+                        </div>
+                    </div>
+                    <div><h5><b>Select what to display in the PDF.</b></h5></div>
+                    <div class="form-check mb-0 ms-3">
+                        <input class="form-check-input" type="checkbox" id="remember-me">
+                        <label class="form-check-label" for="remember-me">
+                            Unit Price
+                        </label>
+                    </div>
+                    <hr />
+                    <div class="form-check mb-0 ms-3">
+                        <input class="form-check-input" type="checkbox" id="remember-me">
+                        <label class="form-check-label" for="remember-me">
+                            Quantity
+                        </label>
+                    </div>
+                    <hr />
+                    <div class="form-check mb-0 ms-3">
+                        <input class="form-check-input" type="checkbox" id="remember-me">
+                        <label class="form-check-label" for="remember-me">
+                            Line Total
+                        </label>
+                    </div>
+                    <hr />
+                    <div class="form-check mb-0 ms-3">
+                        <input class="form-check-input" type="checkbox" id="remember-me">
+                        <label class="form-check-label" for="remember-me">
+                            Section Total
+                        </label>
+                    </div>
+                    <hr />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deleteAsSection" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">Do you want to delete Details of your roof installation is as follows:?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Deleting this section will also delete all items within it.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="confirmDeleteSection()">Delete Section</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="">
+    <h5 class=""></h5>
+    <div class="">
+        <div class="row gy-3">
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasBoth" aria-labelledby="offcanvasBothLabel">
+                <div class="offcanvas-header">
+
+                    <h5 id="offcanvasBothLabel" class="offcanvas-title">Edit Price Detail</h5><br />
+
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body my-auto mx-0 flex-grow-0">
+
+                    <div class="modal-body">
+
+                        <label>Name</label>
+                        <input type="text" class="form-control flex-grow-1 me-2 mt-2" />
+                        <label class="mt-2">Description</label>
+                        <textarea class="form-control flex-grow-1 me-2 mt-2" rows="2" cols="50"></textarea>
+                        <label for="itemSelect" class="mt-2">Unit</label>
+                        <select class="form-select mt-0" aria-label="Dropdown for sharing options">
+                            <option></option>
+                            <option>SQ</option>
+                            <option>SQFT</option>
+                            <option>LF</option>
+                            <option>EA</option>
+                            <option>PC</option>
+                        </select>
+                        <label for="itemSelect" class="mt-2">Price adjustment</label>
+                        <div class="row mt-2">
+                            <div class="col-3">
+                                <label>Material</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col-3">
+                                <label>Labor</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col-3">
+                                <label>
+                                    Margin
+                                </label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col-3">
+                                <label>
+                                    Price
+                                </label>
+                                <input type="text" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-check mb-0">
+                                <input class="form-check-input" type="checkbox" id="remember-me">
+                                <label class="form-check-label" for="remember-me">
+                                    This item is tax exempt
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <button type="button" class="btn btn-primary mb-2 d-grid w-100">Save</button>
+                        <button type="button" class="btn btn-label-secondary d-grid w-100" data-bs-dismiss="offcanvas">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="">
+    <h5 class=""></h5>
+    <div class="">
+        <div class="row gy-3">
+            <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasBoth1" aria-labelledby="offcanvasBothLabel">
+                <div class="offcanvas-header p-2 mt-4">
+                    <strong id="offcanvasBothLabel" class="offcanvas-title">Quantity calculation for synthetic underlayment</strong><br />
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <label class="ms-2">Build your formula here just like you would in Excel. To insert token names, select from the list or type '@@' and SumoQuote will suggest the correct token name.</label>
+
+                <div class="offcanvas-body my-auto mx-0 flex-grow-0">
+
+                    <div class="modal-body">
+
+                        <label>Formula</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Total Roof Area /1000">
+                            <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tokens</button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="javascript:void(0);">Action</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0);">Another action</a></li>
+                                <li><a class="dropdown-item" href="javascript:void(0);">Something else here</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="javascript:void(0);">Separated link</a></li>
+                            </ul>
+
+                        </div>
+                        <label class="mt-2">Rounding</label>
+                        <textarea class="form-control flex-grow-1 me-2 mt-2" rows="2" cols="50"></textarea>
+                        <label for="itemSelect" class="mt-2">Unit</label>
+                        <select class="form-select mt-0" aria-label="Dropdown for sharing options">
+                            <option>Next Whole Number</option>
+                            <option>Next 1/10th</option>
+                            <option>Next 1/4th</option>
+                            <option>Next 1/2</option>
+                            <option>Previous 1/10th</option>
+                            <option>Previous 1/4th</option>
+                        </select>
+                        <hr />
+                        <strong for="itemSelect" class="mt-2">Test your formula</strong>
+                        <p class="mt-2">Once you've built your formula, you can run a test here to make sure it's working correctly</p>
+
+                        <div class="mt-4">
+                            <label for="itemSelect" class="mt-2">Total Roof Area</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="text-end mt-2">
+                            <strong>Result:0</strong>
+
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <button type="button" class="btn btn-primary mb-2 d-grid w-100">Save</button>
+                        <button type="button" class="btn btn-label-secondary d-grid w-100" data-bs-dismiss="offcanvas">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="col-lg-4 col-md-6">
+    <div class="mt-4">
+        <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalFullTitle">Review</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div style="width: 100%; height: 100%; border: 1px solid #ccc;">
+                            <iframe src="@Url.Content("~/image/estimatedetailsviewpage.pdf")" width="100%" height="100%" style="border: none;"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let tabCount = 1;
+    const maxTabs = 5;
+
+    function handleClick() {
+        if (tabCount < maxTabs) {
+            tabCount++;
+            const newTab = document.createElement('li');
+            newTab.classList.add('nav-item');
+            newTab.style = "";
+            newTab.innerHTML = `
+                                                            <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-new${tabCount}" aria-controls="navs-top-new${tabCount}" aria-selected="false">
+                                                                <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>New Quote
+                                                                <a href="#" title="close" onclick="openModal(${tabCount})"><i class="ti ti-x align-text-bottom me-2 ms-2 icon-close"></i></a>
+                                                            </button>
+                                                        `;
+
+            document.getElementById('tabList').insertBefore(newTab, document.querySelector('.nav-item.card.ms-4'));
+            const newTabContent = document.createElement('div');
+            newTabContent.classList.add('tab-pane', 'fade');
+            newTabContent.id = `navs-top-new${tabCount}`;
+            newTabContent.setAttribute('role', 'tabpanel');
+            newTabContent.setAttribute('aria-labelledby', `navs-top-new${tabCount}-tab`);
+            newTabContent.innerHTML = `
+                                                            <div class="row">
+                                                                <div class="col-6">
+                                                                    <label for="itemSelect">Include all items from</label>
+                                                                    <select class="form-select mt-0" aria-label="Dropdown for sharing options">
+                                                                        <option selected>None</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-6">
+                                                                    <label for="itemSelect">Description</label>
+                                                                    <input class="form-control" type="text" autofocus />
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="mt-3">
+                                                                <hr />
+                                                                <h5>
+                                                                    Section Title
+                                                                    <span class="cursor-pointer">
+                                                                        🔼 🔽
+                                                                    </span>
+                                                                </h5>
+
+                                                                <div class="row align-items-center">
+                                                                    <div class="col-6">
+                                                                        <div class="input-group input-group-merge">
+                                                                            <input type="text" class="form-control" aria-describedby="basic-addon-search31">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-5 text-start">
+                                                                        <span class="mb-1"><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                    </div>
+                                                                    <div class="col text-end form-check form-switch">
+                                                                        <span class=""><input type="checkbox" class="form-check-input" /></span>
+                                                                    </div>
+                                                                </div>
+                                                                <hr />
+                                                                                                        <div class="row mt-3">
+                                                                                                    <div class="card-body pt-0 px-0">
+                                                                                                        <form class="source-item">
+                                                                                                            <div class="mb-4" data-repeater-list="group-b">
+                                                                                                                <div class="repeater-wrapper mt-2" data-repeater-item>
+                                                                                                                    <div class="d-flex border rounded position-relative pe-0">
+                                                                                                                        <div class="row w-100 p-6">
+                                                                                                                            <div class="col-md-6 col-12 mb-md-0 mb-4">
+                                                                                                                                <p class="h6 repeater-title">Item</p>
+                                                                                                                                <textarea class="form-control" rows="2" placeholder="" disabled></textarea>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-md-3 col-12 mb-md-0 mb-4">
+                                                                                                                                <p class="h6 repeater-title">Qty</p>
+                                                                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                                                                            </div>
+                                                                                                                            <div class="col-md-2 col-12 mb-md-0 mb-4">
+                                                                                                                                <p class="h6 repeater-title">Qty</p>
+                                                                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                                                                            </div>
+                                                                                                                            <div class="col-md-1 col-12 pe-0 mt-md-2">
+                                                                                                                                <p class="h6 repeater-title">Price</p>
+                                                                                                                                <p class="mb-0 text-heading">$0.00</p>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="d-flex flex-column align-items-center justify-content-between border-start p-2">
+                                                                                                                            <i class="ti ti-lg ti-trash-filled text-danger" data-repeater-delete></i>
+                                                                                                                            <div class="dropdown">
+                                                                                                                                <span class="message-actions input-group-text">
+                                                                                                                                    <a data-bs-toggle="modal"
+                                                                                                                                       data-bs-target="#textAreaEnabledId2"> <i class='ti ti-lock cursor-pointer'></i></a>
+                                                                                                                                </span>
+
+                                                                                                                                </i>
+                                                                                                                                <div class="dropdown-menu dropdown-menu-end w-px-300 p-4" aria-labelledby="dropdownMenuButton">
+
+                                                                                                                                    <div class="row g-3">
+                                                                                                                                        <div class="col-12">
+                                                                                                                                            <label for="discountInput" class="form-label">Discount(%)</label>
+                                                                                                                                            <input type="number" class="form-control" id="discountInput" min="0" max="100" />
+                                                                                                                                        </div>
+                                                                                                                                        <div class="col-md-6">
+                                                                                                                                            <label for="taxInput1" class="form-label">Tax 1</label>
+                                                                                                                                            <select name="tax-1-input" id="taxInput1" class="form-select tax-select">
+                                                                                                                                                <option value="0%" selected>0%</option>
+                                                                                                                                                <option value="1%">1%</option>
+                                                                                                                                                <option value="10%">10%</option>
+                                                                                                                                                <option value="18%">18%</option>
+                                                                                                                                                <option value="40%">40%</option>
+                                                                                                                                            </select>
+                                                                                                                                        </div>
+                                                                                                                                        <div class="col-md-6">
+                                                                                                                                            <label for="taxInput2" class="form-label">Tax 2</label>
+                                                                                                                                            <select name="tax-2-input" id="taxInput2" class="form-select tax-select">
+                                                                                                                                                <option value="0%" selected>0%</option>
+                                                                                                                                                <option value="1%">1%</option>
+                                                                                                                                                <option value="10%">10%</option>
+                                                                                                                                                <option value="18%">18%</option>
+                                                                                                                                                <option value="40%">40%</option>
+                                                                                                                                            </select>
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                    <div class="dropdown-divider my-4"></div>
+                                                                                                                                    <button type="button" class="btn btn-label-primary btn-apply-changes">Apply</button>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </form>
+                                                                                                    </div>
+                                                                                                    <div class="card-body pt-0 px-0">
+                                                                                                        <form class="source-item">
+                                                                                                            <div class="mb-4" data-repeater-list="group-a">
+                                                                                                                <div class="repeater-wrapper mt-2" data-repeater-item>
+                                                                                                                    <div class="d-flex border rounded position-relative pe-0">
+                                                                                                                        <div class="row w-100 p-6">
+                                                                                                                            <div class="col-md-6 col-12 mb-md-0 mb-4">
+                                                                                                                                <p class="h6 repeater-title">Item</p>
+                                                                                                                                <textarea class="form-control" rows="2" placeholder=""></textarea>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-md-3 col-12 mb-md-0 mb-4">
+                                                                                                                                <p class="h6 repeater-title">Qty</p>
+                                                                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                                                                            </div>
+                                                                                                                            <div class="col-md-2 col-12 mb-md-0 mb-4">
+                                                                                                                                <p class="h6 repeater-title">Qty</p>
+                                                                                                                                <input type="text" class="form-control invoice-item-qty" placeholder="1" min="1" max="50" />
+                                                                                                                            </div>
+                                                                                                                            <div class="col-md-1 col-12 pe-0 mt-md-2">
+                                                                                                                                <p class="h6 repeater-title">Price</p>
+                                                                                                                                <p class="mb-0 text-heading">$0.00</p>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                        <div class="d-flex flex-column align-items-center justify-content-between border-start p-2">
+                                                                                                                            <i class="ti ti-lg ti-trash-filled text-danger" data-repeater-delete></i>
+                                                                                                                            <div class="dropdown">
+                                                                                                                                <span class="message-actions input-group-text">
+                                                                                                                                    <a data-bs-toggle="modal"
+                                                                                                                                       data-bs-target="#textAreaEnabledId1"><i class='ti ti-plus cursor-pointer'></i></a>
+                                                                                                                                </span>
+
+                                                                                                                                </i>
+                                                                                                                                <div class="dropdown-menu dropdown-menu-end w-px-300 p-4" aria-labelledby="dropdownMenuButton">
+
+                                                                                                                                    <div class="row g-3">
+                                                                                                                                        <div class="col-12">
+                                                                                                                                            <label for="discountInput" class="form-label">Discount(%)</label>
+                                                                                                                                            <input type="number" class="form-control" id="discountInput" min="0" max="100" />
+                                                                                                                                        </div>
+                                                                                                                                        <div class="col-md-6">
+                                                                                                                                            <label for="taxInput1" class="form-label">Tax 1</label>
+                                                                                                                                            <select name="tax-1-input" id="taxInput1" class="form-select tax-select">
+                                                                                                                                                <option value="0%" selected>0%</option>
+                                                                                                                                                <option value="1%">1%</option>
+                                                                                                                                                <option value="10%">10%</option>
+                                                                                                                                                <option value="18%">18%</option>
+                                                                                                                                                <option value="40%">40%</option>
+                                                                                                                                            </select>
+                                                                                                                                        </div>
+                                                                                                                                        <div class="col-md-6">
+                                                                                                                                            <label for="taxInput2" class="form-label">Tax 2</label>
+                                                                                                                                            <select name="tax-2-input" id="taxInput2" class="form-select tax-select">
+                                                                                                                                                <option value="0%" selected>0%</option>
+                                                                                                                                                <option value="1%">1%</option>
+                                                                                                                                                <option value="10%">10%</option>
+                                                                                                                                                <option value="18%">18%</option>
+                                                                                                                                                <option value="40%">40%</option>
+                                                                                                                                            </select>
+                                                                                                                                        </div>
+                                                                                                                                    </div>
+                                                                                                                                    <div class="dropdown-divider my-4"></div>
+                                                                                                                                    <button type="button" class="btn btn-label-primary btn-apply-changes">Apply</button>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <hr />
+                                                                                                            <div class="row">
+                                                                                                                <div class="col-6">
+                                                                                                                    <button type="button" class="btn btn-outline-primary waves-effect" data-repeater-create><i class='ti ti-plus ti-14px me-1_5'></i>Add Item</button>
+                                                                                                                </div>
+                                                                                                                <div class="col-6 text-end">
+                                                                                                                    <label>Section total: <strong class="ms-4">$0.00</strong></label>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </form>
+                                                                                                    </div>
+
+                                                                                                    <hr class="my-0">
+                                                                                                    <div class="col-6 text-start ps-0 p-2">
+                                                                                                        <button type="button" class="btn btn-outline-primary waves-effect" data-repeater-create><i class='ti ti-plus ti-14px me-1_5'></i>Add section</button>
+                                                                                                    </div>
+                                                                                                    <hr />
+                                                                                                    <div class="card-body px-0">
+                                                                                                        <div class="row row-gap-4">
+                                                                                                            <div class="col-md-6 mb-md-0 mb-4">
+                                                                                                            </div>
+                                                                                                            <div class="col-md-6 d-flex justify-content-end">
+                                                                                                                <div class="invoice-calculations">
+
+                                                                                                                    <div class="d-flex justify-content-between mb-2">
+                                                                                                                        <span class="w-px-100">Quote subtotal:</span>
+                                                                                                                        <span class="fw-medium text-heading">$0.00</span>
+                                                                                                                    </div>
+                                                                                                                    <hr />
+                                                                                                                    <div class="d-flex justify-content-between">
+                                                                                                                        <span class="w-px-100">Total:</span>
+                                                                                                                        <span class="fw-medium text-heading">$0.00</span>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+
+                                                                                                    </div>
+                                                                                                    <hr class="my-0">
+                                                                                                </div>
+                                                                                                <div class="row mt-4">
+                                                                                                    <div class="col-12">
+                                                                                                        <div>
+                                                                                                            <label for="note" class="text-heading mb-1 fw-medium">Note:</label>
+                                                                                                            <textarea class="form-control" rows="2" id="note"></textarea>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                            </div>
+                                                        `;
+            document.getElementById('tabContent').appendChild(newTabContent);
+            if (tabCount >= maxTabs) {
+                document.getElementById('plusButton').remove();
+            }
+        }
+    }
+    function openModal(tabId) {
+        const modal = document.createElement('div');
+        modal.classList.add('modal', 'fade');
+        modal.id = `tabcloseId${tabId}`;
+        modal.setAttribute('tabindex', '-1');
+        modal.setAttribute('aria-hidden', 'true');
+        modal.innerHTML = `
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalCenterTitle">Delete quote?</h5><br />
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <label for="nameWithTitle" class="form-label">Deleting this quote will remove all associated data. This cannot be undone.</label>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-danger" onclick="deleteTab(${tabId})">Delete quote</button>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        new bootstrap.Modal(modal).show();
+    }
+    // function deleteTab(tabId) {
+    //     const tab = document.getElementById(`navs-top-new${tabId}`);
+    //     const tabButton = document.querySelector(`[aria-controls="navs-top-new${tabId}"]`).parentElement;
+    //     tabButton.remove();
+    //     tab.remove();
+    //     const modal = document.getElementById(`tabcloseId${tabId}`);
+    //     const modalInstance = bootstrap.Modal.getInstance(modal);
+    //     modalInstance.hide();
+    //     const homeTab = document.getElementById('navs-top-home');
+    //     const homeTabButton = document.querySelector('[aria-controls="navs-top-home"]').parentElement;
+    //     homeTab.classList.add('show', 'active');
+    //     homeTabButton.classList.add('active');
+    //     const tabInstance = new bootstrap.Tab(homeTabButton);
+    //     tabInstance.show();
+    // }
+</script>
+<script>
+    const pdfUrl = '@Url.Content("~/image/samplereportviewpage.pdf")';
+
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdfDoc => {
+        const pdfViewer = document.getElementById('pdfViewer');
+        for (let i = 1; i <= pdfDoc.numPages; i++) {
+            pdfDoc.getPage(i).then(page => {
+                const viewport = page.getViewport({ scale: 1.5 });
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                pdfViewer.appendChild(canvas);
+
+                page.render({ canvasContext: context, viewport: viewport });
+            });
+        }
+    }).catch(error => console.error('Error loading PDF:', error));
+</script>
+<script>
+    document.getElementById('edit-title-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        var titleText = document.getElementById('title-text');
+        var titleInput = document.getElementById('title-input');
+        var editIcon = document.getElementById('edit-title-link');
+        if (titleInput.style.display === 'none') {
+            titleInput.style.display = 'inline-block';
+            titleInput.value = titleText.innerText;
+            titleText.style.display = 'none';
+            editIcon.style.display = 'none';
+
+            titleInput.focus();
+        } else {
+            titleText.innerText = titleInput.value;
+            titleInput.style.display = 'none';
+            titleText.style.display = 'inline-block';
+            editIcon.style.display = 'inline-block';
+        }
+    });
+    document.addEventListener('click', function (e) {
+        var titleText = document.getElementById('title-text');
+        var titleInput = document.getElementById('title-input');
+        var editIcon = document.getElementById('edit-title-link');
+        if (!titleText.contains(e.target) && !titleInput.contains(e.target) && !editIcon.contains(e.target)) {
+            if (titleInput.style.display === 'inline-block') {
+                titleText.innerText = titleInput.value;
+                titleInput.style.display = 'none';
+                titleText.style.display = 'inline-block';
+                editIcon.style.display = 'inline-block';
+            }
+        }
+    });
+</script>

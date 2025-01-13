@@ -16,6 +16,7 @@ namespace MrGutter.Services.IService
         public Task<int> SetOtpAsync(UsersVM usersVM);
         public Task<int> ValidateOTPAsync(LoginVM loginModel);
         public Task<UsersVM> GetUserAsync(string? UserId);
+        public Task<RoleVM> GetRoleAsync(string? RoleId);
         public Task<int> ResetPasswordAsync(LoginVM loginVM);
     }
 }

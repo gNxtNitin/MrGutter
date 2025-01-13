@@ -1,0 +1,465 @@
+﻿@{
+    Layout = "_Layout_EditReportLayoutSetting";
+    ViewBag.Title = "layout Report";
+}
+
+
+
+@* <div class="mt-4">
+<div class="swiper-container swiper-container-horizontal swiper swiper-card-advance-bg" id="swiper-with-pagination-cards">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="row">
+                <div class="col-12 d-flex">
+                    <div class="col-4">
+                        <h5 class="text-white mb-0">Dashboard</h5>
+                    </div>
+                    <div class="col-4">
+
+                    </div>
+                    <div class="col-4 text-end">
+                        <a class="btn btn-label-primary d-grid w-100 waves-effect">Create new project</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+</div> *@
+<div class="flex-shrink-1 container-fluid flex-grow-1 container-p-x container-p-y pt-0">
+
+    <div class="layout-demo-wrapper">
+        <div class="layout-demo-placeholder">
+            <div class="row">
+                <div class="col-12">
+                   @*  <h5 class="mb-0">Page Content</h5> *@
+                   @*  <div class="d-flex justify-content-between mb-1">
+                        <h5 class="mb-0">
+                            Introduction <a href="#" title="Edit the page title"><i class="ti ti-edit"></i></a>
+                        </h5>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-primary waves-effect">View Page</button>
+                    </div> *@
+                    <div class="row">
+                        <div class="col-4">
+                            <h5 class="mb-0">
+                                <span id="title-text">Introduction</span>
+                                <a href="#" id="edit-title-link">
+                                    <i class="ti ti-edit"></i>
+                                </a>
+                            </h5>
+                            <input type="text" id="title-input" class="form-control" style="display: none;" />
+                        </div>
+                        <div class="col-4">
+                        </div>
+                        <div class="col-4 text-end">
+                            <button type="button" class="btn btn-outline-primary waves-effect" data-bs-target="#fullscreenModal" data-bs-toggle="modal" data-bs-dismiss="modal">View Page</button>
+                        </div>
+                    </div>
+                    <label>
+                        You have saved templates.<a href="" data-bs-toggle="modal"
+                                                    data-bs-target="#viewIntoductionModel"> view templates</a>
+                    </label>
+                    <div class="card mb-6 mt-3">
+                        <!-- Account -->
+                        <div class="card-body pt-4">
+                            <form id="formAccountSettings" method="GET" onsubmit="return false">
+                                <div class="row">
+                                    <div class="mb-4 col-md-12">
+                                        <div class="input-group input-group-merge">
+                                            <div class="col-12">
+                                                <div class="card mb-6">
+
+                                                    <div class="card-body">
+                                                        <div id="snow-toolbar">
+                                                            <span class="ql-formats">
+                                                                <select class="ql-font"></select>
+                                                                <select class="ql-size"></select>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <button class="ql-bold"></button>
+                                                                <button class="ql-italic"></button>
+                                                                <button class="ql-underline"></button>
+                                                                <button class="ql-strike"></button>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <select class="ql-color"></select>
+                                                                <select class="ql-background"></select>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <button class="ql-script" value="sub"></button>
+                                                                <button class="ql-script" value="super"></button>
+                                                            </span>
+                                                            <span class="ql-formats">
+                                                                <button class="ql-header" value="1"></button>
+                                                                <button class="ql-header" value="2"></button>
+                                                                <button class="ql-blockquote"></button>
+                                                                <button class="ql-code-block"></button>
+                                                            </span>
+                                                        </div>
+                                                        <div id="snow-editor">
+                                                            <label>
+                                                                {{SALESPERSON_LAST_NAME}}{{ACCOUNT_NAME}}{{SALESPERSON_TITLE}}Hi {{CUSTOMER_FIRST_NAME}},
+
+                                                            </label>
+                                                            <br />
+                                                            <label>
+                                                                Thank you for the opportunity to quote on the painting of your home. Please find your estimate below along with upgrade options for potential impr{{ACCOUNT_NAME}}{{SALESPERSON_TITLE}}{{SALESPERSON_TITLE}}ovements to your project, if applicable.
+                                                            </label>
+                                                            <br />
+                                                            <label>
+                                                                The following estimate is for:
+                                                            </label>
+                                                            <br />
+                                                            <label>
+                                                                1.    Preparation of specified surfaces
+
+                                                                2.    Supply of all products and materials
+
+                                                                3.    1 or 2 Full coats to all selected surfaces (see quote details)
+
+                                                                4.    Clean up upon completion
+
+                                                                5.    Safety certification and coverage for all employees
+
+                                                                6.    Full Licensing to work in your geographical region
+
+                                                                7.    Final inspection of all work completed by you the owner
+
+                                                                8.    2-Year Workmanship Warranty on complete projects
+
+
+                                                            </label>
+                                                            <br />
+                                                            <label>
+                                                                We don’t want you to be personally liable should a worker happen to get injured therefore, we maintain current liability insurance for all employees and crews. We carry $2,000,000 liability insurance.
+
+                                                                <br />
+
+                                                                Once the job is complete, we will inspect your project to make sure we did everything correct and up to our strict standards and site is spotless.
+
+                                                                <br />
+
+                                                                If you have any questions, please give me a call. We always want to provide the best service to our clients. If we are outside your budget, please let us know and we will do our best to work within that!
+
+                                                                <br />
+
+                                                                As per your request, I have also included some optional upgrades for you should you wish to have a premium paint or finish completed on your home. These are available on the Authorization page for you to review.
+                                                            </label>
+                                                            <br />
+                                                            <label>Kind regards,</label>
+                                                            <br>
+                                                            <label>
+                                                                {{SALESPERSON_NAME}}
+                                                                <br />
+                                                                {{SALESPERSON_EMAIL}}
+                                                                <br />
+                                                                {{SALESPERSON_PHONE}}
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <a href="" data-bs-toggle="modal"
+                                       data-bs-target="#saveAsTemplate">Save as template</a>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /Account -->
+                    </div>
+                  
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Layout settings</h5>
+                    <span class="ms-1 pt-1">(Customize controls for this layout)</span>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col mb-4">
+                            <h5 for="nameWithTitle" class="form-label">Layout Name</h5>
+                            <input type="text"
+                                   id="nameWithTitle"
+                                   class="form-control"
+                                   placeholder="Enter Layout Name" />
+                        </div>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col mb-0">
+                            <h5 for="nameWithTitle" class="form-label">Sharing</h5>
+                            <div class="input-group">
+                                <div class="input-group-text">
+
+                                    <input class="form-check-input mt-0"
+                                           type="checkbox"
+                                           value=""
+                                           aria-label="Checkbox for following text input" />
+                                </div>
+                                <label class="form-control">Make this layout available to all users</label>
+                            </div>
+                        </div>
+                    </div>
+                   
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="viewIntoductionModel" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Saved templates</h5>
+                  
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card mb-6">
+                        <div class="card-header px-0 pt-0">
+                            <div class="nav-align-top">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item">
+                                        <button type="button" class="nav-link active" data-bs-toggle="tab" data-bs-target="#form-tabs-personal" aria-controls="form-tabs-personal" role="tab" aria-selected="true">
+                                            <span class="ti ti-user ti-lg d-sm-none"></span><span class="d-none d-sm-block">My Layout</span>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button type="button" class="nav-link" data-bs-toggle="tab" data-bs-target="#form-tabs-account" aria-controls="form-tabs-account" role="tab" aria-selected="false">
+                                            <span class="ti ti-user-cog ti-lg d-sm-none"></span><span class="d-none d-sm-block">Shared Layout</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content p-0">
+                                <div class="tab-pane fade active show" id="form-tabs-personal" role="tabpanel">
+                                    <form>
+                                        <div class="row g-6">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="input-group input-group-merge">
+                                                        <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon-search31">
+                                                    </div>
+                                                    <div class="col-sm-12 col-form-label text-sm-end">
+                                                        <ul class="list-group list-group-flush mt-2">
+                                                            <label class="text-center">No matching records found.</label>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- Account Details -->
+                                <div class="tab-pane fade" id="form-tabs-account" role="tabpanel">
+                                    <form>
+                                        <div class="row g-6">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="input-group input-group-merge">
+                                                        <span class="input-group-text" id="basic-addon-search31"><i class="ti ti-search"></i></span>
+                                                        <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon-search31">
+                                                    </div>
+                                                    <div class="col-sm-12 col-form-label text-sm-end">
+                                                        <ul class="list-group list-group-flush mt-2">
+                                                            <li class="list-group-item d-flex justify-content-between">
+                                                                <span class="col-sm-7 d-flex justify-content-start">
+                                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                    <span>Introduction (Sample)</span>
+                                                                </span>
+                                                                <span class="col-sm-5 d-flex justify-content-end align-items-center">
+                                                                    <span>
+                                                                        <a href="#" title="Check">
+                                                                            <i class="ti ti-lg ti-check text-success me-2"></i>
+                                                                        </a>
+                                                                    </span>
+                                                                    <span><a href="#" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                    <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                </span>
+                                                            </li>
+                                                            <li class="list-group-item d-flex justify-content-between">
+                                                                <span class="col-sm-7 d-flex justify-content-start">
+                                                                    <i class="drag-handle cursor-move ti ti-menu-2 align-text-bottom me-2"></i>
+                                                                    <span>(Sample) Residential Metals</span>
+                                                                </span>
+                                                                <span class="col-sm-5 d-flex justify-content-end align-items-center">
+                                                                    <span>
+                                                                        <a href="#" title="Check">
+                                                                            <i class="ti ti-lg ti-check text-success me-2"></i>
+                                                                        </a>
+                                                                    </span>
+                                                                    <span><a href="#" title="Edit"><i class="ti ti-lg ti-edit-circle me-2"></i></a></span>
+                                                                    <span><a href="#" title="Delete"><i class="ti ti-lg ti-trash-filled text-danger me-2"></i></a></span>
+                                                                </span>
+                                                            </li>
+                                                            <!-- Additional layout items go here -->
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="saveAsTemplate" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCenterTitle">Save as new template</h5><br />
+                 
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <label class="ms-5 ps-1">(Create a name for this new template to use it in future reports.)</label>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col mb-4">
+                            <h5 for="nameWithTitle" class="form-label">New template Name</h5>
+                            <input type="text"
+                                   id="nameWithTitle"
+                                   class="form-control"
+                               />
+                        </div>
+                        <div class="form-check mb-0 ms-3">
+                            <input class="form-check-input" type="checkbox" id="remember-me">
+                            <label class="form-check-label" for="remember-me">
+                               Share this template with all users
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-lg-4 col-md-6">
+    <div class="mt-4">
+        <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalFullTitle">Review</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div style="width: 100%; height: 100%; border: 1px solid #ccc;">
+                            <iframe src="@Url.Content("~/image/introductionviewpage.pdf")" width="100%" height="100%" style="border: none;"></iframe>
+                        </div>
+
+
+                    </div>
+                    @*     <div class="modal-footer">
+                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> *@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const pdfUrl = '@Url.Content("~/image/samplereportviewpage.pdf")';
+
+    pdfjsLib.getDocument(pdfUrl).promise.then(pdfDoc => {
+        const pdfViewer = document.getElementById('pdfViewer');
+        for (let i = 1; i <= pdfDoc.numPages; i++) {
+            pdfDoc.getPage(i).then(page => {
+                const viewport = page.getViewport({ scale: 1.5 });
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+                pdfViewer.appendChild(canvas);
+
+                page.render({ canvasContext: context, viewport: viewport });
+            });
+        }
+    }).catch(error => console.error('Error loading PDF:', error));
+</script>
+
+<script>
+    document.getElementById('edit-title-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        var titleText = document.getElementById('title-text');
+        var titleInput = document.getElementById('title-input');
+        var editIcon = document.getElementById('edit-title-link');
+        if (titleInput.style.display === 'none') {
+            titleInput.style.display = 'inline-block';
+            titleInput.value = titleText.innerText;
+            titleText.style.display = 'none';
+            editIcon.style.display = 'none';
+
+            titleInput.focus();
+        } else {
+            titleText.innerText = titleInput.value;
+            titleInput.style.display = 'none';
+            titleText.style.display = 'inline-block';
+            editIcon.style.display = 'inline-block';
+        }
+    });
+    document.addEventListener('click', function (e) {
+        var titleText = document.getElementById('title-text');
+        var titleInput = document.getElementById('title-input');
+        var editIcon = document.getElementById('edit-title-link');
+        if (!titleText.contains(e.target) && !titleInput.contains(e.target) && !editIcon.contains(e.target)) {
+            if (titleInput.style.display === 'inline-block') {
+                titleText.innerText = titleInput.value;
+                titleInput.style.display = 'none';
+                titleText.style.display = 'inline-block';
+                editIcon.style.display = 'inline-block';
+            }
+        }
+    });
+
+
+</script>

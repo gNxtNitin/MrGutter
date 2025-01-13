@@ -56,7 +56,6 @@ namespace MrGutter.Repository
                 string json = JsonConvert.SerializeObject(APIRequestModel);
                // APIRequestModel.V = await _encryptDecrypt.Encrypt(json);
                // string json2 = JsonConvert.SerializeObject(APIRequestModel);
-
                 APIResponseModel = await _aPIWrapper.PostAsync("Account/ResetPassword", json);
             }
             catch (Exception ex)
@@ -171,6 +170,24 @@ namespace MrGutter.Repository
                 string V = await _encryptDecrypt.Encrypt(UserId.ToString());
                 string reqStr = HttpUtility.UrlEncode(V);
                 APIResponseModel = await _aPIWrapper.GetAsync("UserManager/GetUsers?encReq=",reqStr);
+            }
+            catch (Exception ex)
+            {
+                APIResponseModel = new APIResponseModel();
+                APIResponseModel.Code = -1;
+                APIResponseModel.Msg = ex.Message;
+            }
+            return APIResponseModel;
+        }
+        public async Task<APIResponseModel> GetRoleAsync(string? RoleId)
+        {
+            APIResponseModel APIResponseModel = new APIResponseModel();
+            APIRequestModel APIRequestModel = new APIRequestModel();
+            try
+            {
+                string V = await _encryptDecrypt.Encrypt(RoleId.ToString());
+                string reqStr = HttpUtility.UrlEncode(V);
+                APIResponseModel = await _aPIWrapper.GetAsync("UserManager/GetRoles?encReq=", reqStr);
             }
             catch (Exception ex)
             {

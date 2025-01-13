@@ -5,6 +5,7 @@ using MrGutter.Repository.IRepository;
 using MrGutter.Services;
 
 using MrGutter.Services.IService;
+using NuGet.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,11 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IUserManagerService, UserManagerService>();
+builder.Services.AddScoped<ILayoutManagerService, LayoutManagerService>();
+builder.Services.AddScoped<ILayoutManagerRepository, LayoutManagerRepository>();
+builder.Services.AddScoped<IEstimatesService, EstimatesService>();
+builder.Services.AddScoped<IEstimatesRepository, EstimatesRepository>();
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 
@@ -24,10 +30,12 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     {
         options.LoginPath = new PathString("/Account/Index");
         options.LogoutPath = new PathString("/Account/LogOut");
-        options.ExpireTimeSpan = TimeSpan.FromMinutes(10); 
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
         options.AccessDeniedPath = "/Home/Forbidden/";
         options.SlidingExpiration = true;
     });
+
+
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 // Register Custom HttpClient with CustomHttpClientHandler
 builder.Services.AddTransient<CustomHttpClientHandler>();

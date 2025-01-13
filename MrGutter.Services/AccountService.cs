@@ -90,6 +90,13 @@ namespace MrGutter.Services
             usersVM = JsonConvert.DeserializeObject<UsersVM>(response.Data);
             return usersVM;
         }
+        public async Task<RoleVM> GetRoleAsync(string? RoleId)
+        {
+            RoleVM roleVM = new RoleVM();
+            var response = await _accountRepo.GetRoleAsync(RoleId);
+            roleVM = JsonConvert.DeserializeObject<RoleVM>(response.Data);
+            return roleVM;
+        }
         public async Task<int> SendForgotPasswordEmailAsync(LoginVM loginModel)
         {
            int result = 0;

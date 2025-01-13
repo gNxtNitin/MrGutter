@@ -47,12 +47,11 @@ namespace MrGutter.Web.Controllers
                 ViewBag.LoginError = "Invalid";
                 return View("Index", loginReq);
             }
+
             try
             {
                 var result = await _accountService.AuthenticateUser(loginReq);
-
                 var token = result.Data;
-
                 if (result.Code <= 0)
                 {
                     ViewBag.LoginError = "Invalid";
@@ -60,11 +59,8 @@ namespace MrGutter.Web.Controllers
                     return View("Index");
                 }
                 HttpContext.Session.SetInt32("UserId", Convert.ToInt32(result.Code));
-
-
                 var roleManager = await _userService.GetRoleByUserIdAsync(Convert.ToInt32(result.Code));
                 var roleName = roleManager.Roles.FirstOrDefault()?.RoleName;
-
                 if (string.IsNullOrEmpty(roleName))
                 {
                     ViewBag.LoginError = "Invalid";
@@ -73,19 +69,30 @@ namespace MrGutter.Web.Controllers
                 }
                 var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.Role, roleName),
-            new Claim(ClaimTypes.NameIdentifier, result.Code.ToString()),
-              new Claim("Token", token)
+            new Claim(ClaimTypes.Role, roleName),              
+            new Claim(ClaimTypes.NameIdentifier, result.Code.ToString()), 
+            new Claim("Token", token)                 
         };
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
                 var props = new AuthenticationProperties
                 {
-                    IsPersistent = true,
-                    ExpiresUtc = DateTime.UtcNow.AddMinutes(15)
+                    IsPersistent = true,                   
+                    ExpiresUtc = DateTime.UtcNow.AddMinutes(15) 
                 };
-                HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props).Wait();
-
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props);
+                HttpContext.Session.SetString("AuthToken", token); 
+                HttpContext.Response.Cookies.Append(
+                    "AuthToken",
+                    token,
+                    new CookieOptions
+                    {
+                        HttpOnly = true,    
+                        Secure = true,      
+                        SameSite = SameSiteMode.Strict, 
+                        Expires = DateTime.UtcNow.AddMinutes(15) 
+                    });
+                var roleManagerdsadsa = await _userService.GetRoleByUserIdAsync(Convert.ToInt32(result.Code));
                 return RedirectToAction("EstimateList", "Estimates", new { area = "" });
             }
             catch (Exception ex)
@@ -94,6 +101,7 @@ namespace MrGutter.Web.Controllers
                 return View("Index");
             }
         }
+
         public async Task<IActionResult> LogOut()
         {
             var userId = _httpContextAccessor.HttpContext?.Session.GetInt32("UserId");
