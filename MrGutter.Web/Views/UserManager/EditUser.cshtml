@@ -1,0 +1,45 @@
+﻿@model MrGutter.Models.ViewModels.UsersVM
+
+<div class="container-xxl container-y-p">
+    <h2>Edit User</h2>
+
+    <form method="post" asp-action="EditUser" asp-controller="UserManager">
+        <div class="form-group">
+
+            <div class="mb-3">
+                <label for="userName" class="form-label">Username</label>
+                <input id="userName" class="form-control" type="text" asp-for="UserName" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" class="form-control" type="email" asp-for="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="mobileNo" class="form-label">Mobile Number</label>
+                <input id="mobileNo" class="form-control" type="text" asp-for="Mobile" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="userType" class="form-label">User Type</label>
+                <input id="userType" class="form-control" type="text" asp-for="UserType" />
+                <span asp-validation-for="UserType" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="userStatus" class="form-label">User Status</label>
+                <input id="userStatus" class="form-control" type="text" asp-for="UserStatus" />
+                <span asp-validation-for="UserStatus" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </div>
+    </form>
+
+</div>

@@ -9,6 +9,14 @@ namespace MrGutter.Models.ViewModels
 {
     public class UsersVM
     {
+        public string UserID { get; set; } = "0";
+        public string CompanyId { get; set; } = "0";
+        public string CompanyName { get; set; }
+        public string CompanyEmail { get; set; }
+        public string CompanyPhone { get; set; }
+        public string PointOfContact { get; set; }
+
+        public string RoleID { get; set; } = "1";
         [Required(ErrorMessage = "First Name is required")]
         [StringLength(50, ErrorMessage = "First Name cannot exceed 50 characters")]
         public string? FirstName { get; set; }
@@ -24,10 +32,10 @@ namespace MrGutter.Models.ViewModels
         [Required(ErrorMessage = "Phone Number is required")]
         [Phone(ErrorMessage = "Invalid Phone Number")]
         [StringLength(10, ErrorMessage = "Phone Number cannot exceed 10 digits")]
-        public string? MobileNo { get; set; }
-       
+        public string? Mobile { get; set; }
+
         public string? UserName { get; set; }
-        public string? DOB { get; set; }
+        public DateTime? DOB { get; set; }
         [Required(ErrorMessage = "Password is required")]
         [RegularExpression(@"^(?=.*[!@#$%^&*(),.?""{}|<>]).+$", ErrorMessage = "Password must contain at least one special character.")]
         public string? Password { get; set; }
@@ -37,10 +45,12 @@ namespace MrGutter.Models.ViewModels
         public string? ConfirmPassword { get; set; }
 
         [Required(ErrorMessage = "Company Name is required")]
-        public string? CompanyName { get; set; }
+        public string? UserType { get; set; }
+        public string? UserStatus { get; set; }
         public string? SelectQues { get; set; }
-
-
+        public bool isActive { get; set; }
+        public string? Flag { get; set; }
         public List<User>? Users { get; set; }
     }
+  
 }
