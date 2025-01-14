@@ -130,7 +130,7 @@
                     </li>
                     <!-- Users -->
                     <li class="menu-item@(isUser ? " active open" : "")">
-                        <a asp-area="" asp-action="User" asp-controller="UserManager" class="menu-link">
+                        <a asp-area="" asp-action="User" asp-controller="Account" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-users"></i>
                             <div data-i18n="Users">Users</div>
                         </a>
@@ -159,7 +159,7 @@
                     </li>
 
                     <li class="menu-item@(isCompany ? " active open" : "")">
-                        <a asp-area="" asp-action="Company" asp-controller="UserManager" class="menu-link">
+                        <a asp-area="" asp-action="Company" asp-controller="Account" class="menu-link">
                             <i class="menu-icon tf-icons ti ti-building scaleX-n1-rtl"></i>
                             <div data-i18n="Company">Company</div>
                         </a>
@@ -172,13 +172,13 @@
                         </a>
                         <ul class="menu-sub sub-menu-icon">
                             <li class="menu-item@(currentPage == "/Account/EditProfile" ? " active open" : "")">
-                                <a class="menu-link" asp-area="" asp-controller="UserManager" asp-action="EditProfile">
+                                <a class="menu-link" asp-area="" asp-controller="Account" asp-action="EditProfile">
                                     <i class="pe-1 ti ti-pencil"></i>
                                     <div data-i18n="Edit Profile">Edit Profile</div>
                                 </a>
                             </li>
                             <li class="menu-item@(currentPage == "/Account/EditPassword" ? " active open" : "")">
-                                <a class="menu-link" asp-area="" asp-controller="UserManager" asp-action="EditPassword">
+                                <a class="menu-link" asp-area="" asp-controller="Account" asp-action="EditPassword">
                                     <i class="pe-1 ti ti-lock-cog"></i>
                                     <div data-i18n="Change Password">Change Password</div>
                                 </a>
@@ -202,7 +202,7 @@
                             <h5 class="modal-title" id="modalCenterTitle">Do you want to sign out?</h5><br />
                         </div>
                         <div class="modal-footer">
-                            <a href="/Account/LogOut" class="btn btn-label-secondary" >
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-label-secondary" >
                                 Yes
                             </a>
                             <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>

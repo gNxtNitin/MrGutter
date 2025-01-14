@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using MrGutter.Repository.IRepository;
 using MrGutter.Repository;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http;
 
 namespace MrGutter.Services
 {
@@ -54,6 +55,70 @@ namespace MrGutter.Services
                 estimates = JsonConvert.DeserializeObject<EstimateVM>(response.Data);
             }
             return estimates;
+        }
+        public async Task<EstimateStatusVM> GetStatuslistAsync(string? StatusId)
+        {
+            int status = 0;
+            EstimateStatusVM estimateStatusVM = new EstimateStatusVM();
+            var response = await _estimatesRepository.GetStatuslistAsync(StatusId);
+            if (response.Data != null)
+            {
+                estimateStatusVM = JsonConvert.DeserializeObject<EstimateStatusVM>(response.Data);
+            }
+            return estimateStatusVM;
+        }
+        public async Task<int> ChangeEstimateStatus(EstimateVM estimateVM)
+        {
+            int result = 0;
+            EstimateModel model = new EstimateModel();
+            model.EstimateNo = estimateVM.EstimateNo;
+            model.FirstName = estimateVM.FirstName;
+            model.LastName = estimateVM.LastName;
+            model.Company = estimateVM.Company;
+            model.Email = estimateVM.Email;
+            model.PhoneNo = estimateVM.PhoneNo;
+            model.Addressline1 = estimateVM.Addressline1;
+            model.Addressline2 = estimateVM.Addressline2;
+            model.City = estimateVM.City;
+            model.State = estimateVM.State;
+            model.ZipCode = estimateVM.ZipCode;
+            model.CompanyID = estimateVM.CompanyID;
+            model.EstimateID = estimateVM.EstimateID;
+            model.StatusID = estimateVM.StatusID;
+            model.CreatedBy = 1;
+            model.Flag = "S";
+            var response = await _estimatesRepository.ChangeEstimateStatus(model);
+            if (response.Code > 0)
+            {
+                result = response.Code;
+            }
+            return result;
+        }
+        public async Task<int> DeleteEstimateAsync(EstimateVM estimateVM)
+        {
+            int result = 0;
+            EstimateModel model = new EstimateModel();
+            model.EstimateNo = estimateVM.EstimateNo;
+            model.FirstName = estimateVM.FirstName;
+            model.LastName = estimateVM.LastName;
+            model.Company = estimateVM.Company;
+            model.Email = estimateVM.Email;
+            model.PhoneNo = estimateVM.PhoneNo;
+            model.Addressline1 = estimateVM.Addressline1;
+            model.Addressline2 = estimateVM.Addressline2;
+            model.City = estimateVM.City;
+            model.State = estimateVM.State;
+            model.ZipCode = estimateVM.ZipCode;
+            model.CompanyID = estimateVM.CompanyID;
+            model.EstimateID = estimateVM.EstimateID;
+            model.CreatedBy = 1;
+            model.Flag = "D";
+            var response = await _estimatesRepository.DeleteEstimateAsync(model);
+            if (response.Code > 0)
+            {
+                result = response.Code;
+            }
+            return result;
         }
     }
 }

@@ -59,5 +59,63 @@ namespace MrGutter.Repository
             }
             return response;
         }
+        public async Task<APIResponseModel> GetStatuslistAsync(string? StatusId)
+        {
+            APIResponseModel response = new APIResponseModel();
+            try
+            {
+                string V = await _encryptDecrypt.Encrypt(StatusId.ToString());
+                string reqStr = HttpUtility.UrlEncode(V);
+                response = await _aPIWrapper.GetAsync("Estimate/GetStatus?encReq=", reqStr);
+            }
+            catch (Exception ex)
+            {
+                response = new APIResponseModel();
+                response.Code = -1;
+                response.Msg = ex.Message;
+            }
+            return response;
+        }
+        public async Task<APIResponseModel> ChangeEstimateStatus(EstimateModel estimateModel)
+        {
+            APIResponseModel response = new APIResponseModel();
+            try
+            {
+                string json = JsonConvert.SerializeObject(estimateModel);
+                //string V = await encryptDecrypt.Encrypt(json);
+                string reqStr = HttpUtility.UrlEncode(json);
+
+                //Call the API
+                response = await _aPIWrapper.PostAsync("Estimate/CreateOrSetEstimate", json);
+            }
+            catch (Exception ex)
+            {
+                response = new APIResponseModel();
+                response.Code = -1;
+                response.Msg = ex.Message;
+            }
+            return response;
+        }
+        public async Task<APIResponseModel> DeleteEstimateAsync(EstimateModel estimateModel)
+        {
+            APIResponseModel response = new APIResponseModel();
+            try
+            {
+                string json = JsonConvert.SerializeObject(estimateModel);
+                //string V = await encryptDecrypt.Encrypt(json);
+                string reqStr = HttpUtility.UrlEncode(json);
+
+                //Call the API
+                response = await _aPIWrapper.PostAsync("Estimate/CreateOrSetEstimate", json);
+            }
+            catch (Exception ex)
+            {
+                response = new APIResponseModel();
+                response.Code = -1;
+                response.Msg = ex.Message;
+            }
+            return response;
+        }
+        
     }
 }

@@ -3,6 +3,8 @@
     Layout = "_Layout_Main";
     ViewBag.Title = "Estimate";
 }
+
+
 <style>
     .hidden {
         display: none;
@@ -113,23 +115,23 @@
                 </div>
 
                 <div class="col-md-2 user_role">
-                    <select id="userRole" class="form-select text-capitalize ms-2">
-                        <option value="Select">Estimator</option>
-                        <option value="Admin">John Doe</option>
-                        <option value="Allen">Allen</option>
-                        <option value="George">George</option>
-                    </select>
+                   
+                        <select id="userRole" class="form-select text-capitalize ms-2">
+                        @foreach (var user in Model.EstimatorUsers)
+                        {
+                            <option value="@user.UserID">@user.FirstName @user.LastName</option>
+                        }
+                            </select>
+                   
                 </div>
 
                 <div class="col-md-2 user_plan">
                     <select id="userPlan" class="form-select text-capitalize ms-2">
-                        <option value="Status">Estimate Status</option>
-                        <option value="Requested">Requested</option>
-                        <option value="Cancelled">Cancelled</option>
-                        <option value="Accepted">Accepted</option>
-                        <option value="Provided">Provided</option>
-                        <option value="Completed">Completed</option>
-                        <option value="Revised">Revised</option>
+                        <option>Estimate Status</option>
+                        @foreach (var item in Model.StatusList)
+                        {
+                            <option value="@item.StatusID">@item.StatusName</option>
+                        }
                     </select>
                 </div>
 
@@ -213,7 +215,8 @@
                                                     <div class="row">
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-project">Estimate No.</label>
-                                                            <input type="text" class="form-control" id="basic-default-project" placeholder="Leave blank to generate" />
+                                                            <input type="text" class="form-control" asp-for="EstimateNo" id="basic-default-project" placeholder="Leave blank to generate" pattern="\d{10}" title="Please enter exactly 10 digits." maxlength="10" />
+
                                                         </div>
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-first">First name</label>
@@ -249,7 +252,7 @@
                                                             <input type="text"
                                                                    name="phoneNo"
                                                                    class="form-control phone-mask"
-                                                                   placeholder="658 799 8941" />
+                                                                   />
                                                             <span asp-validation-for="PhoneNo" class="text-danger"></span>
                                                         </div>
                                                     </div>
@@ -317,70 +320,8 @@
         </div>
     </div>
 
-
-
     <div class="row mb-12 g-6" id="grid" style="display: flex;">
-
-        <div class="col-md-4 ">
-            <div class="card">
-                <div class="row g-0">
-                    <div class="col-md-12 position-relative">
-                        <a asp-action="EstimationDetails" asp-controller="Estimates">
-                            <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-curtis-adams-1694007-3935333.jpg" alt="Card image" />
-                        </a>
-
-                        <div class="position-absolute end-0 top-0 dlt-btn">
-                            <button data-bs-toggle="modal"
-                                    data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text">
-                                <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-
-                        <div class="card-body g-0">
-
-                            <div class="col-md-12 mb-2">
-                                <h5 class="card-title mb-0"><b>Insurance Sample</b></h5>
-                                <p class="mb-1">Estimate No. : 890 329 2123</p>
-                                <p class="card-text text-black">123 Sample Ave NW  Calgary, AB</p>
-                            </div>
-
-
-                            <div class="col-md-12 ps-0">
-                              
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <div class="col-md-6 rounded text-white status-dropdown">
-                                        <select class="form-select text-capitalize">
-                                            <option value="Requested" selected>Requested</option>
-                                            <option value="Provided">Provided</option>
-                                            <option value="Completed">Completed</option>
-                                            <option value="Revised">Revised</option>
-                                            <option value="Accepted">Accepted</option>
-                                            <option value="Cancelled">Cancelled</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6 d-flex justify-content-end align-items-center">
-                                        <p style="color:#b1acac !important" class="mb-0">Created 3 days ago.</p>
-                                    </div>
-                                </div>
-                                
-
-
-
-                            </div>
-
-
-
-                        </div>
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
- @foreach (var item in Model.EstimateList)
+        @foreach (var item in Model.EstimateList)
 {
         string estimateCreatedDate = item.EstimateCreatedDate;
         string formattedDate = "Invalid date format";
@@ -417,42 +358,54 @@
                     formattedDate = $"Created {timeDifference.Seconds} seconds ago.";
                 }
             }
-        
     }
 
     <div class="col-md-4">
         <div class="card">
             <div class="row g-0">
                 <div class="col-md-12 position-relative">
-                    <a asp-action="EstimationDetails" asp-controller="Estimates">
-                        <img class="card-img card-img-left card-img-height " src="~/img/elements/pexels-pixabay-164558.jpg" alt="Card image" />
-                    </a>
-                    <div class="position-absolute end-0 top-0 dlt-btn">
-                        <button class="border-0 dtl-btn" data-bs-toggle="modal"
-                               data-bs-target="#delete" id="confirm-text"><i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i></button>
-                    </div>
+                            <a asp-action="EstimationDetails" asp-controller="Estimates" asp-route-id="@item.EstimateID">
+                                <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-pixabay-164558.jpg" alt="Card image" />
+                                <div hidden>@item.EstimateID</div>
+                            </a>
+
+
+                            <div class="position-absolute end-0 top-0 dlt-btn">
+                                <button data-bs-toggle="modal" data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text" onclick="setEstimateID(@item.EstimateID)">
+                                    <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
+                                </button>
+                            </div>
                 </div>
                 <div class="col-md-12">
                     <div class="card-body row g-0">
                         <div class="col-md-12 mb-2">
-                            <h5 class="card-title mb-0"><b>@item.FirstName</b></h5>
+                            <h5 class="card-title mb-0"><b>@item.FirstName @item.LastName</b></h5>
                             <p class="mb-1">Estimate No. : @item.EstimateNo</p>
-                            <p class="card-text text-black">@item.Addressline1</p>
+                            <p class="card-text text-black">@item.Addressline1 @item.Addressline2, @item.City, @item.State, @item.ZipCode</p>
                         </div>
                         <div class="col-md-12 rounded text-white status-dropdown">
                             <div class="d-flex justify-content-center align-items-center">
-                                <div class="col-md-6 rounded text-white status-dropdown">
-                                    <select class="form-select text-capitalize">
-                                        <option value="Requested">Requested</option>
-                                        <option value="Provided">Provided</option>
-                                        <option value="Completed">Completed</option>
-                                        <option value="Revised">Revised</option>
-                                        <option value="Accepted" selected>Accepted</option>
-                                        <option value="Cancelled">Cancelled</option>
-                                    </select>
-                                </div>
+                                        <div class="col-md-6 rounded text-white status-dropdown">
+                                            <select class="form-select text-capitalize statusSelect">
+                                                @foreach (var i in Model.StatusList)
+                                                {
+                                                    @if (item.StatusID.ToString() == i.StatusID.ToString())
+                                                    {
+                                                        <option value="@i.StatusID" selected>@i.StatusName</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@i.StatusID">@i.StatusName</option>
+                                                    }
+                                                }
+                                            </select>
+                                            <div id="estimateId_@item.EstimateID" hidden>@item.EstimateID</div>
+                                        </div>
+
+
                                 <div class="col-md-6 d-flex justify-content-end align-items-center">
                                     <p style="color:#b1acac !important" class="mb-0">@formattedDate</p>
+
                                 </div>
                             </div>
                         </div>
@@ -463,22 +416,11 @@
     </div>
 }
 
-  
-
-
                     </div>
-                </div>
-            </div>
-        </div> 
 
-   
-
-       
-
-    </div>
 
     <div id="list" style="display: none;">
-      
+
         <!-- Users List Table -->
         <div class="card">
 
@@ -486,28 +428,34 @@
                 <table class="datatables-estimate table">
                     <thead class="border-top bg-menu-theme text-white">
                         <tr>
-                           @*  <th class="text-white"></th> *@
-@*                             <th class="text-white"></th>
- *@                            
+                            @*  <th class="text-white"></th> *@
+                            @*                             <th class="text-white"></th>
+                            *@
                             <th class="text-white">No.</th>
                             <th class="text-white">Name</th>
                             <th class="text-white"> Address</th>
                             <th class="text-white"> Estimator</th>
                             <th class="text-white"> Created</th>
-                            <th class="text-white">Status</th>
+                         @*    <th class="text-white">Status</th> *@
                             @* <th class="text-white">Role</th>
                             <th class="text-white">Status</th> *@
-                         @*    <th class="text-white">Revenue</th> *@
+                            @*    <th class="text-white">Revenue</th> *@
                         </tr>
                     </thead>
                 </table>
             </div>
-          
+
         </div>
 
 
 
     </div>
+
+       
+
+    </div>
+
+  
 
 
     <!--Script for grid and list view-->
@@ -526,40 +474,74 @@
 
     </script>
 
-    <!--Modal for Delete button-->
-    <!--Modal for Sign out-->
-    <div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalCenterTitle">Do you want to delete this estimate?</h5><br />
-
-
-                </div>
-
-
-                <div class="modal-footer">
-                    <a class="btn btn-label-secondary" data-bs-dismiss="modal">
-                        Yes
-                    </a>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
-                </div>
+<div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">Do you want to delete estimate</span>?</h5>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-label-secondary" data-bs-dismiss="modal" id="confirmDeleteBtn">Yes</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
             </div>
         </div>
     </div>
-
-
-
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.statusSelect').change(function () {
+            // Find the parent div and get the unique estimateId
+            var statusId = $(this).val(); // Get selected status ID
+            var estimateId = $(this).closest('.status-dropdown').find('[id^="estimateId_"]').text(); // Get the corresponding EstimateID for the current select box
+
+            $.ajax({
+                url: "/Estimates/ChangeEstimateStatus",
+                type: "POST",
+                data: {
+                    statusId: statusId,
+                    estimateId: estimateId
+                },
+                success: function (response) {
+                  
+                },
+                error: function (xhr, status, error) {
+                 
+                }
+            });
+        });
+    });
+
+</script>
+<script>
+    function setEstimateID(estimateID) {
+        $('#confirmDeleteBtn').off('click').on('click', function () {
+            debugger
+            $.ajax({
+                url: "/Estimates/DeleteEstimate",
+                type: "POST",
+                data: {
+                    estimateId: estimateID
+                },
+                success: function (response) {
+                    window.location.reload();
+                },
+                error: function (xhr, status, error) {
+                    console.error("Error during deletion:", error);
+                }
+            });
+        });
+        $('#estimateID').text(estimateID);
+    }
+
+
+
+</script>
 <!--Script for drop down colour-->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        debugger
-        // Retrieve the ViewBag value
         var showErrorModal = '@(ViewBag.EstimateError ?? "False")' === 'True';
-
-        // Show the modal if EstimateError is true
         if (showErrorModal) {
             var modal = new bootstrap.Modal(document.getElementById('modalSignature'));
             modal.show();
@@ -568,42 +550,36 @@
 </script>
 
 <script>
-    // Function to update the background and text color of each dropdown
     function updateBackgroundColor(selectElement) {
         var selectedValue = selectElement.value;
-        var parentDiv = selectElement.closest('.status-dropdown'); // Get the parent div with class 'status-dropdown'
-
-        // Reset background and text color classes
-        parentDiv.classList.remove("bg-success", "bg-primary", "bg-secondary", "bg-danger", "bg-blue", "text-white", "text-dark");
-
-        // Apply the correct background and text color based on the selected value
-        if (selectedValue === "Accepted") {
-            parentDiv.classList.add("bg-success", "text-white"); // Green background, white text
-        } else if (selectedValue === "Requested") {
-            parentDiv.classList.add("bg-primary", "text-white"); // Blue background, white text
-        } else if (selectedValue === "Provided") {
-            parentDiv.classList.add("bg-secondary", "text-dark"); // Grey background, dark text
-        } else if (selectedValue === "Cancelled") {
-            parentDiv.classList.add("bg-danger", "text-white"); // Red background, white text
-        } else if (selectedValue === "Revised") {
-            parentDiv.classList.add("bg-success", "text-white"); // Red background, white text
-        } else if (selectedValue === "Completed") {
-            parentDiv.classList.add("bg-blue", "text-white"); // Red background, white text
+        var parentDiv = selectElement.closest('.status-dropdown');
+        parentDiv.style.backgroundColor = "";
+        parentDiv.style.color = "";
+        const statusColors = {
+            "5": { backgroundColor: "#008080", color: "#ffffff" },
+            "1": { backgroundColor: "#007bff", color: "#ffffff" },
+            "2": { backgroundColor: "#90ee90", color: "#ffffff" },
+            "6": { backgroundColor: "#ff0000", color: "#ffffff" },
+            "4": { backgroundColor: "#ffa500", color: "#ffffff" },
+            "3": { backgroundColor: "#008000", color: "#ffffff" }
+        };
+        if (statusColors[selectedValue]) {
+            parentDiv.style.backgroundColor = statusColors[selectedValue].backgroundColor;
+            parentDiv.style.color = statusColors[selectedValue].color;
         }
     }
-
-    // Set the background color on page load for all dropdowns
     window.addEventListener('load', function () {
         var selectElements = document.querySelectorAll('.status-dropdown select');
         selectElements.forEach(function (selectElement) {
-            updateBackgroundColor(selectElement); // Apply background color based on current selection
+            updateBackgroundColor(selectElement); 
+        });
+    });
+    document.querySelectorAll('.status-dropdown select').forEach(function (selectElement) {
+        selectElement.addEventListener("change", function () {
+            updateBackgroundColor(selectElement); 
         });
     });
 
-    // Listen for changes on each select dropdown
-    document.querySelectorAll('.status-dropdown select').forEach(function (selectElement) {
-        selectElement.addEventListener("change", function () {
-            updateBackgroundColor(selectElement); // Update background color when selection changes
-        });
-    });
+
+
 </script>

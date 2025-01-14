@@ -49,8 +49,13 @@ namespace MrGutter.Models.ViewModels
         public string? ZipCode { get; set; }
         public string? EstimateCreatedDate { get; set; }
         public int CompanyID { get; set; } = 1;
+        public int StatusID { get; set; }
+
+
         public int CreatedBy { get; set; }
         public List<EstimateVM>? EstimateList { get; set; }
+        public List<User>? EstimatorUsers { get; set; }
+        public List<EstimateStatusVM>? StatusList { get; set; }
     }
 
 }

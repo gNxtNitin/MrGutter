@@ -60,6 +60,7 @@ namespace MrGutter.Web.Controllers
                 }
                 HttpContext.Session.SetInt32("UserId", Convert.ToInt32(result.Code));
                 var roleManager = await _userService.GetRoleByUserIdAsync(Convert.ToInt32(result.Code));
+
                 var roleName = roleManager.Roles.FirstOrDefault()?.RoleName;
                 if (string.IsNullOrEmpty(roleName))
                 {
@@ -199,6 +200,18 @@ namespace MrGutter.Web.Controllers
             return View(resetPasswordVM);
         }
         public IActionResult CreateAccount()
+        {
+            return View();
+        }
+        public IActionResult EditPassword()
+        {
+            return View();
+        }
+        public IActionResult EditProfile()
+        {
+            return View();
+        }
+        public IActionResult MyProfile()
         {
             return View();
         }
