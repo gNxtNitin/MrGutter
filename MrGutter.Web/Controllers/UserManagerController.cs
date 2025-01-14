@@ -187,14 +187,14 @@ namespace MrGutter.Web.Controllers
         public async Task<ActionResult> CreateUser(UsersVM user)
         {
 
-            if (!ModelState.IsValid)
-            {
-                TempData["CreateUserError"] = true; 
-                return RedirectToAction("User");
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    TempData["CreateUserError"] = true; 
+            //    return RedirectToAction("User");
+            //}
             var res = await _userManagerService.CreateOrUpdateUser(user);
 
-            return RedirectToAction("User");
+            return View("User");
 
 
 

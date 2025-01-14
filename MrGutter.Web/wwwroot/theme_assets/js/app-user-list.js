@@ -139,6 +139,7 @@ function deleteRow(userID) {
 
 
 function openEditModal(userID) {
+    alert("inside user edit")
     $.ajax({
         url: '/UserManager/EditUser?userID=' + userID,
         method: 'GET',

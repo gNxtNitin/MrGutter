@@ -101,6 +101,7 @@ namespace MrGutter.Web.Controllers
                 };
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props);
                 HttpContext.Session.SetString("AuthToken", token); 
+
                 HttpContext.Response.Cookies.Append(
                     "AuthToken",
                     token,
