@@ -39,6 +39,18 @@ namespace MrGutter.Web.Controllers
         {
             return View();
         }
+        public IActionResult EditPassword()
+        {
+            return View();
+        }
+        public IActionResult EditProfile()
+        {
+            return View();
+        }
+        public IActionResult MyProfile()
+        {
+            return View();
+        }
         [HttpPost]
         public async Task<IActionResult> Login(LoginVM loginReq)
         {
@@ -143,7 +155,8 @@ namespace MrGutter.Web.Controllers
         {
             return View();
         }
-     
+   
+
         [HttpPost]
         public async Task<IActionResult> ForgotPassword(LoginVM model)
         {

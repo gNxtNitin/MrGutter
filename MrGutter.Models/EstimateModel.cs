@@ -16,6 +16,7 @@ namespace MrGutter.Models
         public string? Company { get; set; }
         public string? Email { get; set; }
         public string? PhoneNo { get; set; }
+        public int StatusID { get; set; }
         public string? Addressline1 { get; set; }
         public string? Addressline2 { get; set; }
         public string? City { get; set; }
