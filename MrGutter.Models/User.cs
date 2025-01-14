@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,8 @@ namespace MrGutter.Models
         public string? PinCode { get; set; }
         public string? Flag { get; set; }
         public string Password { get; set; }
+        [Required(ErrorMessage = "First Name is required")]
+        [StringLength(50, ErrorMessage = "First Name cannot exceed 50 characters")]
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string UserType { get; set; }

@@ -49,6 +49,10 @@ builder.Services.AddSession(); // Add session service
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddScoped<IAccountService, AccountService>();
+
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

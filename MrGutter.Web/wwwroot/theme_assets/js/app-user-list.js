@@ -68,6 +68,8 @@ $(document).ready(function () {
 
 
 });
+
+
 const selectedUsers = new Set();
 
     // Handle individual row selection
@@ -190,7 +192,7 @@ function saveChanges() {
         isActive: $('#editModal #editIsActive').val()
     };
    
-    alert("User data is: " + JSON.stringify(userData)); 
+    //alert("User data is: " + JSON.stringify(userData)); 
 
     $.ajax({
         url: '/userManager/EditUser',
@@ -202,17 +204,18 @@ function saveChanges() {
                 $('#userDatatable').DataTable().ajax.reload();
                
             } else {
-                //alert('Error updating user.' + response.error);
-                $('#editModal').modal('hide');
-                $('#userDatatable').DataTable().ajax.reload();
-                location.reload();
+                alert('Error updating user.' + response.error);
+                //$('#editModal').modal('hide');
+                //$('#userDatatable').DataTable().ajax.reload();
+                //location.reload();
             }
           
         },
         error: function (xhr, status, error) {
-            $('#editModal').modal('hide');
-            $('#userDatatable').DataTable().ajax.reload();
-            location.reload();
+            alert("Error" + error)
+            //$('#editModal').modal('hide');
+            //$('#userDatatable').DataTable().ajax.reload();
+            //location.reload();
         }
     });
 }

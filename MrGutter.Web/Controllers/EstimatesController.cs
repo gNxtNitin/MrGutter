@@ -23,11 +23,11 @@ namespace MrGutter.Web.Controllers
             if (!ModelState.IsValid)
             {
                 ViewBag.EstimateError = true;
-                return View("EstimateList");
+                return RedirectToAction("EstimateList");
             }
             var result = await _estimatesService.CreateEstimateAsync(estimateVM);
 
-            return View();
+            return RedirectToAction("EstimateList");
         }
         public async Task<IActionResult> EstimateList()
         {

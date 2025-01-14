@@ -58,11 +58,12 @@ namespace MrGutter.Web.Controllers
             var searchValue = Request.Form["search[value]"].FirstOrDefault();
             int pageSize = length != null ? Convert.ToInt32(length) : 0;
             int skip = start != null ? Convert.ToInt32(start) : 0;
-            var originalUserList = result.Users.ToList(); 
 
             // Store the original user list for count
             var originalUserList = result.Users.ToList(); // Make sure to evaluate the list here
             var users = originalUserList.AsQueryable();
+
+            // Sorting
             if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
             {
                 bool descendingOrder = sortColumnDirection == "asc" ? false : true;
@@ -186,11 +187,23 @@ namespace MrGutter.Web.Controllers
         public async Task<ActionResult> CreateUser(UsersVM user)
         {
 
+            if (!ModelState.IsValid)
+            {
+                TempData["CreateUserError"] = true; 
+                return RedirectToAction("User");
+            }
             var res = await _userManagerService.CreateOrUpdateUser(user);
+
+            return RedirectToAction("User");
+
+
+
+           
             //var res = user.Users.FirstOrDefault(m => m.UserID == );
 
-            }
-            return View("User");
+            //return View("User");
+            
+          
         }
         public async Task<ActionResult> Company()
         {
@@ -234,8 +247,6 @@ namespace MrGutter.Web.Controllers
 
             // Count filtered records
             int recordsTotal = users.Count();
-            var data = users.Skip(skip).Take(pageSize).ToList();
-            var jsonData = new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = originalUserList.Count(), data = users };
             var data = users.Skip(skip).Take(pageSize)
                             .Select(user => new {
                                 companyName = user.CompanyName,
@@ -268,9 +279,6 @@ namespace MrGutter.Web.Controllers
                 contactPerson = res.ContactPerson,
             });  // Return user data as JSON
         }
-        public IActionResult Company()
-        {
-            return View();
 
         [HttpPost]
         public async Task<ActionResult> EditCompany(CompanyVM compInfo)
@@ -281,6 +289,21 @@ namespace MrGutter.Web.Controllers
             //var res = user.Users.FirstOrDefault(m => m.UserID == );
 
             return View(res);
+        }
+        [HttpPost]
+        public async Task<ActionResult> CreateCompany(CompanyVM cmpInfo)
+        {
+
+            var res = await _userManagerService.CreateOrUpdateCompany(cmpInfo);
+            //var res = user.Users.FirstOrDefault(m => m.UserID == );
+
+            return View("Company");
+        }
+
+        public async Task<ActionResult> DeleteCompany(CompanyVM cmp)
+        {
+            var res = await _userManagerService.DeleteCompanyAsync(cmp);
+            return View("Company");
         }
 
 
