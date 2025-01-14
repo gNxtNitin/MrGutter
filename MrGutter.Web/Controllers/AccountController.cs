@@ -68,12 +68,31 @@ namespace MrGutter.Web.Controllers
                     ViewBag.LoginErrorMsg = "Invalid Credentials.";
                     return View("Index");
                 }
+
+                // Fetch company information
+              
+                var companyManager = await _userService.GetCompanyAsync(result.Code.ToString());
+                var companyId = companyManager.Company.FirstOrDefault()?.CompanyId; 
+
+                if (companyId == null)
+                {
+                    ViewBag.LoginError = "Invalid";
+                    ViewBag.LoginErrorMsg = "Unable to retrieve company information.";
+                    return View("Index");
+                }
+
+                // Store company ID in session
+                int cId = Int32.Parse(companyId);
+                HttpContext.Session.SetInt32("CompanyId", cId);
+
+
+
                 var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.Role, roleName),              
-            new Claim(ClaimTypes.NameIdentifier, result.Code.ToString()), 
-            new Claim("Token", token)                 
-        };
+                {
+                    new Claim(ClaimTypes.Role, roleName),              
+                    new Claim(ClaimTypes.NameIdentifier, result.Code.ToString()), 
+                    new Claim("Token", token)                 
+                };
                 var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                 var principal = new ClaimsPrincipal(identity);
                 var props = new AuthenticationProperties

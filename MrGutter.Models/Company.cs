@@ -15,5 +15,7 @@ namespace MrGutter.Models
         public string? CompanyPhone { get; set; }
         public string? ContactPerson { get; set; }
         public string? Flag { get; set; }
+        public bool isActive { get; set; } = true;
+        public int CreatedBy { get; set; } = 0;
     }
 }

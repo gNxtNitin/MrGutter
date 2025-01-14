@@ -187,10 +187,23 @@ namespace MrGutter.Web.Controllers
         public async Task<ActionResult> CreateUser(UsersVM user)
         {
 
+            if (!ModelState.IsValid)
+            {
+                TempData["CreateUserError"] = true; 
+                return RedirectToAction("User");
+            }
             var res = await _userManagerService.CreateOrUpdateUser(user);
+
+            return RedirectToAction("User");
+
+
+
+           
             //var res = user.Users.FirstOrDefault(m => m.UserID == );
 
-            return View("User");
+            //return View("User");
+            
+          
         }
         public async Task<ActionResult> Company()
         {
@@ -276,6 +289,21 @@ namespace MrGutter.Web.Controllers
             //var res = user.Users.FirstOrDefault(m => m.UserID == );
 
             return View(res);
+        }
+        [HttpPost]
+        public async Task<ActionResult> CreateCompany(CompanyVM cmpInfo)
+        {
+
+            var res = await _userManagerService.CreateOrUpdateCompany(cmpInfo);
+            //var res = user.Users.FirstOrDefault(m => m.UserID == );
+
+            return View("Company");
+        }
+
+        public async Task<ActionResult> DeleteCompany(CompanyVM cmp)
+        {
+            var res = await _userManagerService.DeleteCompanyAsync(cmp);
+            return View("Company");
         }
 
 

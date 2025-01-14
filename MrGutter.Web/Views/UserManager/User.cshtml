@@ -77,57 +77,53 @@
                  id="offcanvasAddUser"
                  aria-labelledby="offcanvasAddUserLabel">
                 <div class="offcanvas-header border-bottom">
-                    <h5 id="offcanvasAddUserLabel" class="offcanvas-title">Add </h5>
+                    <h5 id="offcanvasAddUserLabel" class="offcanvas-title">Add user</h5>
                     <button type="button"
                             class="btn-close text-reset"
                             data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body mx-0 flex-grow-0 p-6 h-100">
-                    <form class="add-new-user pt-0" method="post" asp-controller="UserManager" asp-action="CreateUser">
+                    <form id="createUserf" class="add-new-user pt-0" method="post" asp-controller="UserManager" asp-action="CreateUser">
+                      
                         <div class="mb-6">
                             <label class="form-label" for="add-user-firstname">First name</label>
                             <input type="text"
                                    class="form-control"
                                    id="add-user-firstname"
                                    placeholder="John"
-                                   name="firstName"
+                                   asp-for="FirstName"
                                    value="" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
                         </div>
                         <div class="mb-6">
-                            <label class="form-label" for="add-user-lastname">Last name</label>
+                            <label class="form-label" asp-for="LastName">Last name</label>
                             <input type="text"
                                    class="form-control"
                                    id="add-user-lastname"
                                    placeholder="Doe"
-                                   name="lastName"/>
+                                   asp-for="LastName" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
                         </div>
                         <div class="mb-6">
-                            <label class="form-label" for="add-user-email">Email</label>
+                            <label class="form-label" asp-for="Email">Email</label>
                             <input type="text"
                                    id="add-user-email"
                                    class="form-control"
                                    placeholder="john.doe@example.com"
-                                   name="email" />
+                                   asp-for="Email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
                         <div class="mb-6">
-                            <label class="form-label" for="add-user-contact">Phone number</label>
+                            <label class="form-label" asp-for="Mobile">Phone number</label>
                             <input type="text"
                                    id="add-user-contact"
                                    class="form-control phone-mask"
                                    placeholder="+1 (609) 988-44-11"
-                                   name="mobile" />
+                                   asp-for="Mobile" />
+                            <span asp-validation-for="Mobile" class="text-danger"></span>
                         </div>
-                        @*  <div class="mb-6">
-                        <label class="form-label" for="add-user-company">Job title</label>
-                        <input type="text"
-                        id="add-user-company"
-                        class="form-control"
-                        placeholder="Web Developer"
-                        aria-label="jdoe1"
-                        name="companyName" />
-                        </div>
-                        *@
+                       
 
                         <div class="mb-6">
                         
@@ -172,7 +168,7 @@
 
 
 
-                        <button type="submit" id="" class="btn btn-primary me-3 data-submit">Save</button>
+                        <button type="submit" id="saveUserBtn" class="btn btn-primary me-3 data-submit">Save</button>
                         <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">Cancel</button>
                     </form>
                 </div>
@@ -267,7 +263,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="saveChanges()">Save</button>
+                <button type="submit" class="btn btn-primary" onclick="saveChanges()">Save</button>
                 <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
                     Cancel
                 </button>
@@ -295,8 +291,19 @@
         </div>
     </div>
 </div>
+@* 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initialize the offcanvas modal
+        var modalElement = document.getElementById('offcanvasAddUser');
+        var modal = new bootstrap.Offcanvas(modalElement);
 
-
-
-
-    
+        // Check TempData value for error flag and show/hide the modal
+        var showErrorModal = '@(TempData["CreateUserError"] != null && (bool)TempData["CreateUserError"] ? "true" : "false")';
+       
+        if (showErrorModal === 'true') {
+            // Show the modal if the TempData flag is true
+            modal.show();
+        }
+    });
+</script> *@

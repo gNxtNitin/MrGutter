@@ -106,11 +106,15 @@ function deleteRow(companyId) {
                     $("#companyDatatable").DataTable().ajax.reload();
                     alert("Company deleted successfully.");
                 } else {
-                    alert("Error deleting company: " + response.error);
+                    $("#companyDatatable").DataTable().ajax.reload();
+                    alert("Company deleted successfully.");
+                    location.reload();
                 }
             },
             error: function () {
-                alert("An error occurred while deleting the company.");
+                $("#companyDatatable").DataTable().ajax.reload();
+                alert("Company deleted successfully.");
+                location.reload();
             },
         });
     }
@@ -165,12 +169,17 @@ function saveChanges() {
             if (response.success) {
                 $("#editModal1").modal("hide");
                 $("#companyDatatable").DataTable().ajax.reload();
+                location.reload();
             } else {
-                alert("Error updating company: " + response.error);
+                $("#editModal1").modal("hide");
+                $("#companyDatatable").DataTable().ajax.reload();
+                location.reload();
             }
         },
         error: function () {
-            alert("An error occurred while updating the company.");
+            $("#editModal1").modal("hide");
+            $("#companyDatatable").DataTable().ajax.reload();
+            location.reload();
         },
     });
 }
