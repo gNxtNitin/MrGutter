@@ -26,10 +26,10 @@ $(document).ready(function () {
                 "data": null,
                 "render": function (data, type, row) {
                     return `
-                      <a class="text-danger" style="cursor: pointer;" onclick="openEditModal(${row.userID})">
+                      <a class="text-danger" style="cursor: pointer;" onclick="openEditModal1(${row.userID})">
                            <i class='fa-solid fa-pen-to-square text-danger'></i>
                       </a>
-                       <a href="#" class="text-danger" style="cursor: pointer;" onclick="deleteRow(${row.userID})">
+                       <a href="#" class="text-danger" style="cursor: pointer;" onclick="deleteUserRow(${row.userID})">
                            <i class='ti ti-trash text-danger'></i>
                       </a>
                           <a href="#" class="text-danger" style="cursor: pointer;">
@@ -109,7 +109,7 @@ const selectedUsers = new Set();
 
 
 //Row deletion
-function deleteRow(userID) {
+function deleteUserRow(userID) {
     // Confirm the deletion with the user
     if (confirm("Are you sure you want to delete this user?")) {
         // Perform the AJAX request to delete the user
@@ -138,7 +138,8 @@ function deleteRow(userID) {
 }
 
 
-function openEditModal(userID) {
+function openEditModal1(userID) {
+    //alert("inside user edit")
     $.ajax({
         url: '/UserManager/EditUser?userID=' + userID,
         method: 'GET',
@@ -176,10 +177,12 @@ function openEditModal(userID) {
 
 
 
-function saveChanges() {
+function saveChanges1() {
     
     var selectedRoleID = $('#editModal #editRole').val();      
     var selectedRoleName = $('#editModal #editRole option:selected').text(); 
+
+    var companyId = $('#editModal #companyId').val();      
     var userData = {
         userID: $('#editModal #editUserID').val(),
         firstName: $('#editModal #fName').val(),
@@ -189,7 +192,8 @@ function saveChanges() {
         userType: selectedRoleName, 
         roleID: selectedRoleID,
         userStatus: $('#editModal #editStatus').val(),
-        isActive: $('#editModal #editIsActive').val()
+        isActive: $('#editModal #editIsActive').val(),
+        companyId: companyId
     };
    
     //alert("User data is: " + JSON.stringify(userData)); 
@@ -202,20 +206,21 @@ function saveChanges() {
             if (response.success) {
                 $('#editModal').modal('hide');
                 $('#userDatatable').DataTable().ajax.reload();
+                location.reload();
                
             } else {
-                alert('Error updating user.' + response.error);
-                //$('#editModal').modal('hide');
-                //$('#userDatatable').DataTable().ajax.reload();
-                //location.reload();
+                //alert('Error updating user.' + response.error);
+                $('#editModal').modal('hide');
+                $('#userDatatable').DataTable().ajax.reload();
+                location.reload();
             }
           
         },
         error: function (xhr, status, error) {
-            alert("Error" + error)
-            //$('#editModal').modal('hide');
-            //$('#userDatatable').DataTable().ajax.reload();
-            //location.reload();
+            //alert("Error" + error)
+            $('#editModal').modal('hide');
+            $('#userDatatable').DataTable().ajax.reload();
+            location.reload();
         }
     });
 }

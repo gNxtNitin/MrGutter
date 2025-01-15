@@ -5,6 +5,7 @@ using MrGutter.Models.ViewModels;
 using MrGutter.Services;
 using MrGutter.Services.IService;
 using Newtonsoft.Json.Linq;
+using System.Security.Cryptography;
 
 namespace MrGutter.Web.Controllers
 {
@@ -29,6 +30,7 @@ namespace MrGutter.Web.Controllers
                 ViewBag.EstimateError = true;
                 return RedirectToAction("EstimateList");
             }
+            estimateVM.CreatedBy = HttpContext.Session.GetInt32("UserId") ?? 0;
             var result = await _estimatesService.CreateEstimateAsync(estimateVM);
           
            
@@ -36,9 +38,15 @@ namespace MrGutter.Web.Controllers
         }
         public async Task<IActionResult> EstimateList()
         {
-           EstimateVM estimateVM = new EstimateVM();
+            int companyId = HttpContext.Session.GetInt32("CompanyId") ?? 0;
+            int userId = HttpContext.Session.GetInt32("UserId") ?? 0  ;
+            EstimateIdsVM estimateIdsVM = new EstimateIdsVM();
+            estimateIdsVM.CompanyID = companyId;
+            estimateIdsVM.UserId = userId;
+
+            EstimateVM estimateVM = new EstimateVM();
             var StatusColor = await _estimatesService.GetStatuslistAsync("");
-            estimateVM =await _estimatesService.GetEstimatelistAsync("");
+            estimateVM =await _estimatesService.GetEstimatelistAsync(estimateIdsVM);
             var allRole = await _userManagerService.GetRoleAsync("");
             var allUser = await _userManagerService.GetUserAsync("");
             var estimatorRole = allRole.Roles.FirstOrDefault(r => r.RoleName == "Estimator"); 
@@ -109,23 +117,50 @@ namespace MrGutter.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> GetEstimateList()
         {
-            var estimateID = 0;
-            var estimates = await _estimatesService.GetEstimatelistAsync("");
-            var estimate = estimates.EstimateList.FirstOrDefault(m => m.EstimateID  == estimateID);
+
+            EstimateVM estimateVM = new EstimateVM();
+            int companyId = HttpContext.Session.GetInt32("CompanyId") ?? 0;
+            int userId = HttpContext.Session.GetInt32("UserId") ?? 0;
+            EstimateIdsVM estimateIdsVM = new EstimateIdsVM();
+            estimateIdsVM.CompanyID = companyId;
+            estimateIdsVM.UserId = userId;
+            estimateVM = await _estimatesService.GetEstimatelistAsync(estimateIdsVM);
+
+            //var estimate = estimates.EstimateList.FirstOrDefault(m => m.EstimateID  == estimateID);
             return View();
         }
 
-        public IActionResult EstimationDetails(int id)
+        public async Task<IActionResult> EstimationDetails(int id)
         {
-            
-            return View();
-        }
-        public async Task<IActionResult> EstimationSettings()
-        {
-            var allRole = await _userManagerService.GetUserAsync("");
             EstimateVM estimateVM = new EstimateVM();
-           
-            return View();
+            int companyId = HttpContext.Session.GetInt32("CompanyId") ?? 0;
+            int userId = HttpContext.Session.GetInt32("UserId") ?? 0;
+            EstimateIdsVM estimateIdsVM = new EstimateIdsVM();
+            estimateIdsVM.CompanyID = companyId;
+            estimateIdsVM.UserId = userId;
+            estimateIdsVM.EstimateID = id;
+            estimateVM = await _estimatesService.GetEstimatelistAsync(estimateIdsVM);
+            return View(estimateVM);
+        }
+    
+
+        public async Task<IActionResult> EstimationSettings(int EstimateId)
+        {
+            EstimateVM estimateVM = new EstimateVM();
+            int companyId = HttpContext.Session.GetInt32("CompanyId") ?? 0;
+            int userId = HttpContext.Session.GetInt32("UserId") ?? 0;
+            EstimateIdsVM estimateIdsVM = new EstimateIdsVM();
+            estimateIdsVM.CompanyID = companyId;
+            estimateIdsVM.UserId = userId;
+            estimateIdsVM.EstimateID = EstimateId;
+            var StatusColor = await _estimatesService.GetStatuslistAsync("");
+            estimateVM = await _estimatesService.GetEstimatelistAsync(estimateIdsVM);
+            var allRole = await _userManagerService.GetRoleAsync("");
+            var allUser = await _userManagerService.GetUserAsync("");
+            var estimatorRole = allRole.Roles.FirstOrDefault(r => r.RoleName == "Estimator");
+            var estimatorUsers = allUser.Users.Where(u => u.UserType == "Estimator").ToList();
+            estimateVM.EstimatorUsers = estimatorUsers;
+            return View(estimateVM);
         }
         [HttpPost]
         public async Task<IActionResult> DeleteEstimate(int estimateId)
@@ -136,53 +171,60 @@ namespace MrGutter.Web.Controllers
             return RedirectToAction("EstimateList");
         }
         [HttpPost]
-        public async Task<IActionResult> GetEstimatesList()
+        public async Task<IActionResult> UpdateEstimate(EstimateVM estimateVM)
         {
-            var result = await _estimatesService.GetEstimatelistAsync (""); 
-            var draw = Request.Form["draw"].FirstOrDefault();
-            var start = Request.Form["start"].FirstOrDefault();
-            var length = Request.Form["length"].FirstOrDefault();
-            var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
-            var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
-            var searchValue = Request.Form["search[value]"].FirstOrDefault();
-            int pageSize = length != null ? Convert.ToInt32(length) : 0;
-            int skip = start != null ? Convert.ToInt32(start) : 0;
-            var originalCompanyList = result.EstimateList.ToList();
-            var users = originalCompanyList.AsQueryable();
-
-            // Sorting
-            if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
-            {
-                bool descendingOrder = sortColumnDirection == "asc" ? false : true;
-                users = users.OrderByProperty(sortColumn, descendingOrder);
-            }
-
-            // Searching
-            if (!string.IsNullOrEmpty(searchValue))
-            {
-                users = users.Where(m =>
-                    m.EstimateNo.Contains(searchValue, StringComparison.OrdinalIgnoreCase) ||
-                    m.FirstName.Contains(searchValue, StringComparison.OrdinalIgnoreCase) ||
-                    m.Addressline1.Contains(searchValue, StringComparison.OrdinalIgnoreCase) ||
-                    m.LastName.Contains(searchValue, StringComparison.OrdinalIgnoreCase) ||
-                    m.EstimateCreatedDate.Contains(searchValue, StringComparison.OrdinalIgnoreCase));
-            }
-
-            // Count filtered records
-            int recordsTotal = users.Count();
-            var data = users.Skip(skip).Take(pageSize)
-                            .Select(user => new {
-                                estimateNo = user.EstimateNo,
-                                firstName = user.FirstName,
-                                addressline1 = user.Addressline1,
-                                lastName = user.LastName,
-                                estimateCreatedDate = user.EstimateCreatedDate,
-                                estimateId = user.EstimateID
-                            }).ToList();
-
-            var jsonData = new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = originalCompanyList.Count(), data = data };
-            return Ok(jsonData);
+            
+            var result = await _estimatesService.UpdateEstimate(estimateVM);
+            return RedirectToAction("EstimateList");
         }
+        //[HttpPost]
+        //public async Task<IActionResult> GetEstimatesList()
+        //{
+        //    var result = await _estimatesService.GetEstimatelistAsync (""); 
+        //    var draw = Request.Form["draw"].FirstOrDefault();
+        //    var start = Request.Form["start"].FirstOrDefault();
+        //    var length = Request.Form["length"].FirstOrDefault();
+        //    var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
+        //    var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
+        //    var searchValue = Request.Form["search[value]"].FirstOrDefault();
+        //    int pageSize = length != null ? Convert.ToInt32(length) : 0;
+        //    int skip = start != null ? Convert.ToInt32(start) : 0;
+        //    var originalCompanyList = result.EstimateList.ToList();
+        //    var users = originalCompanyList.AsQueryable();
+
+        //    // Sorting
+        //    if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
+        //    {
+        //        bool descendingOrder = sortColumnDirection == "asc" ? false : true;
+        //        users = users.OrderByProperty(sortColumn, descendingOrder);
+        //    }
+
+        //    // Searching
+        //    if (!string.IsNullOrEmpty(searchValue))
+        //    {
+        //        users = users.Where(m =>
+        //            m.EstimateNo.Contains(searchValue, StringComparison.OrdinalIgnoreCase) ||
+        //            m.FirstName.Contains(searchValue, StringComparison.OrdinalIgnoreCase) ||
+        //            m.Addressline1.Contains(searchValue, StringComparison.OrdinalIgnoreCase) ||
+        //            m.LastName.Contains(searchValue, StringComparison.OrdinalIgnoreCase) ||
+        //            m.EstimateCreatedDate.Contains(searchValue, StringComparison.OrdinalIgnoreCase));
+        //    }
+
+        //    // Count filtered records
+        //    int recordsTotal = users.Count();
+        //    var data = users.Skip(skip).Take(pageSize)
+        //                    .Select(user => new {
+        //                        estimateNo = user.EstimateNo,
+        //                        firstName = user.FirstName,
+        //                        addressline1 = user.Addressline1,
+        //                        lastName = user.LastName,
+        //                        estimateCreatedDate = user.EstimateCreatedDate,
+        //                        estimateId = user.EstimateID
+        //                    }).ToList();
+
+        //    var jsonData = new { draw = draw, recordsFiltered = recordsTotal, recordsTotal = originalCompanyList.Count(), data = data };
+        //    return Ok(jsonData);
+        //}
 
         [HttpPost]
         public async Task<IActionResult> ChangeEstimateStatus(int statusId , int estimateId)
