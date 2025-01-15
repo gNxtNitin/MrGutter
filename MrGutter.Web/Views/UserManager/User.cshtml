@@ -61,9 +61,12 @@
                             <th class="text-white">Phone</th>
                             <th class="text-white">Role</th>
                             <th class="text-white">Status</th>
+
                           
                             <th class="text-white">Actions</th>
-                            <th><input type="checkbox" id="selectAll" class="select-all" /></th>
+@*                             <th><input type="checkbox" id="selectAll" class="select-all" /></th>
+ *@
+
                         </tr>
                     </thead>
                     <tbody>
@@ -275,8 +278,101 @@
 </div>
 
 
+<!-- Modal for View -->
+<div class="modal fade" id="userView" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="row gap-0">
+                    <h5 class="modal-title mb-0 fs-4" id="modalCenterTitle"><b>Edit user</b></h5><br />
+                </div>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form class="add-new-user pt-0" id="addNewUserForm" onsubmit="return false">
+
+                    <input type="hidden" id="editUserID" />
+                    <input type="hidden" id="editIsActive" />
+                    <input type="hidden" id="companyId" />
+
+                    <div class="mb-6">
+                        <label class="form-label" for="fName">First name</label>
+                        <input type="text"
+                               class="form-control"
+                               id="fName"
+                               placeholder="John"
+                               name="firstname"
+                               aria-label="John" />
+                    </div>
+                    <div class="mb-6">
+                        <label class="form-label" for="lName">Last name</label>
+                        <input type="text"
+                               class="form-control"
+                               id="lName"
+                               placeholder="John"
+                               name="firstname"
+                               aria-label="John" />
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="form-label" for="editEmail">Email</label>
+                        <input type="text"
+                               id="editEmail"
+                               class="form-control"
+                               placeholder="john.doe@example.com"
+                               aria-label="john.doe@example.com"
+                               name="userEmail" />
+                    </div>
+                    <div class="mb-6">
+                        <label class="form-label" for="editPhone">Phone number</label>
+                        <input type="text"
+                               id="editPhone"
+                               class="form-control"
+                               placeholder="+1 (609) 988-44-11" />
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="form-label" for="editRole">Role</label>
+                        <select id="editRole" class="form-select">
+                            @*   <option value="select" selected>Select</option>
+                            <option value="SuperAdmin">Super Admin</option>
+                            <option value="Admin">Admin</option>
+                            <option value="User">User</option>
+                            <option value="Estimator">Estimator</option> *@
+
+                        </select>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="form-label" for="editStatus">Status</label>
+                        <select id="editStatus" class="form-select">
+                            <option value="select" selected>Select</option>
+                            <option value="Active">Active</option>
+                            <option value="InActive">InActive</option>
+                            <option value="Pending">Pending</option>
+
+                        </select>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" onclick="saveChanges1()">Save</button>
+                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
+                    Cancel
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!-- Modal for Delete pop up-->
-<div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
+@* <div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -291,7 +387,26 @@
             </div>
         </div>
     </div>
+</div> *@
+<!-- Modal for Delete pop up-->
+<div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="modal-title mb-6 fs-5" id="modalCenterTitle">Do you want to delete this user?</p>
+            </div>
+            <div class="modal-footer">
+                <!-- Store the userID when clicking Yes -->
+                <button type="button" class="btn btn-label-secondary confirm-delete" data-bs-dismiss="modal">
+                    Yes
+                </button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 @* 
 <script>
     document.addEventListener("DOMContentLoaded", function () {

@@ -135,6 +135,40 @@ namespace MrGutter.Web.Controllers
             });  
         }
 
+        [HttpGet]
+        public async Task<IActionResult> UserView(string? userID)
+        {
+            var user1 = await _userManagerService.GetUserAsync(userID);
+
+            var userType = user1.Users.FirstOrDefault(m => m.UserID == userID);
+            int IntegerUserId = Int32.Parse(userID);
+
+            var allRole = await _userManagerService.GetRoleAsync("");
+            var roles = allRole.Roles.Select(m => new { RoleID = m.RoleID, RoleName = m.RoleName }).ToList();
+            var passRoleId = roles.FirstOrDefault(m => m.RoleName.ToString() == userType.UserType);
+            var user = user1.Users.FirstOrDefault(m => m.UserID == userID);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return Json(new
+            {
+                UserID = userID,
+                RoleID = passRoleId.RoleID,
+                UserName = user.UserName,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                Mobile = user.Mobile,
+                UserType = user.UserType,
+                UserStatus = user.UserStatus,
+                isActive = user.isActive,
+                Roles = roles
+            });
+        }
+
+
+
         [HttpPost]
         public async Task<ActionResult> EditUser(UsersVM user)
         {
