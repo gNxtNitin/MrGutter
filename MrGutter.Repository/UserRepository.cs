@@ -51,6 +51,8 @@ namespace MrGutter.Repository
                 string V = await _encryptDecrypt.Encrypt(roleId.ToString());
                 string reqStr = HttpUtility.UrlEncode(V);
                 response = await _aPIWrapper.GetAsync("UserManager/GetRoles?encReq=", reqStr);
+
+
             }
             catch (Exception ex)
             {

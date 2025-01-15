@@ -54,6 +54,8 @@ namespace MrGutter.Services
             UsersVM usersVM = new UsersVM();
             var response = await _userRepository.GetUserAsync(UserId);
             usersVM = JsonConvert.DeserializeObject<UsersVM>(response.Data);
+
+            \
             return usersVM;
         }
         public async Task<int> CreateOrUpdateUser(UsersVM user)
