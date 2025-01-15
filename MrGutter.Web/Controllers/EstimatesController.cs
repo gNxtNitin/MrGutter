@@ -60,7 +60,11 @@ namespace MrGutter.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> EstimateData()
         {
+            
             EstimateIdsVM estimateFilterReq = new EstimateIdsVM();
+            estimateFilterReq.CompanyID = HttpContext.Session.GetInt32("CompanyId") ?? 0;
+            estimateFilterReq.UserId = HttpContext.Session.GetInt32("UserId") ?? 0;
+
             var result = await _estimatesService.GetEstimatelistAsync(estimateFilterReq); 
             var draw = Request.Form["draw"].FirstOrDefault();
             var start = Request.Form["start"].FirstOrDefault();
