@@ -11,6 +11,7 @@ namespace MrGutter.Models.ViewModels
     public class EstimateVM
     {
         public int EstimateID { get; set; } = 0;
+        public int UserID { get; set; } = 0;
         public string? EstimateNo { get; set; }
         [Required(ErrorMessage = "First name is required.")]
         [StringLength(50, ErrorMessage = "First name cannot exceed 50 characters.")]
@@ -29,12 +30,15 @@ namespace MrGutter.Models.ViewModels
 
         [Required(ErrorMessage = "Phone number is required.")]
         [Phone(ErrorMessage = "Invalid phone number.")]
-        public string? PhoneNo { get; set; }
+        public string? PhoneNumber { get; set; }
 
         [Required(ErrorMessage = "Address line 1 is required.")]
         [StringLength(100, ErrorMessage = "Address line 1 cannot exceed 100 characters.")]
         public string? Addressline1 { get; set; }
         public string? Addressline2 { get; set; }
+        public string? NextCallDate { get; set; }
+        public string? EstimateRevenue { get; set; }
+
 
         [Required(ErrorMessage = "City is required.")]
         [StringLength(50, ErrorMessage = "City cannot exceed 50 characters.")]
@@ -48,6 +52,7 @@ namespace MrGutter.Models.ViewModels
         //[RegularExpression(@"^\d{5}(-\d{4})?$", ErrorMessage = "Invalid zip code.")]
         public string? ZipCode { get; set; }
         public string? EstimateCreatedDate { get; set; }
+        public string? CompanyName { get; set; }
         public int CompanyID { get; set; } = 1;
         public int StatusID { get; set; }
 
@@ -56,6 +61,14 @@ namespace MrGutter.Models.ViewModels
         public List<EstimateVM>? EstimateList { get; set; }
         public List<User>? EstimatorUsers { get; set; }
         public List<EstimateStatusVM>? StatusList { get; set; }
+    }
+    public class EstimateIdsVM
+    {
+        public string? Flag { get; set; }
+        public int UserId { get; set; } = 0;
+        public int CompanyID { get; set; } = 0;
+        public int EstimateID { get; set; } = 0;
+
     }
 
 }

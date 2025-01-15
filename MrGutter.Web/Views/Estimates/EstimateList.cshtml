@@ -9,16 +9,18 @@
     .hidden {
         display: none;
     }
+
     .bg-blue {
         background-color: #007bff; /* Choose a shade of blue */
     }
 
-  
+
 
     div.dataTables_wrapper div.dataTables_length, div.dataTables_wrapper .dataTables_filter {
         margin-top: 0 !important;
         margin-bottom: 0 !important;
     }
+
     .top-right-dropdown {
         position: absolute;
         top: 5px;
@@ -26,9 +28,9 @@
         z-index: 1;
     }
     /* .layout-page{
-                max-width: 1300px !important;
-                margin: 0 auto !important;
-            } */
+                    max-width: 1300px !important;
+                    margin: 0 auto !important;
+                } */
     .card-img-height {
         height: 200px;
         width: 100%;
@@ -71,14 +73,14 @@
         background: #2E7DB3;
     }
     /* .dlt-btn{
-                display:none;
-                transition: all 0.5s ease-out;
-            }
-
-            .card:hover .dlt-btn{
-                    display:block;
+                    display:none;
                     transition: all 0.5s ease-out;
-             } */
+                }
+
+                .card:hover .dlt-btn{
+                        display:block;
+                        transition: all 0.5s ease-out;
+                 } */
     .dlt-btn {
         opacity: 0;
         visibility: hidden;
@@ -109,20 +111,20 @@
 
                 <div class="col-md-2">
                     <div class="input-group ms-2 me-1">
-                       
+
                         <input type="search" id="searchInput" class="form-control" placeholder="Search" name="Search" />
                     </div>
                 </div>
 
                 <div class="col-md-2 user_role">
-                   
-                        <select id="userRole" class="form-select text-capitalize ms-2">
+
+                    <select id="userRole" class="form-select text-capitalize ms-2">
                         @foreach (var user in Model.EstimatorUsers)
                         {
                             <option value="@user.UserID">@user.FirstName @user.LastName</option>
                         }
-                            </select>
-                   
+                    </select>
+
                 </div>
 
                 <div class="col-md-2 user_plan">
@@ -177,7 +179,7 @@
                        data-bs-target="#modalSignature" class="btn btn-primary tf-icons  scaleX-n1-rtl mx-3" title="Create Estimate">
                         <span class="ti ti-plus me-2"></span>
                         Estimate
-                   </a>
+                    </a>
                     <div class="border-start mx-2 pl-2" style="height: 30px;"></div>
                     <div class="px-3">
                         <a id="gridIcon" href="#" onclick="switchToGrid()" class="menu-item ti ti-layout-grid-filled ms-3" title="Tile view"></a>
@@ -241,19 +243,18 @@
                                                     <div class="row">
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-email">Email</label>
-                                                        
-                                                                <input type="text"
-                                                                    name="email" value=""
-                                                                       class="form-control"/>
-                                                                <span asp-validation-for="Email" class="text-danger"></span>
+
+                                                            <input type="text"
+                                                                   name="email" value=""
+                                                                   class="form-control" />
+                                                            <span asp-validation-for="Email" class="text-danger"></span>
                                                         </div>
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-phone">Phone No</label>
                                                             <input type="text"
-                                                                   name="phoneNo"
-                                                                   class="form-control phone-mask"
-                                                                   />
-                                                            <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                                                                   name="PhoneNumber"
+                                                                   class="form-control phone-mask" />
+                                                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                                                         </div>
                                                     </div>
 
@@ -266,7 +267,7 @@
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-line2">Address line 2</label>
                                                             <input type="text" class="form-control" name="addressline2" value="" placeholder="" />
-                                                         
+
                                                         </div>
                                                     </div>
 
@@ -302,7 +303,7 @@
 
 
                                     </div>
-                           
+
                                 </div>
 
                             </div>
@@ -321,102 +322,113 @@
     </div>
 
     <div class="row mb-12 g-6" id="grid" style="display: flex;">
-        @foreach (var item in Model.EstimateList)
-{
-        string estimateCreatedDate = item.EstimateCreatedDate;
-        string formattedDate = "Invalid date format";
-
-        if (!string.IsNullOrEmpty(estimateCreatedDate))
-        {
-            DateTime createdDate;
-            if (DateTime.TryParse(estimateCreatedDate, out createdDate))
+        @{
+            if (Model.EstimateList == null || !Model.EstimateList.Any())
             {
-                TimeSpan timeDifference = DateTime.Now - createdDate;
-
-                if (timeDifference.Days > 365)
-                {
-                    formattedDate = $"Created {timeDifference.Days / 365} years ago.";
-                }
-                else if (timeDifference.Days > 30)
-                {
-                    formattedDate = $"Created {timeDifference.Days / 30} months ago.";
-                }
-                else if (timeDifference.Days > 0)
-                {
-                    formattedDate = $"Created {timeDifference.Days} days ago.";
-                }
-                else if (timeDifference.Hours > 0)
-                {
-                    formattedDate = $"Created {timeDifference.Hours} hours ago.";
-                }
-                else if (timeDifference.Minutes > 0)
-                {
-                    formattedDate = $"Created {timeDifference.Minutes} minutes ago.";
-                }
-                else
-                {
-                    formattedDate = $"Created {timeDifference.Seconds} seconds ago.";
-                }
-            }
-    }
-
-    <div class="col-md-4">
-        <div class="card">
-            <div class="row g-0">
-                <div class="col-md-12 position-relative">
-                            <a asp-action="EstimationDetails" asp-controller="Estimates" asp-route-id="@item.EstimateID">
-                                <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-pixabay-164558.jpg" alt="Card image" />
-                                <div hidden>@item.EstimateID</div>
-                            </a>
-
-
-                            <div class="position-absolute end-0 top-0 dlt-btn">
-                                <button data-bs-toggle="modal" data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text" onclick="setEstimateID(@item.EstimateID)">
-                                    <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
-                                </button>
-                            </div>
+                <div class="row mb-12 g-6 text-center" style="display: flex;">
+                    <p>No record found.</p>
                 </div>
-                <div class="col-md-12">
-                    <div class="card-body row g-0">
-                        <div class="col-md-12 mb-2">
-                            <h5 class="card-title mb-0"><b>@item.FirstName @item.LastName</b></h5>
-                            <p class="mb-1">Estimate No. : @item.EstimateNo</p>
-                            <p class="card-text text-black">@item.Addressline1 @item.Addressline2, @item.City, @item.State, @item.ZipCode</p>
-                        </div>
-                        <div class="col-md-12 rounded text-white status-dropdown">
-                            <div class="d-flex justify-content-center align-items-center">
-                                        <div class="col-md-6 rounded text-white status-dropdown">
-                                            <select class="form-select text-capitalize statusSelect">
-                                                @foreach (var i in Model.StatusList)
-                                                {
-                                                    @if (item.StatusID.ToString() == i.StatusID.ToString())
-                                                    {
-                                                        <option value="@i.StatusID" selected>@i.StatusName</option>
-                                                    }
-                                                    else
-                                                    {
-                                                        <option value="@i.StatusID">@i.StatusName</option>
-                                                    }
-                                                }
-                                            </select>
-                                            <div id="estimateId_@item.EstimateID" hidden>@item.EstimateID</div>
+            }
+            else
+            {
+                @foreach (var item in Model.EstimateList)
+                {
+                    string estimateCreatedDate = item.EstimateCreatedDate;
+                    string formattedDate = "Invalid date format";
+
+                    if (!string.IsNullOrEmpty(estimateCreatedDate))
+                    {
+                        DateTime createdDate;
+                        if (DateTime.TryParse(estimateCreatedDate, out createdDate))
+                        {
+                            TimeSpan timeDifference = DateTime.Now - createdDate;
+
+                            if (timeDifference.Days > 365)
+                            {
+                                formattedDate = $"Created {timeDifference.Days / 365} years ago.";
+                            }
+                            else if (timeDifference.Days > 30)
+                            {
+                                formattedDate = $"Created {timeDifference.Days / 30} months ago.";
+                            }
+                            else if (timeDifference.Days > 0)
+                            {
+                                formattedDate = $"Created {timeDifference.Days} days ago.";
+                            }
+                            else if (timeDifference.Hours > 0)
+                            {
+                                formattedDate = $"Created {timeDifference.Hours} hours ago.";
+                            }
+                            else if (timeDifference.Minutes > 0)
+                            {
+                                formattedDate = $"Created {timeDifference.Minutes} minutes ago.";
+                            }
+                            else
+                            {
+                                formattedDate = $"Created {timeDifference.Seconds} seconds ago.";
+                            }
+                        }
+                    }
+
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="row g-0">
+                                <div class="col-md-12 position-relative">
+                                    <a asp-action="EstimationDetails" asp-controller="Estimates" asp-route-id="@item.EstimateID">
+                                        <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-pixabay-164558.jpg" alt="Card image" />
+                                        <div hidden>@item.EstimateID</div>
+                                    </a>
+
+
+                                    <div class="position-absolute end-0 top-0 dlt-btn">
+                                        <button data-bs-toggle="modal" data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text" onclick="setEstimateID(@item.EstimateID)">
+                                            <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="card-body row g-0">
+                                        <div class="col-md-12 mb-2">
+                                            <h5 class="card-title mb-0"><b>@item.FirstName @item.LastName</b></h5>
+                                            <p class="mb-1">Estimate No. : @item.EstimateNo</p>
+                                            <p class="card-text text-black">@item.Addressline1 @item.Addressline2, @item.City, @item.State, @item.ZipCode</p>
                                         </div>
+                                        <div class="col-md-12 rounded text-white status-dropdown">
+                                            <div class="d-flex justify-content-center align-items-center">
+                                                <div class="col-md-6 rounded text-white status-dropdown">
+                                                    <select class="form-select text-capitalize statusSelect">
+                                                        @foreach (var i in Model.StatusList)
+                                                        {
+                                                            @if (item.StatusID.ToString() == i.StatusID.ToString())
+                                                            {
+                                                                <option value="@i.StatusID" selected>@i.StatusName</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="@i.StatusID">@i.StatusName</option>
+                                                            }
+                                                        }
+                                                    </select>
+                                                    <div id="estimateId_@item.EstimateID" hidden>@item.EstimateID</div>
+                                                </div>
 
 
-                                <div class="col-md-6 d-flex justify-content-end align-items-center">
-                                    <p style="color:#b1acac !important" class="mb-0">@formattedDate</p>
+                                                <div class="col-md-6 d-flex justify-content-end align-items-center">
+                                                    <p style="color:#b1acac !important" class="mb-0">@formattedDate</p>
 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-}
+                }
+            }
+        }
 
-                    </div>
+    </div>
 
 
     <div id="list" style="display: none;">
@@ -436,7 +448,7 @@
                             <th class="text-white"> Address</th>
                             <th class="text-white"> Estimator</th>
                             <th class="text-white"> Created</th>
-                         @*    <th class="text-white">Status</th> *@
+                            @*    <th class="text-white">Status</th> *@
                             @* <th class="text-white">Role</th>
                             <th class="text-white">Status</th> *@
                             @*    <th class="text-white">Revenue</th> *@
@@ -451,28 +463,28 @@
 
     </div>
 
-       
-
-    </div>
-
-  
 
 
-    <!--Script for grid and list view-->
-    <script>
-        function switchToGrid() {
-            // Hide the list view and show the grid view
-            document.getElementById("list").style.display = "none";
-            document.getElementById("grid").style.display = "flex";
-        }
+</div>
 
-        function switchToList() {
-            // Hide the grid view and show the list view
-            document.getElementById("grid").style.display = "none";
-            document.getElementById("list").style.display = "block";
-        }
 
-    </script>
+
+
+<!--Script for grid and list view-->
+<script>
+    function switchToGrid() {
+        // Hide the list view and show the grid view
+        document.getElementById("list").style.display = "none";
+        document.getElementById("grid").style.display = "flex";
+    }
+
+    function switchToList() {
+        // Hide the grid view and show the list view
+        document.getElementById("grid").style.display = "none";
+        document.getElementById("list").style.display = "block";
+    }
+
+</script>
 
 <div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -504,10 +516,10 @@
                     estimateId: estimateId
                 },
                 success: function (response) {
-                  
+
                 },
                 error: function (xhr, status, error) {
-                 
+
                 }
             });
         });
@@ -571,12 +583,12 @@
     window.addEventListener('load', function () {
         var selectElements = document.querySelectorAll('.status-dropdown select');
         selectElements.forEach(function (selectElement) {
-            updateBackgroundColor(selectElement); 
+            updateBackgroundColor(selectElement);
         });
     });
     document.querySelectorAll('.status-dropdown select').forEach(function (selectElement) {
         selectElement.addEventListener("change", function () {
-            updateBackgroundColor(selectElement); 
+            updateBackgroundColor(selectElement);
         });
     });
 

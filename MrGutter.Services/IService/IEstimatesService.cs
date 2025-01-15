@@ -12,10 +12,10 @@ namespace MrGutter.Services.IService
         public Task<int> CreateEstimateAsync(EstimateVM estimateVM);
         public Task<int> ChangeEstimateStatus(EstimateVM estimateVM);
         public Task<int> DeleteEstimateAsync(EstimateVM estimateVM);
-
+        public Task<int> UpdateEstimate(EstimateVM estimateIdsVM);
         
 
         public Task<EstimateStatusVM> GetStatuslistAsync(string? StatusId);
-        public Task<EstimateVM> GetEstimatelistAsync(string? EstimateId);
+        public Task<EstimateVM> GetEstimatelistAsync(EstimateIdsVM estimateIdsVM);
     }
 }

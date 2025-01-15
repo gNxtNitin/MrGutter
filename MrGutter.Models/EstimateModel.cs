@@ -9,10 +9,14 @@ namespace MrGutter.Models
     public class EstimateModel
     {
         public string? Flag { get; set; }
+        public int UserID { get; set; } = 0;
         public int EstimateID { get; set; } = 0;
         public string? EstimateNo { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
+        public string? CompanyName { get; set; }
+        public string? EstimateCreatedDate { get; set; }
+        
         public string? Company { get; set; }
         public string? Email { get; set; }
         public string? PhoneNo { get; set; }
@@ -24,6 +28,17 @@ namespace MrGutter.Models
         public string? ZipCode { get; set; }
         public bool IsShared { get; set; }
         public int CompanyID { get; set; }
+        public string? EstimateRevenue { get; set; }
         public int CreatedBy { get; set; }
+        public string? NextCallDate { get; set; }
+      
+    }
+    public class EstimateIdsModel
+    {
+        public string? Flag { get; set; }
+        public int UserId { get; set; } = 0;
+        public int CompanyID { get; set; } = 0;
+        public int EstimateID { get; set; } = 0;
+    
     }
 }
