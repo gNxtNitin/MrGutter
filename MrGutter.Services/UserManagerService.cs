@@ -98,6 +98,7 @@ namespace MrGutter.Services
             //obj.isActive = user.isActive;
             obj.Flag = "D";
             obj.UserID = user.UserID;
+            obj.CreatedBy = user.CreatedBy;
             var res = await _userRepository.CreateOrUpdateUser(obj);
             if (res.Code >= 0)
             {
