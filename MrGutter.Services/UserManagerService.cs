@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
+using Microsoft.JSInterop.Implementation;
 using MrGutter.Models;
 using MrGutter.Models.ViewModels;
 using MrGutter.Repository.IRepository;
@@ -57,6 +59,8 @@ namespace MrGutter.Services
         public async Task<int> CreateOrUpdateUser(UsersVM user)
         {
             int result = 0;
+
+            
             User obj = new User();
             //obj.UserName = user.UserName;
             obj.FirstName = user.FirstName;
@@ -64,6 +68,8 @@ namespace MrGutter.Services
             obj.LastName = user.LastName;
             obj.UserID  = user.UserID;
             obj.RoleID = user.RoleID;
+            obj.CompanyId = user.CompanyId;
+            obj.CreatedBy = user.CreatedBy;
             //obj.UserName = user.UserName;
             obj.Email = user.Email;
             obj.Mobile = user.Mobile;
@@ -89,9 +95,10 @@ namespace MrGutter.Services
         {
             int result = 0;
             User obj = new User();
-            obj.isActive = user.isActive;
+            //obj.isActive = user.isActive;
             obj.Flag = "D";
             obj.UserID = user.UserID;
+            obj.CreatedBy = user.CreatedBy;
             var res = await _userRepository.CreateOrUpdateUser(obj);
             if (res.Code >= 0)
             {
@@ -120,6 +127,7 @@ namespace MrGutter.Services
             obj.CompanyEmail = cmpInfo.CompanyEmail;
             obj.ContactPerson = cmpInfo.ContactPerson;
             obj.CompanyId = cmpInfo.CompanyId;
+            obj.CreatedBy = cmpInfo.CreatedBy;
 
 
             if (cmpInfo.CompanyId == "0")
@@ -145,6 +153,7 @@ namespace MrGutter.Services
            // obj.isActive = cmpInfo.isActive;
             obj.Flag = "D";
             obj.CompanyId = cmpInfo.CompanyId;
+            obj.CreatedBy = cmpInfo.CreatedBy;
             var res = await _userRepository.CreateOrUpdateCompany(obj);
             if (res.Code >= 0)
             {

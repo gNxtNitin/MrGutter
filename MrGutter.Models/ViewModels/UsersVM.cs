@@ -11,11 +11,11 @@ namespace MrGutter.Models.ViewModels
     {
         public string UserID { get; set; } = "0";
         public string CompanyId { get; set; } = "0";
-        public string CompanyName { get; set; }
-        public string CompanyEmail { get; set; }
-        public string CompanyPhone { get; set; }
+        public string? CompanyName { get; set; }
+        public string? CompanyEmail { get; set; }
+        public string? CompanyPhone { get; set; }
         public string PointOfContact { get; set; }
-
+        public string? CreatedBy { get; set; }
         public string RoleID { get; set; } = "1";
         [Required(ErrorMessage = "First Name is required")]
         [StringLength(50, ErrorMessage = "First Name cannot exceed 50 characters")]

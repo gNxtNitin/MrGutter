@@ -92,36 +92,36 @@
                                    class="form-control"
                                    id="add-user-firstname"
                                    placeholder="John"
-                                   asp-for="FirstName"
+                                  name="firstName"
                                    value="" />
-                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                          @*   <span asp-validation-for="FirstName" class="text-danger"></span> *@
                         </div>
                         <div class="mb-6">
-                            <label class="form-label" asp-for="LastName">Last name</label>
+                            <label class="form-label" for="add-user-lastname">Last name</label>
                             <input type="text"
                                    class="form-control"
                                    id="add-user-lastname"
                                    placeholder="Doe"
-                                   asp-for="LastName" />
-                            <span asp-validation-for="LastName" class="text-danger"></span>
+                                  name="lastName" />
+                           @*  <span asp-validation-for="LastName" class="text-danger"></span> *@
                         </div>
                         <div class="mb-6">
-                            <label class="form-label" asp-for="Email">Email</label>
+                            <label class="form-label" for="add-user-email">Email</label>
                             <input type="text"
                                    id="add-user-email"
                                    class="form-control"
                                    placeholder="john.doe@example.com"
-                                   asp-for="Email" />
-                            <span asp-validation-for="Email" class="text-danger"></span>
+                                   name="email" />
+                          @*   <span asp-validation-for="Email" class="text-danger"></span> *@
                         </div>
                         <div class="mb-6">
-                            <label class="form-label" asp-for="Mobile">Phone number</label>
+                            <label class="form-label" for="add-user-contact">Phone number</label>
                             <input type="text"
                                    id="add-user-contact"
                                    class="form-control phone-mask"
                                    placeholder="+1 (609) 988-44-11"
-                                   asp-for="Mobile" />
-                            <span asp-validation-for="Mobile" class="text-danger"></span>
+                                   name="mobile" />
+                           @*  <span asp-validation-for="Mobile" class="text-danger"></span> *@
                         </div>
                        
 
@@ -195,6 +195,7 @@
 
                     <input type="hidden" id="editUserID" />
                     <input type="hidden" id="editIsActive" />
+                    <input type="hidden" id="companyId" />
                     
                     <div class="mb-6">
                         <label class="form-label" for="fName">First name</label>
@@ -263,7 +264,7 @@
 
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" onclick="saveChanges()">Save</button>
+                <button type="submit" class="btn btn-primary" onclick="saveChanges1()">Save</button>
                 <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">
                     Cancel
                 </button>

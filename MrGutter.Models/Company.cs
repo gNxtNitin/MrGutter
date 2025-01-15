@@ -16,6 +16,6 @@ namespace MrGutter.Models
         public string? ContactPerson { get; set; }
         public string? Flag { get; set; }
         public bool isActive { get; set; } = true;
-        public int CreatedBy { get; set; } = 0;
+        public int? CreatedBy { get; set; } = 0;
     }
 }

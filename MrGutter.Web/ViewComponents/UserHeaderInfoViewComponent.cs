@@ -12,27 +12,33 @@ namespace MrGutter.Web.ViewComponents
     {
         private readonly IAccountService _accountService;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly IUserManagerService _userManagerService;
 
-        public UserHeaderInfoViewComponent(IAccountService accountService, IHttpContextAccessor httpContextAccessor)
+        public UserHeaderInfoViewComponent(IUserManagerService userManagerService, IAccountService accountService, IHttpContextAccessor httpContextAccessor)
         {
             _accountService = accountService;
             _httpContextAccessor = httpContextAccessor;
+            _userManagerService = userManagerService;
         }
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var userId = _httpContextAccessor.HttpContext?.Session.GetInt32("UserId");
+            var CompanyId = _httpContextAccessor.HttpContext?.Session.GetInt32("CompanyId");
             if (userId == null)
             {
                 return View(new UsersVM());
             }
-              var userDetails = await _accountService.GetUserAsync(userId.ToString());
+            var userDetails = await _accountService.GetUserAsync(userId.ToString());
+            var companyDetails = await _userManagerService.GetCompanyAsync(CompanyId.ToString());
+            var cmp = companyDetails.Company.FirstOrDefault();
             var user = userDetails.Users.FirstOrDefault();
 
             var viewModel = new User
             {
                 FirstName = user?.FirstName,
-                LastName = user?.LastName
+                LastName = user?.LastName,
+                CompanyId = cmp.CompanyId
             };
             return View(viewModel);
         }

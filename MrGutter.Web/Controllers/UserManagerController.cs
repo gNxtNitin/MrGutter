@@ -28,20 +28,20 @@ namespace MrGutter.Web.Controllers
 
             var roles = allRole.Roles.ToList();
 
+            var allCompanies = await _userManagerService.GetCompanyAsync("");
+            var companies = allCompanies.Company.ToList();
 
-            // Map roles dynamically to a list of SelectListItem
             var rolesDropDown = roles.Select(role => new SelectListItem
             {
                 Text = role.RoleName, 
                 Value = role.RoleID.ToString() 
             }).ToList();
 
-            var CompanyList = new List<SelectListItem>
+            var CompanyList = companies.Select(cmp => new SelectListItem
             {
-                new SelectListItem { Text = "MrGutter", Value = "1" },
-                new SelectListItem { Text = "US Metal Roofing", Value = "2" }
-            };
-
+                Text = cmp.CompanyName,
+                Value = cmp.CompanyId.ToString()
+            }).ToList();
             ViewBag.Company = CompanyList;
             ViewBag.Roles = rolesDropDown;
             return View();
@@ -49,7 +49,7 @@ namespace MrGutter.Web.Controllers
         [HttpPost]        
         public async Task<IActionResult> UserList()
         {
-            var result = await _userManagerService.GetUserAsync(""); // Fetch users
+            var result = await _userManagerService.GetUserAsync(""); 
             var draw = Request.Form["draw"].FirstOrDefault();
             var start = Request.Form["start"].FirstOrDefault();
             var length = Request.Form["length"].FirstOrDefault();
@@ -59,18 +59,15 @@ namespace MrGutter.Web.Controllers
             int pageSize = length != null ? Convert.ToInt32(length) : 0;
             int skip = start != null ? Convert.ToInt32(start) : 0;
 
-            // Store the original user list for count
-            var originalUserList = result.Users.ToList(); // Make sure to evaluate the list here
+            var originalUserList = result.Users.ToList(); 
             var users = originalUserList.AsQueryable();
 
-            // Sorting
             if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
             {
                 bool descendingOrder = sortColumnDirection == "asc" ? false : true;
                 users = users.OrderByProperty(sortColumn, descendingOrder);
             }
 
-            // Searching
             if (!string.IsNullOrEmpty(searchValue))
             {
                 users = users.Where(m =>
@@ -81,7 +78,6 @@ namespace MrGutter.Web.Controllers
                     m.UserStatus.Contains(searchValue, StringComparison.OrdinalIgnoreCase));
             }
 
-            // Count filtered records
             int recordsTotal = users.Count();
             var data = users.Skip(skip).Take(pageSize)
                             .Select(user => new {
@@ -100,49 +96,29 @@ namespace MrGutter.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteUser(UsersVM user)
         {
+            user.CreatedBy = HttpContext.Session.GetInt32("UserId").ToString();
             var res = await _userManagerService.DeleteUser(user);
 
             return View("User");
 
         }
 
-        // GET method to fetch user details for editing
         [HttpGet]
         public async Task<IActionResult> EditUser(string? userID)
         {
             var user1 = await _userManagerService.GetUserAsync(userID);
-            //UsersVM user = JsonConvert.DeserializeObject<UsersVM>(user1.ToString());
 
             var userType = user1.Users.FirstOrDefault(m => m.UserID == userID);
             int IntegerUserId = Int32.Parse(userID);
 
             var allRole = await _userManagerService.GetRoleAsync("");
-
-            // var roleId = role.Roles.FirstOrDefault(m => m.RoleName == userType.UserType);
             var roles = allRole.Roles.Select(m => new { RoleID = m.RoleID, RoleName = m.RoleName }).ToList();
-
-            var passRoleId = roles.FirstOrDefault(m => m.RoleName.ToString() == userType.UserType);
-
+            var passRoleId = roles.FirstOrDefault(m => m.RoleName.ToString() == userType.UserType);           
             var user = user1.Users.FirstOrDefault(m => m.UserID == userID);
             if (user == null)
             {
                 return NotFound();
             }
-
-            //var userVM = new UsersVM
-            //{
-            //    UserID = userID,
-            //    RoleID = user.RoleID,
-            //    UserName = user.UserName,
-            //    FirstName = user.FirstName,
-            //    LastName = user.LastName,
-            //    Email = user.Email,
-            //    Mobile = user.Mobile,
-            //    UserType = user.UserType,
-            //    UserStatus = user.UserStatus,
-            //    isActive = user.isActive
-            //};
-            // Return the response with roles and user data
             return Json(new
             {
                 UserID = userID,
@@ -155,66 +131,34 @@ namespace MrGutter.Web.Controllers
                 UserType = user.UserType,
                 UserStatus = user.UserStatus,
                 isActive = user.isActive,
-                Roles = roles // Correctly defined roles here
-            });  // Return user data as JSON
+                Roles = roles 
+            });  
         }
 
         [HttpPost]
         public async Task<ActionResult> EditUser(UsersVM user)
         {
-            //var result = await _userManagerService.GetUserAsync(user.UserID);
-            //var res1 = result.Users.FirstOrDefault(m => m.UserID == user.UserID);
-            //UsersVM data = new UsersVM
-            //{
-            //    FirstName = res1?.FirstName,
-            //    LastName = res1?.LastName,
-            //    UserName = user.UserName,
-            //    Email = user.Email,
-            //    MobileNo = user.MobileNo,
-            //    UserStatus = user.UserStatus,
-            //    UserType = user.UserType,
-            //    UserID = user.UserID
-            //};
-
+            user.CompanyId = HttpContext.Session.GetInt32("CompanyId").ToString();
+            user.CreatedBy = HttpContext.Session.GetInt32("UserId").ToString();
             var res = await _userManagerService.CreateOrUpdateUser(user);
-            //var res = user.Users.FirstOrDefault(m => m.UserID == );
-
-            return View(res);
+            return View("User");
         }
-
-
         [HttpPost]
         public async Task<ActionResult> CreateUser(UsersVM user)
         {
-
-            if (!ModelState.IsValid)
-            {
-                TempData["CreateUserError"] = true; 
-                return RedirectToAction("User");
-            }
+            user.CreatedBy = HttpContext.Session.GetInt32("UserId").ToString();
             var res = await _userManagerService.CreateOrUpdateUser(user);
-
-            return RedirectToAction("User");
-
-
-
-           
-            //var res = user.Users.FirstOrDefault(m => m.UserID == );
-
-            //return View("User");
-            
-          
+            return View("User");
         }
         public async Task<ActionResult> Company()
-        {
-           // var result = await _userManagerService.GetCompanyAsync("");
+        {           
             return View();
         }
 
         [HttpPost]
         public async Task<IActionResult> CompanyList()
         {
-            var result = await _userManagerService.GetCompanyAsync(""); // Fetch Company
+            var result = await _userManagerService.GetCompanyAsync(""); 
             var draw = Request.Form["draw"].FirstOrDefault();
             var start = Request.Form["start"].FirstOrDefault();
             var length = Request.Form["length"].FirstOrDefault();
@@ -224,8 +168,7 @@ namespace MrGutter.Web.Controllers
             int pageSize = length != null ? Convert.ToInt32(length) : 0;
             int skip = start != null ? Convert.ToInt32(start) : 0;
 
-            // Store the original user list for count
-            var originalCompanyList = result.Company.ToList(); // Make sure to evaluate the list here
+            var originalCompanyList = result.Company.ToList(); 
             var users = originalCompanyList.AsQueryable();
 
             // Sorting
@@ -267,9 +210,6 @@ namespace MrGutter.Web.Controllers
         {
             var user1 = await _userManagerService.GetCompanyAsync(companyId);
             var res = user1.Company.FirstOrDefault(m => m.CompanyId == companyId);
-            
-
-
             return Json(new
             {
                 companyId = res.CompanyId,
@@ -277,31 +217,27 @@ namespace MrGutter.Web.Controllers
                 companyEmail = res.CompanyEmail,
                 companyPhone = res.CompanyPhone,
                 contactPerson = res.ContactPerson,
-            });  // Return user data as JSON
+            });  
         }
 
         [HttpPost]
         public async Task<ActionResult> EditCompany(CompanyVM compInfo)
         {
-            
-
+            compInfo.CreatedBy = HttpContext.Session.GetInt32("UserId");
             var res = await _userManagerService.CreateOrUpdateCompany(compInfo);
-            //var res = user.Users.FirstOrDefault(m => m.UserID == );
-
             return View(res);
         }
         [HttpPost]
         public async Task<ActionResult> CreateCompany(CompanyVM cmpInfo)
         {
-
+            cmpInfo.CreatedBy = HttpContext.Session.GetInt32("UserId");
             var res = await _userManagerService.CreateOrUpdateCompany(cmpInfo);
-            //var res = user.Users.FirstOrDefault(m => m.UserID == );
-
             return View("Company");
         }
 
         public async Task<ActionResult> DeleteCompany(CompanyVM cmp)
         {
+            cmp.CreatedBy = HttpContext.Session.GetInt32("UserId");
             var res = await _userManagerService.DeleteCompanyAsync(cmp);
             return View("Company");
         }
