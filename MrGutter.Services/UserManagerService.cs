@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
 using MrGutter.Models;
 using MrGutter.Models.ViewModels;
 using MrGutter.Repository.IRepository;
@@ -57,6 +58,8 @@ namespace MrGutter.Services
         public async Task<int> CreateOrUpdateUser(UsersVM user)
         {
             int result = 0;
+
+            
             User obj = new User();
             //obj.UserName = user.UserName;
             obj.FirstName = user.FirstName;
@@ -64,6 +67,8 @@ namespace MrGutter.Services
             obj.LastName = user.LastName;
             obj.UserID  = user.UserID;
             obj.RoleID = user.RoleID;
+            obj.CompanyId = user.CompanyId;
+            obj.CreatedBy = user.CreatedBy;
             //obj.UserName = user.UserName;
             obj.Email = user.Email;
             obj.Mobile = user.Mobile;
@@ -89,7 +94,7 @@ namespace MrGutter.Services
         {
             int result = 0;
             User obj = new User();
-            obj.isActive = user.isActive;
+            //obj.isActive = user.isActive;
             obj.Flag = "D";
             obj.UserID = user.UserID;
             var res = await _userRepository.CreateOrUpdateUser(obj);

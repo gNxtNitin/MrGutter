@@ -81,20 +81,31 @@ namespace MrGutter.Web.Controllers
                 }
 
                 // Fetch company information
-              
-                var companyManager = await _userService.GetCompanyAsync(result.Code.ToString());
-                var companyId = companyManager.Company.FirstOrDefault()?.CompanyId; 
 
-                if (companyId == null)
+                var companyManager = await _userService.GetCompanyAsync(result.Code.ToString());
+                var companyId = companyManager.Company.FirstOrDefault()?.CompanyId;
+
+                if (string.IsNullOrEmpty(companyId))
                 {
                     ViewBag.LoginError = "Invalid";
                     ViewBag.LoginErrorMsg = "Unable to retrieve company information.";
                     return View("Index");
                 }
 
-                // Store company ID in session
-                int cId = Int32.Parse(companyId);
-                HttpContext.Session.SetInt32("CompanyId", cId);
+                // Sanitize the companyId to remove non-numeric characters
+                var sanitizedCompanyId = new string(companyId.Where(char.IsDigit).ToArray());
+
+                // Parse the sanitized companyId into an integer
+                if (int.TryParse(sanitizedCompanyId, out int cId))
+                {
+                    HttpContext.Session.SetInt32("CompanyId", cId);
+                }
+                else
+                {
+                    ViewBag.LoginError = "Invalid";
+                    ViewBag.LoginErrorMsg = "Invalid company ID format.";
+                    return View("Index");
+                }
 
 
 

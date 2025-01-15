@@ -14,6 +14,7 @@ namespace MrGutter.Models
         public string CompanyName { get; set; }
         public string CompanyEmail { get; set; }
         public string CompanyPhone { get; set; }
+        public string? CreatedBy { get; set; }
         public string PointOfContact { get; set; }
         public string RoleID { get; set; } = "1";
         public string UserName { get; set; }
@@ -33,7 +34,7 @@ namespace MrGutter.Models
         public string Email { get; set; }
         public bool isActive { get; set; }
         public DateTime? DOB { get; set; }
-        public string CreatedBy { get; set; } = "0";
+      //  public string CreatedBy { get; set; } = "0";
         public string LastLoginDate { get; set; }
         public string UserStatus { get; set; }
         public string Initials

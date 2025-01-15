@@ -28,6 +28,8 @@ namespace MrGutter.Web.Controllers
 
             var roles = allRole.Roles.ToList();
 
+            var allCompanies = await _userManagerService.GetCompanyAsync("");
+            var companies = allCompanies.Company.ToList();
 
             // Map roles dynamically to a list of SelectListItem
             var rolesDropDown = roles.Select(role => new SelectListItem
@@ -36,11 +38,13 @@ namespace MrGutter.Web.Controllers
                 Value = role.RoleID.ToString() 
             }).ToList();
 
-            var CompanyList = new List<SelectListItem>
+            var CompanyList = companies.Select(cmp => new SelectListItem
             {
-                new SelectListItem { Text = "MrGutter", Value = "1" },
-                new SelectListItem { Text = "US Metal Roofing", Value = "2" }
-            };
+                Text = cmp.CompanyName,
+                Value = cmp.CompanyId.ToString()
+            }).ToList();
+
+
 
             ViewBag.Company = CompanyList;
             ViewBag.Roles = rolesDropDown;
@@ -100,6 +104,7 @@ namespace MrGutter.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteUser(UsersVM user)
         {
+            user.CreatedBy = HttpContext.Session.GetInt32("UserId").ToString();
             var res = await _userManagerService.DeleteUser(user);
 
             return View("User");
@@ -118,31 +123,19 @@ namespace MrGutter.Web.Controllers
 
             var allRole = await _userManagerService.GetRoleAsync("");
 
-            // var roleId = role.Roles.FirstOrDefault(m => m.RoleName == userType.UserType);
             var roles = allRole.Roles.Select(m => new { RoleID = m.RoleID, RoleName = m.RoleName }).ToList();
 
-            var passRoleId = roles.FirstOrDefault(m => m.RoleName.ToString() == userType.UserType);
+            //var allCompanies = await _userManagerService.GetCompanyAsync("");
+            //var companies = allCompanies.Company.Select(m => new { CompanyId = m.CompanyId, CompanyName = m.CompanyName }).ToList();
 
+            var passRoleId = roles.FirstOrDefault(m => m.RoleName.ToString() == userType.UserType);
+           
             var user = user1.Users.FirstOrDefault(m => m.UserID == userID);
             if (user == null)
             {
                 return NotFound();
             }
 
-            //var userVM = new UsersVM
-            //{
-            //    UserID = userID,
-            //    RoleID = user.RoleID,
-            //    UserName = user.UserName,
-            //    FirstName = user.FirstName,
-            //    LastName = user.LastName,
-            //    Email = user.Email,
-            //    Mobile = user.Mobile,
-            //    UserType = user.UserType,
-            //    UserStatus = user.UserStatus,
-            //    isActive = user.isActive
-            //};
-            // Return the response with roles and user data
             return Json(new
             {
                 UserID = userID,
@@ -155,6 +148,7 @@ namespace MrGutter.Web.Controllers
                 UserType = user.UserType,
                 UserStatus = user.UserStatus,
                 isActive = user.isActive,
+               
                 Roles = roles // Correctly defined roles here
             });  // Return user data as JSON
         }
@@ -175,11 +169,12 @@ namespace MrGutter.Web.Controllers
             //    UserType = user.UserType,
             //    UserID = user.UserID
             //};
-
+            user.CompanyId = HttpContext.Session.GetInt32("CompanyId").ToString();
+            user.CreatedBy = HttpContext.Session.GetInt32("UserId").ToString();
             var res = await _userManagerService.CreateOrUpdateUser(user);
             //var res = user.Users.FirstOrDefault(m => m.UserID == );
 
-            return View(res);
+            return View("User");
         }
 
 
@@ -192,6 +187,7 @@ namespace MrGutter.Web.Controllers
             //    TempData["CreateUserError"] = true; 
             //    return RedirectToAction("User");
             //}
+            user.CreatedBy = HttpContext.Session.GetInt32("UserId").ToString();
             var res = await _userManagerService.CreateOrUpdateUser(user);
 
             return View("User");

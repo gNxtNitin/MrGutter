@@ -123,14 +123,14 @@ function deleteRow(companyId) {
 // Open edit modal
 function openEditModal(companyId) {
 
-    alert("in get method")
+    alert("in get method of company")
     $.ajax({
         url: "/userManager/EditCompany?companyId=" + companyId,
         method: "GET",
 
         success: function (response) {
             resetEditModal(); // Clear old data
-            populateEditModal(response);
+            populateEditModalforCompany(response);
             $("#editModal1").modal("show");
         },
         error: function () {
@@ -143,7 +143,7 @@ function resetEditModal() {
     $("#editModal1").find("input, select").val(""); // Clear modal fields
 }
 
-function populateEditModal(data) {
+function populateEditModalforCompany(data) {
     $("#editModal1 #editCompanyId").val(data.companyId);
     $("#editModal1 #editCompanyName").val(data.companyName);
     $("#editModal1 #editContactPerson").val(data.contactPerson);
