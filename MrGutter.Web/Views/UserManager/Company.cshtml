@@ -55,13 +55,14 @@
                     <thead class="border-top bg-menu-theme text-white">
                         <tr>
                             @*    <th class="text-white">Avatar</th> *@
-                            <th class="text-white">CompanyName</th>
-                            <th class="text-white">PointOfContact</th>
-                            <th class="text-white">Email</th>
+                            <th class="text-white">Company name</th>
+                            <th class="text-white">Point of contact</th>
+                            <th class="text-white">E-mail</th>
                             <th class="text-white">Phone</th>
 
                             <th class="text-white">Actions</th>
-                            <th><input type="checkbox" id="selectAll" class="select-all" /></th>
+@*                             <th><input type="checkbox" id="selectAll" class="select-all" /></th>
+ *@
                         </tr>
                     </thead>
                     <tbody>
@@ -253,18 +254,18 @@
 
 
 <!-- Modal for Delete pop up-->
-<div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="deletecmp" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <p class="modal-title mb-6 fs-5" id="modalCenterTitle">Do you want to delete this user?</p>
+                <p class="modal-title mb-6 fs-5" id="modalCenterTitle">Do you want to delete this company?</p>
             </div>
             <div class="modal-footer">
+                <!-- Store the userID when clicking Yes -->
                 <button type="button" class="btn btn-label-secondary confirm-delete" data-bs-dismiss="modal">
                     Yes
                 </button>
                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
-
             </div>
         </div>
     </div>
