@@ -279,8 +279,8 @@ namespace MrGutter.Web.Controllers
         [HttpPost]
         public async Task<ActionResult> EditCompany(CompanyVM compInfo)
         {
-            
 
+            compInfo.CreatedBy = HttpContext.Session.GetInt32("UserId");
             var res = await _userManagerService.CreateOrUpdateCompany(compInfo);
             //var res = user.Users.FirstOrDefault(m => m.UserID == );
 
@@ -289,7 +289,7 @@ namespace MrGutter.Web.Controllers
         [HttpPost]
         public async Task<ActionResult> CreateCompany(CompanyVM cmpInfo)
         {
-
+            cmpInfo.CreatedBy = HttpContext.Session.GetInt32("UserId");
             var res = await _userManagerService.CreateOrUpdateCompany(cmpInfo);
             //var res = user.Users.FirstOrDefault(m => m.UserID == );
 
@@ -298,6 +298,7 @@ namespace MrGutter.Web.Controllers
 
         public async Task<ActionResult> DeleteCompany(CompanyVM cmp)
         {
+            cmp.CreatedBy = HttpContext.Session.GetInt32("UserId");
             var res = await _userManagerService.DeleteCompanyAsync(cmp);
             return View("Company");
         }

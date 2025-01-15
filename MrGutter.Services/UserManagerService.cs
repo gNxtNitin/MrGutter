@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Hosting;
+using Microsoft.JSInterop.Implementation;
 using MrGutter.Models;
 using MrGutter.Models.ViewModels;
 using MrGutter.Repository.IRepository;
@@ -125,6 +126,7 @@ namespace MrGutter.Services
             obj.CompanyEmail = cmpInfo.CompanyEmail;
             obj.ContactPerson = cmpInfo.ContactPerson;
             obj.CompanyId = cmpInfo.CompanyId;
+            obj.CreatedBy = cmpInfo.CreatedBy;
 
 
             if (cmpInfo.CompanyId == "0")
@@ -150,6 +152,7 @@ namespace MrGutter.Services
            // obj.isActive = cmpInfo.isActive;
             obj.Flag = "D";
             obj.CompanyId = cmpInfo.CompanyId;
+            obj.CreatedBy = cmpInfo.CreatedBy;
             var res = await _userRepository.CreateOrUpdateCompany(obj);
             if (res.Code >= 0)
             {

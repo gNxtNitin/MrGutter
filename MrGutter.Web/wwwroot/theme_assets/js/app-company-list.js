@@ -123,7 +123,7 @@ function deleteRow(companyId) {
 // Open edit modal
 function openEditModal(companyId) {
 
-    alert("in get method of company")
+    //alert("in get method of company")
     $.ajax({
         url: "/userManager/EditCompany?companyId=" + companyId,
         method: "GET",
