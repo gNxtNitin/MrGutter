@@ -42,14 +42,17 @@ namespace MrGutter.Repository
             }
             return response;
         }
-        public async Task<APIResponseModel> GetEstimatelistAsync(string? EstimateId)
+        public async Task<APIResponseModel> UpdateEstimate(EstimateModel estimateModel)
         {
             APIResponseModel response = new APIResponseModel();
             try
             {
-                string V = await _encryptDecrypt.Encrypt(EstimateId.ToString());
-                string reqStr = HttpUtility.UrlEncode(V);
-                response = await _aPIWrapper.GetAsync("Estimate/GetEstimate?encReq=", reqStr);
+                string json = JsonConvert.SerializeObject(estimateModel);
+                //string V = await encryptDecrypt.Encrypt(json);
+                string reqStr = HttpUtility.UrlEncode(json);
+
+                //Call the API
+                response = await _aPIWrapper.PostAsync("Estimate/CreateOrSetEstimate", json);
             }
             catch (Exception ex)
             {
@@ -59,6 +62,25 @@ namespace MrGutter.Repository
             }
             return response;
         }
+        public async Task<APIResponseModel> GetEstimatelistAsync(EstimateIdsModel estimateIdsModel)
+        {
+            APIResponseModel response = new APIResponseModel();
+            try
+            {
+                string queryParameters = $"flag={estimateIdsModel.Flag}&userId={estimateIdsModel.UserId}&companyId={estimateIdsModel.CompanyID}&estimateId={estimateIdsModel.EstimateID}";
+                response = await _aPIWrapper.GetAsync($"Estimate/GetEstimate?{queryParameters}", "");
+            }
+            catch (Exception ex)
+            {
+                response = new APIResponseModel
+                {
+                    Code = -1,
+                    Msg = ex.Message
+                };
+            }
+            return response;
+        }
+
         public async Task<APIResponseModel> GetStatuslistAsync(string? StatusId)
         {
             APIResponseModel response = new APIResponseModel();

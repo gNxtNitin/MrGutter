@@ -11,13 +11,7 @@
         right: 5px;
         z-index: 1;
     }
-    /* .layout-page{
-            max-width: 1300px !important;
-            margin: 0 auto !important;
-        } */
-
     .card-img-top {
-        /*   height: 150px; */
         object-fit: cover;
     }
 
@@ -53,25 +47,62 @@
                     <div class="col-md-8 row">
 
                         <div class="col-md-6">
-                            <h5 class="card-title"><i class="menu-icon ti ti-users"></i> <b>Insurance Sample</b></h5>
-                            <h6 class="card-title"><i class="menu-icon ti ti-phone-call"></i> <a href="tel:988 897 3243" class="text-decoration-underline"></a></h6>
-                            <h5 class="card-title"><i class="menu-icon ti ti-mail"></i> <a href="mailto:support@MrGutter.com" class="text-decoration-underline"></a></h5>
+                            <h5 class="card-title"><i class="menu-icon ti ti-users"></i> <b>@Model.EstimateList[0].FirstName @Model.EstimateList[0].LastName</b></h5>
+                            <h6 class="card-title"><i class="menu-icon ti ti-phone-call"></i> <a href="tel:988 897 3243" class="text-decoration-underline">@Model.EstimateList[0].PhoneNumber</a></h6>
+                            <h5 class="card-title"><i class="menu-icon ti ti-mail"></i> <a href="mailto:support@MrGutter.com" class="text-decoration-underline">@Model.EstimateList[0].Email</a></h5>
                         </div>
-                        <div class="col-md-6 d-flex align-items-start">
-                            <span class="me-1"><i class="menu-icon ti ti-home"></i></span>
-                            <!-- Text -->
-                            <h6 class="card-title mb-0">
-                             <br />
-                                Calgary, AB <br />
-                                Created 3 years ago.
-                            </h6>
+                        <div class="col-md-6 align-items-start">
+                            <span class="me-1"><i class="menu-icon ti ti-home"></i>@Model.EstimateList[0].Addressline1, @Model.Addressline2</span>
+                            <br />
+                            <span class="ms-5 ps-3">@Model.EstimateList[0].City, @Model.EstimateList[0].State, @Model.EstimateList[0].ZipCode </span>
+                            <br />
+                            @{
+                                string estimateCreatedDate = @Model.EstimateList[0].EstimateCreatedDate;
+                                string formattedDate = "Invalid date format";
+
+                                if (!string.IsNullOrEmpty(estimateCreatedDate))
+                                {
+                                    DateTime createdDate;
+                                    if (DateTime.TryParse(estimateCreatedDate, out createdDate))
+                                    {
+                                        TimeSpan timeDifference = DateTime.Now - createdDate;
+
+                                        if (timeDifference.Days > 365)
+                                        {
+                                            formattedDate = $"Created {timeDifference.Days / 365} years ago.";
+                                        }
+                                        else if (timeDifference.Days > 30)
+                                        {
+                                            formattedDate = $"Created {timeDifference.Days / 30} months ago.";
+                                        }
+                                        else if (timeDifference.Days > 0)
+                                        {
+                                            formattedDate = $"Created {timeDifference.Days} days ago.";
+                                        }
+                                        else if (timeDifference.Hours > 0)
+                                        {
+                                            formattedDate = $"Created {timeDifference.Hours} hours ago.";
+                                        }
+                                        else if (timeDifference.Minutes > 0)
+                                        {
+                                            formattedDate = $"Created {timeDifference.Minutes} minutes ago.";
+                                        }
+                                        else
+                                        {
+                                            formattedDate = $"Created {timeDifference.Seconds} seconds ago.";
+                                        }
+                                    }
+                                }
+                            }
+                            <span class="ms-5 ps-3">@formattedDate</span>
+                          
                         </div>
                     </div>
 
                     <div class="col-md-4 row">
                         <div class="col-md-12 mb-2 text-end">
                             <div class="col-md-12 pe-0">
-                                <a asp-action="EstimationSettings" asp-controller="Estimates" class="mt-2 btn btn-outline-info me-0 pe-5"><i class="ti ti-settings me-3 ti-md"></i> Estimate settings</a>
+                                <a asp-action="EstimationSettings" asp-controller="Estimates" asp-route-EstimateId="@Model.EstimateList[0].EstimateID" class="mt-2 btn btn-outline-info me-0 pe-5"><i class="ti ti-settings me-3 ti-md"></i>Estimate settings</a>
                             </div>
                             <div class="col-md-12 mt-2">
                                 <button data-bs-toggle="modal"

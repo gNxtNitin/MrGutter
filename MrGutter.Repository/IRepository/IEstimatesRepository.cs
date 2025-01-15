@@ -10,10 +10,11 @@ namespace MrGutter.Repository.IRepository
     public interface IEstimatesRepository
     {
         public Task<APIResponseModel> CreateEstimateAsync(EstimateModel estimateModel);
-        public Task<APIResponseModel> GetEstimatelistAsync(string? EstimateId);
+        public Task<APIResponseModel> GetEstimatelistAsync(EstimateIdsModel estimateIdsModel);
        public Task<APIResponseModel> GetStatuslistAsync(string? EstimateId);
         public Task<APIResponseModel> ChangeEstimateStatus(EstimateModel estimateModel);
         public Task<APIResponseModel> DeleteEstimateAsync(EstimateModel estimateModel);
+        public Task<APIResponseModel> UpdateEstimate(EstimateModel estimateModel);
 
         
     }
