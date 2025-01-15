@@ -252,6 +252,9 @@
                                                         <div class="col-md-6 mb-6">
                                                             <label class="form-label" for="basic-default-phone">Phone No</label>
                                                             <input type="text"
+                                                                   name="phoneNo"
+                                                                   class="form-control phone-mask" />
+                                                            <span asp-validation-for="PhoneNo" class="text-danger"></span>
                                                                    name="PhoneNumber"
                                                                    class="form-control phone-mask" />
                                                             <span asp-validation-for="PhoneNumber" class="text-danger"></span>
@@ -322,136 +325,115 @@
     </div>
 
     <div class="row mb-12 g-6" id="grid" style="display: flex;">
-        @{
-            if (Model.EstimateList == null || !Model.EstimateList.Any())
+        @foreach (var item in Model.EstimateList)
+        {
+            string estimateCreatedDate = item.EstimateCreatedDate;
+            string formattedDate = "Invalid date format";
+
+            if (!string.IsNullOrEmpty(estimateCreatedDate))
             {
-                <div class="row mb-12 g-6 text-center" style="display: flex;">
-                    <p>No record found.</p>
-                </div>
-            }
-            else
-            {
-                @foreach (var item in Model.EstimateList)
+                DateTime createdDate;
+                if (DateTime.TryParse(estimateCreatedDate, out createdDate))
                 {
-                    string estimateCreatedDate = item.EstimateCreatedDate;
-                    string formattedDate = "Invalid date format";
+                    TimeSpan timeDifference = DateTime.Now - createdDate;
 
-                    if (!string.IsNullOrEmpty(estimateCreatedDate))
+                    if (timeDifference.Days > 365)
                     {
-                        DateTime createdDate;
-                        if (DateTime.TryParse(estimateCreatedDate, out createdDate))
-                        {
-                            TimeSpan timeDifference = DateTime.Now - createdDate;
-
-                            if (timeDifference.Days > 365)
-                            {
-                                formattedDate = $"Created {timeDifference.Days / 365} years ago.";
-                            }
-                            else if (timeDifference.Days > 30)
-                            {
-                                formattedDate = $"Created {timeDifference.Days / 30} months ago.";
-                            }
-                            else if (timeDifference.Days > 0)
-                            {
-                                formattedDate = $"Created {timeDifference.Days} days ago.";
-                            }
-                            else if (timeDifference.Hours > 0)
-                            {
-                                formattedDate = $"Created {timeDifference.Hours} hours ago.";
-                            }
-                            else if (timeDifference.Minutes > 0)
-                            {
-                                formattedDate = $"Created {timeDifference.Minutes} minutes ago.";
-                            }
-                            else
-                            {
-                                formattedDate = $"Created {timeDifference.Seconds} seconds ago.";
-                            }
-                        }
+                        formattedDate = $"Created {timeDifference.Days / 365} years ago.";
                     }
+                    else if (timeDifference.Days > 30)
+                    {
+                        formattedDate = $"Created {timeDifference.Days / 30} months ago.";
+                    }
+                    else if (timeDifference.Days > 0)
+                    {
+                        formattedDate = $"Created {timeDifference.Days} days ago.";
+                    }
+                    else if (timeDifference.Hours > 0)
+                    {
+                        formattedDate = $"Created {timeDifference.Hours} hours ago.";
+                    }
+                    else if (timeDifference.Minutes > 0)
+                    {
+                        formattedDate = $"Created {timeDifference.Minutes} minutes ago.";
+                    }
+                    else
+                    {
+                        formattedDate = $"Created {timeDifference.Seconds} seconds ago.";
+                    }
+                }
+            }
+            <div class="col-md-4">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-12 position-relative">
+                        <a asp-action="EstimationDetails" asp-controller="Estimates" asp-route-id="@item.EstimateID">
+                            <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-pixabay-164558.jpg" alt="Card image" />
+                            <div hidden>@item.EstimateID</div>
+                        </a>
 
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="row g-0">
-                                <div class="col-md-12 position-relative">
-                                    <a asp-action="EstimationDetails" asp-controller="Estimates" asp-route-id="@item.EstimateID">
-                                        <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-pixabay-164558.jpg" alt="Card image" />
-                                        <div hidden>@item.EstimateID</div>
-                                    </a>
 
-
-                                    <div class="position-absolute end-0 top-0 dlt-btn">
-                                        <button data-bs-toggle="modal" data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text" onclick="setEstimateID(@item.EstimateID)">
-                                            <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
-                                        </button>
+                        <div class="position-absolute end-0 top-0 dlt-btn">
+                            <button data-bs-toggle="modal" data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text" onclick="setEstimateID(@item.EstimateID)">
+                                <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card-body row g-0">
+                            <div class="col-md-12 mb-2">
+                                <h5 class="card-title mb-0"><b>@item.FirstName @item.LastName</b></h5>
+                                <p class="mb-1">Estimate No. : @item.EstimateNo</p>
+                                <p class="card-text text-black">@item.Addressline1 @item.Addressline2, @item.City, @item.State, @item.ZipCode</p>
+                            </div>
+                            <div class="col-md-12 rounded text-white status-dropdown">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="col-md-6 rounded text-white status-dropdown">
+                                        <select class="form-select text-capitalize statusSelect">
+                                            @foreach (var i in Model.StatusList)
+                                            {
+                                                @if (item.StatusID.ToString() == i.StatusID.ToString())
+                                                {
+                                                    <option value="@i.StatusID" selected>@i.StatusName</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="@i.StatusID">@i.StatusName</option>
+                                                }
+                                            }
+                                        </select>
+                                        <div id="estimateId_@item.EstimateID" hidden>@item.EstimateID</div>
                                     </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="card-body row g-0">
-                                        <div class="col-md-12 mb-2">
-                                            <h5 class="card-title mb-0"><b>@item.FirstName @item.LastName</b></h5>
-                                            <p class="mb-1">Estimate No. : @item.EstimateNo</p>
-                                            <p class="card-text text-black">@item.Addressline1 @item.Addressline2, @item.City, @item.State, @item.ZipCode</p>
-                                        </div>
-                                        <div class="col-md-12 rounded text-white status-dropdown">
-                                            <div class="d-flex justify-content-center align-items-center">
-                                                <div class="col-md-6 rounded text-white status-dropdown">
-                                                    <select class="form-select text-capitalize statusSelect">
-                                                        @foreach (var i in Model.StatusList)
-                                                        {
-                                                            @if (item.StatusID.ToString() == i.StatusID.ToString())
-                                                            {
-                                                                <option value="@i.StatusID" selected>@i.StatusName</option>
-                                                            }
-                                                            else
-                                                            {
-                                                                <option value="@i.StatusID">@i.StatusName</option>
-                                                            }
-                                                        }
-                                                    </select>
-                                                    <div id="estimateId_@item.EstimateID" hidden>@item.EstimateID</div>
-                                                </div>
 
 
-                                                <div class="col-md-6 d-flex justify-content-end align-items-center">
-                                                    <p style="color:#b1acac !important" class="mb-0">@formattedDate</p>
+                                    <div class="col-md-6 d-flex justify-content-end align-items-center">
+                                        <p style="color:#b1acac !important" class="mb-0">@formattedDate</p>
 
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                }
-            }
+                </div>
+            </div>
+        </div>
         }
-
     </div>
 
 
     <div id="list" style="display: none;">
-
-        <!-- Users List Table -->
+        <!-- Estimate List Table -->
         <div class="card">
-
             <div class="card-datatable table-responsive">
                 <table class="datatables-estimate table">
                     <thead class="border-top bg-menu-theme text-white">
                         <tr>
-                            @*  <th class="text-white"></th> *@
-                            @*                             <th class="text-white"></th>
-                            *@
                             <th class="text-white">No.</th>
                             <th class="text-white">Name</th>
                             <th class="text-white"> Address</th>
                             <th class="text-white"> Estimator</th>
                             <th class="text-white"> Created</th>
-                            @*    <th class="text-white">Status</th> *@
-                            @* <th class="text-white">Role</th>
-                            <th class="text-white">Status</th> *@
-                            @*    <th class="text-white">Revenue</th> *@
+                               <th class="text-white">Status</th>
                         </tr>
                     </thead>
                 </table>
