@@ -52,6 +52,7 @@ namespace MrGutter.Services
             int result = 0;
 
             EstimateModel model = new EstimateModel();
+            //model.EstimateNo = estimateVM.EstimateList[0].EstimateNo;
             model.EstimateNo = estimateVM.EstimateList[0].EstimateNo;
             model.FirstName = estimateVM.EstimateList[0].FirstName;
             model.LastName = estimateVM.EstimateList[0].LastName;
