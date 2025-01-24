@@ -10,14 +10,17 @@ namespace MrGutter.Models
     public class User
     {
         public string UserID { get; set; } = "0";
-        public string CompanyId { get; set; } = "0";
-        public string CompanyName { get; set; }
-        public string CompanyEmail { get; set; }
-        public string CompanyPhone { get; set; }
+        // public string CompanyId { get; set; } = "0";
+        public List<UserCompanyModel>? CompanyList { get; set; } = new List<UserCompanyModel>();
+        public string? CompanyName { get; set; }
+        public string? CompanyEmail { get; set; }
+        public string? CompanyPhone { get; set; }
         public string? CreatedBy { get; set; }
-        public string PointOfContact { get; set; }
-        public string RoleID { get; set; } = "1";
-        public string UserName { get; set; }
+        public string? PointOfContact { get; set; }
+         public string RoleName { get; set; }
+      
+        public List<UserRoleModel>? RoleList { get; set; } = new List<UserRoleModel>();
+        public string? UserName { get; set; }
         public string? Address1 { get; set; }
         public string? Address2 { get; set; }
         public string? City { get; set; }

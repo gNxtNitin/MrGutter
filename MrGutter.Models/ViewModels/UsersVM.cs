@@ -10,13 +10,16 @@ namespace MrGutter.Models.ViewModels
     public class UsersVM
     {
         public string UserID { get; set; } = "0";
-        public string CompanyId { get; set; } = "0";
+        //public string CompanyId { get; set; } = "0";
+        public List<UserCompanyModel>? CompanyList { get; set; } = new List<UserCompanyModel>();
         public string? CompanyName { get; set; }
         public string? CompanyEmail { get; set; }
         public string? CompanyPhone { get; set; }
-        public string PointOfContact { get; set; }
+        public string? PointOfContact { get; set; }
         public string? CreatedBy { get; set; }
-        public string RoleID { get; set; } = "1";
+        public string? RoleName { get; set; } 
+        public List<UserRoleModel>? RoleList { get; set; } = new List<UserRoleModel>();
+
         [Required(ErrorMessage = "First Name is required")]
         [StringLength(50, ErrorMessage = "First Name cannot exceed 50 characters")]
         public string? FirstName { get; set; }
@@ -43,6 +46,8 @@ namespace MrGutter.Models.ViewModels
         [Required(ErrorMessage = "Confirm Password is required")]
         [Compare("Password", ErrorMessage = "Passwords do not match.")]
         public string? ConfirmPassword { get; set; }
+       
+
 
         [Required(ErrorMessage = "Company Name is required")]
         public string? UserType { get; set; }

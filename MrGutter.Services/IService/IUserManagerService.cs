@@ -11,6 +11,10 @@ namespace MrGutter.Services.IService
     public interface IUserManagerService
     {
         public Task<RoleVM> GetRoleByUserIdAsync(int userId);
+
+        //For multiple roles
+        public Task<List<UserRoleModel>> GetUserRole(int userId);
+        public Task<List<UserCompanyModel>> GetUserCompany(int userId);
         public Task<UsersVM> GetUserAsync(string? UserId);
         public Task<RoleVM> GetRoleAsync(string? roleId);
         public Task<int> CreateOrUpdateUser(UsersVM user);

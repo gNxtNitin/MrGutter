@@ -1,4 +1,5 @@
-﻿@model MrGutter.Models.ViewModels.UsersVM
+﻿
+@model MrGutter.Models.ViewModels.UsersVM
 @{
     Layout = "_Layout_Main";
     ViewData["Title"] = "User List";
@@ -126,34 +127,66 @@
                                    name="mobile" />
                            @*  <span asp-validation-for="Mobile" class="text-danger"></span> *@
                         </div>
-                       
 
                         <div class="mb-6">
-                        
-
-                            <label for="company" class="form-label">Company</label>
-                            <select id="company" name="companyId" class="form-select">
-                                <option value="">Select a company</option>
-
-                                <!-- Bind the dropdown options using ViewBag -->
-                                @foreach (var comp in ViewBag.Company as List<SelectListItem> ?? new List<SelectListItem>())
+                            <label class="form-label">Roles</label>
+                            <div class="checkbox-container">
+                                @if (Model.RoleList != null && Model.RoleList.Count > 0)
                                 {
-                                    <option value="@comp.Value">@comp.Text</option>
+                                    for (var i = 0; i < Model.RoleList.Count; i++)
+                                    {
+                                        if (i < Model.RoleList.Count) // Prevent index overflow
+                                        {
+                                            <div class="form-check form-check-inline">
+                                                <input type="checkbox"
+                                                       id="role_@Model.RoleList[i].RoleId"
+                                                       name="RoleList[@i].IsActive"
+                                                       value="true"
+                                                       class="form-check-input" />
+                                                <input type="hidden" name="RoleList[@i].RoleId" value="@Model.RoleList[i].RoleId" />
+                                                <input type="hidden" name="RoleList[@i].RoleName" value="@Model.RoleList[i].RoleName" />
+                                                <label for="role_@Model.RoleList[i].RoleId" class="form-check-label">
+                                                    @Model.RoleList[i].RoleName
+                                                </label>
+                                            </div>
+                                        }
+                                    }
                                 }
-                            </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <label class="form-label">Companies</label>
+                            <div class="checkbox-container">
+                                @if (Model.CompanyList != null && Model.CompanyList.Count > 0)
+                                {
+                                    for (var i = 0; i < Model.CompanyList.Count; i++)
+                                    {
+                                        if (i < Model.CompanyList.Count) // Prevent index overflow
+                                        {
+                                            <div class="form-check form-check-inline">
+                                                <input type="checkbox"
+                                                       id="company_@Model.CompanyList[i].CompanyId"
+                                                       name="CompanyList[@i].IsActive"
+                                                       value="true"
+                                                       class="form-check-input" />
+                                                <input type="hidden" name="CompanyList[@i].CompanyId" value="@Model.CompanyList[i].CompanyId" />
+                                                <input type="hidden" name="CompanyList[@i].CompanyName" value="@Model.CompanyList[i].CompanyName" />
+                                                <label for="company_@Model.CompanyList[i].CompanyId" class="form-check-label">
+                                                    @Model.CompanyList[i].CompanyName
+                                                </label>
+                                            </div>
+                                        }
+                                    }
+                                }
+                            </div>
                         </div>
 
 
-                        <div class="mb-6">
-                            <label for="user-role" class="form-label">User Role</label>
-                            <select id="user-role" name="roleID" class="form-select">
-                                <option value="">Select a Role</option>
-                                @foreach (var role in ViewBag.Roles as List<SelectListItem> ?? new List<SelectListItem>())
-                                {
-                                    <option value="@role.Value" data-userType="@role.Text">@role.Text</option>
-                                }
-                            </select>
-                        </div>
+
+
+
+
 
                         <!-- Hidden field for UserType -->
                         <input type="hidden" id="userType" name="UserType" value="">
@@ -241,26 +274,42 @@
                     </div>
 
                     <div class="mb-6">
-                        <label class="form-label" for="editRole">Role</label>
-                        <select id="editRole" class="form-select">
-                          @*   <option value="select" selected>Select</option>
-                            <option value="SuperAdmin">Super Admin</option>
-                            <option value="Admin">Admin</option>
-                            <option value="User">User</option>
-                            <option value="Estimator">Estimator</option> *@
+                  
 
-                        </select>
+                        <label class="form-label" for="editRoleCheckbox">Role</label>
+                        <div class="checkbox-container" id="editRoleCheckbox">
+                            <!-- Checkboxes will be dynamically added here -->
+                        </div>
+
+
+                    </div>
+                    <div class="mb-6">
+                        
+                        <label class="form-label" for="editCompanyCheckbox">Company</label>
+                        <div class="checkbox-container" id="editCompanyCheckbox">
+                            <!-- Checkboxes will be dynamically added here -->
+                        </div>
+
+
                     </div>
 
-                    <div class="mb-6">
+                   @*  <div class="mb-6">
                         <label class="form-label" for="editStatus">Status</label>
                         <select id="editStatus" class="form-select">
                             <option value="select" selected>Select</option>
                             <option value="Active">Active</option>
                             <option value="InActive">InActive</option>
-                            <option value="Pending">Pending</option>
-
+                           
                         </select>
+                    </div> *@
+
+
+                    <!-- Status -->
+                    <div class="mb-6">
+                        <label class="form-label">Status</label>
+                        <div id="editStatus" class="radio-container">
+                            <!-- Radio buttons will be dynamically added here -->
+                        </div>
                     </div>
 
                 </form>
@@ -371,23 +420,8 @@
 </div>
 
 
-<!-- Modal for Delete pop up-->
-@* <div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <p class="modal-title mb-6 fs-5" id="modalCenterTitle">Do you want to delete this user?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-label-secondary confirm-delete" data-bs-dismiss="modal">
-                    Yes
-                </button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
 
-            </div>
-        </div>
-    </div>
-</div> *@
+
 <!-- Modal for Delete pop up-->
 <div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -407,19 +441,28 @@
 </div>
 
 
-@* 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Initialize the offcanvas modal
-        var modalElement = document.getElementById('offcanvasAddUser');
-        var modal = new bootstrap.Offcanvas(modalElement);
+    function updateIsActive(checkbox, id, type) {
+        // Log to confirm the function is triggered
+        console.log("Checkbox clicked!", checkbox.checked, id, type);
 
-        // Check TempData value for error flag and show/hide the modal
-        var showErrorModal = '@(TempData["CreateUserError"] != null && (bool)TempData["CreateUserError"] ? "true" : "false")';
-       
-        if (showErrorModal === 'true') {
-            // Show the modal if the TempData flag is true
-            modal.show();
+        // Serialize only necessary fields for Role and Company lists
+        var roleList = @Html.Raw(Json.Serialize(Model.RoleList.Select(r => new { r.RoleId, r.IsActive })));
+        var companyList = @Html.Raw(Json.Serialize(Model.CompanyList.Select(c => new { c.CompanyId, c.IsActive })));
+
+        // Combine both lists into a unified array
+        var combinedList = [...roleList, ...companyList];
+
+        // Find the selected item based on its type and ID
+        var selectedItem = combinedList.find(item =>
+            (item.RoleId && item.RoleId === id && type === 'role') ||
+            (item.CompanyId && item.CompanyId === id && type === 'company')
+        );
+
+        if (selectedItem) {
+            // Update IsActive status based on the checkbox state
+            selectedItem.IsActive = checkbox.checked;
+            console.log("Updated item: ", selectedItem);
         }
-    });
-</script> *@
+    }
+</script>

@@ -14,16 +14,26 @@ $(document).ready(function () {
         },
         dom: '<"top"l<"right-section"fB>>rt<"bottom"ip><"clear">',
         columns: [
-            { data: "companyName", name: "companyName", autoWidth: true },
+            {
+                data: null, name: "companyName", autoWidth: true,
+                render: function (data, type, row) {
+                    let logoHtml = '';
+                    if (row.companyLogo) {
+                        logoHtml = `<img src="${row.companyLogo}" alt="${row.companyName} Logo" class="rounded-circle" style="width: 30px; height: 30px; margin-right: 5px;">`;
+                    }
+                    return `${logoHtml}${row.companyName}`;
+                }
+            },
             { data: "contactPerson", name: "contactPerson", autoWidth: true },
             { data: "companyEmail", name: "companyEmail", autoWidth: true },
             { data: "companyPhone", name: "companyPhone", autoWidth: true },
             {
-                data: null,
+                data: null, searchable: false,
+                orderable: false,
                 render: function (data, type, row) {
                     return `
                         <a class="text-danger" style="cursor: pointer;" title="Edit Company" onclick="openEditModal(${row.companyId})">
-                            <i class='fa-solid fa-pen-to-square text-danger'></i>
+                            <i class='fa-solid fa-pen-to-square text-primary'></i>
                         </a>
                         <a href="#" class="text-danger" style="cursor: pointer;" title="Delete Company" onclick="deleteCmpRow(${row.companyId})">
                             <i class='ti ti-trash text-danger'></i>
@@ -32,16 +42,6 @@ $(document).ready(function () {
                     `;
                 },
             },
-            //{
-            //    data: "",
-            //    name: "checkbox",
-            //    autoWidth: true,
-            //    render: function (data, type, row) {
-            //        return `<input type="checkbox" class="select-row" data-company-id="${row.companyId}" />`;
-            //    },
-            //    orderable: false,
-            //    searchable: false,
-            //},
         ],
         buttons: [
             {
@@ -92,69 +92,32 @@ $(document).ready(function () {
     }
 });
 
-// Row deletion
-//function deleteRow(companyId) {
-//    if (confirm("Are you sure you want to delete this company?")) {
-//        $.ajax({
-//            url: "/userManager/DeleteCompany",
-//            method: "POST",
-//            data: { companyId },
-//            success: function (response) {
-//                if (response.success) {
-//                    $("#companyDatatable").DataTable().ajax.reload();
-//                    alert("Company deleted successfully.");
-//                } else {
-//                    $("#companyDatatable").DataTable().ajax.reload();
-//                    alert("Company deleted successfully.");
-//                    location.reload();
-//                }
-//            },
-//            error: function () {
-//                $("#companyDatatable").DataTable().ajax.reload();
-//                alert("Company deleted successfully.");
-//                location.reload();
-//            },
-//        });
-//    }
-//}
 
 function deleteCmpRow(CompanyId) {
-    
     $('#deletecmp').modal('show');
-
     $('#deletecmp .confirm-delete').data('user-id', CompanyId);
-
-   // alert("cmpid " + CompanyId)
 }
 
 $('#deletecmp .confirm-delete').on('click', function () {
     var CompanyId = $(this).data('user-id');
-
     $.ajax({
         url: '/userManager/DeleteCompany',
         method: 'POST',
         data: { CompanyId: CompanyId },
         success: function (response) {
-            console.log("Response from server:", response);
-
             if (response.success) {
-
                 $('#deletecmp').modal('hide');
                 $('#companyDatatable').DataTable().ajax.reload();
                 alert("User deleted successfully.");
             } else {
                 $('#deletecmp').modal('hide');
                 $('#companyDatatable').DataTable().ajax.reload();
-
             }
         },
         error: function (xhr, status, error) {
             // Log the error for debugging
-            //console.error("Error with AJAX request:", error);
-            //alert("Error: Unable to delete the user.");
             $('#deletecmp').modal('hide');
             $('#companyDatatable').DataTable().ajax.reload();
-
         }
     });
 });
@@ -162,12 +125,9 @@ $('#deletecmp .confirm-delete').on('click', function () {
 
 // Open edit modal
 function openEditModal(companyId) {
-
-    //alert("in get method of company")
     $.ajax({
         url: "/userManager/EditCompany?companyId=" + companyId,
         method: "GET",
-
         success: function (response) {
             resetEditModal(); // Clear old data
             populateEditModalforCompany(response);

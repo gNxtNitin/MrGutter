@@ -54,8 +54,7 @@ namespace MrGutter.Services
             UsersVM usersVM = new UsersVM();
             var response = await _userRepository.GetUserAsync(UserId);
             usersVM = JsonConvert.DeserializeObject<UsersVM>(response.Data);
-
-            \
+                        
             return usersVM;
         }
         public async Task<int> CreateOrUpdateUser(UsersVM user)
@@ -66,11 +65,11 @@ namespace MrGutter.Services
             User obj = new User();
             //obj.UserName = user.UserName;
             obj.FirstName = user.FirstName;
-            obj.isActive = user.isActive;
+            obj.isActive = true;
             obj.LastName = user.LastName;
             obj.UserID  = user.UserID;
-            obj.RoleID = user.RoleID;
-            obj.CompanyId = user.CompanyId;
+            obj.RoleList = user.RoleList;
+            obj.CompanyList = user.CompanyList;
             obj.CreatedBy = user.CreatedBy;
             //obj.UserName = user.UserName;
             obj.Email = user.Email;
@@ -115,8 +114,7 @@ namespace MrGutter.Services
         public async Task<CompanyVM> GetCompanyAsync(string? cId)
         {
             CompanyVM CompVM = new CompanyVM();
-           
-            var response = await _userRepository.GetCompanyAsync(cId);
+            var response = await _userRepository.GetCompanyAsync("", cId);
             CompVM = JsonConvert.DeserializeObject<CompanyVM>(response.Data); 
             return CompVM;
         }
@@ -165,6 +163,47 @@ namespace MrGutter.Services
             return result;
         }
 
+        public async Task<List<UserRoleModel>> GetUserRole(int userId)
+        {
+              RoleVM userRM = new RoleVM();
+            List<UserRoleModel> userRoles = new List<UserRoleModel>();
+
+            var res = await _userRepository.GetRoleByUserIdAsync(userId);
+
+            userRM = JsonConvert.DeserializeObject<RoleVM>(res.Data);
+
+            foreach(var i in userRM.Roles)
+            {
+                userRoles.Add(new UserRoleModel
+                {
+                    UserId = userId,
+                    RoleName = i.RoleName,
+                   RoleId=i.RoleID.ToString(),
+                    IsActive = i.IsActive
+                });
+            }
+
+            return userRoles;
+        }
+        public async Task<List<UserCompanyModel>> GetUserCompany(int userId)
+        {   
+            CompanyVM usreCompanyModel = new CompanyVM();
+            List<UserCompanyModel> userCompanies = new List<UserCompanyModel>();
+            var userCompany = await _userRepository.GetCompanyAsync(userId.ToString(),"");
+            usreCompanyModel = JsonConvert.DeserializeObject<CompanyVM>(userCompany.Data);
+            foreach(var i in usreCompanyModel.Company)
+            {
+                userCompanies.Add(new UserCompanyModel
+                {
+                    UserId = userId,
+                    CompanyId = i.CompanyId,
+                    CompanyName = i.CompanyName,
+                    IsActive = i.isActive
+                }
+                    );
+            }
+            return userCompanies;
+        }
         #endregion
     }
 }

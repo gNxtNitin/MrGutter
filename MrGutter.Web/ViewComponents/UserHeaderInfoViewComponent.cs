@@ -33,12 +33,18 @@ namespace MrGutter.Web.ViewComponents
             var companyDetails = await _userManagerService.GetCompanyAsync(CompanyId.ToString());
             var cmp = companyDetails.Company.FirstOrDefault();
             var user = userDetails.Users.FirstOrDefault();
+            List<UserCompanyModel> c = new List<UserCompanyModel>();
 
+            UserCompanyModel userCompany = new UserCompanyModel
+            {
+                CompanyId = cmp.CompanyId
+            };
+            c.Add(userCompany);
             var viewModel = new User
             {
                 FirstName = user?.FirstName,
                 LastName = user?.LastName,
-                CompanyId = cmp.CompanyId
+                CompanyList = c
             };
             return View(viewModel);
         }

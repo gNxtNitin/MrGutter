@@ -11,7 +11,11 @@ namespace MrGutter.Repository
     public class APIWrapper
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
+        //Dev api
         private string baseURL = "https://localhost:7014/api/";
+
+       //UAT api 
+       // private string baseURL = "http://smarterlead-001-site6.otempurl.com/api/";
         public APIWrapper(IHttpContextAccessor httpContextAccessor)
         {
             _httpContextAccessor = httpContextAccessor;
@@ -20,10 +24,8 @@ namespace MrGutter.Repository
         public async Task<APIResponseModel> GetAsync(string APIName, string? JsonData)
         {
             APIResponseModel? resp = null;
-
             try
             {
-             
                 string url = baseURL + APIName;
                 using HttpClient client = new();
                 var token = _httpContextAccessor.HttpContext?.Session.GetString("AuthToken");

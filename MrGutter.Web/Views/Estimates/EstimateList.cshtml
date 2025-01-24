@@ -1,7 +1,7 @@
 ﻿@model MrGutter.Models.ViewModels.EstimateVM
 @{
     Layout = "_Layout_Main";
-    ViewBag.Title = "Estimate";
+    ViewBag.Title = "Estimate List";
 }
 
 
@@ -28,9 +28,9 @@
         z-index: 1;
     }
     /* .layout-page{
-                    max-width: 1300px !important;
-                    margin: 0 auto !important;
-                } */
+                            max-width: 1300px !important;
+                            margin: 0 auto !important;
+                        } */
     .card-img-height {
         height: 200px;
         width: 100%;
@@ -73,14 +73,14 @@
         background: #2E7DB3;
     }
     /* .dlt-btn{
-                    display:none;
-                    transition: all 0.5s ease-out;
-                }
+                            display:none;
+                            transition: all 0.5s ease-out;
+                        }
 
-                .card:hover .dlt-btn{
-                        display:block;
-                        transition: all 0.5s ease-out;
-                 } */
+                        .card:hover .dlt-btn{
+                                display:block;
+                                transition: all 0.5s ease-out;
+                         } */
     .dlt-btn {
         opacity: 0;
         visibility: hidden;
@@ -96,233 +96,279 @@
         height: 200px;
         object-fit: cover;
     }
+    .required{
+        color:red
+    }
 
 </style>
-
-
-
-
 <div class="container-xxl flex-grow-1">
-
     <div class="col-md-12 container-p-y">
         <div class="card">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <form asp-action="EstimateList" asp-controller="Estimates" method="get" id="estimatorForm" class="w-100">
+                        <div class="d-flex align-items-center w-100">
+                            <div class="me-2">
+                                <div class="input-group ms-2 me-1">
+                                    <input type="search" id="searchInput" class="form-control searchInputDataTable" placeholder="Search" name="Search" onkeyup="filterEstimates()" />
+                                </div>
 
-            <div class="card-header d-flex justify-content-between align-items-center row px-1 gap-3 gap-md-0">
+                            </div>
+                            <div class="me-2 user_role">
+                                <select class="form-select text-capitalize ms-2" id="estimatorSelectChange" name="estimatorId">
+                                    @if (ViewBag.filteredEstimatorIdMsg == false)
+                                    {
+                                        <option value="0" selected>All Estimator</option>
+                                        @if (Model.EstimatorUsers != null)
+                                        {
+                                            @foreach (var user in Model.EstimatorUsers)
+                                            {
+                                                @if (Model.EstimateList.Count != 0 && Model.EstimateList.FirstOrDefault()?.UserID.ToString() == user.UserID.ToString())
+                                                {
+                                                    @if (ViewBag.filteredEstimatorIdMsg == true)
+                                                    {
 
-                <div class="col-md-2">
-                    <div class="input-group ms-2 me-1">
+                                                        <option value="@user.UserID" selected>@user.FirstName @user.LastName</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@user.UserID">@user.FirstName @user.LastName</option>
+                                                    }
+                                                }
+                                                else
+                                                {
 
-                        <input type="search" id="searchInput" class="form-control" placeholder="Search" name="Search" />
-                    </div>
+                                                    <option value="@user.UserID">@user.FirstName @user.LastName</option>
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <option value="0">All Estimator</option>
+
+                                        @if (Model.EstimatorUsers != null)
+                                        {
+                                            @foreach (var user in Model.EstimatorUsers)
+                                            {
+                                                @if (Model.EstimateList.Count != 0 && Model.EstimateList.FirstOrDefault()?.UserID.ToString() == user.UserID.ToString())
+                                                {
+                                                    @if (ViewBag.filteredEstimateIdMsg == true)
+                                                    {
+
+                                                        <option value="@user.UserID" selected>@user.FirstName @user.LastName</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@user.UserID">@user.FirstName @user.LastName</option>
+                                                    }
+                                                }
+                                                else
+                                                {
+
+                                                    <option value="@user.UserID">@user.FirstName @user.LastName</option>
+                                                }
+                                            }
+                                        }
+                                    }
+
+                      
+                                </select>
+
+                            </div>
+                            <div class="me-2 user_plan">
+                                <select id="userPlan" class="form-select text-capitalize ms-2" name="StatusID">
+                                    @if (ViewBag.filteredStatusIdMsg == false)
+                                    {
+                                        <option value="0" selected>All Status</option>
+                                        @if (Model.StatusList != null)
+                                        {
+                                            @foreach (var item in Model.StatusList)
+                                            {
+                                                @if (Model.EstimateList.Count != 0 && Model.EstimateList.FirstOrDefault()?.StatusID.ToString() == item.StatusID.ToString())
+                                                {
+                                                    @if (ViewBag.filteredStatusIdMsg == true)
+                                                    {
+
+                                                        <option value="@item.StatusID" selected>@item.StatusName</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@item.StatusID">@item.StatusName</option>
+                                                    }
+                                                }
+                                                else
+                                                {
+
+                                                    <option value="@item.StatusID">@item.StatusName</option>
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <option value="0">All Status</option>
+                                        @if (Model.StatusList != null)
+                                        {
+                                            @foreach (var item in Model.StatusList)
+                                            {
+                                                @if (Model.EstimateList.Count != 0 && Model.EstimateList.FirstOrDefault()?.StatusID.ToString() == item.StatusID.ToString())
+                                                {
+                                                    @if (ViewBag.filteredStatusMsg == true)
+                                                    {
+
+                                                        <option value="@item.StatusID" selected>@item.StatusName</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@item.StatusID">@item.StatusName</option>
+                                                    }
+                                                }
+                                                else
+                                                {
+
+                                                    <option value="@item.StatusID">@item.StatusName</option>
+                                                }
+                                            }
+                                        }
+                                    }
+                                </select>
+                            </div>
+                            <div class="me-2 user_status">
+                                <select id="userStatus" class="form-select text-capitalize ms-2 form-selectCreationDate" name="CreationStatus">
+                                    <option value="Created anytime">Created anytime</option>
+                                    <option value="24">Last 24 hours</option>
+                                    <option value="7">Last 7 days</option>
+                                    <option value="30">Last 30 days</option>
+                                    <option value="Older">Older (than 30 days)</option>
+                                </select>
+                                <p id="selectedStatus" hidden></p>
+                            </div>
+
+                            <!-- Hidden Fields to store selected values -->
+                            <input type="hidden" id="hiddenEstimatorId" name="userId" value="0" />
+                            <input type="hidden" id="hiddenStatusId" name="StatusID" value="0" />
+                            <input type="hidden" id="hiddenCreationStatus" name="CreationStatus" value="Created anytime" />
+                            <div class="me-2">
+                                <a href="#" id="clearAllBtn" class="text-decoration-underline ms-3">Clear all</a>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-
-                <div class="col-md-2 user_role">
-
-                    <select id="userRole" class="form-select text-capitalize ms-2">
-                        @foreach (var user in Model.EstimatorUsers)
-                        {
-                            <option value="@user.UserID">@user.FirstName @user.LastName</option>
-                        }
-                    </select>
-
-                </div>
-
-                <div class="col-md-2 user_plan">
-                    <select id="userPlan" class="form-select text-capitalize ms-2">
-                        <option>Estimate Status</option>
-                        @foreach (var item in Model.StatusList)
-                        {
-                            <option value="@item.StatusID">@item.StatusName</option>
-                        }
-                    </select>
-                </div>
-
-                <div class="col-md-2 user_status">
-                    <select id="userStatus" class="form-select text-capitalize ms-2">
-                        <option value="Created anytime">Created anytime</option>
-                        <option value="24">Last 24 hours</option>
-                        <option value="7">Last 7 days</option>
-                        <option value="30">Last 30 days</option>
-                        <option value="Older">Older (than 30 days)</option>
-                    </select>
-                </div>
-
-                <div class="col-md-1">
-                    <a href="#" id="clearAllBtn" class="text-decoration-underline ms-3">Clear all</a>
-                </div>
-
-                <!-- Script for reset all the input fields of filter -->
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        document.getElementById("clearAllBtn").addEventListener("click", function (e) {
-                            e.preventDefault();
-
-                            // Reset input field
-                            const searchInput = document.getElementById("searchInput");
-                            if (searchInput) searchInput.value = "";
-
-                            // Reset select fields
-                            const userRole = document.getElementById("userRole");
-                            const userPlan = document.getElementById("userPlan");
-                            const userStatus = document.getElementById("userStatus");
-
-                            if (userRole) userRole.selectedIndex = 0;
-                            if (userPlan) userPlan.selectedIndex = 0;
-                            if (userStatus) userStatus.selectedIndex = 0;
-                        });
-                    });
-                </script>
-                <!-- Script end -->
-
-                <div class="col-md-3 d-flex justify-content-end align-items-center">
+                <div class="d-flex justify-content-end align-items-center">
                     <a href="#" data-bs-toggle="modal"
-                       data-bs-target="#modalSignature" class="btn btn-primary tf-icons  scaleX-n1-rtl mx-3" title="Create Estimate">
+                       data-bs-target="#modalSignature" class="btn btn-primary tf-icons scaleX-n1-rtl mx-3" title="Create Estimate">
                         <span class="ti ti-plus me-2"></span>
                         Estimate
                     </a>
                     <div class="border-start mx-2 pl-2" style="height: 30px;"></div>
                     <div class="px-3">
                         <a id="gridIcon" href="#" onclick="switchToGrid()" class="menu-item ti ti-layout-grid-filled ms-3" title="Tile view"></a>
-                        <a id="listIcon" href="#" onclick="switchToList()" class="menu-item ti ti-list me-1" title="List view"></a>
+                        <a id="listIcon" href="#" onclick="switchToList()" class="menu-item ti ti-list me-1 listTable" title="List view"></a>
                     </div>
                 </div>
-
-
-                <!--Modal for Create Estimate button-->
-                <div class="modal fade" id="modalSignature" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog  modal-xl" role="document">
-
-                        <div class="">
-                            <div class="">
-
-                                <div class="modal-content m-4">
-
-                                    <div class="modal-header">
-                                        <div>
-                                            <h3 class="mb-0">Create new estimate</h3>
-                                            <p>Input customer details below to begin creating new reports</p>
-                                        </div>
-
-                                        <button type="button"
-                                                class="btn-close"
-                                                data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                    </div>
-
-                                    <div class="modal-body">
-
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <form asp-controller="Estimates" asp-action="CreateEstimate" method="post">
-                                                    <div class="row">
-                                                        <div class="col-md-6 mb-6">
-                                                            <label class="form-label" for="basic-default-project">Estimate No.</label>
-                                                            <input type="text" class="form-control" asp-for="EstimateNo" id="basic-default-project" placeholder="Leave blank to generate" pattern="\d{10}" title="Please enter exactly 10 digits." maxlength="10" />
-
-                                                        </div>
-                                                        <div class="col-md-6 mb-6">
-                                                            <label class="form-label" for="basic-default-first">First name</label>
-                                                            <input type="text" class="form-control" name="firstName" value="" placeholder="" />
-                                                            <span asp-validation-for="FirstName" class="text-danger"></span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-md-6 mb-6">
-                                                            <label class="form-label" for="basic-default-last">Last name</label>
-                                                            <input type="text" class="form-control" name="lastName" value="" placeholder="" />
-                                                            <span asp-validation-for="LastName" class="text-danger"></span>
-                                                        </div>
-                                                        <div class="col-md-6 mb-6">
-                                                            <label class="form-label" for="basic-default-company">Company</label>
-                                                            <input type="text" class="form-control" name="company" value="" placeholder="ACME Inc." />
-                                                            <span asp-validation-for="Company" class="text-danger"></span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-md-6 mb-6">
-                                                            <label class="form-label" for="basic-default-email">Email</label>
-
-                                                            <input type="text"
-                                                                   name="email" value=""
-                                                                   class="form-control" />
-                                                            <span asp-validation-for="Email" class="text-danger"></span>
-                                                        </div>
-                                                        <div class="col-md-6 mb-6">
-                                                            <label class="form-label" for="basic-default-phone">Phone No</label>
-                                                            <input type="text"
-                                                                   name="phoneNo"
-                                                                   class="form-control phone-mask" />
-                                                            <span  class="text-danger"></span>
-                                                                   name="PhoneNumber"
-                                                                   class="form-control phone-mask" />
-                                                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-md-6 mb-6">
-                                                            <label class="form-label" for="basic-default-line1">Address line 1</label>
-                                                            <input type="text" class="form-control" name="addressline1" value="" placeholder="" />
-                                                            <span asp-validation-for="Addressline1" class="text-danger"></span>
-                                                        </div>
-                                                        <div class="col-md-6 mb-6">
-                                                            <label class="form-label" for="basic-default-line2">Address line 2</label>
-                                                            <input type="text" class="form-control" name="addressline2" value="" placeholder="" />
-
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="row">
-                                                        <div class="col-md-4 mb-6">
-                                                            <label class="form-label" for="basic-default-city">City</label>
-                                                            <input type="text" class="form-control" name="city" value="" placeholder="" />
-                                                            <span asp-validation-for="City" class="text-danger"></span>
-                                                        </div>
-                                                        <div class="col-md-4 mb-6">
-                                                            <label class="form-label" for="basic-default-state">State</label>
-                                                            <input type="text" class="form-control" name="state" value="" placeholder="" />
-                                                            <span asp-validation-for="State" class="text-danger"></span>
-                                                        </div>
-                                                        <div class="col-md-4 mb-6">
-                                                            <label class="form-label" for="basic-default-zip">Zip code/Postal code</label>
-                                                            <input type="text" class="form-control" name="zipCode" value="" placeholder="" />
-                                                            <span asp-validation-for="ZipCode" class="text-danger"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-primary">Create Estimate</button>
-                                                        <button type="submit" asp-controller="Estimates" asp-action="EstimateList" class="btn btn-label-secondary" data-bs-dismiss="modal">
-                                                            Cancel
-                                                        </button>
-
-                                                    </div>
-                                                </form>
-                                            </div>
-
-                                        </div>
+            </div>
+        </div>
 
 
 
-                                    </div>
-
+        <!-- Script end -->
+        <!-- Modal for Create Estimate button-->
+        <div class="modal fade" id="modalSignature" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="">
+                    <div class="">
+                        <div class="modal-content m-4">
+                            <div class="modal-header">
+                                <div>
+                                    <h3 class="mb-0">Create new estimate</h3>
+                                    <p>Input customer details below to begin creating new reports</p>
                                 </div>
-
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form asp-controller="Estimates" asp-action="CreateEstimate" method="post" id="estimateForm">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-6">
+                                                    <label class="form-label" for="basic-default-project">Estimate No.</label>
+                                                    <input type="text" class="form-control" asp-for="EstimateNo" id="basic-default-project" placeholder="Leave blank to generate" pattern="\d{10}" title="Please enter exactly 10 digits." maxlength="10" />
+                                                </div>
+                                                <div class="col-md-6 mb-6">
+                                                    <label class="form-label" for="basic-default-first">First name<span class="required">*</span></label>
+                                                    <input type="text" class="form-control" name="firstName" value="" placeholder="" required />
+                                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-6">
+                                                    <label class="form-label" for="basic-default-last">Last name</label>
+                                                    <input type="text" class="form-control" name="lastName" value="" placeholder="" />
+                                                </div>
+                                                <div class="col-md-6 mb-6">
+                                                    <label class="form-label" for="basic-default-company">Company</label>
+                                                    <input type="text" class="form-control" name="company" value="" placeholder="ACME Inc." />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-6">
+                                                    <label class="form-label" for="basic-default-email">Email</label>
+                                                    <input type="text" name="email" value="" class="form-control" />
+                                                </div>
+                                                <div class="col-md-6 mb-6">
+                                                    <label class="form-label" for="basic-default-phone">Phone No</label>
+                                                    <input type="text" class="form-control phone-mask" asp-for="PhoneNumber" />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-6">
+                                                    <label class="form-label" for="basic-default-line1">Address line 1<span class="required">*</span></label>
+                                                    <input type="text" class="form-control" name="addressline1" value="" placeholder="" required />
+                                                    <span asp-validation-for="Addressline1" class="text-danger"></span>
+                                                </div>
+                                                <div class="col-md-6 mb-6">
+                                                    <label class="form-label" for="basic-default-line2">Address line 2</label>
+                                                    <input type="text" class="form-control" name="addressline2" value="" placeholder="" />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 mb-6">
+                                                    <label class="form-label" for="basic-default-city">City</label>
+                                                    <input type="text" class="form-control" name="city" value="" placeholder="" />
+                                                </div>
+                                                <div class="col-md-4 mb-6">
+                                                    <label class="form-label" for="basic-default-state">State</label>
+                                                    <input type="text" class="form-control" name="state" value="" placeholder="" />
+                                                </div>
+                                                <div class="col-md-4 mb-6">
+                                                    <label class="form-label" for="basic-default-zip">Zip code/Postal code</label>
+                                                    <input type="text" class="form-control" name="zipCode" value="" placeholder="" />
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Create Estimate</button>
+                                                <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Cancel</button>
+                                            </div>
+                                        </form>
+                                        <!-- Error Messages Section -->
+                                        <div id="errorMessages" class="text-danger mt-3" style="display:none;">
+                                            <ul id="errorList"></ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
-
-
-
             </div>
-
-
         </div>
+
     </div>
+
+
+   
+
 
     <div class="row mb-12 g-6" id="grid" style="display: flex;">
         @{
@@ -373,16 +419,20 @@
                         }
                     }
 
-                    <div class="col-md-4">
+                    <div class="col-md-4 estimate-card" data-name="@item.FirstName @item.LastName @item.Addressline1 @item.Addressline2 @item.City @item.State @item.ZipCode @formattedDate" data-estimate-no="@item.EstimateNo">
                         <div class="card">
                             <div class="row g-0">
                                 <div class="col-md-12 position-relative">
+                                   
+
                                     <a asp-action="EstimationDetails" asp-controller="Estimates" asp-route-id="@item.EstimateID">
-                                        <img class="card-img card-img-left card-img-height" src="~/img/elements/pexels-pixabay-164558.jpg" alt="Card image" />
+                                        <img class="card-img card-img-left card-img-height"
+                                             src="@(Url.Content(item.EstimateID % 4 == 0 ? "~/img/elements/est1.jpg" :
+                          (item.EstimateID % 3 == 0 ? "~/img/elements/est2.jpg" :
+                          (item.EstimateID % 2 == 0 ? "~/img/elements/est3.jpg" : "~/img/elements/est4.jpg"))))"
+                                             alt="Card image" />
                                         <div hidden>@item.EstimateID</div>
                                     </a>
-
-
                                     <div class="position-absolute end-0 top-0 dlt-btn">
                                         <button data-bs-toggle="modal" data-bs-target="#delete" class="border-0 dtl-btn" id="confirm-text" onclick="setEstimateID(@item.EstimateID)">
                                             <i class="ti ti-trash ti-md me-2 text-white me-lg-0 ti-lg"></i>
@@ -393,13 +443,13 @@
                                     <div class="card-body row g-0">
                                         <div class="col-md-12 mb-2">
                                             <h5 class="card-title mb-0"><b>@item.FirstName @item.LastName</b></h5>
-                                            <p class="mb-1">Estimate No. : @item.EstimateNo</p>
+                                            <p class="mb-1">Estimate# : @item.EstimateNo</p>
                                             <p class="card-text text-black">@item.Addressline1 @item.Addressline2, @item.City, @item.State, @item.ZipCode</p>
                                         </div>
                                         <div class="col-md-12 rounded text-white status-dropdown">
                                             <div class="d-flex justify-content-center align-items-center">
                                                 <div class="col-md-6 rounded text-white status-dropdown">
-                                                    <select class="form-select text-capitalize statusSelect">
+                                                    <select class="form-select text-capitalize statusSelectChange">
                                                         @foreach (var i in Model.StatusList)
                                                         {
                                                             @if (item.StatusID.ToString() == i.StatusID.ToString())
@@ -412,13 +462,11 @@
                                                             }
                                                         }
                                                     </select>
-                                                    <div mailto:id="estimateid_@item.EstimateID" hidden>@item.EstimateID</div>
+                                                    <div id="estimateId_@item.EstimateID" hidden>@item.EstimateID</div>
                                                 </div>
-
 
                                                 <div class="col-md-6 d-flex justify-content-end align-items-center">
                                                     <p style="color:#b1acac !important" class="mb-0">@formattedDate</p>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -440,14 +488,15 @@
                 <table class="datatables-estimate table">
                     <thead class="border-top bg-menu-theme text-white">
                         <tr>
-                            <th class="text-white">No.</th>
+                            <th class="text-white">Estimate#</th>
                             <th class="text-white">Name</th>
                             <th class="text-white"> Address</th>
                             <th class="text-white"> Estimator</th>
                             <th class="text-white"> Created</th>
-                               <th class="text-white">Status</th>
+                            <th class="text-white">Status</th>
                         </tr>
                     </thead>
+
                 </table>
             </div>
 
@@ -461,23 +510,55 @@
 
 </div>
 
+    </div>
 
+ <script>
+    function filterEstimates() {
+        var searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        var cards = document.querySelectorAll('.estimate-card');
 
+        cards.forEach(function (card) {
+            var cardTitle = card.getAttribute('data-name').toLowerCase();
+            var cardEstimateNo = card.getAttribute('data-estimate-no').toLowerCase();
 
+            if (cardTitle.includes(searchTerm) || cardEstimateNo.includes(searchTerm)) {
+                card.style.display = ''; // Show the card if search term matches
+            } else {
+                card.style.display = 'none'; // Hide the card if no match
+            }
+        });
+    }
+</script> 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!--Script for grid and list view-->
 <script>
     function switchToGrid() {
         // Hide the list view and show the grid view
         document.getElementById("list").style.display = "none";
         document.getElementById("grid").style.display = "flex";
+        location.reload();
     }
 
     function switchToList() {
-        // Hide the grid view and show the list view
         document.getElementById("grid").style.display = "none";
         document.getElementById("list").style.display = "block";
+        document.getElementById('searchInput').value = '';
     }
 
+
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+     
+            estimateId = '@Model.UserID';
+   
+   
+        if (listIcon) {
+            listIcon.addEventListener('click', function (event) {
+                initializeEstimateTable(estimateId);
+            });
+        }
+    });
 </script>
 
 <div class="modal fade" id="delete" tabindex="-1" aria-hidden="true">
@@ -494,10 +575,93 @@
     </div>
 </div>
 
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Function to update hidden fields based on dropdown selection
+        function updateHiddenFields() {
+            var estimatorId = document.getElementById('estimatorSelectChange').value;
+            var statusId = document.getElementById('userPlan').value;
+            var creationStatus = document.getElementById('userStatus').value;
+
+            // Update the hidden fields with selected values
+            document.getElementById('hiddenEstimatorId').value = estimatorId;
+            document.getElementById('hiddenStatusId').value = statusId;
+            document.getElementById('hiddenCreationStatus').value = creationStatus;
+        }
+
+        // For estimator selection
+        document.getElementById('estimatorSelectChange').addEventListener('change', function () {
+            updateHiddenFields();
+            document.getElementById('estimatorForm').submit();
+        });
+
+        // For user plan (Estimate Status) selection
+        document.getElementById('userPlan').addEventListener('change', function () {
+            updateHiddenFields();
+            document.getElementById('estimatorForm').submit();
+        });
+
+        // For user status selection
+        document.getElementById('userStatus').addEventListener('change', function () {
+            updateHiddenFields();
+            document.getElementById('estimatorForm').submit();
+        });
+
+        // Clear all filters
+        document.getElementById("clearAllBtn").addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Reset select fields
+            const estimatorSelect = document.getElementById("estimatorSelectChange");
+            const userPlanSelect = document.getElementById("userPlan");
+            const userStatusSelect = document.getElementById("userStatus");
+
+            if (estimatorSelect) estimatorSelect.selectedIndex = 0;
+            if (userPlanSelect) userPlanSelect.selectedIndex = 0;
+            if (userStatusSelect) userStatusSelect.selectedIndex = 0;
+
+            // Reset hidden fields
+            document.getElementById('hiddenEstimatorId').value = '0';
+            document.getElementById('hiddenStatusId').value = '0';
+            document.getElementById('hiddenCreationStatus').value = 'Created anytime';
+
+            // Submit the form with the cleared filters
+            document.getElementById('estimatorForm').submit();
+        });
+
+        // Initialize hidden fields with the initial values on page load
+        updateHiddenFields();
+    });
+
+
+</script>
+<script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+        var firstName = document.querySelector('input[name="firstName"]');
+        var addressLine1 = document.querySelector('input[name="addressline1"]');
+        var firstNameError = document.querySelector('span[asp-validation-for="FirstName"]');
+        var addressLine1Error = document.querySelector('span[asp-validation-for="Addressline1"]');
+        firstNameError.innerHTML = '';
+        addressLine1Error.innerHTML = '';
+        if (!firstName.value) {
+            firstNameError.innerHTML = 'Please provide First Name.';
+            event.preventDefault(); 
+        }
+
+        if (!addressLine1.value) {
+            addressLine1Error.innerHTML = 'Please provide Address.';
+            event.preventDefault();
+        }
+    });
+</script>
+
+
 <script>
     $(document).ready(function () {
-        $('.statusSelect').change(function () {
+        $('.statusSelectChange').change(function () {
             // Find the parent div and get the unique estimateId
             var statusId = $(this).val(); // Get selected status ID
             var estimateId = $(this).closest('.status-dropdown').find('[id^="estimateId_"]').text(); // Get the corresponding EstimateID for the current select box
@@ -523,7 +687,7 @@
 <script>
     function setEstimateID(estimateID) {
         $('#confirmDeleteBtn').off('click').on('click', function () {
-            debugger
+
             $.ajax({
                 url: "/Estimates/DeleteEstimate",
                 type: "POST",
@@ -531,10 +695,10 @@
                     estimateId: estimateID
                 },
                 success: function (response) {
-                    window.location.reload();
+                    location.reload();
                 },
                 error: function (xhr, status, error) {
-                    console.error("Error during deletion:", error);
+
                 }
             });
         });
@@ -544,16 +708,7 @@
 
 
 </script>
-<!--Script for drop down colour-->
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var showErrorModal = '@(ViewBag.EstimateError ?? "False")' === 'True';
-        if (showErrorModal) {
-            var modal = new bootstrap.Modal(document.getElementById('modalSignature'));
-            modal.show();
-        }
-    });
-</script>
+
 
 <script>
     function updateBackgroundColor(selectElement) {
@@ -585,6 +740,24 @@
             updateBackgroundColor(selectElement);
         });
     });
+
+
+    const userStatusDropdown = document.querySelector('.form-selectCreationDate');
+    function restoreSelection() {
+        const storedValue = sessionStorage.getItem('selectedValue');
+        if (storedValue) {
+            userStatusDropdown.value = storedValue;
+        } else {
+            userStatusDropdown.value = 'Created anytime';
+        }
+        document.getElementById('selectedStatus').textContent = 'Selected: ' + userStatusDropdown.value;
+    }
+    userStatusDropdown.addEventListener('change', function () {
+        const selectedValue = userStatusDropdown.value;
+        sessionStorage.setItem('selectedValue', selectedValue);
+        document.getElementById('selectedStatus').textContent = 'Selected: ' + selectedValue;
+    });
+    restoreSelection();
 
 
 

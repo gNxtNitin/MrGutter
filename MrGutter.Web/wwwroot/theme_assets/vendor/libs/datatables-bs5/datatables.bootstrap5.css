@@ -62,7 +62,7 @@ table.dataTable thead > tr > td.sorting_desc_disabled:before,
 table.dataTable thead > tr > td.sorting_desc_disabled:after {
   position: absolute;
   display: block;
-  opacity: 0.125;
+  opacity: 1;
   right: 10px;
   line-height: 9px;
   font-size: 0.8em;
@@ -93,7 +93,7 @@ table.dataTable thead > tr > td.sorting_desc_disabled:after {
 table.dataTable thead > tr > th.sorting_asc:before, table.dataTable thead > tr > th.sorting_desc:after,
 table.dataTable thead > tr > td.sorting_asc:before,
 table.dataTable thead > tr > td.sorting_desc:after {
-  opacity: 0.6;
+  opacity: 1;
 }
 
 table.dataTable thead > tr > th.sorting_desc_disabled:after, table.dataTable thead > tr > th.sorting_asc_disabled:before,
@@ -597,7 +597,7 @@ table.dataTable thead th.sorting_disabled::before, table.dataTable thead th.sort
   display: none !important;
 }
 table.dataTable thead th.sorting:before, table.dataTable thead th.sorting:after {
-  visibility: hidden;
+  visibility: visible;
 }
 table.dataTable thead th.sorting:hover:before, table.dataTable thead th.sorting:hover:after {
   visibility: visible;

@@ -48,6 +48,7 @@ namespace MrGutter.Models.ViewModels
         [StringLength(50, ErrorMessage = "State cannot exceed 50 characters.")]
         public string? State { get; set; }
 
+
         [Required(ErrorMessage = "Zip code is required.")]
         //[RegularExpression(@"^\d{5}(-\d{4})?$", ErrorMessage = "Invalid zip code.")]
         public string? ZipCode { get; set; }
@@ -55,12 +56,13 @@ namespace MrGutter.Models.ViewModels
         public string? CompanyName { get; set; }
         public int CompanyID { get; set; } = 1;
         public int StatusID { get; set; }
-
-
         public int CreatedBy { get; set; }
         public List<EstimateVM>? EstimateList { get; set; }
         public List<User>? EstimatorUsers { get; set; }
-        public List<EstimateStatusVM>? StatusList { get; set; }
+        public List<EstimateStatusVM> StatusList { get; set; }
+        public List<MeasurementTokenVM>? MeasurementToken { get; set; }
+        public List<MeasurementUnitVM>? MeasurementUnit { get; set; }
+        public List<MeasurementCatVM>? MeasurementCat { get; set; }
     }
     public class EstimateIdsVM
     {
@@ -68,7 +70,44 @@ namespace MrGutter.Models.ViewModels
         public int UserId { get; set; } = 0;
         public int CompanyID { get; set; } = 0;
         public int EstimateID { get; set; } = 0;
+        public int StatusID { get; set; } = 0;
 
+    }
+    public class CreationStatusFilter
+    {
+        private DateTime _currentDate;
+
+        public CreationStatusFilter()
+        {
+            _currentDate = DateTime.Now;
+        }
+
+        public DateTime GetStartDate(int creationStatus)
+        {
+            DateTime startDate;
+            if (creationStatus == 24)
+            {
+                startDate = _currentDate.AddHours(-24);
+            }
+            else if (creationStatus == 7)
+            {
+                startDate = _currentDate.AddDays(-7);
+            }
+            else if (creationStatus == 30)
+            {
+                startDate = _currentDate.AddDays(-30);
+            }
+            else if (creationStatus == -1)
+            {
+                startDate = DateTime.MinValue;
+            }
+            else
+            {
+                startDate = DateTime.MinValue;
+            }
+
+            return startDate;
+        }
     }
 
 }

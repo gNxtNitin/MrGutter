@@ -19,12 +19,10 @@ namespace MrGutter.Services
         public  EstimatesService(IEstimatesRepository estimatesRepository)
         {
             _estimatesRepository = estimatesRepository;
-
         }
         public async Task<int> CreateEstimateAsync(EstimateVM estimateVM)
         {
             int result = 0;
-         
             EstimateModel model =  new EstimateModel();
             model.EstimateNo =  estimateVM.EstimateNo;
             model.FirstName = estimateVM.FirstName;
@@ -39,6 +37,7 @@ namespace MrGutter.Services
             model.ZipCode = estimateVM.ZipCode;
             model.CompanyID = estimateVM.CompanyID;
             model.CreatedBy = estimateVM.CreatedBy;
+            model.UserID = estimateVM.UserID;
             model.Flag = "C";
             var response = await _estimatesRepository.CreateEstimateAsync(model);
             if (response.Code > 0)
@@ -70,7 +69,7 @@ namespace MrGutter.Services
             model.CreatedBy = estimateVM.EstimateList[0].CreatedBy;
             model.EstimateCreatedDate = estimateVM.EstimateList[0].EstimateCreatedDate;
             model.EstimateID = estimateVM.EstimateList[0].EstimateID;
-            model.UserID = estimateVM.EstimateList[0].UserID;
+            model.UserID = estimateVM.UserID;
             model.Flag = "U";
             var response = await _estimatesRepository.UpdateEstimate(model);
             if (response.Code > 0)
@@ -150,9 +149,59 @@ namespace MrGutter.Services
             model.ZipCode = estimateVM.ZipCode;
             model.CompanyID = estimateVM.CompanyID;
             model.EstimateID = estimateVM.EstimateID;
-            model.CreatedBy = 1;
+            model.CreatedBy = estimateVM.UserID;
             model.Flag = "D";
             var response = await _estimatesRepository.DeleteEstimateAsync(model);
+            if (response.Code > 0)
+            {
+                result = response.Code;
+            }
+            return result;
+        }
+
+        public async Task<MeasurementCatVM> GetMeasurementCatListAsync(int CatId, int CompanyId)
+        {
+            MeasurementCatVM measurementCat = new MeasurementCatVM();
+
+            var response = await _estimatesRepository.GetMeasurementCatListAsync(CatId, CompanyId);
+            if (response.Data != null)
+            {
+                measurementCat = JsonConvert.DeserializeObject<MeasurementCatVM>(response.Data);
+            }
+            return measurementCat;
+        }
+        public async Task<MeasurementTokenVM> GetMeasurementTokenListAsync(int estimateId, int companyId, int mTokenId)
+        {
+            MeasurementTokenVM measurementToken = new MeasurementTokenVM();
+
+            var response = await _estimatesRepository.GetMeasurementTokenListAsync(estimateId, companyId, mTokenId);
+            if (response.Data != null)
+            {
+                measurementToken = JsonConvert.DeserializeObject<MeasurementTokenVM>(response.Data);
+            }
+            return measurementToken;
+        }
+        public async Task<MeasurementUnitVM> GetMeasurementUnitListAsync(int uMId, int companyId)
+        {
+            MeasurementUnitVM measurementToken = new MeasurementUnitVM();
+
+            var response = await _estimatesRepository.GetMeasurementUnitListAsync(uMId, companyId);
+            if (response.Data != null)
+            {
+                measurementToken = JsonConvert.DeserializeObject<MeasurementUnitVM>(response.Data);
+            }
+            return measurementToken;
+        }
+
+        public async Task<int> UpdateMeasurementTokenValueAsync(int MTokenID, int estimateID, string TokenValue)
+        {
+            int result = 0;
+            MeasurementTokenModel measurementToken = new MeasurementTokenModel();
+            measurementToken.Flag = "V";
+            measurementToken.MTokenID = MTokenID;
+            measurementToken.EstimateID = estimateID;
+            measurementToken.TokenValue = TokenValue;
+            var response = await _estimatesRepository.CreateOrSetMeasurementTokenAsync(measurementToken);
             if (response.Code > 0)
             {
                 result = response.Code;

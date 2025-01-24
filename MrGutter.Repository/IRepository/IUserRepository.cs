@@ -16,7 +16,7 @@ namespace MrGutter.Repository.IRepository
         public Task<APIResponseModel> GetUserAsync(string? userId);
         public Task<APIResponseModel> CreateOrUpdateUser(User userInfo);
         public Task<APIResponseModel> DeleteUser(User userInfo);
-        public Task<APIResponseModel> GetCompanyAsync(string? userId);
+        public Task<APIResponseModel> GetCompanyAsync(string? userId, string? companyId);
         public Task<APIResponseModel> CreateOrUpdateCompany(Company cmpInfo);
         public Task<APIResponseModel> DeleteCompanyAsync(Company cmpInfo);
 

@@ -15,7 +15,12 @@ namespace MrGutter.Repository.IRepository
         public Task<APIResponseModel> ChangeEstimateStatus(EstimateModel estimateModel);
         public Task<APIResponseModel> DeleteEstimateAsync(EstimateModel estimateModel);
         public Task<APIResponseModel> UpdateEstimate(EstimateModel estimateModel);
+        public  Task<APIResponseModel> GetMeasurementTokenListAsync(int estimateId, int companyId, int mTokenId);
+        public Task<APIResponseModel> GetMeasurementUnitListAsync(int uMId, int companyId);
+        public Task<APIResponseModel> GetMeasurementCatListAsync(int CatId, int CompanyId);
+        public Task<APIResponseModel> CreateOrSetMeasurementTokenAsync(MeasurementTokenModel measurementToken);
 
-        
+
+
     }
 }

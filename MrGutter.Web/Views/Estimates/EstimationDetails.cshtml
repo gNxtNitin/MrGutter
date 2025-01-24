@@ -11,6 +11,7 @@
         right: 5px;
         z-index: 1;
     }
+
     .card-img-top {
         object-fit: cover;
     }
@@ -25,24 +26,34 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body row py-2">
-                  
+
 
                     <div class="d-flex align-items-center mb-3">
-                        <div class="text-end me-4">
-                            <h4 class="card-title">Insurance Sample</h4>
-                        </div>
+                        @foreach (var item in Model.EstimateList)
+                        {
+                            <div class="text-end me-4">
+                                <h4 class="card-title">Insurance Sample</h4>
+                            </div>
 
-                        <div class="rounded text-white status-dropdown">
-                            <select class="form-select text-capitalize">
-                                <option value="Requested" selected>Requested</option>
-                                <option value="Provided">Provided</option>
-                                <option value="Completed">Completed</option>
-                                <option value="Revised">Revised</option>
-                                <option value="Accepted">Accepted</option>
-                                <option value="Cancelled">Cancelled</option>
-                            </select>
-                        </div>
+                            <div class="col-md-2 rounded text-white status-dropdown">
+                                <select class="form-select text-capitalize" id="statusSelectChange">
+                                    @foreach (var i in Model.StatusList)
+                                    {
+                                        @if (item.StatusID.ToString() == i.StatusID.ToString())
+                                        {
+                                            <option value="@i.StatusID" selected>@i.StatusName</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@i.StatusID">@i.StatusName</option>
+                                        }
+                                    }
+                                </select>
+                                <div id="estimateId_@item.EstimateID" hidden>@item.EstimateID</div>
+                            </div>
+                        }
                     </div>
+
 
                     <div class="col-md-8 row">
 
@@ -95,7 +106,7 @@
                                 }
                             }
                             <span class="ms-5 ps-3">@formattedDate</span>
-                          
+
                         </div>
                     </div>
 
@@ -464,47 +475,60 @@
         </div> *@
     </div>
 </div>
-
-<!--Script for drop down colour-->
-
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    // Function to update the background and text color of each dropdown
-    function updateBackgroundColor(selectElement) {
-        var selectedValue = selectElement.value;
-        var parentDiv = selectElement.closest('.status-dropdown'); // Get the parent div with class 'status-dropdown'
+    $(document).ready(function () {
+        $('#statusSelectChange').change(function () {
+            var statusId = $(this).val();
+            var estimateId = $(this).closest('.status-dropdown').find('[id^="estimateId_"]').text();
+            $.ajax({
+                url: "/Estimates/ChangeEstimateStatus",
+                type: "POST",
+                data: {
+                    statusId: statusId,
+                    estimateId: estimateId
+                },
+                success: function (response) {
 
-        // Reset background and text color classes
-        parentDiv.classList.remove("bg-success", "bg-primary", "bg-secondary", "bg-danger", "bg-blue", "text-white", "text-dark");
+                },
+                error: function (xhr, status, error) {
 
-        // Apply the correct background and text color based on the selected value
-        if (selectedValue === "Accepted") {
-            parentDiv.classList.add("bg-success", "text-white"); // Green background, white text
-        } else if (selectedValue === "Requested") {
-            parentDiv.classList.add("bg-primary", "text-white"); // Blue background, white text
-        } else if (selectedValue === "Provided") {
-            parentDiv.classList.add("bg-secondary", "text-dark"); // Grey background, dark text
-        } else if (selectedValue === "Cancelled") {
-            parentDiv.classList.add("bg-danger", "text-white"); // Red background, white text
-        } else if (selectedValue === "Revised") {
-            parentDiv.classList.add("bg-success", "text-white"); // Red background, white text
-        } else if (selectedValue === "Completed") {
-            parentDiv.classList.add("bg-blue", "text-white"); // Red background, white text
-        }
-    }
-
-    // Set the background color on page load for all dropdowns
-    window.addEventListener('load', function () {
-        var selectElements = document.querySelectorAll('.status-dropdown select');
-        selectElements.forEach(function (selectElement) {
-            updateBackgroundColor(selectElement); // Apply background color based on current selection
+                }
+            });
         });
     });
 
-    // Listen for changes on each select dropdown
+</script>
+
+
+<script>
+    function updateBackgroundColor(selectElement) {
+        var selectedValue = selectElement.value;
+        var parentDiv = selectElement.closest('.status-dropdown'); 
+        parentDiv.classList.remove("bg-success", "bg-primary", "bg-secondary", "bg-danger", "bg-blue", "text-white", "text-dark");
+        if (selectedValue === "Accepted") {
+            parentDiv.classList.add("bg-success", "text-white"); 
+        } else if (selectedValue === "Requested") {
+            parentDiv.classList.add("bg-primary", "text-white"); 
+        } else if (selectedValue === "Provided") {
+            parentDiv.classList.add("bg-secondary", "text-dark");
+        } else if (selectedValue === "Cancelled") {
+            parentDiv.classList.add("bg-danger", "text-white"); 
+        } else if (selectedValue === "Revised") {
+            parentDiv.classList.add("bg-success", "text-white"); 
+        } else if (selectedValue === "Completed") {
+            parentDiv.classList.add("bg-blue", "text-white"); 
+        }
+    }
+    window.addEventListener('load', function () {
+        var selectElements = document.querySelectorAll('.status-dropdown select');
+        selectElements.forEach(function (selectElement) {
+            updateBackgroundColor(selectElement); 
+        });
+    });
     document.querySelectorAll('.status-dropdown select').forEach(function (selectElement) {
         selectElement.addEventListener("change", function () {
-            updateBackgroundColor(selectElement); // Update background color when selection changes
+            updateBackgroundColor(selectElement); 
         });
     });
 </script>
@@ -557,7 +581,6 @@
  *@
 
 
-<!--Script for View page button-->
 <script>
     const pdfUrl = '@Url.Content("~/report_view_pages/reportinspection.pdf")';
 
@@ -577,5 +600,38 @@
         }
     }).catch(error => console.error('Error loading PDF:', error));
 </script>
+<script>
+    function updateBackgroundColor(selectElement) {
+        var selectedValue = selectElement.value;
+        var parentDiv = selectElement.closest('.status-dropdown');
+        parentDiv.style.backgroundColor = "";
+        parentDiv.style.color = "";
+        const statusColors = {
+            "5": { backgroundColor: "#008080", color: "#ffffff" },
+            "1": { backgroundColor: "#007bff", color: "#ffffff" },
+            "2": { backgroundColor: "#90ee90", color: "#ffffff" },
+            "6": { backgroundColor: "#ff0000", color: "#ffffff" },
+            "4": { backgroundColor: "#ffa500", color: "#ffffff" },
+            "3": { backgroundColor: "#008000", color: "#ffffff" }
+        };
+        if (statusColors[selectedValue]) {
+            parentDiv.style.backgroundColor = statusColors[selectedValue].backgroundColor;
+            parentDiv.style.color = statusColors[selectedValue].color;
+        }
+    }
+    window.addEventListener('load', function () {
+        var selectElements = document.querySelectorAll('.status-dropdown select');
+        selectElements.forEach(function (selectElement) {
+            updateBackgroundColor(selectElement);
+        });
+    });
+    document.querySelectorAll('.status-dropdown select').forEach(function (selectElement) {
+        selectElement.addEventListener("change", function () {
+            updateBackgroundColor(selectElement);
+        });
+    });
 
+
+
+</script>
 

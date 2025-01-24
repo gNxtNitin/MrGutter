@@ -88,9 +88,6 @@ namespace MrGutter.Repository
             try
             {
                 string json = JsonConvert.SerializeObject(userId);
-                //string V = await _encryptDecrypt.Encrypt(json);
-                //string reqStr = HttpUtility.UrlEncode(V);
-
                 //Call the API
                 apiResponse = await _aPIWrapper.GetAsync("UserManager/GetUsers?userId=" + userId, "");
             }
@@ -118,8 +115,6 @@ namespace MrGutter.Repository
                 response.Msg = ex.Message;
             }
             return response;
-
-
         }
         public async Task<APIResponseModel> DeleteUser(User userInfo)
         {
@@ -140,17 +135,21 @@ namespace MrGutter.Repository
 
         }
 
-        public async Task <APIResponseModel> GetCompanyAsync(string? cId)
+        public async Task <APIResponseModel> GetCompanyAsync(string? userId, string? companyId)
         {
             APIResponseModel apiResponse = new APIResponseModel();
             try
             {
-                string json = JsonConvert.SerializeObject(cId);
-                //string V = await _encryptDecrypt.Encrypt(json);
-                //string reqStr = HttpUtility.UrlEncode(V);
-
+                string json = JsonConvert.SerializeObject(userId);
                 //Call the API
-                apiResponse = await _aPIWrapper.GetAsync("UserManager/GetCompany?cId=" + cId, "");
+                if(companyId != null && companyId != "")
+                {
+                    apiResponse = await _aPIWrapper.GetAsync("UserManager/GetCompany?companyId=" + companyId, "");
+                }
+                else
+                {
+                    apiResponse = await _aPIWrapper.GetAsync("UserManager/GetCompany?userId=" + userId, "");
+                }
             }
             catch (Exception ex)
             {

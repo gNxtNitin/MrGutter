@@ -88,7 +88,7 @@ namespace MrGutter.Repository
             {
                 string V = await _encryptDecrypt.Encrypt(StatusId.ToString());
                 string reqStr = HttpUtility.UrlEncode(V);
-                response = await _aPIWrapper.GetAsync("Estimate/GetStatus?encReq=", reqStr);
+                response = await _aPIWrapper.GetAsync("Estimate/GetStatus?statusId=", reqStr);
             }
             catch (Exception ex)
             {
@@ -138,6 +138,74 @@ namespace MrGutter.Repository
             }
             return response;
         }
-        
+
+
+        public async Task<APIResponseModel> GetMeasurementCatListAsync(int CatId, int CompanyId)
+        {
+            APIResponseModel response = new APIResponseModel();
+           
+            try
+            {
+               
+                response = await _aPIWrapper.GetAsync("Estimate/GetMeasurementCat?mCatId="+ CatId + "&companyId="+ CompanyId, "");
+            }
+            catch (Exception ex)
+            {
+                response = new APIResponseModel();
+                response.Code = -1;
+                response.Msg = ex.Message;
+            }
+            return response;
+        }
+        public async Task<APIResponseModel> GetMeasurementTokenListAsync(int estimateId, int companyId, int mTokenId)
+        {
+            APIResponseModel response = new APIResponseModel();
+            try
+            {
+
+                response = await _aPIWrapper.GetAsync("Estimate/GetMeasurementToken?estimateId=" + estimateId + "&companyId=" + companyId + "&mTokenId="+mTokenId,"");
+            }
+            catch (Exception ex)
+            {
+                response = new APIResponseModel();
+                response.Code = -1;
+                response.Msg = ex.Message;
+            }
+            return response;
+        }
+        public async Task<APIResponseModel> GetMeasurementUnitListAsync(int uMId, int companyId)
+        {
+            APIResponseModel response = new APIResponseModel();
+            try
+            {
+
+                response = await _aPIWrapper.GetAsync("Estimate/GetMeasurementUnit?uMId=" + uMId + "&companyId=" + companyId, "");
+            }
+            catch (Exception ex)
+            {
+                response = new APIResponseModel();
+                response.Code = -1;
+                response.Msg = ex.Message;
+            }
+            return response;
+        }
+        public async Task<APIResponseModel> CreateOrSetMeasurementTokenAsync(MeasurementTokenModel measurementToken)
+        {
+            APIResponseModel response = new APIResponseModel();
+            try
+            {
+                string json = JsonConvert.SerializeObject(measurementToken);
+                //string V = await encryptDecrypt.Encrypt(json);
+                string reqStr = HttpUtility.UrlEncode(json);
+                response = await _aPIWrapper.PostAsync("Estimate/CreateOrSetMeasurementToken", json);
+            }
+            catch (Exception ex)
+            {
+                response = new APIResponseModel();
+                response.Code = -1;
+                response.Msg = ex.Message;
+            }
+            return response;
+        }
     }
 }

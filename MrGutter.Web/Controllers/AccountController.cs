@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Identity;
 using MrGutter.Models;
 using MrGutter.Web.Models;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 namespace MrGutter.Web.Controllers
 {
     public class AccountController : Controller
@@ -21,6 +22,7 @@ namespace MrGutter.Web.Controllers
         private readonly IUserManagerService _userService;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly ILogger<AccountController> _logger;
+
         EncryptDecrypt _encryptDecrypt = new EncryptDecrypt();
         public AccountController(IAccountService accountService, IUserManagerService userService, IHttpContextAccessor httpContextAccessor, ILogger<AccountController> logger)
         {
@@ -43,6 +45,41 @@ namespace MrGutter.Web.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public async Task<IActionResult> EditPassword(ResetPasswordVM resetPassword)
+        {
+            LoginVM loginVM = new LoginVM();
+            var userId = HttpContext.Session.GetInt32("UserId");
+            var user = await _userService.GetUserAsync(userId.ToString());
+            var userEmail = user.Users.FirstOrDefault(m => m.UserID == userId.ToString());
+
+            loginVM.EmailOrMobile = userEmail.Email;
+            loginVM.Password = resetPassword.Password;
+            loginVM.ConfirmPassword = resetPassword.ConfirmPassword;
+            if (loginVM.Password == loginVM.ConfirmPassword)
+            {
+                var result = await _accountService.ResetPasswordAsync(loginVM);
+                if (result > 0)
+                {
+                    return RedirectToAction("SuccessEditPassword");
+                }
+            }
+            else
+            {
+                ViewBag.ConfirmPassword = "The password and confirmation password do not match.";
+                return View(resetPassword);
+
+            }
+            return View();
+        }
+
+
+
+        public IActionResult SuccessEditPassword()
+        {
+            return View();
+        }
         public IActionResult EditProfile()
         {
             return View();
@@ -59,7 +96,6 @@ namespace MrGutter.Web.Controllers
                 ViewBag.LoginError = "Invalid";
                 return View("Index", loginReq);
             }
-
             try
             {
                 var result = await _accountService.AuthenticateUser(loginReq);
@@ -82,19 +118,16 @@ namespace MrGutter.Web.Controllers
 
                 // Fetch company information
 
-                var companyManager = await _userService.GetCompanyAsync(result.Code.ToString());
-                var companyId = companyManager.Company.FirstOrDefault()?.CompanyId;
-
+                var companyManager = (await _userService.GetUserCompany(result.Code)).FirstOrDefault();
+                var companyId = companyManager.CompanyId;
                 if (string.IsNullOrEmpty(companyId))
                 {
                     ViewBag.LoginError = "Invalid";
                     ViewBag.LoginErrorMsg = "Unable to retrieve company information.";
                     return View("Index");
                 }
-
                 // Sanitize the companyId to remove non-numeric characters
                 var sanitizedCompanyId = new string(companyId.Where(char.IsDigit).ToArray());
-
                 // Parse the sanitized companyId into an integer
                 if (int.TryParse(sanitizedCompanyId, out int cId))
                 {
@@ -106,9 +139,6 @@ namespace MrGutter.Web.Controllers
                     ViewBag.LoginErrorMsg = "Invalid company ID format.";
                     return View("Index");
                 }
-
-
-
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Role, roleName),              
@@ -124,7 +154,6 @@ namespace MrGutter.Web.Controllers
                 };
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal, props);
                 HttpContext.Session.SetString("AuthToken", token); 
-
                 HttpContext.Response.Cookies.Append(
                     "AuthToken",
                     token,
@@ -166,8 +195,6 @@ namespace MrGutter.Web.Controllers
         {
             return View();
         }
-   
-
         [HttpPost]
         public async Task<IActionResult> ForgotPassword(LoginVM model)
         {
@@ -203,16 +230,6 @@ namespace MrGutter.Web.Controllers
             {
                 return View(resetPassword);
             }
-            //if (usersVM.Password == null)
-            //{
-            //    ViewBag.errormsg = "Password is required";
-            //    return View(usersVM);
-            //}
-            //else if (usersVM.ConfirmPassword == null)
-            //{
-            //    ViewBag.error = "Confirm password is required";
-            //    return View(usersVM);
-            //}
             if (loginVM.Password == loginVM.ConfirmPassword)
             {
                 var result = await _accountService.ResetPasswordAsync(loginVM);
@@ -227,8 +244,6 @@ namespace MrGutter.Web.Controllers
                 return View(resetPassword);
 
             }
-
-
             return View();
         }
 
@@ -236,11 +251,29 @@ namespace MrGutter.Web.Controllers
         {
             return View();
         }
-        public IActionResult ChangePassword(string email)
+        public async Task<IActionResult> ChangePassword(string email)
         {
-            ResetPasswordVM resetPasswordVM = new ResetPasswordVM();   
-            resetPasswordVM.EmailID = email;
+            ResetPasswordVM resetPasswordVM = new ResetPasswordVM();
+
+            if (IsBase64String(email))
+            {
+                string decEmail = await _encryptDecrypt.Decrypt(email);
+                resetPasswordVM.EmailID = decEmail;
+            }
+            else
+            {
+                // Handle invalid email format
+                resetPasswordVM.EmailID = "Invalid Email Format";
+            }
+
             return View(resetPasswordVM);
+        }
+
+
+        private bool IsBase64String(string str)
+        {
+            str = str.Trim();
+            return (str.Length % 4 == 0) && Regex.IsMatch(str, @"^[a-zA-Z0-9\+/=]*$", RegexOptions.None);
         }
         public IActionResult CreateAccount()
         {
